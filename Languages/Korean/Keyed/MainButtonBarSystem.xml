@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>더 보기 ({0})</MBBS_More>
+  <MBBS_MoreTip>서랍에 접어 넣은 버튼입니다. 서랍 맨 아래에 서랍 전용 설정 버튼이 있습니다.</MBBS_MoreTip>
+  <MBBS_OpenSettings>주요 버튼 바 설정</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>게임 중에 열었습니다. 변경 사항은 현재 저장 파일에 적용됩니다.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>주 메뉴에서 열었습니다. 변경 사항은 새 게임이 시작할 때 쓰는 기본 템플릿에 적용됩니다.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>항상 이 모드로 바 그리기 (테스트용)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>설정을 하나라도 바꾸기 전까지는 게임이 직접 바를 그립니다. 켜면 이 모드가 그린 바와 게임이 그린 바를 비교할 수 있습니다.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>주요 버튼 바 설정 (현재 저장 파일)</MBBS_Title_Save>
+  <MBBS_Title_Template>주요 버튼 바 설정 (기본 템플릿)</MBBS_Title_Template>
+  <MBBS_Tab_Simple>기본</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>고급</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>표시</MBBS_Col_Visible>
+  <MBBS_Col_Icon>아이콘</MBBS_Col_Icon>
+  <MBBS_Col_Name>이름</MBBS_Col_Name>
+  <MBBS_Col_Source>출처 모드</MBBS_Col_Source>
+  <MBBS_Col_HotKey>단축키</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>서랍</MBBS_Col_Drawer>
+  <MBBS_BarRow>바 전체 (기본값)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>모드가 숨긴 버튼 ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>출처 모드가 일부러 바에 두지 않은 버튼입니다. 바에 표시하려면 '고급' 탭에서 '항상 표시'를 켜세요.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>위로 이동</MBBS_MoveUp>
+  <MBBS_MoveDown>아래로 이동</MBBS_MoveDown>
+  <MBBS_OrderHint>목록의 위→아래가 화면의 왼쪽→오른쪽입니다. 행을 드래그해서 순서를 바꿀 수 있습니다.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(잠금)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(왼쪽 끝)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(오른쪽 끝)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>지금은 바에 없습니다. 버튼 자체의 표시 조건이 충족되지 않았습니다.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>표시 방식</MBBS_DisplayMode>
+  <MBBS_MinWidth>스크롤 시 최소 버튼 너비: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>기본 버튼 너비: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>버튼 간격: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>화면 너비 채우기</MBBS_FillScreen>
+  <MBBS_FillScreenTip>버튼이 모두 들어갈 때는 버튼을 늘려 화면 너비 전체를 채웁니다.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>게임 메뉴 버튼을 오른쪽 끝에 잠금</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>잠겨 있는 동안 메뉴 버튼은 숨기거나 옮기거나 서랍에 넣을 수 없으며, 이름만 바꿀 수 있습니다.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>게임 메뉴 버튼의 잠금이 '고급' 탭에서 해제되었습니다.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>게임 메뉴 버튼은 오른쪽 끝에 잠겨 있어 이름만 바꿀 수 있습니다. '고급' 탭의 '바 전체' 행에서 잠금을 해제할 수 있습니다.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>버튼 출처: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>아이콘 출처: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>출처 모드가 일부러 바에 두지 않은 버튼입니다. '항상 표시'를 켜야만 나타납니다.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>없음</MBBS_None>
+  <MBBS_Unknown>알 수 없음</MBBS_Unknown>
+  <MBBS_Visible>바에 표시</MBBS_Visible>
+  <MBBS_InDrawer>'더 보기' 서랍에 넣기</MBBS_InDrawer>
+  <MBBS_CustomName>사용자 지정 이름 (비워 두면 원래 이름: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>너비: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>너비: 바 전체 설정을 따름</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>위치 고정</MBBS_Pin>
+  <MBBS_Pin_None>고정 안 함</MBBS_Pin_None>
+  <MBBS_Pin_Left>왼쪽 끝</MBBS_Pin_Left>
+  <MBBS_Pin_Right>오른쪽 끝</MBBS_Pin_Right>
+  <MBBS_ForceShow>항상 표시</MBBS_ForceShow>
+  <MBBS_ForceShowTip>버튼 자체의 조건상 나타나지 않아야 할 때도 버튼을 표시합니다. 이때는 눌러도 아무 일도 일어나지 않을 수 있습니다.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>기본 템플릿으로 저장</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>기본 템플릿 적용</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>기본 템플릿으로 저장했습니다. 새 게임은 이 배치로 시작합니다.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>모두 초기화</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>모든 설정을 손대지 않은 상태의 바(게임 기본 상태에 다른 모드의 변경 사항만 반영된 상태)로 되돌리시겠습니까? 템플릿은 적용되지 않습니다.</MBBS_ResetAllConfirm>
+  <MBBS_Save>저장</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>{0} 감지됨: 지금은 해당 모드가 바를 제어하므로, 여기서 바꾼 내용은 이 모드를 우선으로 해야 적용됩니다.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>{0} 감지됨: 이 모드가 우선이므로, 해당 모드가 바에 주는 효과는 꺼져 있습니다.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>자세한 내용은 '고급' 탭을 확인하세요.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>호환성: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>이 모드 우선</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>이 모드가 바를 그립니다. {0} 모드가 바에 주는 효과는 꺼지고, 그 설정은 참고값으로만 쓰입니다.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0} 우선</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>바는 계속 {0} 모드가 담당합니다. 이 모드는 설정 창만 유지합니다.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>게임을 다시 시작해야 적용됩니다.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>{0} 설정 가져오기</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>{0}의 배치를 가져왔습니다. 유지하려면 '저장'을 누르세요.</MBBS_Compat_Imported>
+  <MBBS_HotKey>단축키: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>설정</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>제거</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>모든 저장 파일에서 공유되며, '환경설정 &gt; 키보드 구성'의 키와 같습니다.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>모든 저장 파일에서 공유됩니다. 이 버튼은 '환경설정 &gt; 키보드 구성'에 항목이 없으므로 이 모드가 키를 관리합니다.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>지정할 키를 누르세요 (취소: Esc)</MBBS_PressKey>
+  <MBBS_Export>내보내기...</MBBS_Export>
+  <MBBS_Import>가져오기...</MBBS_Import>
+  <MBBS_Export_Clipboard>텍스트로 복사 (Discord, LINE 등)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>배치를 클립보드에 복사했습니다.</MBBS_Export_Copied>
+  <MBBS_Export_File>파일로 저장</MBBS_Export_File>
+  <MBBS_Export_Saved>{0}에 저장했습니다</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>모드용 XML로 복사 (배치 모드 제작용)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def XML을 복사했습니다. 만들고 있는 모드의 Defs 폴더 아래 .xml 파일에 넣고 defName과 label을 바꾸세요.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>클립보드에서</MBBS_Import_Clipboard>
+  <MBBS_Import_File>파일: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>배치: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>배치: {0} (제작: {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>배치를 이 창으로 가져왔습니다. 유지하려면 '저장'을 누르세요.</MBBS_Import_Done>
+  <MBBS_Import_Empty>클립보드가 비어 있습니다.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>내보낸 배치가 아닙니다 (올바른 XML이 아님).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>이 텍스트에는 배치가 들어 있지 않습니다.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>이 텍스트는 프로그램 클래스를 생성하려고 합니다. 배치에는 전혀 필요 없는 동작이므로 가져오지 않았습니다.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>더 새로운 버전의 이 모드로 만든 배치입니다 (형식 {0}, 현재 버전은 {1}까지 읽을 수 있음). 먼저 모드를 업데이트하세요.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>배치를 읽을 수 없습니다: {0}</MBBS_Import_Failed>
+  <MBBS_Default>기본값</MBBS_Default>
+  <MBBS_DefaultTip>기본값으로 되돌립니다.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>서랍</MBBS_Section_Drawer>
+  <MBBS_Section_Size>너비와 간격</MBBS_Section_Size>
+  <MBBS_ArrowWidth>스크롤 화살표 너비: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>마우스 휠 속도: 한 칸당 {0}px</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>'더 보기' 버튼 너비: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>'더 보기' 버튼 너비: 글자에 맞춤</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>서랍 열 수: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>서랍 열 수: 자동</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>서랍 칸 너비: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>서랍 칸 너비: 기본 버튼 너비와 같음</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>글자 정렬</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>버튼 글자의 위치입니다. 아이콘만 표시하는 버튼에는 영향을 주지 않습니다.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>게임 기본</MBBS_Align_Default>
+  <MBBS_Align_Left>왼쪽</MBBS_Align_Left>
+  <MBBS_Align_Center>가운데</MBBS_Align_Center>
+  <MBBS_Align_Right>오른쪽</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>게임 자체 리소스</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>외형</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>테마</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>테마는 바와 버튼의 모양을 바꿉니다. Main Button Bar System을 선행 모드로 지정한 테마 모드도 여기에 표시됩니다. 선택한 테마는 현재 저장 파일에 함께 저장됩니다 (주 메뉴에서는 템플릿에 저장).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>제작: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>화살표는 버튼이 다 들어가지 않을 때만 나타납니다. 모두 들어가는 동안에는 바를 스크롤할 필요가 없습니다.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>이미 기본값입니다.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>주요 버튼 (이 모드가 관리)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>{0} 키는 다음 항목에서도 사용 중입니다:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>두 항목이 같은 키를 쓰면 그 키를 눌렀을 때 둘 중 하나만 작동합니다. '환경설정 &gt; 키보드 구성'에서 둘 중 하나를 바꾸거나, 여기서 다른 키를 고르세요.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>이 모드가 관리하는 키는 게임 자체의 키보다 나중에 처리되므로, 위 항목들이 이 키를 먼저 가져가고 이 버튼은 반응하지 않습니다. 여기서 다른 키를 고르거나, '환경설정 &gt; 키보드 구성'에서 다른 항목의 키를 바꾸세요.</MBBS_HotKeyConflictExplainCustom>
+</LanguageData>

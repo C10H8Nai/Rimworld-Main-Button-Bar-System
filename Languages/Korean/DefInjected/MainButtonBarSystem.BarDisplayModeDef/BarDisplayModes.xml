@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>바닐라</Vanilla.label>
+  <Vanilla.description>기본 게임처럼 화면 너비를 똑같이 나눕니다. 스크롤과 서랍은 없습니다.</Vanilla.description>
+  <Collapse.label>접기</Collapse.label>
+  <Collapse.description>'서랍'에 체크한 버튼은 '더 보기' 서랍으로 들어가고, 나머지 버튼이 바를 나눠 씁니다.</Collapse.description>
+  <Scroll.label>스크롤</Scroll.label>
+  <Scroll.description>버튼이 너비를 유지하며, 마우스 휠이나 화살표로 바를 스크롤합니다. 서랍은 사용하지 않습니다.</Scroll.description>
+  <CollapseScroll.label>접기 + 스크롤</CollapseScroll.label>
+  <CollapseScroll.description>서랍은 '접기'와 똑같이 작동하고, 나머지 버튼은 스크롤됩니다.</CollapseScroll.description>
+</LanguageData>
