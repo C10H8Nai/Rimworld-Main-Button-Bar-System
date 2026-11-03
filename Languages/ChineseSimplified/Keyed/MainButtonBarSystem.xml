@@ -1,13 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <!-- 第一阶段测试设置（临时） -->
-  <MBBS_Test_Header>第一阶段测试设置（临时，之后会换成正式的设置窗口）</MBBS_Test_Header>
-  <MBBS_Test_GameDraws>由游戏绘制底部栏（不接管，默认）</MBBS_Test_GameDraws>
-  <MBBS_Test_OwnVanilla>由本模组绘制：原版排法（外观应与原版完全相同）</MBBS_Test_OwnVanilla>
-  <MBBS_Test_OwnScroll>由本模组绘制：滚动模式</MBBS_Test_OwnScroll>
-  <MBBS_Test_DefaultWidth>滚动模式：按钮默认宽度 {0}px</MBBS_Test_DefaultWidth>
-  <MBBS_Test_MinWidth>滚动模式：按钮最小宽度 {0}px</MBBS_Test_MinWidth>
-  <MBBS_Test_FillScreen>滚动模式：按钮放得下时拉伸填满屏幕宽度</MBBS_Test_FillScreen>
-  <MBBS_Test_PinMenu>滚动模式：菜单按钮固定在最右边</MBBS_Test_PinMenu>
-  <MBBS_Test_Note>改动立即生效。在底部栏上用鼠标滚轮，或点两端的箭头按钮来滚动。</MBBS_Test_Note>
+  <MBBS_More>更多（{0}）</MBBS_More>
+  <MBBS_MoreTip>收进抽屉的按钮。抽屉下方有自己的设置按钮。</MBBS_MoreTip>
+  <MBBS_OpenSettings>主按钮栏设置</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>在游戏中打开：修改的是当前存档的设置。</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>在主菜单打开：修改的是默认模板，新游戏会以它为起点。</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>总是由本模组绘制底部栏（测试用）</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>在你改动任何设置之前，底部栏仍由游戏自己绘制。开启后可以比较本模组和游戏绘制的结果。</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>主按钮栏设置（当前存档）</MBBS_Title_Save>
+  <MBBS_Title_Template>主按钮栏设置（默认模板）</MBBS_Title_Template>
+  <MBBS_Tab_Simple>简单</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>进阶</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>显示</MBBS_Col_Visible>
+  <MBBS_Col_Icon>图标</MBBS_Col_Icon>
+  <MBBS_Col_Name>名称</MBBS_Col_Name>
+  <MBBS_Col_Source>来源模组</MBBS_Col_Source>
+  <MBBS_Col_HotKey>快捷键</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>抽屉</MBBS_Col_Drawer>
+  <MBBS_BarRow>整条栏（默认值）</MBBS_BarRow>
+  <MBBS_OriginallyHidden>原本不显示（{0}）</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>这些按钮是其模组刻意不放在栏上的。在进阶里开启「强制显示」才会出现在栏上。</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>上移</MBBS_MoveUp>
+  <MBBS_MoveDown>下移</MBBS_MoveDown>
+  <MBBS_OrderHint>列表上→下 ＝ 画面左→右。可拖动排序。</MBBS_OrderHint>
+  <MBBS_LockedSuffix>（锁定）</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>（固定左端）</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>（固定右端）</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>目前不在栏上：按钮自身的出现条件不成立。</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>显示方式</MBBS_DisplayMode>
+  <MBBS_Mode_Vanilla>原版</MBBS_Mode_Vanilla>
+  <MBBS_Mode_Vanilla_Desc>和原版一样平分画面宽度。不滚动，没有抽屉。</MBBS_Mode_Vanilla_Desc>
+  <MBBS_Mode_Collapse>折叠</MBBS_Mode_Collapse>
+  <MBBS_Mode_Collapse_Desc>勾了「抽屉」的按钮收进「更多」抽屉，其余按钮分配栏的宽度。</MBBS_Mode_Collapse_Desc>
+  <MBBS_Mode_Scroll>滚动</MBBS_Mode_Scroll>
+  <MBBS_Mode_Scroll_Desc>按钮维持宽度，用鼠标滚轮或箭头左右滚动。不使用抽屉。</MBBS_Mode_Scroll_Desc>
+  <MBBS_Mode_CollapseScroll>折叠＋滚动</MBBS_Mode_CollapseScroll>
+  <MBBS_Mode_CollapseScroll_Desc>抽屉照常使用，剩下的按钮可以滚动。</MBBS_Mode_CollapseScroll_Desc>
+  <MBBS_MinWidth>滚动时每个按钮的最小宽度：{0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>按钮默认宽度：{0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>按钮间距：{0}px</MBBS_Gap>
+  <MBBS_FillScreen>填满画面宽度</MBBS_FillScreen>
+  <MBBS_FillScreenTip>按钮放得下时，拉伸到占满整个宽度。</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>游戏菜单按钮锁定在最右边</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>锁定时，菜单按钮不能隐藏、移动或收进抽屉，只能改名。</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>游戏菜单按钮已在进阶中解锁。</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>游戏菜单按钮锁定在最右边，只能改名。可以在进阶的「整条栏」里解锁。</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>按钮来源：{0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>图标来源：{0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName：{0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>其模组刻意不放在栏上；开启「强制显示」才会出现。</MBBS_Info_OriginallyHidden>
+  <MBBS_None>无</MBBS_None>
+  <MBBS_Unknown>未知</MBBS_Unknown>
+  <MBBS_Visible>显示在栏上</MBBS_Visible>
+  <MBBS_InDrawer>收进「更多」抽屉</MBBS_InDrawer>
+  <MBBS_CustomName>自定义名称（留空＝原本的名称：{0}）</MBBS_CustomName>
+  <MBBS_ResetName>还原</MBBS_ResetName>
+  <MBBS_ButtonWidth>宽度：{0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>宽度：跟随整条栏</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>固定位置</MBBS_Pin>
+  <MBBS_Pin_None>不固定</MBBS_Pin_None>
+  <MBBS_Pin_Left>左端</MBBS_Pin_Left>
+  <MBBS_Pin_Right>右端</MBBS_Pin_Right>
+  <MBBS_ForceShow>强制显示</MBBS_ForceShow>
+  <MBBS_ForceShowTip>即使按钮自身条件不成立也显示。这时点它可能没有反应。</MBBS_ForceShowTip>
+  <MBBS_HotKeyReadOnly>快捷键：{0}（编辑功能在之后的版本）</MBBS_HotKeyReadOnly>
+  <MBBS_SaveAsTemplate>存为默认模板</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>套用默认模板</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>已存为默认模板。新游戏会使用这个排法。</MBBS_TemplateSaved>
+  <MBBS_ResetAll>全部重置</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>要把所有设置恢复成「没改过」的状态（原版加上其他模组改过的结果）吗？这不会套用模板。</MBBS_ResetAllConfirm>
+  <MBBS_Save>保存</MBBS_Save>
 </LanguageData>

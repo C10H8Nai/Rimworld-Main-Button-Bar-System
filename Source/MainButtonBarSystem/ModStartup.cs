@@ -22,6 +22,9 @@ namespace MainButtonBarSystem
                 return;
             }
 
+            // Read the template now, outside any game load, so later reads never nest inside another Scribe pass.
+            _ = BarConfigManager.Template;
+
             StartupDiagnostics.RunAtStartup();
         }
     }
