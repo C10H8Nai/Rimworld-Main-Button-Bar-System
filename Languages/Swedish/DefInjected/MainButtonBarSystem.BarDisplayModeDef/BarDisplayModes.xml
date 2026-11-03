@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>original</Vanilla.label>
+  <Vanilla.description>Som i grundspelet: skärmbredden delas lika. Ingen rullning och ingen låda.</Vanilla.description>
+  <Collapse.label>hopfällning</Collapse.label>
+  <Collapse.description>Knappar markerade med ”Låda” flyttas till ”Mer”-lådan; resten delar på fältet.</Collapse.description>
+  <Scroll.label>rullning</Scroll.label>
+  <Scroll.description>Knapparna behåller sin bredd; rulla fältet med mushjulet eller pilarna. Lådan används inte.</Scroll.description>
+  <CollapseScroll.label>hopfällning + rullning</CollapseScroll.label>
+  <CollapseScroll.description>Lådan fungerar som i ”Hopfällning”; övriga knappar rullar.</CollapseScroll.description>
+</LanguageData>

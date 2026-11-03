@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Veel ({0})</MBBS_More>
+  <MBBS_MoreTip>Sahtlisse koondatud nupud. Sahtli allservas on oma seadete nupp.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Põhinuppude riba seaded</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Avatud mängus: muudatused kehtivad praegusele salvestusele.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Avatud peamenüüst: muudatused kehtivad vaikemallile, millega uued mängud algavad.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Joonista riba alati selle modifikatsiooniga (testimiseks)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Kuni sa midagi ei muuda, joonistab mäng riba ise. Lülita see sisse, et võrrelda selle modifikatsiooni joonistatud riba mängu omaga.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Põhinuppude riba seaded (see salvestus)</MBBS_Title_Save>
+  <MBBS_Title_Template>Põhinuppude riba seaded (vaikemall)</MBBS_Title_Template>
+  <MBBS_Tab_Simple>Lihtne</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>Täpsem</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>Näita</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Ikoon</MBBS_Col_Icon>
+  <MBBS_Col_Name>Nimi</MBBS_Col_Name>
+  <MBBS_Col_Source>Allikas</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Kiirklahv</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Sahtel</MBBS_Col_Drawer>
+  <MBBS_BarRow>Kogu riba (vaikeväärtused)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Oma modifikatsioonis peidetud ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Nupud, mida nende modifikatsioon meelega ribal ei näita. Nupu ribale toomiseks lülita vahekaardil Täpsem sisse „Näita alati“.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Nihuta üles</MBBS_MoveUp>
+  <MBBS_MoveDown>Nihuta alla</MBBS_MoveDown>
+  <MBBS_OrderHint>Ülevalt alla = ekraanil vasakult paremale. Järjekorra muutmiseks lohista ridu.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(lukus)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(vasak serv)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(parem serv)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Praegu pole ribal: nupu enda tingimus pole täidetud.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Kuvarežiim</MBBS_DisplayMode>
+  <MBBS_MinWidth>Nupu minimaalne laius kerimisel: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Nupu vaikelaius: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Nuppude vahe: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Täida ekraani laius</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Kui nupud mahuvad, venitatakse need üle kogu laiuse.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Lukusta mängu menüünupp paremasse serva</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Lukustatud menüünuppu ei saa peita, liigutada ega sahtlisse panna; seda saab ainult ümber nimetada.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Mängu menüünupp on vahekaardil Täpsem lukust vabastatud.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Mängu menüünupp on lukustatud paremasse serva ja seda saab ainult ümber nimetada. Lukust vabastamiseks ava vahekaart Täpsem, rida „Kogu riba“.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Nupu allikas: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Ikooni allikas: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Selle modifikatsioon hoiab seda meelega ribalt eemal; see ilmub ainult valikuga „Näita alati“.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>puudub</MBBS_None>
+  <MBBS_Unknown>tundmatu</MBBS_Unknown>
+  <MBBS_Visible>Näita ribal</MBBS_Visible>
+  <MBBS_InDrawer>Pane sahtlisse „Veel“</MBBS_InDrawer>
+  <MBBS_CustomName>Oma nimi (tühi = algne: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Laius: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Laius: sama mis kogu ribal</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Fikseeritud asukoht</MBBS_Pin>
+  <MBBS_Pin_None>Fikseerimata</MBBS_Pin_None>
+  <MBBS_Pin_Left>Vasak serv</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Parem serv</MBBS_Pin_Right>
+  <MBBS_ForceShow>Näita alati</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Näita nuppu ka siis, kui selle enda tingimuse järgi ei peaks see ilmuma. Klõpsamine ei pruugi siis midagi teha.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Salvesta vaikemallina</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Rakenda vaikemall</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Salvestatud vaikemallina. Uued mängud algavad selle paigutusega.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Lähtesta kõik</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Kas lähtestada kõik seaded puutumata ribale (mäng koos teiste modifikatsioonide muudatustega)? Malli ei rakendata.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Salvesta</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>Tuvastati {0}: see juhib praegu riba, seega jõustuvad siinsed muudatused alles siis, kui sellel modifikatsioonil on eesõigus.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>Tuvastati {0}: sellel modifikatsioonil on eesõigus, seega on tuvastatud modifikatsiooni mõju ribale välja lülitatud.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Üksikasjad vahekaardil Täpsem.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Ühilduvus: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Esmalt see modifikatsioon</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Riba joonistab see modifikatsioon. Modifikatsiooni {0} mõju ribale on välja lülitatud; selle seadeid kasutatakse ainult võrdlusväärtustena.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>Esmalt {0}</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>Riba jääb modifikatsiooni {0} hallata. Sellest modifikatsioonist jääb alles ainult seadete aken.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Jõustub pärast mängu taaskäivitamist.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Impordi seaded modifikatsioonist {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Paigutus imporditi modifikatsioonist {0}. Selle säilitamiseks vajuta „Salvesta“.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Kiirklahv: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Määra</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Puhasta</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Ühine kõigile salvestustele; sama klahv mis jaotises Valikud &gt; Klaviatuuri konfiguratsioon.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Ühine kõigile salvestustele. Seda nuppu jaotises Valikud &gt; Klaviatuuri konfiguratsioon ei ole, seega hoiab klahvi alles see modifikatsioon.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Vajuta klahvi (Esc tühistab)</MBBS_PressKey>
+  <MBBS_Export>Ekspordi...</MBBS_Export>
+  <MBBS_Import>Impordi...</MBBS_Import>
+  <MBBS_Export_Clipboard>Kopeeri tekstina (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Paigutus kopeeriti lõikelauale.</MBBS_Export_Copied>
+  <MBBS_Export_File>Salvesta failina</MBBS_Export_File>
+  <MBBS_Export_Saved>Salvestatud: {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Kopeeri modifikatsiooni XML-ina (paigutusmodifikatsiooni loomiseks)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def-XML kopeeritud. Pane see oma modifikatsiooni Defs-kaustas olevasse .xml-faili ning muuda defName ja label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Lõikelaualt</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Fail: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Paigutus: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Paigutus: {0} (autor: {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Paigutus imporditi sellesse aknasse. Selle säilitamiseks vajuta „Salvesta“.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Lõikelaud on tühi.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>See pole eksporditud paigutus (pole kehtiv XML).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Selles tekstis pole paigutust.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>See tekst üritab luua programmiklasse, mida paigutus kunagi ei vaja. Ei imporditud.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Loodud selle modifikatsiooni uuema versiooniga (vorming {0}; see versioon loeb vorminguid kuni {1}). Uuenda esmalt modifikatsiooni.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Paigutust ei õnnestunud lugeda: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Vaikimisi</MBBS_Default>
+  <MBBS_DefaultTip>Tagasi vaikeväärtusele.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Sahtel</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Laius ja vahed</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Kerimisnoolte laius: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Hiireratta kiirus: {0}px sammu kohta</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Nupu „Veel“ laius: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Nupu „Veel“ laius: teksti järgi</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Sahtli veerud: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Sahtli veerud: automaatne</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Sahtli lahtri laius: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Sahtli lahtri laius: sama mis nupu vaikelaius</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Teksti joondus</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Kuhu nuppude tekst paigutub. Ainult ikooni näitavaid nuppe see ei mõjuta.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Nagu mängus</MBBS_Align_Default>
+  <MBBS_Align_Left>Vasak</MBBS_Align_Left>
+  <MBBS_Align_Center>Keskel</MBBS_Align_Center>
+  <MBBS_Align_Right>Parem</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>mängu enda ressursid</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>Välimus</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Teema</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Teemad muudavad riba ja selle nuppude välimust. Siin on ka teemamodifikatsioonid, mille sõltuvuseks on Main Button Bar System. Valik salvestatakse koos selle salvestusega (või peamenüüs koos malliga).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>autor: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Nooled ilmuvad ainult siis, kui nupud ei mahu. Kuni need mahuvad, pole riba vaja kerida.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>See on juba vaikeväärtus.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Põhinupud (selle modifikatsiooni hoitud)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Klahvi {0} kasutavad ka:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Kui kaks funktsiooni jagavad sama klahvi, käivitab vajutus ainult ühe neist. Muuda üht neist jaotises Valikud &gt; Klaviatuuri konfiguratsioon või vali siin teine klahv.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>See modifikatsioon töötleb oma klahve alles pärast mängu omi, seega võtavad ülaltoodud funktsioonid selle klahvi enne ja see nupp ei reageeri. Vali siin teine klahv või muuda teist funktsiooni jaotises Valikud &gt; Klaviatuuri konfiguratsioon.</MBBS_HotKeyConflictExplainCustom>
+</LanguageData>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Mere ({0})</MBBS_More>
+  <MBBS_MoreTip>Knapper, der er samlet i skuffen. Skuffen har sin egen indstillingsknap nederst.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Indstillinger for hovedknaplinjen</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Åbnet i et spil: ændringer gælder det aktuelle gemte spil.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Åbnet fra hovedmenuen: ændringer gælder standardskabelonen, som nye spil starter med.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Lad altid dette mod tegne linjen (til test)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Indtil du ændrer noget, tegner spillet selv linjen. Slå dette til for at sammenligne dette mods tegning med spillets.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Indstillinger for hovedknaplinjen (dette gemte spil)</MBBS_Title_Save>
+  <MBBS_Title_Template>Indstillinger for hovedknaplinjen (standardskabelon)</MBBS_Title_Template>
+  <MBBS_Tab_Simple>Enkel</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>Avanceret</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>Vis</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
+  <MBBS_Col_Name>Navn</MBBS_Col_Name>
+  <MBBS_Col_Source>Fra mod</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Genvejstast</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Skuffe</MBBS_Col_Drawer>
+  <MBBS_BarRow>Hele linjen (standard)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Skjult af eget mod ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Knapper, som deres mod med vilje holder væk fra linjen. Slå »Vis altid« til under Avanceret for at sætte en af dem på linjen.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Flyt op</MBBS_MoveUp>
+  <MBBS_MoveDown>Flyt ned</MBBS_MoveDown>
+  <MBBS_OrderHint>Øverst til nederst = venstre til højre på skærmen. Træk i rækkerne for at ændre rækkefølgen.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(låst)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(venstre ende)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(højre ende)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Ikke på linjen lige nu: knappens egen betingelse er ikke opfyldt.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Visningstilstand</MBBS_DisplayMode>
+  <MBBS_MinWidth>Mindste knapbredde ved rulning: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Standardbredde for knapper: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Afstand mellem knapper: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Udfyld skærmens bredde</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Når der er plads til knapperne, strækkes de ud over hele bredden.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Lås spillets menuknap i højre ende</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Mens menuknappen er låst, kan den ikke skjules, flyttes eller lægges i skuffen; den kan kun omdøbes.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Spillets menuknap er låst op under Avanceret.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Spillets menuknap er låst i højre ende og kan kun omdøbes. Lås den op under Avanceret i rækken »Hele linjen«.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Knap fra: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Ikon fra: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Dens mod holder den med vilje væk fra linjen; den vises kun med »Vis altid«.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>ingen</MBBS_None>
+  <MBBS_Unknown>ukendt</MBBS_Unknown>
+  <MBBS_Visible>Vis på linjen</MBBS_Visible>
+  <MBBS_InDrawer>Læg i »Mere«-skuffen</MBBS_InDrawer>
+  <MBBS_CustomName>Eget navn (tomt = originalt: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Bredde: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Bredde: samme som hele linjen</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Fast placering</MBBS_Pin>
+  <MBBS_Pin_None>Ikke fast</MBBS_Pin_None>
+  <MBBS_Pin_Left>Venstre ende</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Højre ende</MBBS_Pin_Right>
+  <MBBS_ForceShow>Vis altid</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Vis knappen, selv når dens egen betingelse siger, at den ikke skal vises. Et klik på den gør så måske ingenting.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Gem som standardskabelon</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Anvend standardskabelon</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Gemt som standardskabelon. Nye spil starter med denne opstilling.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Nulstil alt</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Nulstil alle indstillinger til den urørte linje (spillet plus det, andre mods har ændret)? Skabelonen anvendes ikke.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Gem</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>{0} fundet: det styrer linjen lige nu, så ændringer her virker kun, når dette mod har forrang.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>{0} fundet: dette mod har forrang, så det andet mods virkning på linjen er slået fra.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Detaljer under Avanceret.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Kompatibilitet: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Dette mod først</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Dette mod tegner linjen. Virkningen fra {0} på linjen er slået fra; dets indstillinger bruges kun som referenceværdier.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0} først</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} beholder linjen. Dette mod beholder kun sit indstillingsvindue.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Træder i kraft, når spillet er genstartet.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Importér indstillinger fra {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Opstillingen fra {0} er importeret. Tryk på Gem for at beholde den.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Genvejstast: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Vælg</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Ryd</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Fælles for alle gemte spil; samme tast som under Indstillinger &gt; Tastaturkonfiguration.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Fælles for alle gemte spil. Denne knap findes ikke under Indstillinger &gt; Tastaturkonfiguration, så dette mod gemmer tasten.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Tryk på en tast (Esc for at annullere)</MBBS_PressKey>
+  <MBBS_Export>Eksportér...</MBBS_Export>
+  <MBBS_Import>Importér...</MBBS_Import>
+  <MBBS_Export_Clipboard>Kopiér som tekst (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Opstillingen er kopieret til udklipsholderen.</MBBS_Export_Copied>
+  <MBBS_Export_File>Gem som fil</MBBS_Export_File>
+  <MBBS_Export_Saved>Gemt i {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Kopiér som mod-XML (til at lave et opstillingsmod)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def-XML kopieret. Læg den i en .xml-fil i dit mods Defs-mappe, og ret defName og label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Fra udklipsholderen</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Fil: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Opstilling: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Opstilling: {0} (af {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Opstillingen er importeret i dette vindue. Tryk på Gem for at beholde den.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Udklipsholderen er tom.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Det er ikke en eksporteret opstilling (ikke gyldig XML).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Teksten indeholder ingen opstilling.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Teksten forsøger at oprette programklasser, hvilket en opstilling aldrig har brug for. Ikke importeret.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Lavet med en nyere version af dette mod (format {0}; denne version læser op til {1}). Opdatér først dette mod.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Kunne ikke læse opstillingen: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Standard</MBBS_Default>
+  <MBBS_DefaultTip>Tilbage til standardværdien.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Skuffe</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Bredde og afstand</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Bredde på rullepile: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Musehjulets hastighed: {0}px pr. hak</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Bredde på »Mere«-knappen: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Bredde på »Mere«-knappen: tilpasset teksten</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Kolonner i skuffen: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Kolonner i skuffen: automatisk</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Cellebredde i skuffen: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Cellebredde i skuffen: samme som standardbredden for knapper</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Tekstjustering</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Hvor knapteksterne placeres. Knapper, der kun viser et ikon, påvirkes ikke.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Som i spillet</MBBS_Align_Default>
+  <MBBS_Align_Left>Venstre</MBBS_Align_Left>
+  <MBBS_Align_Center>Centreret</MBBS_Align_Center>
+  <MBBS_Align_Right>Højre</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>spillets egne ressourcer</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>Udseende</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Temaer ændrer, hvordan linjen og dens knapper ser ud. Tema-mods, der har Main Button Bar System som afhængighed, vises også her. Valget gemmes med dette gemte spil (eller med skabelonen i hovedmenuen).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>af {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Pilene vises kun, når der ikke er plads til alle knapperne. Så længe der er plads, behøver linjen ikke at rulle.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Allerede standardværdien.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Hovedknapper (gemt af dette mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Tasten {0} bruges også af:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Når to tastetildelinger deler en tast, udløser et tryk kun den ene af dem. Ret en af dem under Indstillinger &gt; Tastaturkonfiguration, eller vælg en anden tast her.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Dette mod behandler sine egne taster efter spillets, så tildelingerne ovenfor får tasten først, og denne knap reagerer ikke. Vælg en anden tast her, eller ret den anden tildeling under Indstillinger &gt; Tastaturkonfiguration.</MBBS_HotKeyConflictExplainCustom>
+</LanguageData>

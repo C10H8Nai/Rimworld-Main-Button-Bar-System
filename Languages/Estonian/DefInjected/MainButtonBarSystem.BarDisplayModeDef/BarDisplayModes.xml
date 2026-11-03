@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>originaal</Vanilla.label>
+  <Vanilla.description>Nagu põhimängus: ekraani laius jagatakse võrdselt. Kerimist ega sahtlit pole.</Vanilla.description>
+  <Collapse.label>ahendamine</Collapse.label>
+  <Collapse.description>Nupud, millel on märge „Sahtel“, liiguvad sahtlisse „Veel“; ülejäänud jagavad riba.</Collapse.description>
+  <Scroll.label>kerimine</Scroll.label>
+  <Scroll.description>Nupud säilitavad oma laiuse; keri riba hiireratta või noolte abil. Sahtlit ei kasutata.</Scroll.description>
+  <CollapseScroll.label>ahendamine + kerimine</CollapseScroll.label>
+  <CollapseScroll.description>Sahtel töötab nagu režiimis „Ahendamine“; ülejäänud nupud keritakse.</CollapseScroll.description>
+</LanguageData>
