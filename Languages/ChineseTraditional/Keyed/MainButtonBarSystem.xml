@@ -71,13 +71,11 @@
   <MBBS_Compat_RestartNeeded>重新啟動遊戲後生效。</MBBS_Compat_RestartNeeded>
   <MBBS_Compat_Import>匯入 {0} 的設定</MBBS_Compat_Import>
   <MBBS_Compat_Imported>已匯入 {0} 的排法。按「儲存」才會保留。</MBBS_Compat_Imported>
-  <MBBS_Appearance>外觀</MBBS_Appearance>
   <MBBS_HotKey>快捷鍵：{0}</MBBS_HotKey>
   <MBBS_HotKeySet>設定</MBBS_HotKeySet>
   <MBBS_HotKeyClear>清除</MBBS_HotKeyClear>
   <MBBS_HotKeyGameNote>所有存檔共用，和「選項 → 鍵盤設定」裡的相同。</MBBS_HotKeyGameNote>
   <MBBS_HotKeyCustomNote>所有存檔共用。這個按鈕在「鍵盤設定」裡沒有項目，由本模組保存。</MBBS_HotKeyCustomNote>
-  <MBBS_HotKeyConflict>和這些按鍵衝突：{0}</MBBS_HotKeyConflict>
   <MBBS_PressKey>請按一個鍵（Esc 取消）</MBBS_PressKey>
   <MBBS_Export>匯出…</MBBS_Export>
   <MBBS_Import>匯入…</MBBS_Import>
@@ -117,4 +115,15 @@
   <MBBS_Align_Center>置中</MBBS_Align_Center>
   <MBBS_Align_Right>靠右</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>遊戲本體資源</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>外觀</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>主題</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>主題會改變底部列和按鈕的外觀。以本模組為前置的主題模組也會出現在這裡。選擇會跟著這個存檔保存（在主選單時則存到範本）。</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>作者：{0}（{1}）</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>按鈕放不下時才會出現箭頭；放得下時不需要捲動。</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>已經是預設值。</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>主按鈕（本模組保存）</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>按鍵 {0} 也被這些功能使用：</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}：{1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>兩個功能共用同一個鍵時，按下去只會觸發其中一個。請到「選項 → 鍵盤設定」改掉其中一個，或在這裡換一個鍵。</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>本模組保存的快捷鍵在遊戲自己的快捷鍵之後才處理，所以上面的功能會先用掉這個鍵，這個按鈕不會有反應。請在這裡換一個鍵，或到「選項 → 鍵盤設定」改掉另一個。</MBBS_HotKeyConflictExplainCustom>
 </LanguageData>

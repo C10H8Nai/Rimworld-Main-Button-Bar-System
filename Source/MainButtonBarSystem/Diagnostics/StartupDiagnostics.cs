@@ -57,6 +57,10 @@ namespace MainButtonBarSystem
                 Describe(sb, AccessTools.Method(typeof(MainButtonWorker), nameof(MainButtonWorker.DoButton)));
                 Describe(sb, AccessTools.Method(typeof(CameraDriver), nameof(CameraDriver.CameraDriverOnGUI)));
                 Describe(sb, AccessTools.Method(typeof(KeyBindingDefGenerator), nameof(KeyBindingDefGenerator.ImpliedKeyBindingDefs)));
+                // Patched by this mod for label alignment and themes; other mods patching them may interact.
+                Describe(sb, AccessTools.Method(typeof(Widgets), nameof(Widgets.ButtonTextSubtle)));
+                Describe(sb, AccessTools.Method(typeof(Widgets), nameof(Widgets.DrawAtlas), new[] { typeof(Rect), typeof(Texture2D) }));
+                Describe(sb, AccessTools.Method(typeof(Widgets), nameof(Widgets.DrawAtlas), new[] { typeof(Rect), typeof(Texture2D), typeof(bool) }));
             });
             Log.Message(report.ToString().TrimEnd());
         }

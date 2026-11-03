@@ -71,13 +71,11 @@
   <MBBS_Compat_RestartNeeded>重新启动游戏后生效。</MBBS_Compat_RestartNeeded>
   <MBBS_Compat_Import>导入 {0} 的设置</MBBS_Compat_Import>
   <MBBS_Compat_Imported>已导入 {0} 的排法。按「保存」才会保留。</MBBS_Compat_Imported>
-  <MBBS_Appearance>外观</MBBS_Appearance>
   <MBBS_HotKey>快捷键：{0}</MBBS_HotKey>
   <MBBS_HotKeySet>设置</MBBS_HotKeySet>
   <MBBS_HotKeyClear>清除</MBBS_HotKeyClear>
   <MBBS_HotKeyGameNote>所有存档共用，和「选项 → 键盘设置」里的相同。</MBBS_HotKeyGameNote>
   <MBBS_HotKeyCustomNote>所有存档共用。这个按钮在「键盘设置」里没有项目，由本模组保存。</MBBS_HotKeyCustomNote>
-  <MBBS_HotKeyConflict>和这些按键冲突：{0}</MBBS_HotKeyConflict>
   <MBBS_PressKey>请按一个键（Esc 取消）</MBBS_PressKey>
   <MBBS_Export>导出…</MBBS_Export>
   <MBBS_Import>导入…</MBBS_Import>
@@ -117,4 +115,15 @@
   <MBBS_Align_Center>置中</MBBS_Align_Center>
   <MBBS_Align_Right>靠右</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>游戏本体资源</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>外观</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>主题</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>主题会改变底部栏和按钮的外观。以本模组为前置的主题模组也会出现在这里。选择会跟着这个存档保存（在主菜单时则保存到模板）。</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>作者：{0}（{1}）</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>按钮放不下时才会出现箭头；放得下时不需要滚动。</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>已经是默认值。</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>主按钮（本模组保存）</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>按键 {0} 也被这些功能使用：</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}：{1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>两个功能共用同一个键时，按下去只会触发其中一个。请到「选项 → 键盘设置」改掉其中一个，或在这里换一个键。</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>本模组保存的快捷键在游戏自己的快捷键之后才处理，所以上面的功能会先用掉这个键，这个按钮不会有反应。请在这里换一个键，或到「选项 → 键盘设置」改掉另一个。</MBBS_HotKeyConflictExplainCustom>
 </LanguageData>

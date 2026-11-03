@@ -112,20 +112,110 @@ public class DisplayModeWorker_TwoRows : BarDisplayModeWorker
 
 `DrawBar` runs for every GUI event, like the game's own bar.
 
-## 4. Appearance
+## 4. Themes (appearance) — XML and images only
 
-How the bar and each button are painted. Derive from `BarAppearanceWorker` and override what you need:
-`DrawBarBackground`, `DrawButton`, `DrawMoreButton`, `DrawScrollArrow`, `DrawDrawerButton`. The defaults call
-the game's `MainButtonWorker.DoButton`, so other mods' patches on it keep working; keep calling it unless you
-really replace the whole button.
+A theme changes how the bar and its buttons look. Players pick one in the settings window's **Appearance** tab,
+which lists every `BarAppearanceDef` from every loaded mod, with a preview. A theme needs no C#: every field is
+optional, and anything left out keeps the game's look.
+
+The theme never replaces the game's button code: buttons are still drawn by `MainButtonWorker.DoButton`, so
+other mods' changes to it (icons, research progress, tutorial highlights) keep working. While this mod draws a
+bar button, the game's subtle button atlas is swapped for the theme's atlas of the current state, and the label
+colour is set.
+
+### Theme mod layout
+
+```
+MyTheme/
+  About/About.xml
+  Defs/MyTheme_Themes.xml
+  Textures/MyTheme/
+    Button.png            normal button (nine-slice atlas)
+    ButtonMouseover.png   under the mouse
+    ButtonActive.png      pressed, or its tab is open
+    ButtonDisabled.png    disabled (no map, etc.)
+    Bar.png               behind the whole bar (atlas)
+    More.png              the "More" button (atlas)
+    ArrowLeft.png         icon on the left scroll arrow
+    ArrowRight.png        icon on the right scroll arrow
+    Drawer.png            behind the "More" drawer (atlas)
+    Preview.png           shown in the Appearance tab
+```
+
+`About/About.xml`:
 
 ```xml
-<MainButtonBarSystem.BarAppearanceDef>
-  <defName>MyMod_Translucent</defName>
-  <label>translucent</label>
-  <workerClass>MyMod.AppearanceWorker_Translucent</workerClass>
-</MainButtonBarSystem.BarAppearanceDef>
+<ModMetaData>
+  <name>My Theme</name>
+  <author>Me</author>
+  <packageId>me.mytheme</packageId>
+  <supportedVersions><li>1.7</li></supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>NAI.MainButtonBarSystem</packageId>
+      <displayName>Main Button Bar System</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter><li>NAI.MainButtonBarSystem</li></loadAfter>
+</ModMetaData>
 ```
+
+`Defs/MyTheme_Themes.xml` (texture paths are relative to `Textures/`, without the extension):
+
+```xml
+<Defs>
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>MyTheme_Steel</defName>
+    <label>steel</label>
+    <description>Brushed steel buttons with amber labels.</description>
+    <author>Me</author>
+    <displayOrder>100</displayOrder>
+
+    <button>MyTheme/Button</button>
+    <buttonMouseover>MyTheme/ButtonMouseover</buttonMouseover>
+    <buttonActive>MyTheme/ButtonActive</buttonActive>
+    <buttonDisabled>MyTheme/ButtonDisabled</buttonDisabled>
+    <labelColor>(1, 0.8, 0.4, 1)</labelColor>
+    <labelMouseoverColor>(1, 0.95, 0.7, 1)</labelMouseoverColor>
+
+    <barBackground>MyTheme/Bar</barBackground>
+    <moreButton>MyTheme/More</moreButton>
+    <arrowLeft>MyTheme/ArrowLeft</arrowLeft>
+    <arrowRight>MyTheme/ArrowRight</arrowRight>
+    <drawerBackground>MyTheme/Drawer</drawerBackground>
+    <preview>MyTheme/Preview</preview>
+  </MainButtonBarSystem.BarAppearanceDef>
+</Defs>
+```
+
+| Field | Left out |
+|---|---|
+| `button` | The game's subtle button atlas |
+| `buttonMouseover` | The normal atlas with the game's mouse-over tint |
+| `buttonActive` | `buttonMouseover`, else the normal atlas |
+| `buttonDisabled` | The normal atlas |
+| `labelColor` | White. Colours are `(r, g, b, a)` from 0 to 1; alpha 0 also means "left out" |
+| `labelMouseoverColor` | `labelColor` |
+| `barBackground` | Nothing behind the bar (vanilla) |
+| `moreButton` | Drawn like the other buttons |
+| `arrowLeft`, `arrowRight` | The characters `<` and `>` on a button |
+| `drawerBackground` | The game's window background |
+| `preview` | A preview drawn from the textures above |
+
+**Atlases** are drawn with the game's `Widgets.DrawAtlas`, the nine-slice method of the vanilla buttons: the four
+corners keep their size and the edges and centre stretch, so one texture fits any button width. Use a square
+texture (64×64 works well) and keep the border art inside the outer quarter on each side. Textures that are
+missing are reported once in the log, and that part falls back to the game's look.
+
+Label colours, mouse-over and active states also apply to the "More" button, the scroll arrows and the drawer.
+Translate `label` and `description` in `Languages/<Language>/DefInjected/MainButtonBarSystem.BarAppearanceDef/`.
+
+### Effects beyond textures
+
+Set `workerClass` to a class deriving from `BarAppearanceWorker` and override what you need:
+`DrawBarBackground`, `DrawButton`, `DrawDrawerButton`, `DrawDrawerBackground`, `ButtonAtlas`, `LabelColor`,
+`DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`. Keep drawing buttons through `ButtonPainter.Draw` (or
+the game's `DoButton`) so other mods' changes to buttons keep working.
 
 ## 5. Compatibility bridges
 

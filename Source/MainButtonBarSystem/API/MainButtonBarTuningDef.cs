@@ -112,6 +112,15 @@ namespace MainButtonBarSystem
 
             /// <summary>Space between a left- or right-aligned button label and the button edge.</summary>
             public float labelSidePadding;
+
+            /// <summary>Font of button labels this mod draws itself (the game uses Small).</summary>
+            public GameFont labelFont;
+
+            /// <summary>Shift of a label under the mouse, like the game's "pressed" look: (2,-2).</summary>
+            public Vector2 hoverLabelOffset;
+
+            /// <summary>Texture of the drawer's settings button. Empty: the game's inspect-settings gear.</summary>
+            public string drawerSettingsIcon;
         }
 
         public class SettingsWindowLayout
@@ -158,6 +167,15 @@ namespace MainButtonBarSystem
             public int importMenuMaxFiles;
 
             public Vector2 captureKeyDialogSize;
+
+            public float themeCardHeight;
+            public float themePreviewHeight;
+
+            /// <summary>Share of a theme card's width used by its preview.</summary>
+            public float themePreviewFraction;
+
+            /// <summary>Sample buttons in a drawn theme preview (a More button is added).</summary>
+            public int themePreviewButtons;
         }
     }
 }

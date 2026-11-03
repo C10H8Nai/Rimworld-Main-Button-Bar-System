@@ -33,7 +33,7 @@ namespace MainButtonBarSystem.Tests
             var body = Regex.Match(source, @"public class " + className + @"\s*\{(?<body>.*?)\n        \}", RegexOptions.Singleline);
             Assert.True(body.Success, "class " + className + " not found");
 
-            var fields = Regex.Matches(body.Groups["body"].Value, @"public (?:int|float|bool|IntRange|FloatRange|Vector2) (\w+);")
+            var fields = Regex.Matches(body.Groups["body"].Value, @"public (?:int|float|bool|IntRange|FloatRange|Vector2|GameFont) (\w+);")
                 .Select(m => m.Groups[1].Value)
                 .ToList();
             Assert.NotEmpty(fields);

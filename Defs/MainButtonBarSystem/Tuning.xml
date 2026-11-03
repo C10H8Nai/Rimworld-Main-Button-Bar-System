@@ -46,6 +46,9 @@
       <drawerReopenGuardSeconds>0.3</drawerReopenGuardSeconds>
       <moreButtonLabelPadding>24</moreButtonLabelPadding>
       <labelSidePadding>6</labelSidePadding>     <!-- left/right aligned button labels -->
+      <labelFont>Small</labelFont>               <!-- the game's button label font -->
+      <hoverLabelOffset>(2,-2)</hoverLabelOffset> <!-- the game's "pressed" shift under the mouse -->
+      <drawerSettingsIcon></drawerSettingsIcon>  <!-- empty: the game's inspect-settings gear -->
     </behaviour>
 
     <!-- Layout of the settings window. -->
@@ -86,6 +89,10 @@
       <customNameMaxLength>40</customNameMaxLength>
       <importMenuMaxFiles>15</importMenuMaxFiles>
       <captureKeyDialogSize>(400,160)</captureKeyDialogSize>
+      <themeCardHeight>110</themeCardHeight>
+      <themePreviewHeight>36</themePreviewHeight>
+      <themePreviewFraction>0.55</themePreviewFraction>
+      <themePreviewButtons>4</themePreviewButtons>
     </settingsWindow>
   </MainButtonBarSystem.MainButtonBarTuningDef>
 </Defs>

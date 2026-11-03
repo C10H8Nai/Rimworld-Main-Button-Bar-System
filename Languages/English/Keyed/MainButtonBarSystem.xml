@@ -71,13 +71,11 @@
   <MBBS_Compat_RestartNeeded>Takes effect after restarting the game.</MBBS_Compat_RestartNeeded>
   <MBBS_Compat_Import>Import settings from {0}</MBBS_Compat_Import>
   <MBBS_Compat_Imported>Imported the arrangement from {0}. Press Save to keep it.</MBBS_Compat_Imported>
-  <MBBS_Appearance>Appearance</MBBS_Appearance>
   <MBBS_HotKey>Hotkey: {0}</MBBS_HotKey>
   <MBBS_HotKeySet>Set</MBBS_HotKeySet>
   <MBBS_HotKeyClear>Clear</MBBS_HotKeyClear>
   <MBBS_HotKeyGameNote>Shared by all saves; the same key as in Options &gt; Keyboard.</MBBS_HotKeyGameNote>
   <MBBS_HotKeyCustomNote>Shared by all saves. This button has no entry in Options &gt; Keyboard, so this mod keeps the key.</MBBS_HotKeyCustomNote>
-  <MBBS_HotKeyConflict>Same key as: {0}</MBBS_HotKeyConflict>
   <MBBS_PressKey>Press a key (Esc to cancel)</MBBS_PressKey>
   <MBBS_Export>Export...</MBBS_Export>
   <MBBS_Import>Import...</MBBS_Import>
@@ -117,4 +115,15 @@
   <MBBS_Align_Center>Center</MBBS_Align_Center>
   <MBBS_Align_Right>Right</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>the game's own assets</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>Appearance</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Theme</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Themes change how the bar and its buttons look. Theme mods that list Main Button Bar System as a dependency appear here too. The choice is saved with this save (or with the template at the main menu).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>by {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Arrows appear only when the buttons do not fit. While they fit, the bar does not need to scroll.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Already the default value.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Main buttons (kept by this mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>The key {0} is also used by:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>When two bindings share a key, pressing it triggers only one of them. Change one of them in Options &gt; Keyboard, or pick another key here.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>This mod handles the keys it keeps after the game's own, so the bindings above take this key first and this button will not react. Pick another key here, or change the other binding in Options &gt; Keyboard.</MBBS_HotKeyConflictExplainCustom>
 </LanguageData>

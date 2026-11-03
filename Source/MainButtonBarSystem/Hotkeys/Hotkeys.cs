@@ -69,28 +69,73 @@ namespace MainButtonBarSystem
             MainButtonBarSystemMod.Instance.WriteSettings();
         }
 
-        /// <summary>Names of other bindings that use the same key, for the conflict warning.</summary>
-        public static List<string> Conflicts(MainButtonDef def)
+        /// <summary>One binding that shares the button's key, described for the player.</summary>
+        public readonly struct Conflict
         {
-            var result = new List<string>();
+            /// <summary>Where the other binding is listed, e.g. a key binding category or "Main buttons".</summary>
+            public readonly string Category;
+            public readonly string Label;
+
+            public Conflict(string category, string label)
+            {
+                Category = category;
+                Label = label;
+            }
+        }
+
+        /// <summary>
+        /// Other bindings that really conflict, by the game's own rule (KeyPrefsData.ConflictingBindings): the other
+        /// binding counts only if it is in the same self-conflicting category, in a category this one's
+        /// <c>checkForConflicts</c> lists, or shares an <c>extraConflictTags</c> entry; <c>ignoreConflictsWith</c> is
+        /// skipped. Keys this mod stores itself are treated as the MainTabs category.
+        /// </summary>
+        public static List<Conflict> Conflicts(MainButtonDef def)
+        {
+            var result = new List<Conflict>();
             var key = Get(def);
             if (key == KeyCode.None) return result;
 
+            bool custom = !UsesGameBinding(def);
+            var mainTabs = KeyBindingCategoryDefOf.MainTabs;
+            var ownCategory = def.hotKey?.category ?? mainTabs;
             var data = KeyPrefs.KeyPrefsData;
             if (data?.keyPrefs != null)
             {
                 foreach (var pair in data.keyPrefs)
                 {
-                    if (pair.Key == def.hotKey || pair.Value == null) continue;
-                    if (pair.Value.keyBindingA == key || pair.Value.keyBindingB == key) result.Add(pair.Key.LabelCap);
+                    var other = pair.Key;
+                    if (other == null || other == def.hotKey || pair.Value == null) continue;
+                    if (pair.Value.keyBindingA != key && pair.Value.keyBindingB != key) continue;
+                    // A key this mod stores is handled after the game's main button keys, so any main button
+                    // key on the same key takes it first; for everything else the game's rule applies.
+                    bool swallowsCustom = custom && other.category == mainTabs;
+                    if (!swallowsCustom && !InConflictScope(def.hotKey, ownCategory, other)) continue;
+                    result.Add(new Conflict(other.category?.LabelCap ?? "", other.LabelCap));
                 }
             }
+
+            // Keys this mod stores: only the first match fires, so two of them on one key always conflict, and a
+            // stored key on the same key as this game-bound button never fires.
             foreach (var pair in Custom)
             {
                 if (pair.Key == def.defName || pair.Value != key) continue;
-                result.Add(DefDatabase<MainButtonDef>.GetNamedSilentFail(pair.Key)?.LabelCap ?? pair.Key);
+                var label = DefDatabase<MainButtonDef>.GetNamedSilentFail(pair.Key)?.LabelCap ?? pair.Key;
+                result.Add(new Conflict("MBBS_HotKeyCustomCategory".Translate(), label));
             }
             return result;
+        }
+
+        private static bool InConflictScope(KeyBindingDef own, KeyBindingCategoryDef ownCategory, KeyBindingDef other)
+        {
+            if (own?.ignoreConflictsWith != null && own.ignoreConflictsWith.Contains(other)) return false;
+            if (other.category == ownCategory && ownCategory.selfConflicting) return true;
+            if (ownCategory.checkForConflicts != null && other.category != null && ownCategory.checkForConflicts.Contains(other.category)) return true;
+            if (own?.extraConflictTags != null && other.extraConflictTags != null)
+            {
+                foreach (var tag in own.extraConflictTags)
+                    if (other.extraConflictTags.Contains(tag)) return true;
+            }
+            return false;
         }
 
         /// <summary>
