@@ -13,6 +13,15 @@
 | 補丁兩個 `DrawAtlas` 會跑兩遍 | 只補丁 3 參數的版本 |
 | API.md 的貼圖建議 | 照本機確認的切法改寫：一定要正方形；畫面上四角 = 貼圖寬 ÷ 4，上限是按鈕高的一半（主按鈕列 18），所以貼圖超過 72×72 沒有意義；邊和中央是拉伸 |
 
+生態調查（`docs/research/ecosystem-2026-11-04.md`）帶來的修正：
+
+| 項目 | 處理 |
+|---|---|
+| `DoButtons` 的「別人已經接管」判斷永遠不會執行 | Harmony 3 會在前面的 prefix 回傳 false 後跳過本模組的 prefix，所以觀察改到 postfix（一定會執行）。別的模組畫列時，查詢 API 和診斷現在都會正確記錄 |
+| UI Not Included、DragReorder | 新增相容橋接：偵測到時設定畫面有提示；本模組優先時，移除 UI Not Included 換掉 `DoButtons` 的 transpiler、DragReorder 在主按鈕列上的補丁 |
+| 版本資訊 | `About.xml` 加 `modVersion`（0.6.0）；新增 `LoadFolders.xml`（根目錄＋`1.7`）；`MainButtonBarAPI.ApiVersion` |
+| API.md | 新增：軟相依寫法、API 穩定性、本模組的補丁清單和優先級、使用限制 |
+
 翻譯：「簡單」「進階」的 key 改名（`MBBS_Tab_*` → `MBBS_View_*`，翻譯沿用）；新增「按鈕」分頁名稱和切換的提示，29 種語言都有。
 
 ## 步驟
@@ -25,7 +34,9 @@
    - 按「預設值」，滑桿和輸入框都回到預設。
 4. 抽屜右下角是齒輪，滑鼠移上去有提示，點了打開設定。
 5. 外觀分頁的預覽兩端有 `<` `>`，右箭頭在「更多」的左邊。
-6. 上一輪沒測的：撞鍵（Tab 不誤報、Medical Tab 的 M 有說明）、英文「Drawer」欄標題、文字對齊的滑鼠位移、其他語言的設定畫面。
+6. `LoadFolders.xml` 新增後，模組照常載入（`Loaded.` 有出現、設定畫面正常、抽屜齒輪有圖）。
+7. 開發模式下，「Patches on main button methods」那段診斷，現在是在第一次畫主按鈕列時寫入（改由 postfix 觸發）。
+8. 上一輪沒測的：撞鍵（Tab 不誤報、Medical Tab 的 M 有說明）、英文「Drawer」欄標題、文字對齊的滑鼠位移、其他語言的設定畫面。
 
 ## 要帶回雲端的資料
 

@@ -8,21 +8,26 @@ namespace MainButtonBarSystem
     [HarmonyPatch(typeof(MainButtonsRoot), "DoButtons")]
     public static class MainButtonsRoot_DoButtons_Patch
     {
-        // Run after every other prefix so we can see whether one of them already took over the bar.
+        /// <summary>True while this mod's prefix ran in the current call (so the postfix knows who drew).</summary>
+        private static bool prefixRan;
+
+        // Last, so other mods' prefixes run first. If one of them returns false (Custom Bottom Bar, Multiplayer's
+        // spectator view), Harmony skips every later prefix that can affect the original, including this one:
+        // the bar is then theirs, and the postfix below records what they show. When this mod has priority, the
+        // other mod's patch is removed instead (CompatBridgeWorker.TakeOver).
         [HarmonyPriority(Priority.Last)]
-        public static bool Prefix(MainButtonsRoot __instance, bool __runOriginal)
+        public static bool Prefix(MainButtonsRoot __instance)
+        {
+            prefixRan = true;
+            return !BarRenderer.TryDraw(__instance);
+        }
+
+        // Postfixes always run, so this is where to observe calls in which another mod drew the bar.
+        public static void Postfix(MainButtonsRoot __instance)
         {
             StartupDiagnostics.ReportPatchesOnce();
-
-            // Another mod (for example Custom Bottom Bar) already skipped the original and draws the bar itself.
-            // When this mod has priority, that mod's patch is removed instead (CompatBridgeWorker.TakeOver).
-            if (!__runOriginal)
-            {
-                BarRenderer.ReportGameDrawn(__instance);
-                return false;
-            }
-
-            return !BarRenderer.TryDraw(__instance);
+            if (!prefixRan) BarRenderer.ReportGameDrawn(__instance);
+            prefixRan = false;
         }
     }
 

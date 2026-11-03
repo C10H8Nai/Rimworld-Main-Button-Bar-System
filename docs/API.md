@@ -250,6 +250,63 @@ The default worker removes the other mod's Harmony patches on `MainButtonsRoot.D
 `MainButtonsRoot.MainButtonsOnGUI` and `MainButtonWorker.DoButton` when this mod has priority. Override
 `TakeOver`, `ReferenceValue`, `CanImport` and `ImportInto` for more. Priority changes apply after a restart.
 
+## Depending on this mod softly
+
+Most add-ons should work with or without Main Button Bar System. Common ways:
+
+- **XML on a list item**: `MayRequire` skips the item when the mod is missing.
+  ```xml
+  <modExtensions>
+    <li Class="MainButtonBarSystem.MainButtonBarDefaults" MayRequire="NAI.MainButtonBarSystem">
+      <inDrawer>true</inDrawer>
+    </li>
+  </modExtensions>
+  ```
+  (Unverified on 1.7 for a `Class=` item inside `modExtensions`; if it errors, use the next option.)
+- **XML patch**: wrap `PatchOperationAddModExtension` in `PatchOperationFindMod`. Note that FindMod matches the
+  mod's **name**, `Main Button Bar System`, not its packageId.
+- **C#**: put the code that touches this mod in a separate assembly loaded only when it is active, through
+  `LoadFolders.xml`: `<li IfModActive="NAI.MainButtonBarSystem">MBBS/</li>`. Or check
+  `ModsConfig.IsActive("NAI.MainButtonBarSystem")` before calling into it.
+- In `About.xml`, a hard dependency goes in `modDependencies` plus `loadAfter`. RimSort treats the `*ByVersion`
+  tags as replacing, not adding to, the plain ones, so repeat entries if you use them.
+
+## API stability
+
+`MainButtonBarAPI.ApiVersion` (a property; currently `1.0`) covers everything in this document: the five
+slots' def fields and workers, `MainButtonBarDefaults`, `MainButtonArrangementDef`, `BarDrawContext`,
+`BarButton`, `ButtonPainter.Draw` and `MainButtonBarAPI`. Additions raise the minor number; removals or changed
+meanings raise the major number, and removed members stay for one release marked `[Obsolete]`. Arrangements carry
+their own `formatVersion`. Anything not listed here is internal and may change.
+
+## Harmony patches and ordering
+
+Harmony id: `NAI.MainButtonBarSystem`. Order your patches around it with `[HarmonyBefore]` / `[HarmonyAfter]`.
+
+| Method | Patch | Notes |
+|---|---|---|
+| `MainButtonsRoot.DoButtons` | prefix, `Priority.Last` | Returns false only when this mod draws the bar. If an earlier prefix of yours returns false, Harmony skips this one and the bar is yours. |
+| `MainButtonsRoot.DoButtons` | postfix | Observes who drew, for `MainButtonBarAPI`; never changes anything |
+| `MainButtonsRoot.HandleLowPriorityShortcuts` | postfix | Hotkeys kept by this mod, after the game's and after windows |
+| `CameraDriver.CameraDriverOnGUI` | prefix | Skips only for a scroll-wheel event over a scrolling bar, so the map does not zoom |
+| `Widgets.ButtonTextSubtle` | prefix + postfix | Acts only while this mod draws a bar button (label alignment, theme colour); never skips |
+| `Widgets.DrawAtlas(Rect, Texture2D, bool)` | prefix + postfix | Acts only while this mod draws a bar button (theme atlas); never skips |
+
+Compatibility bridges remove other mods' patches only when the player gives this mod priority, and log each
+removal.
+
+## Limits to know
+
+- Buttons are always drawn through the game's `MainButtonWorker.DoButton`, so changes you make there apply.
+- The order on screen comes from the player's settings and the game's defs, not from
+  `MainButtonsRoot.allButtonsInOrder`; mods that rewrite that list do not change this mod's order (an import is
+  planned instead).
+- A display mode may report a bar taller than one row (`ReportBarRect`), but the game and mods such as RimHUD
+  place the inspect pane assuming the vanilla height.
+- Renaming a button changes `MainButtonDef.label` for the whole game, so other mods see the new name too.
+- Per-save arrangements are stored in a `GameComponent`. In Multiplayer, joining players receive the host's
+  arrangement (Multiplayer has no 1.7 build yet; see docs/research).
+
 ## Tuning def
 
 Every tunable number lives in `Defs/MainButtonBarSystem/Tuning.xml`
