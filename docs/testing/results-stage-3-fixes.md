@@ -141,6 +141,18 @@
 
 - **看不太出來目前是「簡單」還是「進階」**（使用者回報，截圖 `screenshots/fixes_08_simple_advanced_toggle.png`）：兩顆按鈕長得幾乎一樣，選中的只有邊框稍微亮一點。建議改用原版視窗的分頁樣式（`TabDrawer.DrawTabs`／`TabRecord`，選中的分頁和下面的內容區連在一起，像研究、信仰視窗那樣）。如果維持按鈕，選中的要有明顯差異，例如填色、文字變亮，或未選中的變暗。之後加「外觀」分頁時也用同一套樣式。
 
+### 給雲端的新需求：補齊 RimWorld 官方支援的語言（使用者 2026-11-03）
+
+- 目前只有 English、ChineseSimplified、ChineseTraditional。使用者要補齊 RimWorld 常見的語言，理由是本模組要顯示的文字不多。
+- 範圍：遊戲本體 `Data/Core/Languages` 附的官方語言，共 29 種。資料夾用舊式名稱（現在的 `ChineseSimplified` 就是這種寫法，遊戲會用 `legacyFolderName` 對上）：
+  - Catalan、ChineseSimplified、ChineseTraditional、Czech、Danish、Dutch、English、Estonian、Finnish、French、German、Greek
+  - Hungarian、Italian、Japanese、Korean、Norwegian、Polish、Portuguese、PortugueseBrazilian、Romanian、Russian、Slovak
+  - Spanish、SpanishLatin、Swedish、Turkish、Ukrainian、Vietnamese
+- 建議：
+  - 擴充 `tools/gen_translations.py` 的表格，每個鍵一次寫齊所有語言，避免之後新增的鍵（齒輪提示、外觀分頁、撞鍵說明等）只有三種語言有。
+  - DefInjected（`MainButtonBarSystem.BarDisplayModeDef`、`MainButtonBarSystem.BarAppearanceDef`，以及之後的主題 Def）也要每種語言都有。
+  - 除了中英文，其他語言是機器翻譯。建議在工作坊說明寫「歡迎指正翻譯」。
+
 ### 給雲端的新需求：外觀分頁和主題（使用者 2026-11-03）
 
 - 設定視窗最上面（「简单」「进阶」旁）新增「外觀」分頁，列出所有主題，附預覽，讓玩家挑。
