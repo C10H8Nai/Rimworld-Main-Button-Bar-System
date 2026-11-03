@@ -1,13 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <!-- 第一階段測試設定（暫時） -->
-  <MBBS_Test_Header>第一階段測試設定（暫時，之後會換成正式的設定視窗）</MBBS_Test_Header>
-  <MBBS_Test_GameDraws>由遊戲繪製底部列（不接管，預設）</MBBS_Test_GameDraws>
-  <MBBS_Test_OwnVanilla>由本模組繪製：原版排法（外觀應與原版完全相同）</MBBS_Test_OwnVanilla>
-  <MBBS_Test_OwnScroll>由本模組繪製：捲動模式</MBBS_Test_OwnScroll>
-  <MBBS_Test_DefaultWidth>捲動模式：按鈕預設寬度 {0}px</MBBS_Test_DefaultWidth>
-  <MBBS_Test_MinWidth>捲動模式：按鈕最小寬度 {0}px</MBBS_Test_MinWidth>
-  <MBBS_Test_FillScreen>捲動模式：按鈕放得下時拉伸填滿畫面寬度</MBBS_Test_FillScreen>
-  <MBBS_Test_PinMenu>捲動模式：選單按鈕固定在最右邊</MBBS_Test_PinMenu>
-  <MBBS_Test_Note>改動立即生效。在底部列上用滑鼠滾輪，或點兩端的箭頭按鈕來捲動。</MBBS_Test_Note>
+  <MBBS_More>更多（{0}）</MBBS_More>
+  <MBBS_MoreTip>收進抽屜的按鈕。抽屜下方有自己的設定按鈕。</MBBS_MoreTip>
+  <MBBS_OpenSettings>主按鈕列設定</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>在遊戲中打開：修改的是目前存檔的設定。</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>在主選單打開：修改的是預設範本，新遊戲會以它為起點。</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>總是由本模組繪製底部列（測試用）</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>在你改動任何設定之前，底部列仍由遊戲自己繪製。開啟後可以比較本模組和遊戲繪製的結果。</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>主按鈕列設定（目前存檔）</MBBS_Title_Save>
+  <MBBS_Title_Template>主按鈕列設定（預設範本）</MBBS_Title_Template>
+  <MBBS_Tab_Simple>簡單</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>進階</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>顯示</MBBS_Col_Visible>
+  <MBBS_Col_Icon>圖示</MBBS_Col_Icon>
+  <MBBS_Col_Name>名稱</MBBS_Col_Name>
+  <MBBS_Col_Source>來源模組</MBBS_Col_Source>
+  <MBBS_Col_HotKey>快捷鍵</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>抽屜</MBBS_Col_Drawer>
+  <MBBS_BarRow>整條列（預設值）</MBBS_BarRow>
+  <MBBS_OriginallyHidden>原本不顯示（{0}）</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>這些按鈕是其模組刻意不放在列上的。在進階裡開啟「強制顯示」才會出現在列上。</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>上移</MBBS_MoveUp>
+  <MBBS_MoveDown>下移</MBBS_MoveDown>
+  <MBBS_OrderHint>清單上→下 ＝ 畫面左→右。可拖曳排序。</MBBS_OrderHint>
+  <MBBS_LockedSuffix>（鎖定）</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>（固定左端）</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>（固定右端）</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>目前不在列上：按鈕自身的出現條件不成立。</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>顯示方式</MBBS_DisplayMode>
+  <MBBS_Mode_Vanilla>原版</MBBS_Mode_Vanilla>
+  <MBBS_Mode_Vanilla_Desc>和原版一樣平分畫面寬度。不捲動，沒有抽屜。</MBBS_Mode_Vanilla_Desc>
+  <MBBS_Mode_Collapse>摺疊</MBBS_Mode_Collapse>
+  <MBBS_Mode_Collapse_Desc>勾了「抽屜」的按鈕收進「更多」抽屜，其餘按鈕分配列的寬度。</MBBS_Mode_Collapse_Desc>
+  <MBBS_Mode_Scroll>捲動</MBBS_Mode_Scroll>
+  <MBBS_Mode_Scroll_Desc>按鈕維持寬度，用滑鼠滾輪或箭頭左右捲動。不使用抽屜。</MBBS_Mode_Scroll_Desc>
+  <MBBS_Mode_CollapseScroll>摺疊＋捲動</MBBS_Mode_CollapseScroll>
+  <MBBS_Mode_CollapseScroll_Desc>抽屜照常使用，剩下的按鈕可以捲動。</MBBS_Mode_CollapseScroll_Desc>
+  <MBBS_MinWidth>捲動時每顆按鈕的最小寬度：{0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>按鈕預設寬度：{0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>按鈕間距：{0}px</MBBS_Gap>
+  <MBBS_FillScreen>填滿畫面寬度</MBBS_FillScreen>
+  <MBBS_FillScreenTip>按鈕放得下時，拉伸到占滿整個寬度。</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>遊戲選單按鈕鎖定在最右邊</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>鎖定時，選單按鈕不能隱藏、移動或收進抽屜，只能改名。</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>遊戲選單按鈕已在進階中解鎖。</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>遊戲選單按鈕鎖定在最右邊，只能改名。可以在進階的「整條列」裡解鎖。</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>按鈕來源：{0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>圖示來源：{0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName：{0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>其模組刻意不放在列上；開啟「強制顯示」才會出現。</MBBS_Info_OriginallyHidden>
+  <MBBS_None>無</MBBS_None>
+  <MBBS_Unknown>未知</MBBS_Unknown>
+  <MBBS_Visible>顯示在列上</MBBS_Visible>
+  <MBBS_InDrawer>收進「更多」抽屜</MBBS_InDrawer>
+  <MBBS_CustomName>自訂名稱（留空＝原本的名稱：{0}）</MBBS_CustomName>
+  <MBBS_ResetName>還原</MBBS_ResetName>
+  <MBBS_ButtonWidth>寬度：{0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>寬度：跟整條列</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>固定位置</MBBS_Pin>
+  <MBBS_Pin_None>不固定</MBBS_Pin_None>
+  <MBBS_Pin_Left>左端</MBBS_Pin_Left>
+  <MBBS_Pin_Right>右端</MBBS_Pin_Right>
+  <MBBS_ForceShow>強制顯示</MBBS_ForceShow>
+  <MBBS_ForceShowTip>即使按鈕自身條件不成立也顯示。這時點它可能沒有反應。</MBBS_ForceShowTip>
+  <MBBS_HotKeyReadOnly>快捷鍵：{0}（編輯功能在之後的版本）</MBBS_HotKeyReadOnly>
+  <MBBS_SaveAsTemplate>存成預設範本</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>套用預設範本</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>已存成預設範本。新遊戲會使用這個排法。</MBBS_TemplateSaved>
+  <MBBS_ResetAll>全部重設</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>要把所有設定恢復成「沒改過」的狀態（原版加上其他模組改過的結果）嗎？這不會套用範本。</MBBS_ResetAllConfirm>
+  <MBBS_Save>儲存</MBBS_Save>
 </LanguageData>

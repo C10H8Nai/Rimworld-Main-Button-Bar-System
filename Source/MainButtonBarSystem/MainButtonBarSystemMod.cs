@@ -22,31 +22,18 @@ namespace MainButtonBarSystem
 
         public override string SettingsCategory() => "Main Button Bar System";
 
+        // The game's mod settings window is small, so it only opens our own window (spec 3.5, 5).
         public override void DoSettingsWindowContents(Rect inRect)
         {
             var listing = new Listing_Standard();
             listing.Begin(inRect);
 
-            listing.Label("MBBS_Test_Header".Translate());
+            listing.Label(BarConfigManager.InGame ? "MBBS_ModSettings_InGame".Translate() : "MBBS_ModSettings_MainMenu".Translate());
+            if (listing.ButtonText("MBBS_OpenSettings".Translate()))
+                Find.WindowStack.Add(new Dialog_MainButtonBar());
+
             listing.GapLine();
-
-            if (listing.RadioButton("MBBS_Test_GameDraws".Translate(), Settings.testRenderMode == TestRenderMode.GameDraws))
-                Settings.testRenderMode = TestRenderMode.GameDraws;
-            if (listing.RadioButton("MBBS_Test_OwnVanilla".Translate(), Settings.testRenderMode == TestRenderMode.OwnVanillaLayout))
-                Settings.testRenderMode = TestRenderMode.OwnVanillaLayout;
-            if (listing.RadioButton("MBBS_Test_OwnScroll".Translate(), Settings.testRenderMode == TestRenderMode.OwnScroll))
-                Settings.testRenderMode = TestRenderMode.OwnScroll;
-
-            listing.Gap();
-            listing.Label("MBBS_Test_DefaultWidth".Translate(Settings.scrollDefaultWidth));
-            Settings.scrollDefaultWidth = (int)listing.Slider(Settings.scrollDefaultWidth, 40f, 300f);
-            listing.Label("MBBS_Test_MinWidth".Translate(Settings.scrollMinWidth));
-            Settings.scrollMinWidth = (int)listing.Slider(Settings.scrollMinWidth, 20f, 300f);
-            listing.CheckboxLabeled("MBBS_Test_FillScreen".Translate(), ref Settings.fillScreen);
-            listing.CheckboxLabeled("MBBS_Test_PinMenu".Translate(), ref Settings.pinMenuRight);
-
-            listing.Gap();
-            listing.Label("MBBS_Test_Note".Translate());
+            listing.CheckboxLabeled("MBBS_AlwaysDrawBar".Translate(), ref Settings.alwaysDrawBar, "MBBS_AlwaysDrawBarTip".Translate());
 
             listing.End();
         }

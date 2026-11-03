@@ -1,13 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <!-- Stage 1 test settings (temporary) -->
-  <MBBS_Test_Header>Stage 1 test settings (temporary, replaced by the real settings window later)</MBBS_Test_Header>
-  <MBBS_Test_GameDraws>Game draws the bar (no takeover, default)</MBBS_Test_GameDraws>
-  <MBBS_Test_OwnVanilla>This mod draws the bar: vanilla layout (should look identical)</MBBS_Test_OwnVanilla>
-  <MBBS_Test_OwnScroll>This mod draws the bar: scroll mode</MBBS_Test_OwnScroll>
-  <MBBS_Test_DefaultWidth>Scroll mode: default button width {0}px</MBBS_Test_DefaultWidth>
-  <MBBS_Test_MinWidth>Scroll mode: minimum button width {0}px</MBBS_Test_MinWidth>
-  <MBBS_Test_FillScreen>Scroll mode: stretch buttons to fill the screen when they fit</MBBS_Test_FillScreen>
-  <MBBS_Test_PinMenu>Scroll mode: keep the game menu button fixed at the right end</MBBS_Test_PinMenu>
-  <MBBS_Test_Note>Changes apply immediately. Scroll with the mouse wheel over the bar or with the arrow buttons at both ends.</MBBS_Test_Note>
+  <MBBS_More>More ({0})</MBBS_More>
+  <MBBS_MoreTip>Buttons collapsed into the drawer. The drawer has its own settings button at the bottom.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Main button bar settings</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Opened in a game: changes apply to the current save.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Opened from the main menu: changes apply to the default template that new games start with.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Always draw the bar with this mod (for testing)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Until you change something, the game keeps drawing the bar itself. Turn this on to compare this mod's drawing with the game's.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Main button bar settings (this save)</MBBS_Title_Save>
+  <MBBS_Title_Template>Main button bar settings (default template)</MBBS_Title_Template>
+  <MBBS_Tab_Simple>Simple</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>Advanced</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>Show</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Icon</MBBS_Col_Icon>
+  <MBBS_Col_Name>Name</MBBS_Col_Name>
+  <MBBS_Col_Source>From mod</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Hotkey</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Drawer</MBBS_Col_Drawer>
+  <MBBS_BarRow>Whole bar (defaults)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Hidden by their mod ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Buttons their mod keeps off the bar on purpose. Turn on "Always show" in Advanced to put one on the bar.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Move up</MBBS_MoveUp>
+  <MBBS_MoveDown>Move down</MBBS_MoveDown>
+  <MBBS_OrderHint>Top to bottom = left to right on screen. Drag rows to reorder.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(locked)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(left end)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(right end)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Not on the bar right now: the button's own condition is not met.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Display mode</MBBS_DisplayMode>
+  <MBBS_Mode_Vanilla>Vanilla</MBBS_Mode_Vanilla>
+  <MBBS_Mode_Vanilla_Desc>Like the base game: the screen width is shared equally. No scrolling and no drawer.</MBBS_Mode_Vanilla_Desc>
+  <MBBS_Mode_Collapse>Collapse</MBBS_Mode_Collapse>
+  <MBBS_Mode_Collapse_Desc>Buttons marked "Drawer" move into the More drawer; the rest share the bar.</MBBS_Mode_Collapse_Desc>
+  <MBBS_Mode_Scroll>Scroll</MBBS_Mode_Scroll>
+  <MBBS_Mode_Scroll_Desc>Buttons keep their width; scroll the bar with the mouse wheel or the arrows. The drawer is not used.</MBBS_Mode_Scroll_Desc>
+  <MBBS_Mode_CollapseScroll>Collapse + scroll</MBBS_Mode_CollapseScroll>
+  <MBBS_Mode_CollapseScroll_Desc>Drawer as in Collapse; the remaining buttons scroll.</MBBS_Mode_CollapseScroll_Desc>
+  <MBBS_MinWidth>Minimum button width when scrolling: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Default button width: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Space between buttons: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Fill the screen width</MBBS_FillScreen>
+  <MBBS_FillScreenTip>When the buttons fit, stretch them to use the whole width.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Lock the game menu button at the right end</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>While locked, the menu button cannot be hidden, moved or put in the drawer; it can only be renamed.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>The game menu button has been unlocked in Advanced.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>The game menu button is locked at the right end and can only be renamed. Unlock it in Advanced, on the whole bar row.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Button from: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Icon from: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Its mod keeps it off the bar on purpose; it appears only with "Always show".</MBBS_Info_OriginallyHidden>
+  <MBBS_None>none</MBBS_None>
+  <MBBS_Unknown>unknown</MBBS_Unknown>
+  <MBBS_Visible>Show on the bar</MBBS_Visible>
+  <MBBS_InDrawer>Put in the More drawer</MBBS_InDrawer>
+  <MBBS_CustomName>Custom name (empty = original: {0})</MBBS_CustomName>
+  <MBBS_ResetName>Original</MBBS_ResetName>
+  <MBBS_ButtonWidth>Width: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Width: same as the whole bar</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Fixed position</MBBS_Pin>
+  <MBBS_Pin_None>Not fixed</MBBS_Pin_None>
+  <MBBS_Pin_Left>Left end</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Right end</MBBS_Pin_Right>
+  <MBBS_ForceShow>Always show</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Show the button even when its own condition says it should not appear. Clicking it may then do nothing.</MBBS_ForceShowTip>
+  <MBBS_HotKeyReadOnly>Hotkey: {0} (editing comes in a later version)</MBBS_HotKeyReadOnly>
+  <MBBS_SaveAsTemplate>Save as default template</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Apply default template</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Saved as the default template. New games will start with this arrangement.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Reset all</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Reset every setting to the untouched bar (the game plus what other mods changed)? This does not apply the template.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Save</MBBS_Save>
 </LanguageData>
