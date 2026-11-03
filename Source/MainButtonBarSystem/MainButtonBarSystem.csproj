@@ -16,6 +16,8 @@
     <GenerateDependencyFile>false</GenerateDependencyFile>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Keep the committed DLL byte-identical across commits: by default the SDK stamps the current git SHA into it. -->
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
   </PropertyGroup>
 
   <!-- Compile-time references only: nothing from these packages may be copied into 1.7/Assemblies. -->
