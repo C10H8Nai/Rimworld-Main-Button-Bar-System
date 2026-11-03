@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>MainButtonBarSystem</RootNamespace>
+    <AssemblyName>MainButtonBarSystem</AssemblyName>
+    <!-- Build straight into the mod's version folder so the repo can be dropped into RimWorld/Mods as-is. -->
+    <OutputPath>../../1.7/Assemblies/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <DebugType>none</DebugType>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- RimWorld 1.7 is only on Steam's unstable branch, so only unstable reference builds exist. -->
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4995-unstable" ExcludeAssets="runtime" />
+    <!-- Harmony is supplied at runtime by the Harmony mod; never ship 0Harmony.dll. -->
+    <PackageReference Include="Lib.Harmony.Ref" Version="2.4.3" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
