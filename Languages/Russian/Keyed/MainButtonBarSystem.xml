@@ -20,7 +20,7 @@
   <MBBS_Col_Drawer>Свернуть</MBBS_Col_Drawer>
   <MBBS_BarRow>Вся панель (по умолчанию)</MBBS_BarRow>
   <MBBS_OriginallyHidden>Скрытые собственным модом ({0})</MBBS_OriginallyHidden>
-  <MBBS_OriginallyHiddenTip>Эти кнопки их мод намеренно не выводит на панель. Чтобы поместить такую кнопку на панель, включите «Всегда показывать» на вкладке «Расширенные».</MBBS_OriginallyHiddenTip>
+  <MBBS_OriginallyHiddenTip>Эти кнопки их мод намеренно не выводит на панель. Чтобы поместить такую кнопку на панель, включите «Всегда показывать» в режиме «Расширенные».</MBBS_OriginallyHiddenTip>
   <MBBS_MoveUp>Вверх</MBBS_MoveUp>
   <MBBS_MoveDown>Вниз</MBBS_MoveDown>
   <MBBS_OrderHint>Сверху вниз = слева направо на экране. Перетаскивайте строки, чтобы изменить порядок.</MBBS_OrderHint>
@@ -36,8 +36,8 @@
   <MBBS_FillScreenTip>Если кнопки помещаются, растягивать их на всю ширину.</MBBS_FillScreenTip>
   <MBBS_MenuLocked>Заблокировать кнопку «Меню» у правого края</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Пока кнопка «Меню» заблокирована, её нельзя скрыть, переместить или убрать в меню «Ещё» — только переименовать.</MBBS_MenuLockedTip>
-  <MBBS_MenuUnlockedNote>Кнопка «Меню» разблокирована на вкладке «Расширенные».</MBBS_MenuUnlockedNote>
-  <MBBS_MenuLockedNote>Кнопка «Меню» заблокирована у правого края, её можно только переименовать. Разблокировать её можно на вкладке «Расширенные», в строке «Вся панель».</MBBS_MenuLockedNote>
+  <MBBS_MenuUnlockedNote>Кнопка «Меню» разблокирована в режиме «Расширенные».</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Кнопка «Меню» заблокирована у правого края, её можно только переименовать. Разблокировать её можно в режиме «Расширенные», в строке «Вся панель».</MBBS_MenuLockedNote>
   <MBBS_Info_ButtonSource>Источник кнопки: {0}</MBBS_Info_ButtonSource>
   <MBBS_Info_IconSource>Источник иконки: {0}</MBBS_Info_IconSource>
   <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
@@ -63,7 +63,7 @@
   <MBBS_Save>Сохранить</MBBS_Save>
   <MBBS_Compat_TheirsNotice>Обнаружен мод {0}: сейчас панелью управляет он, поэтому изменения здесь вступят в силу, только когда приоритет будет у этого мода.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Обнаружен мод {0}: приоритет у этого мода, поэтому влияние мода {0} на панель отключено.</MBBS_Compat_OursNotice>
-  <MBBS_Compat_SeeAdvanced>Подробности на вкладке «Расширенные».</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_SeeAdvanced>Подробности в режиме «Расширенные».</MBBS_Compat_SeeAdvanced>
   <MBBS_Compat_Header>Совместимость: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Приоритет у этого мода</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Панель отрисовывает этот мод. Влияние мода {0} на панель отключено, его настройки используются только как справочные значения.</MBBS_Compat_Ours_Desc>

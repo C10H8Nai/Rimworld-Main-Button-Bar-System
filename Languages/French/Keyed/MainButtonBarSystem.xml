@@ -20,7 +20,7 @@
   <MBBS_Col_Drawer>Tiroir</MBBS_Col_Drawer>
   <MBBS_BarRow>Barre entière (valeurs par défaut)</MBBS_BarRow>
   <MBBS_OriginallyHidden>Masqués par leur mod ({0})</MBBS_OriginallyHidden>
-  <MBBS_OriginallyHiddenTip>Boutons que leur mod garde volontairement hors de la barre. Activez « Toujours afficher » dans l'onglet Avancé pour en placer un sur la barre.</MBBS_OriginallyHiddenTip>
+  <MBBS_OriginallyHiddenTip>Boutons que leur mod garde volontairement hors de la barre. Activez « Toujours afficher » en mode Avancé pour en placer un sur la barre.</MBBS_OriginallyHiddenTip>
   <MBBS_MoveUp>Monter</MBBS_MoveUp>
   <MBBS_MoveDown>Descendre</MBBS_MoveDown>
   <MBBS_OrderHint>De haut en bas = de gauche à droite à l'écran. Faites glisser les lignes pour les réordonner.</MBBS_OrderHint>
@@ -36,8 +36,8 @@
   <MBBS_FillScreenTip>Quand les boutons tiennent, les étirer pour utiliser toute la largeur.</MBBS_FillScreenTip>
   <MBBS_MenuLocked>Verrouiller le bouton du menu du jeu tout à droite</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Tant qu'il est verrouillé, le bouton du menu ne peut être ni masqué, ni déplacé, ni rangé dans le tiroir ; il peut seulement être renommé.</MBBS_MenuLockedTip>
-  <MBBS_MenuUnlockedNote>Le bouton du menu du jeu a été déverrouillé dans l'onglet Avancé.</MBBS_MenuUnlockedNote>
-  <MBBS_MenuLockedNote>Le bouton du menu du jeu est verrouillé tout à droite et peut seulement être renommé. Déverrouillez-le dans l'onglet Avancé, sur la ligne de la barre entière.</MBBS_MenuLockedNote>
+  <MBBS_MenuUnlockedNote>Le bouton du menu du jeu a été déverrouillé en mode Avancé.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Le bouton du menu du jeu est verrouillé tout à droite et peut seulement être renommé. Déverrouillez-le en mode Avancé, sur la ligne de la barre entière.</MBBS_MenuLockedNote>
   <MBBS_Info_ButtonSource>Bouton issu de : {0}</MBBS_Info_ButtonSource>
   <MBBS_Info_IconSource>Icône issue de : {0}</MBBS_Info_IconSource>
   <MBBS_Info_DefName>defName : {0}</MBBS_Info_DefName>
@@ -63,7 +63,7 @@
   <MBBS_Save>Sauvegarder</MBBS_Save>
   <MBBS_Compat_TheirsNotice>{0} détecté : il contrôle actuellement la barre, les modifications faites ici ne prennent donc effet que si ce mod a la priorité.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>{0} détecté : ce mod a la priorité, l'effet de {0} sur la barre est donc désactivé.</MBBS_Compat_OursNotice>
-  <MBBS_Compat_SeeAdvanced>Détails dans l'onglet Avancé.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_SeeAdvanced>Détails en mode Avancé.</MBBS_Compat_SeeAdvanced>
   <MBBS_Compat_Header>Compatibilité : {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Priorité à ce mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Ce mod dessine la barre. L'effet de {0} sur la barre est désactivé ; ses paramètres servent uniquement de valeurs de référence.</MBBS_Compat_Ours_Desc>

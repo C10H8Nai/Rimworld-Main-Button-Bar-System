@@ -20,7 +20,7 @@
   <MBBS_Col_Drawer>Cajón</MBBS_Col_Drawer>
   <MBBS_BarRow>Barra completa (valores por defecto)</MBBS_BarRow>
   <MBBS_OriginallyHidden>Ocultos por su mod ({0})</MBBS_OriginallyHidden>
-  <MBBS_OriginallyHiddenTip>Botones que su mod deja fuera de la barra a propósito. Activa «Mostrar siempre» en la pestaña Avanzado para poner uno en la barra.</MBBS_OriginallyHiddenTip>
+  <MBBS_OriginallyHiddenTip>Botones que su mod deja fuera de la barra a propósito. Activa «Mostrar siempre» en el modo Avanzado para poner uno en la barra.</MBBS_OriginallyHiddenTip>
   <MBBS_MoveUp>Subir</MBBS_MoveUp>
   <MBBS_MoveDown>Bajar</MBBS_MoveDown>
   <MBBS_OrderHint>De arriba abajo = de izquierda a derecha en pantalla. Arrastra las filas para reordenarlas.</MBBS_OrderHint>
@@ -36,8 +36,8 @@
   <MBBS_FillScreenTip>Si los botones caben, se estiran para usar todo el ancho.</MBBS_FillScreenTip>
   <MBBS_MenuLocked>Bloquear el botón del menú del juego en el extremo derecho</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Mientras está bloqueado, el botón del menú no se puede ocultar, mover ni meter en el cajón; solo se puede renombrar.</MBBS_MenuLockedTip>
-  <MBBS_MenuUnlockedNote>El botón del menú del juego se ha desbloqueado en la pestaña Avanzado.</MBBS_MenuUnlockedNote>
-  <MBBS_MenuLockedNote>El botón del menú del juego está bloqueado en el extremo derecho y solo se puede renombrar. Desbloquéalo en la pestaña Avanzado, en la fila de la barra completa.</MBBS_MenuLockedNote>
+  <MBBS_MenuUnlockedNote>El botón del menú del juego se ha desbloqueado en el modo Avanzado.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>El botón del menú del juego está bloqueado en el extremo derecho y solo se puede renombrar. Desbloquéalo en el modo Avanzado, en la fila de la barra completa.</MBBS_MenuLockedNote>
   <MBBS_Info_ButtonSource>Origen del botón: {0}</MBBS_Info_ButtonSource>
   <MBBS_Info_IconSource>Origen del icono: {0}</MBBS_Info_IconSource>
   <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
@@ -63,7 +63,7 @@
   <MBBS_Save>Guardar</MBBS_Save>
   <MBBS_Compat_TheirsNotice>Se ha detectado {0}: ahora mismo controla la barra, así que los cambios hechos aquí solo surten efecto cuando este mod tiene prioridad.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Se ha detectado {0}: este mod tiene prioridad, así que el efecto de {0} sobre la barra está desactivado.</MBBS_Compat_OursNotice>
-  <MBBS_Compat_SeeAdvanced>Más detalles en la pestaña Avanzado.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_SeeAdvanced>Más detalles en el modo Avanzado.</MBBS_Compat_SeeAdvanced>
   <MBBS_Compat_Header>Compatibilidad: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Prioridad a este mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Este mod dibuja la barra. El efecto de {0} sobre la barra está desactivado; su configuración solo se usa como valores de referencia.</MBBS_Compat_Ours_Desc>

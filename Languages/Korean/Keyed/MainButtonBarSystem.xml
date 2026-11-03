@@ -20,7 +20,7 @@
   <MBBS_Col_Drawer>서랍</MBBS_Col_Drawer>
   <MBBS_BarRow>바 전체 (기본값)</MBBS_BarRow>
   <MBBS_OriginallyHidden>모드가 숨긴 버튼 ({0})</MBBS_OriginallyHidden>
-  <MBBS_OriginallyHiddenTip>출처 모드가 일부러 바에 두지 않은 버튼입니다. 바에 표시하려면 '고급' 탭에서 '항상 표시'를 켜세요.</MBBS_OriginallyHiddenTip>
+  <MBBS_OriginallyHiddenTip>출처 모드가 일부러 바에 두지 않은 버튼입니다. 바에 표시하려면 '고급'에서 '항상 표시'를 켜세요.</MBBS_OriginallyHiddenTip>
   <MBBS_MoveUp>위로 이동</MBBS_MoveUp>
   <MBBS_MoveDown>아래로 이동</MBBS_MoveDown>
   <MBBS_OrderHint>목록의 위→아래가 화면의 왼쪽→오른쪽입니다. 행을 드래그해서 순서를 바꿀 수 있습니다.</MBBS_OrderHint>
@@ -36,8 +36,8 @@
   <MBBS_FillScreenTip>버튼이 모두 들어갈 때는 버튼을 늘려 화면 너비 전체를 채웁니다.</MBBS_FillScreenTip>
   <MBBS_MenuLocked>게임 메뉴 버튼을 오른쪽 끝에 잠금</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>잠겨 있는 동안 메뉴 버튼은 숨기거나 옮기거나 서랍에 넣을 수 없으며, 이름만 바꿀 수 있습니다.</MBBS_MenuLockedTip>
-  <MBBS_MenuUnlockedNote>게임 메뉴 버튼의 잠금이 '고급' 탭에서 해제되었습니다.</MBBS_MenuUnlockedNote>
-  <MBBS_MenuLockedNote>게임 메뉴 버튼은 오른쪽 끝에 잠겨 있어 이름만 바꿀 수 있습니다. '고급' 탭의 '바 전체' 행에서 잠금을 해제할 수 있습니다.</MBBS_MenuLockedNote>
+  <MBBS_MenuUnlockedNote>게임 메뉴 버튼의 잠금이 '고급'에서 해제되었습니다.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>게임 메뉴 버튼은 오른쪽 끝에 잠겨 있어 이름만 바꿀 수 있습니다. '고급'의 '바 전체' 행에서 잠금을 해제할 수 있습니다.</MBBS_MenuLockedNote>
   <MBBS_Info_ButtonSource>버튼 출처: {0}</MBBS_Info_ButtonSource>
   <MBBS_Info_IconSource>아이콘 출처: {0}</MBBS_Info_IconSource>
   <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
@@ -63,7 +63,7 @@
   <MBBS_Save>저장</MBBS_Save>
   <MBBS_Compat_TheirsNotice>{0} 감지됨: 지금은 해당 모드가 바를 제어하므로, 여기서 바꾼 내용은 이 모드를 우선으로 해야 적용됩니다.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>{0} 감지됨: 이 모드가 우선이므로, 해당 모드가 바에 주는 효과는 꺼져 있습니다.</MBBS_Compat_OursNotice>
-  <MBBS_Compat_SeeAdvanced>자세한 내용은 '고급' 탭을 확인하세요.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_SeeAdvanced>자세한 내용은 '고급'에서 확인하세요.</MBBS_Compat_SeeAdvanced>
   <MBBS_Compat_Header>호환성: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>이 모드 우선</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>이 모드가 바를 그립니다. {0} 모드가 바에 주는 효과는 꺼지고, 그 설정은 참고값으로만 쓰입니다.</MBBS_Compat_Ours_Desc>

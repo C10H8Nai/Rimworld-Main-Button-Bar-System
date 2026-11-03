@@ -20,7 +20,7 @@
   <MBBS_Col_Drawer>Sertar</MBBS_Col_Drawer>
   <MBBS_BarRow>Toată bara (valori implicite)</MBBS_BarRow>
   <MBBS_OriginallyHidden>Ascunse de modul lor ({0})</MBBS_OriginallyHidden>
-  <MBBS_OriginallyHiddenTip>Butoane pe care modul lor le ține intenționat în afara barei. Activează „Afișează mereu” în fila Avansat pentru a pune unul pe bară.</MBBS_OriginallyHiddenTip>
+  <MBBS_OriginallyHiddenTip>Butoane pe care modul lor le ține intenționat în afara barei. Activează „Afișează mereu” în modul Avansat pentru a pune unul pe bară.</MBBS_OriginallyHiddenTip>
   <MBBS_MoveUp>Mută în sus</MBBS_MoveUp>
   <MBBS_MoveDown>Mută în jos</MBBS_MoveDown>
   <MBBS_OrderHint>De sus în jos = de la stânga la dreapta pe ecran. Trage rândurile pentru a le reordona.</MBBS_OrderHint>
@@ -36,8 +36,8 @@
   <MBBS_FillScreenTip>Când butoanele încap, sunt întinse pentru a ocupa toată lățimea.</MBBS_FillScreenTip>
   <MBBS_MenuLocked>Blochează butonul Meniu al jocului la capătul din dreapta</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Cât timp este blocat, butonul Meniu nu poate fi ascuns, mutat sau pus în sertar; poate fi doar redenumit.</MBBS_MenuLockedTip>
-  <MBBS_MenuUnlockedNote>Butonul Meniu al jocului a fost deblocat în fila Avansat.</MBBS_MenuUnlockedNote>
-  <MBBS_MenuLockedNote>Butonul Meniu al jocului este blocat la capătul din dreapta și poate fi doar redenumit. Deblochează-l în fila Avansat, pe rândul pentru toată bara.</MBBS_MenuLockedNote>
+  <MBBS_MenuUnlockedNote>Butonul Meniu al jocului a fost deblocat în modul Avansat.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Butonul Meniu al jocului este blocat la capătul din dreapta și poate fi doar redenumit. Deblochează-l în modul Avansat, pe rândul pentru toată bara.</MBBS_MenuLockedNote>
   <MBBS_Info_ButtonSource>Butonul provine din: {0}</MBBS_Info_ButtonSource>
   <MBBS_Info_IconSource>Pictograma provine din: {0}</MBBS_Info_IconSource>
   <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
@@ -63,7 +63,7 @@
   <MBBS_Save>Salvează</MBBS_Save>
   <MBBS_Compat_TheirsNotice>A fost detectat {0}: momentan el controlează bara, așa că modificările de aici au efect doar când acest mod are prioritate.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>A fost detectat {0}: acest mod are prioritate, așa că efectul lui asupra barei este dezactivat.</MBBS_Compat_OursNotice>
-  <MBBS_Compat_SeeAdvanced>Detalii în fila Avansat.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_SeeAdvanced>Detalii în modul Avansat.</MBBS_Compat_SeeAdvanced>
   <MBBS_Compat_Header>Compatibilitate: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Întâi acest mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Acest mod desenează bara. Efectul lui {0} asupra barei este dezactivat; setările sale sunt folosite doar ca valori de referință.</MBBS_Compat_Ours_Desc>

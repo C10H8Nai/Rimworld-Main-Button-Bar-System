@@ -20,7 +20,7 @@
   <MBBS_Col_Drawer>Sbalit</MBBS_Col_Drawer>
   <MBBS_BarRow>Celá lišta (výchozí)</MBBS_BarRow>
   <MBBS_OriginallyHidden>Skryté vlastním modem ({0})</MBBS_OriginallyHidden>
-  <MBBS_OriginallyHiddenTip>Tato tlačítka jejich mod záměrně nedává na lištu. Chceš-li některé z nich na lištu umístit, zapni „Vždy zobrazit“ na kartě „Pokročilé“.</MBBS_OriginallyHiddenTip>
+  <MBBS_OriginallyHiddenTip>Tato tlačítka jejich mod záměrně nedává na lištu. Chceš-li některé z nich na lištu umístit, zapni „Vždy zobrazit“ v režimu „Pokročilé“.</MBBS_OriginallyHiddenTip>
   <MBBS_MoveUp>Nahoru</MBBS_MoveUp>
   <MBBS_MoveDown>Dolů</MBBS_MoveDown>
   <MBBS_OrderHint>Shora dolů = zleva doprava na obrazovce. Pořadí změníš přetažením řádků.</MBBS_OrderHint>
@@ -36,8 +36,8 @@
   <MBBS_FillScreenTip>Když se tlačítka vejdou, roztáhnou se na celou šířku.</MBBS_FillScreenTip>
   <MBBS_MenuLocked>Zamknout tlačítko „Nabídka“ úplně vpravo</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Zamčené tlačítko „Nabídka“ nelze skrýt, přesunout ani sbalit do panelu „Více“; lze ho jen přejmenovat.</MBBS_MenuLockedTip>
-  <MBBS_MenuUnlockedNote>Tlačítko „Nabídka“ bylo odemčeno na kartě „Pokročilé“.</MBBS_MenuUnlockedNote>
-  <MBBS_MenuLockedNote>Tlačítko „Nabídka“ je zamčeno úplně vpravo a lze ho jen přejmenovat. Odemknout ho můžeš na kartě „Pokročilé“ v řádku „Celá lišta“.</MBBS_MenuLockedNote>
+  <MBBS_MenuUnlockedNote>Tlačítko „Nabídka“ bylo odemčeno v režimu „Pokročilé“.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Tlačítko „Nabídka“ je zamčeno úplně vpravo a lze ho jen přejmenovat. Odemknout ho můžeš v režimu „Pokročilé“ v řádku „Celá lišta“.</MBBS_MenuLockedNote>
   <MBBS_Info_ButtonSource>Zdroj tlačítka: {0}</MBBS_Info_ButtonSource>
   <MBBS_Info_IconSource>Zdroj ikony: {0}</MBBS_Info_IconSource>
   <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
@@ -63,7 +63,7 @@
   <MBBS_Save>Uložit</MBBS_Save>
   <MBBS_Compat_TheirsNotice>Zjištěn mod {0}: lištu teď ovládá on, takže změny zde se projeví, jen když bude mít přednost tento mod.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Zjištěn mod {0}: přednost má tento mod, takže vliv modu {0} na lištu je vypnutý.</MBBS_Compat_OursNotice>
-  <MBBS_Compat_SeeAdvanced>Podrobnosti najdeš na kartě „Pokročilé“.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_SeeAdvanced>Podrobnosti najdeš v režimu „Pokročilé“.</MBBS_Compat_SeeAdvanced>
   <MBBS_Compat_Header>Kompatibilita: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Přednost má tento mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Lištu vykresluje tento mod. Vliv modu {0} na lištu je vypnutý a jeho nastavení slouží jen jako referenční hodnoty.</MBBS_Compat_Ours_Desc>

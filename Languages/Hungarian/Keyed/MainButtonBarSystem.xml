@@ -20,7 +20,7 @@
   <MBBS_Col_Drawer>Fiók</MBBS_Col_Drawer>
   <MBBS_BarRow>Teljes gombsor (alapértékek)</MBBS_BarRow>
   <MBBS_OriginallyHidden>Modjuk által elrejtve ({0})</MBBS_OriginallyHidden>
-  <MBBS_OriginallyHiddenTip>Ezeket a gombokat a saját modjuk szándékosan nem teszi ki a gombsorra. Ha egyet ki akarsz tenni, kapcsold be a Haladó fülön a „Mindig látható” opciót.</MBBS_OriginallyHiddenTip>
+  <MBBS_OriginallyHiddenTip>Ezeket a gombokat a saját modjuk szándékosan nem teszi ki a gombsorra. Ha egyet ki akarsz tenni, kapcsold be a Haladó nézetben a „Mindig látható” opciót.</MBBS_OriginallyHiddenTip>
   <MBBS_MoveUp>Feljebb</MBBS_MoveUp>
   <MBBS_MoveDown>Lejjebb</MBBS_MoveDown>
   <MBBS_OrderHint>Fentről lefelé = balról jobbra a képernyőn. A sorok húzással átrendezhetők.</MBBS_OrderHint>
@@ -36,8 +36,8 @@
   <MBBS_FillScreenTip>Ha a gombok elférnek, széthúzza őket a teljes szélességre.</MBBS_FillScreenTip>
   <MBBS_MenuLocked>A játék menügombjának zárolása a jobb szélen</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Amíg zárolva van, a menügomb nem rejthető el, nem mozgatható és nem tehető a fiókba; csak átnevezni lehet.</MBBS_MenuLockedTip>
-  <MBBS_MenuUnlockedNote>A játék menügombjának zárolása fel lett oldva a Haladó fülön.</MBBS_MenuUnlockedNote>
-  <MBBS_MenuLockedNote>A játék menügombja a jobb szélen zárolva van, és csak átnevezni lehet. A zárolást a Haladó fülön, a „Teljes gombsor” sorban oldhatod fel.</MBBS_MenuLockedNote>
+  <MBBS_MenuUnlockedNote>A játék menügombjának zárolása fel lett oldva a Haladó nézetben.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>A játék menügombja a jobb szélen zárolva van, és csak átnevezni lehet. A zárolást a Haladó nézetben, a „Teljes gombsor” sorban oldhatod fel.</MBBS_MenuLockedNote>
   <MBBS_Info_ButtonSource>Gomb forrása: {0}</MBBS_Info_ButtonSource>
   <MBBS_Info_IconSource>Ikon forrása: {0}</MBBS_Info_IconSource>
   <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
@@ -63,7 +63,7 @@
   <MBBS_Save>Mentés</MBBS_Save>
   <MBBS_Compat_TheirsNotice>Észlelt mod: {0}. Jelenleg az irányítja a gombsort, ezért az itteni változtatások csak akkor lépnek érvénybe, ha ez a mod kap elsőbbséget.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Észlelt mod: {0}. Ez a mod élvez elsőbbséget, ezért annak a gombsorra gyakorolt hatása ki van kapcsolva.</MBBS_Compat_OursNotice>
-  <MBBS_Compat_SeeAdvanced>Részletek a Haladó fülön.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_SeeAdvanced>Részletek a Haladó nézetben.</MBBS_Compat_SeeAdvanced>
   <MBBS_Compat_Header>Kompatibilitás: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Ez a mod az első</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Ez a mod rajzolja a gombsort. A(z) {0} gombsorra gyakorolt hatása ki van kapcsolva; a beállításai csak referenciaértékként szolgálnak.</MBBS_Compat_Ours_Desc>
