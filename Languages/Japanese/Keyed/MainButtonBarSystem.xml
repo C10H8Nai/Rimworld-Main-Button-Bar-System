@@ -11,6 +11,7 @@
   <MBBS_Title_Template>メインボタンバーの設定(デフォルトテンプレート)</MBBS_Title_Template>
   <MBBS_View_Simple>基本</MBBS_View_Simple>
   <MBBS_View_Advanced>詳細</MBBS_View_Advanced>
+  <MBBS_ViewTip>「詳細」では設定項目が増えます: 幅,位置の固定,ラベルの位置揃え,ホットキー,互換性.この選択はすべてのセーブデータで共通です.</MBBS_ViewTip>
   <MBBS_Col_Visible>表示</MBBS_Col_Visible>
   <MBBS_Col_Icon>アイコン</MBBS_Col_Icon>
   <MBBS_Col_Name>名前</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>中央揃え</MBBS_Align_Center>
   <MBBS_Align_Right>右揃え</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>ゲーム本体のアセット</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>ボタン</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>外観</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>テーマ</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>テーマはバーとボタンの見た目を変更します.Main Button Bar Systemを前提MODに指定しているテーマMODもここに表示されます.選択はこのセーブデータと一緒に保存されます(タイトル画面ではテンプレートに保存されます).</MBBS_ThemeHeaderTip>

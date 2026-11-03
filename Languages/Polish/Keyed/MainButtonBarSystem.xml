@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Ustawienia dolnego paska (domyślny szablon)</MBBS_Title_Template>
   <MBBS_View_Simple>Podstawowe</MBBS_View_Simple>
   <MBBS_View_Advanced>Zaawansowane</MBBS_View_Advanced>
+  <MBBS_ViewTip>Widok „Zaawansowane” pokazuje więcej opcji: szerokości, stałe pozycje, wyrównanie napisów, skróty klawiszowe i kompatybilność. Ten wybór obowiązuje we wszystkich zapisach.</MBBS_ViewTip>
   <MBBS_Col_Visible>Pokaż</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikona</MBBS_Col_Icon>
   <MBBS_Col_Name>Nazwa</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Do środka</MBBS_Align_Center>
   <MBBS_Align_Right>Do prawej</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>zasoby samej gry</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Przyciski</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Wygląd</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Motyw</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Motywy zmieniają wygląd paska i jego przycisków. Pojawiają się tu też mody z motywami, które mają Main Button Bar System jako zależność. Wybór jest przechowywany w tym zapisie (lub w szablonie, gdy okno otwarto z menu głównego).</MBBS_ThemeHeaderTip>

@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Põhinuppude riba seaded (vaikemall)</MBBS_Title_Template>
   <MBBS_View_Simple>Lihtne</MBBS_View_Simple>
   <MBBS_View_Advanced>Täpsem</MBBS_View_Advanced>
+  <MBBS_ViewTip>„Täpsem“ näitab rohkem valikuid: laiused, fikseeritud asukohad, teksti joondus, kiirklahvid ja ühilduvus. Valik on ühine kõigile salvestustele.</MBBS_ViewTip>
   <MBBS_Col_Visible>Näita</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikoon</MBBS_Col_Icon>
   <MBBS_Col_Name>Nimi</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Keskel</MBBS_Align_Center>
   <MBBS_Align_Right>Parem</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>mängu enda ressursid</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Nupud</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Välimus</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Teema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Teemad muudavad riba ja selle nuppude välimust. Siin on ka teemamodifikatsioonid, mille sõltuvuseks on Main Button Bar System. Valik salvestatakse koos selle salvestusega (või peamenüüs koos malliga).</MBBS_ThemeHeaderTip>

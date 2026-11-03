@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Inställningar för huvudknappsfältet (standardmall)</MBBS_Title_Template>
   <MBBS_View_Simple>Enkel</MBBS_View_Simple>
   <MBBS_View_Advanced>Avancerat</MBBS_View_Advanced>
+  <MBBS_ViewTip>Avancerat visar fler inställningar: bredder, fasta positioner, textjustering, snabbtangenter och kompatibilitet. Valet är gemensamt för alla sparfiler.</MBBS_ViewTip>
   <MBBS_Col_Visible>Visa</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
   <MBBS_Col_Name>Namn</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Centrerad</MBBS_Align_Center>
   <MBBS_Align_Right>Höger</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>spelets egna resurser</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Knappar</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Utseende</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Teman ändrar hur fältet och dess knappar ser ut. Temamoddar som har Main Button Bar System som beroende visas också här. Valet sparas med denna sparfil (eller med mallen i huvudmenyn).</MBBS_ThemeHeaderTip>

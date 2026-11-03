@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Impostazioni della barra principale (modello predefinito)</MBBS_Title_Template>
   <MBBS_View_Simple>Semplice</MBBS_View_Simple>
   <MBBS_View_Advanced>Avanzate</MBBS_View_Advanced>
+  <MBBS_ViewTip>In Avanzate compaiono più opzioni: larghezze, posizioni fisse, allineamento delle etichette, tasti rapidi e compatibilità. La scelta è condivisa da tutti i salvataggi.</MBBS_ViewTip>
   <MBBS_Col_Visible>Mostra</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icona</MBBS_Col_Icon>
   <MBBS_Col_Name>Nome</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Centro</MBBS_Align_Center>
   <MBBS_Align_Right>Destra</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>risorse del gioco</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Pulsanti</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Aspetto</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>I temi cambiano l'aspetto della barra e dei suoi pulsanti. Qui compaiono anche le mod di temi che indicano Main Button Bar System come dipendenza. La scelta viene memorizzata in questo salvataggio (o nel modello, se fatta dal menù principale).</MBBS_ThemeHeaderTip>

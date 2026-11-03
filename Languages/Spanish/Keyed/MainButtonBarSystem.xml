@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Configuración de la barra principal (plantilla predeterminada)</MBBS_Title_Template>
   <MBBS_View_Simple>Básico</MBBS_View_Simple>
   <MBBS_View_Advanced>Avanzado</MBBS_View_Advanced>
+  <MBBS_ViewTip>El modo Avanzado muestra más opciones: anchos, posiciones fijas, alineación del texto, atajos y compatibilidad. La elección es común a todas las partidas.</MBBS_ViewTip>
   <MBBS_Col_Visible>Mostrar</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icono</MBBS_Col_Icon>
   <MBBS_Col_Name>Nombre</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Centro</MBBS_Align_Center>
   <MBBS_Align_Right>Derecha</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>recursos del propio juego</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Botones</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Aspecto</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Los temas cambian el aspecto de la barra y de sus botones. Aquí también aparecen los mods de temas que tienen Main Button Bar System como dependencia. La elección se guarda con esta partida (o con la plantilla, desde el menú principal).</MBBS_ThemeHeaderTip>

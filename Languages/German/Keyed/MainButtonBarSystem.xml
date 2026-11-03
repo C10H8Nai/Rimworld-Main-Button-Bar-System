@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Einstellungen der Hauptleiste (Standardvorlage)</MBBS_Title_Template>
   <MBBS_View_Simple>Einfach</MBBS_View_Simple>
   <MBBS_View_Advanced>Erweitert</MBBS_View_Advanced>
+  <MBBS_ViewTip>„Erweitert“ zeigt weitere Optionen: Breiten, feste Positionen, Ausrichtung der Beschriftung, Tastenkürzel und Kompatibilität. Die Auswahl gilt für alle Spielstände.</MBBS_ViewTip>
   <MBBS_Col_Visible>Anzeigen</MBBS_Col_Visible>
   <MBBS_Col_Icon>Symbol</MBBS_Col_Icon>
   <MBBS_Col_Name>Name</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Mitte</MBBS_Align_Center>
   <MBBS_Align_Right>Rechts</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>Ressourcen des Spiels</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Schaltflächen</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Aussehen</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Design</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Designs ändern das Aussehen der Leiste und ihrer Schaltflächen. Design-Mods, die Main Button Bar System als Abhängigkeit angeben, erscheinen ebenfalls hier. Die Auswahl wird mit diesem Spielstand gespeichert (im Hauptmenü mit der Vorlage).</MBBS_ThemeHeaderTip>

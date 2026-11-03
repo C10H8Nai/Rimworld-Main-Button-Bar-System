@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Ρυθμίσεις γραμμής βασικών κουμπιών (προεπιλεγμένο πρότυπο)</MBBS_Title_Template>
   <MBBS_View_Simple>Απλές</MBBS_View_Simple>
   <MBBS_View_Advanced>Σύνθετες</MBBS_View_Advanced>
+  <MBBS_ViewTip>Στις Σύνθετες εμφανίζονται περισσότερες επιλογές: πλάτη, σταθερές θέσεις, στοίχιση ετικετών, πλήκτρα συντόμευσης και συμβατότητα. Η επιλογή είναι κοινή για όλες τις αποθηκεύσεις.</MBBS_ViewTip>
   <MBBS_Col_Visible>Ορατό</MBBS_Col_Visible>
   <MBBS_Col_Icon>Εικονίδιο</MBBS_Col_Icon>
   <MBBS_Col_Name>Όνομα</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Κέντρο</MBBS_Align_Center>
   <MBBS_Align_Right>Δεξιά</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>τα αρχεία του ίδιου του παιχνιδιού</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Κουμπιά</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Εμφάνιση</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Θέμα</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Τα θέματα αλλάζουν την εμφάνιση της γραμμής και των κουμπιών της. Εδώ εμφανίζονται επίσης mods θεμάτων που δηλώνουν το Main Button Bar System ως εξάρτηση. Η επιλογή αποθηκεύεται μαζί με αυτή την αποθήκευση (ή με το πρότυπο, στο κύριο μενού).</MBBS_ThemeHeaderTip>

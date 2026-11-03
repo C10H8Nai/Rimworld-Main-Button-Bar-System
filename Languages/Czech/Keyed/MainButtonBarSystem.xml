@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Nastavení dolní lišty (výchozí šablona)</MBBS_Title_Template>
   <MBBS_View_Simple>Základní</MBBS_View_Simple>
   <MBBS_View_Advanced>Pokročilé</MBBS_View_Advanced>
+  <MBBS_ViewTip>Režim „Pokročilé“ zobrazí další možnosti: šířky, pevné pozice, zarovnání popisků, klávesové zkratky a kompatibilitu. Volba platí pro všechny uložené pozice.</MBBS_ViewTip>
   <MBBS_Col_Visible>Zobrazit</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikona</MBBS_Col_Icon>
   <MBBS_Col_Name>Název</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Na střed</MBBS_Align_Center>
   <MBBS_Align_Right>Vpravo</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>vlastní soubory hry</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Tlačítka</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Vzhled</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Motiv</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Motivy mění vzhled lišty a jejích tlačítek. Objeví se tu i mody s motivy, které mají Main Button Bar System jako závislost. Volba se ukládá s touto uloženou pozicí (nebo se šablonou, pokud je okno otevřené z hlavního menu).</MBBS_ThemeHeaderTip>

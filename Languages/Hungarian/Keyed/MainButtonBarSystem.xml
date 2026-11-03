@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Főgombsor beállításai (alapértelmezett sablon)</MBBS_Title_Template>
   <MBBS_View_Simple>Egyszerű</MBBS_View_Simple>
   <MBBS_View_Advanced>Haladó</MBBS_View_Advanced>
+  <MBBS_ViewTip>A Haladó nézet több beállítást mutat: szélességek, rögzített helyek, feliratok igazítása, gyorsbillentyűk és kompatibilitás. A választás minden mentésre közös.</MBBS_ViewTip>
   <MBBS_Col_Visible>Látható</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
   <MBBS_Col_Name>Név</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Középre</MBBS_Align_Center>
   <MBBS_Align_Right>Jobbra</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>a játék saját erőforrásai</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Gombok</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Megjelenés</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Téma</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>A témák a gombsor és a gombjai kinézetét változtatják meg. Azok a témamodok is itt jelennek meg, amelyek függőségként jelölik meg a Main Button Bar System modot. A választás ezzel a mentéssel együtt tárolódik (a főmenüben pedig a sablonnal).</MBBS_ThemeHeaderTip>

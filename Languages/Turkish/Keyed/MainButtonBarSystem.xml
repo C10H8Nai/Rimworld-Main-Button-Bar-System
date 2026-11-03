@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Ana buton barı ayarları (varsayılan şablon)</MBBS_Title_Template>
   <MBBS_View_Simple>Basit</MBBS_View_Simple>
   <MBBS_View_Advanced>Gelişmiş</MBBS_View_Advanced>
+  <MBBS_ViewTip>Gelişmiş görünüm daha fazla seçenek gösterir: genişlikler, sabit konumlar, yazı hizalama, kısayollar ve uyumluluk. Bu seçim tüm kayıtlarda ortaktır.</MBBS_ViewTip>
   <MBBS_Col_Visible>Göster</MBBS_Col_Visible>
   <MBBS_Col_Icon>İkon</MBBS_Col_Icon>
   <MBBS_Col_Name>İsim</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Orta</MBBS_Align_Center>
   <MBBS_Align_Right>Sağ</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>oyunun kendi dosyaları</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Butonlar</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Görünüm</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Temalar, barın ve butonlarının görünümünü değiştirir. Main Button Bar System'i bağımlılık olarak listeleyen tema modları da burada görünür. Seçim bu kayıtla birlikte saklanır (ana menüdeyken şablonla birlikte).</MBBS_ThemeHeaderTip>

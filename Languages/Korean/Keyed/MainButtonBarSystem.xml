@@ -11,6 +11,7 @@
   <MBBS_Title_Template>주요 버튼 바 설정 (기본 템플릿)</MBBS_Title_Template>
   <MBBS_View_Simple>기본</MBBS_View_Simple>
   <MBBS_View_Advanced>고급</MBBS_View_Advanced>
+  <MBBS_ViewTip>'고급'을 선택하면 너비, 위치 고정, 글자 정렬, 단축키, 호환성 옵션이 추가로 표시됩니다. 이 선택은 모든 저장 파일에서 공유됩니다.</MBBS_ViewTip>
   <MBBS_Col_Visible>표시</MBBS_Col_Visible>
   <MBBS_Col_Icon>아이콘</MBBS_Col_Icon>
   <MBBS_Col_Name>이름</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>가운데</MBBS_Align_Center>
   <MBBS_Align_Right>오른쪽</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>게임 자체 리소스</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>버튼</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>외형</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>테마</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>테마는 바와 버튼의 모양을 바꿉니다. Main Button Bar System을 선행 모드로 지정한 테마 모드도 여기에 표시됩니다. 선택한 테마는 현재 저장 파일에 함께 저장됩니다 (주 메뉴에서는 템플릿에 저장).</MBBS_ThemeHeaderTip>

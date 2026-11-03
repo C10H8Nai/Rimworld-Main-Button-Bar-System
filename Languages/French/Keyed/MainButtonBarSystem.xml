@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Paramètres de la barre principale (modèle par défaut)</MBBS_Title_Template>
   <MBBS_View_Simple>Simple</MBBS_View_Simple>
   <MBBS_View_Advanced>Avancé</MBBS_View_Advanced>
+  <MBBS_ViewTip>Le mode Avancé affiche plus d'options : largeurs, positions fixes, alignement des libellés, raccourcis et compatibilité. Ce choix est commun à toutes les parties.</MBBS_ViewTip>
   <MBBS_Col_Visible>Afficher</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icône</MBBS_Col_Icon>
   <MBBS_Col_Name>Nom</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Centre</MBBS_Align_Center>
   <MBBS_Align_Right>Droite</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>ressources du jeu</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Boutons</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Apparence</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Thème</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Les thèmes changent l'apparence de la barre et de ses boutons. Les mods de thème qui indiquent Main Button Bar System comme dépendance apparaissent aussi ici. Le choix est sauvegardé avec cette partie (ou avec le modèle depuis le menu principal).</MBBS_ThemeHeaderTip>

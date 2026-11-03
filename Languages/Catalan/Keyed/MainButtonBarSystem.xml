@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Configuració de la barra de botons principals (plantilla per defecte)</MBBS_Title_Template>
   <MBBS_View_Simple>Senzill</MBBS_View_Simple>
   <MBBS_View_Advanced>Avançat</MBBS_View_Advanced>
+  <MBBS_ViewTip>El mode Avançat mostra més opcions: amplades, posicions fixes, alineació del text, dreceres i compatibilitat. L’elecció es comparteix entre totes les partides.</MBBS_ViewTip>
   <MBBS_Col_Visible>Mostra</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icona</MBBS_Col_Icon>
   <MBBS_Col_Name>Nom</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Centre</MBBS_Align_Center>
   <MBBS_Align_Right>Dreta</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>els recursos del mateix joc</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Botons</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Aparença</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Els temes canvien l’aspecte de la barra i dels seus botons. Els mods de temes que tenen Main Button Bar System com a dependència també apareixen aquí. L’elecció es desa amb aquesta partida (o amb la plantilla, si l’obriu des del menú principal).</MBBS_ThemeHeaderTip>

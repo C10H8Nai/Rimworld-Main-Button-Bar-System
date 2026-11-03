@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Setările barei de butoane principale (șablon implicit)</MBBS_Title_Template>
   <MBBS_View_Simple>Simplu</MBBS_View_Simple>
   <MBBS_View_Advanced>Avansat</MBBS_View_Advanced>
+  <MBBS_ViewTip>Modul Avansat afișează mai multe opțiuni: lățimi, poziții fixe, alinierea textului, taste rapide și compatibilitate. Alegerea este comună pentru toate salvările.</MBBS_ViewTip>
   <MBBS_Col_Visible>Vizibil</MBBS_Col_Visible>
   <MBBS_Col_Icon>Pictogramă</MBBS_Col_Icon>
   <MBBS_Col_Name>Nume</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Centru</MBBS_Align_Center>
   <MBBS_Align_Right>Dreapta</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>resursele proprii ale jocului</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Butoane</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Aspect</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Temă</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Temele schimbă aspectul barei și al butoanelor ei. Modurile de teme care au Main Button Bar System ca dependență apar și ele aici. Alegerea este păstrată în această salvare (sau în șablon, când deschizi setările din meniul principal).</MBBS_ThemeHeaderTip>

@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Innstillinger for hovedknapplinjen (standardmal)</MBBS_Title_Template>
   <MBBS_View_Simple>Enkel</MBBS_View_Simple>
   <MBBS_View_Advanced>Avansert</MBBS_View_Advanced>
+  <MBBS_ViewTip>Avansert viser flere innstillinger: bredder, faste plasseringer, tekstjustering, hurtigtaster og kompatibilitet. Valget er felles for alle lagrede spill.</MBBS_ViewTip>
   <MBBS_Col_Visible>Vis</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
   <MBBS_Col_Name>Navn</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Midtstilt</MBBS_Align_Center>
   <MBBS_Align_Right>Høyre</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>spillets egne ressurser</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Knapper</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Utseende</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Temaer endrer hvordan linjen og knappene ser ut. Tema-mods som har Main Button Bar System som avhengighet, vises også her. Valget lagres med dette lagrede spillet (eller med malen i hovedmenyen).</MBBS_ThemeHeaderTip>

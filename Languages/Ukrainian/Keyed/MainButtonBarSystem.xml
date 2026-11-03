@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Налаштування нижньої панелі (стандартний шаблон)</MBBS_Title_Template>
   <MBBS_View_Simple>Основні</MBBS_View_Simple>
   <MBBS_View_Advanced>Розширені</MBBS_View_Advanced>
+  <MBBS_ViewTip>У режимі «Розширені» доступно більше налаштувань: ширина, закріплення, вирівнювання написів, клавіші та сумісність. Вибір спільний для всіх збережень.</MBBS_ViewTip>
   <MBBS_Col_Visible>Показ</MBBS_Col_Visible>
   <MBBS_Col_Icon>Іконка</MBBS_Col_Icon>
   <MBBS_Col_Name>Назва</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>По центру</MBBS_Align_Center>
   <MBBS_Align_Right>Праворуч</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>ресурси самої гри</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Кнопки</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Вигляд</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Тема</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Теми змінюють вигляд панелі та її кнопок. Тут також з'являються моди тем, у яких Main Button Bar System указано в залежностях. Вибір зберігається в цьому збереженні (або в шаблоні, якщо вікно відкрито з головного меню).</MBBS_ThemeHeaderTip>

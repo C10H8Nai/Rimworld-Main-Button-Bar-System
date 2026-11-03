@@ -11,6 +11,7 @@
   <MBBS_Title_Template>Indstillinger for hovedknaplinjen (standardskabelon)</MBBS_Title_Template>
   <MBBS_View_Simple>Enkel</MBBS_View_Simple>
   <MBBS_View_Advanced>Avanceret</MBBS_View_Advanced>
+  <MBBS_ViewTip>Avanceret viser flere indstillinger: bredder, faste placeringer, tekstjustering, genvejstaster og kompatibilitet. Valget er fælles for alle gemte spil.</MBBS_ViewTip>
   <MBBS_Col_Visible>Vis</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
   <MBBS_Col_Name>Navn</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Centreret</MBBS_Align_Center>
   <MBBS_Align_Right>Højre</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>spillets egne ressourcer</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Knapper</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Udseende</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Temaer ændrer, hvordan linjen og dens knapper ser ud. Tema-mods, der har Main Button Bar System som afhængighed, vises også her. Valget gemmes med dette gemte spil (eller med skabelonen i hovedmenuen).</MBBS_ThemeHeaderTip>
