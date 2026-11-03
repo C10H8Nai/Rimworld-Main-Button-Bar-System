@@ -9,7 +9,7 @@ namespace MainButtonBarSystem
 
         public MainButtonBarSystemMod(ModContentPack content) : base(content)
         {
-            new Harmony(HarmonyId).PatchAll();
+            new Harmony(HarmonyId).PatchAll(typeof(MainButtonBarSystemMod).Assembly);
             Log.Message("[Main Button Bar System] Loaded.");
         }
     }
