@@ -24,7 +24,7 @@ RimWorld 1.7 模組。自訂遊戲畫面底部的主按鈕列：排序、隱藏�
 |---|---|
 | `About/` | 模組名稱、作者、支援版本、前置模組 |
 | `1.7/Assemblies/` | 編譯好的 `MainButtonBarSystem.dll`（提交進 repo，讓 repo 直接可用） |
-| `Defs/` | 內建的顯示方式、外觀、相容橋接（都是積木插槽的 Def） |
+| `Defs/` | 內建的顯示方式、外觀、相容橋接（都是積木插槽的 Def），以及所有可調參數 `Tuning.xml`（程式裡不寫死任何參數） |
 | `Languages/` | 英文、简体中文、繁體中文翻譯（Keyed 由 `tools/gen_translations.py` 產生） |
 | `Source/MainButtonBarSystem/` | C# 原始碼；`Core/` 是不依賴遊戲的純邏輯（版面計算、排序合併） |
 | `Source/MainButtonBarSystem.Tests/` | `Core/` 的單元測試，不需要遊戲就能跑 |

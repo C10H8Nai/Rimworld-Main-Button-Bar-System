@@ -45,25 +45,29 @@ namespace MainButtonBarSystem.Core
         }
     }
 
+    /// <summary>
+    /// Inputs of the layout. There are no built-in values: callers pass everything (the mod reads them from its
+    /// tuning def and the player's settings).
+    /// </summary>
     public sealed class LayoutOptions
     {
-        public DisplayMode Mode = DisplayMode.Vanilla;
+        public DisplayMode Mode;
         public int BarWidth;
 
         /// <summary>Natural width of a full button when it has no override (natural-width layouts only).</summary>
-        public int DefaultWidth = 120;
+        public int DefaultWidth;
 
         /// <summary>No full button is narrower than this in natural-width layouts; half buttons get half.</summary>
-        public int MinWidth = 80;
+        public int MinWidth;
 
         /// <summary>Space between neighbouring buttons. Vanilla mode ignores it.</summary>
         public int Gap;
 
         /// <summary>Stretch buttons to fill the available width when they fit.</summary>
-        public bool FillScreen = true;
+        public bool FillScreen;
 
-        public int MoreButtonWidth = 70;
-        public int ArrowWidth = 24;
+        public int MoreButtonWidth;
+        public int ArrowWidth;
     }
 
     public readonly struct PlacedItem

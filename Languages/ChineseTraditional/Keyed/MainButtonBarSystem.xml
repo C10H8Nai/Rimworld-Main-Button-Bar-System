@@ -46,7 +46,6 @@
   <MBBS_Visible>顯示在列上</MBBS_Visible>
   <MBBS_InDrawer>收進「更多」抽屜</MBBS_InDrawer>
   <MBBS_CustomName>自訂名稱（留空＝原本的名稱：{0}）</MBBS_CustomName>
-  <MBBS_ResetName>還原</MBBS_ResetName>
   <MBBS_ButtonWidth>寬度：{0}px</MBBS_ButtonWidth>
   <MBBS_ButtonWidthFollow>寬度：跟整條列</MBBS_ButtonWidthFollow>
   <MBBS_Pin>固定位置</MBBS_Pin>
@@ -99,4 +98,23 @@
   <MBBS_Import_Unsafe>這段文字要求建立程式類別，排法不需要這個，所以沒有匯入。</MBBS_Import_Unsafe>
   <MBBS_Import_TooNew>由較新版本的本模組製作（格式 {0}，此版本最多讀 {1}）。請先更新模組。</MBBS_Import_TooNew>
   <MBBS_Import_Failed>無法讀取排法：{0}</MBBS_Import_Failed>
+  <MBBS_Default>預設值</MBBS_Default>
+  <MBBS_DefaultTip>恢復成預設值。</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>抽屜</MBBS_Section_Drawer>
+  <MBBS_Section_Size>寬度與間距</MBBS_Section_Size>
+  <MBBS_ArrowWidth>捲動箭頭寬度：{0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>滑鼠滾輪速度：每格 {0}px</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>「更多」按鈕寬度：{0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>「更多」按鈕寬度：依文字自動</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>抽屜欄數：{0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>抽屜欄數：自動</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>抽屜格寬：{0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>抽屜格寬：跟按鈕預設寬度</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>文字對齊</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>按鈕文字的位置。只顯示圖示的按鈕不受影響。</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>照遊戲原本的</MBBS_Align_Default>
+  <MBBS_Align_Left>靠左</MBBS_Align_Left>
+  <MBBS_Align_Center>置中</MBBS_Align_Center>
+  <MBBS_Align_Right>靠右</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>遊戲本體資源</MBBS_IconFromGameAssets>
 </LanguageData>

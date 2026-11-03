@@ -29,7 +29,7 @@ namespace MainButtonBarSystem
             }
         }
 
-        public static bool IsLocked(BarConfig config, string defName) => config.menuLocked && defName == MenuDefName;
+        public static bool IsLocked(BarConfig config, string defName) => config.MenuLocked && defName == MenuDefName;
 
         public static PinPosition PinOf(BarConfig config, string defName) =>
             IsLocked(config, defName) ? PinPosition.Right : config.Get(defName).pin;

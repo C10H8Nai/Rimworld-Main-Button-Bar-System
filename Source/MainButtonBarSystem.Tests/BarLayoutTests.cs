@@ -7,6 +7,17 @@ namespace MainButtonBarSystem.Tests
 {
     public class BarLayoutTests
     {
+        /// <summary>Values every test shares unless it sets its own: fill on, 120/80 widths, 70px More, 24px arrows.</summary>
+        private static LayoutOptions Opt(LayoutOptions o, bool fill = true)
+        {
+            o.FillScreen = fill;
+            if (o.DefaultWidth == 0) o.DefaultWidth = 120;
+            if (o.MinWidth == 0) o.MinWidth = 80;
+            if (o.MoreButtonWidth == 0) o.MoreButtonWidth = 70;
+            if (o.ArrowWidth == 0) o.ArrowWidth = 24;
+            return o;
+        }
+
         private static List<LayoutItem> Items(params string[] keys) => keys.Select(k => new LayoutItem(k)).ToList();
 
         private static IEnumerable<PlacedItem> AllInBarCoordinates(LayoutResult r) =>
@@ -19,7 +30,7 @@ namespace MainButtonBarSystem.Tests
         [Fact]
         public void Vanilla_SplitsEvenly_LastTakesRemainder()
         {
-            var r = BarLayout.Compute(Items("a", "b", "c"), new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 1000 });
+            var r = BarLayout.Compute(Items("a", "b", "c"), Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 1000 }));
 
             Assert.Equal(new[] { 333, 333, 334 }, r.Center.Select(c => c.Width));
             Assert.Equal(new[] { 0, 333, 666 }, r.Center.Select(c => c.X));
@@ -31,7 +42,7 @@ namespace MainButtonBarSystem.Tests
         public void Vanilla_MinimizedGetsHalfOfFullWidth()
         {
             var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("half", minimized: true), new LayoutItem("c") };
-            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 1000 });
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 1000 }));
 
             // 2.5 units -> full = 400, half = 200, last takes 1000 - 600.
             Assert.Equal(new[] { 400, 200, 400 }, r.Center.Select(c => c.Width));
@@ -41,7 +52,7 @@ namespace MainButtonBarSystem.Tests
         public void Vanilla_IgnoresGapAndDrawer()
         {
             var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b", inDrawer: true) };
-            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 100, Gap = 10 });
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 100, Gap = 10 }));
 
             Assert.Equal(new[] { "a", "b" }, r.Center.Select(c => c.Key));
             Assert.Equal(new[] { 50, 50 }, r.Center.Select(c => c.Width));
@@ -58,7 +69,7 @@ namespace MainButtonBarSystem.Tests
                 new LayoutItem("first", pin: PinPosition.Left),
                 new LayoutItem("b"),
             };
-            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 400 });
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 400 }));
 
             var placed = AllInBarCoordinates(r).ToList();
             Assert.Equal(new[] { "first", "a", "b", "menu" }, placed.Select(p => p.Key));
@@ -69,7 +80,7 @@ namespace MainButtonBarSystem.Tests
         [Fact]
         public void Empty_ProducesEmptyResult()
         {
-            var r = BarLayout.Compute(new List<LayoutItem>(), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 500 });
+            var r = BarLayout.Compute(new List<LayoutItem>(), Opt(new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 500 }));
 
             Assert.Empty(r.Center);
             Assert.False(r.NeedsScroll);
@@ -86,7 +97,7 @@ namespace MainButtonBarSystem.Tests
                 new LayoutItem("c"),
                 new LayoutItem("menu", pin: PinPosition.Right, inDrawer: true),
             };
-            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 400 });
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 400 }));
 
             Assert.Equal(new[] { "b" }, r.Drawer);
             Assert.Equal(new[] { "a", "c" }, r.Center.Select(c => c.Key));
@@ -100,7 +111,7 @@ namespace MainButtonBarSystem.Tests
         [Fact]
         public void Collapse_WithoutDrawerItems_HasNoMoreButton()
         {
-            var r = BarLayout.Compute(Items("a", "b"), new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 200 });
+            var r = BarLayout.Compute(Items("a", "b"), Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 200 }));
 
             Assert.Null(r.More);
             Assert.Empty(r.Drawer);
@@ -109,7 +120,7 @@ namespace MainButtonBarSystem.Tests
         [Fact]
         public void Collapse_WithoutFill_UsesNaturalWidthsAndNeverScrolls()
         {
-            var r = BarLayout.Compute(Items("a", "b", "c"), new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 200, FillScreen = false, DefaultWidth = 100, MinWidth = 50 });
+            var r = BarLayout.Compute(Items("a", "b", "c"), Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 200, DefaultWidth = 100, MinWidth = 50 }, fill: false));
 
             Assert.Equal(new[] { 100, 100, 100 }, r.Center.Select(c => c.Width));
             Assert.False(r.NeedsScroll);
@@ -119,7 +130,7 @@ namespace MainButtonBarSystem.Tests
         public void Scroll_DrawerFlagIgnored()
         {
             var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b", inDrawer: true) };
-            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000 });
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000 }));
 
             Assert.Empty(r.Drawer);
             Assert.Null(r.More);
@@ -129,7 +140,7 @@ namespace MainButtonBarSystem.Tests
         [Fact]
         public void Scroll_FitsAndFills()
         {
-            var r = BarLayout.Compute(Items("a", "b", "c"), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 900, DefaultWidth = 100, MinWidth = 80 });
+            var r = BarLayout.Compute(Items("a", "b", "c"), Opt(new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 900, DefaultWidth = 100, MinWidth = 80 }));
 
             Assert.False(r.NeedsScroll);
             Assert.Equal(new[] { 300, 300, 300 }, r.Center.Select(c => c.Width));
@@ -139,7 +150,7 @@ namespace MainButtonBarSystem.Tests
         [Fact]
         public void Scroll_FitsWithoutFill_KeepsNaturalWidth()
         {
-            var r = BarLayout.Compute(Items("a", "b"), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 900, DefaultWidth = 100, MinWidth = 80, FillScreen = false });
+            var r = BarLayout.Compute(Items("a", "b"), Opt(new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 900, DefaultWidth = 100, MinWidth = 80 }, fill: false));
 
             Assert.Equal(new[] { 100, 100 }, r.Center.Select(c => c.Width));
             Assert.Equal(200, r.ContentWidth);
@@ -149,7 +160,7 @@ namespace MainButtonBarSystem.Tests
         public void Scroll_OverflowReservesArrowsAndScrolls()
         {
             var keys = Enumerable.Range(0, 20).Select(i => "b" + i).ToArray();
-            var r = BarLayout.Compute(Items(keys), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 80, ArrowWidth = 24 });
+            var r = BarLayout.Compute(Items(keys), Opt(new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 80, ArrowWidth = 24 }));
 
             Assert.True(r.NeedsScroll);
             Assert.Equal(2000, r.ContentWidth);
@@ -165,7 +176,7 @@ namespace MainButtonBarSystem.Tests
         public void Scroll_MinWidthWinsOverSmallerDefault()
         {
             var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("half", minimized: true), new LayoutItem("custom", width: 30) };
-            var o = new LayoutOptions { Mode = DisplayMode.Scroll, DefaultWidth = 60, MinWidth = 100 };
+            var o = Opt(new LayoutOptions { Mode = DisplayMode.Scroll, DefaultWidth = 60, MinWidth = 100 });
 
             Assert.Equal(100, BarLayout.NaturalWidth(items[0], o));
             Assert.Equal(50, BarLayout.NaturalWidth(items[1], o));
@@ -175,7 +186,7 @@ namespace MainButtonBarSystem.Tests
         [Fact]
         public void Scroll_ExplicitWidthAboveMinimumIsKept()
         {
-            var o = new LayoutOptions { Mode = DisplayMode.Scroll, DefaultWidth = 120, MinWidth = 80 };
+            var o = Opt(new LayoutOptions { Mode = DisplayMode.Scroll, DefaultWidth = 120, MinWidth = 80 });
 
             Assert.Equal(200, BarLayout.NaturalWidth(new LayoutItem("w", width: 200), o));
             Assert.Equal(60, BarLayout.NaturalWidth(new LayoutItem("h", minimized: true), o));
@@ -190,7 +201,7 @@ namespace MainButtonBarSystem.Tests
             items.Add(new LayoutItem("menu", pin: PinPosition.Right));
             items[5].InDrawer = true;
 
-            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.CollapseScroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 80, MoreButtonWidth = 70, ArrowWidth = 24, Gap = 0 });
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.CollapseScroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 80, MoreButtonWidth = 70, ArrowWidth = 24, Gap = 0 }));
 
             Assert.Equal(new PlacedItem("left", 0, 100).ToString(), r.Left.Single().ToString());
             Assert.Equal(new PlacedItem("menu", 900, 100).ToString(), r.Right.Single().ToString());
@@ -207,7 +218,7 @@ namespace MainButtonBarSystem.Tests
         public void Gap_IsAppliedBetweenButtonsAndAroundBlocks()
         {
             var items = new List<LayoutItem> { new LayoutItem("left", pin: PinPosition.Left), new LayoutItem("a"), new LayoutItem("b"), new LayoutItem("menu", pin: PinPosition.Right) };
-            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 50, Gap = 10, FillScreen = false });
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 50, Gap = 10 }, fill: false));
 
             Assert.Equal(110, r.ViewportX);
             Assert.Equal(1000 - 110 - 110, r.ViewportWidth);
@@ -219,7 +230,7 @@ namespace MainButtonBarSystem.Tests
         [Fact]
         public void Gap_FillStillSpansViewportExactly()
         {
-            var r = BarLayout.Compute(Items("a", "b", "c"), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 50, Gap = 10 });
+            var r = BarLayout.Compute(Items("a", "b", "c"), Opt(new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 50, Gap = 10 }));
 
             var last = r.Center.Last();
             Assert.Equal(r.ViewportWidth, last.X + last.Width);
@@ -232,7 +243,7 @@ namespace MainButtonBarSystem.Tests
         public void ClampScroll_StaysInRange(float offset, int expected)
         {
             var keys = Enumerable.Range(0, 20).Select(i => "b" + i).ToArray();
-            var r = BarLayout.Compute(Items(keys), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 80, ArrowWidth = 24 });
+            var r = BarLayout.Compute(Items(keys), Opt(new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 80, ArrowWidth = 24 }));
 
             Assert.Equal(expected, r.ClampScroll(offset));
         }
@@ -240,7 +251,7 @@ namespace MainButtonBarSystem.Tests
         [Fact]
         public void TinyBar_DoesNotProduceNegativeSizes()
         {
-            var r = BarLayout.Compute(Items("a", "b"), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 10, DefaultWidth = 100, MinWidth = 80, ArrowWidth = 24 });
+            var r = BarLayout.Compute(Items("a", "b"), Opt(new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 10, DefaultWidth = 100, MinWidth = 80, ArrowWidth = 24 }));
 
             Assert.True(r.ViewportWidth >= 0);
             Assert.True(r.ArrowWidth >= 0);

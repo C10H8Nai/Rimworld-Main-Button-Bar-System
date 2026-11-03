@@ -31,6 +31,9 @@ namespace MainButtonBarSystem
 
         /// <summary>Mod whose Textures folder supplies the icon; null when unresolved or no icon.</summary>
         public string IconSourceModName;
+
+        /// <summary>No mod folder has the icon, but the game loads it from its own asset bundles.</summary>
+        public bool IconFromGameAssets;
     }
 
     public static class ButtonBaseline
@@ -70,6 +73,8 @@ namespace MainButtonBarSystem
                     SourcePackageId = def.modContentPack?.PackageId,
                     IconSourceModName = string.IsNullOrEmpty(def.iconPath) ? null : iconSources.Resolve(def.iconPath),
                 };
+                if (!string.IsNullOrEmpty(def.iconPath) && entry.IconSourceModName == null)
+                    entry.IconFromGameAssets = ContentFinder<Texture2D>.Get(def.iconPath, false) != null;
                 byDefName[def.defName] = entry;
                 inVanillaOrder.Add(entry);
             }
