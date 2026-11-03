@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>original</Vanilla.label>
+  <Vanilla.description>Como no jogo base: a largura do ecrã é dividida em partes iguais. Sem deslocamento e sem gaveta.</Vanilla.description>
+  <Collapse.label>recolher</Collapse.label>
+  <Collapse.description>Os botões marcados em "Gaveta" passam para a gaveta "Mais"; os restantes partilham a barra.</Collapse.description>
+  <Scroll.label>deslocar</Scroll.label>
+  <Scroll.description>Os botões mantêm a largura; desloca a barra com a roda do rato ou com as setas. A gaveta não é usada.</Scroll.description>
+  <CollapseScroll.label>recolher + deslocar</CollapseScroll.label>
+  <CollapseScroll.description>A gaveta funciona como no modo Recolher; os restantes botões deslocam-se.</CollapseScroll.description>
+</LanguageData>

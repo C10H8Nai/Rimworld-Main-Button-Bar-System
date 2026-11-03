@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>origineel</Vanilla.label>
+  <Vanilla.description>Zoals in het basisspel: de schermbreedte wordt gelijk verdeeld. Geen scrollen en geen lade.</Vanilla.description>
+  <Collapse.label>inklappen</Collapse.label>
+  <Collapse.description>Knoppen met "Lade" aangevinkt gaan naar de "Meer"-lade; de rest deelt de balk.</Collapse.description>
+  <Scroll.label>scrollen</Scroll.label>
+  <Scroll.description>Knoppen houden hun breedte; scroll de balk met het muiswiel of de pijlen. De lade wordt niet gebruikt.</Scroll.description>
+  <CollapseScroll.label>inklappen + scrollen</CollapseScroll.label>
+  <CollapseScroll.description>De lade werkt zoals bij Inklappen; de overige knoppen scrollen.</CollapseScroll.description>
+</LanguageData>
