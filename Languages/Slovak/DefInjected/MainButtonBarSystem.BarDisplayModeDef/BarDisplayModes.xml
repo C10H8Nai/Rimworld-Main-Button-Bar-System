@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>ako v hre</Vanilla.label>
+  <Vanilla.description>Ako v základnej hre: šírka obrazovky sa delí rovnakým dielom. Bez posúvania a bez panelu „Viac“.</Vanilla.description>
+  <Collapse.label>zbalenie</Collapse.label>
+  <Collapse.description>Tlačidlá označené „Zbaliť“ sa presunú do panelu „Viac“; ostatné si delia lištu.</Collapse.description>
+  <Scroll.label>posúvanie</Scroll.label>
+  <Scroll.description>Tlačidlá si zachovajú šírku; lištu posúvate kolieskom myši alebo šípkami. Panel „Viac“ sa nepoužíva.</Scroll.description>
+  <CollapseScroll.label>zbalenie + posúvanie</CollapseScroll.label>
+  <CollapseScroll.description>Panel „Viac“ funguje ako v režime „Zbalenie“; zvyšné tlačidlá sa posúvajú.</CollapseScroll.description>
+</LanguageData>

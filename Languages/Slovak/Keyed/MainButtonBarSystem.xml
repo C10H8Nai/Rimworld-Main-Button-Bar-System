@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Viac ({0})</MBBS_More>
+  <MBBS_MoreTip>Tlačidlá zbalené do panelu „Viac“. Panel má dole vlastné tlačidlo nastavení.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Nastavenia dolnej lišty</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Otvorené v hre: zmeny platia pre aktuálnu uloženú hru.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Otvorené z hlavného menu: zmeny platia pre predvolenú šablónu, s ktorou začínajú nové hry.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Vždy vykresľovať lištu týmto modom (na testovanie)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Kým niečo nezmeníte, lištu vykresľuje samotná hra. Zapnite to, ak chcete porovnať vykresľovanie tohto modu a hry.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Nastavenia dolnej lišty (táto uložená hra)</MBBS_Title_Save>
+  <MBBS_Title_Template>Nastavenia dolnej lišty (predvolená šablóna)</MBBS_Title_Template>
+  <MBBS_Tab_Simple>Základné</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>Pokročilé</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>Zobraziť</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Ikona</MBBS_Col_Icon>
+  <MBBS_Col_Name>Názov</MBBS_Col_Name>
+  <MBBS_Col_Source>Z modu</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Kláves</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Zbaliť</MBBS_Col_Drawer>
+  <MBBS_BarRow>Celá lišta (predvolené)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Skryté vlastným modom ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Tieto tlačidlá ich mod zámerne nedáva na lištu. Ak chcete niektoré z nich umiestniť na lištu, zapnite „Vždy zobraziť“ na karte „Pokročilé“.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Nahor</MBBS_MoveUp>
+  <MBBS_MoveDown>Nadol</MBBS_MoveDown>
+  <MBBS_OrderHint>Zhora nadol = zľava doprava na obrazovke. Poradie zmeníte presúvaním riadkov.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(zamknuté)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(úplne vľavo)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(úplne vpravo)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Momentálne nie je na lište: vlastná podmienka tlačidla nie je splnená.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Režim zobrazenia</MBBS_DisplayMode>
+  <MBBS_MinWidth>Minimálna šírka tlačidla pri posúvaní: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Predvolená šírka tlačidla: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Medzera medzi tlačidlami: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Vyplniť šírku obrazovky</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Keď sa tlačidlá zmestia, roztiahnu sa na celú šírku.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Zamknúť tlačidlo „Menu“ úplne vpravo</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Zamknuté tlačidlo „Menu“ sa nedá skryť, presunúť ani zbaliť do panelu „Viac“; dá sa len premenovať.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Tlačidlo „Menu“ bolo odomknuté na karte „Pokročilé“.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Tlačidlo „Menu“ je zamknuté úplne vpravo a dá sa len premenovať. Odomknúť ho môžete na karte „Pokročilé“ v riadku „Celá lišta“.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Zdroj tlačidla: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Zdroj ikony: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Jeho mod ho zámerne nedáva na lištu; objaví sa len s voľbou „Vždy zobraziť“.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>žiadny</MBBS_None>
+  <MBBS_Unknown>neznámy</MBBS_Unknown>
+  <MBBS_Visible>Zobraziť na lište</MBBS_Visible>
+  <MBBS_InDrawer>Zbaliť do panelu „Viac“</MBBS_InDrawer>
+  <MBBS_CustomName>Vlastný názov (prázdne = pôvodný: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Šírka: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Šírka: rovnaká ako celá lišta</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Pevná pozícia</MBBS_Pin>
+  <MBBS_Pin_None>Žiadna</MBBS_Pin_None>
+  <MBBS_Pin_Left>Úplne vľavo</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Úplne vpravo</MBBS_Pin_Right>
+  <MBBS_ForceShow>Vždy zobraziť</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Zobrazí tlačidlo, aj keď by sa podľa jeho vlastnej podmienky zobraziť nemalo. Kliknutie naň potom nemusí nič urobiť.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Uložiť ako predvolenú šablónu</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Použiť predvolenú šablónu</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Uložené ako predvolená šablóna. Nové hry začnú s týmto usporiadaním.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Resetovať všetko</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Vrátiť všetky nastavenia na nedotknutú lištu (hra plus zmeny ostatných modov)? Šablóna sa tým nepoužije.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Uložiť</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>Zistený mod {0}: lištu teraz ovláda on, takže zmeny tu sa prejavia, len keď bude mať prednosť tento mod.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>Zistený mod {0}: prednosť má tento mod, takže vplyv modu {0} na lištu je vypnutý.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Podrobnosti nájdete na karte „Pokročilé“.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Kompatibilita: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Prednosť má tento mod</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Lištu vykresľuje tento mod. Vplyv modu {0} na lištu je vypnutý a jeho nastavenia slúžia len ako referenčné hodnoty.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>Prednosť má {0}</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>Lištu ponecháva {0}. Z tohto modu zostane len okno nastavení.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Prejaví sa po reštarte hry.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Importovať nastavenia z {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Usporiadanie z {0} bolo importované. Ak ho chcete zachovať, stlačte „Uložiť“.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Klávesová skratka: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Nastaviť</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Zmazať</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Platí pre všetky uložené hry; je to ten istý kláves ako v „Nastavenia &gt; Nastavenie klávesnice“.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Platí pre všetky uložené hry. Toto tlačidlo nemá položku v „Nastavenia &gt; Nastavenie klávesnice“, preto kláves uchováva tento mod.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Stlačte kláves (Esc na zrušenie)</MBBS_PressKey>
+  <MBBS_Export>Export...</MBBS_Export>
+  <MBBS_Import>Import...</MBBS_Import>
+  <MBBS_Export_Clipboard>Kopírovať ako text (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Usporiadanie bolo skopírované do schránky.</MBBS_Export_Copied>
+  <MBBS_Export_File>Uložiť ako súbor</MBBS_Export_File>
+  <MBBS_Export_Saved>Uložené do súboru: {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Kopírovať ako XML pre mod (na vytvorenie modu s usporiadaním)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def vo formáte XML bol skopírovaný. Vložte ho do súboru .xml v priečinku Defs vášho modu a zmeňte defName a label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Zo schránky</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Súbor: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Usporiadanie: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Usporiadanie: {0} (autor: {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Usporiadanie bolo importované do tohto okna. Ak ho chcete zachovať, stlačte „Uložiť“.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Schránka je prázdna.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Toto nie je exportované usporiadanie (neplatné XML).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Tento text neobsahuje žiadne usporiadanie.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Tento text sa pokúša vytvoriť programové triedy, ktoré usporiadanie nikdy nepotrebuje. Neimportované.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Vytvorené novšou verziou tohto modu (formát {0}; táto verzia podporuje najviac {1}). Najprv mod aktualizujte.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Usporiadanie sa nepodarilo načítať: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Predvolené</MBBS_Default>
+  <MBBS_DefaultTip>Vrátiť na predvolenú hodnotu.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Panel „Viac“</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Šírka a medzery</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Šírka šípok na posúvanie: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Rýchlosť kolieska myši: {0}px na krok</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Šírka tlačidla „Viac“: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Šírka tlačidla „Viac“: podľa popisu</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Stĺpce panelu „Viac“: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Stĺpce panelu „Viac“: automaticky</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Šírka bunky panelu „Viac“: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Šírka bunky panelu „Viac“: ako predvolená šírka tlačidla</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Zarovnanie popisov</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Umiestnenie popisov na tlačidlách. Tlačidiel, ktoré ukazujú len ikonu, sa to netýka.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Ako v hre</MBBS_Align_Default>
+  <MBBS_Align_Left>Vľavo</MBBS_Align_Left>
+  <MBBS_Align_Center>Na stred</MBBS_Align_Center>
+  <MBBS_Align_Right>Vpravo</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>vlastné súbory hry</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>Vzhľad</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Motív</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Motívy menia vzhľad lišty a jej tlačidiel. Objavia sa tu aj mody s motívmi, ktoré majú Main Button Bar System ako závislosť. Voľba sa ukladá s touto uloženou hrou (alebo so šablónou, ak je okno otvorené z hlavného menu).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>autor: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Šípky sa zobrazia, len keď sa tlačidlá nezmestia. Kým sa zmestia, lišta sa posúvať nemusí.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Už je to predvolená hodnota.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Tlačidlá dolnej lišty (uchováva tento mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Kláves {0} používa aj:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Keď dve priradenia zdieľajú ten istý kláves, jeho stlačenie spustí len jedno z nich. Zmeňte jedno z nich v „Nastavenia &gt; Nastavenie klávesnice“ alebo tu vyberte iný kláves.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Tento mod spracúva svoje klávesy až po klávesoch hry, takže priradenia vyššie zachytia tento kláves skôr a toto tlačidlo nezareaguje. Vyberte tu iný kláves alebo zmeňte to druhé priradenie v „Nastavenia &gt; Nastavenie klávesnice“.</MBBS_HotKeyConflictExplainCustom>
+</LanguageData>
