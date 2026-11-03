@@ -1,0 +1,249 @@
+using System.Collections.Generic;
+using System.Linq;
+using MainButtonBarSystem.Core;
+using Xunit;
+
+namespace MainButtonBarSystem.Tests
+{
+    public class BarLayoutTests
+    {
+        private static List<LayoutItem> Items(params string[] keys) => keys.Select(k => new LayoutItem(k)).ToList();
+
+        private static IEnumerable<PlacedItem> AllInBarCoordinates(LayoutResult r) =>
+            r.Left
+                .Concat(r.Center.Select(c => new PlacedItem(c.Key, r.ViewportX + c.X, c.Width)))
+                .Concat(r.More.HasValue ? new[] { r.More.Value } : new PlacedItem[0])
+                .Concat(r.Right)
+                .OrderBy(p => p.X);
+
+        [Fact]
+        public void Vanilla_SplitsEvenly_LastTakesRemainder()
+        {
+            var r = BarLayout.Compute(Items("a", "b", "c"), new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 1000 });
+
+            Assert.Equal(new[] { 333, 333, 334 }, r.Center.Select(c => c.Width));
+            Assert.Equal(new[] { 0, 333, 666 }, r.Center.Select(c => c.X));
+            Assert.False(r.NeedsScroll);
+            Assert.Null(r.More);
+        }
+
+        [Fact]
+        public void Vanilla_MinimizedGetsHalfOfFullWidth()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("half", minimized: true), new LayoutItem("c") };
+            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 1000 });
+
+            // 2.5 units -> full = 400, half = 200, last takes 1000 - 600.
+            Assert.Equal(new[] { 400, 200, 400 }, r.Center.Select(c => c.Width));
+        }
+
+        [Fact]
+        public void Vanilla_IgnoresGapAndDrawer()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b", inDrawer: true) };
+            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 100, Gap = 10 });
+
+            Assert.Equal(new[] { "a", "b" }, r.Center.Select(c => c.Key));
+            Assert.Equal(new[] { 50, 50 }, r.Center.Select(c => c.Width));
+            Assert.Empty(r.Drawer);
+        }
+
+        [Fact]
+        public void Vanilla_PinnedButtonsKeepEndsAndSpanFullWidth()
+        {
+            var items = new List<LayoutItem>
+            {
+                new LayoutItem("menu", pin: PinPosition.Right),
+                new LayoutItem("a"),
+                new LayoutItem("first", pin: PinPosition.Left),
+                new LayoutItem("b"),
+            };
+            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 400 });
+
+            var placed = AllInBarCoordinates(r).ToList();
+            Assert.Equal(new[] { "first", "a", "b", "menu" }, placed.Select(p => p.Key));
+            Assert.Equal(0, placed[0].X);
+            Assert.Equal(400, placed[3].X + placed[3].Width);
+        }
+
+        [Fact]
+        public void Empty_ProducesEmptyResult()
+        {
+            var r = BarLayout.Compute(new List<LayoutItem>(), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 500 });
+
+            Assert.Empty(r.Center);
+            Assert.False(r.NeedsScroll);
+            Assert.Equal(0, r.MaxScroll);
+        }
+
+        [Fact]
+        public void Collapse_MovesDrawerItemsOutAndAddsMore()
+        {
+            var items = new List<LayoutItem>
+            {
+                new LayoutItem("a"),
+                new LayoutItem("b", inDrawer: true),
+                new LayoutItem("c"),
+                new LayoutItem("menu", pin: PinPosition.Right, inDrawer: true),
+            };
+            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 400 });
+
+            Assert.Equal(new[] { "b" }, r.Drawer);
+            Assert.Equal(new[] { "a", "c" }, r.Center.Select(c => c.Key));
+            Assert.NotNull(r.More);
+            Assert.Equal(new[] { "menu" }, r.Right.Select(c => c.Key));
+            // Order on the bar: center, More, pinned right; four equal units filling 400px.
+            Assert.Equal(new[] { "a", "c", BarLayout.MoreKey, "menu" }, AllInBarCoordinates(r).Select(p => p.Key));
+            Assert.All(AllInBarCoordinates(r), p => Assert.Equal(100, p.Width));
+        }
+
+        [Fact]
+        public void Collapse_WithoutDrawerItems_HasNoMoreButton()
+        {
+            var r = BarLayout.Compute(Items("a", "b"), new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 200 });
+
+            Assert.Null(r.More);
+            Assert.Empty(r.Drawer);
+        }
+
+        [Fact]
+        public void Collapse_WithoutFill_UsesNaturalWidthsAndNeverScrolls()
+        {
+            var r = BarLayout.Compute(Items("a", "b", "c"), new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 200, FillScreen = false, DefaultWidth = 100, MinWidth = 50 });
+
+            Assert.Equal(new[] { 100, 100, 100 }, r.Center.Select(c => c.Width));
+            Assert.False(r.NeedsScroll);
+        }
+
+        [Fact]
+        public void Scroll_DrawerFlagIgnored()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b", inDrawer: true) };
+            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000 });
+
+            Assert.Empty(r.Drawer);
+            Assert.Null(r.More);
+            Assert.Equal(2, r.Center.Count);
+        }
+
+        [Fact]
+        public void Scroll_FitsAndFills()
+        {
+            var r = BarLayout.Compute(Items("a", "b", "c"), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 900, DefaultWidth = 100, MinWidth = 80 });
+
+            Assert.False(r.NeedsScroll);
+            Assert.Equal(new[] { 300, 300, 300 }, r.Center.Select(c => c.Width));
+            Assert.Equal(900, r.ContentWidth);
+        }
+
+        [Fact]
+        public void Scroll_FitsWithoutFill_KeepsNaturalWidth()
+        {
+            var r = BarLayout.Compute(Items("a", "b"), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 900, DefaultWidth = 100, MinWidth = 80, FillScreen = false });
+
+            Assert.Equal(new[] { 100, 100 }, r.Center.Select(c => c.Width));
+            Assert.Equal(200, r.ContentWidth);
+        }
+
+        [Fact]
+        public void Scroll_OverflowReservesArrowsAndScrolls()
+        {
+            var keys = Enumerable.Range(0, 20).Select(i => "b" + i).ToArray();
+            var r = BarLayout.Compute(Items(keys), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 80, ArrowWidth = 24 });
+
+            Assert.True(r.NeedsScroll);
+            Assert.Equal(2000, r.ContentWidth);
+            Assert.Equal(0, r.LeftArrowX);
+            Assert.Equal(976, r.RightArrowX);
+            Assert.Equal(24, r.ViewportX);
+            Assert.Equal(952, r.ViewportWidth);
+            Assert.Equal(2000 - 952, r.MaxScroll);
+            Assert.All(r.Center, c => Assert.Equal(100, c.Width));
+        }
+
+        [Fact]
+        public void Scroll_MinWidthWinsOverSmallerDefault()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("half", minimized: true), new LayoutItem("custom", width: 30) };
+            var o = new LayoutOptions { Mode = DisplayMode.Scroll, DefaultWidth = 60, MinWidth = 100 };
+
+            Assert.Equal(100, BarLayout.NaturalWidth(items[0], o));
+            Assert.Equal(50, BarLayout.NaturalWidth(items[1], o));
+            Assert.Equal(100, BarLayout.NaturalWidth(items[2], o));
+        }
+
+        [Fact]
+        public void Scroll_ExplicitWidthAboveMinimumIsKept()
+        {
+            var o = new LayoutOptions { Mode = DisplayMode.Scroll, DefaultWidth = 120, MinWidth = 80 };
+
+            Assert.Equal(200, BarLayout.NaturalWidth(new LayoutItem("w", width: 200), o));
+            Assert.Equal(60, BarLayout.NaturalWidth(new LayoutItem("h", minimized: true), o));
+        }
+
+        [Fact]
+        public void Scroll_PinnedButtonsStayOutsideViewport()
+        {
+            var keys = Enumerable.Range(0, 20).Select(i => "b" + i).ToList();
+            var items = keys.Select(k => new LayoutItem(k)).ToList();
+            items.Insert(0, new LayoutItem("left", pin: PinPosition.Left));
+            items.Add(new LayoutItem("menu", pin: PinPosition.Right));
+            items[5].InDrawer = true;
+
+            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.CollapseScroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 80, MoreButtonWidth = 70, ArrowWidth = 24, Gap = 0 });
+
+            Assert.Equal(new PlacedItem("left", 0, 100).ToString(), r.Left.Single().ToString());
+            Assert.Equal(new PlacedItem("menu", 900, 100).ToString(), r.Right.Single().ToString());
+            Assert.Equal(new PlacedItem(BarLayout.MoreKey, 830, 70).ToString(), r.More.Value.ToString());
+            Assert.True(r.NeedsScroll);
+            Assert.Equal(100, r.LeftArrowX);
+            Assert.Equal(830 - 24, r.RightArrowX);
+            Assert.Equal(124, r.ViewportX);
+            Assert.Equal(830 - 24 - 124, r.ViewportWidth);
+            Assert.Equal(19, r.Center.Count);
+        }
+
+        [Fact]
+        public void Gap_IsAppliedBetweenButtonsAndAroundBlocks()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("left", pin: PinPosition.Left), new LayoutItem("a"), new LayoutItem("b"), new LayoutItem("menu", pin: PinPosition.Right) };
+            var r = BarLayout.Compute(items, new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 50, Gap = 10, FillScreen = false });
+
+            Assert.Equal(110, r.ViewportX);
+            Assert.Equal(1000 - 110 - 110, r.ViewportWidth);
+            Assert.Equal(new[] { 0, 110 }, r.Center.Select(c => c.X));
+            Assert.Equal(900, r.Right.Single().X);
+            Assert.Equal(210, r.ContentWidth);
+        }
+
+        [Fact]
+        public void Gap_FillStillSpansViewportExactly()
+        {
+            var r = BarLayout.Compute(Items("a", "b", "c"), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 50, Gap = 10 });
+
+            var last = r.Center.Last();
+            Assert.Equal(r.ViewportWidth, last.X + last.Width);
+        }
+
+        [Theory]
+        [InlineData(-50f, 0)]
+        [InlineData(10.7f, 10)]
+        [InlineData(99999f, 1048)]
+        public void ClampScroll_StaysInRange(float offset, int expected)
+        {
+            var keys = Enumerable.Range(0, 20).Select(i => "b" + i).ToArray();
+            var r = BarLayout.Compute(Items(keys), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 1000, DefaultWidth = 100, MinWidth = 80, ArrowWidth = 24 });
+
+            Assert.Equal(expected, r.ClampScroll(offset));
+        }
+
+        [Fact]
+        public void TinyBar_DoesNotProduceNegativeSizes()
+        {
+            var r = BarLayout.Compute(Items("a", "b"), new LayoutOptions { Mode = DisplayMode.Scroll, BarWidth = 10, DefaultWidth = 100, MinWidth = 80, ArrowWidth = 24 });
+
+            Assert.True(r.ViewportWidth >= 0);
+            Assert.True(r.ArrowWidth >= 0);
+        }
+    }
+}

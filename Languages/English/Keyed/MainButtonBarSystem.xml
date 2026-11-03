@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Stage 1 test settings (temporary) -->
+  <MBBS_Test_Header>Stage 1 test settings (temporary, replaced by the real settings window later)</MBBS_Test_Header>
+  <MBBS_Test_GameDraws>Game draws the bar (no takeover, default)</MBBS_Test_GameDraws>
+  <MBBS_Test_OwnVanilla>This mod draws the bar: vanilla layout (should look identical)</MBBS_Test_OwnVanilla>
+  <MBBS_Test_OwnScroll>This mod draws the bar: scroll mode</MBBS_Test_OwnScroll>
+  <MBBS_Test_DefaultWidth>Scroll mode: default button width {0}px</MBBS_Test_DefaultWidth>
+  <MBBS_Test_MinWidth>Scroll mode: minimum button width {0}px</MBBS_Test_MinWidth>
+  <MBBS_Test_FillScreen>Scroll mode: stretch buttons to fill the screen when they fit</MBBS_Test_FillScreen>
+  <MBBS_Test_PinMenu>Scroll mode: keep the game menu button fixed at the right end</MBBS_Test_PinMenu>
+  <MBBS_Test_Note>Changes apply immediately. Scroll with the mouse wheel over the bar or with the arrow buttons at both ends.</MBBS_Test_Note>
+</LanguageData>

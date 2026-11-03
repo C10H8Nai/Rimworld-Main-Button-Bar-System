@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 第一階段測試設定（暫時） -->
+  <MBBS_Test_Header>第一階段測試設定（暫時，之後會換成正式的設定視窗）</MBBS_Test_Header>
+  <MBBS_Test_GameDraws>由遊戲繪製底部列（不接管，預設）</MBBS_Test_GameDraws>
+  <MBBS_Test_OwnVanilla>由本模組繪製：原版排法（外觀應與原版完全相同）</MBBS_Test_OwnVanilla>
+  <MBBS_Test_OwnScroll>由本模組繪製：捲動模式</MBBS_Test_OwnScroll>
+  <MBBS_Test_DefaultWidth>捲動模式：按鈕預設寬度 {0}px</MBBS_Test_DefaultWidth>
+  <MBBS_Test_MinWidth>捲動模式：按鈕最小寬度 {0}px</MBBS_Test_MinWidth>
+  <MBBS_Test_FillScreen>捲動模式：按鈕放得下時拉伸填滿畫面寬度</MBBS_Test_FillScreen>
+  <MBBS_Test_PinMenu>捲動模式：選單按鈕固定在最右邊</MBBS_Test_PinMenu>
+  <MBBS_Test_Note>改動立即生效。在底部列上用滑鼠滾輪，或點兩端的箭頭按鈕來捲動。</MBBS_Test_Note>
+</LanguageData>

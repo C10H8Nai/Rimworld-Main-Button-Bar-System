@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 第一阶段测试设置（临时） -->
+  <MBBS_Test_Header>第一阶段测试设置（临时，之后会换成正式的设置窗口）</MBBS_Test_Header>
+  <MBBS_Test_GameDraws>由游戏绘制底部栏（不接管，默认）</MBBS_Test_GameDraws>
+  <MBBS_Test_OwnVanilla>由本模组绘制：原版排法（外观应与原版完全相同）</MBBS_Test_OwnVanilla>
+  <MBBS_Test_OwnScroll>由本模组绘制：滚动模式</MBBS_Test_OwnScroll>
+  <MBBS_Test_DefaultWidth>滚动模式：按钮默认宽度 {0}px</MBBS_Test_DefaultWidth>
+  <MBBS_Test_MinWidth>滚动模式：按钮最小宽度 {0}px</MBBS_Test_MinWidth>
+  <MBBS_Test_FillScreen>滚动模式：按钮放得下时拉伸填满屏幕宽度</MBBS_Test_FillScreen>
+  <MBBS_Test_PinMenu>滚动模式：菜单按钮固定在最右边</MBBS_Test_PinMenu>
+  <MBBS_Test_Note>改动立即生效。在底部栏上用鼠标滚轮，或点两端的箭头按钮来滚动。</MBBS_Test_Note>
+</LanguageData>
