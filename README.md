@@ -24,8 +24,10 @@ RimWorld 1.7 模組。自訂遊戲畫面底部的主按鈕列：排序、隱藏�
 |---|---|
 | `About/` | 模組名稱、作者、支援版本、前置模組 |
 | `1.7/Assemblies/` | 編譯好的 `MainButtonBarSystem.dll`（提交進 repo，讓 repo 直接可用） |
-| `Source/` | C# 原始碼 |
-| `docs/` | 設計規格與調查資料 |
+| `Languages/` | 英文、简体中文、繁體中文翻譯 |
+| `Source/MainButtonBarSystem/` | C# 原始碼；`Core/` 是不依賴遊戲的純邏輯（版面計算等） |
+| `Source/MainButtonBarSystem.Tests/` | `Core/` 的單元測試，不需要遊戲就能跑 |
+| `docs/` | 設計規格、調查資料、各階段測試清單（`docs/testing/`） |
 
 ## 編譯
 
@@ -41,5 +43,11 @@ dotnet build Source/MainButtonBarSystem/MainButtonBarSystem.csproj -c Release
 |---|---|---|
 | `Krafs.Rimworld.Ref` | `1.7.4995-unstable` | RimWorld 1.7.4995（Steam unstable 分支）的參考組件 |
 | `Lib.Harmony` | `3.0.0-rc.4` | 組件版本 0Harmony 3.0.0.0，和工作坊 Harmony 的 1.7 版相同 |
+
+單元測試：
+
+```bash
+dotnet test Source/MainButtonBarSystem.Tests
+```
 
 Harmony 3 已將不帶參數的 `PatchAll()` 標為過時，要明確傳入組件：`PatchAll(typeof(X).Assembly)`。
