@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>orijinal</Vanilla.label>
+  <Vanilla.description>Ana oyundaki gibi: ekran genişliği eşit olarak paylaştırılır. Kaydırma ve çekmece yoktur.</Vanilla.description>
+  <Collapse.label>daraltma</Collapse.label>
+  <Collapse.description>"Çekmece" işaretli butonlar "Diğer" çekmecesine taşınır; kalanlar barı paylaşır.</Collapse.description>
+  <Scroll.label>kaydırma</Scroll.label>
+  <Scroll.description>Butonlar genişliklerini korur; barı fare tekerleğiyle veya oklarla kaydır. Çekmece kullanılmaz.</Scroll.description>
+  <CollapseScroll.label>daraltma + kaydırma</CollapseScroll.label>
+  <CollapseScroll.description>Çekmece, Daraltma modundaki gibi çalışır; kalan butonlar kaydırılır.</CollapseScroll.description>
+</LanguageData>

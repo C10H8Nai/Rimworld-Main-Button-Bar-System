@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>αρχική</Vanilla.label>
+  <Vanilla.description>Όπως στο βασικό παιχνίδι: το πλάτος της οθόνης μοιράζεται εξίσου. Χωρίς κύλιση και χωρίς συρτάρι.</Vanilla.description>
+  <Collapse.label>σύμπτυξη</Collapse.label>
+  <Collapse.description>Τα κουμπιά με σήμανση «Συρτάρι» μπαίνουν στο συρτάρι «Άλλα»· τα υπόλοιπα μοιράζονται τη γραμμή.</Collapse.description>
+  <Scroll.label>κύλιση</Scroll.label>
+  <Scroll.description>Τα κουμπιά κρατούν το πλάτος τους· κάντε κύλιση στη γραμμή με τη ροδέλα του ποντικιού ή με τα βέλη. Το συρτάρι δεν χρησιμοποιείται.</Scroll.description>
+  <CollapseScroll.label>σύμπτυξη + κύλιση</CollapseScroll.label>
+  <CollapseScroll.description>Το συρτάρι λειτουργεί όπως στη Σύμπτυξη· τα υπόλοιπα κουμπιά κάνουν κύλιση.</CollapseScroll.description>
+</LanguageData>

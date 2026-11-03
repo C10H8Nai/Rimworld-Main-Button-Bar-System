@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>eredeti</Vanilla.label>
+  <Vanilla.description>Mint az alapjátékban: a képernyő szélessége egyenlően oszlik el. Nincs görgetés és nincs fiók.</Vanilla.description>
+  <Collapse.label>összecsukás</Collapse.label>
+  <Collapse.description>A „Fiók” jelölésű gombok a „Több” fiókba kerülnek; a többiek osztoznak a gombsoron.</Collapse.description>
+  <Scroll.label>görgetés</Scroll.label>
+  <Scroll.description>A gombok megtartják a szélességüket; a gombsort az egérgörgővel vagy a nyilakkal görgetheted. A fiók nincs használatban.</Scroll.description>
+  <CollapseScroll.label>összecsukás + görgetés</CollapseScroll.label>
+  <CollapseScroll.description>A fiók úgy működik, mint az Összecsukás módban; a többi gomb görgethető.</CollapseScroll.description>
+</LanguageData>

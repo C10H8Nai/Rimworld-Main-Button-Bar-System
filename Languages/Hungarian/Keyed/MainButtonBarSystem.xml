@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Több ({0})</MBBS_More>
+  <MBBS_MoreTip>A fiókba összecsukott gombok. A fióknak saját beállításgombja van az alján.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Főgombsor beállításai</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Játékban megnyitva: a változtatások a jelenlegi mentésre vonatkoznak.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Főmenüből megnyitva: a változtatások az alapértelmezett sablonra vonatkoznak, amellyel az új játékok indulnak.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>A gombsort mindig ez a mod rajzolja (teszteléshez)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Amíg nem változtatsz semmin, a gombsort maga a játék rajzolja. Kapcsold be, hogy összehasonlíthasd ennek a modnak a rajzolását a játékéval.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Főgombsor beállításai (ez a mentés)</MBBS_Title_Save>
+  <MBBS_Title_Template>Főgombsor beállításai (alapértelmezett sablon)</MBBS_Title_Template>
+  <MBBS_Tab_Simple>Egyszerű</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>Haladó</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>Látható</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
+  <MBBS_Col_Name>Név</MBBS_Col_Name>
+  <MBBS_Col_Source>Forrás</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Billentyű</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Fiók</MBBS_Col_Drawer>
+  <MBBS_BarRow>Teljes gombsor (alapértékek)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Modjuk által elrejtve ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Ezeket a gombokat a saját modjuk szándékosan nem teszi ki a gombsorra. Ha egyet ki akarsz tenni, kapcsold be a Haladó fülön a „Mindig látható” opciót.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Feljebb</MBBS_MoveUp>
+  <MBBS_MoveDown>Lejjebb</MBBS_MoveDown>
+  <MBBS_OrderHint>Fentről lefelé = balról jobbra a képernyőn. A sorok húzással átrendezhetők.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(zárolva)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(bal szélen)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(jobb szélen)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Most nincs a gombsoron: a gomb saját feltétele nem teljesül.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Megjelenítési mód</MBBS_DisplayMode>
+  <MBBS_MinWidth>Minimális gombszélesség görgetéskor: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Alapértelmezett gombszélesség: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Gombok közötti távolság: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>A teljes képernyőszélesség kitöltése</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Ha a gombok elférnek, széthúzza őket a teljes szélességre.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>A játék menügombjának zárolása a jobb szélen</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Amíg zárolva van, a menügomb nem rejthető el, nem mozgatható és nem tehető a fiókba; csak átnevezni lehet.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>A játék menügombjának zárolása fel lett oldva a Haladó fülön.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>A játék menügombja a jobb szélen zárolva van, és csak átnevezni lehet. A zárolást a Haladó fülön, a „Teljes gombsor” sorban oldhatod fel.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Gomb forrása: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Ikon forrása: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>A saját modja szándékosan nem teszi ki a gombsorra; csak a „Mindig látható” opcióval jelenik meg.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>nincs</MBBS_None>
+  <MBBS_Unknown>ismeretlen</MBBS_Unknown>
+  <MBBS_Visible>Megjelenítés a gombsoron</MBBS_Visible>
+  <MBBS_InDrawer>Áthelyezés a „Több” fiókba</MBBS_InDrawer>
+  <MBBS_CustomName>Egyéni név (üres = eredeti: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Szélesség: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Szélesség: ugyanaz, mint a teljes gombsoré</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Rögzített hely</MBBS_Pin>
+  <MBBS_Pin_None>Nincs</MBBS_Pin_None>
+  <MBBS_Pin_Left>Bal szél</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Jobb szél</MBBS_Pin_Right>
+  <MBBS_ForceShow>Mindig látható</MBBS_ForceShow>
+  <MBBS_ForceShowTip>A gomb akkor is megjelenik, ha a saját feltétele szerint nem kellene. Ilyenkor előfordulhat, hogy a rákattintás nem csinál semmit.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Mentés alapértelmezett sablonként</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Alapértelmezett sablon alkalmazása</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Elmentve alapértelmezett sablonként. Az új játékok ezzel az elrendezéssel indulnak.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Minden alapállapotba</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Minden beállítást visszaállítasz az érintetlen gombsorra (a játék, plusz amit más modok módosítottak rajta)? Ez nem alkalmazza a sablont.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Mentés</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>Észlelt mod: {0}. Jelenleg az irányítja a gombsort, ezért az itteni változtatások csak akkor lépnek érvénybe, ha ez a mod kap elsőbbséget.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>Észlelt mod: {0}. Ez a mod élvez elsőbbséget, ezért annak a gombsorra gyakorolt hatása ki van kapcsolva.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Részletek a Haladó fülön.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Kompatibilitás: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Ez a mod az első</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Ez a mod rajzolja a gombsort. A(z) {0} gombsorra gyakorolt hatása ki van kapcsolva; a beállításai csak referenciaértékként szolgálnak.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0} az első</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>A gombsort továbbra is a(z) {0} kezeli. Ez a mod csak a beállítási ablakát tartja meg.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>A játék újraindítása után lép érvénybe.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Beállítások importálása innen: {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Elrendezés importálva innen: {0}. Nyomd meg a „Mentés” gombot a megtartásához.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Gyorsbillentyű: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Beállít</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Törlés</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Minden mentésre közös; ugyanaz a billentyű, mint a „Beállítások &gt; Billentyűzet beállítása” menüben.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Minden mentésre közös. Ennek a gombnak nincs bejegyzése a „Beállítások &gt; Billentyűzet beállítása” menüben, ezért a billentyűt ez a mod tárolja.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Nyomj meg egy billentyűt (Esc: mégse)</MBBS_PressKey>
+  <MBBS_Export>Exportálás...</MBBS_Export>
+  <MBBS_Import>Importálás...</MBBS_Import>
+  <MBBS_Export_Clipboard>Másolás szövegként (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Elrendezés a vágólapra másolva.</MBBS_Export_Copied>
+  <MBBS_Export_File>Mentés fájlba</MBBS_Export_File>
+  <MBBS_Export_Saved>Mentve ide: {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Másolás mod XML-ként (elrendezés-mod készítéséhez)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def XML másolva. Tedd egy .xml fájlba a modod Defs mappájában, és írd át a defName és a label értékét.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Vágólapról</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Fájl: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Elrendezés: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Elrendezés: {0} (készítette: {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Elrendezés importálva ebbe az ablakba. Nyomd meg a „Mentés” gombot a megtartásához.</MBBS_Import_Done>
+  <MBBS_Import_Empty>A vágólap üres.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Ez nem exportált elrendezés (nem érvényes XML).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Ebben a szövegben nincs elrendezés.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Ez a szöveg programosztályok létrehozását kéri, amire egy elrendezésnek soha nincs szüksége. Nem lett importálva.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>A mod egy újabb verziójával készült (formátum: {0}; ez a verzió legfeljebb ezt olvassa: {1}). Előbb frissítsd a modot.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Nem sikerült beolvasni az elrendezést: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Alapérték</MBBS_Default>
+  <MBBS_DefaultTip>Vissza az alapértékre.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Fiók</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Szélesség és térköz</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Görgetőnyilak szélessége: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Egérgörgő sebessége: {0}px lépésenként</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>„Több” gomb szélessége: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>„Több” gomb szélessége: a felirathoz igazodik</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Oszlopok a fiókban: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Oszlopok a fiókban: automatikus</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Fiókcellák szélessége: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Fiókcellák szélessége: ugyanaz, mint az alapértelmezett gombszélesség</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Feliratok igazítása</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>A gombfeliratok helye. A csak ikont mutató gombokra nincs hatással.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Ahogy a játékban</MBBS_Align_Default>
+  <MBBS_Align_Left>Balra</MBBS_Align_Left>
+  <MBBS_Align_Center>Középre</MBBS_Align_Center>
+  <MBBS_Align_Right>Jobbra</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>a játék saját erőforrásai</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>Megjelenés</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Téma</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>A témák a gombsor és a gombjai kinézetét változtatják meg. Azok a témamodok is itt jelennek meg, amelyek függőségként jelölik meg a Main Button Bar System modot. A választás ezzel a mentéssel együtt tárolódik (a főmenüben pedig a sablonnal).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>készítette: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>A nyilak csak akkor jelennek meg, ha a gombok nem férnek el. Amíg elférnek, a gombsort nem kell görgetni.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Már az alapérték van beállítva.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Főgombok (ez a mod tárolja)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>A(z) {0} billentyűt ezek is használják:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Ha két hozzárendelés ugyanazt a billentyűt használja, a lenyomása csak az egyiket indítja el. Módosítsd az egyiket a „Beállítások &gt; Billentyűzet beállítása” menüben, vagy válassz itt másik billentyűt.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Ez a mod az általa tárolt billentyűket a játék saját billentyűi után kezeli, ezért a fenti hozzárendelések előbb kapják meg ezt a billentyűt, és ez a gomb nem fog reagálni. Válassz itt másik billentyűt, vagy módosítsd a másik hozzárendelést a „Beállítások &gt; Billentyűzet beállítása” menüben.</MBBS_HotKeyConflictExplainCustom>
+</LanguageData>
