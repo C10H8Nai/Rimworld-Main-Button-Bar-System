@@ -12,9 +12,9 @@ using Verse;
 namespace MainButtonBarSystem
 {
     /// <summary>
-    /// Stage 1 probes for the risks listed in the design spec (section 8). Everything here is temporary
-    /// and is removed before release. Probe failures are reported as plain messages, never as errors,
-    /// because a failed probe is an expected outcome, not a bug.
+    /// Environment report written only in development mode: button counts, hotkey and icon sources, image
+    /// loading, and every patch on the main button methods. Useful when a player reports a conflict. Probe
+    /// failures are plain messages, never errors, because a failed probe is an expected outcome.
     /// </summary>
     public static class StartupDiagnostics
     {
@@ -29,7 +29,7 @@ namespace MainButtonBarSystem
         public static void RunAtStartup()
         {
             var report = new StringBuilder();
-            report.AppendLine(MainButtonBarSystemMod.LogPrefix + "Stage 1 diagnostics (temporary)");
+            report.AppendLine(MainButtonBarSystemMod.LogPrefix + "Diagnostics (dev mode)");
 
             Section(report, "Buttons", ReportButtons);
             Section(report, "Hotkeys", ReportHotkeys);
@@ -45,9 +45,10 @@ namespace MainButtonBarSystem
         {
             if (patchReportDone) return;
             patchReportDone = true;
+            if (!Prefs.DevMode) return;
 
             var report = new StringBuilder();
-            report.AppendLine(MainButtonBarSystemMod.LogPrefix + "Patches on main button methods (temporary)");
+            report.AppendLine(MainButtonBarSystemMod.LogPrefix + "Patches on main button methods (dev mode)");
             Section(report, "Patches", sb =>
             {
                 Describe(sb, AccessTools.Method(typeof(MainButtonsRoot), "DoButtons"));

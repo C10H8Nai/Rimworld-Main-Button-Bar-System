@@ -60,7 +60,8 @@ namespace MainButtonBarSystem
     /// <summary>The built-in modes: vanilla split, collapse, scroll, collapse + scroll.</summary>
     public class BarDisplayModeWorker_Standard : BarDisplayModeWorker
     {
-        private const float WheelPixelsPerUnit = 25f;
+        /// <summary>Where the mouse is moved for buttons it cannot reach, so they neither highlight nor react.</summary>
+        private static readonly Vector2 Unreachable = new Vector2(-100000f, -100000f);
 
         private readonly List<LayoutItem> items = new List<LayoutItem>();
         private readonly Dictionary<string, BarButton> byKey = new Dictionary<string, BarButton>();
@@ -73,10 +74,12 @@ namespace MainButtonBarSystem
             byKey.Clear();
             drawer.Clear();
 
+            int drawerCount = 0;
             foreach (var b in ctx.Buttons)
             {
                 byKey[b.Key] = b;
                 items.Add(new LayoutItem(b.Key, b.Minimized, b.Width, b.Pin, b.InDrawer));
+                if (b.InDrawer && def.usesDrawer) drawerCount++;
             }
 
             var config = ctx.Config;
@@ -84,10 +87,12 @@ namespace MainButtonBarSystem
             {
                 Mode = def.layout,
                 BarWidth = (int)ctx.BarRect.width,
-                DefaultWidth = config.defaultWidth,
-                MinWidth = config.minWidth,
-                Gap = config.gap,
-                FillScreen = config.fillScreen,
+                DefaultWidth = config.DefaultWidth,
+                MinWidth = config.MinWidth,
+                Gap = config.Gap,
+                FillScreen = config.FillScreen,
+                MoreButtonWidth = Mathf.CeilToInt(ctx.Appearance.MoreButtonWidth(config, drawerCount)),
+                ArrowWidth = config.ArrowWidth,
             });
 
             float x0 = ctx.BarRect.x, y = ctx.BarRect.y, h = ctx.BarRect.height;
@@ -127,11 +132,11 @@ namespace MainButtonBarSystem
             var ev = Event.current;
             if (ev.type == EventType.ScrollWheel && Mouse.IsOver(area))
             {
-                scrollOffset += (ev.delta.y + ev.delta.x) * WheelPixelsPerUnit;
+                scrollOffset += (ev.delta.y + ev.delta.x) * ctx.Config.WheelScrollPixels;
                 ev.Use();
             }
 
-            float page = Mathf.Max(layout.ViewportWidth * 0.6f, 1f);
+            float page = Mathf.Max(layout.ViewportWidth * MainButtonBarTuningDef.Current.behaviour.arrowPageFraction, 1f);
             if (ctx.Appearance.DrawScrollArrow(new Rect(x0 + layout.LeftArrowX, y, layout.ArrowWidth, h), left: true))
                 scrollOffset -= page;
             if (ctx.Appearance.DrawScrollArrow(new Rect(x0 + layout.RightArrowX, y, layout.ArrowWidth, h), left: false))
@@ -139,8 +144,15 @@ namespace MainButtonBarSystem
 
             scrollOffset = layout.ClampScroll(scrollOffset);
 
+            // Buttons are clipped to the viewport when drawn, but the game's hit tests are not: the hidden part of a
+            // half-visible button would still highlight and take clicks under the arrows or the More button. While
+            // the mouse is outside the viewport, move it out of reach for the buttons inside.
             var viewport = new Rect(x0 + layout.ViewportX, y, layout.ViewportWidth, h);
+            bool reachable = Mouse.IsOver(viewport);
+
             GUI.BeginGroup(viewport);
+            var saved = ev.mousePosition;
+            if (!reachable) ev.mousePosition = Unreachable;
             try
             {
                 foreach (var p in layout.Center)
@@ -152,6 +164,7 @@ namespace MainButtonBarSystem
             }
             finally
             {
+                if (!reachable) ev.mousePosition = saved;
                 GUI.EndGroup();
             }
         }

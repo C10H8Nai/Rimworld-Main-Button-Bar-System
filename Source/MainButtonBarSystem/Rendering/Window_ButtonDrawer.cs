@@ -7,37 +7,25 @@ namespace MainButtonBarSystem
 {
     /// <summary>
     /// The "More" drawer: a grid of the buttons collapsed out of the bar, popping up above the More button,
-    /// with its own settings button underneath (spec 3.3).
+    /// with its own settings button underneath (spec 3.3). Columns and cell width come from the bar settings,
+    /// everything else from the tuning def.
     /// </summary>
     public class Window_ButtonDrawer : Window
     {
-        private const float CellWidth = 170f;
-        private const float CellHeight = MainButtonDef.ButtonHeight;
-        private const float SettingsRowHeight = 30f;
-        private const float Pad = 6f;
-        private const int MaxColumns = 4;
+        private static float lastClosedAt = -1f;
 
         private readonly Rect anchor;
-        private readonly List<BarButton> keys = new List<BarButton>();
+        private readonly List<BarButton> buttons = new List<BarButton>();
 
-        // Clicking More while the drawer is open first closes it as a click outside (mouse down), then the
-        // More button fires (mouse up). Without this the drawer would reopen immediately.
-        private const float ReopenGuardSeconds = 0.3f;
-        private static float lastClosedAt = -1f;
+        private static MainButtonBarTuningDef.Behaviour B => MainButtonBarTuningDef.Current.behaviour;
 
         public static bool IsShowing => Find.WindowStack?.IsOpen<Window_ButtonDrawer>() ?? false;
 
         public static void Toggle(Rect moreButtonRect)
         {
             if (IsShowing) CloseIfOpen();
-            else if (Time.realtimeSinceStartup - lastClosedAt > ReopenGuardSeconds)
+            else if (Time.realtimeSinceStartup - lastClosedAt > B.drawerReopenGuardSeconds)
                 Find.WindowStack.Add(new Window_ButtonDrawer(moreButtonRect));
-        }
-
-        public override void PostClose()
-        {
-            base.PostClose();
-            lastClosedAt = Time.realtimeSinceStartup;
         }
 
         public static void CloseIfOpen()
@@ -58,28 +46,50 @@ namespace MainButtonBarSystem
             soundClose = SoundDefOf.TabClose;
         }
 
-        protected override float Margin => Pad;
+        public override void PostClose()
+        {
+            base.PostClose();
+            lastClosedAt = Time.realtimeSinceStartup;
+        }
 
-        private int Columns => Mathf.Clamp(BarRenderer.Drawer.Count, 1, MaxColumns);
+        protected override float Margin => B.drawerPadding;
 
-        private int Rows => Mathf.Max(1, Mathf.CeilToInt(BarRenderer.Drawer.Count / (float)Columns));
+        private static BarConfig Config => BarConfigManager.Active;
+
+        private static float CellWidth => Config.DrawerCellWidth > 0 ? Config.DrawerCellWidth : Config.DefaultWidth;
+
+        private static float CellHeight => B.buttonRectHeight;
+
+        private static int Columns
+        {
+            get
+            {
+                int count = Mathf.Max(1, BarRenderer.Drawer.Count);
+                int wanted = Config.DrawerColumns > 0 ? Config.DrawerColumns : Mathf.Min(count, B.drawerMaxAutoColumns);
+                // Never wider than the screen.
+                int fit = Mathf.Max(1, Mathf.FloorToInt((UI.screenWidth - B.drawerPadding * 2f) / Mathf.Max(1f, CellWidth)));
+                return Mathf.Clamp(wanted, 1, fit);
+            }
+        }
+
+        private static int Rows => Mathf.Max(1, Mathf.CeilToInt(BarRenderer.Drawer.Count / (float)Columns));
 
         public override Vector2 InitialSize =>
-            new Vector2(Columns * CellWidth + Pad * 2f, Rows * CellHeight + SettingsRowHeight + Pad * 3f);
+            new Vector2(Columns * CellWidth + B.drawerPadding * 2f, Rows * CellHeight + B.drawerSettingsRowHeight + B.drawerPadding * 3f);
 
         protected override void SetInitialSizeAndPosition()
         {
             var size = InitialSize;
-            float x = Mathf.Clamp(anchor.xMax - size.x, 0f, UI.screenWidth - size.x);
+            float x = Mathf.Clamp(anchor.xMax - size.x, 0f, Mathf.Max(0f, UI.screenWidth - size.x));
             float y = anchor.y - size.y;
             windowRect = new Rect(x, y, size.x, size.y).Rounded();
         }
 
         public override void DoWindowContents(Rect inRect)
         {
-            keys.Clear();
-            keys.AddRange(BarRenderer.Drawer);
-            if (keys.Count == 0)
+            buttons.Clear();
+            buttons.AddRange(BarRenderer.Drawer);
+            if (buttons.Count == 0)
             {
                 Close(false);
                 return;
@@ -93,13 +103,14 @@ namespace MainButtonBarSystem
             }
 
             int columns = Columns;
+            float cellWidth = CellWidth, cellHeight = CellHeight;
             bool activated = false;
-            for (int i = 0; i < keys.Count; i++)
+            for (int i = 0; i < buttons.Count; i++)
             {
-                var button = keys[i];
+                var button = buttons[i];
                 if (button?.Def?.Worker == null) continue;
 
-                var cell = new Rect(inRect.x + (i % columns) * CellWidth, inRect.y + (i / columns) * CellHeight, CellWidth, CellHeight);
+                var cell = new Rect(inRect.x + (i % columns) * cellWidth, inRect.y + (i / columns) * cellHeight, cellWidth, cellHeight);
                 var before = Event.current.type;
                 BarRenderer.Appearance.DrawDrawerButton(button, cell);
                 // Buttons fire on mouse up; closing on mouse down would swallow the click.
@@ -107,7 +118,7 @@ namespace MainButtonBarSystem
                     activated = true;
             }
 
-            var settingsRect = new Rect(inRect.x, inRect.yMax - SettingsRowHeight, inRect.width, SettingsRowHeight);
+            var settingsRect = new Rect(inRect.x, inRect.yMax - B.drawerSettingsRowHeight, inRect.width, B.drawerSettingsRowHeight);
             if (Widgets.ButtonText(settingsRect, "MBBS_OpenSettings".Translate()))
             {
                 MainButtonBarAPI.OpenSettings();

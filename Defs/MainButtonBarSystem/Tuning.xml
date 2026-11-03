@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Every tunable number of Main Button Bar System. The code has no built-in values for these;
+    change them here or with an XML patch on MainButtonBarSystem.MainButtonBarTuningDef[defName="MainButtonBarTuning"].
+  -->
+  <MainButtonBarSystem.MainButtonBarTuningDef>
+    <defName>MainButtonBarTuning</defName>
+
+    <!-- Defaults of the settings players can change; each has a "default" button in the settings window. -->
+    <barDefaults>
+      <defaultWidth>120</defaultWidth>
+      <minWidth>80</minWidth>
+      <gap>0</gap>
+      <fillScreen>true</fillScreen>
+      <menuLocked>true</menuLocked>
+      <moreButtonWidth>0</moreButtonWidth>       <!-- 0: fit the "More (N)" label -->
+      <arrowWidth>24</arrowWidth>
+      <wheelScrollPixels>25</wheelScrollPixels>  <!-- per unit of wheel movement -->
+      <drawerColumns>0</drawerColumns>           <!-- 0: automatic -->
+      <drawerCellWidth>0</drawerCellWidth>       <!-- 0: the bar's default button width -->
+    </barDefaults>
+
+    <!-- Slider ranges in the settings window. -->
+    <ranges>
+      <defaultWidth>40~400</defaultWidth>
+      <minWidth>20~300</minWidth>
+      <gap>0~30</gap>
+      <buttonWidth>0~400</buttonWidth>
+      <moreButtonWidth>0~300</moreButtonWidth>
+      <arrowWidth>12~80</arrowWidth>
+      <wheelScrollPixels>5~100</wheelScrollPixels>
+      <drawerColumns>0~10</drawerColumns>
+      <drawerCellWidth>0~400</drawerCellWidth>
+      <widthStep>5</widthStep>
+    </ranges>
+
+    <!-- Fixed behaviour, not shown in the settings window. -->
+    <behaviour>
+      <barTopFromBottom>35</barTopFromBottom>    <!-- vanilla -->
+      <buttonRectHeight>36</buttonRectHeight>    <!-- vanilla draws 36, one pixel past the screen bottom -->
+      <arrowPageFraction>0.6</arrowPageFraction>
+      <drawerMaxAutoColumns>4</drawerMaxAutoColumns>
+      <drawerPadding>6</drawerPadding>
+      <drawerSettingsRowHeight>30</drawerSettingsRowHeight>
+      <drawerReopenGuardSeconds>0.3</drawerReopenGuardSeconds>
+      <moreButtonLabelPadding>24</moreButtonLabelPadding>
+      <labelSidePadding>6</labelSidePadding>     <!-- left/right aligned button labels -->
+    </behaviour>
+
+    <!-- Layout of the settings window. -->
+    <settingsWindow>
+      <maxSize>(1180,780)</maxSize>
+      <screenMargin>40</screenMargin>
+      <listFraction>0.6</listFraction>
+      <panelGap>10</panelGap>
+      <headerHeight>36</headerHeight>
+      <noticeLineHeight>24</noticeLineHeight>
+      <tabButtonWidth>110</tabButtonWidth>
+      <closeButtonSpace>40</closeButtonSpace>
+      <columnHeaderHeight>22</columnHeaderHeight>
+      <rowHeight>30</rowHeight>
+      <footerButtonHeight>34</footerButtonHeight>
+      <footerGap>6</footerGap>
+      <detailPadding>10</detailPadding>
+      <checkboxSize>24</checkboxSize>
+      <handleColumn>22</handleColumn>
+      <visibleColumn>40</visibleColumn>
+      <iconColumn>36</iconColumn>
+      <hotKeyColumn>80</hotKeyColumn>
+      <drawerColumn>46</drawerColumn>
+      <sourceColumnMax>170</sourceColumnMax>
+      <sourceColumnFraction>0.26</sourceColumnFraction>
+      <moveButtonWidth>110</moveButtonWidth>
+      <resetButtonWidth>70</resetButtonWidth>
+      <smallButtonWidth>84</smallButtonWidth>
+      <titleIconSize>36</titleIconSize>
+      <textRowHeight>30</textRowHeight>
+      <sliderHeight>22</sliderHeight>
+      <radioIndent>11</radioIndent>
+      <listFramePadding>4</listFramePadding>
+      <rowIconPadding>3</rowIconPadding>
+      <textInset>2</textInset>
+      <tabButtonInset>2</tabButtonInset>
+      <dimmedAlpha>0.5</dimmedAlpha>             <!-- hidden buttons, or ones not on the bar right now -->
+      <customNameMaxLength>40</customNameMaxLength>
+      <importMenuMaxFiles>15</importMenuMaxFiles>
+      <captureKeyDialogSize>(400,160)</captureKeyDialogSize>
+    </settingsWindow>
+  </MainButtonBarSystem.MainButtonBarTuningDef>
+</Defs>

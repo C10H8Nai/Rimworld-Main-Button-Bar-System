@@ -46,7 +46,6 @@
   <MBBS_Visible>Show on the bar</MBBS_Visible>
   <MBBS_InDrawer>Put in the More drawer</MBBS_InDrawer>
   <MBBS_CustomName>Custom name (empty = original: {0})</MBBS_CustomName>
-  <MBBS_ResetName>Original</MBBS_ResetName>
   <MBBS_ButtonWidth>Width: {0}px</MBBS_ButtonWidth>
   <MBBS_ButtonWidthFollow>Width: same as the whole bar</MBBS_ButtonWidthFollow>
   <MBBS_Pin>Fixed position</MBBS_Pin>
@@ -99,4 +98,23 @@
   <MBBS_Import_Unsafe>That text asks to create program classes, which an arrangement never needs. Not imported.</MBBS_Import_Unsafe>
   <MBBS_Import_TooNew>Made by a newer version of this mod (format {0}; this version reads up to {1}). Update the mod first.</MBBS_Import_TooNew>
   <MBBS_Import_Failed>Could not read the arrangement: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Default</MBBS_Default>
+  <MBBS_DefaultTip>Back to the default value.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Drawer</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Width and spacing</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Scroll arrow width: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Mouse wheel speed: {0}px per step</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>"More" button width: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>"More" button width: fit the label</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Drawer columns: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Drawer columns: automatic</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Drawer cell width: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Drawer cell width: same as the default button width</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Label alignment</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Where button labels sit. Buttons that only show an icon are not affected.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>As the game draws it</MBBS_Align_Default>
+  <MBBS_Align_Left>Left</MBBS_Align_Left>
+  <MBBS_Align_Center>Center</MBBS_Align_Center>
+  <MBBS_Align_Right>Right</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>the game's own assets</MBBS_IconFromGameAssets>
 </LanguageData>

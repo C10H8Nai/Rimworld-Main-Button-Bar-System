@@ -56,10 +56,24 @@ namespace MainButtonBarSystem
             ButtonPainter.Draw(button, rect);
         }
 
+        public virtual string MoreButtonLabel(int drawerCount) => "MBBS_More".Translate(drawerCount);
+
+        /// <summary>Width of the More button: the player's setting, or the label's width when that is 0.</summary>
+        public virtual float MoreButtonWidth(BarConfig config, int drawerCount)
+        {
+            if (config.MoreButtonWidth > 0) return config.MoreButtonWidth;
+            var font = Text.Font;
+            Text.Font = GameFont.Small;
+            float width = Text.CalcSize(MoreButtonLabel(drawerCount)).x;
+            Text.Font = font;
+            return width + MainButtonBarTuningDef.Current.behaviour.moreButtonLabelPadding;
+        }
+
         /// <summary>Returns true when clicked.</summary>
         public virtual bool DrawMoreButton(Rect rect, int drawerCount, bool drawerOpen)
         {
-            bool clicked = Widgets.ButtonTextSubtle(rect, "MBBS_More".Translate(drawerCount), 0f, -1f, SoundDefOf.Mouseover_Category, default, null, drawerOpen);
+            Text.Font = GameFont.Small;
+            bool clicked = Widgets.ButtonTextSubtle(rect, MoreButtonLabel(drawerCount), 0f, -1f, SoundDefOf.Mouseover_Category, default, null, drawerOpen);
             TooltipHandler.TipRegion(rect, "MBBS_MoreTip".Translate());
             return clicked;
         }
@@ -74,12 +88,60 @@ namespace MainButtonBarSystem
         }
     }
 
-    /// <summary>Draws a button the way the game does, applying the per-button icon settings.</summary>
+    /// <summary>
+    /// Draws a button the way the game does. The game's MainButtonWorker.DoButton still runs (so other mods'
+    /// patches on it keep working); only the label placement is changed when the player chose an alignment.
+    /// </summary>
     public static class ButtonPainter
     {
+        /// <summary>Alignment requested for the button being drawn; Default outside this mod's drawing.</summary>
+        public static LabelAlign ActiveAlign { get; private set; }
+
         public static void Draw(BarButton button, Rect rect)
         {
-            button.Def.Worker.DoButton(rect);
+            var align = BarConfigManager.Active.labelAlign;
+            if (align == LabelAlign.Default)
+            {
+                button.Def.Worker.DoButton(rect);
+                return;
+            }
+
+            ActiveAlign = align;
+            try
+            {
+                button.Def.Worker.DoButton(rect);
+            }
+            finally
+            {
+                ActiveAlign = LabelAlign.Default;
+            }
+        }
+
+        /// <summary>Draws a button label the game handed to Widgets.ButtonTextSubtle, at the chosen alignment.</summary>
+        internal static void DrawAlignedLabel(Rect rect, string label, Color? labelColor)
+        {
+            var anchor = Text.Anchor;
+            var color = GUI.color;
+            bool wrap = Text.WordWrap;
+            try
+            {
+                Text.Anchor = ActiveAlign switch
+                {
+                    LabelAlign.Left => TextAnchor.MiddleLeft,
+                    LabelAlign.Right => TextAnchor.MiddleRight,
+                    _ => TextAnchor.MiddleCenter,
+                };
+                Text.WordWrap = false;
+                if (labelColor.HasValue) GUI.color = labelColor.Value;
+                float pad = MainButtonBarTuningDef.Current.behaviour.labelSidePadding;
+                Widgets.Label(new Rect(rect.x + pad, rect.y, Mathf.Max(0f, rect.width - pad * 2f), rect.height), label);
+            }
+            finally
+            {
+                Text.Anchor = anchor;
+                GUI.color = color;
+                Text.WordWrap = wrap;
+            }
         }
     }
 }

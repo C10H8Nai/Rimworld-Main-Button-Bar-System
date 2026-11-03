@@ -101,7 +101,10 @@ namespace MainButtonBarSystem
         {
             var ev = Event.current;
             if (ev == null || ev.type != EventType.KeyDown || ev.keyCode == KeyCode.None || Custom.Count == 0) return;
-            if (GUIUtility.keyboardControl != 0) return;
+            // Same gates as the game's KeyBindingDef.KeyDownEvent: not while a search box has focus, and not with
+            // Command/Windows held. Focused text fields already used the key, since this runs after windows.
+            if (Find.WindowStack.AnySearchWidgetFocused) return;
+            if (ev.command && ev.keyCode != KeyCode.LeftCommand && ev.keyCode != KeyCode.RightCommand) return;
 
             foreach (var pair in Custom)
             {
@@ -135,7 +138,7 @@ namespace MainButtonBarSystem
     {
         private readonly Action<KeyCode> onKey;
 
-        public override Vector2 InitialSize => new Vector2(400f, 160f);
+        public override Vector2 InitialSize => MainButtonBarTuningDef.Current.settingsWindow.captureKeyDialogSize;
 
         public Dialog_CaptureKey(Action<KeyCode> onKey)
         {

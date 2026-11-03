@@ -82,15 +82,31 @@ namespace MainButtonBarSystem
     }
 
     /// <summary>
+    /// A switch that can also mean "use the default from the tuning def". The names True and False keep files
+    /// written when these fields were plain bools readable.
+    /// </summary>
+    public enum DefaultableBool
+    {
+        Default,
+        True,
+        False,
+    }
+
+    /// <summary>
     /// One complete arrangement of the bar. Stored per save, as the shared template, as the export format and as
     /// the content of a <see cref="MainButtonArrangementDef"/> (spec 3.4, 4.15). Bump
     /// <see cref="CurrentFormatVersion"/> whenever the meaning of a field changes.
+    /// <para>
+    /// Number fields hold -1 and switches hold <see cref="DefaultableBool.Default"/> while the player has not
+    /// changed them; the effective value then comes from <see cref="MainButtonBarTuningDef"/>. Read the
+    /// PascalCase properties, not the fields.
+    /// </para>
     /// </summary>
     public class BarConfig : IExposable
     {
-        public const int CurrentFormatVersion = 1;
-        public const int DefaultDefaultWidth = 120;
-        public const int DefaultMinWidth = 100;
+        /// <summary>2: number fields may be -1 (use default) and switches may be Default.</summary>
+        public const int CurrentFormatVersion = 2;
+        public const int Unset = -1;
         public const string VanillaMode = "Vanilla";
         public const string VanillaAppearance = "Vanilla";
 
@@ -105,14 +121,39 @@ namespace MainButtonBarSystem
         /// <summary>Saved order of defNames; null means the game's own order.</summary>
         public List<string> order;
 
-        public int defaultWidth = DefaultDefaultWidth;
-        public int minWidth = DefaultMinWidth;
-        public int gap;
-        public bool fillScreen = true;
+        public int defaultWidth = Unset;
+        public int minWidth = Unset;
+        public int gap = Unset;
+        public DefaultableBool fillScreen;
         public LabelAlign labelAlign = LabelAlign.Default;
 
         /// <summary>Game menu button stays at the right end and cannot be hidden or moved (spec 3.3, 4.16).</summary>
-        public bool menuLocked = true;
+        public DefaultableBool menuLocked;
+
+        public int moreButtonWidth = Unset;
+        public int arrowWidth = Unset;
+        public float wheelScrollPixels = Unset;
+        public int drawerColumns = Unset;
+        public int drawerCellWidth = Unset;
+
+        private static MainButtonBarTuningDef.BarDefaults D => MainButtonBarTuningDef.Current.barDefaults;
+
+        public int DefaultWidth => defaultWidth >= 0 ? defaultWidth : D.defaultWidth;
+        public int MinWidth => minWidth >= 0 ? minWidth : D.minWidth;
+        public int Gap => gap >= 0 ? gap : D.gap;
+        public bool FillScreen => Resolve(fillScreen, D.fillScreen);
+        public bool MenuLocked => Resolve(menuLocked, D.menuLocked);
+        public int MoreButtonWidth => moreButtonWidth >= 0 ? moreButtonWidth : D.moreButtonWidth;
+        public int ArrowWidth => arrowWidth >= 0 ? arrowWidth : D.arrowWidth;
+        public float WheelScrollPixels => wheelScrollPixels >= 0f ? wheelScrollPixels : D.wheelScrollPixels;
+        public int DrawerColumns => drawerColumns >= 0 ? drawerColumns : D.drawerColumns;
+        public int DrawerCellWidth => drawerCellWidth >= 0 ? drawerCellWidth : D.drawerCellWidth;
+
+        public static bool Resolve(DefaultableBool value, bool fallback) =>
+            value == DefaultableBool.Default ? fallback : value == DefaultableBool.True;
+
+        public static DefaultableBool Store(bool value, bool fallback) =>
+            value == fallback ? DefaultableBool.Default : value ? DefaultableBool.True : DefaultableBool.False;
 
         public List<ButtonOverride> overrides = new List<ButtonOverride>();
 
@@ -183,6 +224,11 @@ namespace MainButtonBarSystem
             fillScreen = fresh.fillScreen;
             labelAlign = fresh.labelAlign;
             menuLocked = fresh.menuLocked;
+            moreButtonWidth = fresh.moreButtonWidth;
+            arrowWidth = fresh.arrowWidth;
+            wheelScrollPixels = fresh.wheelScrollPixels;
+            drawerColumns = fresh.drawerColumns;
+            drawerCellWidth = fresh.drawerCellWidth;
             overrides.Clear();
             index = null;
         }
@@ -204,12 +250,17 @@ namespace MainButtonBarSystem
             Scribe_Values.Look(ref displayMode, "displayMode", VanillaMode);
             Scribe_Values.Look(ref appearance, "appearance", VanillaAppearance);
             Scribe_Collections.Look(ref order, "order", LookMode.Value);
-            Scribe_Values.Look(ref defaultWidth, "defaultWidth", DefaultDefaultWidth);
-            Scribe_Values.Look(ref minWidth, "minWidth", DefaultMinWidth);
-            Scribe_Values.Look(ref gap, "gap");
-            Scribe_Values.Look(ref fillScreen, "fillScreen", true);
+            Scribe_Values.Look(ref defaultWidth, "defaultWidth", Unset);
+            Scribe_Values.Look(ref minWidth, "minWidth", Unset);
+            Scribe_Values.Look(ref gap, "gap", Unset);
+            Scribe_Values.Look(ref fillScreen, "fillScreen", DefaultableBool.Default);
             Scribe_Values.Look(ref labelAlign, "labelAlign", LabelAlign.Default);
-            Scribe_Values.Look(ref menuLocked, "menuLocked", true);
+            Scribe_Values.Look(ref menuLocked, "menuLocked", DefaultableBool.Default);
+            Scribe_Values.Look(ref moreButtonWidth, "moreButtonWidth", Unset);
+            Scribe_Values.Look(ref arrowWidth, "arrowWidth", Unset);
+            Scribe_Values.Look(ref wheelScrollPixels, "wheelScrollPixels", Unset);
+            Scribe_Values.Look(ref drawerColumns, "drawerColumns", Unset);
+            Scribe_Values.Look(ref drawerCellWidth, "drawerCellWidth", Unset);
             Scribe_Collections.Look(ref overrides, "overrides", LookMode.Deep);
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)

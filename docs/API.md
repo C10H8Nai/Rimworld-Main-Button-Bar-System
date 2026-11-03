@@ -65,9 +65,14 @@ under your mod's `Defs` folder and change `defName` and `label`.
 On import, buttons the player does not have are skipped, and buttons the arrangement does not mention go just
 before the game menu button.
 
-`config` fields: `formatVersion`, `displayMode` (a `BarDisplayModeDef` defName), `appearance` (a
-`BarAppearanceDef` defName), `order`, `defaultWidth`, `minWidth`, `gap`, `fillScreen`, `menuLocked`,
-`overrides` (each with `defName`, `hidden`, `inDrawer`, `label`, `width`, `pin`, `forceShow`, `iconMode`, `icon`).
+`config` fields: `formatVersion` (currently 2), `displayMode` (a `BarDisplayModeDef` defName), `appearance` (a
+`BarAppearanceDef` defName), `order`, `defaultWidth`, `minWidth`, `gap`, `fillScreen`, `labelAlign`
+(`Default` / `Left` / `Center` / `Right`), `menuLocked`, `moreButtonWidth`, `arrowWidth`, `wheelScrollPixels`,
+`drawerColumns`, `drawerCellWidth`, and `overrides` (each with `defName`, `hidden`, `inDrawer`, `label`, `width`,
+`pin`, `forceShow`, `iconMode`, `icon`).
+
+Leave out any field you do not want to set. Number fields left out (or `-1`) and switches left out (or `Default`)
+follow the player's tuning defaults; see below.
 
 ## 3. Display modes
 
@@ -142,6 +147,28 @@ priority, and can import its settings.
 The default worker removes the other mod's Harmony patches on `MainButtonsRoot.DoButtons`,
 `MainButtonsRoot.MainButtonsOnGUI` and `MainButtonWorker.DoButton` when this mod has priority. Override
 `TakeOver`, `ReferenceValue`, `CanImport` and `ImportInto` for more. Priority changes apply after a restart.
+
+## Tuning def
+
+Every tunable number lives in `Defs/MainButtonBarSystem/Tuning.xml`
+(`MainButtonBarSystem.MainButtonBarTuningDef`, defName `MainButtonBarTuning`); the code has no built-in values.
+Sections:
+
+| Section | Contents |
+|---|---|
+| `barDefaults` | Defaults of the settings players can change (widths, gap, fill, menu lock, More width, arrows, wheel speed, drawer columns and cell width) |
+| `ranges` | Slider ranges in the settings window |
+| `behaviour` | Fixed behaviour: bar position and height (vanilla: top 35px above the screen bottom, 36px tall), drawer padding, label padding |
+| `settingsWindow` | Layout of the settings window |
+
+Change values with an ordinary XML patch, for example:
+
+```xml
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/MainButtonBarSystem.MainButtonBarTuningDef[defName="MainButtonBarTuning"]/barDefaults/minWidth</xpath>
+  <value><minWidth>100</minWidth></value>
+</Operation>
+```
 
 ## Query API
 

@@ -34,7 +34,15 @@ namespace MainButtonBarSystem
 
         public static BarAppearanceWorker Appearance => ctx.Appearance ?? BarConfigManager.Active.AppearanceDef?.Worker ?? new BarAppearanceWorker();
 
-        public static Rect DefaultBarRect => new Rect(0f, UI.screenHeight - MainButtonDef.ButtonHeight, UI.screenWidth, MainButtonDef.ButtonHeight);
+        /// <summary>The bar exactly where the game draws it (see the tuning def's behaviour section).</summary>
+        public static Rect DefaultBarRect
+        {
+            get
+            {
+                var b = MainButtonBarTuningDef.Current.behaviour;
+                return new Rect(0f, UI.screenHeight - b.barTopFromBottom, UI.screenWidth, b.buttonRectHeight);
+            }
+        }
 
         /// <summary>Draws the bar. Returns false when the game should draw it instead.</summary>
         public static bool TryDraw(MainButtonsRoot root)
