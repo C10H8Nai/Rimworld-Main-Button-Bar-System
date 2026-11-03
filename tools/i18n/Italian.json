@@ -60,7 +60,7 @@
     "MBBS_ResetAll": "Reimposta tutto",
     "MBBS_ResetAllConfirm": "Riportare tutte le impostazioni alla barra non modificata (il gioco più le modifiche delle altre mod)? Il modello non verrà applicato.",
     "MBBS_Save": "Salva",
-    "MBBS_Compat_TheirsNotice": "Rilevata la mod {0}: al momento controlla lei la barra, quindi le modifiche fatte qui hanno effetto solo se questa mod ha la priorità.",
+    "MBBS_Compat_TheirsNotice": "Rilevata la mod {0}: al momento è lei a controllare la barra, quindi le modifiche fatte qui hanno effetto solo se questa mod ha la priorità.",
     "MBBS_Compat_OursNotice": "Rilevata la mod {0}: questa mod ha la priorità, quindi l'effetto di {0} sulla barra è disattivato.",
     "MBBS_Compat_SeeAdvanced": "Dettagli nella scheda Avanzate.",
     "MBBS_Compat_Header": "Compatibilità: {0}",
