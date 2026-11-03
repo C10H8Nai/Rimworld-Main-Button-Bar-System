@@ -1,0 +1,85 @@
+defName	label	order	buttonVisible	minimized	validWithoutMap	worker	tabWindow	defaultHotKey	hotKeyDef	sourceMod	sourcePackageId	iconPath	iconSourceMod
+Inspect	查看	0	False	False	False	RimWorld.MainButtonWorker_ToggleTab	RimWorld.MainTabWindow_Inspect	None		Core	ludeon.rimworld		
+MintMenus	新潮建造界面	0	False	False	False	RimWorld.MainButtonWorker_ToggleTab	DubsMintMenus.MainTabWindow_MintArchitect	None		Dubs Mint Menus	dubwise.dubsmintmenus		
+MintResearch	新潮研究界面	0	False	False	False	RimWorld.MainButtonWorker_ToggleTab	DubsMintMenus.MainTabWindow_MintResearch	None		Dubs Mint Menus	dubwise.dubsmintmenus		
+MintDesignators	指令转盘	0	False	False	False	RimWorld.MainButtonWorker_ToggleTab	DubsMintMenus.MainTabWindow_MayaMenu	None		Dubs Mint Menus	dubwise.dubsmintmenus		
+Architect	建筑规划	1	True	False	False	RimWorld.MainButtonWorker_ToggleTab	RimWorld.MainTabWindow_Architect	Tab	MainTab_Architect	Core	ludeon.rimworld	UI/Buttons/MainButtons/IconArchitect	Vanilla Textures Expanded
+Work	工作	10	True	False	False	RimWorld.MainButtonWorker_ToggleTab	RimWorld.MainTabWindow_Work	F1	MainTab_Work	Core	ludeon.rimworld	UI/Buttons/MainButtons/IconWork	Vanilla Textures Expanded
+Milian_Work	米莉安工作	10	False	False	False	Milira.MainButtonWorker_MilianWork	Milira.MainTabWindow_MilianWork	None		Milira Race	ancot.milirarace		
+Kiiro_Merchant	商户	11	True	False	False	Kiiro_Event.MainButtonWorker_ToggleMerchantTab	Kiiro_Event.MainTabWindow_Merchant	None		Kiiro Story: Events Expanded	ancot.kiirostoryeventsexpanded		
+HardworkingWork	勤工分配	11	True	False	False	RimWorld.MainButtonWorker_ToggleTab	Kz.MainTabWindow_HardworkingWork	None		kemomimihouse HardworkingKz	moo.hardworking.kz		
+HardworkingAssign	勤工管制	12	False	False	False	RimWorld.MainButtonWorker_ToggleTab	Kz.MainTabWindow_HardworkingAssign	None		kemomimihouse HardworkingKz	moo.hardworking.kz		
+CL_ModuleCenter	模块中心	15	True	False	False	ClWindows.ModuleCenter.MainButtonWorker_ModuleCenter	ClWindows.ModuleCenter.MainTabWindow_ModuleCenter	None		ChezhouLib	chezhou.chezhoulib.lib		
+MedicalTab	医疗	15	True	False	False	RimWorld.MainButtonWorker_ToggleTab	Fluffy.MainTabWindow_Medical	M	MainTab_MedicalTab	Medical Tab - Continued	memegoddess.medicaltab	UI/Buttons/MainButtons/MedicalTab	Bradson's Main Button Icons (Forked + Expanded)
+Schedule	管制	20	True	False	False	RimWorld.MainButtonWorker_ToggleTab	RimWorld.MainTabWindow_Schedule	F2	MainTab_Schedule	Core	ludeon.rimworld	UI/Buttons/MainButtons/IconSchedule	Vanilla Textures Expanded
+WiseClock_DaysMatter	纪念日	20	True	False	False	RimWorld.MainButtonWorker_ToggleTab	RimWorldDaysMatter.DaysMatterTab	None		Days Matter (fork)	wiseclock.ac.daysmatter	UI/Buttons/MainButtons/DaysMatter	Bradson's Main Button Icons (Forked + Expanded)
+AM_LevelSchedule	楼层管制	20	True	False	False	AncientMarket_Libraray.MainButtonWorker_LevelSchedule	AncientMarket_Libraray.MainTabWindow_LevelSchedule	F9	MainTab_AM_LevelSchedule	Ancient urban ruins	xmb.ancienturbanruins.mo	UI/Buttons/MainButtons/AM_LevelSchedule	Bradson's Main Button Icons (Forked + Expanded)
+Assign	方案	30	True	False	False	RimWorld.MainButtonWorker_ToggleTab	RimWorld.MainTabWindow_Assign	F3	MainTab_Assign	Core	ludeon.rimworld	UI/Buttons/MainButtons/IconAssign	Vanilla Textures Expanded
+FW_FashionTab	时装	30	True	False	False	Fashion_Wardrobe.FWorkers+FW_MainButtonWorker	Fashion_Wardrobe.FW_Windows+MainTabWindow_Fashion	F	MainTab_FW_FashionTab	Fashion Wardrobe	aedbia.fashionwardrobe		
+RimTalk_Memory	记忆	35	True	False	False	RimWorld.MainButtonWorker_ToggleTab	RimTalk.Memory.UI.TabWindow.MemoryTabWindowBridge	None		RimTalk - Expand Memory	cj.rimtalk.expandmemory		
+ASA_Combat	combat	35	True	False	False	RimWorld.MainButtonWorker_ToggleTab	AsuRim.Armoury.MainTabWindow_Combat	None		Rules of Engagement	asunib.rulesofengagement		
+Animals	动物	40	True	False	False	RimWorld.MainButtonWorker_ToggleTab	AnimalTab.MainTabWindow_Animals	F4	MainTab_Animals	Animal Tab — Unofficial Update	fluffy.animaltab	UI/Buttons/MainButtons/IconAnimals	Vanilla Textures Expanded
+AIRobots	机器人	42	True	False	False	RimWorld.MainButtonWorker_ToggleTab	AIRobot.X2_MainTabWindow_Robots	None		Misc. Robots	haplo.miscellaneous.robots	UI/Buttons/MainButtons/MiscRobots	Bradson's Main Button Icons (Forked + Expanded)
+Mechs	机械族	45	True	False	False	RimWorld.MainButtonWorker_ToggleMechTab	RimWorld.MainTabWindow_Mechs	None		Biotech	ludeon.rimworld.biotech	UI/Buttons/MainButtons/IconMechanoids	Vanilla Textures Expanded
+GuRenGuiLai_Archive	故人旧影	45	True	False	True	GuRenGuiLai.MainButtonWorker_GuRenGuiLai	RimWorld.MainTabWindow_History	None		故人归来 (Old Friends Return)	yuin.gurenguilai		
+Milian_Config	米莉安配置	46	True	False	False	Milira.MainButtonWorker_MilianConfig	Milira.MainTabWindow_MilianConfig	None		Milira Race	ancot.milirarace		
+WVC_MechsWork	mechs work	46	True	True	False	WVC_WorkModes.MainButtonWorker_ToggleMechTab	WVC_WorkModes.MainTabWindow_Work_Mechs	None		WVC - Work Modes	wvc.sergkart.biotech.moremechanoidsworkmodes	WVC/UI/Buttons/MechsWorkIcon	WVC - Work Modes
+SM_MechWork	机械体工作	46	True	False	False	SM_MechTab.SM_MainButtonWorker_ToggleMechWorkTab	SM_MechTab.SM_MainTabWindow_MechsWork	None		Mech Work Tab	spacemoth.mechtab	UI/Buttons/MainButtons/IconMechanoids	Vanilla Textures Expanded
+Ancot_DronesTab	无人机	47	True	False	False	AncotLibrary.MainButtonWorker_Drones	AncotLibrary.MainTabWindow_Drones	None		Ancot Library	ancot.ancotlibrary		
+Wildlife	野生动物	50	True	False	False	RimWorld.MainButtonWorker_ToggleTab	RimWorld.MainTabWindow_Wildlife	F5	MainTab_Wildlife	Core	ludeon.rimworld	UI/Buttons/MainButtons/IconWildlife	Vanilla Textures Expanded
+Research	研究	50	True	False	False	RimWorld.MainButtonWorker_ToggleResearchTab	NiceResearchTab.MainTabWindow_ResearchTree	F5	MainTab_Research	Nice Research Tab	andromeda.niceresearchtab	UI/Buttons/MainButtons/IconResearch	Vanilla Textures Expanded
+PrisonerRecruit	边缘真香	50	True	False	False	RimWorld.MainButtonWorker_ToggleTab	PrisonerRecruit.MainTabWindow_PrisonerRecruit	None		Prisoner Good Treat Voluntary Join边缘真香	dbs.prisonerrecruit.goodtreatment		
+ZHP_ShopManagement	店铺管理	50	True	False	False	EdgeGeneralStore.MainButtonWorker_ShopManagement		None		Ratkin Misc+ 鼠族拓展:边缘杂货铺	w.zhp		
+Guests	访客	53	True	False	False	RimWorld.MainButtonWorker_ToggleTab	Hospitality.MainTab.MainTabWindow_Hospitality	None		Hospitality (Continued)	orion.hospitality	UI/Buttons/MainButtons/Hospitality	Bradson's Main Button Icons (Forked + Expanded)
+Milk_MainButton	Equal Milking	54	True	True	False	RimWorld.MainButtonWorker_ToggleTab	EqualMilking.MainTabWindow_Milk	None		Equal Milking	akaster.equalmilking	UI/Icons/Milk	Equal Milking
+Patients	求医者	54	True	False	False	RimWorld.MainButtonWorker_ToggleTab	Hospital.MainTab.MainTabWindow_Hospital	None		Hospital	adamas.hospital	UI/Buttons/MainButtons/IconHospital	Hospital
+Miracle_MainTab	米拉	55	True	False	False	Miracle.MainButtonWorker_Miracle	Miracle.MainTabWindow_Miracle	None		MoeLotl Tale: Miracle’s Echo of Justice 萌螈故事线：米拉库尔的正义回响	miracurkjc.miracle.moelotlflyingjiangshi		
+Bodlosh_WeaponStats	武器装备	60	True	False	False	RimWorld.MainButtonWorker_ToggleTab	WeaponStats.MainTabWindow_WeaponStats	None		WeaponStats	bodlosh.weaponstats	UI/Buttons/MainButtons/WeaponStats	Bradson's Main Button Icons (Forked + Expanded)
+Nivarian_UplinkResearch	上行链路	61	True	False	False	Nivarian_Race.Code.UI.MainButtonWorker_UplinkResearch		None		Nivarian Race	keeptpa.nivarianrace		
+RC_ResearchCommissionButton	研究委托	62	True	False	False	ResearchCommission.MainButtonWorker_ResearchCommission		None		Research Commission	mrk.researchcommission		
+Quests	任务	65	True	False	True	RimWorld.MainButtonWorker_ToggleTab	RimWorld.MainTabWindow_Quests	F7	MainTab_Quests	Core	ludeon.rimworld	UI/Buttons/MainButtons/IconQuests	Vanilla Textures Expanded
+Sim_BusinessManager	经商管理	66	True	False	False	RimWorld.MainButtonWorker_ToggleTab	SimManagementLib.SimDialog.MainTabWindow_BusinessManager	None		RimSimManagementFramework边缘模拟经营框架	chezhou.framework.rimsimmanagementframework		
+SW_Warrants	悬赏令	66	True	True	True	RimWorld.MainButtonWorker_ToggleTab	SimpleWarrants.MainTabWindow_Warrants	None		Simple Warrants	pb3n.simplewarrants	UI/Warrants/TargetWarrants	Simple Warrants
+World	世界	70	True	False	True	PrepareLanding.Defs.MainButtonWorkerToggleWorld		F8	MainTab_World	Core	ludeon.rimworld	UI/Buttons/MainButtons/IconWorld	Vanilla Textures Expanded
+MI_UniquePawn_Manager	特殊角色管理器	70	True	True	False	AriandelLibrary.MainButtonWorker_SpecialPawnTab	AriandelLibrary.MainTabWindow_SpecialPawnTrigger	None		Ariandel Library	ariandel.ariandellibrary	AriandelLibrary/Faction/Imperium_Icon_Grey	Ariandel Library
+Inventory	库存	70	True	False	False	RimWorld.MainButtonWorker_ToggleTab	InventoryTab.MainTabWindow_Inventory	None		InventoryTab	kota.inventorytab	UI/Buttons/MainButtons/InventoryTab	Bradson's Main Button Icons (Forked + Expanded)
+RR_Relations	关系	75	True	False	False	RimWorld.MainButtonWorker_ToggleTab	RimRelations.MainTabWindow_RimRelations	None		RimRelations	reo.rimrelations		
+DMS_CrisisShop	危机中心	75	True	False	False	VoyagerCrisisShop.MainButtonWorker_CrisisShop		None		The Dead Man's Switch - AssemblyMaster	maple.deadmanswitch.superassemblymaster		
+RI_InsuranceTab	边缘保险	75	True	True	False	RimWorld.MainButtonWorker_ToggleTab	RimInsurance.MainTabWindow_Insurance	None		边缘保险（RimInsurance）	agenl.riminsurance	UI/RI_InsuranceTab	边缘保险（RimInsurance）
+DMSAM_AirSupportControl	空中支援	76	True	False	False	DMSAM.MainButtonWorker_AirSupport		None		The Dead Man's Switch - AssemblyMaster	maple.deadmanswitch.superassemblymaster		
+ARKPP_PowerPP	Power++	78	True	True	True	aRandomKiwi.PPP.MainButtonWorker_PowerPP		None		Power++	arandomkiwi.powerpp	UI/ARKPP_MainIcon	Power++
+AD_AnimalDictionary	Dictionary	79	True	False	False	RimWorld.MainButtonWorker_ToggleTab	AnimalDictionary.AD_MainTabWindow_AnimalDictionary	None		Animal Dictionary	udon.animaldictionary		
+Rimatomics	边缘核能	79	True	True	True	Rimatomics.MainButtonWorker_Rimatomics	Rimatomics.MainTabWindow_Rimatomics	None		Dubs Rimatomics	dubwise.rimatomics	Rimatomics/UI/MainIco	Dubs Rimatomics
+RimTalkDebug		79	True	True	False	RimWorld.MainButtonWorker_ToggleTab	RimTalk.UI.OverlayTabLauncher	None		RimTalk	cj.rimtalk	UI/RimTalkIcon	RimTalk - Expand Memory
+RTDC_HistoryTab	言出多彩	79	True	True	False	RimTalkDynamicColors.MainButtonWorker_RimTalkHistory	RimTalkDynamicColors.RimTalkHistoryWindow	None		RimTalk DynamicColors 边缘世谭-言出多彩	maiya.rimtalkdynamiccolors	UI/Icons/RTDC_Icon	RimTalk DynamicColors 边缘世谭-言出多彩
+PersonaDirector	备注	79	True	True	False	RimPersonaDirector.MainButtonWorker_Director		None		RimTalk: Persona Director	rp.rimtalk.personadirector	UI/Buttons/DirectorNotes	RimTalk: Persona Director
+History	历史	80	True	False	True	RimWorld.MainButtonWorker_ToggleTab	HistoryExpanded.MainTabWindow_HistoryExpanded	F9	MainTab_History	Core	ludeon.rimworld	UI/Buttons/MainButtons/IconHistory	Vanilla Textures Expanded
+VisibleWealth_MainButton	Wealth breakdown	81	False	True	False	VisibleWealth.MainButtonWorker_WealthBreakdown		None		Visible Wealth	visiblewealth.1trickpwnyta	UI/Buttons/WealthBreakdown	Visible Wealth
+CQF_QuestBook	任务书	85	True	False	True	QuestEditor_Library.MainButtonWorker_QuestBook	QuestEditor_Library.MainTabWindow_QuestBook	None		Custom Quest Framework	hailuan.customquestframework	UI/QuestEditor/LoadQuest	Custom Quest Framework
+FP_VeteransMainTab	veterans	85	False	True	True	RimWorld.MainButtonWorker_ToggleTab	FinitePopulationVeterans.MainTabWindow_Veterans	None		Eternal Pawns	helldan.eternalpawns	UI/Icons/EP_Menu	Eternal Pawns
+Factions	派系	90	True	False	True	RimWorld.MainButtonWorker_ToggleTab	MoreFactionInteraction.MoreFactionWar.MainTabWindow_FactionWar	None		Core	ludeon.rimworld	UI/Buttons/MainButtons/IconFactions	Vanilla Textures Expanded
+ZP_Dictionary	稲作辞典	90	True	True	True	RimWorld.MainButtonWorker_ToggleTab	RiceCCDictionary.ZP_MainTabWindow_Dictionary	None		【ZP】Rice cultivating civilization	udon.ricecultivatingcivilization.for14	Icon/Menu/Rice	【ZP】Rice cultivating civilization
+DigitalStorage_CraftAutomation	制作自动化	95	True	False	False	DigitalStorage.UI.MainButtonWorker_CraftAutomation		None		【CA】数字存储-Digital Storage 4.0	cagier.digitalstorage	2.0/代理建筑	【CA】数字存储-Digital Storage 4.0
+RimTalk_Announcements	通告	99	True	False	False	RimTalkHealthEnhance.MainButtonWorker_Announcement	RimTalkHealthEnhance.MainTabWindow_Announcement	None		RimTalk - Enhanced Prompt and Announcement	ruaji.rimtalkpromptenhance		
+UAT_MainButton	服饰调整	99	True	False	False	RimWorld.MainButtonWorker_ToggleTab	UniversalApparelTweaker.MainTabWindow_ApparelTweaker	None		Universal Apparel Tweaker	zuoyao.universalappareltweaker		
+Ideos	文化	100	True	True	True	RimWorld.MainButtonWorker_ToggleTab	RimWorld.MainTabWindow_Ideos	None		Ideology	ludeon.rimworld.ideology	UI/Buttons/MainButtons/Ideoligions	
+NLFaceSelectTab	NL面部动态表情选项卡	100	True	True	False	RimWorld.MainButtonWorker_ToggleTab	FacialAnimation.NL_SelectPartTabWindow	None		[NL] Facial Animation - WIP	nals.facialanimation	UI/NL_FA_MainTab	[NL] Facial Animation - WIP
+PaintShop	着色工具	100	True	True	False	DubRoss.MainButtonWorker_TogglePaintshop		None		Dub's Paint Shop	dubwise.dubspaintshop	JOP/PaintBrush	Dub's Paint Shop
+MintBillMenu	新潮清单界面	100	True	True	False	DubsMintMenus.MainButtonWorker_MintBillMenu	DubsMintMenus.MainTabWindow_MintBillMenu	None		Dubs Mint Menus	dubwise.dubsmintmenus	Mint/UI/Global_bills	Dubs Mint Menus
+MintGearMenu	新潮装备界面	100	True	True	False	DubsMintMenus.MintPawns_GearButton		None		Dubs Mint Menus	dubwise.dubsmintmenus	UI/Buttons/MainButtons/MintGear	Bradson's Main Button Icons (Forked + Expanded)
+SR_FactionProgress	势力战备进度	100	True	True	False	RimWorld.MainButtonWorker_ToggleTab	SnowRabbit.MainTabWindow_SR_FactionProgress	None		SnowRabbit Race Beta	gugustar.snowrabbitracebeta	SR_UI/Cultures/SR_icon	SnowRabbit Race Beta
+RavenRace_SpecialPawnRoster	渡鸦特殊角色	100	True	True	False	RavenRace.Features.CustomPawn.Ui.MainButtonWorker_SpecialPawnRoster	RavenRace.Features.CustomPawn.Ui.MainTabWindow_SpecialPawnRoster	None		Raven Race - Embers in Shadow	zuoyao.ravenrace	UI/Icons/SpecialPawnRoster	Raven Race - Embers in Shadow
+RGC_UI	RuntimeGC	177	True	False	True	RuntimeGC.MainButtonWorker_RuntimeGC	RuntimeGC.UserInterface	None		RuntimeGC [1.6/1.7] fork2	louize.runtimegc.fork		
+TD_Ctrl-F	Ctrl-F Search	199	True	True	True	Ctrl_F.MainButtonWorker_ToggleCtrlFWindow		None		Ctrl F - Continued	memegoddess.ctrlf	CtrlFTab	Ctrl F - Continued
+TD_CustomAlerts	Custom Alerts	200	True	True	True	Custom_Alerts.MainButtonWorker_ToggleAlertsWindow		None		Custom Alerts - Continued	memegoddess.customalerts	AlertTab	Custom Alerts - Continued
+StuffList	材料	420	True	True	False	RimWorld.MainButtonWorker_ToggleTab	StuffList.MainTabWindow_StuffList	None		Stuff List (Continued)	mlie.stufflist	StuffList/UI/MainIco	Stuff List (Continued)
+XmlExtensions_MainButton_ModSettings	Mod设置	490	False	True	True	XmlExtensions.MainButtonWorker_OpenMoreModSettings		None		XML Extensions	imranfish.xmlextensions	XmlExtensions/UI/Buttons/MainButtons/MainButton_ModSettings	XML Extensions
+ModHelp	帮助	490	True	True	False	RimWorld.MainButtonWorker_ToggleTab	HelpTab.MainTabWindow_ModHelp	None		[O21] WikiRim (Continued)	mlie.wikirim	UI/Buttons/MainButtons/WikiRim	Bradson's Main Button Icons (Forked + Expanded)
+RPMainButton	边缘百科	490	True	True	True	RimWorld.MainButtonWorker_ToggleTab	Rimpedia.MainTabWindow_Rimpedia	None		Rimpedia 1.7	yrtwof.rimpedia	UI/Buttons/MainButtons/Rimpedia	Bradson's Main Button Icons (Forked + Expanded)
+RimIris	RimIris	495	True	True	False	RimIris.MainButtonWorker_Iris		None		RimIris Beta	rimiris.rimiris.beta	UI/Buttons/MainButtons/RimIris	RimIris Beta
+Achievements	成就	499	True	True	True	RimWorld.MainButtonWorker_ToggleTab	AchievementsExpanded.MainTabWindow_Achievements	None		Vanilla Achievements Expanded	vanillaexpanded.achievements	Icons/IconAchievements	Vanilla Achievements Expanded
+AAAA_EmergencySpeaker	警报	499	True	True	True	seekiworks_AllowedAreaAutomaticAdapter.AAAA_MainButtonWorker		None		AAAA(Allowed Area Automatic Adapter)	seekiworksmod.no17	icon/AAAAspeaker	AAAA(Allowed Area Automatic Adapter)
+RimStocks_MainButton	炒股	499	True	True	False	RimWorld.MainButtonWorker_ToggleTab	RimStocks.UI.MainTabWindow_Stocks	None		边缘股市（RimStock）	agenl.rimstocks	RimStocks/UI/MainButton	边缘股市（RimStock）
+Menu	菜单	500	True	False	True	RimWorld.MainButtonWorker_ToggleTab	RimWorld.MainTabWindow_Menu	None		Core	ludeon.rimworld	UI/Buttons/MainButtons/IconMenu	Vanilla Textures Expanded
+ATC_MainButton	AI 翻译	10000	True	False	True	AutoTranslator_Core.MainButtonWorker_AutoTranslator	AutoTranslator_Core.MainTabWindow_AutoTranslator	None		AI 智能漢化網絡(AI Translation Network)	auto.aitranslation.core		
+VisualExceptionsTab	Visual Exceptions	100000	True	True	True	VisualExceptions.TabButtonWorker	VisualExceptions.ExceptionInspector	None		Visual Exceptions	brrainz.visualexceptions	HarmonyTab	Visual Exceptions
