@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Built-in appearance. Add-ons can add their own BarAppearanceDef with a custom workerClass. -->
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>Vanilla</defName>
+    <label>vanilla</label>
+    <description>The game's own button look.</description>
+    <workerClass>MainButtonBarSystem.BarAppearanceWorker</workerClass>
+    <displayOrder>0</displayOrder>
+  </MainButtonBarSystem.BarAppearanceDef>
+</Defs>

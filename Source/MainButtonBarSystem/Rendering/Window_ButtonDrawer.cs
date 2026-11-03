@@ -18,7 +18,7 @@ namespace MainButtonBarSystem
         private const int MaxColumns = 4;
 
         private readonly Rect anchor;
-        private readonly List<string> keys = new List<string>();
+        private readonly List<BarButton> keys = new List<BarButton>();
 
         // Clicking More while the drawer is open first closes it as a click outside (mouse down), then the
         // More button fires (mouse up). Without this the drawer would reopen immediately.
@@ -96,12 +96,12 @@ namespace MainButtonBarSystem
             bool activated = false;
             for (int i = 0; i < keys.Count; i++)
             {
-                var def = DefDatabase<MainButtonDef>.GetNamedSilentFail(keys[i]);
-                if (def?.Worker == null) continue;
+                var button = keys[i];
+                if (button?.Def?.Worker == null) continue;
 
                 var cell = new Rect(inRect.x + (i % columns) * CellWidth, inRect.y + (i / columns) * CellHeight, CellWidth, CellHeight);
                 var before = Event.current.type;
-                def.Worker.DoButton(cell);
+                BarRenderer.Appearance.DrawDrawerButton(button, cell);
                 // Buttons fire on mouse up; closing on mouse down would swallow the click.
                 if (before == EventType.MouseUp && Event.current.type == EventType.Used && Mouse.IsOver(cell))
                     activated = true;
@@ -110,7 +110,7 @@ namespace MainButtonBarSystem
             var settingsRect = new Rect(inRect.x, inRect.yMax - SettingsRowHeight, inRect.width, SettingsRowHeight);
             if (Widgets.ButtonText(settingsRect, "MBBS_OpenSettings".Translate()))
             {
-                Find.WindowStack.Add(new Dialog_MainButtonBar());
+                MainButtonBarAPI.OpenSettings();
                 activated = true;
             }
 

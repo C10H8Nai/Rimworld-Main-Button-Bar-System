@@ -75,7 +75,9 @@ namespace MainButtonBarSystem
             var header = new Rect(inRect.x, inRect.y, inRect.width, HeaderHeight);
             DrawHeader(header);
 
-            var body = new Rect(inRect.x, header.yMax + 4f, inRect.width, inRect.height - header.height - 4f);
+            float noticeHeight = DrawCompatNotices(new Rect(inRect.x, header.yMax, inRect.width, 0f));
+            float top = header.yMax + noticeHeight + 4f;
+            var body = new Rect(inRect.x, top, inRect.width, inRect.yMax - top);
             var left = new Rect(body.x, body.y, Mathf.Floor(body.width * 0.6f), body.height);
             var right = new Rect(left.xMax + Gap, body.y, body.width - left.width - Gap, body.height);
 
@@ -104,6 +106,29 @@ namespace MainButtonBarSystem
                 tab = Tab.Simple;
             if (Widgets.ButtonTextSubtle(advancedRect, "MBBS_Tab_Advanced".Translate(), 0f, -1f, null, default, null, tab == Tab.Advanced))
                 tab = Tab.Advanced;
+        }
+
+        /// <summary>One line per detected bar-takeover mod (spec 3.7). Returns the height used.</summary>
+        private float DrawCompatNotices(Rect at)
+        {
+            float y = at.y;
+            foreach (var bridge in CompatBridges.Detected)
+            {
+                var worker = bridge.Worker;
+                string text = worker.SessionPriority == CompatPriority.Theirs
+                    ? "MBBS_Compat_TheirsNotice".Translate(bridge.ModNameOrLabel)
+                    : "MBBS_Compat_OursNotice".Translate(bridge.ModNameOrLabel);
+                if (!Advanced) text += " " + "MBBS_Compat_SeeAdvanced".Translate();
+                var line = new Rect(at.x, y, at.width, 24f);
+                GUI.color = new Color(1f, 0.85f, 0.4f);
+                Text.Anchor = TextAnchor.MiddleLeft;
+                Widgets.Label(line, text.Truncate(line.width));
+                Text.Anchor = TextAnchor.UpperLeft;
+                GUI.color = Color.white;
+                TooltipHandler.TipRegion(line, text);
+                y += line.height;
+            }
+            return y - at.y;
         }
 
         // ---------------------------------------------------------------- list
@@ -352,7 +377,7 @@ namespace MainButtonBarSystem
 
         private void DrawRight(Rect rect)
         {
-            float footerHeight = FooterButtonHeight * (editingTemplate ? 1 : 2) + 6f;
+            float footerHeight = FooterButtonHeight * (editingTemplate ? 2 : 3) + 12f;
             var detail = new Rect(rect.x, rect.y, rect.width, rect.height - footerHeight - 6f);
             var footer = new Rect(rect.x, rect.yMax - footerHeight, rect.width, footerHeight);
 
@@ -364,8 +389,45 @@ namespace MainButtonBarSystem
             DrawFooter(footer);
         }
 
-        private void DrawBarDetail(Rect rect)
+        private void DrawCompatSettings(Listing_Standard listing)
         {
+            foreach (var bridge in CompatBridges.Detected)
+            {
+                var worker = bridge.Worker;
+                listing.GapLine();
+                listing.Label("MBBS_Compat_Header".Translate(bridge.ModNameOrLabel));
+                foreach (CompatPriority p in Enum.GetValues(typeof(CompatPriority)))
+                {
+                    if (listing.RadioButton(("MBBS_Compat_" + p).Translate(bridge.ModNameOrLabel), worker.Priority == p, 12f, ("MBBS_Compat_" + p + "_Desc").Translate(bridge.ModNameOrLabel)) && worker.Priority != p)
+                    {
+                        MainButtonBarSystemMod.Settings.compatPriority[bridge.defName] = p;
+                        MainButtonBarSystemMod.Instance.WriteSettings();
+                    }
+                }
+                if (worker.Priority != worker.SessionPriority)
+                {
+                    GUI.color = new Color(1f, 0.85f, 0.4f);
+                    listing.Label("MBBS_Compat_RestartNeeded".Translate());
+                    GUI.color = Color.white;
+                }
+                if (worker.CanImport && listing.ButtonText("MBBS_Compat_Import".Translate(bridge.ModNameOrLabel)))
+                {
+                    worker.ImportInto(working);
+                    Messages.Message("MBBS_Compat_Imported".Translate(bridge.ModNameOrLabel), MessageTypeDefOf.NeutralEvent, false);
+                }
+            }
+        }
+
+        private float barDetailHeight = 600f;
+        private Vector2 barDetailScroll;
+        private float buttonDetailHeight = 600f;
+        private Vector2 buttonDetailScroll;
+
+        private void DrawBarDetail(Rect outer)
+        {
+            var view = new Rect(0f, 0f, outer.width - 16f, Mathf.Max(barDetailHeight, outer.height));
+            Widgets.BeginScrollView(outer, ref barDetailScroll, view);
+            var rect = new Rect(0f, 0f, view.width, 100000f);
             var listing = new Listing_Standard();
             listing.Begin(rect);
             Text.Font = GameFont.Medium;
@@ -374,13 +436,13 @@ namespace MainButtonBarSystem
             listing.GapLine();
 
             listing.Label("MBBS_DisplayMode".Translate());
-            foreach (DisplayMode mode in Enum.GetValues(typeof(DisplayMode)))
+            foreach (var mode in BarModel.DisplayModes)
             {
-                if (listing.RadioButton(ModeLabel(mode), working.displayMode == mode, 12f, ("MBBS_Mode_" + mode + "_Desc").Translate()))
-                    working.displayMode = mode;
+                if (listing.RadioButton(mode.LabelCap, working.displayMode == mode.defName, 12f, mode.description))
+                    working.displayMode = mode.defName;
             }
 
-            if (BarLayout.Scrolls(working.displayMode))
+            if (working.DisplayModeDef?.usesMinWidth ?? false)
             {
                 listing.Gap();
                 listing.Label("MBBS_MinWidth".Translate(working.minWidth));
@@ -396,6 +458,20 @@ namespace MainButtonBarSystem
                 working.gap = Mathf.RoundToInt(listing.Slider(working.gap, 0f, 30f));
                 listing.CheckboxLabeled("MBBS_FillScreen".Translate(), ref working.fillScreen, "MBBS_FillScreenTip".Translate());
                 listing.CheckboxLabeled("MBBS_MenuLocked".Translate(), ref working.menuLocked, "MBBS_MenuLockedTip".Translate());
+
+                var appearances = BarModel.Appearances.ToList();
+                if (appearances.Count > 1)
+                {
+                    listing.GapLine();
+                    listing.Label("MBBS_Appearance".Translate());
+                    foreach (var appearance in appearances)
+                    {
+                        if (listing.RadioButton(appearance.LabelCap, working.appearance == appearance.defName, 12f, appearance.description))
+                            working.appearance = appearance.defName;
+                    }
+                }
+
+                DrawCompatSettings(listing);
             }
             else if (!working.menuLocked)
             {
@@ -406,15 +482,20 @@ namespace MainButtonBarSystem
             }
 
             listing.End();
+            barDetailHeight = listing.CurHeight + 12f;
+            Widgets.EndScrollView();
         }
 
-        private void DrawButtonDetail(Rect rect, string name)
+        private void DrawButtonDetail(Rect outer, string name)
         {
             var def = DefDatabase<MainButtonDef>.GetNamedSilentFail(name);
             var baseline = ButtonBaseline.Get(name);
             var o = working.Get(name);
             bool locked = BarModel.IsLocked(working, name);
 
+            var view = new Rect(0f, 0f, outer.width - 16f, Mathf.Max(buttonDetailHeight, outer.height));
+            Widgets.BeginScrollView(outer, ref buttonDetailScroll, view);
+            var rect = new Rect(0f, 0f, view.width, 100000f);
             var listing = new Listing_Standard();
             listing.Begin(rect);
 
@@ -491,10 +572,37 @@ namespace MainButtonBarSystem
                 listing.CheckboxLabeled("MBBS_ForceShow".Translate(), ref forceShow, "MBBS_ForceShowTip".Translate());
                 if (forceShow != o.forceShow) working.GetOrCreate(name).forceShow = forceShow;
 
-                listing.Label("MBBS_HotKeyReadOnly".Translate(HotKeyLabel(def)));
+                if (def != null)
+                {
+                    listing.Gap();
+                    var hotkeyRow = listing.GetRect(30f);
+                    Text.Anchor = TextAnchor.MiddleLeft;
+                    Widgets.Label(new Rect(hotkeyRow.x, hotkeyRow.y, hotkeyRow.width - 180f, hotkeyRow.height), "MBBS_HotKey".Translate(Hotkeys.Label(def)));
+                    Text.Anchor = TextAnchor.UpperLeft;
+                    if (Widgets.ButtonText(new Rect(hotkeyRow.xMax - 176f, hotkeyRow.y, 84f, hotkeyRow.height), "MBBS_HotKeySet".Translate()))
+                        Hotkeys.Define(def);
+                    if (Widgets.ButtonText(new Rect(hotkeyRow.xMax - 88f, hotkeyRow.y, 84f, hotkeyRow.height), "MBBS_HotKeyClear".Translate(), true, true, Hotkeys.Get(def) != KeyCode.None))
+                        Hotkeys.Clear(def);
+
+                    GUI.color = Color.gray;
+                    Text.Font = GameFont.Tiny;
+                    listing.Label((Hotkeys.UsesGameBinding(def) ? "MBBS_HotKeyGameNote" : "MBBS_HotKeyCustomNote").Translate());
+                    Text.Font = GameFont.Small;
+                    GUI.color = Color.white;
+
+                    var conflicts = Hotkeys.Conflicts(def);
+                    if (conflicts.Count > 0)
+                    {
+                        GUI.color = new Color(1f, 0.5f, 0.4f);
+                        listing.Label("MBBS_HotKeyConflict".Translate(string.Join(", ", conflicts)));
+                        GUI.color = Color.white;
+                    }
+                }
             }
 
             listing.End();
+            buttonDetailHeight = listing.CurHeight + 12f;
+            Widgets.EndScrollView();
         }
 
         private void DrawFooter(Rect rect)
@@ -513,6 +621,13 @@ namespace MainButtonBarSystem
                     ReplaceWorking(BarConfigManager.Template.Clone());
                 y += FooterButtonHeight + 6f;
             }
+
+            float halfWidth = (rect.width - 6f) / 2f;
+            if (Widgets.ButtonText(new Rect(rect.x, y, halfWidth, FooterButtonHeight), "MBBS_Export".Translate()))
+                Find.WindowStack.Add(new FloatMenu(ExportOptions()));
+            if (Widgets.ButtonText(new Rect(rect.x + halfWidth + 6f, y, halfWidth, FooterButtonHeight), "MBBS_Import".Translate()))
+                Find.WindowStack.Add(new FloatMenu(ImportOptions()));
+            y += FooterButtonHeight + 6f;
 
             float third = (rect.width - 12f) / 3f;
             if (Widgets.ButtonText(new Rect(rect.x, y, third, FooterButtonHeight), "MBBS_ResetAll".Translate()))
@@ -534,9 +649,79 @@ namespace MainButtonBarSystem
             BarConfigManager.Preview = working;
         }
 
+        // ---------------------------------------------------------------- export / import (spec 3.9)
+
+        private List<FloatMenuOption> ExportOptions()
+        {
+            return new List<FloatMenuOption>
+            {
+                new FloatMenuOption("MBBS_Export_Clipboard".Translate(), () =>
+                {
+                    GUIUtility.systemCopyBuffer = ArrangementIO.ToText(working);
+                    Messages.Message("MBBS_Export_Copied".Translate(), MessageTypeDefOf.NeutralEvent, false);
+                }),
+                new FloatMenuOption("MBBS_Export_File".Translate(), () =>
+                {
+                    var path = ArrangementIO.SaveToFile(working);
+                    Messages.Message("MBBS_Export_Saved".Translate(path), MessageTypeDefOf.NeutralEvent, false);
+                }),
+                new FloatMenuOption("MBBS_Export_ModXml".Translate(), () =>
+                {
+                    GUIUtility.systemCopyBuffer = ArrangementIO.ToModXml(working, "MyArrangement", "my arrangement", SteamOrPlayerName());
+                    Messages.Message("MBBS_Export_ModXmlCopied".Translate(), MessageTypeDefOf.NeutralEvent, false);
+                }),
+            };
+        }
+
+        private List<FloatMenuOption> ImportOptions()
+        {
+            var options = new List<FloatMenuOption>
+            {
+                new FloatMenuOption("MBBS_Import_Clipboard".Translate(), () => ImportResult(ArrangementIO.FromText(GUIUtility.systemCopyBuffer, out var error), error)),
+            };
+            foreach (var file in ArrangementIO.ExportedFiles().Take(15))
+            {
+                var path = file.FullName;
+                options.Add(new FloatMenuOption("MBBS_Import_File".Translate(file.Name), () => ImportResult(ArrangementIO.FromFile(path, out var error), error)));
+            }
+            foreach (var def in DefDatabase<MainButtonArrangementDef>.AllDefs.OrderBy(d => d.label))
+            {
+                var arrangement = def;
+                string label = arrangement.author.NullOrEmpty()
+                    ? "MBBS_Import_Def".Translate(arrangement.LabelCap)
+                    : "MBBS_Import_DefBy".Translate(arrangement.LabelCap, arrangement.author);
+                options.Add(new FloatMenuOption(label, () => ImportResult(arrangement.config, null)));
+            }
+            return options;
+        }
+
+        private void ImportResult(BarConfig imported, string error)
+        {
+            if (imported == null)
+            {
+                Messages.Message(error ?? "MBBS_Import_NoConfig".Translate(), MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+            ReplaceWorking(ArrangementIO.ForImport(imported));
+            Messages.Message("MBBS_Import_Done".Translate(), MessageTypeDefOf.NeutralEvent, false);
+        }
+
+        private static string SteamOrPlayerName()
+        {
+            try
+            {
+                return SteamUtility.SteamPersonaName;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
         // ---------------------------------------------------------------- helpers
 
-        public static string ModeLabel(DisplayMode mode) => ("MBBS_Mode_" + mode).Translate();
+        public static string ModeLabel(string defName) =>
+            DefDatabase<BarDisplayModeDef>.GetNamedSilentFail(defName ?? BarConfig.VanillaMode)?.LabelCap ?? defName;
 
         private static string DisplayLabel(string name, ButtonOverride o)
         {
@@ -545,19 +730,7 @@ namespace MainButtonBarSystem
             return label.NullOrEmpty() ? name : label.CapitalizeFirst();
         }
 
-        private static string HotKeyLabel(MainButtonDef def)
-        {
-            try
-            {
-                if (def?.hotKey == null) return "—";
-                var key = KeyPrefs.KeyPrefsData.GetBoundKeyCode(def.hotKey, KeyPrefs.BindingSlot.A);
-                return key == KeyCode.None ? "—" : key.ToStringReadable();
-            }
-            catch
-            {
-                return "?";
-            }
-        }
+        private static string HotKeyLabel(MainButtonDef def) => def == null ? "—" : Hotkeys.Label(def);
 
         private static Texture2D SafeIcon(MainButtonDef def)
         {

@@ -15,9 +15,8 @@ namespace MainButtonBarSystem
     }
 
     /// <summary>
-    /// What the user changed on one button. Every field's default means "not changed", so an override that
-    /// only has defaults is the same as no override and buttons the user never touched stay exactly as the
-    /// game and other mods made them (spec 3.7).
+    /// What the user changed on one button. A button without an override uses the defaults its mod declared
+    /// (<see cref="MainButtonBarDefaults"/>), else stays exactly as the game and other mods made it (spec 3.7).
     /// </summary>
     public class ButtonOverride : IExposable
     {
@@ -40,11 +39,25 @@ namespace MainButtonBarSystem
             this.defName = defName;
         }
 
-        public bool IsEmpty =>
-            !hidden && !inDrawer && label.NullOrEmpty() && width <= 0 && pin == PinPosition.None && !forceShow &&
-            iconMode == IconMode.Default && icon.NullOrEmpty();
+        public bool IsEmpty => SameSettings(Empty);
+
+        public bool SameSettings(ButtonOverride other) =>
+            hidden == other.hidden && inDrawer == other.inDrawer && NullIfEmpty(label) == NullIfEmpty(other.label) &&
+            width == other.width && pin == other.pin && forceShow == other.forceShow && iconMode == other.iconMode &&
+            NullIfEmpty(icon) == NullIfEmpty(other.icon);
 
         public ButtonOverride Clone() => (ButtonOverride)MemberwiseClone();
+
+        public ButtonOverride CloneFor(string newDefName)
+        {
+            var copy = Clone();
+            copy.defName = newDefName;
+            return copy;
+        }
+
+        internal static readonly ButtonOverride Empty = new ButtonOverride();
+
+        private static string NullIfEmpty(string s) => string.IsNullOrEmpty(s) ? null : s;
 
         public void ExposeData()
         {
@@ -69,17 +82,25 @@ namespace MainButtonBarSystem
     }
 
     /// <summary>
-    /// One complete arrangement of the bar. Stored per save, as the shared template, and as the export format
-    /// (spec 3.4, 4.15). <see cref="CurrentFormatVersion"/> is bumped whenever the meaning of a field changes.
+    /// One complete arrangement of the bar. Stored per save, as the shared template, as the export format and as
+    /// the content of a <see cref="MainButtonArrangementDef"/> (spec 3.4, 4.15). Bump
+    /// <see cref="CurrentFormatVersion"/> whenever the meaning of a field changes.
     /// </summary>
     public class BarConfig : IExposable
     {
         public const int CurrentFormatVersion = 1;
         public const int DefaultDefaultWidth = 120;
         public const int DefaultMinWidth = 100;
+        public const string VanillaMode = "Vanilla";
+        public const string VanillaAppearance = "Vanilla";
 
         public int formatVersion = CurrentFormatVersion;
-        public DisplayMode displayMode = DisplayMode.Vanilla;
+
+        /// <summary>defName of a <see cref="BarDisplayModeDef"/>.</summary>
+        public string displayMode = VanillaMode;
+
+        /// <summary>defName of a <see cref="BarAppearanceDef"/>.</summary>
+        public string appearance = VanillaAppearance;
 
         /// <summary>Saved order of defNames; null means the game's own order.</summary>
         public List<string> order;
@@ -97,45 +118,55 @@ namespace MainButtonBarSystem
 
         [Unsaved] private Dictionary<string, ButtonOverride> index;
 
-        private static readonly ButtonOverride Empty = new ButtonOverride();
+        public BarDisplayModeDef DisplayModeDef =>
+            DefDatabase<BarDisplayModeDef>.GetNamedSilentFail(displayMode ?? VanillaMode) ?? DefDatabase<BarDisplayModeDef>.GetNamedSilentFail(VanillaMode);
+
+        public BarAppearanceDef AppearanceDef =>
+            DefDatabase<BarAppearanceDef>.GetNamedSilentFail(appearance ?? VanillaAppearance) ?? DefDatabase<BarAppearanceDef>.GetNamedSilentFail(VanillaAppearance);
 
         /// <summary>
-        /// True when nothing differs from the untouched state, so the game can keep drawing the bar itself.
+        /// True when the bar would look exactly like the game draws it, so the game can keep drawing it.
         /// </summary>
         public bool IsUntouched =>
-            displayMode == DisplayMode.Vanilla && order == null && overrides.All(o => o.IsEmpty);
+            (displayMode ?? VanillaMode) == VanillaMode && (appearance ?? VanillaAppearance) == VanillaAppearance && order == null &&
+            labelAlign == LabelAlign.Default && overrides.All(IsRedundant) && !ButtonDefaults.AnyChangesVanillaBar;
 
-        /// <summary>Read-only view of a button's override; never null.</summary>
+        /// <summary>Effective settings of a button: the user's override, else its mod's defaults, else empty. Never null; do not modify.</summary>
         public ButtonOverride Get(string defName)
         {
             EnsureIndex();
-            return defName != null && index.TryGetValue(defName, out var o) ? o : Empty;
+            if (defName != null && index.TryGetValue(defName, out var o)) return o;
+            return ButtonDefaults.For(defName) ?? ButtonOverride.Empty;
         }
 
+        /// <summary>The user's override for editing, created from the button's defaults if there is none yet.</summary>
         public ButtonOverride GetOrCreate(string defName)
         {
             EnsureIndex();
             if (!index.TryGetValue(defName, out var o))
             {
-                o = new ButtonOverride(defName);
+                o = ButtonDefaults.For(defName)?.CloneFor(defName) ?? new ButtonOverride(defName);
                 overrides.Add(o);
                 index[defName] = o;
             }
             return o;
         }
 
-        /// <summary>Drops overrides that hold no change, so the file only lists what the user really changed.</summary>
+        /// <summary>Drops overrides that equal what the button would have anyway, so files only list real changes.</summary>
         public void Prune()
         {
-            overrides.RemoveAll(o => o == null || o.defName.NullOrEmpty() || o.IsEmpty);
+            overrides.RemoveAll(o => o == null || o.defName.NullOrEmpty() || IsRedundant(o));
             index = null;
         }
+
+        private static bool IsRedundant(ButtonOverride o) =>
+            o == null || o.SameSettings(ButtonDefaults.For(o.defName) ?? ButtonOverride.Empty);
 
         public BarConfig Clone()
         {
             var copy = (BarConfig)MemberwiseClone();
             copy.order = order?.ToList();
-            copy.overrides = overrides.Where(o => o != null).Select(o => o.Clone()).ToList();
+            copy.overrides = (overrides ?? new List<ButtonOverride>()).Where(o => o != null).Select(o => o.Clone()).ToList();
             copy.index = null;
             return copy;
         }
@@ -144,6 +175,7 @@ namespace MainButtonBarSystem
         {
             var fresh = new BarConfig();
             displayMode = fresh.displayMode;
+            appearance = fresh.appearance;
             order = null;
             defaultWidth = fresh.defaultWidth;
             minWidth = fresh.minWidth;
@@ -158,6 +190,7 @@ namespace MainButtonBarSystem
         private void EnsureIndex()
         {
             if (index != null) return;
+            overrides ??= new List<ButtonOverride>();
             index = new Dictionary<string, ButtonOverride>();
             foreach (var o in overrides)
             {
@@ -168,7 +201,8 @@ namespace MainButtonBarSystem
         public void ExposeData()
         {
             Scribe_Values.Look(ref formatVersion, "formatVersion", 0);
-            Scribe_Values.Look(ref displayMode, "displayMode", DisplayMode.Vanilla);
+            Scribe_Values.Look(ref displayMode, "displayMode", VanillaMode);
+            Scribe_Values.Look(ref appearance, "appearance", VanillaAppearance);
             Scribe_Collections.Look(ref order, "order", LookMode.Value);
             Scribe_Values.Look(ref defaultWidth, "defaultWidth", DefaultDefaultWidth);
             Scribe_Values.Look(ref minWidth, "minWidth", DefaultMinWidth);
@@ -180,9 +214,11 @@ namespace MainButtonBarSystem
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                if (overrides == null) overrides = new List<ButtonOverride>();
+                overrides ??= new List<ButtonOverride>();
                 overrides.RemoveAll(o => o == null || o.defName.NullOrEmpty());
                 if (formatVersion <= 0) formatVersion = CurrentFormatVersion;
+                displayMode ??= VanillaMode;
+                appearance ??= VanillaAppearance;
                 index = null;
             }
         }
