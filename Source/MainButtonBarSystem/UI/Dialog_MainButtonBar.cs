@@ -52,6 +52,20 @@ namespace MainButtonBarSystem
 
         private bool Advanced => tab == Tab.Advanced;
 
+        // Button widths: the tuning def's minimum, widened to fit the label in the current language.
+        private static float ResetWidth => FitButton(L.resetButtonWidth, "MBBS_Default");
+        private static float SmallButtonWidth => Mathf.Max(FitButton(L.smallButtonWidth, "MBBS_HotKeySet"), FitButton(L.smallButtonWidth, "MBBS_HotKeyClear"));
+        private static float MoveButtonWidth => Mathf.Max(FitButton(L.moveButtonWidth, "MBBS_MoveUp"), FitButton(L.moveButtonWidth, "MBBS_MoveDown"));
+
+        private static float FitButton(float minimum, string key)
+        {
+            var font = Text.Font;
+            Text.Font = GameFont.Small;
+            float width = Text.CalcSize(key.Translate()).x + L.buttonTextPadding * 2f;
+            Text.Font = font;
+            return Mathf.Max(minimum, width);
+        }
+
         private Vector2 themeScroll;
         private float themeListHeight;
         private readonly List<TabRecord> tabs = new List<TabRecord>();
@@ -412,8 +426,8 @@ namespace MainButtonBarSystem
             // Move buttons. Top to bottom in the list is left to right on screen.
             int index = mainRows.IndexOf(selected);
             bool movable = index >= 0 && !BarModel.IsLocked(working, selected);
-            var up = new Rect(buttonsRow.x, buttonsRow.y, L.moveButtonWidth, buttonsRow.height);
-            var down = new Rect(up.xMax + L.footerGap, buttonsRow.y, L.moveButtonWidth, buttonsRow.height);
+            var up = new Rect(buttonsRow.x, buttonsRow.y, MoveButtonWidth, buttonsRow.height);
+            var down = new Rect(up.xMax + L.footerGap, buttonsRow.y, MoveButtonWidth, buttonsRow.height);
             if (DimmableButton(up, "MBBS_MoveUp".Translate(), movable)) Step(index, -1);
             if (DimmableButton(down, "MBBS_MoveDown".Translate(), movable)) Step(index, 1);
             Text.Anchor = TextAnchor.MiddleLeft;
@@ -747,7 +761,7 @@ namespace MainButtonBarSystem
             listing.Label("MBBS_CustomName".Translate(baseline?.Label?.CapitalizeFirst() ?? name));
             var nameRow = listing.GetRect(L.textRowHeight);
             string current = o.label ?? "";
-            var field = new Rect(nameRow.x, nameRow.y, nameRow.width - L.resetButtonWidth - L.footerGap, nameRow.height);
+            var field = new Rect(nameRow.x, nameRow.y, nameRow.width - ResetWidth - L.footerGap, nameRow.height);
             string edited = Widgets.TextField(field, current, L.customNameMaxLength);
             if (edited != current) working.GetOrCreate(name).label = edited.NullOrEmpty() ? null : edited;
             if (DefaultButton(nameRow, !o.label.NullOrEmpty()))
@@ -793,13 +807,13 @@ namespace MainButtonBarSystem
         {
             listing.GapLine();
             var row = listing.GetRect(L.textRowHeight);
-            float buttons = L.smallButtonWidth * 2f + L.footerGap;
+            float buttons = SmallButtonWidth * 2f + L.footerGap;
             Text.Anchor = TextAnchor.MiddleLeft;
             Widgets.Label(new Rect(row.x, row.y, row.width - buttons - L.footerGap, row.height), "MBBS_HotKey".Translate(Hotkeys.Label(def)));
             Text.Anchor = TextAnchor.UpperLeft;
-            if (Widgets.ButtonText(new Rect(row.xMax - buttons, row.y, L.smallButtonWidth, row.height), "MBBS_HotKeySet".Translate()))
+            if (Widgets.ButtonText(new Rect(row.xMax - buttons, row.y, SmallButtonWidth, row.height), "MBBS_HotKeySet".Translate()))
                 Hotkeys.Define(def);
-            if (DimmableButton(new Rect(row.xMax - L.smallButtonWidth, row.y, L.smallButtonWidth, row.height), "MBBS_HotKeyClear".Translate(), Hotkeys.Get(def) != KeyCode.None))
+            if (DimmableButton(new Rect(row.xMax - SmallButtonWidth, row.y, SmallButtonWidth, row.height), "MBBS_HotKeyClear".Translate(), Hotkeys.Get(def) != KeyCode.None))
                 Hotkeys.Clear(def);
 
             GUI.color = Color.gray;
@@ -825,7 +839,7 @@ namespace MainButtonBarSystem
         /// <summary>The "Default" button at the right end of a row. Returns true when clicked while enabled.</summary>
         private static bool DefaultButton(Rect row, bool enabled)
         {
-            var rect = new Rect(row.xMax - L.resetButtonWidth, row.y, L.resetButtonWidth, row.height);
+            var rect = new Rect(row.xMax - ResetWidth, row.y, ResetWidth, row.height);
             TooltipHandler.TipRegion(rect, enabled ? "MBBS_DefaultTip".Translate() : "MBBS_AlreadyDefaultTip".Translate());
             return DimmableButton(rect, "MBBS_Default".Translate(), enabled);
         }
@@ -855,7 +869,7 @@ namespace MainButtonBarSystem
         {
             var row = listing.GetRect(L.textRowHeight);
             Text.Anchor = TextAnchor.MiddleLeft;
-            Widgets.Label(new Rect(row.x, row.y, row.width - L.resetButtonWidth - L.footerGap, row.height), label);
+            Widgets.Label(new Rect(row.x, row.y, row.width - ResetWidth - L.footerGap, row.height), label);
             Text.Anchor = TextAnchor.UpperLeft;
             if (tooltip != null) TooltipHandler.TipRegion(row, tooltip);
             return DefaultButton(row, changed);
@@ -891,7 +905,7 @@ namespace MainButtonBarSystem
             if (DefaultButton(row, stored != DefaultableBool.Default)) return DefaultableBool.Default;
             bool before = BarConfig.Resolve(stored, fallback);
             bool value = before;
-            Widgets.CheckboxLabeled(new Rect(row.x, row.y, row.width - L.resetButtonWidth - L.footerGap, row.height), label, ref value);
+            Widgets.CheckboxLabeled(new Rect(row.x, row.y, row.width - ResetWidth - L.footerGap, row.height), label, ref value);
             if (tooltip != null) TooltipHandler.TipRegion(row, tooltip);
             return value == before ? stored : value ? DefaultableBool.True : DefaultableBool.False;
         }
@@ -901,7 +915,7 @@ namespace MainButtonBarSystem
         {
             var row = listing.GetRect(L.textRowHeight);
             if (DefaultButton(row, value != defaultValue)) return defaultValue;
-            Widgets.CheckboxLabeled(new Rect(row.x, row.y, row.width - L.resetButtonWidth - L.footerGap, row.height), label, ref value);
+            Widgets.CheckboxLabeled(new Rect(row.x, row.y, row.width - ResetWidth - L.footerGap, row.height), label, ref value);
             if (tooltip != null) TooltipHandler.TipRegion(row, tooltip);
             return value;
         }

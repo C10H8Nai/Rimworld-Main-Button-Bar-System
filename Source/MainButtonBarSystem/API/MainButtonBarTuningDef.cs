@@ -148,6 +148,9 @@ namespace MainButtonBarSystem
             public float sourceColumnFraction;
             public float moveButtonWidth;
             public float resetButtonWidth;
+
+            /// <summary>Space on each side of a button label; buttons widen to fit longer translations.</summary>
+            public float buttonTextPadding;
             public float smallButtonWidth;
             public float titleIconSize;
             public float textRowHeight;

@@ -75,7 +75,8 @@
       <sourceColumnMax>170</sourceColumnMax>
       <sourceColumnFraction>0.26</sourceColumnFraction>
       <moveButtonWidth>110</moveButtonWidth>
-      <resetButtonWidth>70</resetButtonWidth>
+      <resetButtonWidth>70</resetButtonWidth>       <!-- button widths are minimums; they widen to fit the label -->
+      <buttonTextPadding>8</buttonTextPadding>
       <smallButtonWidth>84</smallButtonWidth>
       <titleIconSize>36</titleIconSize>
       <textRowHeight>30</textRowHeight>
