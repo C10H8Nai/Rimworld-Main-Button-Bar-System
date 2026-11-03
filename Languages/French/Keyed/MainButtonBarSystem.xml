@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Tant que vous n'avez rien modifié, le jeu dessine lui-même la barre. Activez cette option pour comparer le rendu de ce mod à celui du jeu.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Paramètres de la barre principale (cette partie)</MBBS_Title_Save>
   <MBBS_Title_Template>Paramètres de la barre principale (modèle par défaut)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Simple</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Avancé</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Simple</MBBS_View_Simple>
+  <MBBS_View_Advanced>Avancé</MBBS_View_Advanced>
   <MBBS_Col_Visible>Afficher</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icône</MBBS_Col_Icon>
   <MBBS_Col_Name>Nom</MBBS_Col_Name>

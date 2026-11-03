@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Até alterares alguma coisa, o jogo continua a desenhar a barra por si. Ativa esta opção para comparar o desenho deste mod com o do jogo.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Definições da barra de botões principais (este jogo guardado)</MBBS_Title_Save>
   <MBBS_Title_Template>Definições da barra de botões principais (modelo predefinido)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Simples</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Avançado</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Simples</MBBS_View_Simple>
+  <MBBS_View_Advanced>Avançado</MBBS_View_Advanced>
   <MBBS_Col_Visible>Mostrar</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ícone</MBBS_Col_Icon>
   <MBBS_Col_Name>Nome</MBBS_Col_Name>

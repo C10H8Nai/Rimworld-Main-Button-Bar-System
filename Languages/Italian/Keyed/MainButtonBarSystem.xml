@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Finché non modifichi qualcosa, il gioco continua a disegnare la barra da sé. Attiva questa opzione per confrontare il disegno di questa mod con quello del gioco.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Impostazioni della barra principale (questo salvataggio)</MBBS_Title_Save>
   <MBBS_Title_Template>Impostazioni della barra principale (modello predefinito)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Semplice</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Avanzate</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Semplice</MBBS_View_Simple>
+  <MBBS_View_Advanced>Avanzate</MBBS_View_Advanced>
   <MBBS_Col_Visible>Mostra</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icona</MBBS_Col_Icon>
   <MBBS_Col_Name>Nome</MBBS_Col_Name>

@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Sen bir şeyi değiştirene kadar barı oyunun kendisi çizmeye devam eder. Bu modun çizimini oyununkiyle karşılaştırmak için bunu aç.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Ana buton barı ayarları (bu kayıt)</MBBS_Title_Save>
   <MBBS_Title_Template>Ana buton barı ayarları (varsayılan şablon)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Basit</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Gelişmiş</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Basit</MBBS_View_Simple>
+  <MBBS_View_Advanced>Gelişmiş</MBBS_View_Advanced>
   <MBBS_Col_Visible>Göster</MBBS_Col_Visible>
   <MBBS_Col_Icon>İkon</MBBS_Col_Icon>
   <MBBS_Col_Name>İsim</MBBS_Col_Name>

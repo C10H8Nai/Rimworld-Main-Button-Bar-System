@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Hasta que cambies algo, el juego sigue dibujando la barra por su cuenta. Actívalo para comparar cómo la dibuja este mod con cómo la dibuja el juego.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Configuración de la barra principal (esta partida)</MBBS_Title_Save>
   <MBBS_Title_Template>Configuración de la barra principal (plantilla predeterminada)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Básico</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Avanzado</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Básico</MBBS_View_Simple>
+  <MBBS_View_Advanced>Avanzado</MBBS_View_Advanced>
   <MBBS_Col_Visible>Mostrar</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ícono</MBBS_Col_Icon>
   <MBBS_Col_Name>Nombre</MBBS_Col_Name>

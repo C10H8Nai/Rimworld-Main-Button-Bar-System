@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Inntil du endrer noe, tegner spillet linjen selv. Slå på dette for å sammenligne denne moddens tegning med spillets.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Innstillinger for hovedknapplinjen (dette lagrede spillet)</MBBS_Title_Save>
   <MBBS_Title_Template>Innstillinger for hovedknapplinjen (standardmal)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Enkel</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Avansert</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Enkel</MBBS_View_Simple>
+  <MBBS_View_Advanced>Avansert</MBBS_View_Advanced>
   <MBBS_Col_Visible>Vis</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
   <MBBS_Col_Name>Navn</MBBS_Col_Name>

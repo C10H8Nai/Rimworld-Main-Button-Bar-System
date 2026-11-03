@@ -119,7 +119,7 @@ namespace MainButtonBarSystem
             /// <summary>Shift of a label under the mouse, like the game's "pressed" look: (2,-2).</summary>
             public Vector2 hoverLabelOffset;
 
-            /// <summary>Texture of the drawer's settings button. Empty: the game's inspect-settings gear.</summary>
+            /// <summary>Texture of the drawer's settings gear (themes can replace it). This mod ships MainButtonBarSystem/UI/Gear.</summary>
             public string drawerSettingsIcon;
         }
 
@@ -179,6 +179,19 @@ namespace MainButtonBarSystem
 
             /// <summary>Sample buttons in a drawn theme preview (a More button is added).</summary>
             public int themePreviewButtons;
+
+            /// <summary>Number box to the right of each slider; this mod draws its own sliders so other slider mods do not overlap them.</summary>
+            public float numberFieldWidth;
+            public float sliderRailHeight;
+            public Vector2 sliderHandleSize;
+            public Color sliderRailColor;
+            public Color sliderFillColor;
+            public Color sliderHandleColor;
+
+            /// <summary>The Simple / Advanced switch on the Buttons page.</summary>
+            public float viewSwitchWidth;
+            public Color viewSwitchSelectedColor;
+            public Color viewSwitchColor;
         }
     }
 }

@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>設定を何か変更するまでは,バーの描画はゲーム本体が行います.オンにすると,このMODによる描画とゲーム本体の描画を見比べられます.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>メインボタンバーの設定(このセーブデータ)</MBBS_Title_Save>
   <MBBS_Title_Template>メインボタンバーの設定(デフォルトテンプレート)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>基本</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>詳細</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>基本</MBBS_View_Simple>
+  <MBBS_View_Advanced>詳細</MBBS_View_Advanced>
   <MBBS_Col_Visible>表示</MBBS_Col_Visible>
   <MBBS_Col_Icon>アイコン</MBBS_Col_Icon>
   <MBBS_Col_Name>名前</MBBS_Col_Name>

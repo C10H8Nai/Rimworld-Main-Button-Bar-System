@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Μέχρι να αλλάξετε κάτι, τη γραμμή τη σχεδιάζει το ίδιο το παιχνίδι. Ενεργοποιήστε το για να συγκρίνετε τη σχεδίαση αυτού του mod με εκείνη του παιχνιδιού.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Ρυθμίσεις γραμμής βασικών κουμπιών (αυτή η αποθήκευση)</MBBS_Title_Save>
   <MBBS_Title_Template>Ρυθμίσεις γραμμής βασικών κουμπιών (προεπιλεγμένο πρότυπο)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Απλές</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Σύνθετες</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Απλές</MBBS_View_Simple>
+  <MBBS_View_Advanced>Σύνθετες</MBBS_View_Advanced>
   <MBBS_Col_Visible>Ορατό</MBBS_Col_Visible>
   <MBBS_Col_Icon>Εικονίδιο</MBBS_Col_Icon>
   <MBBS_Col_Name>Όνομα</MBBS_Col_Name>

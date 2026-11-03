@@ -52,6 +52,9 @@ namespace MainButtonBarSystem
         /// <summary>Atlas behind the "More" drawer. Empty: the game's window background.</summary>
         public string drawerBackground;
 
+        /// <summary>Icon of the drawer's settings button. Empty: the gear from the tuning def.</summary>
+        public string drawerSettingsIcon;
+
         /// <summary>Image in the Appearance tab. Empty: a preview drawn from the textures above.</summary>
         public string preview;
 
@@ -134,6 +137,9 @@ namespace MainButtonBarSystem
         {
             ButtonPainter.Draw(button, rect, this);
         }
+
+        /// <summary>Icon of the drawer's settings button, or null for the tuning def's gear.</summary>
+        public virtual Texture2D DrawerSettingsIcon() => def.Tex(def.drawerSettingsIcon);
 
         /// <summary>Background of the drawer window, covering the whole window.</summary>
         public virtual void DrawDrawerBackground(Rect windowRect)

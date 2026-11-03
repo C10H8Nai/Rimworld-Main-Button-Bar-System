@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Amíg nem változtatsz semmin, a gombsort maga a játék rajzolja. Kapcsold be, hogy összehasonlíthasd ennek a modnak a rajzolását a játékéval.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Főgombsor beállításai (ez a mentés)</MBBS_Title_Save>
   <MBBS_Title_Template>Főgombsor beállításai (alapértelmezett sablon)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Egyszerű</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Haladó</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Egyszerű</MBBS_View_Simple>
+  <MBBS_View_Advanced>Haladó</MBBS_View_Advanced>
   <MBBS_Col_Visible>Látható</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
   <MBBS_Col_Name>Név</MBBS_Col_Name>

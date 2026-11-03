@@ -139,6 +139,7 @@ MyTheme/
     ArrowLeft.png         icon on the left scroll arrow
     ArrowRight.png        icon on the right scroll arrow
     Drawer.png            behind the "More" drawer (atlas)
+    Gear.png              the drawer's settings button (icon)
     Preview.png           shown in the Appearance tab
 ```
 
@@ -183,6 +184,7 @@ MyTheme/
     <arrowLeft>MyTheme/ArrowLeft</arrowLeft>
     <arrowRight>MyTheme/ArrowRight</arrowRight>
     <drawerBackground>MyTheme/Drawer</drawerBackground>
+    <drawerSettingsIcon>MyTheme/Gear</drawerSettingsIcon>
     <preview>MyTheme/Preview</preview>
   </MainButtonBarSystem.BarAppearanceDef>
 </Defs>
@@ -200,12 +202,22 @@ MyTheme/
 | `moreButton` | Drawn like the other buttons |
 | `arrowLeft`, `arrowRight` | The characters `<` and `>` on a button |
 | `drawerBackground` | The game's window background |
+| `drawerSettingsIcon` | This mod's gear (`MainButtonBarSystem/UI/Gear`, set in the tuning def) |
 | `preview` | A preview drawn from the textures above |
 
-**Atlases** are drawn with the game's `Widgets.DrawAtlas`, the nine-slice method of the vanilla buttons: the four
-corners keep their size and the edges and centre stretch, so one texture fits any button width. Use a square
-texture (64×64 works well) and keep the border art inside the outer quarter on each side. Textures that are
-missing are reported once in the log, and that part falls back to the game's look.
+**Atlases** are drawn with the game's `Widgets.DrawAtlas`, the nine-slice method of the vanilla buttons, so one
+texture fits any button size:
+
+- The texture is cut into quarters: each corner is the outer 25% × 25%, each edge the outer 25% by the middle
+  50%, and the centre the middle 50% × 50%. Edges and centre are **stretched**, not tiled.
+- On screen each corner is **texture width ÷ 4** pixels (UI units), but never more than half the rect's height or
+  width. Only the width counts, so **the texture must be square**, or the corners are squashed vertically.
+- So the texture size sets the border thickness: a 64×64 texture gives 16-pixel corners. Bar buttons are 36
+  pixels tall, so corners stop growing at 18 pixels: textures larger than **72×72** only get scaled down.
+- Keep all border and corner art inside the outer quarter on each side; anything in the middle half stretches.
+- The image is drawn the way it looks in the PNG (top is top).
+
+Textures that are missing are reported once in the log, and that part falls back to the game's look.
 
 Label colours, mouse-over and active states also apply to the "More" button, the scroll arrows and the drawer.
 Translate `label` and `description` in `Languages/<Language>/DefInjected/MainButtonBarSystem.BarAppearanceDef/`.
@@ -213,8 +225,8 @@ Translate `label` and `description` in `Languages/<Language>/DefInjected/MainBut
 ### Effects beyond textures
 
 Set `workerClass` to a class deriving from `BarAppearanceWorker` and override what you need:
-`DrawBarBackground`, `DrawButton`, `DrawDrawerButton`, `DrawDrawerBackground`, `ButtonAtlas`, `LabelColor`,
-`DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`. Keep drawing buttons through `ButtonPainter.Draw` (or
+`DrawBarBackground`, `DrawButton`, `DrawDrawerButton`, `DrawDrawerBackground`, `DrawerSettingsIcon`, `ButtonAtlas`,
+`LabelColor`, `DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`. Keep drawing buttons through `ButtonPainter.Draw` (or
 the game's `DoButton`) so other mods' changes to buttons keep working.
 
 ## 5. Compatibility bridges

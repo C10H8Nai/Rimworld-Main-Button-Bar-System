@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Dopóki niczego nie zmienisz, pasek rysuje sama gra. Włącz, aby porównać rysowanie tego modu z rysowaniem gry.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Ustawienia dolnego paska (ten zapis)</MBBS_Title_Save>
   <MBBS_Title_Template>Ustawienia dolnego paska (domyślny szablon)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Podstawowe</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Zaawansowane</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Podstawowe</MBBS_View_Simple>
+  <MBBS_View_Advanced>Zaawansowane</MBBS_View_Advanced>
   <MBBS_Col_Visible>Pokaż</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikona</MBBS_Col_Icon>
   <MBBS_Col_Name>Nazwa</MBBS_Col_Name>

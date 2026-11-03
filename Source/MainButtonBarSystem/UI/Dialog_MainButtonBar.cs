@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using MainButtonBarSystem.Core;
 using RimWorld;
 using UnityEngine;
@@ -17,14 +18,17 @@ namespace MainButtonBarSystem
     {
         private const string BarKey = "<bar>";
 
+        /// <summary>Pages of the window. Simple / Advanced is not a page but a switch on the Buttons page.</summary>
         private enum Tab
         {
-            Simple,
-            Advanced,
+            Buttons,
             Appearance,
         }
 
-        private static Tab tab = Tab.Simple;
+        private static Tab tab = Tab.Buttons;
+
+        // Text of each number box while it has focus, keyed by the setting it edits.
+        private static readonly Dictionary<string, string> numberBuffers = new Dictionary<string, string>();
 
         private readonly bool editingTemplate;
         private BarConfig working;
@@ -50,7 +54,8 @@ namespace MainButtonBarSystem
         private static MainButtonBarTuningDef.SettingRanges R => T.ranges;
         private static MainButtonBarTuningDef.BarDefaults D => T.barDefaults;
 
-        private bool Advanced => tab == Tab.Advanced;
+        /// <summary>The Simple / Advanced switch, shared by every save and remembered (mod settings).</summary>
+        private static bool Advanced => MainButtonBarSystemMod.Settings.showAdvanced;
 
         // Button widths: the tuning def's minimum, widened to fit the label in the current language.
         private static float ResetWidth => FitButton(L.resetButtonWidth, "MBBS_Default");
@@ -124,8 +129,11 @@ namespace MainButtonBarSystem
             }
             else
             {
-                var left = new Rect(body.x, body.y, Mathf.Floor(body.width * L.listFraction), body.height);
-                var right = new Rect(left.xMax + L.panelGap, body.y, body.width - left.width - L.panelGap, body.height);
+                var switchRow = new Rect(body.x, body.y, body.width, L.textRowHeight);
+                DrawViewSwitch(switchRow);
+                float top = switchRow.yMax + L.footerGap;
+                var left = new Rect(body.x, top, Mathf.Floor(body.width * L.listFraction), body.yMax - top);
+                var right = new Rect(left.xMax + L.panelGap, top, body.width - left.width - L.panelGap, body.yMax - top);
                 DrawList(left);
                 DrawRight(right);
             }
@@ -141,10 +149,38 @@ namespace MainButtonBarSystem
         private void DrawTabs(Rect content)
         {
             tabs.Clear();
-            tabs.Add(new TabRecord("MBBS_Tab_Simple".Translate(), () => tab = Tab.Simple, tab == Tab.Simple));
-            tabs.Add(new TabRecord("MBBS_Tab_Advanced".Translate(), () => tab = Tab.Advanced, tab == Tab.Advanced));
+            tabs.Add(new TabRecord("MBBS_Tab_Buttons".Translate(), () => tab = Tab.Buttons, tab == Tab.Buttons));
             tabs.Add(new TabRecord("MBBS_Tab_Appearance".Translate(), () => tab = Tab.Appearance, tab == Tab.Appearance));
             TabDrawer.DrawTabs(content, tabs, L.tabButtonWidth);
+        }
+
+        /// <summary>Two-part Simple | Advanced switch; the chosen part is filled so the state is obvious.</summary>
+        private static void DrawViewSwitch(Rect row)
+        {
+            var area = new Rect(row.x, row.y, Mathf.Min(L.viewSwitchWidth, row.width), row.height);
+            float half = Mathf.Floor(area.width / 2f);
+            DrawViewPart(new Rect(area.x, area.y, half, area.height), "MBBS_View_Simple".Translate(), false);
+            DrawViewPart(new Rect(area.x + half, area.y, area.width - half, area.height), "MBBS_View_Advanced".Translate(), true);
+            TooltipHandler.TipRegion(area, "MBBS_ViewTip".Translate());
+        }
+
+        private static void DrawViewPart(Rect rect, string label, bool advanced)
+        {
+            bool chosen = Advanced == advanced;
+            Widgets.DrawBoxSolid(rect, chosen ? L.viewSwitchSelectedColor : L.viewSwitchColor);
+            Widgets.DrawBox(rect);
+            if (!chosen) Widgets.DrawHighlightIfMouseover(rect);
+            var color = GUI.color;
+            GUI.color = chosen ? Color.white : Color.gray;
+            Text.Anchor = TextAnchor.MiddleCenter;
+            Widgets.Label(rect, label);
+            Text.Anchor = TextAnchor.UpperLeft;
+            GUI.color = color;
+            if (!chosen && Widgets.ButtonInvisible(rect))
+            {
+                MainButtonBarSystemMod.Settings.showAdvanced = advanced;
+                MainButtonBarSystemMod.Instance.WriteSettings();
+            }
         }
 
         private void DragByTitle(Rect titleArea)
@@ -283,14 +319,22 @@ namespace MainButtonBarSystem
             var worker = theme.Worker;
             worker.DrawBarBackground(rect);
             var samples = ButtonBaseline.All.Where(b => b.ButtonVisible && !b.Label.NullOrEmpty()).Take(L.themePreviewButtons).Select(b => b.Label.CapitalizeFirst()).ToList();
+
+            // Layout as on the bar: < [buttons] > [More].
+            float arrow = Mathf.Min(D.arrowWidth, rect.width / 8f);
             int count = samples.Count + 1;
-            float w = rect.width / count;
+            float w = (rect.width - arrow * 2f) / count;
+            DrawPreviewArrow(theme, new Rect(rect.x, rect.y, arrow, rect.height), true);
+            DrawPreviewArrow(theme, new Rect(rect.x + arrow + w * samples.Count, rect.y, arrow, rect.height), false);
+
             var states = new[] { ButtonVisualState.Normal, ButtonVisualState.Mouseover, ButtonVisualState.Active };
             for (int i = 0; i < count; i++)
             {
-                var r = new Rect(rect.x + w * i, rect.y, w, rect.height);
+                bool isMore = i == count - 1;
+                float x = rect.x + arrow + w * i + (isMore ? arrow : 0f);
+                var r = new Rect(x, rect.y, w, rect.height);
                 var state = i < states.Length ? states[i] : ButtonVisualState.Normal;
-                bool more = i == count - 1;
+                bool more = isMore;
                 var atlas = more ? theme.Tex(theme.moreButton) : null;
                 bool replacesTint = atlas != null;
                 atlas ??= worker.ButtonAtlas(state, out replacesTint) ?? Widgets.ButtonSubtleAtlas;
@@ -300,6 +344,22 @@ namespace MainButtonBarSystem
                 GUI.color = color;
                 string label = more ? worker.MoreButtonLabel(samples.Count) : samples[i];
                 ButtonPainter.DrawLabel(r, label.Truncate(r.width), worker.LabelColor(state) ?? Color.white, TextAnchor.MiddleCenter, state != ButtonVisualState.Normal);
+            }
+        }
+
+        private static void DrawPreviewArrow(BarAppearanceDef theme, Rect r, bool left)
+        {
+            var atlas = theme.Worker.ButtonAtlas(ButtonVisualState.Normal, out _) ?? Widgets.ButtonSubtleAtlas;
+            Widgets.DrawAtlas(r, atlas);
+            var icon = theme.Tex(left ? theme.arrowLeft : theme.arrowRight);
+            if (icon != null)
+            {
+                float size = Mathf.Min(r.width, r.height);
+                Widgets.DrawTextureFitted(new Rect(r.center.x - size / 2f, r.center.y - size / 2f, size, size), icon, 1f);
+            }
+            else
+            {
+                ButtonPainter.DrawLabel(r, left ? "<" : ">", theme.Worker.LabelColor(ButtonVisualState.Normal) ?? Color.white, TextAnchor.MiddleCenter, false);
             }
         }
 
@@ -879,24 +939,98 @@ namespace MainButtonBarSystem
         /// A label row with a "Default" button, then a slider. <paramref name="stored"/> is -1 while unchanged.
         /// Returns the new stored value.
         /// </summary>
-        private static int IntSetting(Listing_Standard listing, string label, int stored, int resolved, IntRange range, int step)
+        private static int IntSetting(Listing_Standard listing, string label, int stored, int resolved, IntRange range, int step,
+            [CallerArgumentExpression("stored")] string id = null)
         {
             if (SectionHeader(listing, label, stored != BarConfig.Unset)) return BarConfig.Unset;
-            var slider = listing.GetRect(L.sliderHeight);
-            float raw = Widgets.HorizontalSlider(slider, resolved, range.min, range.max, false, null, null, null, step);
-            int value = Mathf.Clamp(Mathf.RoundToInt(raw / Mathf.Max(1, step)) * Mathf.Max(1, step), range.min, range.max);
-            listing.Gap(listing.verticalSpacing);
+            float raw = NumberSlider(listing, resolved, range.min, range.max, Mathf.Max(1, step), id);
+            int value = Mathf.Clamp(Mathf.RoundToInt(raw), range.min, range.max);
             return value != resolved ? value : stored;
         }
 
-        private static float FloatSetting(Listing_Standard listing, string label, float stored, float resolved, FloatRange range, float step)
+        private static float FloatSetting(Listing_Standard listing, string label, float stored, float resolved, FloatRange range, float step,
+            [CallerArgumentExpression("stored")] string id = null)
         {
             if (SectionHeader(listing, label, stored >= 0f)) return BarConfig.Unset;
-            var slider = listing.GetRect(L.sliderHeight);
-            float raw = Widgets.HorizontalSlider(slider, resolved, range.min, range.max, false, null, null, null, step);
-            float value = Mathf.Clamp(Mathf.Round(raw / step) * step, range.min, range.max);
-            listing.Gap(listing.verticalSpacing);
+            float value = NumberSlider(listing, resolved, range.min, range.max, step, id);
             return Mathf.Approximately(value, resolved) ? stored : value;
+        }
+
+        /// <summary>
+        /// A slider with a number box at its right. Drawn by this mod rather than Widgets.HorizontalSlider, so
+        /// slider mods that patch that method (BetterSliders draws a box over its right end) do not cover it.
+        /// </summary>
+        private static float NumberSlider(Listing_Standard listing, float value, float min, float max, float step, string id)
+        {
+            var row = listing.GetRect(L.sliderHeight);
+            var field = new Rect(row.xMax - L.numberFieldWidth, row.y, L.numberFieldWidth, row.height);
+            var track = new Rect(row.x, row.y, row.width - L.numberFieldWidth - L.footerGap, row.height);
+            value = Slider(track, value, min, max, step);
+            value = NumberField(field, value, min, max, step, id);
+            listing.Gap(listing.verticalSpacing);
+            return value;
+        }
+
+        private static float Snap(float value, float min, float max, float step) =>
+            Mathf.Clamp(step > 0f ? Mathf.Round(value / step) * step : value, min, max);
+
+        private static float Slider(Rect rect, float value, float min, float max, float step)
+        {
+            int id = GUIUtility.GetControlID(FocusType.Passive, rect);
+            var handleSize = L.sliderHandleSize;
+            var rail = new Rect(rect.x + handleSize.x / 2f, rect.center.y - L.sliderRailHeight / 2f, Mathf.Max(1f, rect.width - handleSize.x), L.sliderRailHeight);
+            float t = max > min ? Mathf.Clamp01((value - min) / (max - min)) : 0f;
+
+            Widgets.DrawBoxSolid(rail, L.sliderRailColor);
+            Widgets.DrawBoxSolid(new Rect(rail.x, rail.y, rail.width * t, rail.height), L.sliderFillColor);
+            var handle = new Rect(rail.x + rail.width * t - handleSize.x / 2f, rect.center.y - handleSize.y / 2f, handleSize.x, handleSize.y);
+            Widgets.DrawBoxSolid(handle, L.sliderHandleColor);
+            Widgets.DrawBox(handle);
+            if (Mouse.IsOver(rect) || GUIUtility.hotControl == id) Widgets.DrawHighlight(handle);
+
+            var ev = Event.current;
+            float FromMouse() => Snap(min + Mathf.Clamp01((ev.mousePosition.x - rail.x) / rail.width) * (max - min), min, max, step);
+            switch (ev.GetTypeForControl(id))
+            {
+                case EventType.MouseDown:
+                    if (ev.button == 0 && rect.Contains(ev.mousePosition))
+                    {
+                        GUIUtility.hotControl = id;
+                        value = FromMouse();
+                        ev.Use();
+                    }
+                    break;
+                case EventType.MouseDrag:
+                    if (GUIUtility.hotControl == id)
+                    {
+                        value = FromMouse();
+                        ev.Use();
+                    }
+                    break;
+                case EventType.MouseUp:
+                    if (GUIUtility.hotControl == id)
+                    {
+                        GUIUtility.hotControl = 0;
+                        ev.Use();
+                    }
+                    break;
+            }
+            return value;
+        }
+
+        /// <summary>Type a value directly. While the box is not focused it always shows the current value.</summary>
+        private static float NumberField(Rect rect, float value, float min, float max, float step, string id)
+        {
+            string name = "MainButtonBarSystem.Number." + id;
+            bool focused = GUI.GetNameOfFocusedControl() == name;
+            if (!focused || !numberBuffers.TryGetValue(id, out var buffer))
+                buffer = step >= 1f ? Mathf.RoundToInt(value).ToString() : value.ToString("0.##");
+
+            float edited = value;
+            GUI.SetNextControlName(name);
+            Widgets.TextFieldNumeric(rect, ref edited, ref buffer, min, max);
+            numberBuffers[id] = buffer;
+            return Mathf.Approximately(edited, value) ? value : Snap(edited, min, max, step);
         }
 
         private static DefaultableBool BoolSetting(Listing_Standard listing, string label, DefaultableBool stored, bool fallback, string tooltip)

@@ -9,8 +9,9 @@
   <MBBS_AlwaysDrawBarTip>Until you change something, the game keeps drawing the bar itself. Turn this on to compare this mod's drawing with the game's.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Main button bar settings (this save)</MBBS_Title_Save>
   <MBBS_Title_Template>Main button bar settings (default template)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Simple</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Advanced</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Simple</MBBS_View_Simple>
+  <MBBS_View_Advanced>Advanced</MBBS_View_Advanced>
+  <MBBS_ViewTip>Advanced shows more options: widths, fixed positions, label alignment, hotkeys and compatibility. The choice is kept for every save.</MBBS_ViewTip>
   <MBBS_Col_Visible>Show</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icon</MBBS_Col_Icon>
   <MBBS_Col_Name>Name</MBBS_Col_Name>
@@ -115,6 +116,7 @@
   <MBBS_Align_Center>Center</MBBS_Align_Center>
   <MBBS_Align_Right>Right</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>the game's own assets</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Buttons</MBBS_Tab_Buttons>
   <MBBS_Tab_Appearance>Appearance</MBBS_Tab_Appearance>
   <MBBS_ThemeHeader>Theme</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Themes change how the bar and its buttons look. Theme mods that list Main Button Bar System as a dependency appear here too. The choice is saved with this save (or with the template at the main menu).</MBBS_ThemeHeaderTip>

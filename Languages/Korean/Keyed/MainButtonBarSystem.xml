@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>설정을 하나라도 바꾸기 전까지는 게임이 직접 바를 그립니다. 켜면 이 모드가 그린 바와 게임이 그린 바를 비교할 수 있습니다.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>주요 버튼 바 설정 (현재 저장 파일)</MBBS_Title_Save>
   <MBBS_Title_Template>주요 버튼 바 설정 (기본 템플릿)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>기본</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>고급</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>기본</MBBS_View_Simple>
+  <MBBS_View_Advanced>고급</MBBS_View_Advanced>
   <MBBS_Col_Visible>표시</MBBS_Col_Visible>
   <MBBS_Col_Icon>아이콘</MBBS_Col_Icon>
   <MBBS_Col_Name>이름</MBBS_Col_Name>

@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Kuni sa midagi ei muuda, joonistab mäng riba ise. Lülita see sisse, et võrrelda selle modifikatsiooni joonistatud riba mängu omaga.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Põhinuppude riba seaded (see salvestus)</MBBS_Title_Save>
   <MBBS_Title_Template>Põhinuppude riba seaded (vaikemall)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Lihtne</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Täpsem</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Lihtne</MBBS_View_Simple>
+  <MBBS_View_Advanced>Täpsem</MBBS_View_Advanced>
   <MBBS_Col_Visible>Näita</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikoon</MBBS_Col_Icon>
   <MBBS_Col_Name>Nimi</MBBS_Col_Name>

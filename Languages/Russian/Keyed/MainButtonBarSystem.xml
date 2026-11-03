@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Пока вы ничего не изменили, панель отрисовывает сама игра. Включите, чтобы сравнить отрисовку этого мода с игровой.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Настройки нижней панели (это сохранение)</MBBS_Title_Save>
   <MBBS_Title_Template>Настройки нижней панели (шаблон по умолчанию)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Основные</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Расширенные</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Основные</MBBS_View_Simple>
+  <MBBS_View_Advanced>Расширенные</MBBS_View_Advanced>
   <MBBS_Col_Visible>Показ</MBBS_Col_Visible>
   <MBBS_Col_Icon>Иконка</MBBS_Col_Icon>
   <MBBS_Col_Name>Название</MBBS_Col_Name>

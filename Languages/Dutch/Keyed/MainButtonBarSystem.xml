@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Zolang je niets wijzigt, tekent het spel de balk zelf. Zet dit aan om de tekening van deze mod met die van het spel te vergelijken.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Instellingen hoofdknoppenbalk (dit opgeslagen spel)</MBBS_Title_Save>
   <MBBS_Title_Template>Instellingen hoofdknoppenbalk (standaardsjabloon)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Eenvoudig</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Geavanceerd</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Eenvoudig</MBBS_View_Simple>
+  <MBBS_View_Advanced>Geavanceerd</MBBS_View_Advanced>
   <MBBS_Col_Visible>Tonen</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icoon</MBBS_Col_Icon>
   <MBBS_Col_Name>Naam</MBBS_Col_Name>

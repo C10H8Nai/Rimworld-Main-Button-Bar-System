@@ -48,7 +48,7 @@
       <labelSidePadding>6</labelSidePadding>     <!-- left/right aligned button labels -->
       <labelFont>Small</labelFont>               <!-- the game's button label font -->
       <hoverLabelOffset>(2,-2)</hoverLabelOffset> <!-- the game's "pressed" shift under the mouse -->
-      <drawerSettingsIcon></drawerSettingsIcon>  <!-- empty: the game's inspect-settings gear -->
+      <drawerSettingsIcon>MainButtonBarSystem/UI/Gear</drawerSettingsIcon> <!-- shipped with this mod; themes can replace it -->
     </behaviour>
 
     <!-- Layout of the settings window. -->
@@ -94,6 +94,15 @@
       <themePreviewHeight>36</themePreviewHeight>
       <themePreviewFraction>0.55</themePreviewFraction>
       <themePreviewButtons>4</themePreviewButtons>
+      <numberFieldWidth>64</numberFieldWidth>
+      <sliderRailHeight>4</sliderRailHeight>
+      <sliderHandleSize>(10,18)</sliderHandleSize>
+      <sliderRailColor>(0.25, 0.25, 0.25, 1)</sliderRailColor>
+      <sliderFillColor>(0.55, 0.55, 0.55, 1)</sliderFillColor>
+      <sliderHandleColor>(0.85, 0.85, 0.85, 1)</sliderHandleColor>
+      <viewSwitchWidth>220</viewSwitchWidth>
+      <viewSwitchSelectedColor>(0.30, 0.45, 0.65, 1)</viewSwitchSelectedColor>
+      <viewSwitchColor>(0.18, 0.18, 0.18, 1)</viewSwitchColor>
     </settingsWindow>
   </MainButtonBarSystem.MainButtonBarTuningDef>
 </Defs>

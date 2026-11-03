@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Ennen kuin muutat jotain, peli piirtää palkin itse. Ota tämä käyttöön, niin voit verrata tämän modin piirtämää palkkia pelin omaan.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Pääpainikepalkin asetukset (tämä tallennus)</MBBS_Title_Save>
   <MBBS_Title_Template>Pääpainikepalkin asetukset (oletusmalli)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Perus</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Edistynyt</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Perus</MBBS_View_Simple>
+  <MBBS_View_Advanced>Edistynyt</MBBS_View_Advanced>
   <MBBS_Col_Visible>Näytä</MBBS_Col_Visible>
   <MBBS_Col_Icon>Kuvake</MBBS_Col_Icon>
   <MBBS_Col_Name>Nimi</MBBS_Col_Name>

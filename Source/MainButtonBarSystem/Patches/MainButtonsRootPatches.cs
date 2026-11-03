@@ -86,14 +86,7 @@ namespace MainButtonBarSystem
         }
     }
 
-    [HarmonyPatch(typeof(Widgets), nameof(Widgets.DrawAtlas), typeof(Rect), typeof(Texture2D))]
-    public static class Widgets_DrawAtlas_Patch
-    {
-        public static void Prefix(Rect rect, ref Texture2D atlas, out Color? __state) => ThemeAtlasSwap.Prefix(rect, ref atlas, out __state);
-
-        public static void Postfix(Color? __state) => ThemeAtlasSwap.Postfix(__state);
-    }
-
+    // Only the three-parameter overload: the two-parameter one just calls it with drawTop: true.
     [HarmonyPatch(typeof(Widgets), nameof(Widgets.DrawAtlas), typeof(Rect), typeof(Texture2D), typeof(bool))]
     public static class Widgets_DrawAtlasDrawTop_Patch
     {

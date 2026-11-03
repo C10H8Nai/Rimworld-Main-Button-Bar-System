@@ -79,21 +79,21 @@ namespace MainButtonBarSystem
             new Vector2(Mathf.Max(Columns * CellWidth, B.drawerSettingsRowHeight) + B.drawerPadding * 2f,
                 Rows * CellHeight + B.drawerSettingsRowHeight + B.drawerPadding * 3f);
 
-        private static Texture2D settingsIcon;
+        private static Texture2D defaultSettingsIcon;
 
-        /// <summary>The settings gear: the tuning def's texture, else the game's inspect-settings gear.</summary>
-        private static Texture2D SettingsIcon
+        /// <summary>The settings gear: the theme's icon, else the tuning def's (this mod ships one).</summary>
+        private static Texture2D SettingsIcon(BarAppearanceWorker appearance)
         {
-            get
+            var themed = appearance?.DrawerSettingsIcon();
+            if (themed != null) return themed;
+            if (defaultSettingsIcon == null)
             {
-                if (settingsIcon == null)
-                {
-                    var path = B.drawerSettingsIcon;
-                    settingsIcon = string.IsNullOrEmpty(path) ? null : ContentFinder<Texture2D>.Get(path, false);
-                    settingsIcon ??= TexButton.OpenInspectSettings;
-                }
-                return settingsIcon;
+                var path = B.drawerSettingsIcon;
+                defaultSettingsIcon = string.IsNullOrEmpty(path) ? null : ContentFinder<Texture2D>.Get(path, false);
+                if (defaultSettingsIcon == null)
+                    Log.WarningOnce(MainButtonBarSystemMod.LogPrefix + "Drawer settings icon '" + path + "' not found.", 0x4D424254);
             }
+            return defaultSettingsIcon;
         }
 
         protected override void SetInitialSizeAndPosition()
@@ -144,7 +144,8 @@ namespace MainButtonBarSystem
             float gear = B.drawerSettingsRowHeight;
             var settingsRect = new Rect(inRect.xMax - gear, inRect.yMax - gear, gear, gear);
             TooltipHandler.TipRegion(settingsRect, "MBBS_OpenSettings".Translate());
-            if (Widgets.ButtonImage(settingsRect, SettingsIcon))
+            var icon = SettingsIcon(appearance);
+            if (icon != null ? Widgets.ButtonImage(settingsRect, icon) : Widgets.ButtonText(settingsRect, "…"))
             {
                 MainButtonBarAPI.OpenSettings();
                 activated = true;

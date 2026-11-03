@@ -9,8 +9,8 @@
   <MBBS_AlwaysDrawBarTip>Доки ви нічого не змінили, панель малює сама гра. Увімкніть, щоб порівняти, як її малює цей мод і як гра.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Налаштування нижньої панелі (це збереження)</MBBS_Title_Save>
   <MBBS_Title_Template>Налаштування нижньої панелі (стандартний шаблон)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Основні</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Розширені</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Основні</MBBS_View_Simple>
+  <MBBS_View_Advanced>Розширені</MBBS_View_Advanced>
   <MBBS_Col_Visible>Показ</MBBS_Col_Visible>
   <MBBS_Col_Icon>Іконка</MBBS_Col_Icon>
   <MBBS_Col_Name>Назва</MBBS_Col_Name>
