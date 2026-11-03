@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Built-in bridges for mods that take over the whole bar. Add-ons can add bridges for other mods. -->
+  <MainButtonBarSystem.CompatBridgeDef>
+    <defName>TooManyButtons</defName>
+    <label>TooManyButtons</label>
+    <modName>TooManyButtons</modName>
+    <workerClass>MainButtonBarSystem.CompatBridgeWorker_TooManyButtons</workerClass>
+    <packageIds>
+      <li>East.TooManyButtons</li>
+    </packageIds>
+    <harmonyIds>
+      <li>East.TooManyButtons</li>
+    </harmonyIds>
+    <assemblyNames>
+      <li>TooManyButtons</li>
+    </assemblyNames>
+  </MainButtonBarSystem.CompatBridgeDef>
+
+  <MainButtonBarSystem.CompatBridgeDef>
+    <defName>CustomBottomBar</defName>
+    <label>Custom Bottom Bar</label>
+    <modName>Custom Bottom Bar</modName>
+    <workerClass>MainButtonBarSystem.CompatBridgeWorker</workerClass>
+    <packageIds>
+      <li>dogebm.custombuttons</li>
+    </packageIds>
+    <assemblyNames>
+      <li>BottomBarSpacing</li>
+    </assemblyNames>
+  </MainButtonBarSystem.CompatBridgeDef>
+</Defs>

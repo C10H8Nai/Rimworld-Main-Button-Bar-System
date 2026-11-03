@@ -38,9 +38,9 @@ namespace MainButtonBarSystem
         public static List<string> EffectiveOrder(BarConfig config) =>
             ButtonOrder.Effective(ButtonOrder.Merge(config.order, CurrentNames, MenuDefName), n => PinOf(config, n));
 
-        /// <summary>Whether the user's settings let a button into the drawer in the current mode.</summary>
+        /// <summary>Whether a button can go into the drawer in the current mode.</summary>
         public static bool DrawerApplies(BarConfig config, string defName) =>
-            BarLayout.HasDrawer(config.displayMode) && PinOf(config, defName) == PinPosition.None;
+            (config.DisplayModeDef?.usesDrawer ?? false) && PinOf(config, defName) == PinPosition.None && !IsLocked(config, defName);
 
         /// <summary>Buttons the game hides on purpose (buttonVisible=false); listed separately (spec 4.11).</summary>
         public static bool OriginallyHidden(string defName) => ButtonBaseline.Get(defName) is { ButtonVisible: false };
@@ -66,5 +66,9 @@ namespace MainButtonBarSystem
                 return false;
             }
         }
+
+        public static IEnumerable<BarDisplayModeDef> DisplayModes => DefDatabase<BarDisplayModeDef>.AllDefs.OrderBy(d => d.displayOrder);
+
+        public static IEnumerable<BarAppearanceDef> Appearances => DefDatabase<BarAppearanceDef>.AllDefs.OrderBy(d => d.displayOrder);
     }
 }

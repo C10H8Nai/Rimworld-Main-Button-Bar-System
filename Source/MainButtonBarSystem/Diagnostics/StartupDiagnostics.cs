@@ -23,8 +23,8 @@ namespace MainButtonBarSystem
 
         private static bool patchReportDone;
 
-        public static string DataFolder => Path.Combine(GenFilePaths.SaveDataFolderPath, "MainButtonBarSystem");
-        public static string IconsFolder => Path.Combine(DataFolder, "Icons");
+        private static string DataFolder => ModPaths.DataFolder;
+        private static string IconsFolder => ModPaths.IconsFolder;
 
         public static void RunAtStartup()
         {

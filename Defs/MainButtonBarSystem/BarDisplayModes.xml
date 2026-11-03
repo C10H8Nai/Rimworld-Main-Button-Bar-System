@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Built-in display modes. Add-ons can add their own BarDisplayModeDef with a custom workerClass. -->
+  <MainButtonBarSystem.BarDisplayModeDef>
+    <defName>Vanilla</defName>
+    <label>vanilla</label>
+    <description>Like the base game: the screen width is shared equally. No scrolling and no drawer.</description>
+    <workerClass>MainButtonBarSystem.BarDisplayModeWorker_Standard</workerClass>
+    <layout>Vanilla</layout>
+    <displayOrder>0</displayOrder>
+  </MainButtonBarSystem.BarDisplayModeDef>
+
+  <MainButtonBarSystem.BarDisplayModeDef>
+    <defName>Collapse</defName>
+    <label>collapse</label>
+    <description>Buttons marked "Drawer" move into the More drawer; the rest share the bar.</description>
+    <workerClass>MainButtonBarSystem.BarDisplayModeWorker_Standard</workerClass>
+    <layout>Collapse</layout>
+    <usesDrawer>true</usesDrawer>
+    <displayOrder>10</displayOrder>
+  </MainButtonBarSystem.BarDisplayModeDef>
+
+  <MainButtonBarSystem.BarDisplayModeDef>
+    <defName>Scroll</defName>
+    <label>scroll</label>
+    <description>Buttons keep their width; scroll the bar with the mouse wheel or the arrows. The drawer is not used.</description>
+    <workerClass>MainButtonBarSystem.BarDisplayModeWorker_Standard</workerClass>
+    <layout>Scroll</layout>
+    <usesMinWidth>true</usesMinWidth>
+    <displayOrder>20</displayOrder>
+  </MainButtonBarSystem.BarDisplayModeDef>
+
+  <MainButtonBarSystem.BarDisplayModeDef>
+    <defName>CollapseScroll</defName>
+    <label>collapse + scroll</label>
+    <description>The drawer works as in Collapse; the remaining buttons scroll.</description>
+    <workerClass>MainButtonBarSystem.BarDisplayModeWorker_Standard</workerClass>
+    <layout>CollapseScroll</layout>
+    <usesDrawer>true</usesDrawer>
+    <usesMinWidth>true</usesMinWidth>
+    <displayOrder>30</displayOrder>
+  </MainButtonBarSystem.BarDisplayModeDef>
+</Defs>

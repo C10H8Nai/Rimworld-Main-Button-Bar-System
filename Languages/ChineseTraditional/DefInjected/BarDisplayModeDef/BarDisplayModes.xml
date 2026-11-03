@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>原版</Vanilla.label>
+  <Vanilla.description>和原版一樣平分畫面寬度。不捲動，沒有抽屜。</Vanilla.description>
+  <Collapse.label>摺疊</Collapse.label>
+  <Collapse.description>勾了「抽屜」的按鈕收進「更多」抽屜，其餘按鈕分配列的寬度。</Collapse.description>
+  <Scroll.label>捲動</Scroll.label>
+  <Scroll.description>按鈕維持寬度，用滑鼠滾輪或箭頭左右捲動。不使用抽屜。</Scroll.description>
+  <CollapseScroll.label>摺疊＋捲動</CollapseScroll.label>
+  <CollapseScroll.description>抽屜照常使用，剩下的按鈕可以捲動。</CollapseScroll.description>
+</LanguageData>

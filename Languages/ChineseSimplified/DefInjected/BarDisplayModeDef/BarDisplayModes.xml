@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>原版</Vanilla.label>
+  <Vanilla.description>和原版一样平分画面宽度。不滚动，没有抽屉。</Vanilla.description>
+  <Collapse.label>折叠</Collapse.label>
+  <Collapse.description>勾了「抽屉」的按钮收进「更多」抽屉，其余按钮分配栏的宽度。</Collapse.description>
+  <Scroll.label>滚动</Scroll.label>
+  <Scroll.description>按钮维持宽度，用鼠标滚轮或箭头左右滚动。不使用抽屉。</Scroll.description>
+  <CollapseScroll.label>折叠＋滚动</CollapseScroll.label>
+  <CollapseScroll.description>抽屉照常使用，剩下的按钮可以滚动。</CollapseScroll.description>
+</LanguageData>

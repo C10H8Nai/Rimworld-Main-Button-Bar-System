@@ -28,14 +28,6 @@
   <MBBS_PinnedRightSuffix>(right end)</MBBS_PinnedRightSuffix>
   <MBBS_NotShowingNowTip>Not on the bar right now: the button's own condition is not met.</MBBS_NotShowingNowTip>
   <MBBS_DisplayMode>Display mode</MBBS_DisplayMode>
-  <MBBS_Mode_Vanilla>Vanilla</MBBS_Mode_Vanilla>
-  <MBBS_Mode_Vanilla_Desc>Like the base game: the screen width is shared equally. No scrolling and no drawer.</MBBS_Mode_Vanilla_Desc>
-  <MBBS_Mode_Collapse>Collapse</MBBS_Mode_Collapse>
-  <MBBS_Mode_Collapse_Desc>Buttons marked "Drawer" move into the More drawer; the rest share the bar.</MBBS_Mode_Collapse_Desc>
-  <MBBS_Mode_Scroll>Scroll</MBBS_Mode_Scroll>
-  <MBBS_Mode_Scroll_Desc>Buttons keep their width; scroll the bar with the mouse wheel or the arrows. The drawer is not used.</MBBS_Mode_Scroll_Desc>
-  <MBBS_Mode_CollapseScroll>Collapse + scroll</MBBS_Mode_CollapseScroll>
-  <MBBS_Mode_CollapseScroll_Desc>Drawer as in Collapse; the remaining buttons scroll.</MBBS_Mode_CollapseScroll_Desc>
   <MBBS_MinWidth>Minimum button width when scrolling: {0}px</MBBS_MinWidth>
   <MBBS_DefaultWidth>Default button width: {0}px</MBBS_DefaultWidth>
   <MBBS_Gap>Space between buttons: {0}px</MBBS_Gap>
@@ -63,11 +55,48 @@
   <MBBS_Pin_Right>Right end</MBBS_Pin_Right>
   <MBBS_ForceShow>Always show</MBBS_ForceShow>
   <MBBS_ForceShowTip>Show the button even when its own condition says it should not appear. Clicking it may then do nothing.</MBBS_ForceShowTip>
-  <MBBS_HotKeyReadOnly>Hotkey: {0} (editing comes in a later version)</MBBS_HotKeyReadOnly>
   <MBBS_SaveAsTemplate>Save as default template</MBBS_SaveAsTemplate>
   <MBBS_ApplyTemplate>Apply default template</MBBS_ApplyTemplate>
   <MBBS_TemplateSaved>Saved as the default template. New games will start with this arrangement.</MBBS_TemplateSaved>
   <MBBS_ResetAll>Reset all</MBBS_ResetAll>
   <MBBS_ResetAllConfirm>Reset every setting to the untouched bar (the game plus what other mods changed)? This does not apply the template.</MBBS_ResetAllConfirm>
   <MBBS_Save>Save</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>Detected {0}: it currently controls the bar, so changes here take effect only when this mod has priority.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>Detected {0}: this mod has priority, so its effect on the bar is switched off.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Details in Advanced.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Compatibility: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>This mod first</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>This mod draws the bar. {0}'s effect on the bar is switched off; its settings are only used as reference values.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0} first</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} keeps the bar. This mod only keeps its settings window.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Takes effect after restarting the game.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Import settings from {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Imported the arrangement from {0}. Press Save to keep it.</MBBS_Compat_Imported>
+  <MBBS_Appearance>Appearance</MBBS_Appearance>
+  <MBBS_HotKey>Hotkey: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Set</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Clear</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Shared by all saves; the same key as in Options &gt; Keyboard.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Shared by all saves. This button has no entry in Options &gt; Keyboard, so this mod keeps the key.</MBBS_HotKeyCustomNote>
+  <MBBS_HotKeyConflict>Same key as: {0}</MBBS_HotKeyConflict>
+  <MBBS_PressKey>Press a key (Esc to cancel)</MBBS_PressKey>
+  <MBBS_Export>Export...</MBBS_Export>
+  <MBBS_Import>Import...</MBBS_Import>
+  <MBBS_Export_Clipboard>Copy as text (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Arrangement copied to the clipboard.</MBBS_Export_Copied>
+  <MBBS_Export_File>Save as a file</MBBS_Export_File>
+  <MBBS_Export_Saved>Saved to {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Copy as mod XML (for making an arrangement mod)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def XML copied. Put it in a .xml file under your mod's Defs folder and change defName and label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>From the clipboard</MBBS_Import_Clipboard>
+  <MBBS_Import_File>File: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Arrangement: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Arrangement: {0} (by {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Arrangement imported into this window. Press Save to keep it.</MBBS_Import_Done>
+  <MBBS_Import_Empty>The clipboard is empty.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>That is not an exported arrangement (not valid XML).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>That text has no arrangement in it.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>That text asks to create program classes, which an arrangement never needs. Not imported.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Made by a newer version of this mod (format {0}; this version reads up to {1}). Update the mod first.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Could not read the arrangement: {0}</MBBS_Import_Failed>
 </LanguageData>

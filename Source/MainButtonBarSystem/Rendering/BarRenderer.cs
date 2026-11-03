@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using HarmonyLib;
-using MainButtonBarSystem.Core;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -9,30 +8,33 @@ using Verse;
 namespace MainButtonBarSystem
 {
     /// <summary>
-    /// Draws the main button bar in place of MainButtonsRoot.DoButtons. Every button is still drawn by
-    /// its own MainButtonWorker.DoButton, so icons, labels and windows other mods add keep working.
+    /// Replaces MainButtonsRoot.DoButtons when the bar is customised. It resolves the user's settings into
+    /// <see cref="BarButton"/>s and hands them to the active display mode, which draws through the active
+    /// appearance. Every button is still drawn by its own MainButtonWorker.DoButton by default.
     /// </summary>
     public static class BarRenderer
     {
-        private const float WheelPixelsPerUnit = 25f;
-
         private static readonly AccessTools.FieldRef<MainButtonsRoot, List<MainButtonDef>> AllButtonsInOrder =
             AccessTools.FieldRefAccess<MainButtonsRoot, List<MainButtonDef>>("allButtonsInOrder");
 
-        private static readonly List<LayoutItem> items = new List<LayoutItem>();
-        private static readonly Dictionary<string, MainButtonDef> byKey = new Dictionary<string, MainButtonDef>();
-        private static readonly List<string> drawer = new List<string>();
+        private static readonly BarDrawContext ctx = new BarDrawContext();
+        private static readonly List<BarButton> buttons = new List<BarButton>();
+        private static readonly List<BarButton> pool = new List<BarButton>();
+        private static readonly List<BarButton> drawer = new List<BarButton>();
+        private static readonly List<MainButtonDef> vanillaVisible = new List<MainButtonDef>();
+        private static readonly List<MainButtonDef> none = new List<MainButtonDef>();
 
-        private static float scrollOffset;
         private static bool failed;
 
-        /// <summary>Screen area of the scrollable part of the bar during the last draw; empty when nothing scrolls.</summary>
+        /// <summary>Screen area where the mouse wheel scrolls the bar during the last draw; empty when nothing scrolls.</summary>
         public static Rect ScrollCaptureRect { get; private set; }
 
         /// <summary>Buttons in the "More" drawer as of the last draw.</summary>
-        public static IReadOnlyList<string> Drawer => drawer;
+        public static IReadOnlyList<BarButton> Drawer => drawer;
 
-        public static List<MainButtonDef> ButtonsInOrder(MainButtonsRoot root) => AllButtonsInOrder(root);
+        public static BarAppearanceWorker Appearance => ctx.Appearance ?? BarConfigManager.Active.AppearanceDef?.Worker ?? new BarAppearanceWorker();
+
+        public static Rect DefaultBarRect => new Rect(0f, UI.screenHeight - MainButtonDef.ButtonHeight, UI.screenWidth, MainButtonDef.ButtonHeight);
 
         /// <summary>Draws the bar. Returns false when the game should draw it instead.</summary>
         public static bool TryDraw(MainButtonsRoot root)
@@ -50,24 +52,38 @@ namespace MainButtonBarSystem
             }
 
             bool forceOwn = MainButtonBarSystemMod.Settings?.alwaysDrawBar ?? false;
-            if (failed || (config.IsUntouched && !forceOwn))
+            if (failed || CompatBridges.AnyControlsBar || (config.IsUntouched && !forceOwn))
             {
-                drawer.Clear();
+                ReportGameDrawn(root);
                 return false;
             }
 
             try
             {
-                Draw(root, config);
+                Draw(config);
                 return true;
             }
             catch (Exception e)
             {
                 Fail("Drawing the main button bar failed; handing it back to the game for this session", e);
-                ScrollCaptureRect = Rect.zero;
-                drawer.Clear();
+                ReportGameDrawn(root);
                 return false;
             }
+        }
+
+        /// <summary>Records what the game (or another mod) shows, for the query API.</summary>
+        public static void ReportGameDrawn(MainButtonsRoot root)
+        {
+            ScrollCaptureRect = Rect.zero;
+            drawer.Clear();
+            vanillaVisible.Clear();
+            var list = root == null ? null : AllButtonsInOrder(root);
+            if (list != null)
+            {
+                foreach (var def in list)
+                    if (def != null && BarModel.SafeVisible(def)) vanillaVisible.Add(def);
+            }
+            MainButtonBarAPI.Report(vanillaVisible, none, DefaultBarRect, ours: false);
         }
 
         private static void Fail(string what, Exception e)
@@ -77,120 +93,67 @@ namespace MainButtonBarSystem
             Log.Error(MainButtonBarSystemMod.LogPrefix + what + ". " + e);
         }
 
-        private static void Draw(MainButtonsRoot root, BarConfig config)
+        private static void Draw(BarConfig config)
         {
-            items.Clear();
-            byKey.Clear();
-            drawer.Clear();
+            BuildButtons(config);
 
-            // Buttons the root knows about, so a button another mod removed from the bar at runtime stays removed
-            // unless the user forces it.
-            var rootButtons = AllButtonsInOrder(root);
-            if (rootButtons != null)
-            {
-                foreach (var def in rootButtons)
-                    if (def != null) byKey[def.defName] = def;
-            }
+            var mode = config.DisplayModeDef;
+            ctx.Config = config;
+            ctx.Buttons = buttons;
+            ctx.BarRect = DefaultBarRect;
+            ctx.Appearance = config.AppearanceDef?.Worker ?? new BarAppearanceWorker();
+            ctx.Reset();
 
-            foreach (var name in BarModel.EffectiveOrder(config))
-            {
-                if (!byKey.TryGetValue(name, out var def))
-                {
-                    if (!config.Get(name).forceShow) continue;
-                    def = DefDatabase<MainButtonDef>.GetNamedSilentFail(name);
-                    if (def == null) continue;
-                    byKey[name] = def;
-                }
-                if (!BarModel.ShouldShow(config, def)) continue;
-
-                var o = config.Get(name);
-                items.Add(new LayoutItem(name, def.minimized, o.width > 0 ? o.width : (int?)null, BarModel.PinOf(config, name), o.inDrawer));
-            }
-
-            var layout = BarLayout.Compute(items, new LayoutOptions
-            {
-                Mode = config.displayMode,
-                BarWidth = UI.screenWidth,
-                DefaultWidth = config.defaultWidth,
-                MinWidth = config.minWidth,
-                Gap = config.gap,
-                FillScreen = config.fillScreen,
-            });
-            drawer.AddRange(layout.Drawer);
-
-            float y = UI.screenHeight - MainButtonDef.ButtonHeight;
-            float h = MainButtonDef.ButtonHeight;
             GUI.color = Color.white;
-
-            foreach (var p in layout.Left) DrawButton(p.Key, new Rect(p.X, y, p.Width, h));
-
-            if (layout.NeedsScroll)
-                DrawScrollingCenter(layout, y, h);
-            else
-                foreach (var p in layout.Center) DrawButton(p.Key, new Rect(layout.ViewportX + p.X, y, p.Width, h));
-
-            if (layout.More.HasValue)
-            {
-                var more = layout.More.Value;
-                DrawMoreButton(new Rect(more.X, y, more.Width, h));
-            }
-            else
-            {
-                Window_ButtonDrawer.CloseIfOpen();
-            }
-
-            foreach (var p in layout.Right) DrawButton(p.Key, new Rect(p.X, y, p.Width, h));
-        }
-
-        private static void DrawMoreButton(Rect rect)
-        {
-            bool open = Window_ButtonDrawer.IsShowing;
-            if (Widgets.ButtonTextSubtle(rect, "MBBS_More".Translate(drawer.Count), 0f, -1f, SoundDefOf.Mouseover_Category, default, null, open))
-                Window_ButtonDrawer.Toggle(rect);
-            TooltipHandler.TipRegion(rect, "MBBS_MoreTip".Translate());
-        }
-
-        private static void DrawScrollingCenter(LayoutResult layout, float y, float h)
-        {
-            var area = new Rect(layout.LeftArrowX, y, layout.RightArrowX + layout.ArrowWidth - layout.LeftArrowX, h);
-            ScrollCaptureRect = area;
-
-            var ev = Event.current;
-            if (ev.type == EventType.ScrollWheel && Mouse.IsOver(area))
-            {
-                scrollOffset += (ev.delta.y + ev.delta.x) * WheelPixelsPerUnit;
-                ev.Use();
-            }
-
-            float page = Mathf.Max(layout.ViewportWidth * 0.6f, 1f);
-            if (Widgets.ButtonText(new Rect(layout.LeftArrowX, y, layout.ArrowWidth, h), "<"))
-                scrollOffset -= page;
-            if (Widgets.ButtonText(new Rect(layout.RightArrowX, y, layout.ArrowWidth, h), ">"))
-                scrollOffset += page;
-
-            scrollOffset = layout.ClampScroll(scrollOffset);
-
-            var viewport = new Rect(layout.ViewportX, y, layout.ViewportWidth, h);
-            GUI.BeginGroup(viewport);
             try
             {
-                foreach (var p in layout.Center)
-                {
-                    float x = p.X - scrollOffset;
-                    if (x + p.Width <= 0f || x >= viewport.width) continue;
-                    DrawButton(p.Key, new Rect(x, 0f, p.Width, h));
-                }
+                mode.Worker.DrawBar(ctx);
             }
             finally
             {
-                GUI.EndGroup();
+                GUI.color = Color.white;
+                Text.Font = GameFont.Small;
+                Text.Anchor = TextAnchor.UpperLeft;
             }
+
+            ScrollCaptureRect = ctx.ScrollCaptureRect;
+            drawer.Clear();
+            foreach (var def in ctx.ReportedInDrawer)
+            {
+                foreach (var b in buttons)
+                {
+                    if (b.Def == def)
+                    {
+                        drawer.Add(b);
+                        break;
+                    }
+                }
+            }
+            MainButtonBarAPI.Report(ctx.ReportedOnBar, ctx.ReportedInDrawer, ctx.ReportedBarRect, ours: true);
         }
 
-        private static void DrawButton(string key, Rect rect)
+        /// <summary>Resolves the config into the buttons to show, in screen order.</summary>
+        private static void BuildButtons(BarConfig config)
         {
-            if (byKey.TryGetValue(key, out var def))
-                def.Worker.DoButton(rect);
+            buttons.Clear();
+            bool drawerMode = config.DisplayModeDef?.usesDrawer ?? false;
+            int n = 0;
+            foreach (var name in BarModel.EffectiveOrder(config))
+            {
+                var def = DefDatabase<MainButtonDef>.GetNamedSilentFail(name);
+                if (def == null || !BarModel.ShouldShow(config, def)) continue;
+
+                if (n == pool.Count) pool.Add(new BarButton());
+                var b = pool[n++];
+                var o = config.Get(name);
+                b.Def = def;
+                b.Settings = o;
+                b.Pin = BarModel.PinOf(config, name);
+                b.InDrawer = drawerMode && b.Pin == Core.PinPosition.None && o.inDrawer;
+                b.Minimized = def.minimized;
+                b.Width = o.width > 0 ? o.width : (int?)null;
+                buttons.Add(b);
+            }
         }
     }
 }

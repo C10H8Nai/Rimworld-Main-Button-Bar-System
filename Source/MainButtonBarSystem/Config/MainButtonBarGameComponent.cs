@@ -23,5 +23,10 @@ namespace MainButtonBarSystem
         {
             if (config == null) config = BarConfigManager.NewFromTemplate();
         }
+
+        public override void GameComponentOnGUI()
+        {
+            CompatBridges.ApplyOnce();
+        }
     }
 }

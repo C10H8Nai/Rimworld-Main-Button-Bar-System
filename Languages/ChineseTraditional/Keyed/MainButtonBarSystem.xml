@@ -28,14 +28,6 @@
   <MBBS_PinnedRightSuffix>（固定右端）</MBBS_PinnedRightSuffix>
   <MBBS_NotShowingNowTip>目前不在列上：按鈕自身的出現條件不成立。</MBBS_NotShowingNowTip>
   <MBBS_DisplayMode>顯示方式</MBBS_DisplayMode>
-  <MBBS_Mode_Vanilla>原版</MBBS_Mode_Vanilla>
-  <MBBS_Mode_Vanilla_Desc>和原版一樣平分畫面寬度。不捲動，沒有抽屜。</MBBS_Mode_Vanilla_Desc>
-  <MBBS_Mode_Collapse>摺疊</MBBS_Mode_Collapse>
-  <MBBS_Mode_Collapse_Desc>勾了「抽屜」的按鈕收進「更多」抽屜，其餘按鈕分配列的寬度。</MBBS_Mode_Collapse_Desc>
-  <MBBS_Mode_Scroll>捲動</MBBS_Mode_Scroll>
-  <MBBS_Mode_Scroll_Desc>按鈕維持寬度，用滑鼠滾輪或箭頭左右捲動。不使用抽屜。</MBBS_Mode_Scroll_Desc>
-  <MBBS_Mode_CollapseScroll>摺疊＋捲動</MBBS_Mode_CollapseScroll>
-  <MBBS_Mode_CollapseScroll_Desc>抽屜照常使用，剩下的按鈕可以捲動。</MBBS_Mode_CollapseScroll_Desc>
   <MBBS_MinWidth>捲動時每顆按鈕的最小寬度：{0}px</MBBS_MinWidth>
   <MBBS_DefaultWidth>按鈕預設寬度：{0}px</MBBS_DefaultWidth>
   <MBBS_Gap>按鈕間距：{0}px</MBBS_Gap>
@@ -63,11 +55,48 @@
   <MBBS_Pin_Right>右端</MBBS_Pin_Right>
   <MBBS_ForceShow>強制顯示</MBBS_ForceShow>
   <MBBS_ForceShowTip>即使按鈕自身條件不成立也顯示。這時點它可能沒有反應。</MBBS_ForceShowTip>
-  <MBBS_HotKeyReadOnly>快捷鍵：{0}（編輯功能在之後的版本）</MBBS_HotKeyReadOnly>
   <MBBS_SaveAsTemplate>存成預設範本</MBBS_SaveAsTemplate>
   <MBBS_ApplyTemplate>套用預設範本</MBBS_ApplyTemplate>
   <MBBS_TemplateSaved>已存成預設範本。新遊戲會使用這個排法。</MBBS_TemplateSaved>
   <MBBS_ResetAll>全部重設</MBBS_ResetAll>
   <MBBS_ResetAllConfirm>要把所有設定恢復成「沒改過」的狀態（原版加上其他模組改過的結果）嗎？這不會套用範本。</MBBS_ResetAllConfirm>
   <MBBS_Save>儲存</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>偵測到 {0}：目前由它控制底部列，這裡的改動要等改成本模組優先才會生效。</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>偵測到 {0}：本模組優先，它對底部列的效果已關閉。</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>詳細請到進階。</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>相容：{0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>本模組優先</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>由本模組繪製底部列。{0} 對底部列的效果會關閉，它的設定只當參考值。</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0} 優先</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} 保留底部列，本模組只保留設定視窗。</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>重新啟動遊戲後生效。</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>匯入 {0} 的設定</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>已匯入 {0} 的排法。按「儲存」才會保留。</MBBS_Compat_Imported>
+  <MBBS_Appearance>外觀</MBBS_Appearance>
+  <MBBS_HotKey>快捷鍵：{0}</MBBS_HotKey>
+  <MBBS_HotKeySet>設定</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>清除</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>所有存檔共用，和「選項 → 鍵盤設定」裡的相同。</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>所有存檔共用。這個按鈕在「鍵盤設定」裡沒有項目，由本模組保存。</MBBS_HotKeyCustomNote>
+  <MBBS_HotKeyConflict>和這些按鍵衝突：{0}</MBBS_HotKeyConflict>
+  <MBBS_PressKey>請按一個鍵（Esc 取消）</MBBS_PressKey>
+  <MBBS_Export>匯出…</MBBS_Export>
+  <MBBS_Import>匯入…</MBBS_Import>
+  <MBBS_Export_Clipboard>複製成文字（Discord、LINE…）</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>排法已複製到剪貼簿。</MBBS_Export_Copied>
+  <MBBS_Export_File>存成檔案</MBBS_Export_File>
+  <MBBS_Export_Saved>已存到 {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>複製成模組 XML（製作排序積木用）</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def XML 已複製。放進你模組 Defs 資料夾下的 .xml 檔，再改 defName 和 label。</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>從剪貼簿</MBBS_Import_Clipboard>
+  <MBBS_Import_File>檔案：{0}</MBBS_Import_File>
+  <MBBS_Import_Def>排序積木：{0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>排序積木：{0}（{1}）</MBBS_Import_DefBy>
+  <MBBS_Import_Done>已匯入到這個視窗。按「儲存」才會保留。</MBBS_Import_Done>
+  <MBBS_Import_Empty>剪貼簿是空的。</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>這不是匯出的排法（不是有效的 XML）。</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>這段文字裡沒有排法。</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>這段文字要求建立程式類別，排法不需要這個，所以沒有匯入。</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>由較新版本的本模組製作（格式 {0}，此版本最多讀 {1}）。請先更新模組。</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>無法讀取排法：{0}</MBBS_Import_Failed>
 </LanguageData>

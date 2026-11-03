@@ -15,10 +15,23 @@ namespace MainButtonBarSystem
             StartupDiagnostics.ReportPatchesOnce();
 
             // Another mod (for example Custom Bottom Bar) already skipped the original and draws the bar itself.
-            // Priority between such mods is a later stage; for now never draw on top of them.
-            if (!__runOriginal) return false;
+            // When this mod has priority, that mod's patch is removed instead (CompatBridgeWorker.TakeOver).
+            if (!__runOriginal)
+            {
+                BarRenderer.ReportGameDrawn(__instance);
+                return false;
+            }
 
             return !BarRenderer.TryDraw(__instance);
+        }
+    }
+
+    [HarmonyPatch(typeof(MainButtonsRoot), nameof(MainButtonsRoot.HandleLowPriorityShortcuts))]
+    public static class MainButtonsRoot_HandleLowPriorityShortcuts_Patch
+    {
+        public static void Postfix()
+        {
+            Hotkeys.HandleCustomHotkeys();
         }
     }
 

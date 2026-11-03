@@ -28,14 +28,6 @@
   <MBBS_PinnedRightSuffix>（固定右端）</MBBS_PinnedRightSuffix>
   <MBBS_NotShowingNowTip>目前不在栏上：按钮自身的出现条件不成立。</MBBS_NotShowingNowTip>
   <MBBS_DisplayMode>显示方式</MBBS_DisplayMode>
-  <MBBS_Mode_Vanilla>原版</MBBS_Mode_Vanilla>
-  <MBBS_Mode_Vanilla_Desc>和原版一样平分画面宽度。不滚动，没有抽屉。</MBBS_Mode_Vanilla_Desc>
-  <MBBS_Mode_Collapse>折叠</MBBS_Mode_Collapse>
-  <MBBS_Mode_Collapse_Desc>勾了「抽屉」的按钮收进「更多」抽屉，其余按钮分配栏的宽度。</MBBS_Mode_Collapse_Desc>
-  <MBBS_Mode_Scroll>滚动</MBBS_Mode_Scroll>
-  <MBBS_Mode_Scroll_Desc>按钮维持宽度，用鼠标滚轮或箭头左右滚动。不使用抽屉。</MBBS_Mode_Scroll_Desc>
-  <MBBS_Mode_CollapseScroll>折叠＋滚动</MBBS_Mode_CollapseScroll>
-  <MBBS_Mode_CollapseScroll_Desc>抽屉照常使用，剩下的按钮可以滚动。</MBBS_Mode_CollapseScroll_Desc>
   <MBBS_MinWidth>滚动时每个按钮的最小宽度：{0}px</MBBS_MinWidth>
   <MBBS_DefaultWidth>按钮默认宽度：{0}px</MBBS_DefaultWidth>
   <MBBS_Gap>按钮间距：{0}px</MBBS_Gap>
@@ -63,11 +55,48 @@
   <MBBS_Pin_Right>右端</MBBS_Pin_Right>
   <MBBS_ForceShow>强制显示</MBBS_ForceShow>
   <MBBS_ForceShowTip>即使按钮自身条件不成立也显示。这时点它可能没有反应。</MBBS_ForceShowTip>
-  <MBBS_HotKeyReadOnly>快捷键：{0}（编辑功能在之后的版本）</MBBS_HotKeyReadOnly>
   <MBBS_SaveAsTemplate>存为默认模板</MBBS_SaveAsTemplate>
   <MBBS_ApplyTemplate>套用默认模板</MBBS_ApplyTemplate>
   <MBBS_TemplateSaved>已存为默认模板。新游戏会使用这个排法。</MBBS_TemplateSaved>
   <MBBS_ResetAll>全部重置</MBBS_ResetAll>
   <MBBS_ResetAllConfirm>要把所有设置恢复成「没改过」的状态（原版加上其他模组改过的结果）吗？这不会套用模板。</MBBS_ResetAllConfirm>
   <MBBS_Save>保存</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>检测到 {0}：目前由它控制底部栏，这里的改动要等改成本模组优先才会生效。</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>检测到 {0}：本模组优先，它对底部栏的效果已关闭。</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>详细请到进阶。</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>兼容：{0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>本模组优先</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>由本模组绘制底部栏。{0} 对底部栏的效果会关闭，它的设置只当参考值。</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0} 优先</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} 保留底部栏，本模组只保留设置窗口。</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>重新启动游戏后生效。</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>导入 {0} 的设置</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>已导入 {0} 的排法。按「保存」才会保留。</MBBS_Compat_Imported>
+  <MBBS_Appearance>外观</MBBS_Appearance>
+  <MBBS_HotKey>快捷键：{0}</MBBS_HotKey>
+  <MBBS_HotKeySet>设置</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>清除</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>所有存档共用，和「选项 → 键盘设置」里的相同。</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>所有存档共用。这个按钮在「键盘设置」里没有项目，由本模组保存。</MBBS_HotKeyCustomNote>
+  <MBBS_HotKeyConflict>和这些按键冲突：{0}</MBBS_HotKeyConflict>
+  <MBBS_PressKey>请按一个键（Esc 取消）</MBBS_PressKey>
+  <MBBS_Export>导出…</MBBS_Export>
+  <MBBS_Import>导入…</MBBS_Import>
+  <MBBS_Export_Clipboard>复制成文字（Discord、LINE…）</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>排法已复制到剪贴板。</MBBS_Export_Copied>
+  <MBBS_Export_File>存成文件</MBBS_Export_File>
+  <MBBS_Export_Saved>已保存到 {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>复制成模组 XML（制作排序积木用）</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def XML 已复制。放进你模组 Defs 文件夹下的 .xml 文件，再改 defName 和 label。</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>从剪贴板</MBBS_Import_Clipboard>
+  <MBBS_Import_File>文件：{0}</MBBS_Import_File>
+  <MBBS_Import_Def>排序积木：{0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>排序积木：{0}（{1}）</MBBS_Import_DefBy>
+  <MBBS_Import_Done>已导入到这个窗口。按「保存」才会保留。</MBBS_Import_Done>
+  <MBBS_Import_Empty>剪贴板是空的。</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>这不是导出的排法（不是有效的 XML）。</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>这段文字里没有排法。</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>这段文字要求建立程序类别，排法不需要这个，所以没有导入。</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>由较新版本的本模组制作（格式 {0}，此版本最多读 {1}）。请先更新模组。</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>无法读取排法：{0}</MBBS_Import_Failed>
 </LanguageData>
