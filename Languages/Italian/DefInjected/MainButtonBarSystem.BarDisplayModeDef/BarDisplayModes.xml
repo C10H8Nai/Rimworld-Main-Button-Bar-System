@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>originale</Vanilla.label>
+  <Vanilla.description>Come nel gioco base: la larghezza dello schermo è divisa in parti uguali. Niente scorrimento e niente cassetto.</Vanilla.description>
+  <Collapse.label>compatta</Collapse.label>
+  <Collapse.description>I pulsanti segnati in «Cassetto» finiscono nel cassetto «Altro»; gli altri si dividono la barra.</Collapse.description>
+  <Scroll.label>scorrevole</Scroll.label>
+  <Scroll.description>I pulsanti mantengono la loro larghezza; scorri la barra con la rotellina del mouse o con le frecce. Il cassetto non viene usato.</Scroll.description>
+  <CollapseScroll.label>compatta + scorrevole</CollapseScroll.label>
+  <CollapseScroll.description>Il cassetto funziona come nella modalità compatta; gli altri pulsanti scorrono.</CollapseScroll.description>
+</LanguageData>

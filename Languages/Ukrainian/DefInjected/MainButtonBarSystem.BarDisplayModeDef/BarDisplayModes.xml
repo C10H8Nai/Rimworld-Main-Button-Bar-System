@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>як у грі</Vanilla.label>
+  <Vanilla.description>Як в основній грі: ширина екрана ділиться порівну. Без прокручування й без меню «Більше».</Vanilla.description>
+  <Collapse.label>згортання</Collapse.label>
+  <Collapse.description>Кнопки з позначкою «Згорнути» переходять до меню «Більше»; решта ділять панель.</Collapse.description>
+  <Scroll.label>прокручування</Scroll.label>
+  <Scroll.description>Кнопки зберігають ширину; панель прокручується коліщатком миші або стрілками. Меню «Більше» не використовується.</Scroll.description>
+  <CollapseScroll.label>згортання + прокручування</CollapseScroll.label>
+  <CollapseScroll.description>Меню «Більше» працює як у режимі «Згортання»; решта кнопок прокручується.</CollapseScroll.description>
+</LanguageData>

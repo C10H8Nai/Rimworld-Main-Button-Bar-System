@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Plus ({0})</MBBS_More>
+  <MBBS_MoreTip>Boutons rangés dans le tiroir. Le tiroir a son propre bouton de paramètres en bas.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Paramètres de la barre principale</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Ouvert en cours de partie : les modifications s'appliquent à la partie actuelle.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Ouvert depuis le menu principal : les modifications s'appliquent au modèle par défaut utilisé par les nouvelles parties.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Toujours afficher la barre avec ce mod (pour tester)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Tant que vous n'avez rien modifié, le jeu affiche lui-même la barre. Activez cette option pour comparer l'affichage de ce mod à celui du jeu.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Paramètres de la barre principale (cette partie)</MBBS_Title_Save>
+  <MBBS_Title_Template>Paramètres de la barre principale (modèle par défaut)</MBBS_Title_Template>
+  <MBBS_Tab_Simple>Simple</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>Avancé</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>Afficher</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Icône</MBBS_Col_Icon>
+  <MBBS_Col_Name>Nom</MBBS_Col_Name>
+  <MBBS_Col_Source>Origine</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Touche</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Tiroir</MBBS_Col_Drawer>
+  <MBBS_BarRow>Barre entière (valeurs par défaut)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Masqués par leur mod ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Boutons que leur mod garde volontairement hors de la barre. Activez « Toujours afficher » dans l'onglet Avancé pour en placer un sur la barre.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Monter</MBBS_MoveUp>
+  <MBBS_MoveDown>Descendre</MBBS_MoveDown>
+  <MBBS_OrderHint>De haut en bas = de gauche à droite à l'écran. Faites glisser les lignes pour les réordonner.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(verrouillé)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(tout à gauche)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(tout à droite)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Absent de la barre pour l'instant : la condition propre au bouton n'est pas remplie.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Mode d'affichage</MBBS_DisplayMode>
+  <MBBS_MinWidth>Largeur minimale des boutons lors du défilement : {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Largeur par défaut des boutons : {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Espace entre les boutons : {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Occuper toute la largeur de l'écran</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Quand les boutons tiennent, les étirer pour utiliser toute la largeur.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Verrouiller le bouton du menu du jeu tout à droite</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Tant qu'il est verrouillé, le bouton du menu ne peut être ni masqué, ni déplacé, ni rangé dans le tiroir ; il peut seulement être renommé.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Le bouton du menu du jeu a été déverrouillé dans l'onglet Avancé.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Le bouton du menu du jeu est verrouillé tout à droite et peut seulement être renommé. Déverrouillez-le dans l'onglet Avancé, sur la ligne de la barre entière.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Bouton issu de : {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Icône issue de : {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName : {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Son mod le garde volontairement hors de la barre ; il n'apparaît qu'avec « Toujours afficher ».</MBBS_Info_OriginallyHidden>
+  <MBBS_None>aucun</MBBS_None>
+  <MBBS_Unknown>inconnu</MBBS_Unknown>
+  <MBBS_Visible>Afficher sur la barre</MBBS_Visible>
+  <MBBS_InDrawer>Ranger dans le tiroir « Plus »</MBBS_InDrawer>
+  <MBBS_CustomName>Nom personnalisé (vide = d'origine : {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Largeur : {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Largeur : identique à la barre entière</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Position fixe</MBBS_Pin>
+  <MBBS_Pin_None>Libre</MBBS_Pin_None>
+  <MBBS_Pin_Left>À gauche</MBBS_Pin_Left>
+  <MBBS_Pin_Right>À droite</MBBS_Pin_Right>
+  <MBBS_ForceShow>Toujours afficher</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Affiche le bouton même si sa propre condition indique qu'il ne devrait pas apparaître. Cliquer dessus peut alors n'avoir aucun effet.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Sauvegarder comme modèle par défaut</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Appliquer le modèle par défaut</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Sauvegardé comme modèle par défaut. Les nouvelles parties commenceront avec cette disposition.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Tout réinitialiser</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Réinitialiser tous les paramètres pour retrouver la barre d'origine (le jeu plus les changements des autres mods) ? Le modèle n'est pas appliqué.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Sauvegarder</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>{0} détecté : il contrôle actuellement la barre, les modifications faites ici ne prennent donc effet que si ce mod a la priorité.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>{0} détecté : ce mod a la priorité, l'effet de {0} sur la barre est donc désactivé.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Détails dans l'onglet Avancé.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Compatibilité : {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Priorité à ce mod</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Ce mod affiche la barre. L'effet de {0} sur la barre est désactivé ; ses paramètres servent uniquement de valeurs de référence.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>Priorité à {0}</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} garde la barre. Ce mod ne conserve que sa fenêtre de paramètres.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Prend effet après le redémarrage du jeu.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Importer les paramètres de {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Disposition importée depuis {0}. Cliquez sur « Sauvegarder » pour la conserver.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Raccourci : {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Assigner</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Effacer</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Commun à toutes les parties ; même touche que dans Options &gt; Configuration du clavier.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Commun à toutes les parties. Ce bouton n'a pas d'entrée dans Options &gt; Configuration du clavier, c'est donc ce mod qui conserve la touche.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Appuyez sur une touche (Esc pour annuler)</MBBS_PressKey>
+  <MBBS_Export>Exporter...</MBBS_Export>
+  <MBBS_Import>Importer...</MBBS_Import>
+  <MBBS_Export_Clipboard>Copier en texte (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Disposition copiée dans le presse-papiers.</MBBS_Export_Copied>
+  <MBBS_Export_File>Sauvegarder dans un fichier</MBBS_Export_File>
+  <MBBS_Export_Saved>Sauvegardé dans {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Copier en XML de mod (pour créer un mod de disposition)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>XML de Def copié. Placez-le dans un fichier .xml du dossier Defs de votre mod, puis modifiez defName et label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Depuis le presse-papiers</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Fichier : {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Disposition : {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Disposition : {0} (par {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Disposition importée dans cette fenêtre. Cliquez sur « Sauvegarder » pour la conserver.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Le presse-papiers est vide.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Ce n'est pas une disposition exportée (XML non valide).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Ce texte ne contient aucune disposition.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Ce texte demande de créer des classes de programme, ce dont une disposition n'a jamais besoin. Rien n'a été importé.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Créée avec une version plus récente de ce mod (format {0} ; cette version lit jusqu'au format {1}). Mettez d'abord le mod à jour.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Impossible de lire la disposition : {0}</MBBS_Import_Failed>
+  <MBBS_Default>Par défaut</MBBS_Default>
+  <MBBS_DefaultTip>Revenir à la valeur par défaut.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Tiroir</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Largeur et espacement</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Largeur des flèches de défilement : {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Vitesse de la molette : {0}px par cran</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Largeur du bouton « Plus » : {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Largeur du bouton « Plus » : adaptée au libellé</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Colonnes du tiroir : {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Colonnes du tiroir : automatique</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Largeur des cases du tiroir : {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Largeur des cases du tiroir : identique à la largeur par défaut des boutons</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Alignement des libellés</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Position du libellé des boutons. Les boutons qui n'affichent qu'une icône ne sont pas concernés.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Comme le jeu</MBBS_Align_Default>
+  <MBBS_Align_Left>Gauche</MBBS_Align_Left>
+  <MBBS_Align_Center>Centre</MBBS_Align_Center>
+  <MBBS_Align_Right>Droite</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>ressources du jeu</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>Apparence</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Thème</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Les thèmes changent l'apparence de la barre et de ses boutons. Les mods de thème qui indiquent Main Button Bar System comme dépendance apparaissent aussi ici. Le choix est sauvegardé avec cette partie (ou avec le modèle depuis le menu principal).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>par {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Les flèches n'apparaissent que si les boutons ne tiennent pas. Tant qu'ils tiennent, la barre n'a pas besoin de défiler.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>C'est déjà la valeur par défaut.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Onglets principaux (gérés par ce mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>La touche {0} est aussi utilisée par :</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0} : {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Quand deux raccourcis partagent une touche, l'appui n'en déclenche qu'un seul. Modifiez l'un d'eux dans Options &gt; Configuration du clavier, ou choisissez une autre touche ici.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Ce mod traite ses propres touches après celles du jeu : les raccourcis ci-dessus captent donc cette touche en premier et ce bouton ne réagira pas. Choisissez une autre touche ici, ou modifiez l'autre raccourci dans Options &gt; Configuration du clavier.</MBBS_HotKeyConflictExplainCustom>
+</LanguageData>

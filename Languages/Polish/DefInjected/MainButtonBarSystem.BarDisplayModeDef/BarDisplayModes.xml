@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>jak w grze</Vanilla.label>
+  <Vanilla.description>Jak w podstawowej grze: szerokość ekranu jest dzielona po równo. Bez przewijania i bez panelu „Więcej”.</Vanilla.description>
+  <Collapse.label>zwijanie</Collapse.label>
+  <Collapse.description>Przyciski oznaczone jako „Zwiń” trafiają do panelu „Więcej”; pozostałe dzielą pasek.</Collapse.description>
+  <Scroll.label>przewijanie</Scroll.label>
+  <Scroll.description>Przyciski zachowują szerokość; pasek przewija się kółkiem myszy lub strzałkami. Panel „Więcej” nie jest używany.</Scroll.description>
+  <CollapseScroll.label>zwijanie + przewijanie</CollapseScroll.label>
+  <CollapseScroll.description>Panel „Więcej” działa jak w trybie „Zwijanie”; pozostałe przyciski się przewijają.</CollapseScroll.description>
+</LanguageData>

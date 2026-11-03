@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Altro ({0})</MBBS_More>
+  <MBBS_MoreTip>Pulsanti raccolti nel cassetto. In fondo al cassetto c'è un pulsante dedicato alle sue impostazioni.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Impostazioni della barra principale</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Aperte durante una partita: le modifiche valgono per il salvataggio attuale.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Aperte dal menù principale: le modifiche valgono per il modello predefinito con cui iniziano le nuove partite.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Disegna sempre la barra con questa mod (per test)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Finché non modifichi qualcosa, il gioco continua a disegnare la barra da sé. Attiva questa opzione per confrontare il disegno di questa mod con quello del gioco.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Impostazioni della barra principale (questo salvataggio)</MBBS_Title_Save>
+  <MBBS_Title_Template>Impostazioni della barra principale (modello predefinito)</MBBS_Title_Template>
+  <MBBS_Tab_Simple>Semplice</MBBS_Tab_Simple>
+  <MBBS_Tab_Advanced>Avanzate</MBBS_Tab_Advanced>
+  <MBBS_Col_Visible>Mostra</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Icona</MBBS_Col_Icon>
+  <MBBS_Col_Name>Nome</MBBS_Col_Name>
+  <MBBS_Col_Source>Origine</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Tasto</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Cassetto</MBBS_Col_Drawer>
+  <MBBS_BarRow>Barra intera (predefiniti)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Nascosti dalla loro mod ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Pulsanti che la loro mod tiene di proposito fuori dalla barra. Attiva «Mostra sempre» nella scheda Avanzate per metterne uno sulla barra.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Sposta su</MBBS_MoveUp>
+  <MBBS_MoveDown>Sposta giù</MBBS_MoveDown>
+  <MBBS_OrderHint>Dall'alto in basso = da sinistra a destra sullo schermo. Trascina le righe per riordinarle.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(bloccato)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(a sinistra)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(a destra)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Al momento non è sulla barra: la condizione propria del pulsante non è soddisfatta.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Modalità di visualizzazione</MBBS_DisplayMode>
+  <MBBS_MinWidth>Larghezza minima dei pulsanti con lo scorrimento: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Larghezza predefinita dei pulsanti: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Spazio tra i pulsanti: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Riempi la larghezza dello schermo</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Se i pulsanti ci stanno, li allarga fino a occupare tutta la larghezza.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Blocca il pulsante del menù di gioco all'estremità destra</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Finché è bloccato, il pulsante del menù non può essere nascosto, spostato o messo nel cassetto; può solo essere rinominato.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Il pulsante del menù di gioco è stato sbloccato nella scheda Avanzate.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Il pulsante del menù di gioco è bloccato all'estremità destra e può solo essere rinominato. Sbloccalo nella scheda Avanzate, nella riga della barra intera.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Origine del pulsante: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Origine dell'icona: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>La sua mod lo tiene di proposito fuori dalla barra; compare solo con «Mostra sempre».</MBBS_Info_OriginallyHidden>
+  <MBBS_None>nessuno</MBBS_None>
+  <MBBS_Unknown>sconosciuto</MBBS_Unknown>
+  <MBBS_Visible>Mostra sulla barra</MBBS_Visible>
+  <MBBS_InDrawer>Metti nel cassetto «Altro»</MBBS_InDrawer>
+  <MBBS_CustomName>Nome personalizzato (vuoto = originale: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Larghezza: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Larghezza: come la barra intera</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Posizione fissa</MBBS_Pin>
+  <MBBS_Pin_None>Libera</MBBS_Pin_None>
+  <MBBS_Pin_Left>A sinistra</MBBS_Pin_Left>
+  <MBBS_Pin_Right>A destra</MBBS_Pin_Right>
+  <MBBS_ForceShow>Mostra sempre</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Mostra il pulsante anche quando la sua condizione dice che non dovrebbe comparire. In tal caso, cliccarlo potrebbe non avere alcun effetto.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Salva come modello predefinito</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Applica il modello predefinito</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Salvato come modello predefinito. Le nuove partite inizieranno con questa disposizione.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Reimposta tutto</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Riportare tutte le impostazioni alla barra non modificata (il gioco più le modifiche delle altre mod)? Il modello non verrà applicato.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Salva</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>Rilevata la mod {0}: al momento controlla lei la barra, quindi le modifiche fatte qui hanno effetto solo se questa mod ha la priorità.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>Rilevata la mod {0}: questa mod ha la priorità, quindi l'effetto di {0} sulla barra è disattivato.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Dettagli nella scheda Avanzate.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Compatibilità: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Priorità a questa mod</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Questa mod disegna la barra. L'effetto di {0} sulla barra è disattivato; le sue impostazioni servono solo come valori di riferimento.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>Priorità a {0}</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} mantiene la barra. Questa mod conserva solo la sua finestra delle impostazioni.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Ha effetto dopo il riavvio del gioco.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Importa le impostazioni da {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Disposizione importata da {0}. Premi «Salva» per conservarla.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Tasto rapido: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Assegna</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Cancella</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Condiviso da tutti i salvataggi; è lo stesso tasto di Opzioni &gt; Configurazione tastiera.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Condiviso da tutti i salvataggi. Questo pulsante non ha una voce in Opzioni &gt; Configurazione tastiera, quindi è questa mod a conservare il tasto.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Premi un tasto (Esc per annullare)</MBBS_PressKey>
+  <MBBS_Export>Esporta...</MBBS_Export>
+  <MBBS_Import>Importa...</MBBS_Import>
+  <MBBS_Export_Clipboard>Copia come testo (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Disposizione copiata negli appunti.</MBBS_Export_Copied>
+  <MBBS_Export_File>Salva come file</MBBS_Export_File>
+  <MBBS_Export_Saved>Salvato in {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Copia come XML di mod (per creare una mod di disposizione)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>XML della Def copiato. Inseriscilo in un file .xml nella cartella Defs della tua mod e cambia defName e label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Dagli appunti</MBBS_Import_Clipboard>
+  <MBBS_Import_File>File: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Disposizione: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Disposizione: {0} (di {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Disposizione importata in questa finestra. Premi «Salva» per conservarla.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Gli appunti sono vuoti.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Non è una disposizione esportata (XML non valido).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Questo testo non contiene alcuna disposizione.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Questo testo chiede di creare classi di programma, che a una disposizione non servono mai. Non è stato importato.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Creata con una versione più recente di questa mod (formato {0}; questa versione legge fino al {1}). Aggiorna prima la mod.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Impossibile leggere la disposizione: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Predefinito</MBBS_Default>
+  <MBBS_DefaultTip>Torna al valore predefinito.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Cassetto</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Larghezza e spaziatura</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Larghezza delle frecce di scorrimento: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Velocità della rotellina del mouse: {0}px per scatto</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Larghezza del pulsante «Altro»: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Larghezza del pulsante «Altro»: adattata all'etichetta</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Colonne del cassetto: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Colonne del cassetto: automatiche</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Larghezza delle celle del cassetto: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Larghezza delle celle del cassetto: come la larghezza predefinita dei pulsanti</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Allineamento delle etichette</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Dove si trovano le etichette dei pulsanti. I pulsanti che mostrano solo un'icona non cambiano.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Come nel gioco</MBBS_Align_Default>
+  <MBBS_Align_Left>Sinistra</MBBS_Align_Left>
+  <MBBS_Align_Center>Centro</MBBS_Align_Center>
+  <MBBS_Align_Right>Destra</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>risorse del gioco</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Appearance>Aspetto</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>I temi cambiano l'aspetto della barra e dei suoi pulsanti. Qui compaiono anche le mod di temi che indicano Main Button Bar System come dipendenza. La scelta viene memorizzata in questo salvataggio (o nel modello, se fatta dal menù principale).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>di {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Le frecce compaiono solo quando i pulsanti non ci stanno. Finché ci stanno, la barra non ha bisogno di scorrere.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>È già il valore predefinito.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Schede principali (gestite da questa mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Il tasto {0} è usato anche da:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Quando due comandi condividono un tasto, premerlo ne attiva solo uno. Cambia uno dei due in Opzioni &gt; Configurazione tastiera, oppure scegli qui un altro tasto.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Questa mod gestisce i propri tasti dopo quelli del gioco, quindi i comandi qui sopra prendono questo tasto per primi e questo pulsante non risponderà. Scegli qui un altro tasto, oppure cambia l'altro comando in Opzioni &gt; Configurazione tastiera.</MBBS_HotKeyConflictExplainCustom>
+</LanguageData>

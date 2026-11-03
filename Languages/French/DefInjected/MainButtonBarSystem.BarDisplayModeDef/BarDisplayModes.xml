@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>original</Vanilla.label>
+  <Vanilla.description>Comme dans le jeu de base : la largeur de l'écran est partagée équitablement. Ni défilement ni tiroir.</Vanilla.description>
+  <Collapse.label>compact</Collapse.label>
+  <Collapse.description>Les boutons cochés dans « Tiroir » vont dans le tiroir « Plus » ; les autres se partagent la barre.</Collapse.description>
+  <Scroll.label>défilant</Scroll.label>
+  <Scroll.description>Les boutons gardent leur largeur ; faites défiler la barre avec la molette ou les flèches. Le tiroir n'est pas utilisé.</Scroll.description>
+  <CollapseScroll.label>compact + défilant</CollapseScroll.label>
+  <CollapseScroll.description>Le tiroir fonctionne comme en mode compact ; les autres boutons défilent.</CollapseScroll.description>
+</LanguageData>

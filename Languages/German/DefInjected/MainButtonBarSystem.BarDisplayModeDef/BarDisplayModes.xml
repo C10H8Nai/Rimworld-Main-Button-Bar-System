@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>Original</Vanilla.label>
+  <Vanilla.description>Wie im Grundspiel: Die Bildschirmbreite wird gleichmäßig aufgeteilt. Kein Scrollen und keine Schublade.</Vanilla.description>
+  <Collapse.label>Einklappen</Collapse.label>
+  <Collapse.description>Mit „Schublade“ markierte Schaltflächen wandern in die „Mehr“-Schublade; die übrigen teilen sich die Leiste.</Collapse.description>
+  <Scroll.label>Scrollen</Scroll.label>
+  <Scroll.description>Die Schaltflächen behalten ihre Breite; die Leiste wird mit dem Mausrad oder den Pfeilen gescrollt. Die Schublade wird nicht verwendet.</Scroll.description>
+  <CollapseScroll.label>Einklappen + Scrollen</CollapseScroll.label>
+  <CollapseScroll.description>Die Schublade funktioniert wie bei „Einklappen“; die übrigen Schaltflächen lassen sich scrollen.</CollapseScroll.description>
+</LanguageData>
