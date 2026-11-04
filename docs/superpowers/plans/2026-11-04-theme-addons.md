@@ -220,3 +220,13 @@
 - [ ] **Step 1:** `superpowers:requesting-code-review` 對整個分支（含 Python）。
 - [ ] **Step 2:** 修正，重跑 Task 1 Step 5 的比對和 `gen_translations.py --check`。
 - [ ] Commit
+
+---
+
+## 執行紀錄（2026-11-04）
+
+- Task 1～9、11 完成 `2026-11-04`；Task 10 編譯：這台機器原本沒有 .NET SDK，作者同意後用微軟官方 `dotnet-install.ps1` 把 SDK 10.0.403 裝到 `C:\Users\IL\.dotnet`（不改 PATH，`C:\Users\IL\.dotnet\dotnet.exe build …`），Release 0 警告 0 錯誤，xunit 46 個測試通過，`verify_dll.py` 0 問題 `2026-11-04`。
+- 和計畫不同的地方：`settingsWindow.themeSettingsHeight` 改成 `themeSettingsGap`（外觀分頁改成一欄捲動的 listing，不用固定高度）；`behaviour` 多一個 `themeTileMaxCount`（Tile 的格數上限，超過就改成 Stretch）；重載的舊貼圖不 `Destroy`（避免同一幀還在用它的繪圖拿到已銷毀的物件），只是不釋放。
+- 各任務的 code review 合併成兩次：Python＋C#＋文件一次整支分支 review（Sonnet 子代理），修正後再補一次自查。
+- 五款舊主題的 PNG：提交版是別的 Pillow 版本編的，像素相同、位元組不同；本機重產後和同機的舊腳本輸出 50 張＋模組圖示位元組全同，所以提交的 PNG 沒有覆蓋。
+- 沒做：進遊戲驗證（留給作者照 `docs/testing/theme-addons.md` 做，或由 Claude 用 23 個模組的測試排序開遊戲）。
