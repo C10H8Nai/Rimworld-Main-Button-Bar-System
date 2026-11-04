@@ -15,13 +15,18 @@
 ##   defName / label / description / author / displayOrder
 ##   labelColor / labelMouseoverColor / labelActiveColor   [r,g,b,a] 0～1，null 表示不設
 ##   palette         base, edge, outline, rule, accent, active：[r,g,b]；ornament：finial / roundel / genetab /
-##                   shard / hull / petal；double, glow_on_hover：布林；icon, tile, rivet, active_rule：[r,g,b] 或 null
+##                   shard / hull / petal；double, glow_on_hover, hollow：布林；icon, tile, rivet, active_rule：[r,g,b] 或 null
+##                   hollow：true 時四種狀態的按鈕 atlas 不填底色（只留邊框、內線、底線、角落裝飾），按鈕圖才透得出來；
+##                   More 的 atlas 照舊有底色（它不會有按鈕圖）
 ##   background      barFit / drawerFit：Atlas / Tile / Stretch / Fit / Cover；barTileScale / drawerTileScale；
 ##                   bar / drawer：null（內建畫法）、{"placeholder": {"size": [w,h], "color": [r,g,b], "text": "…"}}
 ##                   或 {"source": "相對於 JSON 的 PNG 路徑"}
 ##   decorations     清單，每項：file（貼圖檔名，不含副檔名）、placeholder 或 source、target（Bar / Drawer）、
 ##                   anchor（Left / Center / Right）、verticalAnchor（Bottom / Center / Top）、offset [x,y]、
 ##                   size [w,h]、opacity、layer（BelowButtons / AboveButtons）、showWhen（[]、Normal、Mouseover、DrawerOpen）
+##   buttonImage     選填，每顆主按鈕的背景圖（畫在按鈕 atlas 底下）：file、placeholder 或 source、fit（Cover / Fit /
+##                   Stretch；Atlas、Tile 視同 Stretch）、anchor、verticalAnchor（Top / Center / Bottom）、opacity、inset
+##   buttonImages    選填清單，指定按鈕的背景圖，欄位同上再加 button（MainButtonDef 的 defName，例 "Architect"）
 ##   mod             只有完整模組需要：packageId、name、texturesRoot（Textures/ 底下的資料夾）、supportedVersions
 ##   translations    {"ChineseTraditional": {"label": "…", "description": "…"}, …}
 ##   gearSource      選填，齒輪圖示的來源 PNG；省略時找本模組的 Textures/MainButtonBarSystem/UI/Gear.png
@@ -45,12 +50,16 @@
 ##   _theme_image_apply_nine_slice()     — 在畫布上用九宮格方式畫 atlas（預覽用）
 ##   _theme_image_build_bar_strip()      — 一段模擬的按鈕列（遊戲內預覽貼圖）
 ##   _theme_decoration_derive_box()      — 裝飾圖的擺放，和 C# DecorationLayout.Place 同一套規則（預覽用）
+##   _theme_button_image_find()          — 某顆按鈕用的背景圖設定（指定優先，否則預設，否則 None）
+##   _theme_button_image_apply()         — 把按鈕背景圖畫進格子，和 C# Core/ImageFit 同一套規則（預覽用）
 ##   _theme_image_build_mod_preview()    — About/Preview.png
 ##   _theme_json_validate_fields()       — JSON 的必填欄位、列舉值、檔名衝突檢查
 ##   _theme_locate_gear()                — 找齒輪來源 PNG
 ##   _theme_palette_normalize()          — JSON 的顏色清單轉成 tuple
 ##   _theme_def_serialize_color()        — [r,g,b,a] → "(r, g, b, a)"
 ##   _theme_def_serialize_vector()       — [x,y] → "(x, y)"
+##   _theme_def_serialize_button_image() — 按鈕背景圖寫進 Defs 的欄位
+##   _theme_button_image_list()          — buttonImage 加 buttonImages 的清單
 ##   _theme_mod_write_about()            — About/About.xml
 ##   _theme_mod_write_defs()             — Defs/<name>_Themes.xml
 ##   _theme_mod_write_languages()        — Languages/<語言>/DefInjected/…
@@ -65,6 +74,8 @@
 ## V1.0：2026-11-04  從 gen_theme_textures.py 拆出；畫圖程式碼原樣搬入（像素不變），加上佔位圖、完整模組輸出
 ## V1.1：2026-11-04  review 後：JSON 列舉值與檔名衝突檢查、佔位圖文字依寬度縮字級、擺放算法提到模組層
 ## V1.2：2026-11-04  第二輪 review：檔名衝突不分大小寫；palette 不是物件時報 ValueError
+## V1.3：2026-11-04  按鈕背景圖：JSON 的 buttonImage／buttonImages（寫進 Defs、產貼圖、驗證、預覽條先畫圖再畫框）；
+##                   palette 的 hollow（按鈕 atlas 不填底色）
 import argparse
 import json
 import os
@@ -91,6 +102,7 @@ _THEME_DECORATION_DEFAULTS = {"target": "Bar", "anchor": "Left", "verticalAnchor
                               "size": [0, 0], "opacity": 1, "layer": "BelowButtons", "showWhen": []}
 _THEME_BACKGROUND_DEFAULTS = {"barFit": "Atlas", "drawerFit": "Atlas", "barTileScale": 1, "drawerTileScale": 1,
                               "bar": None, "drawer": None}
+_THEME_BUTTON_IMAGE_DEFAULTS = {"fit": "Cover", "anchor": "Center", "verticalAnchor": "Center", "opacity": 1, "inset": 0}
 _THEME_PALETTE_COLOR_KEYS  = ("base", "edge", "outline", "rule", "accent", "active", "icon", "tile", "rivet", "active_rule")
 _THEME_ORNAMENTS           = ("finial", "roundel", "genetab", "shard", "hull", "petal")   # 和 C# 無關，只有這支工具認得
 _THEME_FITS                = ("Atlas", "Tile", "Stretch", "Fit", "Cover")                  # 以下六組要和 C# 的列舉同名
@@ -99,7 +111,7 @@ _THEME_ANCHORS             = ("Left", "Center", "Right")
 _THEME_VERTICAL_ANCHORS    = ("Bottom", "Center", "Top")
 _THEME_LAYERS              = ("BelowButtons", "AboveButtons")
 _THEME_STATES              = ("Normal", "Mouseover", "DrawerOpen")
-_THEME_PREVIEW_LABELS      = ("Architect", "Work", "Schedule", "Assign")
+_THEME_PREVIEW_LABELS      = ("Architect", "Work", "Schedule", "Assign")                 # 預覽條的按鈕，也是原版的 defName（找按鈕圖用）
 _THEME_PREVIEW_BACKGROUND  = (30, 33, 38, 255)
 _THEME_PLACEHOLDER_TEXT    = (246, 242, 241, 255)
 
@@ -223,10 +235,11 @@ def _theme_atlas_build_hover_glow(image, palette, inner, state):
 ############################################################################################################
 #   _theme_atlas_build_button — 按鈕 atlas：漸層底、邊框、內線、狀態底線、角落裝飾
 ############################################################################################################
-def _theme_atlas_build_button(palette, fill, edge, state="normal"):
+def _theme_atlas_build_button(palette, fill, edge, state="normal", hollow=False):
     size = _THEME_ATLAS_SIZE
     image = Image.new("RGBA", (size, size))
-    _theme_atlas_apply_gradient(image, _theme_color_derive_shade(fill, 10), _theme_color_derive_shade(fill, -10))
+    if not hollow:  # hollow：不填底色，按鈕背景圖從中間透出來
+        _theme_atlas_apply_gradient(image, _theme_color_derive_shade(fill, 10), _theme_color_derive_shade(fill, -10))
     draw = ImageDraw.Draw(image)
     style = palette["ornament"]
     outline_offset = 0
@@ -414,6 +427,9 @@ def _theme_image_build_bar_strip(theme, textures, size):
         is_more = index == count - 1
         x = arrow + cell * index + (arrow if is_more else 0)
         atlas_name = "More" if is_more else states[index]
+        button_image = None if is_more else _theme_button_image_find(theme, _THEME_PREVIEW_LABELS[index])
+        if button_image:  # 和遊戲一樣：先畫按鈕圖，再畫框
+            _theme_button_image_apply(strip, textures[button_image["file"]], button_image, (x, 0, cell, height))
         _theme_image_apply_nine_slice(strip, textures[atlas_name], (x, 0, cell, height))
         if atlas_name == "ButtonDisabled":
             continue
@@ -449,6 +465,55 @@ def _theme_decoration_derive_box(decoration, image, target_box):
     x = {"Left": target_x, "Center": target_x + (target_w - box_w) / 2, "Right": target_x + target_w - box_w}[anchor]
     y = {"Top": target_y, "Center": target_y + (target_h - box_h) / 2, "Bottom": target_y + target_h - box_h}[vertical]
     return int(round(x + decoration["offset"][0])), int(round(y + decoration["offset"][1])), int(round(box_w)), int(round(box_h))
+
+
+############################################################################################################
+#   _theme_button_image_list — buttonImage 加上 buttonImages，一份清單（產貼圖、寫檔用）
+############################################################################################################
+def _theme_button_image_list(theme):
+    images = [theme["buttonImage"]] if theme.get("buttonImage") else []
+    return images + list(theme.get("buttonImages") or [])
+
+
+############################################################################################################
+#   _theme_button_image_find — 某顆按鈕（defName）用的背景圖設定：buttonImages 裡指定的優先，否則 buttonImage，否則 None
+############################################################################################################
+def _theme_button_image_find(theme, button):
+    for button_image in reversed(theme.get("buttonImages") or []):   # 和 C# 一樣，同一顆按鈕後面的贏
+        if button_image["button"] == button:
+            return button_image
+    return theme.get("buttonImage")
+
+
+############################################################################################################
+#   _theme_button_image_apply — 把按鈕背景圖畫進格子 box（x, y, w, h）：扣掉 inset 後依 fit 與錨點擺放，
+#   和 C# 的 Core/ImageFit 同一套規則（Cover 等比填滿、裁掉錨點另一側；Fit 等比放進去、放在錨點；其餘拉伸）
+############################################################################################################
+def _theme_button_image_apply(canvas, image, spec, box):
+    x, y, width, height = box
+    inset = int(round(spec["inset"]))
+    x, y, width, height = x + inset, y + inset, width - 2 * inset, height - 2 * inset
+    if width <= 0 or height <= 0:
+        return
+    image_w, image_h = image.size
+    fit = spec["fit"] if spec["fit"] in ("Cover", "Fit") else "Stretch"
+    horizontal = {"Left": 0.0, "Center": 0.5, "Right": 1.0}[spec["anchor"]]
+    vertical = {"Top": 0.0, "Center": 0.5, "Bottom": 1.0}[spec["verticalAnchor"]]
+    if fit == "Cover":
+        scale = max(width / image_w, height / image_h)
+        scaled = image.resize((max(width, round(image_w * scale)), max(height, round(image_h * scale))), Image.Resampling.BILINEAR)
+        left = int(round((scaled.width - width) * horizontal))
+        top = int(round((scaled.height - height) * vertical))
+        piece, origin = scaled.crop((left, top, left + width, top + height)), (x, y)
+    elif fit == "Fit":
+        scale = min(width / image_w, height / image_h)
+        piece = image.resize((max(1, round(image_w * scale)), max(1, round(image_h * scale))), Image.Resampling.BILINEAR)
+        origin = (x + int(round((width - piece.width) * horizontal)), y + int(round((height - piece.height) * vertical)))
+    else:
+        piece, origin = image.resize((width, height), Image.Resampling.BILINEAR), (x, y)
+    if spec["opacity"] < 1:
+        piece.putalpha(piece.getchannel("A").point(lambda value: int(value * spec["opacity"])))
+    canvas.alpha_composite(piece, origin)
 
 
 ############################################################################################################
@@ -523,6 +588,20 @@ def _theme_def_serialize_color(rgba):
 ############################################################################################################
 def _theme_def_serialize_vector(vector):
     return f"({vector[0]:g}, {vector[1]:g})"
+
+
+############################################################################################################
+#   _theme_def_serialize_button_image — 按鈕背景圖的欄位（texture、fit、錨點、opacity、inset），每行加縮排
+############################################################################################################
+def _theme_def_serialize_button_image(button_image, texture_prefix, indent):
+    return [
+        f"{indent}<texture>{texture_prefix}/{button_image['file']}</texture>",
+        f"{indent}<fit>{button_image['fit']}</fit>",
+        f"{indent}<anchor>{button_image['anchor']}</anchor>",
+        f"{indent}<verticalAnchor>{button_image['verticalAnchor']}</verticalAnchor>",
+        f"{indent}<opacity>{button_image['opacity']:g}</opacity>",
+        f"{indent}<inset>{button_image['inset']:g}</inset>",
+    ]
 
 
 ############################################################################################################
@@ -617,6 +696,17 @@ def _theme_mod_write_defs(theme, out_dir, texture_prefix):
                 lines.append("        <showWhen>" + "".join(f"<li>{state}</li>" for state in decoration["showWhen"]) + "</showWhen>")
             lines.append("      </li>")
         lines.append("    </decorations>")
+    if theme.get("buttonImage") or theme.get("buttonImages"):
+        lines += ["", "    <!-- Pictures inside the buttons, drawn under the button atlas: buttonImage for every button, buttonImages",
+                  "         for named ones (button = the MainButtonDef's defName). Fit: Cover (default) / Fit / Stretch. -->"]
+        if theme.get("buttonImage"):
+            lines += ["    <buttonImage>"] + _theme_def_serialize_button_image(theme["buttonImage"], texture_prefix, "      ") + ["    </buttonImage>"]
+        if theme.get("buttonImages"):
+            lines.append("    <buttonImages>")
+            for button_image in theme["buttonImages"]:
+                lines += ["      <li>", f"        <button>{escape(button_image['button'])}</button>"]
+                lines += _theme_def_serialize_button_image(button_image, texture_prefix, "        ") + ["      </li>"]
+            lines.append("    </buttonImages>")
     lines += [f"  </{_THEME_DEF_TYPE}>", "</Defs>", ""]
     os.makedirs(os.path.join(out_dir, "Defs"), exist_ok=True)
     with open(os.path.join(out_dir, "Defs", theme["name"] + "_Themes.xml"), "w", encoding="utf-8", newline="\n") as handle:
@@ -643,12 +733,13 @@ def _theme_mod_write_languages(theme, out_dir):
 ############################################################################################################
 def theme_build_textures(theme, gear_source, with_preview=False):
     palette = theme["palette"]
+    hollow = bool(palette.get("hollow"))   # 只影響四種狀態的按鈕；More 沒有按鈕圖，照舊有底色
     textures = {
-        "Button": _theme_atlas_build_button(palette, palette["base"], palette["edge"]),
-        "ButtonMouseover": _theme_atlas_build_button(palette, _theme_color_derive_shade(palette["base"], 14), _theme_color_derive_shade(palette["edge"], 25), "mouseover"),
-        "ButtonActive": _theme_atlas_build_button(palette, palette["active"], _theme_color_derive_shade(palette["edge"], 35), "active"),
+        "Button": _theme_atlas_build_button(palette, palette["base"], palette["edge"], hollow=hollow),
+        "ButtonMouseover": _theme_atlas_build_button(palette, _theme_color_derive_shade(palette["base"], 14), _theme_color_derive_shade(palette["edge"], 25), "mouseover", hollow),
+        "ButtonActive": _theme_atlas_build_button(palette, palette["active"], _theme_color_derive_shade(palette["edge"], 35), "active", hollow),
         "ButtonDisabled": _theme_atlas_build_button(palette, _theme_color_derive_grey(_theme_color_derive_shade(palette["base"], -4)),
-                                                    _theme_color_derive_grey(_theme_color_derive_shade(palette["edge"], -60)), "disabled"),
+                                                    _theme_color_derive_grey(_theme_color_derive_shade(palette["edge"], -60)), "disabled", hollow),
         "Bar": _theme_atlas_build_bar(palette),
         "More": _theme_atlas_build_button(palette, _theme_color_derive_mix(palette["base"], palette["active"], 0.6), palette["edge"]),
         "Drawer": _theme_atlas_build_drawer(palette),
@@ -670,6 +761,13 @@ def theme_build_textures(theme, gear_source, with_preview=False):
             textures[decoration["file"]] = _theme_image_load_source(theme, decoration["source"])
         else:
             raise ValueError(f"decoration {decoration['file']}: needs placeholder or source")
+    for button_image in _theme_button_image_list(theme):
+        if button_image.get("placeholder"):
+            textures[button_image["file"]] = _theme_image_build_placeholder(button_image["placeholder"])
+        elif button_image.get("source"):
+            textures[button_image["file"]] = _theme_image_load_source(theme, button_image["source"])
+        else:
+            raise ValueError(f"button image {button_image['file']}: needs placeholder or source")
     if with_preview:
         textures["Preview"] = _theme_image_build_bar_strip(theme, textures, _THEME_STRIP_SIZE)
     return textures
@@ -739,6 +837,50 @@ def _theme_json_validate_fields(theme, path):
                 problems.append(f"{where}: showWhen value '{state}' must be one of {', '.join(_THEME_STATES)}")
         if not decoration.get("placeholder") and not decoration.get("source"):
             problems.append(f"{where}: needs placeholder or source")
+    button_images = []
+    if theme.get("buttonImage") is not None:
+        if not isinstance(theme["buttonImage"], dict):
+            problems.append("buttonImage must be an object")
+        else:
+            button_images.append(("buttonImage", theme["buttonImage"]))
+            if "button" in theme["buttonImage"]:
+                problems.append("buttonImage: button is only used in buttonImages")
+    if theme.get("buttonImages") is not None and not isinstance(theme["buttonImages"], list):
+        problems.append("buttonImages must be a list")
+    else:
+        seen_buttons = set()
+        for index, button_image in enumerate(theme.get("buttonImages") or []):
+            where = f"buttonImages[{index}]"
+            if not isinstance(button_image, dict):
+                problems.append(f"{where} must be an object")
+                continue
+            button_images.append((where, button_image))
+            button = button_image.get("button")
+            if not button or not isinstance(button, str):
+                problems.append(f"{where}: button is missing (the MainButtonDef's defName, e.g. Architect)")
+            elif button in seen_buttons:
+                problems.append(f"{where}: button '{button}' is listed twice")
+            else:
+                seen_buttons.add(button)
+    for where, button_image in button_images:
+        file_name = button_image.get("file")
+        if not file_name:
+            problems.append(f"{where}: file is missing")
+        elif file_name.lower() in used_files:
+            problems.append(f"{where}: file '{file_name}' clashes with another texture of the theme")
+        else:
+            used_files.add(file_name.lower())
+        for key, allowed in (("fit", _THEME_FITS), ("anchor", _THEME_ANCHORS), ("verticalAnchor", _THEME_VERTICAL_ANCHORS)):
+            if key in button_image and button_image[key] not in allowed:
+                problems.append(f"{where}: {key} must be one of {', '.join(allowed)}")
+        opacity = button_image.get("opacity", 1)
+        if not isinstance(opacity, (int, float)) or not 0 <= opacity <= 1:
+            problems.append(f"{where}: opacity must be a number from 0 to 1")
+        inset = button_image.get("inset", 0)
+        if not isinstance(inset, (int, float)) or inset < 0:
+            problems.append(f"{where}: inset must be a number of pixels, 0 or more")
+        if not button_image.get("placeholder") and not button_image.get("source"):
+            problems.append(f"{where}: needs placeholder or source")
     if problems:
         raise ValueError(f"{path}: " + "; ".join(problems))
 
@@ -755,6 +897,8 @@ def theme_load(path):
     theme["palette"] = _theme_palette_normalize(theme["palette"])
     theme["background"] = {**_THEME_BACKGROUND_DEFAULTS, **(theme.get("background") or {})}
     theme["decorations"] = [{**_THEME_DECORATION_DEFAULTS, **decoration} for decoration in theme.get("decorations") or []]
+    theme["buttonImage"] = {**_THEME_BUTTON_IMAGE_DEFAULTS, **theme["buttonImage"]} if theme.get("buttonImage") else None
+    theme["buttonImages"] = [{**_THEME_BUTTON_IMAGE_DEFAULTS, **image} for image in theme.get("buttonImages") or []]
     for field in ("labelColor", "labelMouseoverColor", "labelActiveColor"):
         theme.setdefault(field, None)
     return theme

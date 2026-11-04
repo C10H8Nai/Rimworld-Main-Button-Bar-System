@@ -65,5 +65,36 @@
         <layer>AboveButtons</layer>
       </li>
     </decorations>
+
+    <!-- Pictures inside the buttons, drawn under the button atlas: buttonImage for every button, buttonImages
+         for named ones (button = the MainButtonDef's defName). Fit: Cover (default) / Fit / Stretch. -->
+    <buttonImage>
+      <texture>ExampleTheme/ButtonPicture</texture>
+      <fit>Cover</fit>
+      <anchor>Center</anchor>
+      <verticalAnchor>Center</verticalAnchor>
+      <opacity>1</opacity>
+      <inset>0</inset>
+    </buttonImage>
+    <buttonImages>
+      <li>
+        <button>Architect</button>
+        <texture>ExampleTheme/ButtonArchitect</texture>
+        <fit>Cover</fit>
+        <anchor>Center</anchor>
+        <verticalAnchor>Top</verticalAnchor>
+        <opacity>1</opacity>
+        <inset>2</inset>
+      </li>
+      <li>
+        <button>Research</button>
+        <texture>ExampleTheme/ButtonResearch</texture>
+        <fit>Cover</fit>
+        <anchor>Left</anchor>
+        <verticalAnchor>Center</verticalAnchor>
+        <opacity>0.85</opacity>
+        <inset>2</inset>
+      </li>
+    </buttonImages>
   </MainButtonBarSystem.BarAppearanceDef>
 </Defs>

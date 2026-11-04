@@ -1,5 +1,5 @@
 {
-  "_comment": "Template for a theme mod. Copy this file, change name/defName/label/mod.packageId and the colours, replace the placeholders with your own images (\"source\": \"path/relative/to/this/json.png\"), then run: python -I -X utf8 make_theme.py ExampleTheme.json <output folder>. Every optional field is shown here so the generated Defs file is a complete reference.",
+  "_comment": "Template for a theme mod. Copy this file, change name/defName/label/mod.packageId and the colours, replace the placeholders with your own images (\"source\": \"path/relative/to/this/json.png\"), then run: python -I -X utf8 make_theme.py ExampleTheme.json <output folder>. Every optional field is shown here so the generated Defs file is a complete reference. buttonImage puts a picture in every main button and buttonImages in named ones (button = the MainButtonDef defName); palette.hollow leaves the middle of the button frames empty so the pictures show through. Delete what you do not need.",
   "name": "ExampleTheme",
   "defName": "ExampleTheme_Steel",
   "label": "example steel",
@@ -19,6 +19,7 @@
     "ornament": "roundel",
     "double": false,
     "glow_on_hover": false,
+    "hollow": true,
     "icon": null,
     "tile": null,
     "rivet": null,
@@ -50,6 +51,25 @@
       "placeholder": {"size": [64, 64], "color": [52, 56, 62], "text": "DRAWER"},
       "target": "Drawer", "anchor": "Right", "verticalAnchor": "Top", "offset": [-4, 4], "size": [0, 0],
       "opacity": 1, "layer": "AboveButtons", "showWhen": []
+    }
+  ],
+  "buttonImage": {
+    "file": "ButtonPicture",
+    "placeholder": {"size": [240, 72], "color": [58, 70, 86], "text": "BUTTON PICTURE (PLACEHOLDER)"},
+    "fit": "Cover", "anchor": "Center", "verticalAnchor": "Center", "opacity": 1, "inset": 0
+  },
+  "buttonImages": [
+    {
+      "button": "Architect",
+      "file": "ButtonArchitect",
+      "placeholder": {"size": [200, 300], "color": [96, 70, 52], "text": "ARCHITECT"},
+      "fit": "Cover", "anchor": "Center", "verticalAnchor": "Top", "opacity": 1, "inset": 2
+    },
+    {
+      "button": "Research",
+      "file": "ButtonResearch",
+      "placeholder": {"size": [256, 64], "color": [52, 84, 96], "text": "RESEARCH"},
+      "fit": "Cover", "anchor": "Left", "verticalAnchor": "Center", "opacity": 0.85, "inset": 2
     }
   ],
   "mod": {
