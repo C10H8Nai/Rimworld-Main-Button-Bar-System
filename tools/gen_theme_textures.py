@@ -111,6 +111,29 @@ def ornament(d, theme, color):
             d.ellipse([x - 1.5, y - 1.5, x + 1.5, y + 1.5], fill=rivet)
 
 
+def hover_glow(img, theme, inner, state):
+    """A red glow that is plain to see at the bar's size: a bright inset line, its blurred halo, and red haze rising
+    from the bottom edge. Everything stays inside the outer quarter, which the game draws at 1:1 on a 36px button."""
+    hot = shade(theme["rule"], 70 if state == "active" else 55)
+    halo = Image.new("RGBA", (N, N))
+    ImageDraw.Draw(halo).rectangle([inner, inner, N - 1 - inner, N - 1 - inner], outline=hot + (255,), width=3)
+    halo = halo.filter(ImageFilter.GaussianBlur(2.5))
+    img = Image.alpha_composite(img, halo)
+    img = Image.alpha_composite(img, halo)
+    haze = Image.new("RGBA", (N, N))
+    hd = ImageDraw.Draw(haze)
+    bottom = N - 1 - inner
+    rows = Q - inner - 2
+    peak = 150 if state == "active" else 120
+    for i in range(rows):  # strongest at the bottom line, fading upwards
+        hd.line([(inner, bottom - i), (N - 1 - inner, bottom - i)], fill=hot + (int(peak * (1 - i / rows) ** 1.6),))
+    img = Image.alpha_composite(img, haze)
+    d = ImageDraw.Draw(img)
+    d.rectangle([inner + 1, inner + 1, N - 2 - inner, N - 2 - inner], outline=hot + (255,), width=1)
+    d.line([(inner + 1, bottom - 1), (N - 2 - inner, bottom - 1)], fill=shade(theme["accent"], 40) + (255,), width=3)
+    return img
+
+
 def button(theme, fill, edge, state="normal"):
     img = Image.new("RGBA", (N, N))
     gradient_fill(img, shade(fill, 10), shade(fill, -10))
@@ -138,9 +161,12 @@ def button(theme, fill, edge, state="normal"):
         d.line([(inner + 1, y), (N - 2 - inner, y)], fill=theme["accent"] + (255,), width=2)
     glow_states = ("mouseover", "active") if theme.get("glow_on_hover") else ("normal", "mouseover", "active")
     if style == "shard" and state in glow_states:
-        glow = Image.new("RGBA", (N, N))
-        ImageDraw.Draw(glow).rectangle([inner, inner, N - 1 - inner, N - 1 - inner], outline=theme["rule"] + (180 if state == "normal" else 255,), width=2)
-        img = Image.alpha_composite(img, glow.filter(ImageFilter.GaussianBlur(1.5)))
+        if theme.get("glow_on_hover"):
+            img = hover_glow(img, theme, inner, state)
+        else:
+            glow = Image.new("RGBA", (N, N))
+            ImageDraw.Draw(glow).rectangle([inner, inner, N - 1 - inner, N - 1 - inner], outline=theme["rule"] + (180 if state == "normal" else 255,), width=2)
+            img = Image.alpha_composite(img, glow.filter(ImageFilter.GaussianBlur(1.5)))
         d = ImageDraw.Draw(img)
     ornament(d, theme, (edge if state != "disabled" else grey(edge)) + (255,))
     if style in ("shard", "hull"):

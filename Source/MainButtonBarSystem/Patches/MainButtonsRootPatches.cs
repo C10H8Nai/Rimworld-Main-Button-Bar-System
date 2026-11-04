@@ -41,9 +41,10 @@ namespace MainButtonBarSystem
     }
 
     /// <summary>
-    /// Label alignment (spec 3.2) and theme label colour: while this mod draws a bar button, the game's subtle
-    /// button gets the theme's label colour, and with an alignment chosen it draws everything but its text, which
-    /// is then drawn at the chosen alignment. Every other use of the widget is untouched.
+    /// Label alignment (spec 3.2), theme label colour and the icons this mod draws itself: while this mod draws a
+    /// bar button, the game's subtle button gets the theme's label colour, and with an alignment chosen, "icon and
+    /// text" or "icon only" it draws everything but its text; the postfix then draws the label at the chosen
+    /// alignment, the icon and label, or the icon alone. Every other use of the widget is untouched.
     /// </summary>
     [HarmonyPatch(typeof(Widgets), nameof(Widgets.ButtonTextSubtle))]
     public static class Widgets_ButtonTextSubtle_Patch
@@ -53,16 +54,19 @@ namespace MainButtonBarSystem
             __state = null;
             var theme = ButtonPainter.ActiveTheme;
             if (theme != null) labelColor = theme.LabelColor(ButtonPainter.StateFor(rect)) ?? labelColor;
-            bool both = ButtonPainter.ActiveBothIcon != null;
-            if ((ButtonPainter.ActiveAlign == LabelAlign.Default && !both) || string.IsNullOrEmpty(label)) return;
-            __state = label;
+            bool ownIcon = ButtonPainter.ActiveIcon != null;
+            if (ButtonPainter.ActiveAlign == LabelAlign.Default && !ownIcon) return;
+            // Icon only: a label put back by another mod is dropped too (the game passes "" when it draws an icon).
+            if (string.IsNullOrEmpty(label) && !ownIcon) return;
+            __state = label ?? "";
             label = "";
         }
 
         public static void Postfix(Rect rect, Color? labelColor, string __state)
         {
             if (__state == null) return;
-            if (ButtonPainter.ActiveBothIcon != null) ButtonPainter.DrawIconAndLabel(rect, __state, labelColor);
+            if (ButtonPainter.ActiveIconOnly) ButtonPainter.DrawIconOnly(rect);
+            else if (ButtonPainter.ActiveIcon != null) ButtonPainter.DrawIconAndLabel(rect, __state, labelColor);
             else ButtonPainter.DrawAlignedLabel(rect, __state, labelColor);
         }
     }
