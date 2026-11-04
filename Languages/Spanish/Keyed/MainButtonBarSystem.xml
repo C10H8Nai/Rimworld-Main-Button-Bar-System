@@ -85,7 +85,7 @@
   <MBBS_Export_File>Guardar como archivo</MBBS_Export_File>
   <MBBS_Export_Saved>Guardado en {0}</MBBS_Export_Saved>
   <MBBS_Export_ModXml>Copiar como XML de mod (para crear un mod de disposición)</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>XML de la Def copiado. Ponlo en un archivo .xml dentro de la carpeta Defs de tu mod y cambia defName y label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>XML de la Def copiado. Ponlo en un archivo .xml dentro de la carpeta Defs de tu mod.</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>Desde el portapapeles</MBBS_Import_Clipboard>
   <MBBS_Import_File>Archivo: {0}</MBBS_Import_File>
   <MBBS_Import_Def>Disposición: {0}</MBBS_Import_Def>
@@ -163,4 +163,63 @@ y luego pulsa «Actualizar». Se conservan aunque se actualice el mod.</MBBS_Ico
   <MBBS_IconModeAllTip>Cómo muestran todos los botones su icono y su texto, salvo los que tienen un ajuste propio.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Hacer que todos los botones con ajuste propio ({0}) sigan este</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Igual que la barra completa ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>Crear un mod de disposición (listo para subir)</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>Abrir la carpeta de disposiciones</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>Abrir carpeta</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>Carpeta del mod creada:
+{0}
+
+Reinicia el juego y actívalo en la lista de mods para probarlo; desde ahí también puedes subirlo al Workshop. Tus iconos PNG están incluidos.</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>No se ha podido exportar: {0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>portapapeles</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0} de {1} ({2})</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>Copiar como texto</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>Guardar como archivo</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>Copiar como XML de mod</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>Crear un mod de disposición</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>Nombre</MBBS_Export_Name>
+  <MBBS_Export_Author>Autor</MBBS_Export_Author>
+  <MBBS_Export_Description>Descripción</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>El texto incluye el nombre, el autor y el mod de origen de cada botón, para que quien lo importe vea qué le falta.</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>Se guarda en {0}. Los archivos de otras personas que pongas ahí aparecen en «Importar».</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>Una Def para la carpeta Defs de tu propio mod. Los iconos importados como PNG no se incluyen: para eso, usa «Crear un mod de disposición».</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Crea un mod en {1}: About.xml (requiere Main Button Bar System), la disposición y los iconos PNG que usa. Quienes se suscriban la encontrarán en «Importar».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>Copiar</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>Guardar</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>Copiar</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>Crear</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>Ponle un nombre.</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Un Package ID son dos o más partes unidas por puntos; cada una empieza por una letra de la A a la Z y solo usa letras de la A a la Z (sin tildes ni ñ), números y _ (por ejemplo, Author.MyArrangement).</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>Otro mod ya usa {0}.</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>Una disposición para Main Button Bar System. Abre su configuración, pulsa «Importar» y elige «{0}».</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>Importar: {0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>De {0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>Creada con RimWorld {0} y Main Button Bar System {1}.</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>Origen: {0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>Botones presentes en ambos juegos: {0}</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>No están en tu juego, así que se omite su configuración: {0}</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>mod desconocido</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>Solo en tu juego; conservan tu configuración (los nuevos van antes del menú): {0} ({1})</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>Esta disposición no incluye la lista de botones del juego en que se creó (versión antigua). Los botones que no menciona conservan tu configuración.</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>El tema {0} (de {1}) no está instalado; mientras tanto se usa el aspecto original.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>El modo de visualización {0} (de {1}) no está instalado; mientras tanto se usa la barra original.</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>Iconos importados que no tienes: {0} ({1}). Pon los archivos PNG en {2}; mientras tanto, esos botones mantienen su propio icono.</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>Iconos de mods que no tienes: {0} ({1}). Esos botones mantienen su propio icono.</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>y {0} más</MBBS_ImportReport_More>
+  <MBBS_ImportParts>Importar estas partes:</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>Orden y colocación</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>Modo de visualización, orden, botones ocultos, cajón «Más», botones fijos en los extremos y bloqueo del menú.</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>Tamaños y alineación</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>Ancho de los botones, espaciado, ocupar toda la pantalla, alineación del texto, botón «Más», flechas, cuadrícula del cajón y velocidad de la rueda.</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>Nombres de los botones</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>Nombres personalizados. Los botones que no renombra recuperan su nombre original.</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>Iconos</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>Modo texto / icono de toda la barra y de cada botón, y los iconos elegidos.</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>Tema</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>El aspecto elegido en la pestaña Aspecto.</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>(no definido en esta disposición: al importar se restablece el tuyo)</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>Importar</MBBS_ImportConfirm>
 </LanguageData>

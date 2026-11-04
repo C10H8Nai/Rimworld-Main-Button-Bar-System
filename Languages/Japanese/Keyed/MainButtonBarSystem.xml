@@ -85,7 +85,7 @@
   <MBBS_Export_File>ファイルに保存</MBBS_Export_File>
   <MBBS_Export_Saved>{0} に保存しました</MBBS_Export_Saved>
   <MBBS_Export_ModXml>MOD用XMLとしてコピー(配置MOD作成用)</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>Def XMLをコピーしました.自作MODのDefsフォルダ内の.xmlファイルに貼り付けて,defNameとlabelを変更してください.</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>Def XMLをコピーしました.自作MODのDefsフォルダ内の.xmlファイルに貼り付けてください.</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>クリップボードから</MBBS_Import_Clipboard>
   <MBBS_Import_File>ファイル: {0}</MBBS_Import_File>
   <MBBS_Import_Def>配置: {0}</MBBS_Import_Def>
@@ -163,4 +163,63 @@
   <MBBS_IconModeAllTip>すべてのボタンでのアイコンとテキストの表示方法です.個別に設定したボタンには,そのボタンの設定が使われます.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>個別に設定した{0}個のボタンをすべてこの設定に従わせる</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>バー全体の設定に従う({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>配置MODを作成(そのままアップロード可能)</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>配置フォルダを開く</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>フォルダを開く</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>MODフォルダを作成しました:
+{0}
+
+ゲームを再起動してMODリストで有効にすると試せます.そこからワークショップにアップロードすることもできます.使用しているPNGアイコンも含まれています.</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>エクスポートできませんでした: {0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>クリップボード</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0}({1})</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0}(作者: {1},{2})</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>テキストとしてコピー</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>ファイルに保存</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>MOD用XMLとしてコピー</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>配置MODを作成</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>名前</MBBS_Export_Name>
+  <MBBS_Export_Author>作者</MBBS_Export_Author>
+  <MBBS_Export_Description>説明</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>テキストには名前,作者,各ボタンがどのMODのものかが含まれるので,インポートした人は何が足りないかがわかります.</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>{0} に保存されます.他の人から受け取ったファイルをここに置くと,「インポート」に表示されます.</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>自作MODのDefsフォルダ用のDefです.PNGでインポートしたアイコンは含まれません.アイコンも含めるには「配置MODを作成」を使ってください.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>{1} にMODを作成します: About.xml(Main Button Bar Systemが前提MOD),この配置,使用しているPNGアイコン.サブスクライブした人は「インポート」から使えます.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>コピー</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>保存</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>コピー</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>作成</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>名前を入力してください.</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Package IDは,ドットでつないだ2つ以上の部分からなります.各部分は半角英字で始まり,半角英数字と _ だけが使えます(例: Author.MyArrangement).</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>{0} はすでに別のMODが使用しています.</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>Main Button Bar System用の配置です.設定を開いて「インポート」を押し,「{0}」を選んでください.</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>インポート: {0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>作者: {0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>作成環境: RimWorld {0},Main Button Bar System {1}.</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>入手元: {0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>双方のゲームにあるボタン: {0}個</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>あなたのゲームにないため設定をスキップするボタン: {0}個</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>不明なMOD</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>あなたのゲームにだけあり,現在の設定を保持するボタン(新しいものはメニューの左に配置): {0}個({1})</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>この配置には,作成時のゲームのボタン一覧が記録されていません(旧バージョン).記載のないボタンは現在の設定を保持します.</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>テーマ: {0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>テーマ {0}({1})がインストールされていません.インストールされるまではバニラの外観を使用します.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>表示モード {0}({1})がインストールされていません.インストールされるまではバニラのバーを使用します.</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>手元にないインポートアイコン: {0}個({1}).PNGファイルを {2} に置いてください.それまでは各ボタン本来のアイコンを表示します.</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>導入していないMODのアイコン: {0}個({1}).これらのボタンは本来のアイコンを表示します.</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>ほか{0}件</MBBS_ImportReport_More>
+  <MBBS_ImportParts>インポートする項目:</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>順序と位置</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>表示モード,順序,非表示のボタン,「その他」メニュー,両端への固定,メニューボタンのロック.</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>サイズと位置揃え</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>ボタンの幅,間隔,画面幅いっぱいに広げる設定,ラベルの位置揃え,「その他」ボタン,矢印,「その他」メニューのグリッド,ホイールの速度.</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>ボタン名</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>カスタム名.この配置で名前が付いていないボタンは本来の名前に戻ります.</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>アイコン</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>バー全体と各ボタンのテキスト/アイコン表示,および選択したアイコン.</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>テーマ</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>「外観」タブで選んだ見た目.</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>(この配置では未設定: インポートするとあなたの設定はデフォルトに戻ります)</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>インポート</MBBS_ImportConfirm>
 </LanguageData>

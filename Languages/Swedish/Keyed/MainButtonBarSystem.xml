@@ -85,7 +85,7 @@
   <MBBS_Export_File>Spara som fil</MBBS_Export_File>
   <MBBS_Export_Saved>Sparad i {0}</MBBS_Export_Saved>
   <MBBS_Export_ModXml>Kopiera som mod-XML (för att göra en layoutmod)</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>Def-XML kopierad. Lägg den i en .xml-fil i din mods Defs-mapp och ändra defName och label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>Def-XML kopierad. Lägg den i en .xml-fil i din mods Defs-mapp.</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>Från urklipp</MBBS_Import_Clipboard>
   <MBBS_Import_File>Fil: {0}</MBBS_Import_File>
   <MBBS_Import_Def>Layout: {0}</MBBS_Import_Def>
@@ -163,4 +163,63 @@ och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconP
   <MBBS_IconModeAllTip>Hur alla knappar visar ikon och text, om inte en knapp har en egen inställning.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Låt alla knappar med egen inställning ({0}) följa denna</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Samma som hela fältet ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>Skapa en layoutmod (redo att laddas upp)</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>Öppna mappen med layouter</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>Öppna mapp</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>Moddmappen har skapats:
+{0}
+
+Starta om spelet och aktivera modden i modlistan för att prova den; därifrån kan du också ladda upp den till Workshop. Dina PNG-ikoner följer med.</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>Kunde inte exportera: {0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>urklipp</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0} av {1} ({2})</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>Kopiera som text</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>Spara som fil</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>Kopiera som mod-XML</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>Skapa en layoutmod</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>Namn</MBBS_Export_Name>
+  <MBBS_Export_Author>Författare</MBBS_Export_Author>
+  <MBBS_Export_Description>Beskrivning</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>Texten innehåller namn, författare och vilken mod varje knapp kommer från, så att den som importerar ser vad som saknas.</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>Sparas i {0}. Filer från andra som du lägger där visas under ”Importera”.</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>En def för Defs-mappen i din egen mod. Ikoner som du har importerat som PNG ingår inte: använd ”Skapa en layoutmod” för det.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Skapar en mod i {1}: About.xml (kräver Main Button Bar System), layouten och de PNG-ikoner den använder. Prenumeranter hittar den under ”Importera”.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>Kopiera</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>Spara</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>Kopiera</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>Skapa</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>Ge den ett namn.</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Ett Package ID består av två eller fler delar sammanfogade med punkter. Varje del börjar med en bokstav A–Z och innehåller bara bokstäverna A–Z (inte å, ä, ö), siffror och _ (till exempel Author.MyArrangement).</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>En annan mod använder redan {0}.</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>En layout för Main Button Bar System. Öppna dess inställningar, tryck på ”Importera” och välj ”{0}”.</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>Importera: {0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>Av {0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>Skapad med RimWorld {0}, Main Button Bar System {1}.</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>Källa: {0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>Knappar som båda spelen har: {0}</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>Finns inte i ditt spel, så deras inställningar hoppas över: {0}</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>okänd mod</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>Bara i ditt spel, dina inställningar behålls (nya hamnar före menyn): {0} ({1})</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>Denna layout listar inte knapparna i spelet den skapades i (äldre version). Knappar den inte nämner behåller dina inställningar.</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>Temat {0} (från {1}) är inte installerat; tills dess används originalutseendet.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>Visningsläget {0} (från {1}) är inte installerat; tills dess används originalfältet.</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>Importerade ikoner som du saknar: {0} ({1}). Lägg PNG-filerna i {2}; tills dess behåller de knapparna sin egen ikon.</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>Ikoner från moddar som du inte har: {0} ({1}). De knapparna behåller sin egen ikon.</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>och {0} till</MBBS_ImportReport_More>
+  <MBBS_ImportParts>Importera dessa delar:</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>Ordning och placering</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>Visningsläge, ordning, dolda knappar, ”Mer”-lådan, fasta ändar och menylåset.</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>Storlekar och justering</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>Knappbredder, avstånd, fyll skärmen, textjustering, ”Mer”-knappen, pilar, lådans rutnät och mushjulets hastighet.</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>Knappnamn</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>Egna namn. Knappar som den inte döper om får tillbaka sitt eget namn.</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>Ikoner</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>Text-/ikonvisning för hela fältet och varje knapp, samt valda ikoner.</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>Tema</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>Utseendet från fliken Utseende.</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>(inte angivet i denna layout: import återställer ditt)</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>Importera</MBBS_ImportConfirm>
 </LanguageData>

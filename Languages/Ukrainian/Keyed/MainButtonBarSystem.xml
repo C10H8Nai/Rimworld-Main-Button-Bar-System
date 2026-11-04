@@ -85,7 +85,7 @@
   <MBBS_Export_File>Зберегти у файл</MBBS_Export_File>
   <MBBS_Export_Saved>Збережено у файл: {0}</MBBS_Export_Saved>
   <MBBS_Export_ModXml>Копіювати як XML для мода (щоб створити мод із розташуванням)</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>Def у форматі XML скопійовано. Додайте його до файлу .xml у теці Defs вашого мода та змініть defName і label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>Def у форматі XML скопійовано. Додайте його до файлу .xml у теці Defs вашого мода.</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>З буфера обміну</MBBS_Import_Clipboard>
   <MBBS_Import_File>Файл: {0}</MBBS_Import_File>
   <MBBS_Import_Def>Розташування: {0}</MBBS_Import_Def>
@@ -163,4 +163,63 @@
   <MBBS_IconModeAllTip>Як усі кнопки показують іконку та напис, якщо кнопка не має власного налаштування.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Застосувати до всіх кнопок із власним налаштуванням ({0})</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Як у всієї панелі ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>Створити мод із розташуванням (готовий до завантаження)</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>Відкрити теку з розташуваннями</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>Відкрити теку</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>Теку мода створено:
+{0}
+
+Перезапустіть гру й увімкніть мод у списку модів, щоб випробувати його; звідти ж його можна завантажити до Майстерні Steam. Ваші PNG-іконки додано.</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>Не вдалося експортувати: {0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>буфер обміну</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0}, автор: {1} ({2})</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>Копіювати як текст</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>Зберегти у файл</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>Копіювати як XML для мода</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>Створити мод із розташуванням</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>Назва</MBBS_Export_Name>
+  <MBBS_Export_Author>Автор</MBBS_Export_Author>
+  <MBBS_Export_Description>Опис</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>Текст містить назву, автора й те, з якого мода кожна кнопка, — тож той, хто імпортує, побачить, чого бракує.</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>Зберігається в {0}. Файли від інших гравців, покладені туди, з'являться в меню «Імпорт».</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>Def для теки Defs вашого власного мода. Іконки, імпортовані як PNG, не додаються — для цього використайте «Створити мод із розташуванням».</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Створює мод у {1}: About.xml (потребує Main Button Bar System), розташування та PNG-іконки, які воно використовує. Підписники знайдуть його в меню «Імпорт».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>Копіювати</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>Зберегти</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>Копіювати</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>Створити</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>Укажіть назву.</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Package ID складається з двох або більше частин, з'єднаних крапками. Кожна частина починається з латинської літери й містить лише латинські літери, цифри та _ (наприклад, Author.MyArrangement).</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>{0} уже використовує інший мод.</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>Розташування для Main Button Bar System. Відкрийте його налаштування, натисніть «Імпорт» і виберіть «{0}».</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>Імпорт: {0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>Автор: {0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>Створено в RimWorld {0}, Main Button Bar System {1}.</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>Джерело: {0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>Кнопки, що є в обох іграх: {0}</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>Немає у вашій грі, тож їхні налаштування пропускаються: {0}</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>невідомий мод</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>Є лише у вашій грі, ваші налаштування зберігаються (нові стають перед «Меню»): {0} ({1})</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>У цьому розташуванні немає списку кнопок гри, у якій його створено (стара версія). Кнопки, яких воно не згадує, зберігають ваші налаштування.</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>Тема: {0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>Тему {0} (з {1}) не встановлено; доки її немає, використовується вигляд як у грі.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>Режим відображення {0} (з {1}) не встановлено; доки його немає, панель працює як у грі.</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>Імпортовані іконки, яких у вас немає: {0} ({1}). Покладіть PNG-файли в {2}; доти ці кнопки мають власні іконки.</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>Іконки з модів, яких у вас немає: {0} ({1}). Ці кнопки мають власні іконки.</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>і ще {0}</MBBS_ImportReport_More>
+  <MBBS_ImportParts>Імпортувати ці частини:</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>Порядок і розміщення</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>Режим відображення, порядок, приховані кнопки, меню «Більше», закріплення біля країв і блокування «Меню».</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>Розміри й вирівнювання</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>Ширина кнопок, відступи, розтягування на весь екран, вирівнювання написів, кнопка «Більше», стрілки, сітка меню «Більше» та швидкість коліщатка.</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>Назви кнопок</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>Власні назви. Кнопки, які воно не перейменовує, повертають свої початкові назви.</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>Іконки</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>Показ тексту / іконки для всієї панелі та кожної кнопки, а також вибрані іконки.</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>Тема</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>Вигляд, вибраний на вкладці «Вигляд».</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>(не задано в цьому розташуванні: імпорт скине ваше значення до стандартного)</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>Імпортувати</MBBS_ImportConfirm>
 </LanguageData>
