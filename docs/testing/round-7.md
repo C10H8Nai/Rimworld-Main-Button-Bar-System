@@ -6,7 +6,7 @@
 
 | 回報 | 處理 |
 |---|---|
-| B7 遊戲中切換語言後，設定視窗的按鈕清單、右側標題、「原本的名稱」停在舊語言 | 新增 `Patches/PlayDataReload.cs`：`PlayDataLoader.LoadAllPlayData` 的 postfix 在載入完成後（`LongEventHandler.ExecuteWhenFinished`）重抓 baseline，並清掉所有記著舊 Def 的快取：Tuning def、按鈕預設（XML 的部分；API 在執行時登記的保留）、改名紀錄（新 Def 的名字是新語言，有改名的按鈕下一幀重新套用）、`ContentFinder` 找到的圖示（PNG 匯入的保留）、抽屜齒輪圖示、相容橋接的「已套用」旗標。完成時 log 一行 `Play data reloaded ...`。第一次啟動不會觸發（`ButtonBaseline.Captured` 還是 false） |
+| B7 遊戲中切換語言後，設定視窗的按鈕清單、右側標題、「原本的名稱」停在舊語言 | 新增 `Patches/PlayDataReload.cs`：`PlayDataLoader.LoadAllPlayData` 的 postfix 在載入完成後（`LongEventHandler.ExecuteWhenFinished`）重抓 baseline，並清掉所有記著舊 Def 的快取：Tuning def、按鈕預設（XML 的部分；API 在執行時登記的保留）、改名紀錄（新 Def 的名字是新語言，有改名的按鈕下一幀重新套用）、`ContentFinder` 找到的圖示（PNG 匯入的保留）、抽屜齒輪圖示、相容橋接的「已套用」旗標（優先順序仍維持這次啟動時的選擇，換語言不會讓它提早生效）。完成時 log 一行 `Play data reloaded ...`。第一次啟動不會觸發（`ButtonBaseline.Captured` 還是 false） |
 | 開發模式 2 筆 WARN（`ButtonPainter`、`Window_ButtonDrawer` probably needs a StaticConstructorOnStartup attribute） | 兩個類別都加上 `[StaticConstructorOnStartup]` |
 | 基因實驗室偏藍 | 底色改青藍、邊框青 #66B0B5、四角基因方塊深紅 #A84457，開著時的內線也是深紅；文字淡青 |
 | 虛空不像 | 邊框、箭頭、齒輪改鼠尾草綠 #AEBC7E；紅色只剩一條細內線，平常不發光，滑鼠移上或開著時才有紅光和紅色底線；文字淡鼠尾草 |

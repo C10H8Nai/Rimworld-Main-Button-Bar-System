@@ -181,11 +181,11 @@
       "MBBS_Creed.label": "tín điều",
       "MBBS_Creed.description": "Xanh mòng két đậm với viền đỏ san hô và huy hiệu tròn vàng kim, mang màu sắc của bản mở rộng Ideology.",
       "MBBS_GeneLab.label": "phòng thí nghiệm gen",
-      "MBBS_GeneLab.description": "Xanh lam với viền xanh mòng két, ô gen màu tím hồng và chữ màu xanh gen, mang màu sắc của bản mở rộng Biotech.",
+      "MBBS_GeneLab.description": "Xanh lam ngả mòng két với viền xanh mòng két, ô gen màu đỏ thẫm và chữ màu xanh mòng két nhạt, mang màu sắc của bản mở rộng Biotech.",
       "MBBS_Void.label": "hư không",
-      "MBBS_Void.description": "Đen hư không và đá monolith với ánh đỏ và các góc cắt như mảnh vỡ, mang màu sắc của bản mở rộng Anomaly.",
+      "MBBS_Void.description": "Đen hư không với viền xanh lá xô thơm, một đường đỏ mảnh phát sáng khi rê chuột qua và các góc cắt như mảnh vỡ, mang màu sắc của bản mở rộng Anomaly.",
       "MBBS_Starfarer.label": "lữ khách các vì sao",
-      "MBBS_Starfarer.description": "Tấm thép vỏ tàu có đinh tán và ánh sáng xanh lơ của động cơ đẩy, lấy cảm hứng từ bản mở rộng Odyssey."
+      "MBBS_Starfarer.description": "Tím vũ trụ với các tấm vỏ tàu màu tím, đinh tán xanh lơ và một đường sáng xanh lơ của động cơ đẩy, mang màu sắc của bản mở rộng Odyssey."
     }
   }
 }

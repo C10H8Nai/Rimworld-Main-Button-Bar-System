@@ -181,11 +181,11 @@
       "MBBS_Creed.label": "credo",
       "MBBS_Creed.description": "Verde azulado intenso con bordes color coral y medallones dorados, con los colores de la expansión Ideology.",
       "MBBS_GeneLab.label": "laboratorio genético",
-      "MBBS_GeneLab.description": "Azul con bordes verde azulado, casillas de genes color malva y etiquetas azul gen, con los colores de la expansión Biotech.",
+      "MBBS_GeneLab.description": "Azul verdoso con bordes verde azulado, casillas de genes color rojo oscuro y etiquetas verde azulado pálido, con los colores de la expansión Biotech.",
       "MBBS_Void.label": "vacío",
-      "MBBS_Void.description": "Negro del vacío y piedra del monolito con un brillo rojo y esquinas cortadas como esquirlas, con los colores de la expansión Anomaly.",
+      "MBBS_Void.description": "Negro del vacío con bordes verde salvia, una delgada línea roja que se ilumina al pasar el mouse y esquinas cortadas como esquirlas, con los colores de la expansión Anomaly.",
       "MBBS_Starfarer.label": "viajero estelar",
-      "MBBS_Starfarer.description": "Placas de acero del casco con remaches y un brillo cian de propulsores, inspirado en la expansión Odyssey."
+      "MBBS_Starfarer.description": "Morado espacial con placas de casco moradas, remaches cian y una línea cian de propulsores, con los colores de la expansión Odyssey."
     }
   }
 }
