@@ -204,6 +204,15 @@ namespace MainButtonBarSystem
 
             public Vector2 iconPickerSize;
             public float iconPickerCell;
+
+            /// <summary>The export window (name, author, description) and the import window (report and parts).</summary>
+            public Vector2 exportDialogSize;
+            public Vector2 importDialogSize;
+            public float descriptionBoxHeight;
+
+            /// <summary>Button names listed per line of the import report before "and N more".</summary>
+            public int importReportMaxNames;
+            public Color reportWarningColor;
         }
     }
 }

@@ -107,6 +107,11 @@
       <viewSwitchColor>(0.18, 0.18, 0.18, 1)</viewSwitchColor>
       <iconPickerSize>(680,560)</iconPickerSize>
       <iconPickerCell>52</iconPickerCell>
+      <exportDialogSize>(560,440)</exportDialogSize>
+      <importDialogSize>(640,600)</importDialogSize>
+      <descriptionBoxHeight>90</descriptionBoxHeight>
+      <importReportMaxNames>6</importReportMaxNames>
+      <reportWarningColor>(1, 0.82, 0.45, 1)</reportWarningColor>
     </settingsWindow>
   </MainButtonBarSystem.MainButtonBarTuningDef>
 </Defs>

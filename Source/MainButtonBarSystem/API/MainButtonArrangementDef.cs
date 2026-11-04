@@ -11,6 +11,10 @@ namespace MainButtonBarSystem
     public class MainButtonArrangementDef : Def
     {
         public string author;
+
+        /// <summary>Optional: name, the exporting game's buttons and their mods (written by the settings window's export).</summary>
+        public ArrangementMeta meta;
+
         public BarConfig config;
 
         public override IEnumerable<string> ConfigErrors()
