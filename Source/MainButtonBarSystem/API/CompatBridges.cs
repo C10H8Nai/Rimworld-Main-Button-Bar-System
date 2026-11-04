@@ -9,9 +9,26 @@ namespace MainButtonBarSystem
     {
         private static bool applied;
 
+        /// <summary>Priority fixed on the first apply of the session, by def name; outlives reloaded defs and workers.</summary>
+        private static readonly Dictionary<string, CompatPriority> sessionPriorities = new Dictionary<string, CompatPriority>();
+
+        internal static CompatPriority? SessionPriorityOf(CompatBridgeDef def) =>
+            def != null && sessionPriorities.TryGetValue(def.defName, out var priority) ? priority : (CompatPriority?)null;
+
+        /// <summary>Records <paramref name="chosen"/> the first time; later calls return the recorded priority.</summary>
+        internal static CompatPriority FixSessionPriority(CompatBridgeDef def, CompatPriority chosen)
+        {
+            if (!sessionPriorities.TryGetValue(def.defName, out var priority))
+                sessionPriorities[def.defName] = priority = chosen;
+            return priority;
+        }
+
         public static IEnumerable<CompatBridgeDef> All => DefDatabase<CompatBridgeDef>.AllDefs;
 
-        /// <summary>Reloaded defs have fresh workers; apply the priorities to them again (repeating a takeover is harmless).</summary>
+        /// <summary>
+        /// Reloaded defs have fresh workers; apply again with the priorities fixed earlier this session (repeating a
+        /// takeover is harmless: the other mod's patches are already gone).
+        /// </summary>
         internal static void ResetCache() => applied = false;
 
         public static IEnumerable<CompatBridgeDef> Detected => All.Where(d => d.Worker.Detected);
