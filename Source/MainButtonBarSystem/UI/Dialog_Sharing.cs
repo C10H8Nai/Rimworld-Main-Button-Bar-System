@@ -103,7 +103,7 @@ namespace MainButtonBarSystem
             if (error != null)
             {
                 GUI.color = L.reportWarningColor;
-                Widgets.Label(new Rect(inRect.x, y, inRect.width, row * 2f), error);
+                Widgets.Label(new Rect(inRect.x, y, inRect.width, Text.CalcHeight(error, inRect.width)), error);
                 GUI.color = Color.white;
             }
 
