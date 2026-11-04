@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "Motív",
     "MBBS_ImportPart_Theme_Desc": "Vzhľad vybraný na karte „Vzhľad“.",
     "MBBS_ImportPart_NotSet": "(v tomto usporiadaní nie je nastavené: import vráti vaše nastavenie na predvolené)",
-    "MBBS_ImportConfirm": "Importovať"
+    "MBBS_ImportConfirm": "Importovať",
+    "MBBS_Section_Illustration": "Ilustrácia a pozadie",
+    "MBBS_IllustrationNone": "Tento motív nemá obrázok pozadia ani ozdoby; tu nie je čo nastavovať.",
+    "MBBS_BackgroundOpacity": "Krytie pozadia: {0} %",
+    "MBBS_DecorationsShown": "Zobraziť ozdoby",
+    "MBBS_DecorationsShownTip": "Obrázky, ktoré motív umiestňuje na lištu alebo do zásuvky, napríklad portrét postavy. Vypnutím ich všetky skryjete.",
+    "MBBS_DecorationOpacity": "Krytie ozdôb: {0} %",
+    "MBBS_DecorationScale": "Veľkosť ozdôb: {0} %",
+    "MBBS_DecorationOffsetX": "Posun ozdôb X: {0} px",
+    "MBBS_DecorationOffsetY": "Posun ozdôb Y: {0} px",
+    "MBBS_ReloadThemes": "Znova načítať textúry motívov",
+    "MBBS_ReloadThemesTip": "Vývojársky režim: znova načíta súbory PNG každého motívu z jeho priečinka modu, takže upravený obrázok sa zobrazí bez reštartu hry. Potom sa motívy znova skontrolujú; pozri záznam.",
+    "MBBS_ThemesReloaded": "Textúry motívov znova načítané: znova prečítaných súborov: {0}."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "prázdnota",
       "MBBS_Void.description": "Čerň prázdnoty so šalviovozelenými okrajmi, tenkou červenou linkou, ktorá sa pod kurzorom myši rozžiari, a rohmi zrezanými ako črepiny. Vo farbách rozšírenia Anomaly.",
       "MBBS_Starfarer.label": "hviezdny pútnik",
-      "MBBS_Starfarer.description": "Vesmírna fialová s fialovými plátmi trupu, azúrovými nitmi a azúrovou linkou trysiek. Vo farbách rozšírenia Odyssey."
+      "MBBS_Starfarer.description": "Vesmírna fialová s fialovými plátmi trupu, azúrovými nitmi a azúrovou linkou trysiek. Vo farbách rozšírenia Odyssey.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Motív v štýle anime vo farbách Nai: tmavomodré tlačidlá so sivobielymi okrajmi, grafitové linky a fialová žiara, s ilustráciou postavy na ľavom konci lišty."
     }
   }
 }

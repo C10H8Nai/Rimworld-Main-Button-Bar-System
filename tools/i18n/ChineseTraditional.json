@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "外觀主題",
     "MBBS_ImportPart_Theme_Desc": "外觀分頁選的外觀。",
     "MBBS_ImportPart_NotSet": "（這份排序沒有設定：匯入會把你的恢復預設）",
-    "MBBS_ImportConfirm": "匯入"
+    "MBBS_ImportConfirm": "匯入",
+    "MBBS_Section_Illustration": "插圖與背景",
+    "MBBS_IllustrationNone": "這個主題沒有背景圖或裝飾圖，這裡沒有可調整的項目。",
+    "MBBS_BackgroundOpacity": "背景不透明度：{0}%",
+    "MBBS_DecorationsShown": "顯示裝飾圖",
+    "MBBS_DecorationsShownTip": "主題放在底部列或抽屜上的圖片，例如角色立繪。關閉後全部隱藏。",
+    "MBBS_DecorationOpacity": "裝飾圖不透明度：{0}%",
+    "MBBS_DecorationScale": "裝飾圖大小：{0}%",
+    "MBBS_DecorationOffsetX": "裝飾圖位移 X：{0}px",
+    "MBBS_DecorationOffsetY": "裝飾圖位移 Y：{0}px",
+    "MBBS_ReloadThemes": "重新載入主題貼圖",
+    "MBBS_ReloadThemesTip": "開發者模式：從各主題的模組資料夾重新讀取 PNG，改過的圖不用重開遊戲就會顯示。讀完會再檢查一次主題，結果在 log。",
+    "MBBS_ThemesReloaded": "主題貼圖已重新載入：重新讀取了 {0} 個檔案。"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "虛空",
       "MBBS_Void.description": "虛空黑配鼠尾草綠邊框，一道細紅線在滑鼠移上時發光，碎裂切角，取自「異象」擴充的配色。",
       "MBBS_Starfarer.label": "星航",
-      "MBBS_Starfarer.description": "太空紫底配紫色船殼、青色鉚釘與青色推進器光線，取自「奧德賽」擴充的配色。"
+      "MBBS_Starfarer.description": "太空紫底配紫色船殼、青色鉚釘與青色推進器光線，取自「奧德賽」擴充的配色。",
+      "MBBS_Nai.label": "萘伊",
+      "MBBS_Nai.description": "萘伊配色的二次元風主題：深海軍藍按鈕配灰白邊框、石墨灰線條與紫色光暈，列的左端有角色立繪。"
     }
   }
 }

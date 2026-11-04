@@ -222,4 +222,16 @@ Uruchom grę ponownie i włącz mod na liście modów, aby go wypróbować; stam
   <MBBS_ImportPart_Theme_Desc>Wygląd wybrany w zakładce „Wygląd”.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(nieustawione w tym układzie: import przywróci twoje ustawienie domyślne)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Importuj</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Ilustracja i tło</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Ten motyw nie ma obrazu tła ani ozdób; nie ma tu nic do ustawienia.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Krycie tła: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Pokaż ozdoby</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Obrazy, które motyw umieszcza na pasku lub w szufladzie, np. portret postaci. Wyłącz, aby ukryć wszystkie.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Krycie ozdób: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Rozmiar ozdób: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Przesunięcie ozdób X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Przesunięcie ozdób Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Wczytaj ponownie tekstury motywów</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Tryb dewelopera: ponownie wczytuje pliki PNG każdego motywu z jego folderu moda, więc zmieniony obraz pojawia się bez restartu gry. Potem motywy są sprawdzane ponownie; zobacz dziennik.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Tekstury motywów wczytane ponownie: odczytano ponownie {0} plik(ów).</MBBS_ThemesReloaded>
 </LanguageData>

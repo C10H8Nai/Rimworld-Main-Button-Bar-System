@@ -222,4 +222,16 @@
   <MBBS_ImportPart_Theme_Desc>Η εμφάνιση από την καρτέλα «Εμφάνιση».</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(δεν ορίζεται σε αυτή τη διάταξη: η εισαγωγή επαναφέρει το δικό σας στην προεπιλογή)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Εισαγωγή</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Εικονογράφηση και φόντο</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Αυτό το θέμα δεν έχει εικόνα φόντου ούτε διακοσμήσεις· δεν υπάρχει τίποτα να ρυθμίσετε εδώ.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Αδιαφάνεια φόντου: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Εμφάνιση διακοσμήσεων</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Εικόνες που το θέμα τοποθετεί στη μπάρα ή στο συρτάρι, όπως ένα πορτρέτο χαρακτήρα. Απενεργοποιήστε για να κρυφτούν όλες.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Αδιαφάνεια διακοσμήσεων: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Μέγεθος διακοσμήσεων: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Μετατόπιση διακοσμήσεων X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Μετατόπιση διακοσμήσεων Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Επαναφόρτωση υφών θεμάτων</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Λειτουργία προγραμματιστή: ξαναδιαβάζει τα αρχεία PNG κάθε θέματος από τον φάκελο του mod, ώστε μια αλλαγμένη εικόνα να εμφανίζεται χωρίς επανεκκίνηση. Έπειτα τα θέματα ελέγχονται ξανά· δείτε το αρχείο καταγραφής.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Οι υφές των θεμάτων επαναφορτώθηκαν: ξαναδιαβάστηκαν {0} αρχείο(α).</MBBS_ThemesReloaded>
 </LanguageData>

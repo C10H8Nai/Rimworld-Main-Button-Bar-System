@@ -260,6 +260,10 @@ MyTheme/
 | `drawerBackground` | The game's window background |
 | `drawerSettingsIcon` | This mod's gear (`MainButtonBarSystem/UI/Gear`, set in the tuning def) |
 | `preview` | A preview drawn from the textures above |
+| `labelActiveColor` (1.1) | `labelMouseoverColor` while pressed or the tab is open |
+| `barBackgroundFit`, `drawerBackgroundFit` (1.1) | `Atlas`: the background is a nine-slice atlas. See *Illustrations* below |
+| `decorations` (1.1) | No extra images. See *Illustrations* below |
+| `buttonImage`, `buttonImages` (1.1) | No pictures inside the buttons. See *Pictures inside buttons* below |
 
 **Atlases** are drawn with the game's `Widgets.DrawAtlas`, the nine-slice method of the vanilla buttons, so one
 texture fits any button size:
@@ -278,19 +282,167 @@ Textures that are missing are reported once in the log, and that part falls back
 Label colours, mouse-over and active states also apply to the "More" button, the scroll arrows and the drawer.
 Translate `label` and `description` in `Languages/<Language>/DefInjected/MainButtonBarSystem.BarAppearanceDef/`.
 
+### Illustrations: whole images and decorations (API 1.1)
+
+An atlas stretches its middle, so a picture cannot be one. Four optional additions put real illustrations on the
+bar with no C#; a theme that leaves them out looks exactly as before.
+
+**Background fit.** `barBackgroundFit` and `drawerBackgroundFit` say how `barBackground` / `drawerBackground` fill
+their area:
+
+| Value | Drawing |
+|---|---|
+| `Atlas` | Nine-slice, as above (default) |
+| `Tile` | Repeated at its pixel size times `barBackgroundTileScale` / `drawerBackgroundTileScale` (default 1) from the top-left corner; the rest is clipped |
+| `Stretch` | Scaled to fill the area, ignoring the aspect ratio: the usual choice for a wide image drawn for the bar |
+| `Fit` | Scaled to fit inside the area keeping the aspect ratio, centred; the rest stays transparent |
+| `Cover` | Scaled to cover the area keeping the aspect ratio, centred; what sticks out is cropped |
+
+The bar is the screen width × 36 pixels (tuning def `behaviour.buttonRectHeight`), so an image for `Stretch` should
+be wide and 36 pixels tall. The drawer's size depends on its contents.
+
+**Decorations.** `decorations` is a list of images placed at an anchor of the bar or the drawer:
+
+```xml
+<decorations>
+  <li>
+    <texture>MyTheme/Portrait</texture>       <!-- required; relative to Textures/, no extension -->
+    <target>Bar</target>                      <!-- Bar (default) / Drawer -->
+    <anchor>Left</anchor>                     <!-- Left (default) / Center / Right -->
+    <verticalAnchor>Bottom</verticalAnchor>   <!-- Bottom (default) / Center / Top -->
+    <offset>(0, 0)</offset>                   <!-- pixels; x to the right, y downwards -->
+    <size>(0, 0)</size>                       <!-- pixels; (0, 0): the texture's size; one axis 0: keep the aspect ratio -->
+    <opacity>1</opacity>                      <!-- 0 to 1 -->
+    <layer>BelowButtons</layer>               <!-- BelowButtons (default) / AboveButtons -->
+    <showWhen><li>Mouseover</li></showWhen>   <!-- missing or empty: always; Normal / Mouseover / DrawerOpen, any of them -->
+  </li>
+</decorations>
+```
+
+Placement: the box takes its size, its anchor corner is put on the matching edge of the target (`Right` + `Bottom`
+is the bottom-right corner), then `offset` is added. The bar is only 36 pixels tall, so a portrait anchored at the
+bottom grows upwards out of it; that is the intended use. Bar decorations are drawn in the bar's own pass, so the
+part above the bar is painted over the map and under windows. The drawer is a window and clips anything outside it.
+
+States: `Mouseover` holds while the mouse is over the target area itself (the bar's 36-pixel rect, not the part of a
+decoration that sticks out; the drawer window). `DrawerOpen` holds while the "More" drawer is open; for drawer
+decorations it never holds (they are only drawn while the drawer is open), so use `Mouseover`, `Normal` or no list.
+`Normal` holds when neither of the others does.
+
+Players can adjust decorations in the Appearance tab, on top of the theme's values: show or hide them all, their
+opacity, their size (anchored at the same corner), an X / Y offset, and the opacity of the background images. Each
+row has a Default button; the defaults and slider ranges are in the tuning def (`barDefaults`, `ranges`).
+
+**Label colour when active.** `labelActiveColor` applies while a button is pressed or its tab is open; left out,
+the mouse-over colour, then `labelColor`, are used as before.
+
+**Pictures inside buttons.** `buttonImage` puts a picture inside every main button; `buttonImages` gives named
+buttons their own ("this button is this character, that one is that character"). Both are optional, and a button
+with no picture of its own uses `buttonImage`, or none:
+
+```xml
+<buttonImage>                                 <!-- every main button; leave it out for none -->
+  <texture>MyTheme/Buttons/Default</texture>  <!-- required; any size -->
+</buttonImage>
+<buttonImages>
+  <li>
+    <button>Architect</button>                <!-- required: the MainButtonDef's defName (Architect, Work, Research, a mod's button) -->
+    <texture>MyTheme/Buttons/Alice</texture>  <!-- required -->
+    <fit>Cover</fit>                          <!-- Cover (default) / Fit / Stretch; Atlas and Tile are drawn as Stretch -->
+    <anchor>Center</anchor>                   <!-- Left / Center (default) / Right -->
+    <verticalAnchor>Top</verticalAnchor>      <!-- Top / Center (default) / Bottom -->
+    <opacity>1</opacity>                      <!-- 0 to 1 -->
+    <inset>2</inset>                          <!-- pixels kept free inside the button's edge; default 0 -->
+  </li>
+</buttonImages>
+```
+
+`Cover` scales the picture to fill the button keeping its aspect ratio and crops what sticks out; the anchors say
+which part is kept (`verticalAnchor` `Top` keeps the top edge, for a face). `Fit` shows the whole picture and places
+it at the anchors; `Stretch` fills the button, distorting it. A later entry for the same button wins.
+
+Drawing order, for every button on the bar and every cell of the "More" drawer, in every state (disabled too): the
+picture, then the button atlas, then the label and the icon. So the atlas frames the picture: draw your button
+atlases as a frame with a transparent middle (`make_theme.py`: `"hollow": true` in the palette) or the picture is
+covered. The mouse-over and pressed looks stay on the frame; the picture is never tinted. With no button atlas of
+its own, the theme's pictures sit under the game's (mostly opaque) button background, which shows little of them.
+The More button and the scroll arrows never get a picture.
+
+In practice:
+
+- A bar button is 36 pixels tall and usually 33 to 120 pixels wide (wider with few buttons or a wide width
+  setting). A full portrait shows only a strip: crop it first to a wide banner with the face in the middle, or use
+  `verticalAnchor` `Top` (or `Center`) with `Cover`.
+- The label is drawn over the picture. Keep the important part away from the middle, choose label colours that
+  stay readable (`labelColor`), or tell players to pick "icon only" for those buttons.
+- Use `inset` to keep the picture inside the frame's border.
+- A missing picture texture draws nothing (and is reported once, see below); the button still has its frame. In
+  development mode the checks also point out `buttonImages` entries for buttons that are not loaded (a typo, or a
+  mod that is not active) and buttons listed twice.
+- The player's decoration settings (show, opacity, size, offset) and background opacity do not affect button
+  pictures.
+- With `make_theme.py`'s `hollow`, the scroll arrows are hollow too (they use the `button` atlas) and show the bar
+  background; they never get a picture. The More button keeps its fill.
+
+The preview the Appearance tab draws shows the background image, the buttons and their pictures, but no decorations
+(they would grow out of the card), so a theme with decorations should ship a `preview` image.
+
+### Checks and reloading (development mode)
+
+With development mode on, the mod checks every theme at startup and logs one warning per finding, naming the theme
+and the field: textures that do not load, atlases that are not square, atlases larger than 72×72
+(`behaviour.themeAtlasMaxSize`), decoration, background or button pictures with a side over 2048
+(`behaviour.themeDecorationMaxSize`). A missing texture is reported once per session in total: by the check in
+development mode, otherwise by the one-line warning the theme logs when it first draws (as before); it then falls
+back to the game's look. Invalid values in the XML (`opacity` outside 0 to 1, a negative `size` or `inset`, a tile scale
+of 0, an empty `texture`, a `buttonImages` entry with no `button`) are config errors, shown like any other def error. A `Tile` background that would need more
+than `behaviour.themeTileMaxCount` tiles (4096) is stretched instead.
+
+In development mode the Appearance tab also has a **Reload theme textures** button: it reads every theme's PNG files
+again from the theme's own mod folder, so an edited image shows without restarting the game, then runs the checks
+again. The textures read by the previous reload are released at the next one.
+
+### Making a theme mod
+
+- `docs/examples/ExampleTheme/` (in the released mod: `ThemeTemplate/ExampleTheme/`) is a complete theme mod that
+  uses every field, with placeholder images: copy it, rename it, replace the images.
+- `tools/make_theme.py` (released: `ThemeTemplate/tools/`) draws the ten standard textures from a JSON palette and
+  writes a whole theme mod, placeholders included: `python -I -X utf8 make_theme.py MyTheme.json <output folder>`.
+  The example's JSON, `ExampleTheme.json`, shows every setting. Needs Python 3 and Pillow.
+- On the Workshop, add **Main Button Bar System** to the item's *Required items*: `modDependencies` in About.xml
+  only tells the game, not Steam. Keep `loadAfter` as in the example.
+
+### Compatibility promise
+
+Theme fields are only added, never removed or given another meaning: a theme written for API 1.0 loads and looks
+the same under every later 1.x. A field this mod stops reading stays declared for one release, marked in this
+document. Additions raise the minor number of `MainButtonBarAPI.ApiVersion` (1.1 added the illustration fields).
+
 ### Built-in themes as examples
 
-This mod ships five themes made exactly this way: `MBBS_Imperial`, `MBBS_Creed`, `MBBS_GeneLab`, `MBBS_Void` and
-`MBBS_Starfarer` in `Defs/MainButtonBarSystem/BarAppearances.xml`, with textures in
-`Textures/MainButtonBarSystem/Themes/`. Their textures are drawn by `tools/gen_theme_textures.py` (Pillow) from a
-few colours per theme, which is a quick way to start a theme of your own.
+This mod ships six themes made exactly this way, in `Defs/MainButtonBarSystem/BarAppearances.xml` with textures in
+`Textures/MainButtonBarSystem/Themes/`: `MBBS_Imperial`, `MBBS_Creed`, `MBBS_GeneLab`, `MBBS_Void` and
+`MBBS_Starfarer` use atlases only; `MBBS_Nai` adds a semi-transparent portrait behind the buttons (a decoration)
+and `labelActiveColor`. `docs/examples/ExampleTheme` shows every other illustration field: a stretched bar
+background, decorations that appear under the mouse or in the drawer, and button pictures with hollow frames. Their textures are drawn by `tools/gen_theme_textures.py` from `tools/themes/<theme>.json`
+through the same `make_theme.py` a theme mod uses.
 
 ### Effects beyond textures
 
 Set `workerClass` to a class deriving from `BarAppearanceWorker` and override what you need:
-`DrawBarBackground`, `DrawButton`, `DrawDrawerButton`, `DrawDrawerBackground`, `DrawerSettingsIcon`, `ButtonAtlas`,
-`LabelColor`, `DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`. Keep drawing buttons through `ButtonPainter.Draw` (or
-the game's `DoButton`) so other mods' changes to buttons keep working.
+`DrawBarBackground`, `DrawBarBackgroundImage(Rect, float opacity)`, `DrawBarOverlay`, `DrawButton`, `DrawDrawerButton`,
+`DrawDrawerBackground`, `DrawDrawerBackgroundImage`, `DrawDrawerOverlay`, `DrawDecorations`, `DrawerSettingsIcon`,
+`ButtonAtlas`, `ButtonImage`, `DrawButtonImage`, `LabelColor`, `DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`.
+The theme is applied inside buttons (atlases, label colours, pictures) only when the def sets at least one button
+field (a button atlas, a label colour, `buttonImage` or `buttonImages`), so a worker that chooses pictures in code
+still needs one of them in its XML. Override the two-parameter
+`DrawBarBackgroundImage`: the one-parameter form only forwards to it with the player's opacity, and the Appearance
+tab's preview calls the two-parameter form with 1. `DrawBarBackground` is the image
+plus the decorations below the buttons, and a display mode is expected to call it with `BarDrawContext.BarRect`
+(the standard modes do); `DrawBarOverlay` is called with that same rect after every display mode's drawing, so
+decorations above the buttons work with any display mode, and a mode that never calls `DrawBarBackground` shows
+only the upper layer. Keep drawing buttons through `ButtonPainter.Draw` (or the game's `DoButton`) so other mods'
+changes to buttons keep working.
 
 ## 5. Compatibility bridges
 
@@ -378,9 +530,9 @@ Most add-ons should work with or without Main Button Bar System. Common ways:
 
 ## API stability
 
-`MainButtonBarAPI.ApiVersion` (a property; currently `1.0`) covers everything in this document: the five
+`MainButtonBarAPI.ApiVersion` (a property; currently `1.1`) covers everything in this document: the five
 slots' def fields and workers, `MainButtonBarDefaults`, `MainButtonArrangementDef`, `BarDrawContext`,
-`BarButton`, `ButtonPainter.Draw` and `MainButtonBarAPI`. Additions raise the minor number; removals or changed
+`BarButton`, `BarDecoration`, `BarButtonImage`, `DecorationLayout`, `ImageFit`, `ButtonPainter.Draw` and `MainButtonBarAPI`. Additions raise the minor number; removals or changed
 meanings raise the major number, and removed members stay for one release marked `[Obsolete]`. Arrangements carry
 their own `formatVersion`. Anything not listed here is internal and may change.
 
@@ -395,7 +547,7 @@ Harmony id: `NAI.MainButtonBarSystem`. Order your patches around it with `[Harmo
 | `MainButtonsRoot.HandleLowPriorityShortcuts` | postfix | Hotkeys kept by this mod, after the game's and after windows |
 | `CameraDriver.CameraDriverOnGUI` | prefix | Skips only for a scroll-wheel event over a scrolling bar, so the map does not zoom |
 | `Widgets.ButtonTextSubtle` | prefix + postfix | Acts only while this mod draws a bar button (label alignment, theme colour); never skips |
-| `Widgets.DrawAtlas(Rect, Texture2D, bool)` | prefix + postfix | Acts only while this mod draws a bar button (theme atlas); never skips |
+| `Widgets.DrawAtlas(Rect, Texture2D, bool)` | prefix + postfix | Acts only while this mod draws a bar button: draws the button's picture first (once per button), then swaps in the theme atlas; never skips |
 | `PlayDataLoader.LoadAllPlayData` | postfix | After a reload (for example a language change), refreshes this mod's cached defs once loading finishes |
 
 Compatibility bridges remove other mods' patches only when the player gives this mod priority, and log each

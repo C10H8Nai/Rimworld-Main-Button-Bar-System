@@ -18,7 +18,7 @@ namespace MainButtonBarSystem
         /// members stay one release marked [Obsolete] first. Check it before using newer members. A property, not
         /// a const, so callers read the installed version instead of the one they compiled against.
         /// </summary>
-        public static string ApiVersion => "1.0";
+        public static string ApiVersion => "1.1";
 
         private static readonly List<MainButtonDef> onBar = new List<MainButtonDef>();
         private static readonly List<MainButtonDef> inDrawer = new List<MainButtonDef>();

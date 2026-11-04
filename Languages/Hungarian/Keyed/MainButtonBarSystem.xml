@@ -222,4 +222,16 @@ Indítsd újra a játékot, és kapcsold be a modlistában a kipróbáláshoz; o
   <MBBS_ImportPart_Theme_Desc>A Megjelenés lapon kiválasztott kinézet.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(ebben az elrendezésben nincs megadva: az importálás alapértelmezettre állítja a tiédet)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Importálás</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Illusztráció és háttér</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Ennek a témának nincs háttérképe és díszítése; itt nincs mit beállítani.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Háttér átlátszatlansága: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Díszítések megjelenítése</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Képek, amelyeket a téma a sávra vagy a fiókba helyez, például egy karakterportré. Kikapcsolva mind rejtve marad.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Díszítések átlátszatlansága: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Díszítések mérete: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Díszítések eltolása X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Díszítések eltolása Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Témák textúráinak újratöltése</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Fejlesztői mód: minden téma PNG-fájljait újra beolvassa a mod mappájából, így a szerkesztett kép a játék újraindítása nélkül megjelenik. Utána a témák újra ellenőrzésre kerülnek; lásd a naplót.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Témák textúrái újratöltve: {0} fájl újra beolvasva.</MBBS_ThemesReloaded>
 </LanguageData>

@@ -222,4 +222,16 @@
   <MBBS_ImportPart_Theme_Desc>Внешний вид, выбранный на вкладке «Внешний вид».</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(не задано в этой расстановке: при импорте ваше значение сбросится на стандартное)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Импортировать</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Иллюстрация и фон</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>У этой темы нет фонового изображения и украшений; здесь нечего настраивать.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Непрозрачность фона: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Показывать украшения</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Изображения, которые тема размещает на панели или в ящике, например портрет персонажа. Выключите, чтобы скрыть их все.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Непрозрачность украшений: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Размер украшений: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Смещение украшений по X: {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Смещение украшений по Y: {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Перезагрузить текстуры тем</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Режим разработчика: заново читает PNG-файлы каждой темы из её папки мода, чтобы изменённое изображение появилось без перезапуска игры. После этого темы проверяются снова; см. журнал.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Текстуры тем перезагружены: заново прочитано файлов: {0}.</MBBS_ThemesReloaded>
 </LanguageData>

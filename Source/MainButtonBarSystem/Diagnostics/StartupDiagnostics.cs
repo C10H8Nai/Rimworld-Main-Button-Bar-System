@@ -35,6 +35,7 @@ namespace MainButtonBarSystem
             Section(report, "Hotkeys", ReportHotkeys);
             Section(report, "Icon sources", ReportIconSources);
             Section(report, "LoadImage", ReportLoadImage);
+            Section(report, "Themes", ThemeValidator.Report);
             Section(report, "Button table", WriteButtonTable);
 
             Log.Message(report.ToString().TrimEnd());

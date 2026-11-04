@@ -222,4 +222,16 @@ Genstart spillet, og aktivér modet i modlisten for at prøve det; derfra kan du
   <MBBS_ImportPart_Theme_Desc>Udseendet fra fanen Udseende.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(ikke angivet i denne opstilling: import nulstiller dit)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Importér</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Illustration og baggrund</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Dette tema har hverken baggrundsbillede eller pynt; der er intet at justere her.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Baggrundens dækning: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Vis pynt</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Billeder, som temaet sætter på bjælken eller i skuffen, f.eks. et figurportræt. Slå fra for at skjule dem alle.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Pyntens dækning: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Pyntens størrelse: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Pyntens forskydning X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Pyntens forskydning Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Genindlæs temateksturer</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Udviklertilstand: læser hvert temas PNG-filer igen fra dets modmappe, så et redigeret billede vises uden genstart. Bagefter kontrolleres temaerne igen; se loggen.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Temateksturer genindlæst: {0} fil(er) læst igen.</MBBS_ThemesReloaded>
 </LanguageData>

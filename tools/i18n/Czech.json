@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "Motiv",
     "MBBS_ImportPart_Theme_Desc": "Vzhled vybraný na kartě „Vzhled“.",
     "MBBS_ImportPart_NotSet": "(v tomto uspořádání není nastaveno: import vrátí tvoje nastavení na výchozí)",
-    "MBBS_ImportConfirm": "Importovat"
+    "MBBS_ImportConfirm": "Importovat",
+    "MBBS_Section_Illustration": "Ilustrace a pozadí",
+    "MBBS_IllustrationNone": "Tento motiv nemá obrázek pozadí ani ozdoby; zde není co nastavovat.",
+    "MBBS_BackgroundOpacity": "Krytí pozadí: {0} %",
+    "MBBS_DecorationsShown": "Zobrazit ozdoby",
+    "MBBS_DecorationsShownTip": "Obrázky, které motiv umisťuje na lištu nebo do zásuvky, například portrét postavy. Vypnutím je všechny skryjete.",
+    "MBBS_DecorationOpacity": "Krytí ozdob: {0} %",
+    "MBBS_DecorationScale": "Velikost ozdob: {0} %",
+    "MBBS_DecorationOffsetX": "Posun ozdob X: {0} px",
+    "MBBS_DecorationOffsetY": "Posun ozdob Y: {0} px",
+    "MBBS_ReloadThemes": "Znovu načíst textury motivů",
+    "MBBS_ReloadThemesTip": "Vývojářský režim: znovu načte soubory PNG každého motivu z jeho složky modu, takže upravený obrázek se zobrazí bez restartu hry. Poté se motivy znovu zkontrolují; viz záznam.",
+    "MBBS_ThemesReloaded": "Textury motivů znovu načteny: znovu přečteno souborů: {0}."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "nicota",
       "MBBS_Void.description": "Čerň nicoty se šalvějově zelenými okraji, tenkou rudou linkou, která se pod kurzorem myši rozzáří, a rohy seříznutými jako střepy. V barvách rozšíření Anomaly.",
       "MBBS_Starfarer.label": "hvězdoplavec",
-      "MBBS_Starfarer.description": "Vesmírná fialová s fialovými pláty trupu, azurovými nýty a azurovou linkou trysek. V barvách rozšíření Odyssey."
+      "MBBS_Starfarer.description": "Vesmírná fialová s fialovými pláty trupu, azurovými nýty a azurovou linkou trysek. V barvách rozšíření Odyssey.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Motiv ve stylu anime v barvách Nai: tmavě modrá tlačítka s šedobílými okraji, grafitové linky a fialová záře, s ilustrací postavy na levém konci lišty."
     }
   }
 }

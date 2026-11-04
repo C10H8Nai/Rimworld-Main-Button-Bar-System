@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "Tema",
     "MBBS_ImportPart_Theme_Desc": "Utseendet fra fanen Utseende.",
     "MBBS_ImportPart_NotSet": "(ikke angitt i dette oppsettet: import tilbakestiller ditt)",
-    "MBBS_ImportConfirm": "Importer"
+    "MBBS_ImportConfirm": "Importer",
+    "MBBS_Section_Illustration": "Illustrasjon og bakgrunn",
+    "MBBS_IllustrationNone": "Dette temaet har verken bakgrunnsbilde eller pynt; det er ingenting å justere her.",
+    "MBBS_BackgroundOpacity": "Bakgrunnens dekkevne: {0}%",
+    "MBBS_DecorationsShown": "Vis pynt",
+    "MBBS_DecorationsShownTip": "Bilder som temaet plasserer på linjen eller i skuffen, for eksempel et figurportrett. Slå av for å skjule alle.",
+    "MBBS_DecorationOpacity": "Pyntens dekkevne: {0}%",
+    "MBBS_DecorationScale": "Pyntens størrelse: {0}%",
+    "MBBS_DecorationOffsetX": "Pyntens forskyvning X: {0}px",
+    "MBBS_DecorationOffsetY": "Pyntens forskyvning Y: {0}px",
+    "MBBS_ReloadThemes": "Last inn temateksturer på nytt",
+    "MBBS_ReloadThemesTip": "Utviklermodus: leser hvert temas PNG-filer på nytt fra modmappen, slik at et redigert bilde vises uten omstart. Etterpå kontrolleres temaene igjen; se loggen.",
+    "MBBS_ThemesReloaded": "Temateksturer lastet inn på nytt: {0} fil(er) lest på nytt."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "tomrom",
       "MBBS_Void.description": "Tomromssvart med salviegrønne kanter, en tynn rød strek som lyser opp under musen, og hjørner skåret som splinter, i fargene fra utvidelsen Anomaly.",
       "MBBS_Starfarer.label": "stjernefarer",
-      "MBBS_Starfarer.description": "Romlilla med lilla skrogplater, cyanblå nagler og en cyanblå linje fra motorene, i fargene fra utvidelsen Odyssey."
+      "MBBS_Starfarer.description": "Romlilla med lilla skrogplater, cyanblå nagler og en cyanblå linje fra motorene, i fargene fra utvidelsen Odyssey.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Anime-tema i Nais farger: marineblå knapper med gråhvite kanter, grafittlinjer og et fiolett skjær, med en figurillustrasjon i venstre ende av linjen."
     }
   }
 }

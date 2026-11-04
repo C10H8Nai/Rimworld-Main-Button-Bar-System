@@ -222,4 +222,16 @@ Käynnistä peli uudelleen ja ota modi käyttöön modilistassa kokeillaksesi si
   <MBBS_ImportPart_Theme_Desc>Ulkoasu-välilehdeltä valittu ulkoasu.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(ei asetettu tässä järjestelyssä: tuonti palauttaa omasi oletukseksi)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Tuo</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Kuvitus ja tausta</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Tällä teemalla ei ole taustakuvaa eikä koristeita; täällä ei ole säädettävää.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Taustan peittävyys: {0} %</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Näytä koristeet</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Kuvia, jotka teema asettaa palkkiin tai laatikkoon, esimerkiksi hahmon muotokuva. Pois päältä piilottaa ne kaikki.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Koristeiden peittävyys: {0} %</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Koristeiden koko: {0} %</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Koristeiden siirto X: {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Koristeiden siirto Y: {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Lataa teemojen tekstuurit uudelleen</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Kehittäjätila: lukee jokaisen teeman PNG-tiedostot uudelleen sen modikansiosta, joten muokattu kuva näkyy ilman pelin uudelleenkäynnistystä. Sen jälkeen teemat tarkistetaan uudelleen; katso loki.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Teemojen tekstuurit ladattu uudelleen: {0} tiedosto(a) luettu uudelleen.</MBBS_ThemesReloaded>
 </LanguageData>

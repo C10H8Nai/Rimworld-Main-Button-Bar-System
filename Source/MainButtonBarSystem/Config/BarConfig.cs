@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MainButtonBarSystem.Core;
+using UnityEngine;
 using Verse;
 
 namespace MainButtonBarSystem
@@ -107,6 +108,10 @@ namespace MainButtonBarSystem
         /// <summary>2: number fields may be -1 (use default) and switches may be Default.</summary>
         public const int CurrentFormatVersion = 2;
         public const int Unset = -1;
+
+        /// <summary>"Not changed" for the decoration offsets, which may be negative so -1 cannot mark them.</summary>
+        public const int UnsetOffset = int.MinValue;
+
         public const string VanillaMode = "Vanilla";
         public const string VanillaAppearance = "Vanilla";
 
@@ -146,6 +151,22 @@ namespace MainButtonBarSystem
         public int drawerColumns = Unset;
         public int drawerCellWidth = Unset;
 
+        /// <summary>Theme illustration settings (spec 2026-11-04 §3.4): applied on top of the active theme's own values.</summary>
+        public DefaultableBool decorationsShown;
+
+        /// <summary>Percent; -1 while unchanged.</summary>
+        public int decorationOpacity = Unset;
+
+        /// <summary>Percent; -1 while unchanged.</summary>
+        public int decorationScale = Unset;
+
+        /// <summary>Pixels, may be negative; <see cref="UnsetOffset"/> while unchanged.</summary>
+        public int decorationOffsetX = UnsetOffset;
+        public int decorationOffsetY = UnsetOffset;
+
+        /// <summary>Percent, bar and drawer background images; -1 while unchanged.</summary>
+        public int backgroundOpacity = Unset;
+
         private static MainButtonBarTuningDef.BarDefaults D => MainButtonBarTuningDef.Current.barDefaults;
 
         public int DefaultWidth => defaultWidth >= 0 ? defaultWidth : D.defaultWidth;
@@ -158,6 +179,24 @@ namespace MainButtonBarSystem
         public float WheelScrollPixels => wheelScrollPixels >= 0f ? wheelScrollPixels : D.wheelScrollPixels;
         public int DrawerColumns => drawerColumns >= 0 ? drawerColumns : D.drawerColumns;
         public int DrawerCellWidth => drawerCellWidth >= 0 ? drawerCellWidth : D.drawerCellWidth;
+
+        public bool DecorationsShown => Resolve(decorationsShown, D.decorationsShown);
+        public int DecorationOpacityPercent => decorationOpacity >= 0 ? decorationOpacity : D.decorationOpacity;
+        public int DecorationScalePercent => decorationScale >= 0 ? decorationScale : D.decorationScale;
+        public int DecorationOffsetX => decorationOffsetX != UnsetOffset ? decorationOffsetX : D.decorationOffsetX;
+        public int DecorationOffsetY => decorationOffsetY != UnsetOffset ? decorationOffsetY : D.decorationOffsetY;
+        public int BackgroundOpacityPercent => backgroundOpacity >= 0 ? backgroundOpacity : D.backgroundOpacity;
+
+        /// <summary>0 to 1.</summary>
+        public float DecorationOpacity => DecorationOpacityPercent / 100f;
+
+        /// <summary>1 is the theme's own size.</summary>
+        public float DecorationScale => DecorationScalePercent / 100f;
+
+        public Vector2 DecorationOffset => new Vector2(DecorationOffsetX, DecorationOffsetY);
+
+        /// <summary>0 to 1.</summary>
+        public float BackgroundOpacity => BackgroundOpacityPercent / 100f;
 
         public static bool Resolve(DefaultableBool value, bool fallback) =>
             value == DefaultableBool.Default ? fallback : value == DefaultableBool.True;
@@ -240,6 +279,12 @@ namespace MainButtonBarSystem
             wheelScrollPixels = fresh.wheelScrollPixels;
             drawerColumns = fresh.drawerColumns;
             drawerCellWidth = fresh.drawerCellWidth;
+            decorationsShown = fresh.decorationsShown;
+            decorationOpacity = fresh.decorationOpacity;
+            decorationScale = fresh.decorationScale;
+            decorationOffsetX = fresh.decorationOffsetX;
+            decorationOffsetY = fresh.decorationOffsetY;
+            backgroundOpacity = fresh.backgroundOpacity;
             overrides.Clear();
             index = null;
         }
@@ -273,6 +318,12 @@ namespace MainButtonBarSystem
             Scribe_Values.Look(ref wheelScrollPixels, "wheelScrollPixels", Unset);
             Scribe_Values.Look(ref drawerColumns, "drawerColumns", Unset);
             Scribe_Values.Look(ref drawerCellWidth, "drawerCellWidth", Unset);
+            Scribe_Values.Look(ref decorationsShown, "decorationsShown", DefaultableBool.Default);
+            Scribe_Values.Look(ref decorationOpacity, "decorationOpacity", Unset);
+            Scribe_Values.Look(ref decorationScale, "decorationScale", Unset);
+            Scribe_Values.Look(ref decorationOffsetX, "decorationOffsetX", UnsetOffset);
+            Scribe_Values.Look(ref decorationOffsetY, "decorationOffsetY", UnsetOffset);
+            Scribe_Values.Look(ref backgroundOpacity, "backgroundOpacity", Unset);
             Scribe_Collections.Look(ref overrides, "overrides", LookMode.Deep);
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)

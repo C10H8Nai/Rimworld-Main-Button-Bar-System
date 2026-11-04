@@ -222,4 +222,16 @@ Oyunu yeniden başlat ve denemek için mod listesinden etkinleştir; oradan Stea
   <MBBS_ImportPart_Theme_Desc>Görünüm sekmesinde seçilen görünüm.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(bu düzende ayarlanmamış: içe aktarmak seninkini varsayılana döndürür)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>İçe aktar</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Çizim ve arka plan</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Bu temanın arka plan görseli veya süslemesi yok; burada ayarlanacak bir şey yok.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Arka plan opaklığı: %{0}</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Süslemeleri göster</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Temanın çubuğa veya çekmeceye yerleştirdiği görseller, örneğin bir karakter portresi. Kapatınca hepsi gizlenir.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Süsleme opaklığı: %{0}</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Süsleme boyutu: %{0}</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Süsleme kaydırma X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Süsleme kaydırma Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Tema dokularını yeniden yükle</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Geliştirici modu: her temanın PNG dosyalarını mod klasöründen yeniden okur, böylece düzenlenen bir görsel oyunu yeniden başlatmadan görünür. Ardından temalar yeniden denetlenir; günlüğe bakın.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Tema dokuları yeniden yüklendi: {0} dosya yeniden okundu.</MBBS_ThemesReloaded>
 </LanguageData>

@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "Tema",
     "MBBS_ImportPart_Theme_Desc": "A aparência escolhida na aba Aparência.",
     "MBBS_ImportPart_NotSet": "(não definido nesta disposição: importar volta o seu ao padrão)",
-    "MBBS_ImportConfirm": "Importar"
+    "MBBS_ImportConfirm": "Importar",
+    "MBBS_Section_Illustration": "Ilustração e fundo",
+    "MBBS_IllustrationNone": "Este tema não tem imagem de fundo nem decorações; não há nada para ajustar aqui.",
+    "MBBS_BackgroundOpacity": "Opacidade do fundo: {0}%",
+    "MBBS_DecorationsShown": "Mostrar decorações",
+    "MBBS_DecorationsShownTip": "Imagens que o tema coloca na barra ou na gaveta, como um retrato de personagem. Desative para esconder todas.",
+    "MBBS_DecorationOpacity": "Opacidade das decorações: {0}%",
+    "MBBS_DecorationScale": "Tamanho das decorações: {0}%",
+    "MBBS_DecorationOffsetX": "Deslocamento das decorações X: {0}px",
+    "MBBS_DecorationOffsetY": "Deslocamento das decorações Y: {0}px",
+    "MBBS_ReloadThemes": "Recarregar texturas dos temas",
+    "MBBS_ReloadThemesTip": "Modo de desenvolvimento: relê os PNG de cada tema a partir da pasta do mod, para ver uma imagem editada sem reiniciar o jogo. Depois os temas são verificados de novo; veja o log.",
+    "MBBS_ThemesReloaded": "Texturas dos temas recarregadas: {0} arquivo(s) relido(s)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "vazio",
       "MBBS_Void.description": "Preto do vazio com bordas verde-sálvia, uma fina linha vermelha que se acende sob o mouse e cantos cortados como estilhaços, nas cores da expansão Anomaly.",
       "MBBS_Starfarer.label": "viajante estelar",
-      "MBBS_Starfarer.description": "Roxo espacial com placas do casco roxas, rebites ciano e uma linha ciano dos propulsores, nas cores da expansão Odyssey."
+      "MBBS_Starfarer.description": "Roxo espacial com placas do casco roxas, rebites ciano e uma linha ciano dos propulsores, nas cores da expansão Odyssey.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Tema em estilo anime nas cores da Nai: botões azul-marinho com bordas cinza-claro, linhas grafite e um brilho violeta, com uma ilustração de personagem na ponta esquerda da barra."
     }
   }
 }

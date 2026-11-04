@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "Tema",
     "MBBS_ImportPart_Theme_Desc": "Utseendet från fliken Utseende.",
     "MBBS_ImportPart_NotSet": "(inte angivet i denna layout: import återställer ditt)",
-    "MBBS_ImportConfirm": "Importera"
+    "MBBS_ImportConfirm": "Importera",
+    "MBBS_Section_Illustration": "Illustration och bakgrund",
+    "MBBS_IllustrationNone": "Det här temat har varken bakgrundsbild eller dekorationer; det finns inget att justera här.",
+    "MBBS_BackgroundOpacity": "Bakgrundens opacitet: {0}%",
+    "MBBS_DecorationsShown": "Visa dekorationer",
+    "MBBS_DecorationsShownTip": "Bilder som temat placerar på listen eller i lådan, till exempel ett karaktärsporträtt. Stäng av för att dölja alla.",
+    "MBBS_DecorationOpacity": "Dekorationernas opacitet: {0}%",
+    "MBBS_DecorationScale": "Dekorationernas storlek: {0}%",
+    "MBBS_DecorationOffsetX": "Dekorationernas förskjutning X: {0}px",
+    "MBBS_DecorationOffsetY": "Dekorationernas förskjutning Y: {0}px",
+    "MBBS_ReloadThemes": "Läs in tematexturer på nytt",
+    "MBBS_ReloadThemesTip": "Utvecklarläge: läser varje temas PNG-filer på nytt från dess modmapp, så att en redigerad bild visas utan omstart. Därefter kontrolleras temana igen; se loggen.",
+    "MBBS_ThemesReloaded": "Tematexturer inlästa på nytt: {0} fil(er) lästa igen."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "tomrum",
       "MBBS_Void.description": "Tomrumssvart med salviagröna kanter, en tunn röd linje som lyser upp under muspekaren och hörn skurna som skärvor, i färgerna från expansionen Anomaly.",
       "MBBS_Starfarer.label": "stjärnfarare",
-      "MBBS_Starfarer.description": "Rymdlila med lila skrovplåtar, cyanblå nitar och en cyanblå linje från motorerna, i färgerna från expansionen Odyssey."
+      "MBBS_Starfarer.description": "Rymdlila med lila skrovplåtar, cyanblå nitar och en cyanblå linje från motorerna, i färgerna från expansionen Odyssey.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Animetema i Nais färger: marinblå knappar med gråvita kanter, grafitlinjer och ett violett sken, med en karaktärsillustration i listens vänstra ände."
     }
   }
 }

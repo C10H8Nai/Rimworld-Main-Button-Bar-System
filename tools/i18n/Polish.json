@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "Motyw",
     "MBBS_ImportPart_Theme_Desc": "Wygląd wybrany w zakładce „Wygląd”.",
     "MBBS_ImportPart_NotSet": "(nieustawione w tym układzie: import przywróci twoje ustawienie domyślne)",
-    "MBBS_ImportConfirm": "Importuj"
+    "MBBS_ImportConfirm": "Importuj",
+    "MBBS_Section_Illustration": "Ilustracja i tło",
+    "MBBS_IllustrationNone": "Ten motyw nie ma obrazu tła ani ozdób; nie ma tu nic do ustawienia.",
+    "MBBS_BackgroundOpacity": "Krycie tła: {0}%",
+    "MBBS_DecorationsShown": "Pokaż ozdoby",
+    "MBBS_DecorationsShownTip": "Obrazy, które motyw umieszcza na pasku lub w szufladzie, np. portret postaci. Wyłącz, aby ukryć wszystkie.",
+    "MBBS_DecorationOpacity": "Krycie ozdób: {0}%",
+    "MBBS_DecorationScale": "Rozmiar ozdób: {0}%",
+    "MBBS_DecorationOffsetX": "Przesunięcie ozdób X: {0}px",
+    "MBBS_DecorationOffsetY": "Przesunięcie ozdób Y: {0}px",
+    "MBBS_ReloadThemes": "Wczytaj ponownie tekstury motywów",
+    "MBBS_ReloadThemesTip": "Tryb dewelopera: ponownie wczytuje pliki PNG każdego motywu z jego folderu moda, więc zmieniony obraz pojawia się bez restartu gry. Potem motywy są sprawdzane ponownie; zobacz dziennik.",
+    "MBBS_ThemesReloaded": "Tekstury motywów wczytane ponownie: odczytano ponownie {0} plik(ów)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "pustka",
       "MBBS_Void.description": "Czerń pustki z szałwiowozielonymi krawędziami, cienką czerwoną linią, która rozbłyska pod kursorem, i narożnikami ściętymi jak odłamki, w barwach rozszerzenia Anomaly.",
       "MBBS_Starfarer.label": "gwiezdny wędrowiec",
-      "MBBS_Starfarer.description": "Kosmiczny fiolet z fioletowymi płytami kadłuba, cyjanowymi nitami i cyjanową linią silników, w barwach rozszerzenia Odyssey."
+      "MBBS_Starfarer.description": "Kosmiczny fiolet z fioletowymi płytami kadłuba, cyjanowymi nitami i cyjanową linią silników, w barwach rozszerzenia Odyssey.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Motyw w stylu anime w kolorach Nai: granatowe przyciski z szarobiałymi obramowaniami, grafitowe linie i fioletowa poświata, a na lewym końcu paska ilustracja postaci."
     }
   }
 }

@@ -222,4 +222,16 @@ Restart the game, enable it in the mod list to try it, and upload it to the Work
   <MBBS_ImportPart_Theme_Desc>The look from the Appearance tab.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(not set in this arrangement: importing resets yours)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Import</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Illustration and background</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>This theme has no background image or decorations, so there is nothing to adjust here.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Background opacity: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Show decorations</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Images the theme places on the bar or in the drawer, such as a character portrait. Turn off to hide them all.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Decoration opacity: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Decoration size: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Decoration offset X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Decoration offset Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Reload theme textures</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Development mode: reads every theme's PNG files again from its mod folder, so an edited image shows without restarting the game. The themes are checked again afterwards; see the log.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Theme textures reloaded: {0} file(s) read again.</MBBS_ThemesReloaded>
 </LanguageData>

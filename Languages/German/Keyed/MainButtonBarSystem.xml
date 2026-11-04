@@ -222,4 +222,16 @@ Starte das Spiel neu und aktiviere die Mod in der Mod-Liste, um sie auszuprobier
   <MBBS_ImportPart_Theme_Desc>Das Aussehen aus dem Reiter „Aussehen“.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(in dieser Anordnung nicht festgelegt: Importieren setzt deines zurück)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Importieren</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Illustration und Hintergrund</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Dieses Thema hat weder Hintergrundbild noch Dekorationen; hier gibt es nichts einzustellen.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Deckkraft des Hintergrunds: {0} %</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Dekorationen anzeigen</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Bilder, die das Thema auf der Leiste oder in der Schublade platziert, etwa ein Charakterporträt. Ausschalten blendet alle aus.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Deckkraft der Dekorationen: {0} %</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Größe der Dekorationen: {0} %</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Versatz der Dekorationen X: {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Versatz der Dekorationen Y: {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Thementexturen neu laden</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Entwicklermodus: liest die PNG-Dateien jedes Themas erneut aus seinem Mod-Ordner, damit ein geändertes Bild ohne Neustart erscheint. Danach werden die Themen erneut geprüft; siehe Protokoll.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Thementexturen neu geladen: {0} Datei(en) erneut gelesen.</MBBS_ThemesReloaded>
 </LanguageData>

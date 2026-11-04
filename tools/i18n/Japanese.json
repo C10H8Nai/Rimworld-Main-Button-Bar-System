@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "テーマ",
     "MBBS_ImportPart_Theme_Desc": "「外観」タブで選んだ見た目.",
     "MBBS_ImportPart_NotSet": "(この配置では未設定: インポートするとあなたの設定はデフォルトに戻ります)",
-    "MBBS_ImportConfirm": "インポート"
+    "MBBS_ImportConfirm": "インポート",
+    "MBBS_Section_Illustration": "イラストと背景",
+    "MBBS_IllustrationNone": "このテーマには背景画像や飾り画像がないため,ここで調整できる項目はありません.",
+    "MBBS_BackgroundOpacity": "背景の不透明度:{0}%",
+    "MBBS_DecorationsShown": "飾り画像を表示",
+    "MBBS_DecorationsShownTip": "テーマがバーや「その他」メニューに置く画像(キャラクターの立ち絵など)です.オフにするとすべて隠します.",
+    "MBBS_DecorationOpacity": "飾り画像の不透明度:{0}%",
+    "MBBS_DecorationScale": "飾り画像の大きさ:{0}%",
+    "MBBS_DecorationOffsetX": "飾り画像のずらし X:{0}px",
+    "MBBS_DecorationOffsetY": "飾り画像のずらし Y:{0}px",
+    "MBBS_ReloadThemes": "テーマのテクスチャを再読み込み",
+    "MBBS_ReloadThemesTip": "開発モード:各テーマのPNGをMODフォルダから読み直し,編集した画像をゲームを再起動せずに表示します.読み込み後にテーマを再チェックします(ログ参照).",
+    "MBBS_ThemesReloaded": "テーマのテクスチャを再読み込みしました:{0}個のファイルを読み直しました."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "ヴォイド",
       "MBBS_Void.description": "ヴォイドの黒に,セージグリーンの縁取り,マウスを重ねると光る細い赤線,破片のように切り欠いた角を添えた,拡張版Anomalyの配色です.",
       "MBBS_Starfarer.label": "星渡り",
-      "MBBS_Starfarer.description": "宇宙の紫に,紫の船体プレート,シアンのリベット,シアンのスラスターラインを添えた,拡張版Odysseyの配色です."
+      "MBBS_Starfarer.description": "宇宙の紫に,紫の船体プレート,シアンのリベット,シアンのスラスターラインを添えた,拡張版Odysseyの配色です.",
+      "MBBS_Nai.label": "ナイ",
+      "MBBS_Nai.description": "ナイの配色によるアニメ風テーマ.濃紺のボタンに灰白の縁取り,グラファイトの線,紫の光を添え,バーの左端にキャラクターイラストを置きます."
     }
   }
 }

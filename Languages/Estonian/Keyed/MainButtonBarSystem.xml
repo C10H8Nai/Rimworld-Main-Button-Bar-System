@@ -222,4 +222,16 @@ Taaskäivita mäng ja lülita modifikatsioon proovimiseks modifikatsioonide nime
   <MBBS_ImportPart_Theme_Desc>Vahekaardil „Välimus“ valitud välimus.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(selles paigutuses määramata: importimine lähtestab sinu oma)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Impordi</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Illustratsioon ja taust</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Sellel teemal pole taustapilti ega kaunistusi; siin pole midagi seadistada.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Tausta läbipaistmatus: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Näita kaunistusi</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Pildid, mille teema asetab ribale või sahtlisse, näiteks tegelase portree. Väljalülitamine peidab need kõik.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Kaunistuste läbipaistmatus: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Kaunistuste suurus: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Kaunistuste nihe X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Kaunistuste nihe Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Laadi teemade tekstuurid uuesti</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Arendajarežiim: loeb iga teema PNG-failid uuesti selle modikaustast, nii et muudetud pilt ilmub ilma mängu taaskäivitamata. Seejärel kontrollitakse teemasid uuesti; vaata logi.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Teemade tekstuurid uuesti laaditud: {0} fail(i) uuesti loetud.</MBBS_ThemesReloaded>
 </LanguageData>

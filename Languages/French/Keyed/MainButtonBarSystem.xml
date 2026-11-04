@@ -222,4 +222,16 @@ Redémarrez le jeu et activez-le dans la liste des mods pour l'essayer ; vous po
   <MBBS_ImportPart_Theme_Desc>L'apparence choisie dans l'onglet Apparence.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(non défini dans cette disposition : l'importer remet le vôtre par défaut)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Importer</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Illustration et arrière-plan</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Ce thème n'a ni image d'arrière-plan ni décorations : rien à régler ici.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Opacité de l'arrière-plan : {0} %</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Afficher les décorations</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Images que le thème place sur la barre ou dans le tiroir, comme un portrait de personnage. Désactivez pour toutes les masquer.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Opacité des décorations : {0} %</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Taille des décorations : {0} %</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Décalage des décorations X : {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Décalage des décorations Y : {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Recharger les textures des thèmes</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Mode développeur : relit les fichiers PNG de chaque thème depuis son dossier de mod, pour voir une image modifiée sans redémarrer le jeu. Les thèmes sont ensuite revérifiés ; voir le journal.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Textures des thèmes rechargées : {0} fichier(s) relu(s).</MBBS_ThemesReloaded>
 </LanguageData>

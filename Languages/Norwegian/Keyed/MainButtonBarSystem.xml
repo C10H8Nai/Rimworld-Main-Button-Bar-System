@@ -222,4 +222,16 @@ Start spillet på nytt og aktiver modden i modlisten for å prøve den; derfra k
   <MBBS_ImportPart_Theme_Desc>Utseendet fra fanen Utseende.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(ikke angitt i dette oppsettet: import tilbakestiller ditt)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Importer</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Illustrasjon og bakgrunn</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Dette temaet har verken bakgrunnsbilde eller pynt; det er ingenting å justere her.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Bakgrunnens dekkevne: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Vis pynt</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Bilder som temaet plasserer på linjen eller i skuffen, for eksempel et figurportrett. Slå av for å skjule alle.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Pyntens dekkevne: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Pyntens størrelse: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Pyntens forskyvning X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Pyntens forskyvning Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Last inn temateksturer på nytt</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Utviklermodus: leser hvert temas PNG-filer på nytt fra modmappen, slik at et redigert bilde vises uten omstart. Etterpå kontrolleres temaene igjen; se loggen.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Temateksturer lastet inn på nytt: {0} fil(er) lest på nytt.</MBBS_ThemesReloaded>
 </LanguageData>

@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "Téma",
     "MBBS_ImportPart_Theme_Desc": "A Megjelenés lapon kiválasztott kinézet.",
     "MBBS_ImportPart_NotSet": "(ebben az elrendezésben nincs megadva: az importálás alapértelmezettre állítja a tiédet)",
-    "MBBS_ImportConfirm": "Importálás"
+    "MBBS_ImportConfirm": "Importálás",
+    "MBBS_Section_Illustration": "Illusztráció és háttér",
+    "MBBS_IllustrationNone": "Ennek a témának nincs háttérképe és díszítése; itt nincs mit beállítani.",
+    "MBBS_BackgroundOpacity": "Háttér átlátszatlansága: {0}%",
+    "MBBS_DecorationsShown": "Díszítések megjelenítése",
+    "MBBS_DecorationsShownTip": "Képek, amelyeket a téma a sávra vagy a fiókba helyez, például egy karakterportré. Kikapcsolva mind rejtve marad.",
+    "MBBS_DecorationOpacity": "Díszítések átlátszatlansága: {0}%",
+    "MBBS_DecorationScale": "Díszítések mérete: {0}%",
+    "MBBS_DecorationOffsetX": "Díszítések eltolása X: {0}px",
+    "MBBS_DecorationOffsetY": "Díszítések eltolása Y: {0}px",
+    "MBBS_ReloadThemes": "Témák textúráinak újratöltése",
+    "MBBS_ReloadThemesTip": "Fejlesztői mód: minden téma PNG-fájljait újra beolvassa a mod mappájából, így a szerkesztett kép a játék újraindítása nélkül megjelenik. Utána a témák újra ellenőrzésre kerülnek; lásd a naplót.",
+    "MBBS_ThemesReloaded": "Témák textúrái újratöltve: {0} fájl újra beolvasva."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "üresség",
       "MBBS_Void.description": "Ürességfekete, zsályazöld szegélyekkel, az egérmutató alatt felizzó vékony vörös vonallal és szilánkosra vágott sarkokkal, az Anomália kiegészítő színeiben.",
       "MBBS_Starfarer.label": "csillagutazó",
-      "MBBS_Starfarer.description": "Űrlila, lila hajótestlemezekkel, cián szegecsekkel és cián hajtómű-fénycsíkkal, az Odyssey kiegészítő színeiben."
+      "MBBS_Starfarer.description": "Űrlila, lila hajótestlemezekkel, cián szegecsekkel és cián hajtómű-fénycsíkkal, az Odyssey kiegészítő színeiben.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Anime stílusú téma Nai színeiben: sötétkék gombok szürkésfehér kerettel, grafitvonalak és lila derengés, a sáv bal végén egy karakterillusztrációval."
     }
   }
 }

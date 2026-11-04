@@ -222,4 +222,16 @@ Restartuj hru a zapni mod v seznamu modů, abys ho vyzkoušel; odtud ho můžeš
   <MBBS_ImportPart_Theme_Desc>Vzhled vybraný na kartě „Vzhled“.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(v tomto uspořádání není nastaveno: import vrátí tvoje nastavení na výchozí)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Importovat</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Ilustrace a pozadí</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Tento motiv nemá obrázek pozadí ani ozdoby; zde není co nastavovat.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Krytí pozadí: {0} %</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Zobrazit ozdoby</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Obrázky, které motiv umisťuje na lištu nebo do zásuvky, například portrét postavy. Vypnutím je všechny skryjete.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Krytí ozdob: {0} %</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Velikost ozdob: {0} %</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Posun ozdob X: {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Posun ozdob Y: {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Znovu načíst textury motivů</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Vývojářský režim: znovu načte soubory PNG každého motivu z jeho složky modu, takže upravený obrázek se zobrazí bez restartu hry. Poté se motivy znovu zkontrolují; viz záznam.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Textury motivů znovu načteny: znovu přečteno souborů: {0}.</MBBS_ThemesReloaded>
 </LanguageData>

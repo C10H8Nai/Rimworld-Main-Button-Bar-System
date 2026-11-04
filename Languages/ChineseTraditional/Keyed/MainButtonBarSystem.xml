@@ -222,4 +222,16 @@
   <MBBS_ImportPart_Theme_Desc>外觀分頁選的外觀。</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>（這份排序沒有設定：匯入會把你的恢復預設）</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>匯入</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>插圖與背景</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>這個主題沒有背景圖或裝飾圖，這裡沒有可調整的項目。</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>背景不透明度：{0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>顯示裝飾圖</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>主題放在底部列或抽屜上的圖片，例如角色立繪。關閉後全部隱藏。</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>裝飾圖不透明度：{0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>裝飾圖大小：{0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>裝飾圖位移 X：{0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>裝飾圖位移 Y：{0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>重新載入主題貼圖</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>開發者模式：從各主題的模組資料夾重新讀取 PNG，改過的圖不用重開遊戲就會顯示。讀完會再檢查一次主題，結果在 log。</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>主題貼圖已重新載入：重新讀取了 {0} 個檔案。</MBBS_ThemesReloaded>
 </LanguageData>

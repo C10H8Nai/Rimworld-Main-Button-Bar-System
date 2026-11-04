@@ -222,4 +222,16 @@ Reinicia el juego y actívalo en la lista de mods para probarlo; desde ahí tamb
   <MBBS_ImportPart_Theme_Desc>El aspecto elegido en la pestaña Aspecto.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(no definido en esta disposición: al importar se restablece el tuyo)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Importar</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Ilustración y fondo</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Este tema no tiene imagen de fondo ni decoraciones; no hay nada que ajustar aquí.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Opacidad del fondo: {0} %</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Mostrar decoraciones</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Imágenes que el tema coloca en la barra o en el cajón, como un retrato de personaje. Desactívalo para ocultarlas todas.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Opacidad de las decoraciones: {0} %</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Tamaño de las decoraciones: {0} %</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Desplazamiento de las decoraciones X: {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Desplazamiento de las decoraciones Y: {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Recargar texturas de los temas</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Modo desarrollador: vuelve a leer los PNG de cada tema desde su carpeta de mod, para ver una imagen editada sin reiniciar el juego. Después se vuelven a comprobar los temas; consulta el registro.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Texturas de los temas recargadas: {0} archivo(s) leído(s) de nuevo.</MBBS_ThemesReloaded>
 </LanguageData>

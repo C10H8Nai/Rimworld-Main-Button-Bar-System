@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "Teema",
     "MBBS_ImportPart_Theme_Desc": "Ulkoasu-välilehdeltä valittu ulkoasu.",
     "MBBS_ImportPart_NotSet": "(ei asetettu tässä järjestelyssä: tuonti palauttaa omasi oletukseksi)",
-    "MBBS_ImportConfirm": "Tuo"
+    "MBBS_ImportConfirm": "Tuo",
+    "MBBS_Section_Illustration": "Kuvitus ja tausta",
+    "MBBS_IllustrationNone": "Tällä teemalla ei ole taustakuvaa eikä koristeita; täällä ei ole säädettävää.",
+    "MBBS_BackgroundOpacity": "Taustan peittävyys: {0} %",
+    "MBBS_DecorationsShown": "Näytä koristeet",
+    "MBBS_DecorationsShownTip": "Kuvia, jotka teema asettaa palkkiin tai laatikkoon, esimerkiksi hahmon muotokuva. Pois päältä piilottaa ne kaikki.",
+    "MBBS_DecorationOpacity": "Koristeiden peittävyys: {0} %",
+    "MBBS_DecorationScale": "Koristeiden koko: {0} %",
+    "MBBS_DecorationOffsetX": "Koristeiden siirto X: {0} px",
+    "MBBS_DecorationOffsetY": "Koristeiden siirto Y: {0} px",
+    "MBBS_ReloadThemes": "Lataa teemojen tekstuurit uudelleen",
+    "MBBS_ReloadThemesTip": "Kehittäjätila: lukee jokaisen teeman PNG-tiedostot uudelleen sen modikansiosta, joten muokattu kuva näkyy ilman pelin uudelleenkäynnistystä. Sen jälkeen teemat tarkistetaan uudelleen; katso loki.",
+    "MBBS_ThemesReloaded": "Teemojen tekstuurit ladattu uudelleen: {0} tiedosto(a) luettu uudelleen."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "tyhjyys",
       "MBBS_Void.description": "Tyhjyydenmusta, salvianvihreät reunat, ohut punainen viiva, joka hehkuu hiiren alla, ja sirpaleiksi viistetyt kulmat, Anomaly-laajennuksen väreissä.",
       "MBBS_Starfarer.label": "tähtienkulkija",
-      "MBBS_Starfarer.description": "Avaruusvioletti, violetit runkolevyt, syaaniset niitit ja syaaninen moottorien valoviiva, Odyssey-laajennuksen väreissä."
+      "MBBS_Starfarer.description": "Avaruusvioletti, violetit runkolevyt, syaaniset niitit ja syaaninen moottorien valoviiva, Odyssey-laajennuksen väreissä.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Anime-tyylinen teema Nain väreissä: tummansiniset painikkeet harmaanvalkoisin reunuksin, grafiittiviivat ja violetti hehku sekä hahmokuvitus palkin vasemmassa päässä."
     }
   }
 }

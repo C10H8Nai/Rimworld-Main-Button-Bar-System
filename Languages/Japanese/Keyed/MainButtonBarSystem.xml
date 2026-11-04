@@ -222,4 +222,16 @@
   <MBBS_ImportPart_Theme_Desc>「外観」タブで選んだ見た目.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(この配置では未設定: インポートするとあなたの設定はデフォルトに戻ります)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>インポート</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>イラストと背景</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>このテーマには背景画像や飾り画像がないため,ここで調整できる項目はありません.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>背景の不透明度:{0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>飾り画像を表示</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>テーマがバーや「その他」メニューに置く画像(キャラクターの立ち絵など)です.オフにするとすべて隠します.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>飾り画像の不透明度:{0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>飾り画像の大きさ:{0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>飾り画像のずらし X:{0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>飾り画像のずらし Y:{0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>テーマのテクスチャを再読み込み</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>開発モード:各テーマのPNGをMODフォルダから読み直し,編集した画像をゲームを再起動せずに表示します.読み込み後にテーマを再チェックします(ログ参照).</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>テーマのテクスチャを再読み込みしました:{0}個のファイルを読み直しました.</MBBS_ThemesReloaded>
 </LanguageData>

@@ -222,4 +222,16 @@ Hãy khởi động lại trò chơi và bật mod trong danh sách mod để d�
   <MBBS_ImportPart_Theme_Desc>Diện mạo đã chọn ở thẻ Giao diện.</MBBS_ImportPart_Theme_Desc>
   <MBBS_ImportPart_NotSet>(bố cục này không thiết lập: nhập sẽ đưa cài đặt của bạn về mặc định)</MBBS_ImportPart_NotSet>
   <MBBS_ImportConfirm>Nhập</MBBS_ImportConfirm>
+  <MBBS_Section_Illustration>Hình minh họa và nền</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Chủ đề này không có ảnh nền hay trang trí; không có gì để chỉnh ở đây.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Độ mờ đục của nền: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Hiện trang trí</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Các ảnh mà chủ đề đặt lên thanh hoặc trong ngăn kéo, ví dụ hình nhân vật. Tắt để ẩn tất cả.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Độ mờ đục của trang trí: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Kích thước trang trí: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Dịch trang trí theo X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Dịch trang trí theo Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Tải lại texture của chủ đề</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Chế độ nhà phát triển: đọc lại các tệp PNG của từng chủ đề từ thư mục mod, để ảnh đã chỉnh hiện ra mà không cần khởi động lại trò chơi. Sau đó các chủ đề được kiểm tra lại; xem nhật ký.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Đã tải lại texture của chủ đề: đọc lại {0} tệp.</MBBS_ThemesReloaded>
 </LanguageData>

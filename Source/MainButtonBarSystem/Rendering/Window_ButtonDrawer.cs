@@ -155,6 +155,9 @@ namespace MainButtonBarSystem
                 activated = true;
             }
 
+            appearance.DrawDrawerOverlay(inRect.ExpandedBy(B.drawerPadding));
+            GUI.color = Color.white;
+
             if (activated) Close(false);
         }
     }

@@ -216,7 +216,19 @@
     "MBBS_ImportPart_Theme": "Teema",
     "MBBS_ImportPart_Theme_Desc": "Vahekaardil „Välimus“ valitud välimus.",
     "MBBS_ImportPart_NotSet": "(selles paigutuses määramata: importimine lähtestab sinu oma)",
-    "MBBS_ImportConfirm": "Impordi"
+    "MBBS_ImportConfirm": "Impordi",
+    "MBBS_Section_Illustration": "Illustratsioon ja taust",
+    "MBBS_IllustrationNone": "Sellel teemal pole taustapilti ega kaunistusi; siin pole midagi seadistada.",
+    "MBBS_BackgroundOpacity": "Tausta läbipaistmatus: {0}%",
+    "MBBS_DecorationsShown": "Näita kaunistusi",
+    "MBBS_DecorationsShownTip": "Pildid, mille teema asetab ribale või sahtlisse, näiteks tegelase portree. Väljalülitamine peidab need kõik.",
+    "MBBS_DecorationOpacity": "Kaunistuste läbipaistmatus: {0}%",
+    "MBBS_DecorationScale": "Kaunistuste suurus: {0}%",
+    "MBBS_DecorationOffsetX": "Kaunistuste nihe X: {0}px",
+    "MBBS_DecorationOffsetY": "Kaunistuste nihe Y: {0}px",
+    "MBBS_ReloadThemes": "Laadi teemade tekstuurid uuesti",
+    "MBBS_ReloadThemesTip": "Arendajarežiim: loeb iga teema PNG-failid uuesti selle modikaustast, nii et muudetud pilt ilmub ilma mängu taaskäivitamata. Seejärel kontrollitakse teemasid uuesti; vaata logi.",
+    "MBBS_ThemesReloaded": "Teemade tekstuurid uuesti laaditud: {0} fail(i) uuesti loetud."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -241,7 +253,9 @@
       "MBBS_Void.label": "tühjus",
       "MBBS_Void.description": "Tühjusemust salveiroheliste servade, hiire all helendava õhukese punase joone ja killukujuliselt lõigatud nurkadega, Anomaly laienduse värvides.",
       "MBBS_Starfarer.label": "tähtederändur",
-      "MBBS_Starfarer.description": "Kosmoselilla lillade kerepaneelide, tsüaansiniste neetide ja tsüaansinise mootorijoonega, Odyssey laienduse värvides."
+      "MBBS_Starfarer.description": "Kosmoselilla lillade kerepaneelide, tsüaansiniste neetide ja tsüaansinise mootorijoonega, Odyssey laienduse värvides.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Anime stiilis teema Nai värvides: tumesinised nupud hallikasvalgete äärtega, grafiitjooned ja violetne kuma ning tegelase illustratsioon riba vasakus otsas."
     }
   }
 }

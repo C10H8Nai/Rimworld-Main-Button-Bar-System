@@ -19,6 +19,13 @@
       <wheelScrollPixels>25</wheelScrollPixels>  <!-- per unit of wheel movement -->
       <drawerColumns>0</drawerColumns>           <!-- 0: automatic -->
       <drawerCellWidth>0</drawerCellWidth>       <!-- 0: the bar's default button width -->
+      <!-- Theme illustrations (Appearance tab): applied on top of the theme's own values. -->
+      <decorationsShown>true</decorationsShown>
+      <decorationOpacity>100</decorationOpacity> <!-- percent -->
+      <decorationScale>100</decorationScale>     <!-- percent -->
+      <decorationOffsetX>0</decorationOffsetX>   <!-- pixels -->
+      <decorationOffsetY>0</decorationOffsetY>
+      <backgroundOpacity>100</backgroundOpacity> <!-- percent, bar and drawer background images -->
     </barDefaults>
 
     <!-- Slider ranges in the settings window. -->
@@ -32,7 +39,12 @@
       <wheelScrollPixels>5~100</wheelScrollPixels>
       <drawerColumns>0~10</drawerColumns>
       <drawerCellWidth>0~400</drawerCellWidth>
+      <decorationOpacity>0~100</decorationOpacity>
+      <decorationScale>25~300</decorationScale>
+      <decorationOffset>-400~400</decorationOffset>
+      <backgroundOpacity>0~100</backgroundOpacity>
       <widthStep>5</widthStep>
+      <percentStep>5</percentStep>
     </ranges>
 
     <!-- Fixed behaviour, not shown in the settings window. -->
@@ -51,6 +63,9 @@
       <iconSize>32</iconSize>                    <!-- the game's main button icon size -->
       <iconTextGap>4</iconTextGap>
       <drawerSettingsIcon>MainButtonBarSystem/UI/Gear</drawerSettingsIcon> <!-- shipped with this mod; themes can replace it -->
+      <themeAtlasMaxSize>72</themeAtlasMaxSize>            <!-- dev-mode theme check: corners of a 36px button stop growing at 18px -->
+      <themeDecorationMaxSize>2048</themeDecorationMaxSize> <!-- dev-mode theme check: longest side of a decoration or background image -->
+      <themeTileMaxCount>4096</themeTileMaxCount>           <!-- a tiled background needing more tiles is stretched instead -->
     </behaviour>
 
     <!-- Layout of the settings window. -->
@@ -96,6 +111,7 @@
       <themePreviewHeight>36</themePreviewHeight>
       <themePreviewFraction>0.55</themePreviewFraction>
       <themePreviewButtons>4</themePreviewButtons>
+      <themeSettingsGap>12</themeSettingsGap>     <!-- space between the theme cards and the illustration settings below them -->
       <numberFieldWidth>64</numberFieldWidth>
       <sliderRailHeight>4</sliderRailHeight>
       <sliderHandleSize>(10,18)</sliderHandleSize>
