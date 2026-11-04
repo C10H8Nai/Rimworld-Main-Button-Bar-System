@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A theme pack that requires Main Button Bar System (About.xml), so its defs need no MayRequire. -->
+<Defs>
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>MBBSExample_Ember</defName>
+    <label>ember (example)</label>
+    <description>Charcoal and glowing orange, from a theme pack that requires Main Button Bar System.</description>
+    <author>NAI</author>
+    <displayOrder>910</displayOrder>
+    <button>MBBSExample/ThemePack/Ember/Button</button>
+    <buttonMouseover>MBBSExample/ThemePack/Ember/ButtonMouseover</buttonMouseover>
+    <buttonActive>MBBSExample/ThemePack/Ember/ButtonActive</buttonActive>
+    <buttonDisabled>MBBSExample/ThemePack/Ember/ButtonDisabled</buttonDisabled>
+    <labelColor>(0.98, 0.80, 0.62, 1)</labelColor>
+    <labelMouseoverColor>(1, 0.90, 0.55, 1)</labelMouseoverColor>
+    <barBackground>MBBSExample/ThemePack/Ember/Bar</barBackground>
+    <moreButton>MBBSExample/ThemePack/Ember/More</moreButton>
+    <arrowLeft>MBBSExample/ThemePack/Ember/ArrowLeft</arrowLeft>
+    <arrowRight>MBBSExample/ThemePack/Ember/ArrowRight</arrowRight>
+    <drawerBackground>MBBSExample/ThemePack/Ember/Drawer</drawerBackground>
+    <drawerSettingsIcon>MBBSExample/ThemePack/Ember/Gear</drawerSettingsIcon>
+  </MainButtonBarSystem.BarAppearanceDef>
+</Defs>

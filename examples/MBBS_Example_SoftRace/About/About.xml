@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>MBBS Example: Soft Race Mod</name>
+  <author>NAI</author>
+  <packageId>NAI.MBBSExample.SoftRace</packageId>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <!-- No dependency: this stands for a race mod that works with or without Main Button Bar System.
+       loadAfter is optional for content like this; it only keeps the order tidy. -->
+  <loadAfter>
+    <li>NAI.MainButtonBarSystem</li>
+  </loadAfter>
+  <description>Test mod for Main Button Bar System (not for the Workshop). It adds one main button and, only when Main Button Bar System is active, a theme, an icon pack, an arrangement and button defaults. Without Main Button Bar System it must load with no errors.</description>
+</ModMetaData>

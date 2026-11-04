@@ -260,12 +260,15 @@ namespace MainButtonBarSystem
         public static SharedArrangement FromFile(string path, out string error) =>
             FromText(File.ReadAllText(path, Encoding.UTF8), Path.GetFileName(path), out error);
 
-        public static SharedArrangement FromDef(MainButtonArrangementDef def) => new SharedArrangement
+        public static SharedArrangement FromDef(MainButtonArrangementDef def)
         {
-            config = def.config,
-            meta = def.meta ?? new ArrangementMeta { name = def.label, author = def.author, description = def.description },
-            source = def.modContentPack?.Name ?? def.defName,
-        };
+            // The def's own label, author and description fill in what its meta leaves out.
+            var meta = def.meta?.Clone() ?? new ArrangementMeta();
+            if (meta.name.NullOrEmpty()) meta.name = def.LabelCap;
+            if (meta.author.NullOrEmpty()) meta.author = def.author;
+            if (meta.description.NullOrEmpty()) meta.description = def.description;
+            return new SharedArrangement { config = def.config, meta = meta, source = def.modContentPack?.Name ?? def.defName };
+        }
 
         /// <summary>Arrangement files in the exports folder, newest first.</summary>
         public static IEnumerable<FileInfo> ExportedFiles()

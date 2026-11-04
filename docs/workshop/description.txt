@@ -13,7 +13,7 @@ Take control of the bottom bar. With a big mod list it can hold dozens of button
 [*]Label alignment, gap, minimum and default widths, drawer columns and cell width, every value with a Default button.
 [*]Hotkeys for every button, including ones the game gives none; hidden and drawer buttons keep their keys; conflicts are explained.
 [*]Settings are per save, with a default template for new games.
-[*]Export / import arrangements as a file or as text to paste in Discord, or ship one as a tiny XML mod.
+[*]Share arrangements: export with a name as a file or as text for Discord. Before importing you see what fits your game (buttons from mods you lack, a missing theme or icons) and pick which parts to take. One button turns your arrangement into a Workshop-ready mod, PNG icons included.
 [*]Themes: the vanilla look by default, plus five built-in themes in colours inspired by the expansions (Imperial, Creed, Gene Lab, Void, Starfarer; no expansion needed), with previews in the Appearance tab. Theme mods need only XML and images.
 [*]Simple and Advanced views; 29 languages.
 [/list]
@@ -28,7 +28,7 @@ Take control of the bottom bar. With a big mod list it can hold dozens of button
 [/list]
 
 [h2]For modders[/h2]
-Five extension points, the built-in features use them too: display modes, themes, compatibility bridges, per-button defaults in XML, and a query API (which buttons are on the bar, where the bar is). Arrangements and icon packs need only XML. See API.md in the mod folder.
+Five extension points, the built-in features use them too: display modes, themes, compatibility bridges, per-button defaults in XML, and a query API (which buttons are on the bar, where the bar is). Themes, arrangements and icon packs need only XML and images, and any mod can carry them without requiring this one (a race mod can ship its own bar theme). See API.md in the mod folder.
 
 Settings: Options > Mod settings > Main Button Bar System, or the gear in the "More" drawer.
 
@@ -43,7 +43,8 @@ Settings: Options > Mod settings > Main Button Bar System, or the gear in the "M
 [*]按钮可固定在左端或右端；菜单默认锁定在最右边。
 [*]每个按钮可选只显示文字、只显示图标、图标＋文字，可换图标或导入自己的 PNG（存放在模组文件夹外，更新不会被删）。
 [*]快捷键：原版没有快捷键的按钮也能设置；隐藏或收进抽屉的按钮快捷键照样有效。
-[*]设置跟着存档走，并有新游戏用的默认模板；可导出／导入排法。
+[*]设置跟着存档走，并有新游戏用的默认模板。
+[*]分享排法：取名后导出成文件或文本（可贴到 Discord）。导入前会先列出哪些按钮来自你没装的模组、缺少的主题或图标，并可勾选只导入哪几部分。一键做成可上传创意工坊的排序模组，PNG 图标一并打包。
 [*]外观标签页与主题：默认为原版外观，另有 5 款参考各扩展配色的内置主题（帝国、信条、基因实验室、虚空、星航，不需要扩展）；只用 XML＋图片就能做主题模组。
 [*]兼容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可选择由谁绘制（默认由对方绘制）；导入对方设置为实验性功能。
 [*]兼容 Better Sliders：本模组的滑块自行绘制并附数字框，不会被盖住。
@@ -57,7 +58,8 @@ Settings: Options > Mod settings > Main Button Bar System, or the gear in the "M
 [*]按鈕可固定在左端或右端；選單預設鎖定在最右邊。
 [*]每顆按鈕可選只顯示文字、只顯示圖示、圖示＋文字，可換圖示或匯入自己的 PNG（放在模組資料夾外，更新不會被刪）。
 [*]快捷鍵：原版沒有快捷鍵的按鈕也能設定；隱藏或收進抽屜的按鈕快捷鍵照樣有效。
-[*]設定跟著存檔走，並有新遊戲用的預設範本；可匯出／匯入排法。
+[*]設定跟著存檔走，並有新遊戲用的預設範本。
+[*]分享排法：取名後匯出成檔案或文字（可貼到 Discord）。匯入前會先列出哪些按鈕來自你沒裝的模組、缺少的主題或圖示，並可勾選只匯入哪幾部分。一鍵做成可上傳工作坊的排序模組，PNG 圖示一起打包。
 [*]外觀分頁與主題：預設為原版外觀，另有 5 款參考各擴充配色的內建主題（帝國、信條、基因實驗室、虛空、星航，不需要擴充）；只用 XML＋圖片就能做主題模組。
 [*]相容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可選擇由誰繪製（預設由對方繪製）；匯入對方設定為實驗性功能。
 [*]相容 Better Sliders：本模組的滑桿自行繪製並附數字框，不會被蓋住。

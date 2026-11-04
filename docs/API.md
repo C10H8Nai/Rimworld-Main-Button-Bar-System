@@ -6,6 +6,20 @@ extension points ("slots"); add-ons use the same ones. Everything lives in the `
 Add-ons only need XML for the "button defaults" and "arrangement" slots. The other slots take a small DLL that
 references `MainButtonBarSystem.dll`; add `NAI.MainButtonBarSystem` to your `modDependencies` and `loadAfter`.
 
+What you can make, from the bar's top to its bottom:
+
+| You make | How | Needs a DLL | Section |
+|---|---|---|---|
+| A mod with main buttons (race, faction, UI mod) | Say how your buttons should start; ship a theme or icons too, optionally | No | 1, "Shipping content inside another mod" |
+| A mod that draws the whole bar itself | A compatibility bridge, so players choose who draws | Yes | 5 |
+| A new way to lay out the bar | A display mode | Yes | 3 |
+| A look | A theme | No | 4 |
+| Icons | An icon pack | No | 2b |
+| A ready-made arrangement | An arrangement def, or let the game write the whole mod for you | No | 2 |
+| A tool that reads the bar | The query API | Yes | "Query API" |
+
+Working examples of the XML-only kinds are in the repository's `examples/` folder.
+
 ## 1. Button defaults (XML only)
 
 Declare how *your own* button should start out. Players can still change every value; these only replace
@@ -34,8 +48,23 @@ To set defaults on another mod's button, use a `PatchOperationAddModExtension` p
 
 Ship a ready-made arrangement. Players see it under **Import** in the settings window.
 
-The easiest way to write one: arrange the bar in game, then **Export → Copy as mod XML**, paste it into a file
-under your mod's `Defs` folder and change `defName` and `label`.
+The easiest way: arrange the bar in game, then **Export → Create an arrangement mod**. It asks for a name,
+author, description and packageId and writes a complete mod into the game's `Mods` folder: `About.xml` (depending
+on this mod), the arrangement def, and the PNG icons the arrangement uses (copied into its `Textures` folder, so
+subscribers get them). Restart, enable it, and upload it from the mod list.
+
+To put an arrangement into a mod you already have, use **Export → Copy as mod XML** and save it as a `.xml` file in
+your `Defs` folder (see "Shipping content inside another mod" if that mod must also work without this one).
+
+Players can also share plain files: **Export → Save as a file** writes `<name>.xml` to
+`…/RimWorld by Ludeon Studios/MainButtonBarSystem/Exports/`, and files placed there appear under **Import**.
+**Copy as text** is the same file as text, for Discord and the like.
+
+Every export carries a `meta` node beside `config`: name, author, description, game and mod version, and every
+main button of the exporting game with its mod. On import, players see a report first (buttons both games have,
+buttons from mods they lack grouped by mod, a missing theme or icons) and pick which parts to take: order and
+placement, sizes and alignment, names, icons, theme. Buttons the exporting game did not have keep the player's own
+settings. `meta` is optional; files without it import as before, and older versions of this mod ignore it.
 
 ```xml
 <Defs>
@@ -73,6 +102,11 @@ before the game menu button.
 
 Leave out any field you do not want to set. Number fields left out (or `-1`) and switches left out (or `Default`)
 follow the player's tuning defaults; see below.
+
+`meta` fields (all optional, in a def beside `config`): `name`, `author`, `description`, `gameVersion`, `modVersion`,
+`exported`, `buttons` (each `li` with `defName`, `mod`, `packageId`: every button of the game it was made in, which
+tells "left unchanged" apart from "not installed"), `appearanceMod`, `displayModeMod`. Without `buttons`, only the
+buttons the arrangement orders or changes count as known to it.
 
 ## 2b. Icon packs (XML only)
 
@@ -288,6 +322,38 @@ The default worker removes the other mod's Harmony patches on `MainButtonsRoot.D
 `OtherModSettings` reads another mod's `ModSettings` by field name without failing (missing fields give null), and
 `ButtonDefaults.SetRuntimeDefault` sets a button default while the game runs. Priority changes apply after a
 restart.
+
+## Shipping content inside another mod
+
+Themes, icon packs, arrangements and button defaults are defs and textures, and the game reads defs and textures
+from every active mod. So any mod can carry them: a race mod can ship its own bar theme, and the Appearance tab
+lists it with the race mod's name. Load order does not matter for them.
+
+The one rule: if your mod must also work **without** Main Button Bar System, nothing of this mod's may load then,
+or the game logs "Could not find type MainButtonBarSystem...". Pick one:
+
+1. **A folder read only when this mod is active** (recommended for themes, since their textures come along):
+   ```xml
+   <!-- LoadFolders.xml in your mod's root -->
+   <loadFolders>
+     <v1.7>
+       <li>/</li>
+       <li IfModActive="NAI.MainButtonBarSystem">Compat/MainButtonBar</li>
+     </v1.7>
+   </loadFolders>
+   ```
+   Put `Defs/` and `Textures/` for this mod under `Compat/MainButtonBar/`. Without a `LoadFolders.xml` the game
+   reads only your root folder, so adding one means listing `/` (and any version folders you use) yourself.
+2. **`MayRequire` on a whole def**: `<MainButtonBarSystem.BarAppearanceDef MayRequire="NAI.MainButtonBarSystem">`.
+   Textures it points to may sit in your normal `Textures/` folder; they are simply unused without this mod.
+3. **`MayRequire` on a list item**, for button defaults on your own `MainButtonDef` (section 1).
+
+Use texture paths under a folder of your own (`Textures/MyRaceMod/MBBS/...`): when two mods have the same path,
+the one loaded last wins. If a player picks your theme and later removes your mod, the bar falls back to the
+vanilla look; nothing breaks.
+
+`examples/MBBS_Example_SoftRace` in the repository uses all three ways; `examples/MBBS_Example_ThemePack` is a
+theme pack that simply requires this mod.
 
 ## Depending on this mod softly
 
