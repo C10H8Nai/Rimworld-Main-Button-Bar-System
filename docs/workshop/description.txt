@@ -14,7 +14,7 @@ Take control of the bottom bar. With a big mod list it can hold dozens of button
 [*]Hotkeys for every button, including ones the game gives none; hidden and drawer buttons keep their keys; conflicts are explained.
 [*]Settings are per save, with a default template for new games.
 [*]Export / import arrangements as a file or as text to paste in Discord, or ship one as a tiny XML mod.
-[*]Themes: an Appearance tab with previews. Theme mods need only XML and images.
+[*]Themes: the vanilla look by default, plus five built-in themes in colours inspired by the expansions (Imperial, Creed, Gene Lab, Void, Starfarer; no expansion needed), with previews in the Appearance tab. Theme mods need only XML and images.
 [*]Simple and Advanced views; 29 languages.
 [/list]
 
@@ -22,7 +22,8 @@ Take control of the bottom bar. With a big mod list it can hold dozens of button
 [list]
 [*]Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]. RimWorld 1.7.
 [*]Buttons are still drawn by the game, so icon packs (Bradson's Main Button Icons, Vanilla Textures Expanded), replaced windows (Modern History Menu) and added buttons keep working.
-[*]Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected. You choose who draws the bar; their settings are shown for reference and can be imported. Default: the other mod keeps the bar.
+[*]Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected. You choose who draws the bar; default: the other mod keeps it. Their settings are shown for reference; importing them is experimental.
+[*]Works with Better Sliders: this mod draws its own sliders with a number box, so nothing overlaps.
 [*]Removing this mod from a save logs one "could not find class" message on the next load; this is harmless.
 [/list]
 
@@ -43,8 +44,9 @@ Settings: Options > Mod settings > Main Button Bar System, or the gear in the "M
 [*]每个按钮可选只显示文字、只显示图标、图标＋文字，可换图标或导入自己的 PNG（存放在模组文件夹外，更新不会被删）。
 [*]快捷键：原版没有快捷键的按钮也能设置；隐藏或收进抽屉的按钮快捷键照样有效。
 [*]设置跟着存档走，并有新游戏用的默认模板；可导出／导入排法。
-[*]外观分页与主题；只用 XML＋图片就能做主题模组。
-[*]兼容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可选择由谁绘制，并可导入对方的设置。
+[*]外观分页与主题：默认为原版外观，另有 5 款参考各扩展配色的内置主题（帝国、信条、基因实验室、虚空、星航，不需要扩展）；只用 XML＋图片就能做主题模组。
+[*]兼容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可选择由谁绘制（默认由对方绘制）；导入对方设置为实验性功能。
+[*]兼容 Better Sliders：本模组的滑块自行绘制并附数字框，不会被盖住。
 [/list]
 需要 Harmony。从存档中移除本模组时，下次读档会出现一次「找不到类别」的记录，不影响游戏。
 
@@ -56,7 +58,8 @@ Settings: Options > Mod settings > Main Button Bar System, or the gear in the "M
 [*]每顆按鈕可選只顯示文字、只顯示圖示、圖示＋文字，可換圖示或匯入自己的 PNG（放在模組資料夾外，更新不會被刪）。
 [*]快捷鍵：原版沒有快捷鍵的按鈕也能設定；隱藏或收進抽屜的按鈕快捷鍵照樣有效。
 [*]設定跟著存檔走，並有新遊戲用的預設範本；可匯出／匯入排法。
-[*]外觀分頁與主題；只用 XML＋圖片就能做主題模組。
-[*]相容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可選擇由誰繪製，並可匯入對方的設定。
+[*]外觀分頁與主題：預設為原版外觀，另有 5 款參考各擴充配色的內建主題（帝國、信條、基因實驗室、虛空、星航，不需要擴充）；只用 XML＋圖片就能做主題模組。
+[*]相容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可選擇由誰繪製（預設由對方繪製）；匯入對方設定為實驗性功能。
+[*]相容 Better Sliders：本模組的滑桿自行繪製並附數字框，不會被蓋住。
 [/list]
 需要 Harmony。從存檔中移除本模組時，下次讀檔會出現一次「找不到類別」的紀錄，不影響遊戲。

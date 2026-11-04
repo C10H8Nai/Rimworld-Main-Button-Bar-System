@@ -22,8 +22,9 @@ Q = N // 4      # outer quarter: border art must stay inside this
 
 # Palettes measured from the official logos and art and from the game's data (docs/research/dlc-visuals-2026-11-04.md).
 # base: button fill; edge: main border; outline: dark line outside the border (or None); rule: thin inner line;
-# accent: hover/active underline; icon: arrows and gear (defaults to edge); ornament: corner style (corners only:
-# the game stretches the middle of each edge).
+# accent: hover/active underline; icon: arrows and gear (defaults to edge); tile: gene-tile corner colour (defaults
+# to rule); rivet: hull rivet colour (defaults to a lighter edge); ornament: corner style (corners only: the game
+# stretches the middle of each edge).
 THEMES = {
     # Royalty: navy body, gold double hairline (logo gold), ivory labels, psy-teal underline, gold finials.
     "Imperial": dict(base=(36, 42, 48), edge=(226, 208, 109), outline=None, rule=(150, 136, 70), accent=(189, 247, 204),
@@ -31,15 +32,18 @@ THEMES = {
     # Ideology: deep teal body, heavy black outline with coral border (logo coral), teal inner rule, gold roundels.
     "Creed": dict(base=(32, 64, 70), edge=(224, 100, 98), outline=(8, 8, 10), rule=(57, 111, 115), accent=(218, 162, 33),
                   active=(44, 84, 90), ornament="roundel"),
-    # Biotech: blue body, teal border (primaryColor), mauve gene-tile corners, crimson active rule.
-    "GeneLab": dict(base=(29, 50, 92), edge=(125, 179, 179), outline=None, rule=(143, 103, 146), accent=(149, 208, 252),
-                    active=(40, 66, 118), ornament="genetab", active_rule=(192, 73, 83)),
-    # Anomaly: void black body, monolith-stone border, red glowing inset line, faceted shard corners.
-    "Void": dict(base=(16, 18, 22), edge=(75, 64, 64), outline=None, rule=(166, 49, 49), accent=(166, 49, 49),
-                 active=(36, 22, 24), ornament="shard", icon=(190, 64, 64)),
-    # Odyssey (unverified palette): space-black body, steel hull border, rivets, cyan thruster strip.
-    "Starfarer": dict(base=(26, 28, 34), edge=(109, 110, 118), outline=None, rule=(70, 72, 80), accent=(80, 230, 236),
-                      active=(36, 40, 50), ornament="hull", icon=(80, 230, 236)),
+    # Biotech: teal-blue body, teal border (#66B0B5, from the expansion's preview art), deep red gene-tile corners
+    # (#A84457) and a deep red rule on the open button.
+    "GeneLab": dict(base=(24, 56, 68), edge=(102, 176, 181), outline=None, rule=(60, 112, 120), accent=(150, 220, 224),
+                    active=(30, 70, 84), ornament="genetab", tile=(168, 68, 87), active_rule=(168, 68, 87)),
+    # Anomaly: void black body, sage border, arrows and gear (#AEBC7E, the expansion's main colour); red only as a
+    # thin inset line, glowing and underlined under the mouse.
+    "Void": dict(base=(17, 19, 17), edge=(174, 188, 126), outline=None, rule=(150, 44, 44), accent=(196, 58, 54),
+                 active=(30, 34, 26), ornament="shard", glow_on_hover=True),
+    # Odyssey: deep space-purple body, purple hull border, arrows and gear (#9074BB, from the expansion's preview art),
+    # cyan rivets and thruster underline as the second colour.
+    "Starfarer": dict(base=(30, 26, 44), edge=(144, 116, 187), outline=None, rule=(84, 68, 112), accent=(80, 230, 236),
+                      active=(44, 36, 66), ornament="hull", icon=(176, 150, 222), rivet=(90, 210, 220)),
 }
 
 
@@ -94,15 +98,17 @@ def ornament(d, theme, color):
             d.ellipse([x - 1, y - 1, x + 1, y + 1], fill=theme["accent"] + (255,))
         elif style == "genetab":
             x, y = cx + 4 * sx, cy + 4 * sy
-            d.rectangle([min(x, x + 5 * sx), min(y, y + 5 * sy), max(x, x + 5 * sx), max(y, y + 5 * sy)], fill=theme["rule"] + (255,))
+            d.rectangle([min(x, x + 5 * sx), min(y, y + 5 * sy), max(x, x + 5 * sx), max(y, y + 5 * sy)],
+                        fill=theme.get("tile", theme["rule"]) + (255,))
         elif style == "shard":
             d.line([(cx + 7 * sx, cy), (cx, cy + 7 * sy)], fill=theme["rule"] + (255,), width=1)
             d.line([(cx + 11 * sx, cy + 2 * sy), (cx + 2 * sx, cy + 11 * sy)], fill=shade(theme["edge"], 20) + (255,), width=1)
         elif style == "hull":
+            rivet = theme.get("rivet", shade(theme["edge"], 50)) + (255,)
             x, y = cx + 9 * sx, cy + 4 * sy
-            d.ellipse([x - 1.5, y - 1.5, x + 1.5, y + 1.5], fill=shade(theme["edge"], 50) + (255,))
+            d.ellipse([x - 1.5, y - 1.5, x + 1.5, y + 1.5], fill=rivet)
             x, y = cx + 4 * sx, cy + 9 * sy
-            d.ellipse([x - 1.5, y - 1.5, x + 1.5, y + 1.5], fill=shade(theme["edge"], 50) + (255,))
+            d.ellipse([x - 1.5, y - 1.5, x + 1.5, y + 1.5], fill=rivet)
 
 
 def button(theme, fill, edge, state="normal"):
@@ -130,7 +136,8 @@ def button(theme, fill, edge, state="normal"):
         # Accent underline: psy teal, gold, gene blue, red glow or thruster cyan.
         y = N - 1 - inner - 1
         d.line([(inner + 1, y), (N - 2 - inner, y)], fill=theme["accent"] + (255,), width=2)
-    if style == "shard" and state != "disabled":
+    glow_states = ("mouseover", "active") if theme.get("glow_on_hover") else ("normal", "mouseover", "active")
+    if style == "shard" and state in glow_states:
         glow = Image.new("RGBA", (N, N))
         ImageDraw.Draw(glow).rectangle([inner, inner, N - 1 - inner, N - 1 - inner], outline=theme["rule"] + (180 if state == "normal" else 255,), width=2)
         img = Image.alpha_composite(img, glow.filter(ImageFilter.GaussianBlur(1.5)))

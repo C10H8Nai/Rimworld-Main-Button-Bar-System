@@ -19,6 +19,7 @@ python3 tools/make_release.py "D:/RimWorldUpload/MainButtonBarSystem"
 
 - [ ] `About/About.xml`：`modVersion` 要和這次的版本一致；`description` 是遊戲內模組清單看到的簡短說明。
 - [ ] `About/Preview.png`：目前是佔位圖（640×360，用圖形畫的，沒有用遊戲美術）。要換的話保持 16:9，檔案小於 1 MB。
+  用實機截圖換：`python3 tools/make_preview.py 原版截圖.png 本模組截圖.png --before-crop x,y,w,h --after-crop x,y,w,h`（上半原版擠成縮寫的列，下半捲動＋「更多」抽屜；只用遊戲畫面和本模組自己的主題，不放 DLC 美術；腳本會確保小於 1 MB）。
 - [ ] 把上傳資料夾放進 `RimWorld/Mods/`。暫時停用 repo 那份，避免同一個 packageId 出現兩次。
 - [ ] 進遊戲確認：
   - `[Main Button Bar System] Loaded.` 有出現；
