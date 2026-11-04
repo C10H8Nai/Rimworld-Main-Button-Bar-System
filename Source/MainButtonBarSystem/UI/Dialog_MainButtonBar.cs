@@ -311,7 +311,7 @@ namespace MainButtonBarSystem
         }
 
         /// <summary>
-        /// A still picture of a theme from its own textures: normal, mouse-over and active buttons, then More. It does
+        /// A still picture of a theme from its own textures: normal, mouse-over, active and disabled buttons, then More. It does
         /// not run the game's button code, so it works at the main menu too.
         /// </summary>
         private static void DrawThemePreview(BarAppearanceDef theme, Rect rect)
@@ -327,7 +327,8 @@ namespace MainButtonBarSystem
             DrawPreviewArrow(theme, new Rect(rect.x, rect.y, arrow, rect.height), true);
             DrawPreviewArrow(theme, new Rect(rect.x + arrow + w * samples.Count, rect.y, arrow, rect.height), false);
 
-            var states = new[] { ButtonVisualState.Normal, ButtonVisualState.Mouseover, ButtonVisualState.Active };
+            // One sample per state; disabled buttons show no label on the bar either.
+            var states = new[] { ButtonVisualState.Normal, ButtonVisualState.Mouseover, ButtonVisualState.Active, ButtonVisualState.Disabled };
             for (int i = 0; i < count; i++)
             {
                 bool isMore = i == count - 1;
@@ -339,9 +340,10 @@ namespace MainButtonBarSystem
                 bool replacesTint = atlas != null;
                 atlas ??= worker.ButtonAtlas(state, out replacesTint) ?? Widgets.ButtonSubtleAtlas;
                 var color = GUI.color;
-                if (state != ButtonVisualState.Normal && !replacesTint) GUI.color = GenUI.MouseoverColor;
+                if ((state == ButtonVisualState.Mouseover || state == ButtonVisualState.Active) && !replacesTint) GUI.color = GenUI.MouseoverColor;
                 Widgets.DrawAtlas(r, atlas);
                 GUI.color = color;
+                if (state == ButtonVisualState.Disabled) continue;
                 string label = more ? worker.MoreButtonLabel(samples.Count) : samples[i];
                 ButtonPainter.DrawLabel(r, label.Truncate(r.width), worker.LabelColor(state) ?? Color.white, TextAnchor.MiddleCenter, state != ButtonVisualState.Normal);
             }

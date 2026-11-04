@@ -256,8 +256,14 @@ namespace MainButtonBarSystem
         /// <summary>Whether the button being drawn is pressed, open or disabled; mouse-over is decided per rect.</summary>
         public static ButtonVisualState ActiveBaseState { get; private set; }
 
-        /// <summary>Icon to draw left of the label ("icon and text" mode); null otherwise.</summary>
-        public static Texture2D ActiveBothIcon { get; private set; }
+        /// <summary>
+        /// Icon this mod draws itself for the button being drawn: left of the label ("icon and text") or centred
+        /// ("icon only", see <see cref="ActiveIconOnly"/>); null when the game draws the button's icon.
+        /// </summary>
+        public static Texture2D ActiveIcon { get; private set; }
+
+        /// <summary>True when <see cref="ActiveIcon"/> is drawn alone, with no label.</summary>
+        public static bool ActiveIconOnly { get; private set; }
 
         private static MainButtonBarTuningDef.Behaviour B => MainButtonBarTuningDef.Current.behaviour;
 
@@ -266,7 +272,10 @@ namespace MainButtonBarSystem
 
         /// <summary>
         /// Draws through the game's DoButton. Icon settings work by swapping the def's icon only for this call (the
-        /// game draws the icon when MainButtonDef.Icon is set and the label otherwise), then restoring it.
+        /// game draws the icon when MainButtonDef.Icon is set and the label otherwise), then restoring it. For "icon
+        /// and text" and "icon only" the game gets no icon and draws the label; the label patch then draws the icon
+        /// itself, so mods that change how DoButton places icons and labels (Vanilla Textures Expanded shows both when
+        /// the button is wide enough) cannot add the label back.
         /// </summary>
         public static void Draw(BarButton button, Rect rect, BarAppearanceWorker theme)
         {
@@ -297,13 +306,16 @@ namespace MainButtonBarSystem
                         HideIcon(def);
                         break;
                     case IconMode.Both:
+                    case IconMode.Icon:
+                        // Without an icon both fall back to the label, like the game.
                         if (effective != null)
                         {
                             HideIcon(def);
-                            ActiveBothIcon = effective;
+                            ActiveIcon = effective;
+                            ActiveIconOnly = mode == IconMode.Icon;
                         }
                         break;
-                    default: // Default and Icon: the game shows the icon whenever there is one.
+                    default: // Default: the game (and mods changing DoButton) decide, with the custom icon if set.
                         if (custom != null) IconField(def) = custom;
                         break;
                 }
@@ -316,7 +328,8 @@ namespace MainButtonBarSystem
                 ActiveAlign = LabelAlign.Default;
                 ActiveTheme = null;
                 ActiveBaseState = ButtonVisualState.Normal;
-                ActiveBothIcon = null;
+                ActiveIcon = null;
+                ActiveIconOnly = false;
             }
         }
 
@@ -353,7 +366,7 @@ namespace MainButtonBarSystem
             if (over) icon.position += B.hoverLabelOffset;
             var color = GUI.color;
             GUI.color = Color.white;
-            GUI.DrawTexture(icon, ActiveBothIcon);
+            GUI.DrawTexture(icon, ActiveIcon);
             GUI.color = color;
 
             float textX = rect.x + B.labelSidePadding + size + B.iconTextGap;
@@ -365,6 +378,18 @@ namespace MainButtonBarSystem
                 _ => TextAnchor.MiddleLeft,
             };
             DrawLabel(textRect, label, labelColor ?? Color.white, anchor, over);
+        }
+
+        /// <summary>"Icon only": the icon centred, shifted under the mouse like the game's own icons.</summary>
+        internal static void DrawIconOnly(Rect rect)
+        {
+            float size = Mathf.Min(B.iconSize, rect.height, rect.width);
+            var icon = new Rect(rect.center.x - size / 2f, rect.center.y - size / 2f, size, size);
+            if (Mouse.IsOver(rect)) icon.position += B.hoverLabelOffset;
+            var color = GUI.color;
+            GUI.color = Color.white;
+            GUI.DrawTexture(icon, ActiveIcon);
+            GUI.color = color;
         }
 
         /// <summary>A subtle button (More, arrows) drawn with the theme's atlas and label colour.</summary>

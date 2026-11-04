@@ -338,6 +338,9 @@ removal.
 ## Limits to know
 
 - Buttons are always drawn through the game's `MainButtonWorker.DoButton`, so changes you make there apply.
+- Exception: with "icon only" or "icon and text" chosen, the game gets the button without its icon and this mod
+  draws the icon itself (inside `Widgets.ButtonTextSubtle`), so patches that move the icon or add the label back
+  (Vanilla Textures Expanded's icon-and-label mode) only affect buttons left on "default".
 - The order on screen comes from the player's settings and the game's defs, not from
   `MainButtonsRoot.allButtonsInOrder`; mods that rewrite that list do not change this mod's order (an import is
   planned instead).
