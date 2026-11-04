@@ -159,4 +159,8 @@
   <MBBS_Ref_Name>{0}：改名為「{1}」</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}：只顯示文字</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}：自訂圖示 {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>圖示與文字（所有按鈕）</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>所有按鈕顯示圖示和文字的方式；個別按鈕另有設定時以該按鈕為準。</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>讓 {0} 顆有個別設定的按鈕都改成跟這裡</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>跟整條列（{0}）</MBBS_IconMode_FollowBar>
 </LanguageData>

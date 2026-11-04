@@ -244,6 +244,13 @@ Textures that are missing are reported once in the log, and that part falls back
 Label colours, mouse-over and active states also apply to the "More" button, the scroll arrows and the drawer.
 Translate `label` and `description` in `Languages/<Language>/DefInjected/MainButtonBarSystem.BarAppearanceDef/`.
 
+### Built-in themes as examples
+
+This mod ships five themes made exactly this way: `MBBS_Imperial`, `MBBS_Creed`, `MBBS_GeneLab`, `MBBS_Void` and
+`MBBS_Starfarer` in `Defs/MainButtonBarSystem/BarAppearances.xml`, with textures in
+`Textures/MainButtonBarSystem/Themes/`. Their textures are drawn by `tools/gen_theme_textures.py` (Pillow) from a
+few colours per theme, which is a quick way to start a theme of your own.
+
 ### Effects beyond textures
 
 Set `workerClass` to a class deriving from `BarAppearanceWorker` and override what you need:

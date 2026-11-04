@@ -127,6 +127,16 @@ namespace MainButtonBarSystem
         public DefaultableBool fillScreen;
         public LabelAlign labelAlign = LabelAlign.Default;
 
+        /// <summary>
+        /// Icon / text display for every button whose own setting is Default ("follow the bar"). Default here means
+        /// the game's behaviour.
+        /// </summary>
+        public IconMode iconMode = IconMode.Default;
+
+        /// <summary>The display a button really uses: its own setting, else the bar's.</summary>
+        public IconMode IconModeFor(ButtonOverride button) =>
+            button != null && button.iconMode != IconMode.Default ? button.iconMode : iconMode;
+
         /// <summary>Game menu button stays at the right end and cannot be hidden or moved (spec 3.3, 4.16).</summary>
         public DefaultableBool menuLocked;
 
@@ -170,7 +180,7 @@ namespace MainButtonBarSystem
         /// </summary>
         public bool IsUntouched =>
             (displayMode ?? VanillaMode) == VanillaMode && (appearance ?? VanillaAppearance) == VanillaAppearance && order == null &&
-            labelAlign == LabelAlign.Default && overrides.All(IsRedundant) && !ButtonDefaults.AnyChangesVanillaBar;
+            labelAlign == LabelAlign.Default && iconMode == IconMode.Default && overrides.All(IsRedundant) && !ButtonDefaults.AnyChangesVanillaBar;
 
         /// <summary>Effective settings of a button: the user's override, else its mod's defaults, else empty. Never null; do not modify.</summary>
         public ButtonOverride Get(string defName)
@@ -223,6 +233,7 @@ namespace MainButtonBarSystem
             gap = fresh.gap;
             fillScreen = fresh.fillScreen;
             labelAlign = fresh.labelAlign;
+            iconMode = fresh.iconMode;
             menuLocked = fresh.menuLocked;
             moreButtonWidth = fresh.moreButtonWidth;
             arrowWidth = fresh.arrowWidth;
@@ -255,6 +266,7 @@ namespace MainButtonBarSystem
             Scribe_Values.Look(ref gap, "gap", Unset);
             Scribe_Values.Look(ref fillScreen, "fillScreen", DefaultableBool.Default);
             Scribe_Values.Look(ref labelAlign, "labelAlign", LabelAlign.Default);
+            Scribe_Values.Look(ref iconMode, "iconMode", IconMode.Default);
             Scribe_Values.Look(ref menuLocked, "menuLocked", DefaultableBool.Default);
             Scribe_Values.Look(ref moreButtonWidth, "moreButtonWidth", Unset);
             Scribe_Values.Look(ref arrowWidth, "arrowWidth", Unset);

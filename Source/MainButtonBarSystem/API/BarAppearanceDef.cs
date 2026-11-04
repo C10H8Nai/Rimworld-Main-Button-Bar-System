@@ -273,7 +273,7 @@ namespace MainButtonBarSystem
             bool themed = theme != null && theme.def.ChangesButtons;
             var settings = button.Settings ?? ButtonOverride.Empty;
             var custom = CustomIcons.Resolve(settings.icon);
-            var mode = settings.iconMode;
+            var mode = BarConfigManager.Active.IconModeFor(settings);
             if (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default)
             {
                 def.Worker.DoButton(rect);

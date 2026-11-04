@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}：填满画面：{1}",
     "MBBS_Ref_Name": "{0}：改名为「{1}」",
     "MBBS_Ref_NoIcon": "{0}：只显示文字",
-    "MBBS_Ref_Icon": "{0}：自定义图标 {1}"
+    "MBBS_Ref_Icon": "{0}：自定义图标 {1}",
+    "MBBS_IconModeAll": "图标与文字（所有按钮）",
+    "MBBS_IconModeAllTip": "所有按钮显示图标和文字的方式；个别按钮另有设置时以该按钮为准。",
+    "MBBS_IconModeClearAll": "让 {0} 个有个别设置的按钮都改为跟随这里",
+    "MBBS_IconMode_FollowBar": "跟随整条栏（{0}）"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "原版",
-      "Vanilla.description": "游戏原本的按钮外观。"
+      "Vanilla.description": "游戏原本的按钮外观。",
+      "MBBS_Imperial.label": "帝国",
+      "MBBS_Imperial.description": "深紫配金色，取自「皇权」扩展的宫廷氛围。",
+      "MBBS_Creed.label": "信条",
+      "MBBS_Creed.description": "深色皮革与青铜，配上羊皮纸色文字，取自「文化」扩展。",
+      "MBBS_GeneLab.label": "基因实验室",
+      "MBBS_GeneLab.description": "深青绿配上明亮的实验室绿边框，取自「生物技术」扩展。",
+      "MBBS_Void.label": "虚空",
+      "MBBS_Void.description": "近乎全黑，透着暗红微光，取自「异象」扩展。",
+      "MBBS_Starfarer.label": "星航",
+      "MBBS_Starfarer.description": "深海军蓝配钢蓝，切角边框，取自「奥德赛」扩展。"
     }
   }
 }

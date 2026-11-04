@@ -8,4 +8,106 @@
     <workerClass>MainButtonBarSystem.BarAppearanceWorker</workerClass>
     <displayOrder>0</displayOrder>
   </MainButtonBarSystem.BarAppearanceDef>
+
+  <!-- Built-in themes. Textures are drawn by tools/gen_theme_textures.py; they borrow each expansion's colour mood,
+       not its art. They also serve as examples for theme mods (docs/API.md section 4). -->
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>MBBS_Imperial</defName>
+    <label>imperial</label>
+    <description>Deep purple and gold, after the courtly mood of the Royalty expansion.</description>
+    <author>NAI</author>
+    <displayOrder>10</displayOrder>
+    <button>MainButtonBarSystem/Themes/Imperial/Button</button>
+    <buttonMouseover>MainButtonBarSystem/Themes/Imperial/ButtonMouseover</buttonMouseover>
+    <buttonActive>MainButtonBarSystem/Themes/Imperial/ButtonActive</buttonActive>
+    <buttonDisabled>MainButtonBarSystem/Themes/Imperial/ButtonDisabled</buttonDisabled>
+    <labelColor>(0.93, 0.84, 0.59, 1)</labelColor>
+    <labelMouseoverColor>(1, 0.94, 0.78, 1)</labelMouseoverColor>
+    <barBackground>MainButtonBarSystem/Themes/Imperial/Bar</barBackground>
+    <moreButton>MainButtonBarSystem/Themes/Imperial/More</moreButton>
+    <arrowLeft>MainButtonBarSystem/Themes/Imperial/ArrowLeft</arrowLeft>
+    <arrowRight>MainButtonBarSystem/Themes/Imperial/ArrowRight</arrowRight>
+    <drawerBackground>MainButtonBarSystem/Themes/Imperial/Drawer</drawerBackground>
+    <drawerSettingsIcon>MainButtonBarSystem/Themes/Imperial/Gear</drawerSettingsIcon>
+  </MainButtonBarSystem.BarAppearanceDef>
+
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>MBBS_Creed</defName>
+    <label>creed</label>
+    <description>Dark leather and bronze with parchment labels, after the Ideology expansion.</description>
+    <author>NAI</author>
+    <displayOrder>20</displayOrder>
+    <button>MainButtonBarSystem/Themes/Creed/Button</button>
+    <buttonMouseover>MainButtonBarSystem/Themes/Creed/ButtonMouseover</buttonMouseover>
+    <buttonActive>MainButtonBarSystem/Themes/Creed/ButtonActive</buttonActive>
+    <buttonDisabled>MainButtonBarSystem/Themes/Creed/ButtonDisabled</buttonDisabled>
+    <labelColor>(0.91, 0.83, 0.71, 1)</labelColor>
+    <labelMouseoverColor>(1, 0.93, 0.81, 1)</labelMouseoverColor>
+    <barBackground>MainButtonBarSystem/Themes/Creed/Bar</barBackground>
+    <moreButton>MainButtonBarSystem/Themes/Creed/More</moreButton>
+    <arrowLeft>MainButtonBarSystem/Themes/Creed/ArrowLeft</arrowLeft>
+    <arrowRight>MainButtonBarSystem/Themes/Creed/ArrowRight</arrowRight>
+    <drawerBackground>MainButtonBarSystem/Themes/Creed/Drawer</drawerBackground>
+    <drawerSettingsIcon>MainButtonBarSystem/Themes/Creed/Gear</drawerSettingsIcon>
+  </MainButtonBarSystem.BarAppearanceDef>
+
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>MBBS_GeneLab</defName>
+    <label>gene lab</label>
+    <description>Dark teal with bright lab-green edges, after the Biotech expansion.</description>
+    <author>NAI</author>
+    <displayOrder>30</displayOrder>
+    <button>MainButtonBarSystem/Themes/GeneLab/Button</button>
+    <buttonMouseover>MainButtonBarSystem/Themes/GeneLab/ButtonMouseover</buttonMouseover>
+    <buttonActive>MainButtonBarSystem/Themes/GeneLab/ButtonActive</buttonActive>
+    <buttonDisabled>MainButtonBarSystem/Themes/GeneLab/ButtonDisabled</buttonDisabled>
+    <labelColor>(0.73, 0.98, 0.88, 1)</labelColor>
+    <labelMouseoverColor>(0.89, 1, 0.96, 1)</labelMouseoverColor>
+    <barBackground>MainButtonBarSystem/Themes/GeneLab/Bar</barBackground>
+    <moreButton>MainButtonBarSystem/Themes/GeneLab/More</moreButton>
+    <arrowLeft>MainButtonBarSystem/Themes/GeneLab/ArrowLeft</arrowLeft>
+    <arrowRight>MainButtonBarSystem/Themes/GeneLab/ArrowRight</arrowRight>
+    <drawerBackground>MainButtonBarSystem/Themes/GeneLab/Drawer</drawerBackground>
+    <drawerSettingsIcon>MainButtonBarSystem/Themes/GeneLab/Gear</drawerSettingsIcon>
+  </MainButtonBarSystem.BarAppearanceDef>
+
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>MBBS_Void</defName>
+    <label>void</label>
+    <description>Near-black with a dim crimson glow, after the Anomaly expansion.</description>
+    <author>NAI</author>
+    <displayOrder>40</displayOrder>
+    <button>MainButtonBarSystem/Themes/Void/Button</button>
+    <buttonMouseover>MainButtonBarSystem/Themes/Void/ButtonMouseover</buttonMouseover>
+    <buttonActive>MainButtonBarSystem/Themes/Void/ButtonActive</buttonActive>
+    <buttonDisabled>MainButtonBarSystem/Themes/Void/ButtonDisabled</buttonDisabled>
+    <labelColor>(0.89, 0.77, 0.77, 1)</labelColor>
+    <labelMouseoverColor>(1, 0.67, 0.67, 1)</labelMouseoverColor>
+    <barBackground>MainButtonBarSystem/Themes/Void/Bar</barBackground>
+    <moreButton>MainButtonBarSystem/Themes/Void/More</moreButton>
+    <arrowLeft>MainButtonBarSystem/Themes/Void/ArrowLeft</arrowLeft>
+    <arrowRight>MainButtonBarSystem/Themes/Void/ArrowRight</arrowRight>
+    <drawerBackground>MainButtonBarSystem/Themes/Void/Drawer</drawerBackground>
+    <drawerSettingsIcon>MainButtonBarSystem/Themes/Void/Gear</drawerSettingsIcon>
+  </MainButtonBarSystem.BarAppearanceDef>
+
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>MBBS_Starfarer</defName>
+    <label>starfarer</label>
+    <description>Deep navy and steel blue with cut corners, after the Odyssey expansion.</description>
+    <author>NAI</author>
+    <displayOrder>50</displayOrder>
+    <button>MainButtonBarSystem/Themes/Starfarer/Button</button>
+    <buttonMouseover>MainButtonBarSystem/Themes/Starfarer/ButtonMouseover</buttonMouseover>
+    <buttonActive>MainButtonBarSystem/Themes/Starfarer/ButtonActive</buttonActive>
+    <buttonDisabled>MainButtonBarSystem/Themes/Starfarer/ButtonDisabled</buttonDisabled>
+    <labelColor>(0.81, 0.87, 0.96, 1)</labelColor>
+    <labelMouseoverColor>(0.94, 0.97, 1, 1)</labelMouseoverColor>
+    <barBackground>MainButtonBarSystem/Themes/Starfarer/Bar</barBackground>
+    <moreButton>MainButtonBarSystem/Themes/Starfarer/More</moreButton>
+    <arrowLeft>MainButtonBarSystem/Themes/Starfarer/ArrowLeft</arrowLeft>
+    <arrowRight>MainButtonBarSystem/Themes/Starfarer/ArrowRight</arrowRight>
+    <drawerBackground>MainButtonBarSystem/Themes/Starfarer/Drawer</drawerBackground>
+    <drawerSettingsIcon>MainButtonBarSystem/Themes/Starfarer/Gear</drawerSettingsIcon>
+  </MainButtonBarSystem.BarAppearanceDef>
 </Defs>

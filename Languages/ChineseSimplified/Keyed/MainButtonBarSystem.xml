@@ -159,4 +159,8 @@
   <MBBS_Ref_Name>{0}：改名为「{1}」</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}：只显示文字</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}：自定义图标 {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>图标与文字（所有按钮）</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>所有按钮显示图标和文字的方式；个别按钮另有设置时以该按钮为准。</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>让 {0} 个有个别设置的按钮都改为跟随这里</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>跟随整条栏（{0}）</MBBS_IconMode_FollowBar>
 </LanguageData>

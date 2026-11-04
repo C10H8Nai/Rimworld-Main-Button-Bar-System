@@ -716,6 +716,23 @@ namespace MainButtonBarSystem
                 }
 
                 listing.GapLine();
+                if (SectionHeader(listing, "MBBS_IconModeAll".Translate(), working.iconMode != IconMode.Default, "MBBS_IconModeAllTip".Translate()))
+                    working.iconMode = IconMode.Default;
+                foreach (IconMode iconMode in Enum.GetValues(typeof(IconMode)))
+                {
+                    if (listing.RadioButton(("MBBS_IconMode_" + iconMode).Translate(), working.iconMode == iconMode, L.radioIndent))
+                        working.iconMode = iconMode;
+                }
+                int individual = working.overrides.Count(o => o.iconMode != IconMode.Default);
+                if (individual > 0)
+                {
+                    var row = listing.GetRect(L.textRowHeight);
+                    string clear = "MBBS_IconModeClearAll".Translate(individual);
+                    if (Widgets.ButtonText(new Rect(row.x, row.y, UIUtil.FitButton(L.moveButtonWidth, clear), row.height), clear))
+                        foreach (var o in working.overrides) o.iconMode = IconMode.Default;
+                }
+
+                listing.GapLine();
                 working.menuLocked = BoolSetting(listing, "MBBS_MenuLocked".Translate(), working.menuLocked, D.menuLocked, "MBBS_MenuLockedTip".Translate());
 
                 DrawCompatSettings(listing);
@@ -868,7 +885,10 @@ namespace MainButtonBarSystem
                 working.GetOrCreate(name).iconMode = dflt.iconMode;
             foreach (IconMode mode in Enum.GetValues(typeof(IconMode)))
             {
-                if (listing.RadioButton(("MBBS_IconMode_" + mode).Translate(), o.iconMode == mode, L.radioIndent) && o.iconMode != mode)
+                string label = mode == IconMode.Default
+                    ? "MBBS_IconMode_FollowBar".Translate(("MBBS_IconMode_" + working.iconMode).Translate())
+                    : ("MBBS_IconMode_" + mode).Translate();
+                if (listing.RadioButton(label, o.iconMode == mode, L.radioIndent) && o.iconMode != mode)
                     working.GetOrCreate(name).iconMode = mode;
             }
 

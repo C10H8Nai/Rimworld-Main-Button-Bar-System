@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>原版</Vanilla.label>
   <Vanilla.description>遊戲原本的按鈕外觀。</Vanilla.description>
+  <MBBS_Imperial.label>帝國</MBBS_Imperial.label>
+  <MBBS_Imperial.description>深紫配金色，取自「皇權」擴充的宮廷氛圍。</MBBS_Imperial.description>
+  <MBBS_Creed.label>信條</MBBS_Creed.label>
+  <MBBS_Creed.description>深色皮革與青銅，配上羊皮紙色文字，取自「文化」擴充。</MBBS_Creed.description>
+  <MBBS_GeneLab.label>基因實驗室</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>深青綠配上明亮的實驗室綠邊框，取自「生物技術」擴充。</MBBS_GeneLab.description>
+  <MBBS_Void.label>虛空</MBBS_Void.label>
+  <MBBS_Void.description>近乎全黑，透著暗紅微光，取自「異象」擴充。</MBBS_Void.description>
+  <MBBS_Starfarer.label>星航</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>深海軍藍配鋼藍，切角邊框，取自「奧德賽」擴充。</MBBS_Starfarer.description>
 </LanguageData>
