@@ -249,7 +249,7 @@ Translate `label` and `description` in `Languages/<Language>/DefInjected/MainBut
 
 ### Illustrations: whole images and decorations (API 1.1)
 
-An atlas stretches its middle, so a picture cannot be one. Three optional additions put real illustrations on the
+An atlas stretches its middle, so a picture cannot be one. Four optional additions put real illustrations on the
 bar with no C#; a theme that leaves them out looks exactly as before.
 
 **Background fit.** `barBackgroundFit` and `drawerBackgroundFit` say how `barBackground` / `drawerBackground` fill
@@ -301,18 +301,60 @@ row has a Default button; the defaults and slider ranges are in the tuning def (
 **Label colour when active.** `labelActiveColor` applies while a button is pressed or its tab is open; left out,
 the mouse-over colour, then `labelColor`, are used as before.
 
-The preview the Appearance tab draws shows the background image and the buttons but no decorations (they would
-grow out of the card), so a theme with decorations should ship a `preview` image.
+**Pictures inside buttons.** `buttonImage` puts a picture inside every main button; `buttonImages` gives named
+buttons their own ("this button is this character, that one is that character"). Both are optional, and a button
+with no picture of its own uses `buttonImage`, or none:
+
+```xml
+<buttonImage>                                 <!-- every main button; leave it out for none -->
+  <texture>MyTheme/Buttons/Default</texture>  <!-- required; any size -->
+</buttonImage>
+<buttonImages>
+  <li>
+    <button>Architect</button>                <!-- required: the MainButtonDef's defName (Architect, Work, Research, a mod's button) -->
+    <texture>MyTheme/Buttons/Alice</texture>  <!-- required -->
+    <fit>Cover</fit>                          <!-- Cover (default) / Fit / Stretch; Atlas and Tile are drawn as Stretch -->
+    <anchor>Center</anchor>                   <!-- Left / Center (default) / Right -->
+    <verticalAnchor>Top</verticalAnchor>      <!-- Top / Center (default) / Bottom -->
+    <opacity>1</opacity>                      <!-- 0 to 1 -->
+    <inset>2</inset>                          <!-- pixels kept free inside the button's edge; default 0 -->
+  </li>
+</buttonImages>
+```
+
+`Cover` scales the picture to fill the button keeping its aspect ratio and crops what sticks out; the anchors say
+which part is kept (`verticalAnchor` `Top` keeps the top edge, for a face). `Fit` shows the whole picture and places
+it at the anchors; `Stretch` fills the button, distorting it. A later entry for the same button wins.
+
+Drawing order, for every button on the bar and every cell of the "More" drawer, in every state (disabled too): the
+picture, then the button atlas, then the label and the icon. So the atlas frames the picture: draw your button
+atlases as a frame with a transparent middle (`make_theme.py`: `"hollow": true` in the palette) or the picture is
+covered. The mouse-over and pressed looks stay on the frame; the picture is never tinted. With no button atlas of
+its own, the theme's pictures sit under the game's (mostly opaque) button background, which shows little of them.
+The More button and the scroll arrows never get a picture.
+
+In practice:
+
+- A bar button is 36 pixels tall and usually 33 to 120 pixels wide (wider with few buttons or a wide width
+  setting). A full portrait shows only a strip: crop it first to a wide banner with the face in the middle, or use
+  `verticalAnchor` `Top` (or `Center`) with `Cover`.
+- The label is drawn over the picture. Keep the important part away from the middle, choose label colours that
+  stay readable (`labelColor`), or tell players to pick "icon only" for those buttons.
+- Use `inset` to keep the picture inside the frame's border.
+- A missing picture texture draws nothing (and is reported once, see below); the button still has its frame.
+
+The preview the Appearance tab draws shows the background image, the buttons and their pictures, but no decorations
+(they would grow out of the card), so a theme with decorations should ship a `preview` image.
 
 ### Checks and reloading (development mode)
 
 With development mode on, the mod checks every theme at startup and logs one warning per finding, naming the theme
 and the field: textures that do not load, atlases that are not square, atlases larger than 72×72
-(`behaviour.themeAtlasMaxSize`), decoration or background images with a side over 2048
+(`behaviour.themeAtlasMaxSize`), decoration, background or button pictures with a side over 2048
 (`behaviour.themeDecorationMaxSize`). A missing texture is reported once per session in total: by the check in
 development mode, otherwise by the one-line warning the theme logs when it first draws (as before); it then falls
-back to the game's look. Invalid values in the XML (`opacity` outside 0 to 1, a negative `size`, a tile scale of 0,
-an empty `texture`) are config errors, shown like any other def error. A `Tile` background that would need more
+back to the game's look. Invalid values in the XML (`opacity` outside 0 to 1, a negative `size` or `inset`, a tile scale
+of 0, an empty `texture`, a `buttonImages` entry with no `button`) are config errors, shown like any other def error. A `Tile` background that would need more
 than `behaviour.themeTileMaxCount` tiles (4096) is stretched instead.
 
 In development mode the Appearance tab also has a **Reload theme textures** button: it reads every theme's PNG files
@@ -339,9 +381,9 @@ document. Additions raise the minor number of `MainButtonBarAPI.ApiVersion` (1.1
 
 This mod ships six themes made exactly this way, in `Defs/MainButtonBarSystem/BarAppearances.xml` with textures in
 `Textures/MainButtonBarSystem/Themes/`: `MBBS_Imperial`, `MBBS_Creed`, `MBBS_GeneLab`, `MBBS_Void` and
-`MBBS_Starfarer` use atlases only; `MBBS_Nai` is the example of the illustration fields (a stretched bar
-background, a portrait behind the buttons, a mark that appears under the mouse, a badge in the drawer,
-`labelActiveColor`). Their textures are drawn by `tools/gen_theme_textures.py` from `tools/themes/<theme>.json`
+`MBBS_Starfarer` use atlases only; `MBBS_Nai` adds a semi-transparent portrait behind the buttons (a decoration)
+and `labelActiveColor`. `docs/examples/ExampleTheme` shows every other illustration field: a stretched bar
+background, decorations that appear under the mouse or in the drawer, and button pictures with hollow frames. Their textures are drawn by `tools/gen_theme_textures.py` from `tools/themes/<theme>.json`
 through the same `make_theme.py` a theme mod uses.
 
 ### Effects beyond textures

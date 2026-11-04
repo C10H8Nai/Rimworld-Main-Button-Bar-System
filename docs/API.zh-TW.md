@@ -107,7 +107,7 @@ MyTheme/
 
 ### 插圖：整張圖與裝飾圖（API 1.1）
 
-Atlas 會拉伸中段，所以一張畫不能當 atlas 用。三個選填的新功能讓主題不用 C# 就能放真正的插圖；沒用到的主題外觀和以前完全一樣。
+Atlas 會拉伸中段，所以一張畫不能當 atlas 用。四個選填的新功能讓主題不用 C# 就能放真正的插圖；沒用到的主題外觀和以前完全一樣。
 
 **背景的繪製方式。** `barBackgroundFit` 和 `drawerBackgroundFit` 決定 `barBackground`／`drawerBackground` 怎麼填滿區域：
 
@@ -147,11 +147,41 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。三個選填的新�
 
 **按下時的文字顏色。** `labelActiveColor` 用在按鈕按下或分頁開著時；省略時照舊用滑鼠移上顏色，再不然 `labelColor`。
 
-外觀分頁自己畫的預覽只有背景圖和按鈕，不畫裝飾圖（會長出卡片外），所以有裝飾圖的主題請附 `preview` 圖。
+**按鈕裡的圖。** `buttonImage` 在每顆主按鈕裡放一張圖；`buttonImages` 給指定的按鈕各自的圖（「這顆是這個人物、那顆是那個人物」）。兩個都是選填，沒有自己的圖的按鈕用 `buttonImage`，再不然就沒有圖：
+
+```xml
+<buttonImage>                                 <!-- 每顆主按鈕；省略就沒有 -->
+  <texture>MyTheme/Buttons/Default</texture>  <!-- 必填；任意解析度 -->
+</buttonImage>
+<buttonImages>
+  <li>
+    <button>Architect</button>                <!-- 必填：MainButtonDef 的 defName（Architect、Work、Research、模組的按鈕） -->
+    <texture>MyTheme/Buttons/Alice</texture>  <!-- 必填 -->
+    <fit>Cover</fit>                          <!-- Cover（預設）／Fit／Stretch；Atlas、Tile 視同 Stretch -->
+    <anchor>Center</anchor>                   <!-- Left／Center（預設）／Right -->
+    <verticalAnchor>Top</verticalAnchor>      <!-- Top／Center（預設）／Bottom -->
+    <opacity>1</opacity>                      <!-- 0～1 -->
+    <inset>2</inset>                          <!-- 按鈕邊緣往內留幾像素；預設 0 -->
+  </li>
+</buttonImages>
+```
+
+`Cover` 保持比例縮放到蓋滿按鈕，超出的裁掉；錨點決定保留哪一側（`verticalAnchor` 設 `Top` 保留上緣，臉就不會被裁掉）。`Fit` 顯示整張圖，放在錨點那一側；`Stretch` 拉伸填滿、會變形。同一顆按鈕寫兩次時，後面的贏。
+
+繪製順序（底部列的每顆按鈕、「更多」抽屜的每一格，所有狀態都一樣，停用也畫）：先畫圖，再畫按鈕 atlas，最後畫文字和圖示。所以 atlas 是圖的框：按鈕 atlas 要畫成中間透明的框（`make_theme.py` 的 palette 設 `"hollow": true`），不然圖會被蓋住。滑鼠移上和按下的效果留在框上，圖本身不會被染色。主題沒有自己的按鈕 atlas 時，圖會壓在遊戲幾乎不透明的按鈕底下，幾乎看不到。「更多」按鈕和捲動箭頭不會有圖。
+
+實務建議：
+
+- 底部列的按鈕高 36 像素，寬通常 33～120 像素（按鈕少或調寬時更寬）。完整的立繪只會露出一條：先裁成臉在中間的橫幅，或用 `Cover` 加 `verticalAnchor` 設 `Top`（或 `Center`）。
+- 文字會壓在圖上。重要的部分避開正中間、選看得清楚的文字顏色（`labelColor`），或請玩家把那些按鈕設成「只顯示圖示」。
+- 用 `inset` 讓圖留在框的邊線以內。
+- 找不到的按鈕圖什麼都不畫（只報一次，見下節），按鈕仍然有框。
+
+外觀分頁自己畫的預覽會畫背景圖、按鈕和按鈕裡的圖，不畫裝飾圖（會長出卡片外），所以有裝飾圖的主題請附 `preview` 圖。
 
 ### 檢查與重新載入（開發者模式）
 
-開著開發者模式時，本模組啟動時會檢查每個主題，每個問題記一筆警告，寫明主題和欄位：讀不到的貼圖、不是正方形的 atlas、超過 72×72 的 atlas（`behaviour.themeAtlasMaxSize`）、單邊超過 2048 的裝飾圖或背景圖（`behaviour.themeDecorationMaxSize`）。缺貼圖整個遊戲過程只會記一次：開發者模式由這個檢查記，否則由主題第一次畫到它時的那一行警告記（和以前一樣），然後退回遊戲原本的樣子。XML 裡不合法的值（`opacity` 不在 0～1、`size` 為負、tile scale 為 0、`texture` 空白）是設定錯誤，和其他 def 錯誤一樣顯示。`Tile` 背景需要的格數超過 `behaviour.themeTileMaxCount`（4096）時改成拉伸。
+開著開發者模式時，本模組啟動時會檢查每個主題，每個問題記一筆警告，寫明主題和欄位：讀不到的貼圖、不是正方形的 atlas、超過 72×72 的 atlas（`behaviour.themeAtlasMaxSize`）、單邊超過 2048 的裝飾圖、背景圖或按鈕圖（`behaviour.themeDecorationMaxSize`）。缺貼圖整個遊戲過程只會記一次：開發者模式由這個檢查記，否則由主題第一次畫到它時的那一行警告記（和以前一樣），然後退回遊戲原本的樣子。XML 裡不合法的值（`opacity` 不在 0～1、`size` 或 `inset` 為負、tile scale 為 0、`texture` 空白、`buttonImages` 的項目沒寫 `button`）是設定錯誤，和其他 def 錯誤一樣顯示。`Tile` 背景需要的格數超過 `behaviour.themeTileMaxCount`（4096）時改成拉伸。
 
 開發者模式下外觀分頁多一顆**重新載入主題貼圖**按鈕：從各主題自己的模組資料夾重新讀 PNG，改過的圖不用重開遊戲就會顯示，然後再檢查一次。上一次重載讀進來的貼圖會在下一次重載時釋放。
 
@@ -167,7 +197,7 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。三個選填的新�
 
 ### 內建主題就是範例
 
-本模組內建六款照這個方式做的主題，Def 在 `Defs/MainButtonBarSystem/BarAppearances.xml`，貼圖在 `Textures/MainButtonBarSystem/Themes/`：`MBBS_Imperial`、`MBBS_Creed`、`MBBS_GeneLab`、`MBBS_Void`、`MBBS_Starfarer` 只用 atlas；`MBBS_Nai` 是插圖欄位的範例（拉伸的底部列背景、按鈕後面的立繪、滑鼠移上才出現的標記、抽屜裡的徽章、`labelActiveColor`）。貼圖由 `tools/gen_theme_textures.py` 從 `tools/themes/<主題>.json` 產生，用的就是主題模組用的那支 `make_theme.py`。
+本模組內建六款照這個方式做的主題，Def 在 `Defs/MainButtonBarSystem/BarAppearances.xml`，貼圖在 `Textures/MainButtonBarSystem/Themes/`：`MBBS_Imperial`、`MBBS_Creed`、`MBBS_GeneLab`、`MBBS_Void`、`MBBS_Starfarer` 只用 atlas；`MBBS_Nai` 多了按鈕後面一張半透明的立繪（裝飾圖）和 `labelActiveColor`。其他插圖欄位看 `docs/examples/ExampleTheme`：拉伸的底部列背景、滑鼠移上或抽屜裡才出現的裝飾圖、配中空框的按鈕圖。貼圖由 `tools/gen_theme_textures.py` 從 `tools/themes/<主題>.json` 產生，用的就是主題模組用的那支 `make_theme.py`。
 
 ### 貼圖以外的效果
 
