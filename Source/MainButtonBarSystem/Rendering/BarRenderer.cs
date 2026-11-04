@@ -116,8 +116,9 @@ namespace MainButtonBarSystem
             try
             {
                 mode.Worker.DrawBar(ctx);
-                // Decorations above the buttons, whatever display mode drew them.
-                ctx.Appearance.DrawBarOverlay(ctx.ReportedBarRect);
+                // Decorations above the buttons, whatever display mode drew them: the same rect the standard mode
+                // passes to DrawBarBackground, so both layers anchor alike.
+                ctx.Appearance.DrawBarOverlay(ctx.BarRect);
             }
             finally
             {

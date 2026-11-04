@@ -35,7 +35,7 @@ namespace MainButtonBarSystem
             foreach (var (field, path) in def.TexturePaths())
             {
                 if (string.IsNullOrEmpty(path)) continue;
-                var texture = def.Tex(path);
+                var texture = def.TexQuiet(path);   // reported here with the field name, and then not again by Tex
                 if (texture == null)
                 {
                     findings += Warn(def, field, $"texture '{path}' not found (the game's look is used for it)");

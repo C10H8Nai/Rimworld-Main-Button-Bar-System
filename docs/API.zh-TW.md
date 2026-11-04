@@ -151,9 +151,9 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。三個選填的新�
 
 ### 檢查與重新載入（開發者模式）
 
-開著開發者模式時，本模組啟動時會檢查每個主題，每個問題記一筆警告，寫明主題和欄位：讀不到的貼圖、不是正方形的 atlas、超過 72×72 的 atlas（`behaviour.themeAtlasMaxSize`）、單邊超過 2048 的裝飾圖或背景圖（`behaviour.themeDecorationMaxSize`）。關掉開發者模式什麼都不會記；缺貼圖只會退回遊戲原本的樣子。
+開著開發者模式時，本模組啟動時會檢查每個主題，每個問題記一筆警告，寫明主題和欄位：讀不到的貼圖、不是正方形的 atlas、超過 72×72 的 atlas（`behaviour.themeAtlasMaxSize`）、單邊超過 2048 的裝飾圖或背景圖（`behaviour.themeDecorationMaxSize`）。缺貼圖整個遊戲過程只會記一次：開發者模式由這個檢查記，否則由主題第一次畫到它時的那一行警告記（和以前一樣），然後退回遊戲原本的樣子。XML 裡不合法的值（`opacity` 不在 0～1、`size` 為負、tile scale 為 0、`texture` 空白）是設定錯誤，和其他 def 錯誤一樣顯示。`Tile` 背景需要的格數超過 `behaviour.themeTileMaxCount`（4096）時改成拉伸。
 
-開發者模式下外觀分頁多一顆**重新載入主題貼圖**按鈕：從各主題自己的模組資料夾重新讀 PNG，改過的圖不用重開遊戲就會顯示，然後再檢查一次。重載過的貼圖不會釋放，所以同一次遊戲重載很多次會多佔一點記憶體。
+開發者模式下外觀分頁多一顆**重新載入主題貼圖**按鈕：從各主題自己的模組資料夾重新讀 PNG，改過的圖不用重開遊戲就會顯示，然後再檢查一次。上一次重載讀進來的貼圖會在下一次重載時釋放。
 
 ### 做一個主題模組
 
@@ -171,7 +171,7 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。三個選填的新�
 
 ### 貼圖以外的效果
 
-把 `workerClass` 設成繼承 `BarAppearanceWorker` 的類別，覆寫需要的方法：`DrawBarBackground`、`DrawBarBackgroundImage`、`DrawBarOverlay`、`DrawButton`、`DrawDrawerButton`、`DrawDrawerBackground`、`DrawDrawerBackgroundImage`、`DrawDrawerOverlay`、`DrawDecorations`、`DrawerSettingsIcon`、`ButtonAtlas`、`LabelColor`、`DrawMoreButton`、`MoreButtonWidth`、`DrawScrollArrow`。`DrawBarBackground` 是背景圖加按鈕下層的裝飾；`DrawBarOverlay` 在每種顯示方式畫完之後呼叫，所以按鈕上層的裝飾對任何顯示方式都有效。畫按鈕請繼續走 `ButtonPainter.Draw`（或遊戲的 `DoButton`），其他模組對按鈕的修改才會保留。
+把 `workerClass` 設成繼承 `BarAppearanceWorker` 的類別，覆寫需要的方法：`DrawBarBackground`、`DrawBarBackgroundImage`、`DrawBarOverlay`、`DrawButton`、`DrawDrawerButton`、`DrawDrawerBackground`、`DrawDrawerBackgroundImage`、`DrawDrawerOverlay`、`DrawDecorations`、`DrawerSettingsIcon`、`ButtonAtlas`、`LabelColor`、`DrawMoreButton`、`MoreButtonWidth`、`DrawScrollArrow`。`DrawBarBackground` 是背景圖加按鈕下層的裝飾，顯示方式應該用 `BarDrawContext.BarRect` 呼叫它（內建的顯示方式都是）；`DrawBarOverlay` 在每種顯示方式畫完之後用同一個矩形呼叫，所以按鈕上層的裝飾對任何顯示方式都有效，沒呼叫 `DrawBarBackground` 的顯示方式只會有上層。畫按鈕請繼續走 `ButtonPainter.Draw`（或遊戲的 `DoButton`），其他模組對按鈕的修改才會保留。
 
 ## 軟性依賴本模組
 

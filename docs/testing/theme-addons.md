@@ -33,7 +33,7 @@
 
 外觀分頁下方「插圖與背景」一節（選到有插圖的主題才會出現滑桿；選原版時只有一行灰字）：
 
-- [ ] C1 背景不透明度拉到 30%：底部列背景變淡，按鈕不變；按「預設值」回 100%。
+- [ ] C1 背景不透明度拉到 30%：底部列背景變淡，按鈕不變；外觀分頁上每張主題卡的預覽**不變**（預覽固定用 100%）；按「預設值」回 100%。
 - [ ] C2 「顯示裝飾圖」關掉：立繪、HOVER、DRAWER 全部消失；開回來全部回來；「預設值」按鈕在改過後才可按。
 - [ ] C3 裝飾圖不透明度 50%：三張圖都半透明（HOVER 本身 0.9 × 0.5）。
 - [ ] C4 裝飾圖大小 200%：立繪變 320×480，**左下角不動**（錨點不變）；50% 時 80×120。
@@ -44,11 +44,11 @@
 
 ## D. 開發者模式的檢查與重載
 
-- [ ] D1 關遊戲，把 `Mods/ExampleTheme/Textures/ExampleTheme/HoverBadge.png` 改名成 `HoverBadge_x.png`，重開：主選單 log 有一筆黃字 `Theme ExampleTheme_Steel (Example Theme for Main Button Bar System), decorations[1].texture: texture 'ExampleTheme/HoverBadge' not found ...`，只有一筆；診斷報告的 Themes 那行是 `1 warning(s)`。進地圖後其他裝飾正常、HOVER 不顯示、沒有紅字。改回檔名。
+- [ ] D1 關遊戲，把 `Mods/ExampleTheme/Textures/ExampleTheme/HoverBadge.png` 改名成 `HoverBadge_x.png`，重開：主選單 log 有一筆黃字 `Theme ExampleTheme_Steel (Example Theme for Main Button Bar System), decorations[1].texture: texture 'ExampleTheme/HoverBadge' not found ...`；診斷報告的 Themes 那行是 `1 warning(s)`。進地圖、滑鼠移上底部列之後，log **沒有**再多一筆 `texture 'ExampleTheme/HoverBadge' not found; using the game's look for it`（同一個缺圖整場只記一次）。其他裝飾正常、HOVER 不顯示、沒有紅字。改回檔名。
 - [ ] D2 把 `Button.png` 換成一張 64×48 的圖（不是正方形）：黃字 `... button: atlas 'ExampleTheme/Button' is 64x48, not square ...`。換回。
-- [ ] D3 關掉開發者模式重開：D1 的情況完全不記 log（連黃字都沒有）。開回開發者模式。
+- [ ] D3 關掉開發者模式重開 D1 的情況：主選單 log 沒有 `Theme ExampleTheme_Steel ... decorations[1]` 那種帶欄位名的檢查警告；進地圖、滑鼠移上底部列後只有一筆 `[Main Button Bar System] Theme ExampleTheme_Steel: texture 'ExampleTheme/HoverBadge' not found; using the game's look for it.`（這是原本就有的行為），之後不再重複。開回開發者模式。
 - [ ] D4 重載：遊戲開著、進地圖、選 ExampleTheme，用小畫家把 `Portrait.png` 整張塗成紅色存檔，外觀分頁按「重新載入主題貼圖」：畫面上立繪立刻變紅，左下角出現訊息「主題貼圖已重新載入：重新讀取了 N 個檔案」（N ≥ 14：ExampleTheme 的 14 張；內建主題在本模組資料夾裡也會被重讀）。沒有紅字。
-- [ ] D5 重載後再按一次：仍然正常，沒有例外（舊貼圖不釋放，只是多佔記憶體）。
+- [ ] D5 重載後再按一次、再按第三次：仍然正常，沒有例外、畫面沒有破圖（上一次重載的貼圖在這次被釋放，正在畫的是新的一批）。
 - [ ] D6 重載按鈕只在開發者模式顯示：關掉開發者模式後外觀分頁沒有這顆按鈕。
 
 ## E. 舊主題與舊存檔不變

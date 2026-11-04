@@ -85,6 +85,12 @@ namespace MainButtonBarSystem
         [Unsaved] private BarAppearanceWorker workerInt;
         [Unsaved] private readonly Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
 
+        /// <summary>Paths already reported as missing (by <see cref="Tex"/> or the dev-mode validator), so each is reported once.</summary>
+        [Unsaved] private readonly HashSet<string> missingReported = new HashSet<string>();
+
+        /// <summary>Textures <see cref="ReloadTextures"/> read from disk; released at the next reload.</summary>
+        [Unsaved] private readonly List<Texture2D> ownTextures = new List<Texture2D>();
+
         public BarAppearanceWorker Worker
         {
             get
@@ -98,17 +104,30 @@ namespace MainButtonBarSystem
             }
         }
 
-        /// <summary>Loads a texture once; null when the path is empty or missing (a missing one is reported once).</summary>
+        /// <summary>Loads a texture once; null when the path is empty or missing (a missing one is reported once, unless the dev-mode checks already did).</summary>
         public Texture2D Tex(string path)
         {
             if (string.IsNullOrEmpty(path)) return null;
             if (!textures.TryGetValue(path, out var tex))
             {
                 tex = ContentFinder<Texture2D>.Get(path, false);
-                if (tex == null)
+                if (tex == null && missingReported.Add(path))
                     Log.WarningOnce($"{MainButtonBarSystemMod.LogPrefix}Theme {defName}: texture '{path}' not found; using the game's look for it.", (defName + path).GetHashCode());
                 textures[path] = tex;
             }
+            return tex;
+        }
+
+        /// <summary>Like <see cref="Tex"/>, but a missing texture is left for the caller to report (the validator names the field); it is then not reported again.</summary>
+        internal Texture2D TexQuiet(string path)
+        {
+            if (string.IsNullOrEmpty(path)) return null;
+            if (!textures.TryGetValue(path, out var tex))
+            {
+                tex = ContentFinder<Texture2D>.Get(path, false);
+                textures[path] = tex;
+            }
+            if (tex == null) missingReported.Add(path);
             return tex;
         }
 
@@ -143,12 +162,16 @@ namespace MainButtonBarSystem
         /// <summary>
         /// Development mode: reads this theme's PNG files again from its own mod folder and uses them instead of the
         /// game's cached textures, so an edited image shows without a restart. Paths with no file in the mod folder go
-        /// back to the game's texture. Returns how many files were read. The replaced textures are not destroyed, so a
-        /// session with many reloads keeps a few extra textures in memory.
+        /// back to the game's texture. The textures read by the previous reload are destroyed first (nothing holds them
+        /// but this cache). Returns how many files were read.
         /// </summary>
         public int ReloadTextures()
         {
+            foreach (var old in ownTextures)
+                if (old != null) UnityEngine.Object.Destroy(old);
+            ownTextures.Clear();
             textures.Clear();
+            missingReported.Clear();
             int count = 0;
             foreach (var (_, path) in TexturePaths())
             {
@@ -156,6 +179,7 @@ namespace MainButtonBarSystem
                 var tex = LoadFromModFolder(path);
                 if (tex == null) continue;
                 textures[path] = tex;
+                ownTextures.Add(tex);
                 count++;
             }
             return count;
@@ -232,11 +256,14 @@ namespace MainButtonBarSystem
             DrawDecorations(DecorationTarget.Bar, DecorationLayer.BelowButtons, barRect);
         }
 
-        /// <summary>Only the bar's background image, drawn the way <see cref="BarAppearanceDef.barBackgroundFit"/> says (the Appearance tab's preview uses this).</summary>
-        public virtual void DrawBarBackgroundImage(Rect barRect)
+        /// <summary>Only the bar's background image, drawn the way <see cref="BarAppearanceDef.barBackgroundFit"/> says, at the player's background opacity.</summary>
+        public virtual void DrawBarBackgroundImage(Rect barRect) => DrawBarBackgroundImage(barRect, BarConfigManager.Active.BackgroundOpacity);
+
+        /// <summary>The bar's background image at a given opacity (the Appearance tab's preview passes 1 so every card looks the same).</summary>
+        public virtual void DrawBarBackgroundImage(Rect barRect, float opacity)
         {
             var tex = def.Tex(def.barBackground);
-            if (tex != null) TexturePainter.Draw(barRect, tex, def.barBackgroundFit, def.barBackgroundTileScale, BarConfigManager.Active.BackgroundOpacity);
+            if (tex != null) TexturePainter.Draw(barRect, tex, def.barBackgroundFit, def.barBackgroundTileScale, opacity);
         }
 
         /// <summary>Drawn once per event after every button and the More button: the decorations above the buttons.</summary>

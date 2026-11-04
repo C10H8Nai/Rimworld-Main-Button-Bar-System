@@ -309,12 +309,15 @@ grow out of the card), so a theme with decorations should ship a `preview` image
 With development mode on, the mod checks every theme at startup and logs one warning per finding, naming the theme
 and the field: textures that do not load, atlases that are not square, atlases larger than 72×72
 (`behaviour.themeAtlasMaxSize`), decoration or background images with a side over 2048
-(`behaviour.themeDecorationMaxSize`). Nothing is logged outside development mode; a missing texture only falls back
-to the game's look.
+(`behaviour.themeDecorationMaxSize`). A missing texture is reported once per session in total: by the check in
+development mode, otherwise by the one-line warning the theme logs when it first draws (as before); it then falls
+back to the game's look. Invalid values in the XML (`opacity` outside 0 to 1, a negative `size`, a tile scale of 0,
+an empty `texture`) are config errors, shown like any other def error. A `Tile` background that would need more
+than `behaviour.themeTileMaxCount` tiles (4096) is stretched instead.
 
 In development mode the Appearance tab also has a **Reload theme textures** button: it reads every theme's PNG files
 again from the theme's own mod folder, so an edited image shows without restarting the game, then runs the checks
-again. Reloaded textures are not freed, so a long session with many reloads keeps a few extra textures in memory.
+again. The textures read by the previous reload are released at the next one.
 
 ### Making a theme mod
 
@@ -347,9 +350,11 @@ Set `workerClass` to a class deriving from `BarAppearanceWorker` and override wh
 `DrawBarBackground`, `DrawBarBackgroundImage`, `DrawBarOverlay`, `DrawButton`, `DrawDrawerButton`,
 `DrawDrawerBackground`, `DrawDrawerBackgroundImage`, `DrawDrawerOverlay`, `DrawDecorations`, `DrawerSettingsIcon`,
 `ButtonAtlas`, `LabelColor`, `DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`. `DrawBarBackground` is the image
-plus the decorations below the buttons; `DrawBarOverlay` is called after every display mode's drawing, so decorations
-above the buttons work with any display mode. Keep drawing buttons through `ButtonPainter.Draw` (or the game's
-`DoButton`) so other mods' changes to buttons keep working.
+plus the decorations below the buttons, and a display mode is expected to call it with `BarDrawContext.BarRect`
+(the standard modes do); `DrawBarOverlay` is called with that same rect after every display mode's drawing, so
+decorations above the buttons work with any display mode, and a mode that never calls `DrawBarBackground` shows
+only the upper layer. Keep drawing buttons through `ButtonPainter.Draw` (or the game's `DoButton`) so other mods'
+changes to buttons keep working.
 
 ## 5. Compatibility bridges
 

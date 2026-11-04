@@ -44,7 +44,9 @@
 ##   _theme_image_load_source()          — 讀 JSON 指定的現成 PNG
 ##   _theme_image_apply_nine_slice()     — 在畫布上用九宮格方式畫 atlas（預覽用）
 ##   _theme_image_build_bar_strip()      — 一段模擬的按鈕列（遊戲內預覽貼圖）
+##   _theme_decoration_derive_box()      — 裝飾圖的擺放，和 C# DecorationLayout.Place 同一套規則（預覽用）
 ##   _theme_image_build_mod_preview()    — About/Preview.png
+##   _theme_json_validate_fields()       — JSON 的必填欄位、列舉值、檔名衝突檢查
 ##   _theme_locate_gear()                — 找齒輪來源 PNG
 ##   _theme_palette_normalize()          — JSON 的顏色清單轉成 tuple
 ##   _theme_def_serialize_color()        — [r,g,b,a] → "(r, g, b, a)"
@@ -61,6 +63,7 @@
 ##
 ## 修改日誌
 ## V1.0：2026-11-04  從 gen_theme_textures.py 拆出；畫圖程式碼原樣搬入（像素不變），加上佔位圖、完整模組輸出
+## V1.1：2026-11-04  review 後：JSON 列舉值與檔名衝突檢查、佔位圖文字依寬度縮字級、擺放算法提到模組層
 import argparse
 import json
 import os
@@ -88,6 +91,13 @@ _THEME_DECORATION_DEFAULTS = {"target": "Bar", "anchor": "Left", "verticalAnchor
 _THEME_BACKGROUND_DEFAULTS = {"barFit": "Atlas", "drawerFit": "Atlas", "barTileScale": 1, "drawerTileScale": 1,
                               "bar": None, "drawer": None}
 _THEME_PALETTE_COLOR_KEYS  = ("base", "edge", "outline", "rule", "accent", "active", "icon", "tile", "rivet", "active_rule")
+_THEME_ORNAMENTS           = ("finial", "roundel", "genetab", "shard", "hull", "petal")   # 和 C# 無關，只有這支工具認得
+_THEME_FITS                = ("Atlas", "Tile", "Stretch", "Fit", "Cover")                  # 以下四組要和 C# 的列舉同名
+_THEME_TARGETS             = ("Bar", "Drawer")
+_THEME_ANCHORS             = ("Left", "Center", "Right")
+_THEME_VERTICAL_ANCHORS    = ("Bottom", "Center", "Top")
+_THEME_LAYERS              = ("BelowButtons", "AboveButtons")
+_THEME_STATES              = ("Normal", "Mouseover", "DrawerOpen")
 _THEME_PREVIEW_LABELS      = ("Architect", "Work", "Schedule", "Assign")
 _THEME_PREVIEW_BACKGROUND  = (30, 33, 38, 255)
 _THEME_PLACEHOLDER_TEXT    = (246, 242, 241, 255)
@@ -420,6 +430,27 @@ def _theme_image_build_bar_strip(theme, textures, size):
 
 
 ############################################################################################################
+#   _theme_decoration_derive_box — 裝飾圖的擺放（x, y, w, h），和 C# 的 Core/DecorationLayout.Place 同一套規則
+############################################################################################################
+def _theme_decoration_derive_box(decoration, image, target_box):
+    size_x, size_y = decoration["size"]
+    tex_w, tex_h = image.size
+    if size_x <= 0 and size_y <= 0:
+        box_w, box_h = tex_w, tex_h
+    elif size_x <= 0:
+        box_w, box_h = size_y * tex_w / tex_h, size_y
+    elif size_y <= 0:
+        box_w, box_h = size_x, size_x * tex_h / tex_w
+    else:
+        box_w, box_h = size_x, size_y
+    target_x, target_y, target_w, target_h = target_box
+    anchor, vertical = decoration["anchor"], decoration["verticalAnchor"]
+    x = {"Left": target_x, "Center": target_x + (target_w - box_w) / 2, "Right": target_x + target_w - box_w}[anchor]
+    y = {"Top": target_y, "Center": target_y + (target_h - box_h) / 2, "Bottom": target_y + target_h - box_h}[vertical]
+    return int(round(x + decoration["offset"][0])), int(round(y + decoration["offset"][1])), int(round(box_w)), int(round(box_h))
+
+
+############################################################################################################
 #   _theme_image_build_mod_preview — About/Preview.png：標題、裝飾圖的位置、底部一段按鈕列
 ############################################################################################################
 def _theme_image_build_mod_preview(theme, textures):
@@ -428,34 +459,14 @@ def _theme_image_build_mod_preview(theme, textures):
     bar_box = (0, height - _THEME_BAR_HEIGHT, width, _THEME_BAR_HEIGHT)
     strip = _theme_image_build_bar_strip(theme, textures, (width, _THEME_BAR_HEIGHT))
 
-    #############################################################################
-    #   _place — 裝飾圖的擺放，和 Core/DecorationLayout.Place 同一套規則
-    #############################################################################
-    def _place(decoration, image):
-        size_x, size_y = decoration["size"]
-        tex_w, tex_h = image.size
-        if size_x <= 0 and size_y <= 0:
-            box_w, box_h = tex_w, tex_h
-        elif size_x <= 0:
-            box_w, box_h = size_y * tex_w / tex_h, size_y
-        elif size_y <= 0:
-            box_w, box_h = size_x, size_x * tex_h / tex_w
-        else:
-            box_w, box_h = size_x, size_y
-        target_x, target_y, target_w, target_h = bar_box
-        anchor, vertical = decoration["anchor"], decoration["verticalAnchor"]
-        x = {"Left": target_x, "Center": target_x + (target_w - box_w) / 2, "Right": target_x + target_w - box_w}[anchor]
-        y = {"Top": target_y, "Center": target_y + (target_h - box_h) / 2, "Bottom": target_y + target_h - box_h}[vertical]
-        return int(round(x + decoration["offset"][0])), int(round(y + decoration["offset"][1])), int(round(box_w)), int(round(box_h))
-
-    below = [d for d in theme["decorations"] if d["target"] == "Bar" and d["layer"] == "BelowButtons"]
-    above = [d for d in theme["decorations"] if d["target"] == "Bar" and d["layer"] == "AboveButtons"]
+    below = [decoration for decoration in theme["decorations"] if decoration["target"] == "Bar" and decoration["layer"] == "BelowButtons"]
+    above = [decoration for decoration in theme["decorations"] if decoration["target"] == "Bar" and decoration["layer"] == "AboveButtons"]
     for group, after_strip in ((below, False), (above, True)):
         if after_strip:
             canvas.alpha_composite(strip, (bar_box[0], bar_box[1]))
         for decoration in group:
             image = textures[decoration["file"]]
-            x, y, box_w, box_h = _place(decoration, image)
+            x, y, box_w, box_h = _theme_decoration_derive_box(decoration, image, bar_box)
             piece = image.resize((max(1, box_w), max(1, box_h)), Image.Resampling.BILINEAR)
             if decoration["opacity"] < 1:
                 alpha = piece.getchannel("A").point(lambda value: int(value * decoration["opacity"]))
@@ -689,11 +700,53 @@ def theme_icon_build_mod(gear_source):
 
 
 ############################################################################################################
-#   theme_load — 讀 JSON，補預設值，顏色轉 tuple，記住 JSON 的位置（source 路徑相對於它）
+#   _theme_json_validate_fields — 列舉值、必填欄位、檔名衝突；不合法就拋 ValueError（才不會到畫圖時才用 KeyError 爆）
+############################################################################################################
+def _theme_json_validate_fields(theme, path):
+    problems = []
+    for required in ("name", "defName", "label", "description", "palette"):
+        if required not in theme:
+            problems.append(f"missing '{required}'")
+    if problems:
+        raise ValueError(f"{path}: " + "; ".join(problems))
+    for required in ("base", "edge", "rule", "accent", "active", "ornament"):
+        if not theme["palette"].get(required):
+            problems.append(f"palette.{required} is missing")
+    if theme["palette"].get("ornament") not in _THEME_ORNAMENTS:
+        problems.append(f"palette.ornament must be one of {', '.join(_THEME_ORNAMENTS)}")
+    background = theme.get("background") or {}
+    for key in ("barFit", "drawerFit"):
+        if key in background and background[key] not in _THEME_FITS:
+            problems.append(f"background.{key} must be one of {', '.join(_THEME_FITS)}")
+    used_files = set(_THEME_TEXTURE_FILES) | {"Preview"}
+    for index, decoration in enumerate(theme.get("decorations") or []):
+        where = f"decorations[{index}]"
+        file_name = decoration.get("file")
+        if not file_name:
+            problems.append(f"{where}: file is missing")
+        elif file_name in used_files:
+            problems.append(f"{where}: file '{file_name}' clashes with another texture of the theme")
+        else:
+            used_files.add(file_name)
+        for key, allowed in (("target", _THEME_TARGETS), ("anchor", _THEME_ANCHORS), ("verticalAnchor", _THEME_VERTICAL_ANCHORS), ("layer", _THEME_LAYERS)):
+            if key in decoration and decoration[key] not in allowed:
+                problems.append(f"{where}: {key} must be one of {', '.join(allowed)}")
+        for state in decoration.get("showWhen") or []:
+            if state not in _THEME_STATES:
+                problems.append(f"{where}: showWhen value '{state}' must be one of {', '.join(_THEME_STATES)}")
+        if not decoration.get("placeholder") and not decoration.get("source"):
+            problems.append(f"{where}: needs placeholder or source")
+    if problems:
+        raise ValueError(f"{path}: " + "; ".join(problems))
+
+
+############################################################################################################
+#   theme_load — 讀 JSON，檢查，補預設值，顏色轉 tuple，記住 JSON 的位置（source 路徑相對於它）
 ############################################################################################################
 def theme_load(path):
     with open(path, encoding="utf-8") as handle:
         theme = json.load(handle)
+    _theme_json_validate_fields(theme, path)
     theme["_path"] = os.path.abspath(path)
     theme["_dir"] = os.path.dirname(theme["_path"])
     theme["palette"] = _theme_palette_normalize(theme["palette"])
@@ -701,9 +754,6 @@ def theme_load(path):
     theme["decorations"] = [{**_THEME_DECORATION_DEFAULTS, **decoration} for decoration in theme.get("decorations") or []]
     for field in ("labelColor", "labelMouseoverColor", "labelActiveColor"):
         theme.setdefault(field, None)
-    for required in ("name", "defName", "label", "description", "palette"):
-        if required not in theme:
-            raise ValueError(f"{path}: missing '{required}'")
     return theme
 
 

@@ -313,8 +313,9 @@ namespace MainButtonBarSystem
         private static void DrawThemePreview(BarAppearanceDef theme, Rect rect)
         {
             var worker = theme.Worker;
-            // The image only: decorations would grow out of the card (themes with decorations should set a preview).
-            worker.DrawBarBackgroundImage(rect);
+            // The image only, at full opacity: decorations would grow out of the card (themes with decorations should
+            // set a preview), and the player's opacity setting should not fade every card.
+            worker.DrawBarBackgroundImage(rect, 1f);
             var samples = ButtonBaseline.All.Where(b => b.ButtonVisible && !b.Label.NullOrEmpty()).Take(L.themePreviewButtons).Select(b => b.Label.CapitalizeFirst()).ToList();
 
             // Layout as on the bar: < [buttons] > [More].
