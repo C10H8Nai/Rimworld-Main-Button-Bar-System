@@ -108,6 +108,16 @@
 - `docs/API.zh-TW.md`：主題那一節的繁中版（含上架和相容承諾）。
 - `make_release.py` 要不要把範本和工具一起放進發佈檔、還是另外做「主題範本」工作坊項目：評估寫在 `docs/workshop/theme-template-release.md`，給作者決定；預設先採用其中一種。
 
+### 3.8 主按鈕背景圖（追加，2026-11-04）【作者】
+
+按鈕背景原本只有 64×64 九宮格，只能做框、中段會拉伸。追加「在按鈕裡放真正的圖」，而且是選擇性的：
+
+- `BarAppearanceDef.buttonImage`：每顆主按鈕的預設圖（可省略）；`buttonImages`：指定按鈕的覆寫（`button` 填 MainButtonDef 的 defName）。沒指定的按鈕用預設，沒有預設就照舊。
+- `BarButtonImage`：`button`、`texture`（任意解析度）、`fit`（預設 `Cover` 等比填滿裁掉超出、不拉伸；`Fit`、`Stretch` 可選；`Atlas`、`Tile` 視同 `Stretch`）、`anchor`／`verticalAnchor`（Cover 保留哪一側、Fit 放哪邊，預設置中）、`opacity`（預設 1）、`inset`（預設 0）。
+- 繪製順序：圖 → 按鈕 atlas（框）→ 文字與圖示；所有狀態（停用也畫）、底部列與抽屜格子都適用；框中央透明時圖透出來，滑鼠移上／按下的效果留在框上（圖只沿用目前 GUI 顏色的 alpha，不被染色）。More 與捲動箭頭沒有圖。
+- `make_theme.py`：JSON 的 `buttonImage`／`buttonImages`；palette 的 `hollow`（四種狀態的按鈕 atlas 不填底色；More 照舊）。內建五款不加 hollow，重產後像素不變。`ExampleTheme` 示範預設圖、兩顆指定按鈕與 hollow；萘伊主題不加（圖由作者另外提供）。
+- ApiVersion 維持 1.1（這批還沒發佈）；不加新的玩家滑桿。
+
 ## 4. 實作者的判斷（作者可檢查）
 
 1. **繪製的接縫**：`BarAppearanceWorker` 加三個 virtual：`DrawBarBackgroundImage(Rect)`（只畫背景圖，依繪製方式）、`DrawBarOverlay(Rect)`（按鈕上層的裝飾）、`DrawDrawerOverlay(Rect)`；既有的 `DrawBarBackground`／`DrawDrawerBackground` 意義不變（＝背景圖＋按鈕下層裝飾），所以覆寫過它們的第三方 worker 不受影響。`BarRenderer.Draw` 在顯示方式畫完後呼叫 `DrawBarOverlay(ctx.ReportedBarRect)`，所以第三方顯示方式不用改就有上層裝飾；抽屜在畫完格子和齒輪後呼叫 `DrawDrawerOverlay`。
