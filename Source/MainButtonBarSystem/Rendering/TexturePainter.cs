@@ -36,7 +36,10 @@ namespace MainButtonBarSystem
                         GUI.DrawTexture(FitRect(rect, texture.width, texture.height, anchor, verticalAnchor), texture);
                         break;
                     case BackgroundFit.Cover:
-                        GUI.DrawTextureWithTexCoords(rect, texture, CoverCoords(rect, texture.width, texture.height, anchor, verticalAnchor));
+                        // Through the game's DrawTexturePart (part given from the top left), so the texture coordinate
+                        // convention is the game's own whatever the engine layer does.
+                        var uv = CoverCoords(rect, texture.width, texture.height, anchor, verticalAnchor);
+                        Widgets.DrawTexturePart(rect, new Rect(uv.x, 1f - uv.y - uv.height, uv.width, uv.height), texture);
                         break;
                     case BackgroundFit.Tile:
                         DrawTiled(rect, texture, tileScale);

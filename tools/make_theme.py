@@ -17,7 +17,7 @@
 ##   palette         base, edge, outline, rule, accent, active：[r,g,b]；ornament：finial / roundel / genetab /
 ##                   shard / hull / petal；double, glow_on_hover, hollow：布林；icon, tile, rivet, active_rule：[r,g,b] 或 null
 ##                   hollow：true 時四種狀態的按鈕 atlas 不填底色（只留邊框、內線、底線、角落裝飾），按鈕圖才透得出來；
-##                   More 的 atlas 照舊有底色（它不會有按鈕圖）
+##                   More 的 atlas 照舊有底色（它不會有按鈕圖）；捲動箭頭用的是 Button，所以也是中空、透出底部列背景
 ##   background      barFit / drawerFit：Atlas / Tile / Stretch / Fit / Cover；barTileScale / drawerTileScale；
 ##                   bar / drawer：null（內建畫法）、{"placeholder": {"size": [w,h], "color": [r,g,b], "text": "…"}}
 ##                   或 {"source": "相對於 JSON 的 PNG 路徑"}
@@ -479,7 +479,7 @@ def _theme_button_image_list(theme):
 #   _theme_button_image_find — 某顆按鈕（defName）用的背景圖設定：buttonImages 裡指定的優先，否則 buttonImage，否則 None
 ############################################################################################################
 def _theme_button_image_find(theme, button):
-    for button_image in reversed(theme.get("buttonImages") or []):   # 和 C# 一樣，同一顆按鈕後面的贏
+    for button_image in reversed(theme.get("buttonImages") or []):   # 驗證已擋掉重複；C# 遇到重複時後面的贏，這裡同規則
         if button_image["button"] == button:
             return button_image
     return theme.get("buttonImage")
@@ -733,7 +733,7 @@ def _theme_mod_write_languages(theme, out_dir):
 ############################################################################################################
 def theme_build_textures(theme, gear_source, with_preview=False):
     palette = theme["palette"]
-    hollow = bool(palette.get("hollow"))   # 只影響四種狀態的按鈕；More 沒有按鈕圖，照舊有底色
+    hollow = bool(palette.get("hollow"))   # 只影響四種狀態的按鈕（捲動箭頭用 Button，所以也是中空）；More 照舊有底色
     textures = {
         "Button": _theme_atlas_build_button(palette, palette["base"], palette["edge"], hollow=hollow),
         "ButtonMouseover": _theme_atlas_build_button(palette, _theme_color_derive_shade(palette["base"], 14), _theme_color_derive_shade(palette["edge"], 25), "mouseover", hollow),
@@ -823,8 +823,8 @@ def _theme_json_validate_fields(theme, path):
     for index, decoration in enumerate(theme.get("decorations") or []):
         where = f"decorations[{index}]"
         file_name = decoration.get("file")
-        if not file_name:
-            problems.append(f"{where}: file is missing")
+        if not file_name or not isinstance(file_name, str):
+            problems.append(f"{where}: file is missing (a file name without extension)")
         elif file_name.lower() in used_files:
             problems.append(f"{where}: file '{file_name}' clashes with another texture of the theme")
         else:
@@ -862,14 +862,18 @@ def _theme_json_validate_fields(theme, path):
                 problems.append(f"{where}: button '{button}' is listed twice")
             else:
                 seen_buttons.add(button)
+    button_files = {}   # 檔名（小寫）→ 來源；按鈕圖之間可以共用同一個檔（同一張圖給好幾顆按鈕），來源要相同
     for where, button_image in button_images:
         file_name = button_image.get("file")
-        if not file_name:
-            problems.append(f"{where}: file is missing")
+        origin = json.dumps({"source": button_image.get("source"), "placeholder": button_image.get("placeholder")}, sort_keys=True)
+        if not file_name or not isinstance(file_name, str):
+            problems.append(f"{where}: file is missing (a file name without extension)")
         elif file_name.lower() in used_files:
             problems.append(f"{where}: file '{file_name}' clashes with another texture of the theme")
+        elif file_name.lower() in button_files and button_files[file_name.lower()] != origin:
+            problems.append(f"{where}: file '{file_name}' is used by another button picture with a different source or placeholder")
         else:
-            used_files.add(file_name.lower())
+            button_files[file_name.lower()] = origin
         for key, allowed in (("fit", _THEME_FITS), ("anchor", _THEME_ANCHORS), ("verticalAnchor", _THEME_VERTICAL_ANCHORS)):
             if key in button_image and button_image[key] not in allowed:
                 problems.append(f"{where}: {key} must be one of {', '.join(allowed)}")

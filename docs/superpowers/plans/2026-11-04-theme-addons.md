@@ -231,3 +231,21 @@
 - 各任務的 code review 合併成兩次：Python＋C#＋文件一次整支分支 review（Sonnet 子代理），修正後再補一次自查。
 - 五款舊主題的 PNG：提交版是別的 Pillow 版本編的，像素相同、位元組不同；本機重產後和同機的舊腳本輸出 50 張＋模組圖示位元組全同，所以提交的 PNG 沒有覆蓋。
 - 沒做：進遊戲驗證（留給作者照 `docs/testing/theme-addons.md` 做，或由 Claude 用 23 個模組的測試排序開遊戲）。
+
+### 追加：主按鈕背景圖（2026-11-04，雲端）
+
+- 規格見設計文件 §3.8。實作：`BarButtonImage`（`API/BarDecoration.cs`）、`BarAppearanceDef.buttonImage`／`buttonImages`／`ButtonImageFor`／`HasButtonImages`（並納入 `ChangesButtons`、`TexturePaths`、`ConfigErrors`）、worker 的 `ButtonImage`／`DrawButtonImage`、`ButtonPainter.ActiveButton`、`ThemeAtlasSwap` 先畫圖、`TexturePainter.DrawAnchored`＋`Core/ImageFit.cs`（7 個新測試）、外觀分頁預覽、`make_theme.py` 的 `buttonImage(s)` 與 `hollow`、`ExampleTheme` 示範、API 文件與測試清單 H 節。
+- 編譯：雲端 Linux 容器，.NET SDK 10（apt `dotnet-sdk-10.0`），Release 0 警告 0 錯誤；xunit 53 個通過。
+- 貼圖：這台的 Pillow 是 12.3.0，和提交版不同。`gen_theme_textures.py` 重產後六款內建主題與模組圖示**像素全部相同**，位元組不同的檔案還原成提交版（不提交）；`ExampleTheme` 只提交像素真的改變的檔案（四種狀態的 hollow 按鈕、兩張 Preview）和三張新的佔位按鈕圖，再重產一次 `git status` 乾淨（像素比對）。
+- 這個環境沒有 `superpowers:requesting-code-review`，改派一個獨立的審查子代理只看 `c51bd2a..HEAD` 的差異（不給它結論，只給規格和要看的方向）。結果：Critical／Important 都沒有；它另外驗證了 DLL 可重現、六款主題逐像素相同、ExampleTheme 可重產、UV 方向、Python 與 C# 擺放規則一致、舊主題走 `ChangesButtons` 新路徑時畫面不變。Minor 10 項的處理：
+  1. C# worker 覆寫 `ButtonImage` 但 Def 沒有任何按鈕欄位時，預覽有圖、遊戲裡沒有 → 文件寫明「Def 至少要有一個按鈕欄位，主題才會套到按鈕裡」（和 `ButtonAtlas` 既有的限制相同）。
+  2. 別的模組在同一顆按鈕裡再畫 subtle atlas 會多畫幾次圖 → 改成每顆按鈕只在第一次畫 subtle atlas 時畫圖（`ButtonPainter.ActiveButtonImageDrawn`）。
+  3. 圖的矩形沒對齊像素 → 先 `Rounded()`，和 `DrawAtlas` 一致。
+  4. 重複按鈕與打錯的 defName → 開發者模式的 `ThemeValidator` 加提示（不做成設定錯誤：主題本來就可能寫到玩家沒裝的模組按鈕）；Python 的註解更正。
+  5. Python 不讓兩顆按鈕共用同一個檔 → 來源相同就允許；`file` 不是字串時改報 ValueError（裝飾圖也一併）。
+  6. `hollow` 也讓捲動箭頭中空 → 註解與文件寫明。
+  7. 文件不同步 → 欄位表、「Effects beyond textures」的 virtual 清單、API 穩定性清單、Harmony 表的 DrawAtlas 列、玩家裝飾設定不影響按鈕圖，英文與繁中都補上。
+  8. 測試清單 H1 的預期會誤判（Cover＋Top 只露出佔位圖上緣，看不到字）→ 改寫 H1、H9。
+  9. 測試缺「只有按鈕圖的主題」與 Fit／Stretch → 加 H11、H12，以及開發者模式提示的 H13。
+  10. Waylith 的 `DrawTextureWithTexCoords` 原點無法在雲端確認 → Cover 改走遊戲自己的 `Widgets.DrawTexturePart`（左上原點的 UV，由遊戲負責轉換）；Core 的算法仍照規格用 Unity 左下原點，畫之前轉換。置中的情況數學上完全相同，舊背景不受影響。實機由 H5 驗證。
+- 沒做：進遊戲驗證（作者照 `docs/testing/theme-addons.md` 的 H 節在本機做）。

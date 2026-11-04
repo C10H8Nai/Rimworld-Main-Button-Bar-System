@@ -446,7 +446,9 @@ namespace MainButtonBarSystem
             if (image == null) return;
             var tex = def.Tex(image.texture);
             if (tex == null) return;
-            var area = image.inset > 0f ? rect.ContractedBy(image.inset) : rect;
+            // Whole pixels, like the atlas drawn over it (DrawAtlas rounds its rect), so no sliver shows past the frame.
+            var rounded = rect.Rounded();
+            var area = image.inset > 0f ? rounded.ContractedBy(image.inset) : rounded;
             if (area.width <= 0f || area.height <= 0f) return;
             var saved = GUI.color;
             GUI.color = new Color(1f, 1f, 1f, saved.a);
@@ -540,6 +542,12 @@ namespace MainButtonBarSystem
         /// </summary>
         public static MainButtonDef ActiveButton { get; private set; }
 
+        /// <summary>
+        /// Set once <see cref="ActiveButton"/>'s picture is drawn: only the first subtle atlas of a button gets it (the
+        /// game draws one; a mod drawing sub-buttons or badges inside the same button does not get extra copies).
+        /// </summary>
+        internal static bool ActiveButtonImageDrawn { get; set; }
+
         /// <summary>Whether the button being drawn is pressed, open or disabled; mouse-over is decided per rect.</summary>
         public static ButtonVisualState ActiveBaseState { get; private set; }
 
@@ -585,6 +593,7 @@ namespace MainButtonBarSystem
             ActiveAlign = align;
             ActiveTheme = themed ? theme : null;
             ActiveButton = themed ? def : null;
+            ActiveButtonImageDrawn = false;
             ActiveBaseState = BaseState(def, rect);
             try
             {
@@ -616,6 +625,7 @@ namespace MainButtonBarSystem
                 ActiveAlign = LabelAlign.Default;
                 ActiveTheme = null;
                 ActiveButton = null;
+                ActiveButtonImageDrawn = false;
                 ActiveBaseState = ButtonVisualState.Normal;
                 ActiveIcon = null;
                 ActiveIconOnly = false;

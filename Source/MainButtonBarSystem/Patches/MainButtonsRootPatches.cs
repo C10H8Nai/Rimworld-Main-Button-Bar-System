@@ -85,8 +85,9 @@ namespace MainButtonBarSystem
             var theme = ButtonPainter.ActiveTheme;
             if (theme == null || atlas != Widgets.ButtonSubtleAtlas) return;
             var button = ButtonPainter.ActiveButton;
-            if (button != null)
+            if (button != null && !ButtonPainter.ActiveButtonImageDrawn)
             {
+                ButtonPainter.ActiveButtonImageDrawn = true;
                 var image = theme.ButtonImage(button);
                 if (image != null) theme.DrawButtonImage(rect, image);
             }

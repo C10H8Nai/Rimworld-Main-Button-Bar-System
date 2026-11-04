@@ -77,7 +77,7 @@
 
 ExampleTheme 的設定：預設圖 `ButtonPicture`（240×72「BUTTON PICTURE (PLACEHOLDER)」）給每顆按鈕；「建築」（Architect）用 200×300 的棕色「ARCHITECT」（`verticalAnchor` Top、`inset` 2）；「研究」（Research）用 256×64 的藍綠「RESEARCH」（`anchor` Left、`opacity` 0.85、`inset` 2）。按鈕 atlas 是 `hollow`（中間透明的框）。
 
-- [ ] H1 指定的按鈕有自己的圖：建築是棕色 ARCHITECT、研究是藍綠 RESEARCH，其他按鈕是 BUTTON PICTURE；圖在框裡面，文字和圖示畫在圖上面。
+- [ ] H1 指定的按鈕有自己的圖：建築是**棕色**底（ARCHITECT 佔位圖是 200×300、用 Cover＋Top，按鈕只露出上緣一小段，看得到佔位圖的上框線和對角線，**看不到「ARCHITECT」字樣**是正常的）；研究是藍綠底、看得到「RESEARCH」的左半；其他按鈕是 BUTTON PICTURE。圖在框裡面，文字和圖示畫在圖上面。
 - [ ] H2 沒指定的按鈕用預設，沒有預設時只剩框：把 `Mods/ExampleTheme/Defs/ExampleTheme_Themes.xml` 的 `<buttonImage>…</buttonImage>` 整段刪掉重開：只有建築、研究有圖，其他按鈕只剩框（透出底部列背景）。改回。
 - [ ] H3 抽屜格子也有：摺疊模式把建築、研究和另一顆收進抽屜，格子裡的圖和底部列上一樣（建築、研究是自己的圖，另一顆是預設圖）。
 - [ ] H4 四種狀態都有圖：一般、滑鼠移上、分頁開著、停用（遊戲裡「組成商隊」→「選擇路線」，路線規劃期間「世界」等按鈕停用）。滑鼠移上和按下的效果只在框上，**圖不會被染藍**。
@@ -85,9 +85,12 @@ ExampleTheme 的設定：預設圖 `ButtonPicture`（240×72「BUTTON PICTURE (P
 - [ ] H6 inset：建築、研究的圖離按鈕邊緣 2px，預設圖貼齊邊緣。把建築的 `inset` 改成 8 重開，圖明顯內縮一圈。改回。
 - [ ] H7 缺圖只記一次：開發者模式，把 `ButtonResearch.png` 改名重開：主選單 log 只有一筆黃字 `… buttonImages[1].texture: texture 'ExampleTheme/ButtonResearch' not found …`；進地圖、滑鼠移過研究按鈕後不再多記；研究按鈕只剩框（指定了圖但缺檔時不改用預設圖）；沒有紅字。改回。
 - [ ] H8 舊主題外觀不變：原版、帝國、信條、基因實驗室、虛空、星航、萘伊各選一次，和這次改版前相同（它們沒有按鈕圖）。
-- [ ] H9 預覽：外觀分頁的 Example 卡片用它自己的 `Preview` 圖（make_theme.py 產的預覽條，Architect 那格是 ARCHITECT 圖、其他格是預設圖）。把 Defs 的 `<preview>` 刪掉重開，改用畫出來的預覽：樣本按鈕（原版排序前四顆）各有自己的圖，停用的那格也有圖。改回。
+- [ ] H9 預覽：外觀分頁的 Example 卡片用它自己的 `Preview` 圖（make_theme.py 產的預覽條，Architect 那格是 ARCHITECT 圖、其他格是預設圖）。把 Defs 的 `<preview>` 刪掉重開，改用畫出來的預覽：樣本按鈕（原版排序前四顆）裡 Architect 是自己的棕色圖、其他是預設圖，停用的那格也有圖。改回。
 - [ ] H10 「只顯示圖示」：把建築設成只顯示圖示，圖示畫在圖上、沒有文字；「圖示＋文字」時圖示和文字都在圖上。
-- [ ] H11 設定錯誤（選做）：在 Defs 加一個沒寫 `<button>` 的 `buttonImages` 項目重開，log 有 `buttonImages[2]: button is empty` 的設定錯誤；`opacity` 寫 2 有 `opacity must be between 0 and 1`。改回。
+- [ ] H11 只有按鈕圖的主題：把 ExampleTheme 的 Defs 裡 `<button>`、`<buttonMouseover>`、`<buttonActive>`、`<buttonDisabled>` 四行和三個文字顏色（`labelColor` 等）刪掉重開：按鈕圖仍然畫出來，壓在遊戲原本的按鈕底下（看起來很暗，這是預期：遊戲的按鈕底幾乎不透明）。改回。
+- [ ] H12 Fit 與 Stretch：把研究的 `fit` 改成 `Fit`：整張 RESEARCH 圖都看得到，靠左（`anchor` Left），右邊留空；改成 `Stretch`：拉伸填滿、文字變形。改回。
+- [ ] H13 開發者模式的提示：在 `buttonImages` 加一個 `button` 寫成 `Achitect` 的項目重開：一筆黃字 `… buttonImages[2].button: no main button 'Achitect' is loaded …`，沒有紅字。改回。
+- [ ] H14 設定錯誤（選做）：在 Defs 加一個沒寫 `<button>` 的 `buttonImages` 項目重開，log 有 `buttonImages[2]: button is empty` 的設定錯誤；`opacity` 寫 2 有 `opacity must be between 0 and 1`。改回。
 
 ## 要帶回的資料
 

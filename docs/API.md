@@ -229,6 +229,7 @@ MyTheme/
 | `labelActiveColor` (1.1) | `labelMouseoverColor` while pressed or the tab is open |
 | `barBackgroundFit`, `drawerBackgroundFit` (1.1) | `Atlas`: the background is a nine-slice atlas. See *Illustrations* below |
 | `decorations` (1.1) | No extra images. See *Illustrations* below |
+| `buttonImage`, `buttonImages` (1.1) | No pictures inside the buttons. See *Pictures inside buttons* below |
 
 **Atlases** are drawn with the game's `Widgets.DrawAtlas`, the nine-slice method of the vanilla buttons, so one
 texture fits any button size:
@@ -341,7 +342,13 @@ In practice:
 - The label is drawn over the picture. Keep the important part away from the middle, choose label colours that
   stay readable (`labelColor`), or tell players to pick "icon only" for those buttons.
 - Use `inset` to keep the picture inside the frame's border.
-- A missing picture texture draws nothing (and is reported once, see below); the button still has its frame.
+- A missing picture texture draws nothing (and is reported once, see below); the button still has its frame. In
+  development mode the checks also point out `buttonImages` entries for buttons that are not loaded (a typo, or a
+  mod that is not active) and buttons listed twice.
+- The player's decoration settings (show, opacity, size, offset) and background opacity do not affect button
+  pictures.
+- With `make_theme.py`'s `hollow`, the scroll arrows are hollow too (they use the `button` atlas) and show the bar
+  background; they never get a picture. The More button keeps its fill.
 
 The preview the Appearance tab draws shows the background image, the buttons and their pictures, but no decorations
 (they would grow out of the card), so a theme with decorations should ship a `preview` image.
@@ -391,7 +398,10 @@ through the same `make_theme.py` a theme mod uses.
 Set `workerClass` to a class deriving from `BarAppearanceWorker` and override what you need:
 `DrawBarBackground`, `DrawBarBackgroundImage(Rect, float opacity)`, `DrawBarOverlay`, `DrawButton`, `DrawDrawerButton`,
 `DrawDrawerBackground`, `DrawDrawerBackgroundImage`, `DrawDrawerOverlay`, `DrawDecorations`, `DrawerSettingsIcon`,
-`ButtonAtlas`, `LabelColor`, `DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`. Override the two-parameter
+`ButtonAtlas`, `ButtonImage`, `DrawButtonImage`, `LabelColor`, `DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`.
+The theme is applied inside buttons (atlases, label colours, pictures) only when the def sets at least one button
+field (a button atlas, a label colour, `buttonImage` or `buttonImages`), so a worker that chooses pictures in code
+still needs one of them in its XML. Override the two-parameter
 `DrawBarBackgroundImage`: the one-parameter form only forwards to it with the player's opacity, and the Appearance
 tab's preview calls the two-parameter form with 1. `DrawBarBackground` is the image
 plus the decorations below the buttons, and a display mode is expected to call it with `BarDrawContext.BarRect`
@@ -456,7 +466,7 @@ Most add-ons should work with or without Main Button Bar System. Common ways:
 
 `MainButtonBarAPI.ApiVersion` (a property; currently `1.1`) covers everything in this document: the five
 slots' def fields and workers, `MainButtonBarDefaults`, `MainButtonArrangementDef`, `BarDrawContext`,
-`BarButton`, `BarDecoration`, `DecorationLayout`, `ButtonPainter.Draw` and `MainButtonBarAPI`. Additions raise the minor number; removals or changed
+`BarButton`, `BarDecoration`, `BarButtonImage`, `DecorationLayout`, `ImageFit`, `ButtonPainter.Draw` and `MainButtonBarAPI`. Additions raise the minor number; removals or changed
 meanings raise the major number, and removed members stay for one release marked `[Obsolete]`. Arrangements carry
 their own `formatVersion`. Anything not listed here is internal and may change.
 
@@ -471,7 +481,7 @@ Harmony id: `NAI.MainButtonBarSystem`. Order your patches around it with `[Harmo
 | `MainButtonsRoot.HandleLowPriorityShortcuts` | postfix | Hotkeys kept by this mod, after the game's and after windows |
 | `CameraDriver.CameraDriverOnGUI` | prefix | Skips only for a scroll-wheel event over a scrolling bar, so the map does not zoom |
 | `Widgets.ButtonTextSubtle` | prefix + postfix | Acts only while this mod draws a bar button (label alignment, theme colour); never skips |
-| `Widgets.DrawAtlas(Rect, Texture2D, bool)` | prefix + postfix | Acts only while this mod draws a bar button (theme atlas); never skips |
+| `Widgets.DrawAtlas(Rect, Texture2D, bool)` | prefix + postfix | Acts only while this mod draws a bar button: draws the button's picture first (once per button), then swaps in the theme atlas; never skips |
 | `PlayDataLoader.LoadAllPlayData` | postfix | After a reload (for example a language change), refreshes this mod's cached defs once loading finishes |
 
 Compatibility bridges remove other mods' patches only when the player gives this mod priority, and log each

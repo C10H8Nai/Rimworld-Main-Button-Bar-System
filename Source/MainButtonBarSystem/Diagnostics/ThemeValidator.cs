@@ -7,7 +7,8 @@ namespace MainButtonBarSystem
 {
     /// <summary>
     /// Development-mode checks of every theme (built-in and from theme mods): textures that do not load, atlases that
-    /// are not square or larger than the useful size, oversized decorations. Each finding is one warning naming the
+    /// are not square or larger than the useful size, oversized decorations and pictures, button pictures for buttons
+    /// that are not loaded. Each finding is one warning naming the
     /// theme and the field, reported once per session. Runs at startup and after "Reload theme textures".
     /// </summary>
     public static class ThemeValidator
@@ -52,6 +53,29 @@ namespace MainButtonBarSystem
                 {
                     findings += Warn(def, field, $"image '{path}' is {texture.width}x{texture.height}, larger than {behaviour.themeDecorationMaxSize} on a side");
                 }
+            }
+            findings += ValidateButtonImages(def);
+            return findings;
+        }
+
+        /// <summary>
+        /// buttonImages entries naming a button no loaded mod has (a typo, or a mod that is not active) and buttons
+        /// listed twice. Hints only: a theme may well name buttons of mods the player does not use.
+        /// </summary>
+        private static int ValidateButtonImages(BarAppearanceDef def)
+        {
+            if (def.buttonImages == null) return 0;
+            int findings = 0;
+            var seen = new System.Collections.Generic.HashSet<string>();
+            for (int i = 0; i < def.buttonImages.Count; i++)
+            {
+                var button = def.buttonImages[i]?.button;
+                if (string.IsNullOrEmpty(button)) continue;   // a config error already
+                string field = $"{nameof(BarAppearanceDef.buttonImages)}[{i}].{nameof(BarButtonImage.button)}";
+                if (DefDatabase<RimWorld.MainButtonDef>.GetNamedSilentFail(button) == null)
+                    findings += Warn(def, field, $"no main button '{button}' is loaded (a typo, or a mod that is not active); this picture is unused");
+                if (!seen.Add(button))
+                    findings += Warn(def, field, $"'{button}' is listed again; this later entry is used");
             }
             return findings;
         }

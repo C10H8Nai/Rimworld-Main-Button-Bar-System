@@ -92,6 +92,7 @@ MyTheme/
 | `labelActiveColor`（1.1） | 按下或分頁開著時用 `labelMouseoverColor` |
 | `barBackgroundFit`、`drawerBackgroundFit`（1.1） | `Atlas`：背景是九宮格 atlas。見下面「插圖」 |
 | `decorations`（1.1） | 沒有額外的圖。見下面「插圖」 |
+| `buttonImage`、`buttonImages`（1.1） | 按鈕裡沒有圖。見下面「按鈕裡的圖」 |
 
 **Atlas** 用遊戲的 `Widgets.DrawAtlas` 畫，也就是原版按鈕的九宮格方式，一張貼圖適用任何按鈕大小：
 
@@ -175,7 +176,9 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。四個選填的新�
 - 底部列的按鈕高 36 像素，寬通常 33～120 像素（按鈕少或調寬時更寬）。完整的立繪只會露出一條：先裁成臉在中間的橫幅，或用 `Cover` 加 `verticalAnchor` 設 `Top`（或 `Center`）。
 - 文字會壓在圖上。重要的部分避開正中間、選看得清楚的文字顏色（`labelColor`），或請玩家把那些按鈕設成「只顯示圖示」。
 - 用 `inset` 讓圖留在框的邊線以內。
-- 找不到的按鈕圖什麼都不畫（只報一次，見下節），按鈕仍然有框。
+- 找不到的按鈕圖什麼都不畫（只報一次，見下節），按鈕仍然有框。開發者模式的檢查也會指出 `buttonImages` 裡寫了沒載入的按鈕（打錯字，或那個模組沒啟用），以及同一顆按鈕寫了兩次。
+- 玩家的裝飾圖設定（顯示、不透明度、大小、位移）和背景不透明度不影響按鈕圖。
+- 用 `make_theme.py` 的 `hollow` 時，捲動箭頭也是中空的（它們用 `button` atlas），會透出底部列背景，而且不會有圖；「更多」按鈕照舊有底色。
 
 外觀分頁自己畫的預覽會畫背景圖、按鈕和按鈕裡的圖，不畫裝飾圖（會長出卡片外），所以有裝飾圖的主題請附 `preview` 圖。
 
@@ -201,7 +204,7 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。四個選填的新�
 
 ### 貼圖以外的效果
 
-把 `workerClass` 設成繼承 `BarAppearanceWorker` 的類別，覆寫需要的方法：`DrawBarBackground`、`DrawBarBackgroundImage(Rect, float opacity)`、`DrawBarOverlay`、`DrawButton`、`DrawDrawerButton`、`DrawDrawerBackground`、`DrawDrawerBackgroundImage`、`DrawDrawerOverlay`、`DrawDecorations`、`DrawerSettingsIcon`、`ButtonAtlas`、`LabelColor`、`DrawMoreButton`、`MoreButtonWidth`、`DrawScrollArrow`。要覆寫的是雙參數的 `DrawBarBackgroundImage`：單參數版只是帶著玩家的不透明度轉呼叫它，外觀分頁的預覽則用 1 呼叫雙參數版。`DrawBarBackground` 是背景圖加按鈕下層的裝飾，顯示方式應該用 `BarDrawContext.BarRect` 呼叫它（內建的顯示方式都是）；`DrawBarOverlay` 在每種顯示方式畫完之後用同一個矩形呼叫，所以按鈕上層的裝飾對任何顯示方式都有效，沒呼叫 `DrawBarBackground` 的顯示方式只會有上層。畫按鈕請繼續走 `ButtonPainter.Draw`（或遊戲的 `DoButton`），其他模組對按鈕的修改才會保留。
+把 `workerClass` 設成繼承 `BarAppearanceWorker` 的類別，覆寫需要的方法：`DrawBarBackground`、`DrawBarBackgroundImage(Rect, float opacity)`、`DrawBarOverlay`、`DrawButton`、`DrawDrawerButton`、`DrawDrawerBackground`、`DrawDrawerBackgroundImage`、`DrawDrawerOverlay`、`DrawDecorations`、`DrawerSettingsIcon`、`ButtonAtlas`、`ButtonImage`、`DrawButtonImage`、`LabelColor`、`DrawMoreButton`、`MoreButtonWidth`、`DrawScrollArrow`。主題只有在 Def 至少設了一個按鈕欄位（按鈕 atlas、文字顏色、`buttonImage` 或 `buttonImages`）時才會套用到按鈕裡（atlas、文字顏色、按鈕圖），所以在程式裡決定按鈕圖的 worker，XML 裡仍要有其中一個欄位。要覆寫的是雙參數的 `DrawBarBackgroundImage`：單參數版只是帶著玩家的不透明度轉呼叫它，外觀分頁的預覽則用 1 呼叫雙參數版。`DrawBarBackground` 是背景圖加按鈕下層的裝飾，顯示方式應該用 `BarDrawContext.BarRect` 呼叫它（內建的顯示方式都是）；`DrawBarOverlay` 在每種顯示方式畫完之後用同一個矩形呼叫，所以按鈕上層的裝飾對任何顯示方式都有效，沒呼叫 `DrawBarBackground` 的顯示方式只會有上層。畫按鈕請繼續走 `ButtonPainter.Draw`（或遊戲的 `DoButton`），其他模組對按鈕的修改才會保留。
 
 ## 軟性依賴本模組
 
@@ -224,4 +227,4 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。四個選填的新�
 
 ## API 穩定性
 
-`MainButtonBarAPI.ApiVersion`（屬性，目前 `1.1`）涵蓋英文文件裡的所有東西：五個接口的 Def 欄位和 worker、`MainButtonBarDefaults`、`MainButtonArrangementDef`、`BarDrawContext`、`BarButton`、`BarDecoration`、`DecorationLayout`、`ButtonPainter.Draw` 和 `MainButtonBarAPI`。新增提高次版本號；移除或改變意義提高主版本號，而且被移除的成員會先標 `[Obsolete]` 保留一個版本。排序檔有自己的 `formatVersion`。沒列出來的都是內部實作，可能會變。
+`MainButtonBarAPI.ApiVersion`（屬性，目前 `1.1`）涵蓋英文文件裡的所有東西：五個接口的 Def 欄位和 worker、`MainButtonBarDefaults`、`MainButtonArrangementDef`、`BarDrawContext`、`BarButton`、`BarDecoration`、`BarButtonImage`、`DecorationLayout`、`ImageFit`、`ButtonPainter.Draw` 和 `MainButtonBarAPI`。新增提高次版本號；移除或改變意義提高主版本號，而且被移除的成員會先標 `[Obsolete]` 保留一個版本。排序檔有自己的 `formatVersion`。沒列出來的都是內部實作，可能會變。
