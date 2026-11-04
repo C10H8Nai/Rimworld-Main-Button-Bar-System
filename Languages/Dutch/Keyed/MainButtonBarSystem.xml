@@ -85,7 +85,7 @@
   <MBBS_Export_File>Opslaan als bestand</MBBS_Export_File>
   <MBBS_Export_Saved>Opgeslagen in {0}</MBBS_Export_Saved>
   <MBBS_Export_ModXml>Kopiëren als mod-XML (om een indelingsmod te maken)</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>Def-XML gekopieerd. Zet het in een .xml-bestand in de map Defs van je mod en wijzig defName en label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>Def-XML gekopieerd. Zet het in een .xml-bestand in de map Defs van je mod.</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>Van het klembord</MBBS_Import_Clipboard>
   <MBBS_Import_File>Bestand: {0}</MBBS_Import_File>
   <MBBS_Import_Def>Indeling: {0}</MBBS_Import_Def>
@@ -163,6 +163,65 @@ en klik op Vernieuwen. Ze blijven daar staan, ook als de mod wordt bijgewerkt.</
   <MBBS_IconModeAllTip>Hoe elke knop zijn icoon en tekst toont, tenzij een knop een eigen instelling heeft.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Alle knoppen met een eigen instelling ({0}) dit laten volgen</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Gelijk aan de hele balk ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>Indelingsmod maken (klaar om te uploaden)</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>Map met indelingen openen</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>Map openen</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>Modmap aangemaakt:
+{0}
+
+Start het spel opnieuw en zet de mod aan in de modlijst om hem te proberen; van daaruit kun je hem ook naar de Workshop uploaden. Je PNG-iconen zitten erbij.</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>Kan niet exporteren: {0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>klembord</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0} door {1} ({2})</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>Kopiëren als tekst</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>Opslaan als bestand</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>Kopiëren als mod-XML</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>Indelingsmod maken</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>Naam</MBBS_Export_Name>
+  <MBBS_Export_Author>Auteur</MBBS_Export_Author>
+  <MBBS_Export_Description>Beschrijving</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>De tekst bevat de naam, de auteur en van welke mod elke knop komt, zodat wie hem importeert ziet wat er ontbreekt.</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>Opgeslagen in {0}. Bestanden van anderen die je hier neerzet, verschijnen onder Importeren.</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>Een Def voor de map Defs van je eigen mod. Als PNG geïmporteerde iconen zitten er niet bij: gebruik daarvoor "Indelingsmod maken".</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Maakt een mod in {1}: About.xml (vereist Main Button Bar System), de indeling en de PNG-iconen die ze gebruikt. Abonnees vinden de indeling onder Importeren.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>Kopiëren</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>Opslaan</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>Kopiëren</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>Maken</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>Vul een naam in.</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Een Package ID bestaat uit twee of meer delen, verbonden door punten. Elk deel begint met een letter A-Z en bevat alleen letters A-Z (zonder accenten), cijfers en _ (bijvoorbeeld Author.MyArrangement).</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>Een andere mod gebruikt {0} al.</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>Een indeling voor Main Button Bar System. Open de instellingen ervan, klik op Importeren en kies "{0}".</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>Importeren: {0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>Door {0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>Gemaakt met RimWorld {0}, Main Button Bar System {1}.</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>Bron: {0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>Knoppen die in beide spellen zitten: {0}</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>Niet in jouw spel, dus hun instellingen worden overgeslagen: {0}</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>onbekende mod</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>Alleen in jouw spel, je eigen instellingen blijven (nieuwe komen vóór het menu): {0} ({1})</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>Deze indeling vermeldt niet welke knoppen het spel had waarin ze is gemaakt (oudere versie). Knoppen die ze niet noemt, houden je eigen instellingen.</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>Thema: {0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>Thema {0} (van {1}) is niet geïnstalleerd; tot dan wordt het originele uiterlijk gebruikt.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>Weergavemodus {0} (van {1}) is niet geïnstalleerd; tot dan wordt de originele balk gebruikt.</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>Geïmporteerde iconen die je niet hebt: {0} ({1}). Zet de PNG-bestanden in {2}; tot dan houden die knoppen hun eigen icoon.</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>Iconen uit mods die je niet hebt: {0} ({1}). Die knoppen houden hun eigen icoon.</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>en nog {0}</MBBS_ImportReport_More>
+  <MBBS_ImportParts>Deze onderdelen importeren:</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>Volgorde en plaatsing</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>Weergavemodus, volgorde, verborgen knoppen, de "Meer"-lade, vastgezette uiteinden en de menuvergrendeling.</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>Afmetingen en uitlijning</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>Knopbreedtes, tussenruimte, schermbreedte vullen, tekstuitlijning, de "Meer"-knop, pijlen, het raster van de lade en de snelheid van het muiswiel.</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>Knopnamen</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>Eigen namen. Knoppen die ze niet hernoemt, krijgen hun eigen naam terug.</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>Iconen</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>Tekst-/icoonweergave voor de hele balk en elke knop, en de gekozen iconen.</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>Thema</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>Het uiterlijk uit het tabblad Uiterlijk.</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>(niet ingesteld in deze indeling: importeren zet het jouwe terug naar standaard)</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>Importeren</MBBS_ImportConfirm>
   <MBBS_Section_Illustration>Illustratie en achtergrond</MBBS_Section_Illustration>
   <MBBS_IllustrationNone>Dit thema heeft geen achtergrondafbeelding of versieringen; hier valt niets in te stellen.</MBBS_IllustrationNone>
   <MBBS_BackgroundOpacity>Dekking van de achtergrond: {0}%</MBBS_BackgroundOpacity>

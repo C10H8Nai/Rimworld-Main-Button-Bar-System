@@ -28,6 +28,9 @@ namespace MainButtonBarSystem
         /// </summary>
         public Dictionary<string, KeyCode> customHotkeys = new Dictionary<string, KeyCode>();
 
+        /// <summary>Author name last used when exporting an arrangement.</summary>
+        public string exportAuthor;
+
         public CompatPriority PriorityFor(CompatBridgeDef def) =>
             compatPriority.TryGetValue(def.defName, out var p) ? p : def.defaultPriority;
 
@@ -38,6 +41,7 @@ namespace MainButtonBarSystem
             Scribe_Values.Look(ref showAdvanced, "showAdvanced");
             Scribe_Collections.Look(ref compatPriority, "compatPriority", LookMode.Value, LookMode.Value);
             Scribe_Collections.Look(ref customHotkeys, "customHotkeys", LookMode.Value, LookMode.Value);
+            Scribe_Values.Look(ref exportAuthor, "exportAuthor");
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {

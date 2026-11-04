@@ -85,7 +85,7 @@
   <MBBS_Export_File>Salvesta failina</MBBS_Export_File>
   <MBBS_Export_Saved>Salvestatud: {0}</MBBS_Export_Saved>
   <MBBS_Export_ModXml>Kopeeri modifikatsiooni XML-ina (paigutusmodifikatsiooni loomiseks)</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>Def-XML kopeeritud. Pane see oma modifikatsiooni Defs-kaustas olevasse .xml-faili ning muuda defName ja label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>Def-XML kopeeritud. Pane see oma modifikatsiooni Defs-kaustas olevasse .xml-faili.</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>Lõikelaualt</MBBS_Import_Clipboard>
   <MBBS_Import_File>Fail: {0}</MBBS_Import_File>
   <MBBS_Import_Def>Paigutus: {0}</MBBS_Import_Def>
@@ -163,6 +163,65 @@ ja vajuta „Värskenda“. Need jäävad sinna alles ka modifikatsiooni uuendam
   <MBBS_IconModeAllTip>Kuidas iga nupp ikooni ja teksti näitab, kui nupul pole oma seadet.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Lase kõigil oma seadega nuppudel ({0}) seda järgida</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Sama mis kogu ribal ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>Loo paigutusmodifikatsioon (üleslaadimiseks valmis)</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>Ava paigutuste kaust</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>Ava kaust</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>Modifikatsiooni kaust loodud:
+{0}
+
+Taaskäivita mäng ja lülita modifikatsioon proovimiseks modifikatsioonide nimekirjas sisse; sealt saad selle ka Workshopi üles laadida. Sinu PNG-ikoonid on kaasas.</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>Eksportimine ebaõnnestus: {0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>lõikelaud</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0}, autor: {1} ({2})</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>Kopeeri tekstina</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>Salvesta failina</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>Kopeeri modifikatsiooni XML-ina</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>Loo paigutusmodifikatsioon</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>Nimi</MBBS_Export_Name>
+  <MBBS_Export_Author>Autor</MBBS_Export_Author>
+  <MBBS_Export_Description>Kirjeldus</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>Tekstis on nimi, autor ja iga nupu päritolumodifikatsioon, nii et importija näeb, mis tal puudub.</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>Salvestatakse kausta {0}. Teistelt saadud failid, mille sinna paned, ilmuvad menüüsse „Impordi“.</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>Def sinu enda modifikatsiooni Defs-kausta jaoks. PNG-na imporditud ikoonid pole kaasas: selleks kasuta valikut „Loo paigutusmodifikatsioon“.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Loob kausta {1} modifikatsiooni: About.xml (sõltuvus: Main Button Bar System), paigutuse ja selle kasutatud PNG-ikoonid. Tellijad leiavad selle menüüst „Impordi“.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>Kopeeri</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>Salvesta</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>Kopeeri</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>Loo</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>Anna sellele nimi.</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Package ID koosneb vähemalt kahest punktidega ühendatud osast. Iga osa algab tähega A–Z ja sisaldab ainult tähti A–Z (mitte õ, ä, ö, ü), numbreid ja _ (näiteks Author.MyArrangement).</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>{0} on juba teise modifikatsiooni kasutuses.</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>Paigutus modifikatsioonile Main Button Bar System. Ava selle seaded, vajuta „Impordi“ ja vali „{0}“.</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>Impordi: {0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>Autor: {0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>Loodud versioonidega RimWorld {0}, Main Button Bar System {1}.</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>Allikas: {0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>Mõlemas mängus olevad nupud: {0}</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>Sinu mängus puuduvad, seega nende seaded jäetakse vahele: {0}</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>tundmatu modifikatsioon</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>Ainult sinu mängus, sinu seaded jäävad alles (uued lähevad menüü ette): {0} ({1})</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>See paigutus ei loetle selle mängu nuppe, kus see loodi (vanem versioon). Nupud, mida see ei maini, säilitavad sinu seaded.</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>Teema: {0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>Teema {0} (modifikatsioonist {1}) pole paigaldatud; seni kasutatakse originaalset välimust.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>Kuvarežiim {0} (modifikatsioonist {1}) pole paigaldatud; seni kasutatakse originaalset riba.</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>Imporditud ikoonid, mis sul puuduvad: {0} ({1}). Pane PNG-failid kausta {2}; seni kasutavad need nupud oma ikooni.</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>Ikoonid modifikatsioonidest, mida sul pole: {0} ({1}). Need nupud kasutavad oma ikooni.</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>ja veel {0}</MBBS_ImportReport_More>
+  <MBBS_ImportParts>Impordi need osad:</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>Järjekord ja asukohad</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>Kuvarežiim, järjekord, peidetud nupud, sahtel „Veel“, otstesse kinnitatud nupud ja menüünupu lukk.</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>Suurused ja joondus</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>Nuppude laiused, vahe, ekraani täitmine, teksti joondus, nupp „Veel“, nooled, sahtli ruudustik ja hiireratta kiirus.</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>Nuppude nimed</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>Kohandatud nimed. Nupud, mida see ümber ei nimeta, saavad tagasi oma nime.</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>Ikoonid</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>Teksti või ikooni kuvamine kogu ribal ja igal nupul ning valitud ikoonid.</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>Teema</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>Vahekaardil „Välimus“ valitud välimus.</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>(selles paigutuses määramata: importimine lähtestab sinu oma)</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>Impordi</MBBS_ImportConfirm>
   <MBBS_Section_Illustration>Illustratsioon ja taust</MBBS_Section_Illustration>
   <MBBS_IllustrationNone>Sellel teemal pole taustapilti ega kaunistusi; siin pole midagi seadistada.</MBBS_IllustrationNone>
   <MBBS_BackgroundOpacity>Tausta läbipaistmatus: {0}%</MBBS_BackgroundOpacity>

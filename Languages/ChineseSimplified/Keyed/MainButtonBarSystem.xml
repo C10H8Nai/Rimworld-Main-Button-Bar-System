@@ -85,7 +85,7 @@
   <MBBS_Export_File>存成文件</MBBS_Export_File>
   <MBBS_Export_Saved>已保存到 {0}</MBBS_Export_Saved>
   <MBBS_Export_ModXml>复制成模组 XML（制作排序积木用）</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>Def XML 已复制。放进你模组 Defs 文件夹下的 .xml 文件，再改 defName 和 label。</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>已复制 Def XML。存成 .xml 文件，放进你模组的 Defs 文件夹即可。</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>从剪贴板</MBBS_Import_Clipboard>
   <MBBS_Import_File>文件：{0}</MBBS_Import_File>
   <MBBS_Import_Def>排序积木：{0}</MBBS_Import_Def>
@@ -163,6 +163,65 @@
   <MBBS_IconModeAllTip>所有按钮显示图标和文字的方式；个别按钮另有设置时以该按钮为准。</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>让 {0} 个有个别设置的按钮都改为跟随这里</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>跟随整条栏（{0}）</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>做成排序模组（可直接上传）</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>打开排序文件夹</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>打开文件夹</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>已创建模组文件夹：
+{0}
+
+重启游戏后在模组列表启用即可试用，也可以从那里上传到创意工坊。你用到的 PNG 图标已一并放入。</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>无法导出：{0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>剪贴板</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0}（{1}）</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0}，作者 {1}（{2}）</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>复制为文本</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>保存为文件</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>复制为模组 XML</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>做成排序模组</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>名称</MBBS_Export_Name>
+  <MBBS_Export_Author>作者</MBBS_Export_Author>
+  <MBBS_Export_Description>说明</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>文本会附上名称、作者以及每个按钮来自哪个模组，导入的人就能看出缺了什么。</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>保存在 {0}。别人给你的文件放进这里，就会出现在「导入」菜单中。</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>给你自己模组的 Defs 文件夹用的 Def。导入的 PNG 图标不会包含在内，要一起打包请用「做成排序模组」。</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>在 {1} 创建一个模组：About.xml（依赖本模组）、这份排序，以及用到的 PNG 图标。订阅的人会在「导入」菜单看到它。</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>复制</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>保存</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>复制</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>创建</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>请填写名称。</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Package ID 是用点隔开的两段以上英文，每段以英文字母开头，只能用英文字母、数字和 _（例如 Author.MyArrangement）。</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>{0} 已被其他模组使用。</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>Main Button Bar System 的排序。打开它的设置，点「导入」，选择「{0}」。</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>导入：{0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>作者：{0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>制作环境：RimWorld {0}，Main Button Bar System {1}。</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>来源：{0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>两边都有的按钮：{0} 个</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>你的游戏没有、设置会跳过的按钮：{0} 个</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>未知模组</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>只有你的游戏有、保留你的设置（新的排在菜单左边）：{0} 个（{1}）</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>这份排序没有记录制作时的按钮列表（旧版导出）。它没提到的按钮会保留你的设置。</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>主题：{0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>主题 {0}（来自 {1}）未安装；装好之前会使用原版外观。</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>显示方式 {0}（来自 {1}）未安装；装好之前会使用原版的栏。</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>你没有的导入图标：{0} 个（{1}）。把 PNG 放进 {2}；在那之前这些按钮显示原本的图标。</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>来自你没装的模组的图标：{0} 个（{1}）。这些按钮显示原本的图标。</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>等另外 {0} 个</MBBS_ImportReport_More>
+  <MBBS_ImportParts>要导入的部分：</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>顺序与位置</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>显示方式、顺序、隐藏的按钮、「更多」抽屉、固定在两端的按钮和菜单锁定。</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>大小与对齐</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>按钮宽度、间距、填满屏幕、文字对齐、「更多」按钮、箭头、抽屉格子和滚轮速度。</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>按钮名称</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>自定义名称。它没改名的按钮会恢复原本的名称。</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>图标</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>整条栏和每个按钮的文字／图标显示方式，以及选用的图标。</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>外观主题</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>外观标签页选择的外观。</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>（这份排序没有设置：导入会把你的恢复默认）</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>导入</MBBS_ImportConfirm>
   <MBBS_Section_Illustration>插图与背景</MBBS_Section_Illustration>
   <MBBS_IllustrationNone>这个主题没有背景图或装饰图，这里没有可调整的项目。</MBBS_IllustrationNone>
   <MBBS_BackgroundOpacity>背景不透明度：{0}%</MBBS_BackgroundOpacity>

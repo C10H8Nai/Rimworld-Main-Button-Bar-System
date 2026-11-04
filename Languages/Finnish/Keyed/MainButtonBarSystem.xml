@@ -85,7 +85,7 @@
   <MBBS_Export_File>Tallenna tiedostoksi</MBBS_Export_File>
   <MBBS_Export_Saved>Tallennettu: {0}</MBBS_Export_Saved>
   <MBBS_Export_ModXml>Kopioi mod-XML:nä (järjestelymodin tekemistä varten)</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>Def-XML kopioitu. Laita se .xml-tiedostoon modisi Defs-kansioon ja muuta defName ja label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>Def-XML kopioitu. Laita se .xml-tiedostoon modisi Defs-kansioon.</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>Leikepöydältä</MBBS_Import_Clipboard>
   <MBBS_Import_File>Tiedosto: {0}</MBBS_Import_File>
   <MBBS_Import_Def>Järjestely: {0}</MBBS_Import_Def>
@@ -163,6 +163,65 @@ ja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.</MBBS_Ico
   <MBBS_IconModeAllTip>Miten kaikki painikkeet näyttävät kuvakkeen ja tekstin, ellei painikkeella ole omaa asetusta.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Laita kaikki painikkeet, joilla on oma asetus ({0}), noudattamaan tätä</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Sama kuin koko palkilla ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>Tee järjestelymodi (valmis julkaistavaksi)</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>Avaa järjestelykansio</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>Avaa kansio</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>Modikansio luotu:
+{0}
+
+Käynnistä peli uudelleen ja ota modi käyttöön modilistassa kokeillaksesi sitä; sieltä voit myös ladata sen Workshopiin. PNG-kuvakkeesi ovat mukana.</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>Vienti epäonnistui: {0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>leikepöytä</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0}, tekijä: {1} ({2})</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>Kopioi tekstinä</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>Tallenna tiedostoksi</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>Kopioi mod-XML:nä</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>Tee järjestelymodi</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>Nimi</MBBS_Export_Name>
+  <MBBS_Export_Author>Tekijä</MBBS_Export_Author>
+  <MBBS_Export_Description>Kuvaus</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>Tekstissä on nimi, tekijä ja tieto siitä, mistä modista kukin painike tulee, joten tuoja näkee, mitä puuttuu.</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>Tallennetaan kansioon {0}. Muilta saadut tiedostot, jotka laitat sinne, näkyvät Tuo-valikossa.</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>Def oman modisi Defs-kansioon. PNG-muodossa tuodut kuvakkeet eivät ole mukana: käytä niitä varten toimintoa ”Tee järjestelymodi”.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Luo modin kansioon {1}: About.xml (vaatii Main Button Bar System -modin), järjestelyn ja sen käyttämät PNG-kuvakkeet. Tilaajat löytävät sen Tuo-valikosta.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>Kopioi</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>Tallenna</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>Kopioi</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>Luo</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>Anna sille nimi.</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Package ID koostuu vähintään kahdesta pisteillä yhdistetystä osasta. Jokainen osa alkaa kirjaimella A–Z, ja siinä saa olla vain kirjaimia A–Z (ei ä, ö, å), numeroita ja _ (esimerkiksi Author.MyArrangement).</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>{0} on jo toisen modin käytössä.</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>Järjestely Main Button Bar System -modille. Avaa sen asetukset, paina Tuo ja valitse ”{0}”.</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>Tuo: {0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>Tekijä: {0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>Tehty versioilla RimWorld {0}, Main Button Bar System {1}.</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>Lähde: {0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>Molemmissa peleissä olevat painikkeet: {0}</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>Puuttuvat pelistäsi, joten niiden asetukset ohitetaan: {0}</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>tuntematon modi</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>Vain sinun pelissäsi, asetuksesi säilyvät (uudet sijoitetaan ennen valikkoa): {0} ({1})</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>Tässä järjestelyssä ei ole luetteloa sen pelin painikkeista, jossa se tehtiin (vanhempi versio). Painikkeet, joita se ei mainitse, säilyttävät asetuksesi.</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>Teema: {0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>Teemaa {0} (modista {1}) ei ole asennettu; siihen asti käytetään alkuperäistä ulkoasua.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>Näyttötilaa {0} (modista {1}) ei ole asennettu; siihen asti käytetään alkuperäistä palkkia.</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>Tuodut kuvakkeet, jotka sinulta puuttuvat: {0} ({1}). Laita PNG-tiedostot kansioon {2}; siihen asti nämä painikkeet käyttävät omaa kuvakettaan.</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>Kuvakkeet modeista, joita sinulla ei ole: {0} ({1}). Nämä painikkeet käyttävät omaa kuvakettaan.</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>ja {0} muuta</MBBS_ImportReport_More>
+  <MBBS_ImportParts>Tuo nämä osat:</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>Järjestys ja sijoittelu</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>Näyttötila, järjestys, piilotetut painikkeet, ”Muut”-laatikko, päihin kiinnitetyt painikkeet ja Valikko-painikkeen lukitus.</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>Koot ja tasaus</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>Painikkeiden leveydet, väli, näytön täyttö, tekstin tasaus, ”Muut”-painike, nuolet, laatikon ruudukko ja hiiren rullan nopeus.</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>Painikkeiden nimet</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>Omat nimet. Painikkeet, joita se ei nimeä, palaavat omaan nimeensä.</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>Kuvakkeet</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>Teksti- tai kuvakenäyttö koko palkille ja kullekin painikkeelle sekä valitut kuvakkeet.</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>Teema</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>Ulkoasu-välilehdeltä valittu ulkoasu.</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>(ei asetettu tässä järjestelyssä: tuonti palauttaa omasi oletukseksi)</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>Tuo</MBBS_ImportConfirm>
   <MBBS_Section_Illustration>Kuvitus ja tausta</MBBS_Section_Illustration>
   <MBBS_IllustrationNone>Tällä teemalla ei ole taustakuvaa eikä koristeita; täällä ei ole säädettävää.</MBBS_IllustrationNone>
   <MBBS_BackgroundOpacity>Taustan peittävyys: {0} %</MBBS_BackgroundOpacity>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read only when Main Button Bar System is active (see LoadFolders.xml), so no MayRequire is needed here. -->
+<Defs>
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>MBBSExample_LeafFolk</defName>
+    <label>leaf folk (example)</label>
+    <description>Forest green and bronze, shipped inside a race mod that does not require Main Button Bar System.</description>
+    <author>NAI</author>
+    <displayOrder>900</displayOrder>
+    <button>MBBSExample/SoftRace/Theme/Button</button>
+    <buttonMouseover>MBBSExample/SoftRace/Theme/ButtonMouseover</buttonMouseover>
+    <buttonActive>MBBSExample/SoftRace/Theme/ButtonActive</buttonActive>
+    <buttonDisabled>MBBSExample/SoftRace/Theme/ButtonDisabled</buttonDisabled>
+    <labelColor>(0.93, 0.86, 0.62, 1)</labelColor>
+    <labelMouseoverColor>(1, 0.95, 0.75, 1)</labelMouseoverColor>
+    <barBackground>MBBSExample/SoftRace/Theme/Bar</barBackground>
+    <moreButton>MBBSExample/SoftRace/Theme/More</moreButton>
+    <arrowLeft>MBBSExample/SoftRace/Theme/ArrowLeft</arrowLeft>
+    <arrowRight>MBBSExample/SoftRace/Theme/ArrowRight</arrowRight>
+    <drawerBackground>MBBSExample/SoftRace/Theme/Drawer</drawerBackground>
+    <drawerSettingsIcon>MBBSExample/SoftRace/Theme/Gear</drawerSettingsIcon>
+  </MainButtonBarSystem.BarAppearanceDef>
+
+  <MainButtonBarSystem.MainButtonIconSetDef>
+    <defName>MBBSExample_LeafIcons</defName>
+    <label>leaf folk icons (example)</label>
+    <icons>
+      <li>MBBSExample/SoftRace/Icons/LeafGold</li>
+      <li>MBBSExample/SoftRace/Icons/LeafGreen</li>
+    </icons>
+  </MainButtonBarSystem.MainButtonIconSetDef>
+</Defs>
