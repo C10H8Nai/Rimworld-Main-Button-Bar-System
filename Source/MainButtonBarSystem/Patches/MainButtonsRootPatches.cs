@@ -53,14 +53,17 @@ namespace MainButtonBarSystem
             __state = null;
             var theme = ButtonPainter.ActiveTheme;
             if (theme != null) labelColor = theme.LabelColor(ButtonPainter.StateFor(rect)) ?? labelColor;
-            if (ButtonPainter.ActiveAlign == LabelAlign.Default || string.IsNullOrEmpty(label)) return;
+            bool both = ButtonPainter.ActiveBothIcon != null;
+            if ((ButtonPainter.ActiveAlign == LabelAlign.Default && !both) || string.IsNullOrEmpty(label)) return;
             __state = label;
             label = "";
         }
 
         public static void Postfix(Rect rect, Color? labelColor, string __state)
         {
-            if (__state != null) ButtonPainter.DrawAlignedLabel(rect, __state, labelColor);
+            if (__state == null) return;
+            if (ButtonPainter.ActiveBothIcon != null) ButtonPainter.DrawIconAndLabel(rect, __state, labelColor);
+            else ButtonPainter.DrawAlignedLabel(rect, __state, labelColor);
         }
     }
 

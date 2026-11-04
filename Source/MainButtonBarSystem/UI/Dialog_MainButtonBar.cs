@@ -543,8 +543,8 @@ namespace MainButtonBarSystem
                 if (visible == o.hidden) working.GetOrCreate(name).hidden = !visible;
             }
 
-            // Icon (blank when the button has none)
-            var icon = SafeIcon(def);
+            // Icon the button shows with its settings (blank when it has none)
+            var icon = def == null ? null : ButtonPainter.EffectiveIcon(def, o);
             if (icon != null) Widgets.DrawTextureFitted(c.Icon.ContractedBy(L.rowIconPadding), icon, 1f);
 
             // Name
@@ -752,6 +752,7 @@ namespace MainButtonBarSystem
                     listing.Label("MBBS_Compat_RestartNeeded".Translate());
                     GUI.color = Color.white;
                 }
+                foreach (var line in worker.BarReferenceValues()) Note(listing, line);
                 if (worker.CanImport && listing.ButtonText("MBBS_Compat_Import".Translate(bridge.ModNameOrLabel)))
                 {
                     worker.ImportInto(working);
@@ -778,7 +779,7 @@ namespace MainButtonBarSystem
             var listing = BeginScrolledListing(outer, ref buttonDetailScroll, buttonDetailHeight);
 
             var titleRow = listing.GetRect(L.titleIconSize);
-            var icon = SafeIcon(def);
+            var icon = def == null ? null : ButtonPainter.EffectiveIcon(def, o);
             if (icon != null) Widgets.DrawTextureFitted(new Rect(titleRow.x, titleRow.y, L.titleIconSize, L.titleIconSize), icon, 1f);
             float textX = L.titleIconSize + L.footerGap;
             Text.Font = GameFont.Medium;
@@ -850,10 +851,60 @@ namespace MainButtonBarSystem
                 bool forceShow = ButtonBool(listing, "MBBS_ForceShow".Translate(), o.forceShow, dflt.forceShow, "MBBS_ForceShowTip".Translate());
                 if (forceShow != o.forceShow) working.GetOrCreate(name).forceShow = forceShow;
 
+                DrawIconSettings(listing, name, def, o, dflt);
+                DrawReferenceValues(listing, CompatBridges.Detected.SelectMany(b => b.Worker.ReferenceValues(name)));
+
                 if (def != null) DrawHotkey(listing, def);
             }
 
             buttonDetailHeight = EndScrolledListing(listing);
+        }
+
+        /// <summary>Text / icon / both, and a custom icon (spec 3.2).</summary>
+        private void DrawIconSettings(Listing_Standard listing, string name, MainButtonDef def, ButtonOverride o, ButtonOverride dflt)
+        {
+            listing.GapLine();
+            if (SectionHeader(listing, "MBBS_IconMode".Translate(), o.iconMode != dflt.iconMode, "MBBS_IconModeTip".Translate()))
+                working.GetOrCreate(name).iconMode = dflt.iconMode;
+            foreach (IconMode mode in Enum.GetValues(typeof(IconMode)))
+            {
+                if (listing.RadioButton(("MBBS_IconMode_" + mode).Translate(), o.iconMode == mode, L.radioIndent) && o.iconMode != mode)
+                    working.GetOrCreate(name).iconMode = mode;
+            }
+
+            var row = listing.GetRect(L.textRowHeight);
+            string choose = "MBBS_IconChoose".Translate();
+            float chooseWidth = UIUtil.FitButton(L.smallButtonWidth, choose);
+            float right = ResetWidth + L.footerGap + chooseWidth;
+            var preview = ButtonPainter.EffectiveIcon(def, o);
+            float x = row.x;
+            if (preview != null)
+            {
+                Widgets.DrawTextureFitted(new Rect(x, row.y, row.height, row.height), preview, 1f);
+                x += row.height + L.footerGap;
+            }
+            Text.Anchor = TextAnchor.MiddleLeft;
+            var labelRect = new Rect(x, row.y, row.xMax - right - L.footerGap - x, row.height);
+            string text = "MBBS_Icon".Translate(CustomIcons.Describe(o.icon));
+            Widgets.Label(labelRect, text.Truncate(labelRect.width));
+            TooltipHandler.TipRegion(labelRect, text);
+            Text.Anchor = TextAnchor.UpperLeft;
+            if (Widgets.ButtonText(new Rect(row.xMax - right, row.y, chooseWidth, row.height), choose))
+                Find.WindowStack.Add(new Dialog_IconPicker(o.icon, icon => working.GetOrCreate(name).icon = icon));
+            if (DefaultButton(row, (o.icon ?? "") != (dflt.icon ?? "")))
+                working.GetOrCreate(name).icon = dflt.icon;
+            if (CustomIcons.IsMissing(o.icon))
+                Note(listing, "MBBS_IconMissingNote".Translate());
+        }
+
+        /// <summary>What other bar mods have set for this button, as reference (spec 3.7).</summary>
+        private static void DrawReferenceValues(Listing_Standard listing, IEnumerable<string> lines)
+        {
+            var list = lines.ToList();
+            if (list.Count == 0) return;
+            listing.GapLine();
+            listing.Label("MBBS_RefHeader".Translate());
+            foreach (var line in list) Note(listing, line);
         }
 
         private void SetPin(string name, PinPosition pin)

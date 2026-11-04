@@ -128,4 +128,35 @@
   <MBBS_HotKeyConflictItem>{0}：{1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>兩個功能共用同一個鍵時，按下去只會觸發其中一個。請到「選項 → 鍵盤設定」改掉其中一個，或在這裡換一個鍵。</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>本模組保存的快捷鍵在遊戲自己的快捷鍵之後才處理，所以上面的功能會先用掉這個鍵，這個按鈕不會有反應。請在這裡換一個鍵，或到「選項 → 鍵盤設定」改掉另一個。</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>圖示與文字</MBBS_IconMode>
+  <MBBS_IconModeTip>遊戲原本是：按鈕有圖示就只顯示圖示，沒有就只顯示文字。</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>照遊戲原本的</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>只顯示文字</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>只顯示圖示</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>圖示＋文字</MBBS_IconMode_Both>
+  <MBBS_Icon>圖示：{0}</MBBS_Icon>
+  <MBBS_IconOriginal>按鈕原本的</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0}（找不到）</MBBS_IconMissing>
+  <MBBS_IconMissingNote>找不到選擇的圖示，所以使用按鈕原本的圖示。</MBBS_IconMissingNote>
+  <MBBS_IconChoose>選擇…</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>選擇圖示</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>內建</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>匯入的</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>還沒有匯入的圖示。把 PNG 檔放進
+{0}
+再按「重新整理」。模組更新時它們不會被刪除。</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>使用按鈕原本的</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>打開資料夾</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>重新整理</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>其他模組對這顆按鈕的設定（僅供參考）：</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}：在列上</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}：在它的彈出視窗裡</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}：隱藏</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}：強制顯示</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}：寬度 {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}：間距 {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}：填滿畫面：{1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}：改名為「{1}」</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}：只顯示文字</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}：自訂圖示 {1}</MBBS_Ref_Icon>
 </LanguageData>

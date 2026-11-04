@@ -48,6 +48,8 @@
       <labelSidePadding>6</labelSidePadding>     <!-- left/right aligned button labels -->
       <labelFont>Small</labelFont>               <!-- the game's button label font -->
       <hoverLabelOffset>(2,-2)</hoverLabelOffset> <!-- the game's "pressed" shift under the mouse -->
+      <iconSize>32</iconSize>                    <!-- the game's main button icon size -->
+      <iconTextGap>4</iconTextGap>
       <drawerSettingsIcon>MainButtonBarSystem/UI/Gear</drawerSettingsIcon> <!-- shipped with this mod; themes can replace it -->
     </behaviour>
 
@@ -103,6 +105,8 @@
       <viewSwitchWidth>220</viewSwitchWidth>
       <viewSwitchSelectedColor>(0.30, 0.45, 0.65, 1)</viewSwitchSelectedColor>
       <viewSwitchColor>(0.18, 0.18, 0.18, 1)</viewSwitchColor>
+      <iconPickerSize>(680,560)</iconPickerSize>
+      <iconPickerCell>52</iconPickerCell>
     </settingsWindow>
   </MainButtonBarSystem.MainButtonBarTuningDef>
 </Defs>
