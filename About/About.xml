@@ -3,7 +3,7 @@
   <name>Main Button Bar System</name>
   <author>NAI</author>
   <packageId>NAI.MainButtonBarSystem</packageId>
-  <modVersion>0.7.0</modVersion>
+  <modVersion>0.9.0</modVersion>
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
@@ -18,7 +18,7 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <description>Customise the bottom main button bar: reorder by dragging, hide, rename, set widths, pin to either end, and collapse rarely used buttons into a "More" drawer or let the bar scroll. Per-save settings with a default template, hotkeys for every button, custom and imported icons, five built-in themes in expansion-inspired colours (vanilla look by default), export/import of arrangements, 29 languages.
+  <description>Customise the bottom main button bar: reorder by dragging, hide, rename, set widths, pin to either end, and collapse rarely used buttons into a "More" drawer or let the bar scroll. Per-save settings with a default template, hotkeys for every button, custom and imported icons, five built-in themes in expansion-inspired colours (vanilla look by default), sharing of arrangements (with a report of what fits before importing, or as a Workshop-ready mod), 29 languages.
 
 Nothing changes until you change something: a fresh install looks exactly like the game.
 

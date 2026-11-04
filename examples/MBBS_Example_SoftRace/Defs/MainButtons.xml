@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- The race mod's own button. It opens the History window only so it does something. -->
+  <MainButtonDef>
+    <defName>MBBSExample_RaceTab</defName>
+    <label>leaf folk</label>
+    <description>Example button from the soft race test mod.</description>
+    <workerClass>MainButtonWorker_ToggleTab</workerClass>
+    <tabWindowClass>MainTabWindow_History</tabWindowClass>
+    <iconPath>MBBSExample/SoftRace/RaceTab</iconPath>
+    <order>95</order>
+    <!-- Way 2: MayRequire on a list item. Without Main Button Bar System the item is skipped. -->
+    <modExtensions>
+      <li Class="MainButtonBarSystem.MainButtonBarDefaults" MayRequire="NAI.MainButtonBarSystem">
+        <inDrawer>true</inDrawer>
+        <iconMode>Both</iconMode>
+      </li>
+    </modExtensions>
+  </MainButtonDef>
+</Defs>

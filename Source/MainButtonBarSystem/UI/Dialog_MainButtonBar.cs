@@ -1177,34 +1177,62 @@ namespace MainButtonBarSystem
         {
             return new List<FloatMenuOption>
             {
-                new FloatMenuOption("MBBS_Export_Clipboard".Translate(), () =>
+                new FloatMenuOption("MBBS_Export_Clipboard".Translate(), () => AskInfo(ExportTarget.Clipboard, (meta, _) =>
                 {
-                    GUIUtility.systemCopyBuffer = ArrangementIO.ToText(working);
+                    GUIUtility.systemCopyBuffer = ArrangementIO.ToText(working, meta);
                     Messages.Message("MBBS_Export_Copied".Translate(), MessageTypeDefOf.NeutralEvent, false);
-                }),
-                new FloatMenuOption("MBBS_Export_File".Translate(), () =>
+                })),
+                new FloatMenuOption("MBBS_Export_File".Translate(), () => AskInfo(ExportTarget.File, (meta, _) =>
                 {
-                    var path = ArrangementIO.SaveToFile(working);
+                    var path = ArrangementIO.SaveToFile(working, meta);
                     Messages.Message("MBBS_Export_Saved".Translate(path), MessageTypeDefOf.NeutralEvent, false);
-                }),
-                new FloatMenuOption("MBBS_Export_ModXml".Translate(), () =>
+                })),
+                new FloatMenuOption("MBBS_Export_ModXml".Translate(), () => AskInfo(ExportTarget.ModXml, (meta, _) =>
                 {
-                    GUIUtility.systemCopyBuffer = ArrangementIO.ToModXml(working, "MyArrangement", "my arrangement", SteamOrPlayerName());
+                    GUIUtility.systemCopyBuffer = ArrangementIO.ToModXml(working, meta, Core.SharingNames.Identifier(meta.name, "MyArrangement"));
                     Messages.Message("MBBS_Export_ModXmlCopied".Translate(), MessageTypeDefOf.NeutralEvent, false);
-                }),
+                })),
+                new FloatMenuOption("MBBS_Export_ModFolder".Translate(), () => AskInfo(ExportTarget.ModFolder, (meta, packageId) =>
+                {
+                    try
+                    {
+                        var folder = ArrangementIO.ExportModFolder(working, meta, packageId);
+                        Find.WindowStack.Add(new Dialog_MessageBox("MBBS_Export_ModFolderDone".Translate(folder), "MBBS_OpenFolder".Translate(),
+                            () => FolderUtil.Open(folder), "OK".Translate()));
+                    }
+                    catch (System.Exception e)
+                    {
+                        Messages.Message("MBBS_Export_Failed".Translate(e.Message), MessageTypeDefOf.RejectInput, false);
+                    }
+                })),
+                new FloatMenuOption("MBBS_OpenExportsFolder".Translate(), () => FolderUtil.Open(ModPaths.ExportsFolder)),
             };
+        }
+
+        /// <summary>Asks for name, author and description, then exports with them and this game's button list.</summary>
+        private void AskInfo(ExportTarget target, System.Action<ArrangementMeta, string> export)
+        {
+            Find.WindowStack.Add(new Dialog_ArrangementInfo(target, (name, author, description, packageId) =>
+                export(ArrangementMeta.ForExport(working, name, author, description), packageId)));
         }
 
         private List<FloatMenuOption> ImportOptions()
         {
             var options = new List<FloatMenuOption>
             {
-                new FloatMenuOption("MBBS_Import_Clipboard".Translate(), () => ImportResult(ArrangementIO.FromText(GUIUtility.systemCopyBuffer, out var error), error)),
+                new FloatMenuOption("MBBS_Import_Clipboard".Translate(), () =>
+                    ImportResult(ArrangementIO.FromText(GUIUtility.systemCopyBuffer, "MBBS_Import_ClipboardSource".Translate(), out var error), error)),
             };
             foreach (var file in ArrangementIO.ExportedFiles().Take(L.importMenuMaxFiles))
             {
                 var path = file.FullName;
-                options.Add(new FloatMenuOption("MBBS_Import_File".Translate(file.Name), () => ImportResult(ArrangementIO.FromFile(path, out var error), error)));
+                var (name, author) = ArrangementIO.PeekTitle(path);
+                string label = name.NullOrEmpty()
+                    ? "MBBS_Import_File".Translate(file.Name).ToString()
+                    : author.NullOrEmpty()
+                        ? "MBBS_Import_FileNamed".Translate(name, file.Name).ToString()
+                        : "MBBS_Import_FileNamedBy".Translate(name, author, file.Name).ToString();
+                options.Add(new FloatMenuOption(label, () => ImportResult(ArrangementIO.FromFile(path, out var error), error)));
             }
             foreach (var def in DefDatabase<MainButtonArrangementDef>.AllDefs.OrderBy(d => d.label))
             {
@@ -1212,32 +1240,20 @@ namespace MainButtonBarSystem
                 string label = arrangement.author.NullOrEmpty()
                     ? "MBBS_Import_Def".Translate(arrangement.LabelCap)
                     : "MBBS_Import_DefBy".Translate(arrangement.LabelCap, arrangement.author);
-                options.Add(new FloatMenuOption(label, () => ImportResult(arrangement.config, null)));
+                options.Add(new FloatMenuOption(label, () => ImportResult(ArrangementIO.FromDef(arrangement), null)));
             }
+            options.Add(new FloatMenuOption("MBBS_OpenExportsFolder".Translate(), () => FolderUtil.Open(ModPaths.ExportsFolder)));
             return options;
         }
 
-        private void ImportResult(BarConfig imported, string error)
+        private void ImportResult(SharedArrangement imported, string error)
         {
-            if (imported == null)
+            if (imported?.config == null)
             {
                 Messages.Message(error ?? "MBBS_Import_NoConfig".Translate(), MessageTypeDefOf.RejectInput, false);
                 return;
             }
-            ReplaceWorking(ArrangementIO.ForImport(imported));
-            Messages.Message("MBBS_Import_Done".Translate(), MessageTypeDefOf.NeutralEvent, false);
-        }
-
-        private static string SteamOrPlayerName()
-        {
-            try
-            {
-                return SteamUtility.SteamPersonaName;
-            }
-            catch
-            {
-                return "";
-            }
+            Find.WindowStack.Add(new Dialog_ImportArrangement(imported, working, ReplaceWorking));
         }
 
         // ---------------------------------------------------------------- helpers

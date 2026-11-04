@@ -85,7 +85,7 @@
   <MBBS_Export_File>Lưu thành tệp</MBBS_Export_File>
   <MBBS_Export_Saved>Đã lưu vào {0}</MBBS_Export_Saved>
   <MBBS_Export_ModXml>Sao chép dạng XML cho mod (để tạo mod bố cục)</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>Đã sao chép Def XML. Hãy đặt nó vào một tệp .xml trong thư mục Defs của mod bạn, rồi đổi defName và label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>Đã sao chép Def XML. Hãy đặt nó vào một tệp .xml trong thư mục Defs của mod bạn.</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>Từ bộ nhớ tạm</MBBS_Import_Clipboard>
   <MBBS_Import_File>Tệp: {0}</MBBS_Import_File>
   <MBBS_Import_Def>Bố cục: {0}</MBBS_Import_Def>
@@ -163,4 +163,63 @@ rồi nhấn "Làm mới". Các tệp vẫn được giữ lại khi cập nhậ
   <MBBS_IconModeAllTip>Cách tất cả các nút hiện biểu tượng và chữ, trừ khi nút đó có cài đặt riêng.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Cho cả {0} nút có cài đặt riêng theo cài đặt này</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Theo cài đặt toàn thanh ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>Tạo mod bố cục (sẵn sàng tải lên)</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>Mở thư mục bố cục</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>Mở thư mục</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>Đã tạo thư mục mod:
+{0}
+
+Hãy khởi động lại trò chơi và bật mod trong danh sách mod để dùng thử; từ đó bạn cũng có thể tải nó lên Workshop. Các biểu tượng PNG của bạn đã được kèm theo.</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>Không thể xuất: {0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>bộ nhớ tạm</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0} của {1} ({2})</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>Sao chép dạng văn bản</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>Lưu thành tệp</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>Sao chép dạng XML cho mod</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>Tạo mod bố cục</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>Tên</MBBS_Export_Name>
+  <MBBS_Export_Author>Tác giả</MBBS_Export_Author>
+  <MBBS_Export_Description>Mô tả</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>Văn bản có kèm tên, tác giả và mod nguồn của từng nút, để người nhập biết mình đang thiếu gì.</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>Được lưu trong {0}. Tệp của người khác đặt vào đây sẽ hiện trong mục "Nhập".</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>Một Def cho thư mục Defs trong mod của riêng bạn. Biểu tượng đã nhập dạng PNG không được kèm theo: hãy dùng "Tạo mod bố cục" nếu cần.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Tạo một mod trong {1}: About.xml (yêu cầu Main Button Bar System), bố cục và các biểu tượng PNG mà nó dùng. Người đăng ký sẽ thấy nó trong mục "Nhập".</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>Sao chép</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>Lưu</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>Sao chép</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>Tạo</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>Hãy đặt tên.</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Package ID gồm hai phần trở lên nối với nhau bằng dấu chấm; mỗi phần bắt đầu bằng một chữ cái tiếng Anh và chỉ dùng chữ cái tiếng Anh (không dấu), chữ số và _ (ví dụ Author.MyArrangement).</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>{0} đã được một mod khác sử dụng.</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>Một bố cục cho Main Button Bar System. Mở phần cài đặt của nó, nhấn "Nhập" và chọn "{0}".</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>Nhập: {0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>Tác giả: {0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>Được tạo với RimWorld {0}, Main Button Bar System {1}.</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>Nguồn: {0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>Nút có ở cả hai trò chơi: {0}</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>Không có trong trò chơi của bạn nên cài đặt của chúng bị bỏ qua: {0}</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>mod không rõ</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>Chỉ có trong trò chơi của bạn, giữ nguyên cài đặt của bạn (nút mới được đặt trước nút menu): {0} ({1})</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>Bố cục này không liệt kê các nút của trò chơi nơi nó được tạo (phiên bản cũ). Các nút không được nhắc đến sẽ giữ cài đặt của bạn.</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>Chủ đề: {0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>Chủ đề {0} (từ {1}) chưa được cài đặt; trong lúc đó sẽ dùng giao diện nguyên bản.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>Chế độ hiển thị {0} (từ {1}) chưa được cài đặt; trong lúc đó sẽ dùng thanh nút nguyên bản.</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>Biểu tượng đã nhập mà bạn không có: {0} ({1}). Hãy đặt các tệp PNG vào {2}; trước đó, các nút này dùng biểu tượng gốc của chúng.</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>Biểu tượng từ các mod bạn không có: {0} ({1}). Các nút này dùng biểu tượng gốc của chúng.</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>và {0} mục khác</MBBS_ImportReport_More>
+  <MBBS_ImportParts>Nhập các phần sau:</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>Thứ tự và vị trí</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>Chế độ hiển thị, thứ tự, nút bị ẩn, ngăn kéo "Khác", nút cố định ở hai đầu và khóa nút menu.</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>Kích thước và căn lề</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>Độ rộng nút, khoảng cách, lấp đầy màn hình, căn lề nhãn, nút "Khác", mũi tên, lưới ngăn kéo và tốc độ con lăn.</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>Tên nút</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>Tên tùy chỉnh. Các nút không được bố cục đặt tên sẽ trở về tên gốc.</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>Biểu tượng</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>Cách hiển thị chữ / biểu tượng cho cả thanh và từng nút, cùng các biểu tượng đã chọn.</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>Chủ đề</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>Diện mạo đã chọn ở thẻ Giao diện.</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>(bố cục này không thiết lập: nhập sẽ đưa cài đặt của bạn về mặc định)</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>Nhập</MBBS_ImportConfirm>
 </LanguageData>

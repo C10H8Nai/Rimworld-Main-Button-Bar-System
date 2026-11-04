@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>MBBS Example: Theme Pack</name>
+  <author>NAI</author>
+  <packageId>NAI.MBBSExample.ThemePack</packageId>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <!-- A theme pack only makes sense with Main Button Bar System, so it is a hard dependency. -->
+  <modDependencies>
+    <li>
+      <packageId>NAI.MainButtonBarSystem</packageId>
+      <displayName>Main Button Bar System</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>NAI.MainButtonBarSystem</li>
+  </loadAfter>
+  <description>Test mod for Main Button Bar System (not for the Workshop): one theme, XML and images only, no DLL.</description>
+</ModMetaData>

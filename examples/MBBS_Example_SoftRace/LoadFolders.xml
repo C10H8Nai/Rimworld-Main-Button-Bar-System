@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+  <v1.7>
+    <li>/</li>
+    <!-- Way 1: a folder read only when Main Button Bar System is active. Everything in it (Defs, Textures) is
+         skipped otherwise, so its defs may use Main Button Bar System's classes freely. -->
+    <li IfModActive="NAI.MainButtonBarSystem">Compat/MainButtonBar</li>
+  </v1.7>
+</loadFolders>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Way 3: MayRequire on a whole def. Without Main Button Bar System the def is skipped. -->
+  <MainButtonBarSystem.MainButtonArrangementDef MayRequire="NAI.MainButtonBarSystem">
+    <defName>MBBSExample_LeafFolkArrangement</defName>
+    <label>leaf folk layout (example)</label>
+    <description>Collapse mode with the leaf folk theme; History and Factions in the drawer.</description>
+    <author>NAI</author>
+    <config>
+      <formatVersion>2</formatVersion>
+      <displayMode>Collapse</displayMode>
+      <appearance>MBBSExample_LeafFolk</appearance>
+      <overrides>
+        <li>
+          <defName>History</defName>
+          <inDrawer>True</inDrawer>
+        </li>
+        <li>
+          <defName>Factions</defName>
+          <inDrawer>True</inDrawer>
+        </li>
+        <li>
+          <defName>MBBSExample_RaceTab</defName>
+          <label>Leaf folk</label>
+          <iconMode>Icon</iconMode>
+          <icon>MBBSExample/SoftRace/Icons/LeafGold</icon>
+        </li>
+      </overrides>
+    </config>
+  </MainButtonBarSystem.MainButtonArrangementDef>
+</Defs>

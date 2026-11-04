@@ -85,7 +85,7 @@
   <MBBS_Export_File>Αποθήκευση ως αρχείο</MBBS_Export_File>
   <MBBS_Export_Saved>Αποθηκεύτηκε σε: {0}</MBBS_Export_Saved>
   <MBBS_Export_ModXml>Αντιγραφή ως XML mod (για τη δημιουργία mod διάταξης)</MBBS_Export_ModXml>
-  <MBBS_Export_ModXmlCopied>Το Def XML αντιγράφηκε. Βάλτε το σε ένα αρχείο .xml στον φάκελο Defs του mod σας και αλλάξτε τα defName και label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Export_ModXmlCopied>Το Def XML αντιγράφηκε. Βάλτε το σε ένα αρχείο .xml στον φάκελο Defs του mod σας.</MBBS_Export_ModXmlCopied>
   <MBBS_Import_Clipboard>Από το πρόχειρο</MBBS_Import_Clipboard>
   <MBBS_Import_File>Αρχείο: {0}</MBBS_Import_File>
   <MBBS_Import_Def>Διάταξη: {0}</MBBS_Import_Def>
@@ -163,4 +163,63 @@
   <MBBS_IconModeAllTip>Πώς δείχνουν όλα τα κουμπιά το εικονίδιο και την ετικέτα τους, εκτός αν ένα κουμπί έχει δική του ρύθμιση.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Εφαρμογή σε όλα τα κουμπιά με δική τους ρύθμιση ({0})</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Ίδιο με όλη τη γραμμή ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Export_ModFolder>Δημιουργία mod διάταξης (έτοιμο για ανέβασμα)</MBBS_Export_ModFolder>
+  <MBBS_OpenExportsFolder>Άνοιγμα φακέλου διατάξεων</MBBS_OpenExportsFolder>
+  <MBBS_OpenFolder>Άνοιγμα φακέλου</MBBS_OpenFolder>
+  <MBBS_Export_ModFolderDone>Ο φάκελος του mod δημιουργήθηκε:
+{0}
+
+Επανεκκινήστε το παιχνίδι και ενεργοποιήστε το στη λίστα mod για να το δοκιμάσετε· από εκεί μπορείτε επίσης να το ανεβάσετε στο Workshop. Τα εικονίδια PNG σας περιλαμβάνονται.</MBBS_Export_ModFolderDone>
+  <MBBS_Export_Failed>Δεν ήταν δυνατή η εξαγωγή: {0}</MBBS_Export_Failed>
+  <MBBS_Import_ClipboardSource>πρόχειρο</MBBS_Import_ClipboardSource>
+  <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
+  <MBBS_Import_FileNamedBy>{0} από {1} ({2})</MBBS_Import_FileNamedBy>
+  <MBBS_ExportTitle_Clipboard>Αντιγραφή ως κείμενο</MBBS_ExportTitle_Clipboard>
+  <MBBS_ExportTitle_File>Αποθήκευση ως αρχείο</MBBS_ExportTitle_File>
+  <MBBS_ExportTitle_ModXml>Αντιγραφή ως XML mod</MBBS_ExportTitle_ModXml>
+  <MBBS_ExportTitle_ModFolder>Δημιουργία mod διάταξης</MBBS_ExportTitle_ModFolder>
+  <MBBS_Export_Name>Όνομα</MBBS_Export_Name>
+  <MBBS_Export_Author>Δημιουργός</MBBS_Export_Author>
+  <MBBS_Export_Description>Περιγραφή</MBBS_Export_Description>
+  <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
+  <MBBS_ExportHint_Clipboard>Το κείμενο περιλαμβάνει το όνομα, τον δημιουργό και από ποιο mod προέρχεται κάθε κουμπί, ώστε όποιος το εισαγάγει να βλέπει τι του λείπει.</MBBS_ExportHint_Clipboard>
+  <MBBS_ExportHint_File>Αποθηκεύεται στο {0}. Αρχεία άλλων που βάζετε εκεί εμφανίζονται στην «Εισαγωγή».</MBBS_ExportHint_File>
+  <MBBS_ExportHint_ModXml>Ένα Def για τον φάκελο Defs του δικού σας mod. Τα εικονίδια που εισαγάγατε ως PNG δεν περιλαμβάνονται· γι' αυτό χρησιμοποιήστε τη «Δημιουργία mod διάταξης».</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Δημιουργεί ένα mod στο {1}: About.xml (απαιτεί το Main Button Bar System), τη διάταξη και τα εικονίδια PNG που χρησιμοποιεί. Οι συνδρομητές τη βρίσκουν στην «Εισαγωγή».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportConfirm_Clipboard>Αντιγραφή</MBBS_ExportConfirm_Clipboard>
+  <MBBS_ExportConfirm_File>Αποθήκευση</MBBS_ExportConfirm_File>
+  <MBBS_ExportConfirm_ModXml>Αντιγραφή</MBBS_ExportConfirm_ModXml>
+  <MBBS_ExportConfirm_ModFolder>Δημιουργία</MBBS_ExportConfirm_ModFolder>
+  <MBBS_Export_NeedName>Δώστε της ένα όνομα.</MBBS_Export_NeedName>
+  <MBBS_Export_BadPackageId>Ένα Package ID αποτελείται από δύο ή περισσότερα μέρη ενωμένα με τελείες. Κάθε μέρος ξεκινά με λατινικό γράμμα και περιέχει μόνο λατινικά γράμματα, ψηφία και _ (για παράδειγμα Author.MyArrangement).</MBBS_Export_BadPackageId>
+  <MBBS_Export_PackageIdTaken>Το {0} χρησιμοποιείται ήδη από άλλο mod.</MBBS_Export_PackageIdTaken>
+  <MBBS_ModFolder_Usage>Μια διάταξη για το Main Button Bar System. Ανοίξτε τις ρυθμίσεις του, πατήστε «Εισαγωγή» και επιλέξτε «{0}».</MBBS_ModFolder_Usage>
+  <MBBS_ImportTitle>Εισαγωγή: {0}</MBBS_ImportTitle>
+  <MBBS_ImportReport_By>Από {0}</MBBS_ImportReport_By>
+  <MBBS_ImportReport_MadeWith>Δημιουργήθηκε με RimWorld {0}, Main Button Bar System {1}.</MBBS_ImportReport_MadeWith>
+  <MBBS_ImportReport_Source>Πηγή: {0}</MBBS_ImportReport_Source>
+  <MBBS_ImportReport_Matched>Κουμπιά που υπάρχουν και στα δύο παιχνίδια: {0}</MBBS_ImportReport_Matched>
+  <MBBS_ImportReport_Missing>Δεν υπάρχουν στο παιχνίδι σας, οπότε οι ρυθμίσεις τους παραλείπονται: {0}</MBBS_ImportReport_Missing>
+  <MBBS_ImportReport_UnknownMod>άγνωστο mod</MBBS_ImportReport_UnknownMod>
+  <MBBS_ImportReport_OnlyHere>Μόνο στο παιχνίδι σας, κρατούν τις ρυθμίσεις σας (τα νέα μπαίνουν πριν από το μενού): {0} ({1})</MBBS_ImportReport_OnlyHere>
+  <MBBS_ImportReport_NoList>Αυτή η διάταξη δεν καταγράφει τα κουμπιά του παιχνιδιού όπου δημιουργήθηκε (παλαιότερη έκδοση). Τα κουμπιά που δεν αναφέρει κρατούν τις ρυθμίσεις σας.</MBBS_ImportReport_NoList>
+  <MBBS_ImportReport_Theme>Θέμα: {0}</MBBS_ImportReport_Theme>
+  <MBBS_ImportReport_ThemeMissing>Το θέμα {0} (από {1}) δεν είναι εγκατεστημένο· μέχρι τότε χρησιμοποιείται η αρχική εμφάνιση.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_ModeMissing>Η λειτουργία εμφάνισης {0} (από {1}) δεν είναι εγκατεστημένη· μέχρι τότε χρησιμοποιείται η αρχική γραμμή.</MBBS_ImportReport_ModeMissing>
+  <MBBS_ImportReport_IconFilesMissing>Εισαγμένα εικονίδια που δεν έχετε: {0} ({1}). Βάλτε τα αρχεία PNG στο {2}· μέχρι τότε αυτά τα κουμπιά κρατούν το δικό τους εικονίδιο.</MBBS_ImportReport_IconFilesMissing>
+  <MBBS_ImportReport_IconTexturesMissing>Εικονίδια από mods που δεν έχετε: {0} ({1}). Αυτά τα κουμπιά κρατούν το δικό τους εικονίδιο.</MBBS_ImportReport_IconTexturesMissing>
+  <MBBS_ImportReport_More>και {0} ακόμη</MBBS_ImportReport_More>
+  <MBBS_ImportParts>Εισαγωγή αυτών των μερών:</MBBS_ImportParts>
+  <MBBS_ImportPart_Layout>Σειρά και θέση</MBBS_ImportPart_Layout>
+  <MBBS_ImportPart_Layout_Desc>Λειτουργία εμφάνισης, σειρά, κρυφά κουμπιά, συρτάρι «Άλλα», κουμπιά καρφιτσωμένα στα άκρα και κλείδωμα του μενού.</MBBS_ImportPart_Layout_Desc>
+  <MBBS_ImportPart_Sizes>Μεγέθη και στοίχιση</MBBS_ImportPart_Sizes>
+  <MBBS_ImportPart_Sizes_Desc>Πλάτη κουμπιών, απόσταση, κάλυψη οθόνης, στοίχιση ετικετών, κουμπί «Άλλα», βέλη, πλέγμα συρταριού και ταχύτητα ροδέλας.</MBBS_ImportPart_Sizes_Desc>
+  <MBBS_ImportPart_Names>Ονόματα κουμπιών</MBBS_ImportPart_Names>
+  <MBBS_ImportPart_Names_Desc>Προσαρμοσμένα ονόματα. Τα κουμπιά που δεν μετονομάζει επιστρέφουν στο δικό τους όνομα.</MBBS_ImportPart_Names_Desc>
+  <MBBS_ImportPart_Icons>Εικονίδια</MBBS_ImportPart_Icons>
+  <MBBS_ImportPart_Icons_Desc>Εμφάνιση κειμένου / εικονιδίου για όλη τη γραμμή και κάθε κουμπί, καθώς και τα επιλεγμένα εικονίδια.</MBBS_ImportPart_Icons_Desc>
+  <MBBS_ImportPart_Theme>Θέμα</MBBS_ImportPart_Theme>
+  <MBBS_ImportPart_Theme_Desc>Η εμφάνιση από την καρτέλα «Εμφάνιση».</MBBS_ImportPart_Theme_Desc>
+  <MBBS_ImportPart_NotSet>(δεν ορίζεται σε αυτή τη διάταξη: η εισαγωγή επαναφέρει το δικό σας στην προεπιλογή)</MBBS_ImportPart_NotSet>
+  <MBBS_ImportConfirm>Εισαγωγή</MBBS_ImportConfirm>
 </LanguageData>
