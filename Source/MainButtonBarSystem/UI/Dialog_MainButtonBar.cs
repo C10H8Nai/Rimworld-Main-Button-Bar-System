@@ -316,7 +316,8 @@ namespace MainButtonBarSystem
             // The image only, at full opacity: decorations would grow out of the card (themes with decorations should
             // set a preview), and the player's opacity setting should not fade every card.
             worker.DrawBarBackgroundImage(rect, 1f);
-            var samples = ButtonBaseline.All.Where(b => b.ButtonVisible && !b.Label.NullOrEmpty()).Take(L.themePreviewButtons).Select(b => b.Label.CapitalizeFirst()).ToList();
+            var samples = ButtonBaseline.All.Where(b => b.ButtonVisible && !b.Label.NullOrEmpty()).Take(L.themePreviewButtons)
+                .Select(b => (defName: b.DefName, label: b.Label.CapitalizeFirst())).ToList();
 
             // Layout as on the bar: < [buttons] > [More].
             float arrow = Mathf.Min(D.arrowWidth, rect.width / 8f);
@@ -337,12 +338,15 @@ namespace MainButtonBarSystem
                 var atlas = more ? theme.Tex(theme.moreButton) : null;
                 bool replacesTint = atlas != null;
                 atlas ??= worker.ButtonAtlas(state, out replacesTint) ?? Widgets.ButtonSubtleAtlas;
+                // The sample's own picture first, as on the bar (ThemeAtlasSwap), then its frame.
+                var image = more ? null : worker.ButtonImage(DefDatabase<MainButtonDef>.GetNamedSilentFail(samples[i].defName));
+                if (image != null) worker.DrawButtonImage(r, image);
                 var color = GUI.color;
                 if ((state == ButtonVisualState.Mouseover || state == ButtonVisualState.Active) && !replacesTint) GUI.color = GenUI.MouseoverColor;
                 Widgets.DrawAtlas(r, atlas);
                 GUI.color = color;
                 if (state == ButtonVisualState.Disabled) continue;
-                string label = more ? worker.MoreButtonLabel(samples.Count) : samples[i];
+                string label = more ? worker.MoreButtonLabel(samples.Count) : samples[i].label;
                 ButtonPainter.DrawLabel(r, label.Truncate(r.width), worker.LabelColor(state) ?? Color.white, TextAnchor.MiddleCenter, state != ButtonVisualState.Normal);
             }
         }

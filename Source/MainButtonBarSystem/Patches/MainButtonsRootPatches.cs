@@ -74,6 +74,8 @@ namespace MainButtonBarSystem
     /// <summary>
     /// Themes: while this mod draws a bar button, the game's subtle button atlas (drawn by Widgets.ButtonTextSubtle
     /// and by MainButtonWorker.DoButton for disabled buttons) is swapped for the theme's atlas of the current state.
+    /// The button's picture, if the theme gives it one, is drawn first, so the atlas frames it (in every state, the
+    /// game's own atlas too when the theme has none).
     /// </summary>
     public static class ThemeAtlasSwap
     {
@@ -82,6 +84,12 @@ namespace MainButtonBarSystem
             __state = null;
             var theme = ButtonPainter.ActiveTheme;
             if (theme == null || atlas != Widgets.ButtonSubtleAtlas) return;
+            var button = ButtonPainter.ActiveButton;
+            if (button != null)
+            {
+                var image = theme.ButtonImage(button);
+                if (image != null) theme.DrawButtonImage(rect, image);
+            }
             var replacement = theme.ButtonAtlas(ButtonPainter.StateFor(rect), out bool replacesTint);
             if (replacement == null) return;
             atlas = replacement;

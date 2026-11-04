@@ -1,3 +1,4 @@
+using MainButtonBarSystem.Core;
 using UnityEngine;
 using Verse;
 
@@ -10,8 +11,16 @@ namespace MainButtonBarSystem
     /// </summary>
     internal static class TexturePainter
     {
-        /// <summary>Draws <paramref name="texture"/> into <paramref name="rect"/>; <paramref name="alpha"/> multiplies the current GUI colour's alpha.</summary>
-        public static void Draw(Rect rect, Texture2D texture, BackgroundFit fit, float tileScale, float alpha)
+        /// <summary>Draws <paramref name="texture"/> into <paramref name="rect"/>, centred; <paramref name="alpha"/> multiplies the current GUI colour's alpha.</summary>
+        public static void Draw(Rect rect, Texture2D texture, BackgroundFit fit, float tileScale, float alpha) =>
+            DrawAnchored(rect, texture, fit, tileScale, alpha, DecorationAnchor.Center, DecorationVerticalAnchor.Center);
+
+        /// <summary>
+        /// Like <see cref="Draw"/>, with anchors for Fit (where the image sits) and Cover (which side is kept when
+        /// cropping). Stretch, Tile and Atlas ignore them.
+        /// </summary>
+        public static void DrawAnchored(Rect rect, Texture2D texture, BackgroundFit fit, float tileScale, float alpha,
+            DecorationAnchor anchor, DecorationVerticalAnchor verticalAnchor)
         {
             if (texture == null || rect.width <= 0f || rect.height <= 0f) return;
             var saved = GUI.color;
@@ -24,10 +33,10 @@ namespace MainButtonBarSystem
                         GUI.DrawTexture(rect, texture);
                         break;
                     case BackgroundFit.Fit:
-                        GUI.DrawTexture(FitRect(rect, texture.width, texture.height), texture);
+                        GUI.DrawTexture(FitRect(rect, texture.width, texture.height, anchor, verticalAnchor), texture);
                         break;
                     case BackgroundFit.Cover:
-                        GUI.DrawTextureWithTexCoords(rect, texture, CoverCoords(rect, texture.width, texture.height));
+                        GUI.DrawTextureWithTexCoords(rect, texture, CoverCoords(rect, texture.width, texture.height, anchor, verticalAnchor));
                         break;
                     case BackgroundFit.Tile:
                         DrawTiled(rect, texture, tileScale);
@@ -43,23 +52,20 @@ namespace MainButtonBarSystem
             }
         }
 
-        /// <summary>The largest centred rectangle with the texture's aspect ratio that fits inside <paramref name="rect"/>.</summary>
-        internal static Rect FitRect(Rect rect, int texWidth, int texHeight)
+        /// <summary>The largest rectangle with the texture's aspect ratio that fits inside <paramref name="rect"/>, placed at the anchors (<see cref="ImageFit.FitBox"/>).</summary>
+        internal static Rect FitRect(Rect rect, int texWidth, int texHeight,
+            DecorationAnchor anchor = DecorationAnchor.Center, DecorationVerticalAnchor verticalAnchor = DecorationVerticalAnchor.Center)
         {
-            if (texWidth <= 0 || texHeight <= 0) return rect;
-            float scale = Mathf.Min(rect.width / texWidth, rect.height / texHeight);
-            float width = texWidth * scale, height = texHeight * scale;
-            return new Rect(rect.x + (rect.width - width) / 2f, rect.y + (rect.height - height) / 2f, width, height);
+            var box = ImageFit.FitBox(rect.x, rect.y, rect.width, rect.height, texWidth, texHeight, anchor, verticalAnchor);
+            return new Rect(box.X, box.Y, box.Width, box.Height);
         }
 
-        /// <summary>The centred part of the texture (in 0..1 coordinates) that covers <paramref name="rect"/> at the texture's aspect ratio.</summary>
-        internal static Rect CoverCoords(Rect rect, int texWidth, int texHeight)
+        /// <summary>The part of the texture (0..1, origin bottom left) that covers <paramref name="rect"/> at the texture's aspect ratio, keeping the anchored side (<see cref="ImageFit.CoverCoords"/>).</summary>
+        internal static Rect CoverCoords(Rect rect, int texWidth, int texHeight,
+            DecorationAnchor anchor = DecorationAnchor.Center, DecorationVerticalAnchor verticalAnchor = DecorationVerticalAnchor.Center)
         {
-            if (texWidth <= 0 || texHeight <= 0) return new Rect(0f, 0f, 1f, 1f);
-            float scale = Mathf.Max(rect.width / texWidth, rect.height / texHeight);
-            float u = Mathf.Clamp01(rect.width / (texWidth * scale));
-            float v = Mathf.Clamp01(rect.height / (texHeight * scale));
-            return new Rect((1f - u) / 2f, (1f - v) / 2f, u, v);
+            var uv = ImageFit.CoverCoords(rect.width, rect.height, texWidth, texHeight, anchor, verticalAnchor);
+            return new Rect(uv.X, uv.Y, uv.Width, uv.Height);
         }
 
         /// <summary>Repeats the texture from the top-left corner; tiles beyond the tuning def's limit fall back to stretching.</summary>

@@ -82,7 +82,19 @@ namespace MainButtonBarSystem
         /// </summary>
         public List<BarDecoration> decorations;
 
+        /// <summary>
+        /// Picture inside every main button, under the button atlas (a frame with a transparent middle lets it show).
+        /// Empty: none. Buttons listed in <see cref="buttonImages"/> use their own instead.
+        /// </summary>
+        public BarButtonImage buttonImage;
+
+        /// <summary>Pictures for named buttons (<see cref="BarButtonImage.button"/>); override <see cref="buttonImage"/>. Buttons not listed keep the default.</summary>
+        public List<BarButtonImage> buttonImages;
+
         [Unsaved] private BarAppearanceWorker workerInt;
+
+        /// <summary>buttonImages by button defName, built on first use (a later entry for the same button wins).</summary>
+        [Unsaved] private Dictionary<string, BarButtonImage> buttonImageIndex;
         [Unsaved] private readonly Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
 
         /// <summary>Paths already reported as missing (by <see cref="Tex"/> or the dev-mode validator), so each is reported once.</summary>
@@ -135,10 +147,40 @@ namespace MainButtonBarSystem
 
         public bool HasDecorations => decorations != null && decorations.Count > 0;
 
+        /// <summary>True when any button gets a picture (<see cref="buttonImage"/> or an entry of <see cref="buttonImages"/>).</summary>
+        public bool HasButtonImages => IsUsable(buttonImage) || ButtonImageIndex.Count > 0;
+
+        /// <summary>The picture for a button: its own entry in <see cref="buttonImages"/>, else <see cref="buttonImage"/>, else null.</summary>
+        public BarButtonImage ButtonImageFor(string buttonDefName)
+        {
+            if (buttonDefName != null && ButtonImageIndex.TryGetValue(buttonDefName, out var own)) return own;
+            return IsUsable(buttonImage) ? buttonImage : null;
+        }
+
+        private Dictionary<string, BarButtonImage> ButtonImageIndex
+        {
+            get
+            {
+                if (buttonImageIndex == null)
+                {
+                    buttonImageIndex = new Dictionary<string, BarButtonImage>();
+                    if (buttonImages != null)
+                    {
+                        foreach (var image in buttonImages)
+                            if (IsUsable(image) && !string.IsNullOrEmpty(image.button)) buttonImageIndex[image.button] = image;
+                    }
+                }
+                return buttonImageIndex;
+            }
+        }
+
+        private static bool IsUsable(BarButtonImage image) => image != null && !string.IsNullOrEmpty(image.texture);
+
         /// <summary>True when the theme replaces anything inside the buttons themselves.</summary>
         public bool ChangesButtons =>
             !string.IsNullOrEmpty(button) || !string.IsNullOrEmpty(buttonMouseover) || !string.IsNullOrEmpty(buttonActive) ||
-            !string.IsNullOrEmpty(buttonDisabled) || HasLabelColor || labelMouseoverColor.a > 0f || labelActiveColor.a > 0f;
+            !string.IsNullOrEmpty(buttonDisabled) || HasLabelColor || labelMouseoverColor.a > 0f || labelActiveColor.a > 0f ||
+            HasButtonImages;
 
         /// <summary>Every texture field of the def with its path (empty paths included), for checks and reloading.</summary>
         public IEnumerable<(string field, string path)> TexturePaths()
@@ -154,6 +196,13 @@ namespace MainButtonBarSystem
             yield return (nameof(drawerBackground), drawerBackground);
             yield return (nameof(drawerSettingsIcon), drawerSettingsIcon);
             yield return (nameof(preview), preview);
+            if (buttonImage != null)
+                yield return ($"{nameof(buttonImage)}.{nameof(BarButtonImage.texture)}", buttonImage.texture);
+            if (buttonImages != null)
+            {
+                for (int i = 0; i < buttonImages.Count; i++)
+                    yield return ($"{nameof(buttonImages)}[{i}].{nameof(BarButtonImage.texture)}", buttonImages[i]?.texture);
+            }
             if (decorations == null) yield break;
             for (int i = 0; i < decorations.Count; i++)
                 yield return ($"{nameof(decorations)}[{i}].{nameof(BarDecoration.texture)}", decorations[i]?.texture);
@@ -219,6 +268,22 @@ namespace MainButtonBarSystem
                 yield return "workerClass must derive from " + nameof(BarAppearanceWorker);
             if (barBackgroundTileScale <= 0f) yield return nameof(barBackgroundTileScale) + " must be positive";
             if (drawerBackgroundTileScale <= 0f) yield return nameof(drawerBackgroundTileScale) + " must be positive";
+            if (buttonImage != null)
+            {
+                foreach (var e in buttonImage.ConfigErrors(-1)) yield return e;
+            }
+            if (buttonImages != null)
+            {
+                for (int i = 0; i < buttonImages.Count; i++)
+                {
+                    if (buttonImages[i] == null)
+                    {
+                        yield return $"{nameof(buttonImages)}[{i}] is empty";
+                        continue;
+                    }
+                    foreach (var e in buttonImages[i].ConfigErrors(i)) yield return e;
+                }
+            }
             if (decorations == null) yield break;
             for (int i = 0; i < decorations.Count; i++)
             {
@@ -368,6 +433,33 @@ namespace MainButtonBarSystem
             return def.Tex(def.button);
         }
 
+        /// <summary>The picture to draw inside this main button (<see cref="BarAppearanceDef.ButtonImageFor"/>), or null.</summary>
+        public virtual BarButtonImage ButtonImage(MainButtonDef button) => button == null ? null : def.ButtonImageFor(button.defName);
+
+        /// <summary>
+        /// Draws a button picture inside <paramref name="rect"/> (minus its inset), before the button atlas. Only the
+        /// alpha of the current GUI colour is kept, so the game's mouse-over tint stays on the frame and does not tint
+        /// the picture. A missing texture draws nothing (and is reported once).
+        /// </summary>
+        public virtual void DrawButtonImage(Rect rect, BarButtonImage image)
+        {
+            if (image == null) return;
+            var tex = def.Tex(image.texture);
+            if (tex == null) return;
+            var area = image.inset > 0f ? rect.ContractedBy(image.inset) : rect;
+            if (area.width <= 0f || area.height <= 0f) return;
+            var saved = GUI.color;
+            GUI.color = new Color(1f, 1f, 1f, saved.a);
+            try
+            {
+                TexturePainter.DrawAnchored(area, tex, image.EffectiveFit, 1f, image.opacity, image.anchor, image.verticalAnchor);
+            }
+            finally
+            {
+                GUI.color = saved;
+            }
+        }
+
         /// <summary>Label colour for a state, or null to keep the game's. Active: labelActiveColor, else labelMouseoverColor, else labelColor.</summary>
         public virtual Color? LabelColor(ButtonVisualState state)
         {
@@ -442,6 +534,12 @@ namespace MainButtonBarSystem
         /// <summary>Theme applied to the button being drawn; null outside this mod's drawing.</summary>
         public static BarAppearanceWorker ActiveTheme { get; private set; }
 
+        /// <summary>
+        /// The main button being drawn while <see cref="ActiveTheme"/> is set, for its picture
+        /// (<see cref="BarAppearanceWorker.ButtonImage"/>); null for the More button, the arrows and outside this mod's drawing.
+        /// </summary>
+        public static MainButtonDef ActiveButton { get; private set; }
+
         /// <summary>Whether the button being drawn is pressed, open or disabled; mouse-over is decided per rect.</summary>
         public static ButtonVisualState ActiveBaseState { get; private set; }
 
@@ -486,6 +584,7 @@ namespace MainButtonBarSystem
 
             ActiveAlign = align;
             ActiveTheme = themed ? theme : null;
+            ActiveButton = themed ? def : null;
             ActiveBaseState = BaseState(def, rect);
             try
             {
@@ -516,6 +615,7 @@ namespace MainButtonBarSystem
                 def.iconPath = savedPath;
                 ActiveAlign = LabelAlign.Default;
                 ActiveTheme = null;
+                ActiveButton = null;
                 ActiveBaseState = ButtonVisualState.Normal;
                 ActiveIcon = null;
                 ActiveIconOnly = false;
@@ -586,9 +686,11 @@ namespace MainButtonBarSystem
         {
             bool themed = theme != null && theme.def.ChangesButtons;
             var previousTheme = ActiveTheme;
+            var previousButton = ActiveButton;
             var previousState = ActiveBaseState;
             var previousAlign = ActiveAlign;
             ActiveTheme = themed ? theme : null;
+            ActiveButton = null;   // More and the arrows are not main buttons: no picture
             ActiveBaseState = active ? ButtonVisualState.Active : ButtonVisualState.Normal;
             if (anchor == TextAnchor.MiddleCenter) ActiveAlign = LabelAlign.Center;
             try
@@ -598,6 +700,7 @@ namespace MainButtonBarSystem
             finally
             {
                 ActiveTheme = previousTheme;
+                ActiveButton = previousButton;
                 ActiveBaseState = previousState;
                 ActiveAlign = previousAlign;
             }

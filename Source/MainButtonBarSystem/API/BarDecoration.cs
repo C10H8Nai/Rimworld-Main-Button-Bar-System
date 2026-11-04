@@ -105,4 +105,46 @@ namespace MainButtonBarSystem
             if (size.x < 0f || size.y < 0f) yield return prefix + "size must not be negative";
         }
     }
+
+    /// <summary>
+    /// A picture drawn inside main buttons, under the theme's button atlas (API 1.1): <see cref="BarAppearanceDef.buttonImage"/>
+    /// for every button, <see cref="BarAppearanceDef.buttonImages"/> for named ones. Only <see cref="texture"/> (and, in
+    /// the list, <see cref="button"/>) is required; everything else has the defaults shown here.
+    /// </summary>
+    public class BarButtonImage
+    {
+        /// <summary>defName of the MainButtonDef (Architect, Work, a mod's button...). Required in buttonImages; not used in buttonImage.</summary>
+        public string button;
+
+        /// <summary>Texture path relative to Textures/, without the extension. Any size.</summary>
+        public string texture;
+
+        /// <summary>Cover (the default) fills the button keeping the aspect ratio and crops; Fit shows the whole image; Stretch distorts. Atlas and Tile are drawn as Stretch.</summary>
+        public BackgroundFit fit = BackgroundFit.Cover;
+
+        /// <summary>Which side Cover keeps when cropping, and where Fit places the image.</summary>
+        public DecorationAnchor anchor = DecorationAnchor.Center;
+
+        public DecorationVerticalAnchor verticalAnchor = DecorationVerticalAnchor.Center;
+
+        /// <summary>0 to 1.</summary>
+        public float opacity = 1f;
+
+        /// <summary>Pixels kept free inside the button's edge on every side (for example to stay inside the frame).</summary>
+        public float inset;
+
+        /// <summary>The fit actually drawn: Atlas and Tile make no sense inside one button and become Stretch.</summary>
+        public BackgroundFit EffectiveFit => fit == BackgroundFit.Cover || fit == BackgroundFit.Fit ? fit : BackgroundFit.Stretch;
+
+        /// <summary>Errors in the XML. <paramref name="index"/> is the position in buttonImages, or -1 for buttonImage.</summary>
+        public IEnumerable<string> ConfigErrors(int index)
+        {
+            string prefix = index < 0 ? "buttonImage: " : "buttonImages[" + index + "]: ";
+            if (string.IsNullOrEmpty(texture)) yield return prefix + "texture is empty";
+            if (index >= 0 && string.IsNullOrEmpty(button)) yield return prefix + "button is empty (the defName of a MainButtonDef)";
+            if (index < 0 && !string.IsNullOrEmpty(button)) yield return prefix + "button is only read in buttonImages; buttonImage applies to every button";
+            if (opacity < 0f || opacity > 1f) yield return prefix + "opacity must be between 0 and 1";
+            if (inset < 0f) yield return prefix + "inset must not be negative";
+        }
+    }
 }
