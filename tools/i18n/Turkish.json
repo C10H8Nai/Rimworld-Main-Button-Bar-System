@@ -181,11 +181,11 @@
       "MBBS_Creed.label": "inanç",
       "MBBS_Creed.description": "Ideology genişleme paketinin renklerinden, mercan rengi kenarlıklar ve altın madalyonlarla koyu petrol mavisi.",
       "MBBS_GeneLab.label": "gen laboratuvarı",
-      "MBBS_GeneLab.description": "Biotech genişleme paketinin renklerinden, petrol mavisi kenarlıklar, leylak rengi gen kareleri ve gen mavisi yazılarla mavi.",
+      "MBBS_GeneLab.description": "Biotech genişleme paketinin renklerinden, petrol mavisi kenarlıklar, koyu kırmızı gen kareleri ve soluk petrol mavisi yazılarla yeşilimsi mavi.",
       "MBBS_Void.label": "hiçlik",
-      "MBBS_Void.description": "Anomaly genişleme paketinin renklerinden, kırmızı ışıltı ve kıymık gibi kesik köşelerle hiçlik siyahı ve monolit taşı.",
+      "MBBS_Void.description": "Anomaly genişleme paketinin renklerinden, adaçayı yeşili kenarlıklar, fareyle üzerine gelince parlayan ince kırmızı bir çizgi ve kıymık gibi kesik köşelerle hiçlik siyahı.",
       "MBBS_Starfarer.label": "yıldız gezgini",
-      "MBBS_Starfarer.description": "Odyssey genişleme paketinden esinlenen, perçinli çelik gövde plakaları ve camgöbeği itici ışıltısı."
+      "MBBS_Starfarer.description": "Odyssey genişleme paketinin renklerinden, mor gövde plakaları, camgöbeği perçinler ve camgöbeği itici çizgisiyle uzay moru."
     }
   }
 }

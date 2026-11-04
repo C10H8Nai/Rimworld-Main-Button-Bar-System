@@ -10,6 +10,8 @@ namespace MainButtonBarSystem
     /// with its own settings button underneath (spec 3.3). Columns and cell width come from the bar settings,
     /// everything else from the tuning def.
     /// </summary>
+    // The attribute tells the game this class's static texture field is intended (it is loaded on first use).
+    [StaticConstructorOnStartup]
     public class Window_ButtonDrawer : Window
     {
         private static float lastClosedAt = -1f;
@@ -80,6 +82,8 @@ namespace MainButtonBarSystem
                 Rows * CellHeight + B.drawerSettingsRowHeight + B.drawerPadding * 3f);
 
         private static Texture2D defaultSettingsIcon;
+
+        internal static void ResetCache() => defaultSettingsIcon = null;
 
         /// <summary>The settings gear: the theme's icon, else the tuning def's (this mod ships one).</summary>
         private static Texture2D SettingsIcon(BarAppearanceWorker appearance)

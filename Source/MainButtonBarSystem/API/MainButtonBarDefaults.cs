@@ -80,6 +80,9 @@ namespace MainButtonBarSystem
             byDefName = null;
         }
 
+        /// <summary>Rebuild from the (new) defs on next use; runtime defaults are kept.</summary>
+        internal static void ResetCache() => byDefName = null;
+
         private static void Build()
         {
             byDefName = new Dictionary<string, ButtonOverride>();

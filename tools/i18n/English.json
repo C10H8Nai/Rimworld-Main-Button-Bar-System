@@ -181,11 +181,11 @@
       "MBBS_Creed.label": "creed",
       "MBBS_Creed.description": "Deep teal with coral borders and gold roundels, from the Ideology expansion's colours.",
       "MBBS_GeneLab.label": "gene lab",
-      "MBBS_GeneLab.description": "Blue with teal borders, mauve gene tiles and gene-blue labels, from the Biotech expansion's colours.",
+      "MBBS_GeneLab.description": "Teal-blue with teal borders, deep red gene tiles and pale teal labels, from the Biotech expansion's colours.",
       "MBBS_Void.label": "void",
-      "MBBS_Void.description": "Void black and monolith stone with a red glow and shard-cut corners, from the Anomaly expansion's colours.",
+      "MBBS_Void.description": "Void black with sage-green borders, a thin red line that glows under the mouse, and shard-cut corners, from the Anomaly expansion's colours.",
       "MBBS_Starfarer.label": "starfarer",
-      "MBBS_Starfarer.description": "Steel hull plates with rivets and a cyan thruster glow, after the Odyssey expansion."
+      "MBBS_Starfarer.description": "Space purple with purple hull plates, cyan rivets and a cyan thruster line, from the Odyssey expansion's colours."
     }
   }
 }

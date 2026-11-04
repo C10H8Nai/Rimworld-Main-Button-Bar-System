@@ -29,6 +29,8 @@ namespace MainButtonBarSystem
             }
         }
 
+        internal static void ResetCache() => currentNames = null;
+
         public static bool IsLocked(BarConfig config, string defName) => config.MenuLocked && defName == MenuDefName;
 
         public static PinPosition PinOf(BarConfig config, string defName) =>

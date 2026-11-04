@@ -181,11 +181,11 @@
       "MBBS_Creed.label": "usko",
       "MBBS_Creed.description": "Syvä sinivihreä, korallinpunaiset reunat ja kultaiset medaljongit, Maailmankatsomus-laajennuksen väreissä.",
       "MBBS_GeneLab.label": "geenilaboratorio",
-      "MBBS_GeneLab.description": "Sininen, sinivihreät reunat, malvanväriset geeniruudut ja geeninsiniset tekstit, Biotech-laajennuksen väreissä.",
+      "MBBS_GeneLab.description": "Petroolinsininen, sinivihreät reunat, tummanpunaiset geeniruudut ja vaalean sinivihreät tekstit, Biotech-laajennuksen väreissä.",
       "MBBS_Void.label": "tyhjyys",
-      "MBBS_Void.description": "Tyhjyydenmusta ja monoliittikivi, punainen hehku ja sirpaleiksi viistetyt kulmat, Anomaly-laajennuksen väreissä.",
+      "MBBS_Void.description": "Tyhjyydenmusta, salvianvihreät reunat, ohut punainen viiva, joka hehkuu hiiren alla, ja sirpaleiksi viistetyt kulmat, Anomaly-laajennuksen väreissä.",
       "MBBS_Starfarer.label": "tähtienkulkija",
-      "MBBS_Starfarer.description": "Teräksiset runkolevyt, niitit ja syaaninen moottorien hehku, Odyssey-laajennuksen innoittamana."
+      "MBBS_Starfarer.description": "Avaruusvioletti, violetit runkolevyt, syaaniset niitit ja syaaninen moottorien valoviiva, Odyssey-laajennuksen väreissä."
     }
   }
 }

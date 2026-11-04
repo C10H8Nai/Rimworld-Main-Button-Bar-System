@@ -78,8 +78,11 @@ namespace MainButtonBarSystem
         /// <summary>The priority chosen in settings, else the def's default.</summary>
         public CompatPriority Priority => MainButtonBarSystemMod.Settings.PriorityFor(def);
 
-        /// <summary>The priority in force this session; changes apply after a restart.</summary>
-        public CompatPriority SessionPriority { get; private set; } = CompatPriority.Theirs;
+        /// <summary>
+        /// The priority in force this session; changes apply after a restart. Kept by def name in
+        /// <see cref="CompatBridges"/>, so a play-data reload (which creates new workers) does not change it.
+        /// </summary>
+        public CompatPriority SessionPriority => CompatBridges.SessionPriorityOf(def) ?? CompatPriority.Theirs;
 
         /// <summary>True when the other mod keeps the bar and this mod must not draw it.</summary>
         public virtual bool ControlsBar => Detected && SessionPriority == CompatPriority.Theirs;
@@ -92,8 +95,7 @@ namespace MainButtonBarSystem
         {
             if (tookOver || !Detected) return;
             tookOver = true;
-            SessionPriority = Priority;
-            if (SessionPriority == CompatPriority.Ours) TakeOver();
+            if (CompatBridges.FixSessionPriority(def, Priority) == CompatPriority.Ours) TakeOver();
         }
 
         /// <summary>Removes the other mod's patches on the bar. Override to also undo changes it already made.</summary>

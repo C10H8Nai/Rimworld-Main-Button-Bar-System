@@ -18,11 +18,11 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <description>Customise the bottom main button bar: reorder by dragging, hide, rename, set widths, pin to either end, and collapse rarely used buttons into a "More" drawer or let the bar scroll. Per-save settings with a default template, hotkeys for every button, custom and imported icons, themes, export/import of arrangements, 29 languages.
+  <description>Customise the bottom main button bar: reorder by dragging, hide, rename, set widths, pin to either end, and collapse rarely used buttons into a "More" drawer or let the bar scroll. Per-save settings with a default template, hotkeys for every button, custom and imported icons, five built-in themes in expansion-inspired colours (vanilla look by default), export/import of arrangements, 29 languages.
 
 Nothing changes until you change something: a fresh install looks exactly like the game.
 
-Works with mods that add icons, windows or buttons. Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected; you choose who draws it.
+Works with mods that add icons, windows or buttons. Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected; you choose who draws it (importing their settings is experimental). Works with Better Sliders.
 
 Settings: Options > Mod settings > Main Button Bar System, or the gear in the "More" drawer. For modders: API.md in the mod folder.</description>
 </ModMetaData>

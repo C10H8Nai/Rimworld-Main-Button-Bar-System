@@ -181,11 +181,11 @@
       "MBBS_Creed.label": "krédo",
       "MBBS_Creed.description": "Tmavá modrozelená s koralovými okrajmi a zlatými medailónmi. Vo farbách rozšírenia Ideology.",
       "MBBS_GeneLab.label": "genetické laboratórium",
-      "MBBS_GeneLab.description": "Modrá s modrozelenými okrajmi, fialovoružovými génovými dlaždicami a popismi v génovej modrej. Vo farbách rozšírenia Biotech.",
+      "MBBS_GeneLab.description": "Petrolejovomodrá s modrozelenými okrajmi, tmavočervenými génovými dlaždicami a popismi v bledej modrozelenej. Vo farbách rozšírenia Biotech.",
       "MBBS_Void.label": "prázdnota",
-      "MBBS_Void.description": "Čerň prázdnoty a kameň monolitu s červenou žiarou a rohmi zrezanými ako črepiny. Vo farbách rozšírenia Anomaly.",
+      "MBBS_Void.description": "Čerň prázdnoty so šalviovozelenými okrajmi, tenkou červenou linkou, ktorá sa pod kurzorom myši rozžiari, a rohmi zrezanými ako črepiny. Vo farbách rozšírenia Anomaly.",
       "MBBS_Starfarer.label": "hviezdny pútnik",
-      "MBBS_Starfarer.description": "Oceľové pláty trupu s nitmi a azúrovou žiarou trysiek. Inšpirované rozšírením Odyssey."
+      "MBBS_Starfarer.description": "Vesmírna fialová s fialovými plátmi trupu, azúrovými nitmi a azúrovou linkou trysiek. Vo farbách rozšírenia Odyssey."
     }
   }
 }

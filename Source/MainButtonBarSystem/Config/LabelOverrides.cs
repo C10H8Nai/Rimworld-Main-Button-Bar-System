@@ -24,6 +24,9 @@ namespace MainButtonBarSystem
         /// <summary>defName -> label this class last wrote.</summary>
         private static readonly Dictionary<string, string> applied = new Dictionary<string, string>();
 
+        /// <summary>Reloaded defs carry their own labels again; renames are applied anew on the next sync.</summary>
+        internal static void ResetCache() => applied.Clear();
+
         public static void Sync(BarConfig config)
         {
             foreach (var o in config.overrides)

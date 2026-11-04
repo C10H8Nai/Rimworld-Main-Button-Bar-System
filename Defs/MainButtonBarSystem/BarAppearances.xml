@@ -55,15 +55,15 @@
   <MainButtonBarSystem.BarAppearanceDef>
     <defName>MBBS_GeneLab</defName>
     <label>gene lab</label>
-    <description>Blue with teal borders, mauve gene tiles and gene-blue labels, from the Biotech expansion's colours.</description>
+    <description>Teal-blue with teal borders, deep red gene tiles and pale teal labels, from the Biotech expansion's colours.</description>
     <author>NAI</author>
     <displayOrder>30</displayOrder>
     <button>MainButtonBarSystem/Themes/GeneLab/Button</button>
     <buttonMouseover>MainButtonBarSystem/Themes/GeneLab/ButtonMouseover</buttonMouseover>
     <buttonActive>MainButtonBarSystem/Themes/GeneLab/ButtonActive</buttonActive>
     <buttonDisabled>MainButtonBarSystem/Themes/GeneLab/ButtonDisabled</buttonDisabled>
-    <labelColor>(0.58, 0.82, 0.99, 1)</labelColor>
-    <labelMouseoverColor>(0.82, 0.93, 1, 1)</labelMouseoverColor>
+    <labelColor>(0.72, 0.90, 0.91, 1)</labelColor>
+    <labelMouseoverColor>(0.90, 0.97, 0.97, 1)</labelMouseoverColor>
     <barBackground>MainButtonBarSystem/Themes/GeneLab/Bar</barBackground>
     <moreButton>MainButtonBarSystem/Themes/GeneLab/More</moreButton>
     <arrowLeft>MainButtonBarSystem/Themes/GeneLab/ArrowLeft</arrowLeft>
@@ -75,15 +75,15 @@
   <MainButtonBarSystem.BarAppearanceDef>
     <defName>MBBS_Void</defName>
     <label>void</label>
-    <description>Void black and monolith stone with a red glow and shard-cut corners, from the Anomaly expansion's colours.</description>
+    <description>Void black with sage-green borders, a thin red line that glows under the mouse, and shard-cut corners, from the Anomaly expansion's colours.</description>
     <author>NAI</author>
     <displayOrder>40</displayOrder>
     <button>MainButtonBarSystem/Themes/Void/Button</button>
     <buttonMouseover>MainButtonBarSystem/Themes/Void/ButtonMouseover</buttonMouseover>
     <buttonActive>MainButtonBarSystem/Themes/Void/ButtonActive</buttonActive>
     <buttonDisabled>MainButtonBarSystem/Themes/Void/ButtonDisabled</buttonDisabled>
-    <labelColor>(0.69, 0.75, 0.50, 1)</labelColor>
-    <labelMouseoverColor>(0.73, 0.91, 0.91, 1)</labelMouseoverColor>
+    <labelColor>(0.80, 0.84, 0.64, 1)</labelColor>
+    <labelMouseoverColor>(0.96, 0.96, 0.88, 1)</labelMouseoverColor>
     <barBackground>MainButtonBarSystem/Themes/Void/Bar</barBackground>
     <moreButton>MainButtonBarSystem/Themes/Void/More</moreButton>
     <arrowLeft>MainButtonBarSystem/Themes/Void/ArrowLeft</arrowLeft>
@@ -95,14 +95,14 @@
   <MainButtonBarSystem.BarAppearanceDef>
     <defName>MBBS_Starfarer</defName>
     <label>starfarer</label>
-    <description>Steel hull plates with rivets and a cyan thruster glow, after the Odyssey expansion.</description>
+    <description>Space purple with purple hull plates, cyan rivets and a cyan thruster line, from the Odyssey expansion's colours.</description>
     <author>NAI</author>
     <displayOrder>50</displayOrder>
     <button>MainButtonBarSystem/Themes/Starfarer/Button</button>
     <buttonMouseover>MainButtonBarSystem/Themes/Starfarer/ButtonMouseover</buttonMouseover>
     <buttonActive>MainButtonBarSystem/Themes/Starfarer/ButtonActive</buttonActive>
     <buttonDisabled>MainButtonBarSystem/Themes/Starfarer/ButtonDisabled</buttonDisabled>
-    <labelColor>(0.93, 0.94, 0.96, 1)</labelColor>
+    <labelColor>(0.88, 0.84, 0.97, 1)</labelColor>
     <labelMouseoverColor>(0.71, 0.97, 0.99, 1)</labelMouseoverColor>
     <barBackground>MainButtonBarSystem/Themes/Starfarer/Bar</barBackground>
     <moreButton>MainButtonBarSystem/Themes/Starfarer/More</moreButton>
