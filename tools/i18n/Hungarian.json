@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: a teljes képernyőszélesség kitöltése: {1}",
     "MBBS_Ref_Name": "{0}: átnevezve „{1}” névre",
     "MBBS_Ref_NoIcon": "{0}: csak szöveg",
-    "MBBS_Ref_Icon": "{0}: egyéni ikon {1}"
+    "MBBS_Ref_Icon": "{0}: egyéni ikon {1}",
+    "MBBS_IconModeAll": "Ikon és szöveg (minden gomb)",
+    "MBBS_IconModeAllTip": "Hogyan mutatja minden gomb az ikonját és a feliratát, hacsak a gombnak nincs saját beállítása.",
+    "MBBS_IconModeClearAll": "Az összes saját beállítású gomb ({0}) igazítása ehhez",
+    "MBBS_IconMode_FollowBar": "Ugyanaz, mint a teljes gombsoré ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "eredeti",
-      "Vanilla.description": "A játék saját gombkinézete."
+      "Vanilla.description": "A játék saját gombkinézete.",
+      "MBBS_Imperial.label": "birodalmi",
+      "MBBS_Imperial.description": "Mélylila és arany, a Királyság kiegészítő udvari hangulatának ihletésére.",
+      "MBBS_Creed.label": "hitvallás",
+      "MBBS_Creed.description": "Sötét bőr és bronz pergamenszínű feliratokkal, az Ideológia kiegészítő ihletésére.",
+      "MBBS_GeneLab.label": "génlabor",
+      "MBBS_GeneLab.description": "Sötét kékeszöld élénk laborzöld szegélyekkel, a Biotech kiegészítő ihletésére.",
+      "MBBS_Void.label": "üresség",
+      "MBBS_Void.description": "Szinte fekete, halvány karmazsinvörös izzással, az Anomália kiegészítő ihletésére.",
+      "MBBS_Starfarer.label": "csillagutazó",
+      "MBBS_Starfarer.description": "Mély tengerészkék és acélkék, levágott sarkokkal, az Odyssey kiegészítő ihletésére."
     }
   }
 }

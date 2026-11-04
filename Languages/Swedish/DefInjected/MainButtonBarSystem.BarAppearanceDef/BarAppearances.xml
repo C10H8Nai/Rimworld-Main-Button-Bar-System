@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>original</Vanilla.label>
   <Vanilla.description>Spelets eget knapputseende.</Vanilla.description>
+  <MBBS_Imperial.label>kejserlig</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Djup lila och guld, inspirerat av hovstämningen i expansionen Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Mörkt läder och brons med pergamentfärgad text, inspirerat av expansionen Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>genlabb</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Mörk blågrön med klara labbgröna kanter, inspirerat av expansionen Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>tomrum</MBBS_Void.label>
+  <MBBS_Void.description>Nästan svart med ett svagt karmosinrött sken, inspirerat av expansionen Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>stjärnfarare</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Djup marinblå och stålblå med avfasade hörn, inspirerat av expansionen Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

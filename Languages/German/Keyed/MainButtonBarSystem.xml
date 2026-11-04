@@ -159,4 +159,8 @@ und klicke dann auf „Aktualisieren“. Sie bleiben dort auch bei Mod-Updates e
   <MBBS_Ref_Name>{0}: umbenannt in „{1}“</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: nur Text</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: eigenes Symbol {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Symbol und Text (alle Schaltflächen)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Wie alle Schaltflächen Symbol und Beschriftung zeigen, sofern eine Schaltfläche keine eigene Einstellung hat.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Alle Schaltflächen mit eigener Einstellung ({0}) dieser Vorgabe folgen lassen</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Wie die gesamte Leiste ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

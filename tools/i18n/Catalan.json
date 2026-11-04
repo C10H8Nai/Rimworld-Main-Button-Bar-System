@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: omple l’amplada de la pantalla: {1}",
     "MBBS_Ref_Name": "{0}: nom canviat a «{1}»",
     "MBBS_Ref_NoIcon": "{0}: només text",
-    "MBBS_Ref_Icon": "{0}: icona personalitzada {1}"
+    "MBBS_Ref_Icon": "{0}: icona personalitzada {1}",
+    "MBBS_IconModeAll": "Icona i text (tots els botons)",
+    "MBBS_IconModeAllTip": "Com mostra cada botó la icona i el text, tret que el botó tingui una configuració pròpia.",
+    "MBBS_IconModeClearAll": "Fes que tots els botons amb configuració pròpia ({0}) segueixin aquesta",
+    "MBBS_IconMode_FollowBar": "Igual que tota la barra ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "L’aspecte original dels botons del joc."
+      "Vanilla.description": "L’aspecte original dels botons del joc.",
+      "MBBS_Imperial.label": "imperial",
+      "MBBS_Imperial.description": "Porpra fosc i or, inspirat en l’ambient de cort de l’expansió Reialesa.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Cuir fosc i bronze amb el text de color pergamí, inspirat en l’expansió Ideologia.",
+      "MBBS_GeneLab.label": "laboratori genètic",
+      "MBBS_GeneLab.description": "Blau verdós fosc amb vores d’un verd de laboratori brillant, inspirat en l’expansió Biotecnologia.",
+      "MBBS_Void.label": "buit",
+      "MBBS_Void.description": "Gairebé negre amb una lluïssor carmesí tènue, inspirat en l’expansió Anomalia.",
+      "MBBS_Starfarer.label": "navegant estel·lar",
+      "MBBS_Starfarer.description": "Blau marí fosc i blau acer amb cantonades tallades, inspirat en l’expansió Odissea."
     }
   }
 }

@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: розтягувати на всю ширину екрана: {1}",
     "MBBS_Ref_Name": "{0}: перейменовано на «{1}»",
     "MBBS_Ref_NoIcon": "{0}: лише текст",
-    "MBBS_Ref_Icon": "{0}: власна іконка {1}"
+    "MBBS_Ref_Icon": "{0}: власна іконка {1}",
+    "MBBS_IconModeAll": "Іконка та текст (усі кнопки)",
+    "MBBS_IconModeAllTip": "Як усі кнопки показують іконку та напис, якщо кнопка не має власного налаштування.",
+    "MBBS_IconModeClearAll": "Застосувати до всіх кнопок із власним налаштуванням ({0})",
+    "MBBS_IconMode_FollowBar": "Як у всієї панелі ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "як у грі",
-      "Vanilla.description": "Власний вигляд кнопок гри."
+      "Vanilla.description": "Власний вигляд кнопок гри.",
+      "MBBS_Imperial.label": "імперська",
+      "MBBS_Imperial.description": "Глибокий фіолетовий і золото в дусі придворної атмосфери доповнення Royalty.",
+      "MBBS_Creed.label": "кредо",
+      "MBBS_Creed.description": "Темна шкіра та бронза з написами кольору пергаменту, у дусі доповнення Ideology.",
+      "MBBS_GeneLab.label": "генна лабораторія",
+      "MBBS_GeneLab.description": "Темний бірюзовий з яскравою лабораторно-зеленою облямівкою, у дусі доповнення Biotech.",
+      "MBBS_Void.label": "порожнеча",
+      "MBBS_Void.description": "Майже чорний із тьмяним багряним світінням, у дусі доповнення Anomaly.",
+      "MBBS_Starfarer.label": "зоряний мандрівник",
+      "MBBS_Starfarer.description": "Глибокий темно-синій і сталевий синій зі скошеними кутами, у дусі доповнення Odyssey."
     }
   }
 }

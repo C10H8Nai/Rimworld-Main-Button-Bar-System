@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0} : occuper toute la largeur de l'écran : {1}",
     "MBBS_Ref_Name": "{0} : renommé en « {1} »",
     "MBBS_Ref_NoIcon": "{0} : texte seul",
-    "MBBS_Ref_Icon": "{0} : icône personnalisée {1}"
+    "MBBS_Ref_Icon": "{0} : icône personnalisée {1}",
+    "MBBS_IconModeAll": "Icône et texte (tous les boutons)",
+    "MBBS_IconModeAllTip": "Comment tous les boutons affichent leur icône et leur libellé, sauf ceux qui ont leur propre réglage.",
+    "MBBS_IconModeClearAll": "Faire suivre ce réglage à tous les boutons qui ont le leur ({0})",
+    "MBBS_IconMode_FollowBar": "Identique à la barre entière ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "L'apparence d'origine des boutons du jeu."
+      "Vanilla.description": "L'apparence d'origine des boutons du jeu.",
+      "MBBS_Imperial.label": "impérial",
+      "MBBS_Imperial.description": "Violet profond et or, inspiré de l'ambiance de cour de l'extension Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Cuir sombre et bronze avec des libellés couleur parchemin, inspiré de l'extension Ideology.",
+      "MBBS_GeneLab.label": "labo génétique",
+      "MBBS_GeneLab.description": "Bleu sarcelle foncé avec des bordures vert laboratoire éclatant, inspiré de l'extension Biotech.",
+      "MBBS_Void.label": "néant",
+      "MBBS_Void.description": "Presque noir avec une faible lueur cramoisie, inspiré de l'extension Anomaly.",
+      "MBBS_Starfarer.label": "voyageur stellaire",
+      "MBBS_Starfarer.description": "Bleu marine profond et bleu acier aux coins coupés, inspiré de l'extension Odyssey."
     }
   }
 }

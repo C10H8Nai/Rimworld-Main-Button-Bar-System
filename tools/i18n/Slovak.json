@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: vyplniť šírku obrazovky: {1}",
     "MBBS_Ref_Name": "{0}: premenované na „{1}“",
     "MBBS_Ref_NoIcon": "{0}: len text",
-    "MBBS_Ref_Icon": "{0}: vlastná ikona {1}"
+    "MBBS_Ref_Icon": "{0}: vlastná ikona {1}",
+    "MBBS_IconModeAll": "Ikona a text (všetky tlačidlá)",
+    "MBBS_IconModeAllTip": "Ako všetky tlačidlá zobrazujú ikonu a popis, ak tlačidlo nemá vlastné nastavenie.",
+    "MBBS_IconModeClearAll": "Použiť pre všetky tlačidlá s vlastným nastavením ({0})",
+    "MBBS_IconMode_FollowBar": "Rovnako ako celá lišta ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "ako v hre",
-      "Vanilla.description": "Vlastný vzhľad tlačidiel hry."
+      "Vanilla.description": "Vlastný vzhľad tlačidiel hry.",
+      "MBBS_Imperial.label": "imperiálny",
+      "MBBS_Imperial.description": "Sýta fialová a zlatá. Inšpirované dvornou atmosférou rozšírenia Royalty.",
+      "MBBS_Creed.label": "krédo",
+      "MBBS_Creed.description": "Tmavá koža a bronz s popismi farby pergamenu. Inšpirované rozšírením Ideology.",
+      "MBBS_GeneLab.label": "genetické laboratórium",
+      "MBBS_GeneLab.description": "Tmavá modrozelená s okrajmi v žiarivej laboratórnej zelenej. Inšpirované rozšírením Biotech.",
+      "MBBS_Void.label": "prázdnota",
+      "MBBS_Void.description": "Takmer čierna s tlmenou karmínovou žiarou. Inšpirované rozšírením Anomaly.",
+      "MBBS_Starfarer.label": "hviezdny pútnik",
+      "MBBS_Starfarer.description": "Tmavá námornícka modrá a oceľová modrá so zrezanými rohmi. Inšpirované rozšírením Odyssey."
     }
   }
 }

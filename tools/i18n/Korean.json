@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: 화면 너비 채우기: {1}",
     "MBBS_Ref_Name": "{0}: 이름을 '{1}'(으)로 변경",
     "MBBS_Ref_NoIcon": "{0}: 텍스트만",
-    "MBBS_Ref_Icon": "{0}: 사용자 지정 아이콘 {1}"
+    "MBBS_Ref_Icon": "{0}: 사용자 지정 아이콘 {1}",
+    "MBBS_IconModeAll": "아이콘과 텍스트 (모든 버튼)",
+    "MBBS_IconModeAllTip": "모든 버튼에서 아이콘과 텍스트를 표시하는 방식입니다. 개별 설정이 있는 버튼은 그 설정을 따릅니다.",
+    "MBBS_IconModeClearAll": "개별 설정된 버튼 {0}개를 모두 이 설정에 맞추기",
+    "MBBS_IconMode_FollowBar": "바 전체 설정을 따름 ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "바닐라",
-      "Vanilla.description": "게임 기본 버튼 모양입니다."
+      "Vanilla.description": "게임 기본 버튼 모양입니다.",
+      "MBBS_Imperial.label": "제국",
+      "MBBS_Imperial.description": "짙은 보라색과 금색으로 로얄티 확장팩의 궁정 분위기를 담았습니다.",
+      "MBBS_Creed.label": "신조",
+      "MBBS_Creed.description": "짙은 가죽과 청동에 양피지색 글자를 더해 이데올로기 확장팩의 분위기를 담았습니다.",
+      "MBBS_GeneLab.label": "유전자 실험실",
+      "MBBS_GeneLab.description": "짙은 청록색에 밝은 실험실 녹색 테두리로 바이오테크 확장팩의 분위기를 담았습니다.",
+      "MBBS_Void.label": "공허",
+      "MBBS_Void.description": "검정에 가까운 바탕에 희미한 진홍빛으로 아노말리 확장팩의 분위기를 담았습니다.",
+      "MBBS_Starfarer.label": "별의 항해자",
+      "MBBS_Starfarer.description": "짙은 남색과 강철빛 파랑에 모서리를 깎아 오디세이 확장팩의 분위기를 담았습니다."
     }
   }
 }

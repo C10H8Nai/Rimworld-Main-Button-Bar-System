@@ -159,4 +159,8 @@ rồi nhấn "Làm mới". Các tệp vẫn được giữ lại khi cập nhậ
   <MBBS_Ref_Name>{0}: đổi tên thành "{1}"</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: chỉ hiện chữ</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: biểu tượng tùy chỉnh {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Biểu tượng và chữ (tất cả các nút)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Cách tất cả các nút hiện biểu tượng và chữ, trừ khi nút đó có cài đặt riêng.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Cho cả {0} nút có cài đặt riêng theo cài đặt này</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Theo cài đặt toàn thanh ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>original</Vanilla.label>
   <Vanilla.description>L’aspecte original dels botons del joc.</Vanilla.description>
+  <MBBS_Imperial.label>imperial</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Porpra fosc i or, inspirat en l’ambient de cort de l’expansió Reialesa.</MBBS_Imperial.description>
+  <MBBS_Creed.label>credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Cuir fosc i bronze amb el text de color pergamí, inspirat en l’expansió Ideologia.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>laboratori genètic</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Blau verdós fosc amb vores d’un verd de laboratori brillant, inspirat en l’expansió Biotecnologia.</MBBS_GeneLab.description>
+  <MBBS_Void.label>buit</MBBS_Void.label>
+  <MBBS_Void.description>Gairebé negre amb una lluïssor carmesí tènue, inspirat en l’expansió Anomalia.</MBBS_Void.description>
+  <MBBS_Starfarer.label>navegant estel·lar</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Blau marí fosc i blau acer amb cantonades tallades, inspirat en l’expansió Odissea.</MBBS_Starfarer.description>
 </LanguageData>

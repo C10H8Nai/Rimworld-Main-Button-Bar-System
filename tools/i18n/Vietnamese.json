@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: lấp đầy chiều rộng màn hình: {1}",
     "MBBS_Ref_Name": "{0}: đổi tên thành \"{1}\"",
     "MBBS_Ref_NoIcon": "{0}: chỉ hiện chữ",
-    "MBBS_Ref_Icon": "{0}: biểu tượng tùy chỉnh {1}"
+    "MBBS_Ref_Icon": "{0}: biểu tượng tùy chỉnh {1}",
+    "MBBS_IconModeAll": "Biểu tượng và chữ (tất cả các nút)",
+    "MBBS_IconModeAllTip": "Cách tất cả các nút hiện biểu tượng và chữ, trừ khi nút đó có cài đặt riêng.",
+    "MBBS_IconModeClearAll": "Cho cả {0} nút có cài đặt riêng theo cài đặt này",
+    "MBBS_IconMode_FollowBar": "Theo cài đặt toàn thanh ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "nguyên bản",
-      "Vanilla.description": "Kiểu nút gốc của trò chơi."
+      "Vanilla.description": "Kiểu nút gốc của trò chơi.",
+      "MBBS_Imperial.label": "đế chế",
+      "MBBS_Imperial.description": "Tím đậm và vàng kim, lấy cảm hứng từ không khí cung đình của bản mở rộng Royalty.",
+      "MBBS_Creed.label": "tín điều",
+      "MBBS_Creed.description": "Da thuộc sẫm màu và sắc đồng, chữ màu giấy da, lấy cảm hứng từ bản mở rộng Ideology.",
+      "MBBS_GeneLab.label": "phòng thí nghiệm gen",
+      "MBBS_GeneLab.description": "Xanh mòng két đậm với viền xanh lục sáng kiểu phòng thí nghiệm, lấy cảm hứng từ bản mở rộng Biotech.",
+      "MBBS_Void.label": "hư không",
+      "MBBS_Void.description": "Gần như đen với ánh đỏ thẫm mờ nhạt, lấy cảm hứng từ bản mở rộng Anomaly.",
+      "MBBS_Starfarer.label": "lữ khách các vì sao",
+      "MBBS_Starfarer.description": "Xanh hải quân đậm và xanh thép với các góc vát, lấy cảm hứng từ bản mở rộng Odyssey."
     }
   }
 }

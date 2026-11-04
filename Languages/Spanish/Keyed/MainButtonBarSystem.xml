@@ -159,4 +159,8 @@ y luego pulsa «Actualizar». Se conservan aunque se actualice el mod.</MBBS_Ico
   <MBBS_Ref_Name>{0}: renombrado a «{1}»</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: solo texto</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: icono personalizado {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Icono y texto (todos los botones)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Cómo muestran todos los botones su icono y su texto, salvo los que tienen un ajuste propio.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Hacer que todos los botones con ajuste propio ({0}) sigan este</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Igual que la barra completa ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

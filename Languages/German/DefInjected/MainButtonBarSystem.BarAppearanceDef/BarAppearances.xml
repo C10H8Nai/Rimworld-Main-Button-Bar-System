@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>Original</Vanilla.label>
   <Vanilla.description>Das ursprüngliche Aussehen der Schaltflächen des Spiels.</Vanilla.description>
+  <MBBS_Imperial.label>Imperial</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Tiefes Violett und Gold, angelehnt an die höfische Stimmung der Royalty-Erweiterung.</MBBS_Imperial.description>
+  <MBBS_Creed.label>Credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Dunkles Leder und Bronze mit pergamentfarbener Beschriftung, angelehnt an die Ideology-Erweiterung.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>Genlabor</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Dunkles Petrol mit leuchtend laborgrünen Rändern, angelehnt an die Biotech-Erweiterung.</MBBS_GeneLab.description>
+  <MBBS_Void.label>Leere</MBBS_Void.label>
+  <MBBS_Void.description>Fast schwarz mit einem schwachen karmesinroten Glühen, angelehnt an die Anomaly-Erweiterung.</MBBS_Void.description>
+  <MBBS_Starfarer.label>Sternenfahrer</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Tiefes Marineblau und Stahlblau mit abgeschrägten Ecken, angelehnt an die Odyssey-Erweiterung.</MBBS_Starfarer.description>
 </LanguageData>

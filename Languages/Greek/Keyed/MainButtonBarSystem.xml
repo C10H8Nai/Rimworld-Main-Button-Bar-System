@@ -159,4 +159,8 @@
   <MBBS_Ref_Name>{0}: μετονομάστηκε σε «{1}»</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: μόνο κείμενο</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: προσαρμοσμένο εικονίδιο {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Εικονίδιο και κείμενο (όλα τα κουμπιά)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Πώς δείχνουν όλα τα κουμπιά το εικονίδιο και την ετικέτα τους, εκτός αν ένα κουμπί έχει δική του ρύθμιση.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Εφαρμογή σε όλα τα κουμπιά με δική τους ρύθμιση ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Ίδιο με όλη τη γραμμή ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

@@ -159,4 +159,8 @@ og tryk på Opdatér. De bliver liggende, når modet opdateres.</MBBS_IconPicker
   <MBBS_Ref_Name>{0}: omdøbt til »{1}«</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: kun tekst</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: eget ikon {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ikon og tekst (alle knapper)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Hvordan alle knapper viser ikon og tekst, medmindre en knap har sin egen indstilling.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Lad alle knapper med egen indstilling ({0}) følge denne</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Samme som hele linjen ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

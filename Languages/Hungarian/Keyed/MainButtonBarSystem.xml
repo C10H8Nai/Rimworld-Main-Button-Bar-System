@@ -159,4 +159,8 @@ majd nyomd meg a „Frissítés” gombot. A mod frissítésekor is ott maradnak
   <MBBS_Ref_Name>{0}: átnevezve „{1}” névre</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: csak szöveg</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: egyéni ikon {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ikon és szöveg (minden gomb)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Hogyan mutatja minden gomb az ikonját és a feliratát, hacsak a gombnak nincs saját beállítása.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Az összes saját beállítású gomb ({0}) igazítása ehhez</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Ugyanaz, mint a teljes gombsoré ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

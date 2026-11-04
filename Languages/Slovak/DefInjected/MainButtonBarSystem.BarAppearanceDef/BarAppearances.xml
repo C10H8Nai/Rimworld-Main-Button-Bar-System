@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>ako v hre</Vanilla.label>
   <Vanilla.description>Vlastný vzhľad tlačidiel hry.</Vanilla.description>
+  <MBBS_Imperial.label>imperiálny</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Sýta fialová a zlatá. Inšpirované dvornou atmosférou rozšírenia Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>krédo</MBBS_Creed.label>
+  <MBBS_Creed.description>Tmavá koža a bronz s popismi farby pergamenu. Inšpirované rozšírením Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>genetické laboratórium</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Tmavá modrozelená s okrajmi v žiarivej laboratórnej zelenej. Inšpirované rozšírením Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>prázdnota</MBBS_Void.label>
+  <MBBS_Void.description>Takmer čierna s tlmenou karmínovou žiarou. Inšpirované rozšírením Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>hviezdny pútnik</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Tmavá námornícka modrá a oceľová modrá so zrezanými rohmi. Inšpirované rozšírením Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

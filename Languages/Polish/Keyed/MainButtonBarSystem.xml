@@ -159,4 +159,8 @@ a następnie naciśnij „Odśwież”. Pozostaną tam także po aktualizacjach 
   <MBBS_Ref_Name>{0}: nazwa zmieniona na „{1}”</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: tylko tekst</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: własna ikona {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ikona i tekst (wszystkie przyciski)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Jak wszystkie przyciski pokazują ikonę i napis, chyba że przycisk ma własne ustawienie.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Zastosuj do wszystkich przycisków z własnym ustawieniem ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Jak dla całego paska ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

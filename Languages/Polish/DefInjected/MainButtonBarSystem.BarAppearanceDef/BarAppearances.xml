@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>jak w grze</Vanilla.label>
   <Vanilla.description>Własny wygląd przycisków z gry.</Vanilla.description>
+  <MBBS_Imperial.label>imperialny</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Głęboki fiolet i złoto w dworskim klimacie rozszerzenia Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Ciemna skóra i brąz z napisami w kolorze pergaminu, w klimacie rozszerzenia Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>laboratorium genetyczne</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Ciemny turkus z jaskrawą, laboratoryjną zielenią na krawędziach, w klimacie rozszerzenia Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>pustka</MBBS_Void.label>
+  <MBBS_Void.description>Niemal czerń z nikłą karmazynową poświatą, w klimacie rozszerzenia Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>gwiezdny wędrowiec</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Głęboki granat i stalowy błękit ze ściętymi rogami, w klimacie rozszerzenia Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

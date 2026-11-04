@@ -159,4 +159,8 @@
   <MBBS_Ref_Name>{0}: 名前を「{1}」に変更</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: テキストのみ</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: カスタムアイコン {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>アイコンとテキスト(すべてのボタン)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>すべてのボタンでのアイコンとテキストの表示方法です.個別に設定したボタンには,そのボタンの設定が使われます.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>個別に設定した{0}個のボタンをすべてこの設定に従わせる</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>バー全体の設定に従う({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

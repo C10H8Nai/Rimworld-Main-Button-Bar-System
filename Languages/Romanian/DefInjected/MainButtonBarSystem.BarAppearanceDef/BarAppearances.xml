@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>original</Vanilla.label>
   <Vanilla.description>Aspectul original al butoanelor jocului.</Vanilla.description>
+  <MBBS_Imperial.label>imperial</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Violet intens și auriu, inspirat de atmosfera de curte a expansiunii Regalitate.</MBBS_Imperial.description>
+  <MBBS_Creed.label>crez</MBBS_Creed.label>
+  <MBBS_Creed.description>Piele închisă la culoare și bronz, cu text de culoarea pergamentului, inspirat de expansiunea Ideologie.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>laborator genetic</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Verde-albăstrui închis, cu margini de un verde de laborator aprins, inspirat de expansiunea Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>neant</MBBS_Void.label>
+  <MBBS_Void.description>Aproape negru, cu o strălucire stacojie slabă, inspirat de expansiunea Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>călător stelar</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Bleumarin intens și albastru-oțel, cu colțuri teșite, inspirat de expansiunea Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

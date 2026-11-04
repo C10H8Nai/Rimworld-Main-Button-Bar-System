@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>alkuperäinen</Vanilla.label>
   <Vanilla.description>Pelin oma painikkeiden ulkoasu.</Vanilla.description>
+  <MBBS_Imperial.label>keisarillinen</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Syvä violetti ja kulta, Kuninkaallisuus-laajennuksen hovitunnelman innoittamana.</MBBS_Imperial.description>
+  <MBBS_Creed.label>usko</MBBS_Creed.label>
+  <MBBS_Creed.description>Tumma nahka, pronssi ja pergamentinvärinen teksti, Maailmankatsomus-laajennuksen innoittamana.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>geenilaboratorio</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Tumma sinivihreä ja kirkkaan laboratorionvihreät reunat, Biotech-laajennuksen innoittamana.</MBBS_GeneLab.description>
+  <MBBS_Void.label>tyhjyys</MBBS_Void.label>
+  <MBBS_Void.description>Lähes musta ja himmeä karmiininpunainen hehku, Anomaly-laajennuksen innoittamana.</MBBS_Void.description>
+  <MBBS_Starfarer.label>tähtienkulkija</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Syvä laivastonsininen ja teräksensininen sekä viistetyt kulmat, Odyssey-laajennuksen innoittamana.</MBBS_Starfarer.description>
 </LanguageData>

@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: täytä näytön leveys: {1}",
     "MBBS_Ref_Name": "{0}: uusi nimi ”{1}”",
     "MBBS_Ref_NoIcon": "{0}: vain teksti",
-    "MBBS_Ref_Icon": "{0}: oma kuvake {1}"
+    "MBBS_Ref_Icon": "{0}: oma kuvake {1}",
+    "MBBS_IconModeAll": "Kuvake ja teksti (kaikki painikkeet)",
+    "MBBS_IconModeAllTip": "Miten kaikki painikkeet näyttävät kuvakkeen ja tekstin, ellei painikkeella ole omaa asetusta.",
+    "MBBS_IconModeClearAll": "Laita kaikki painikkeet, joilla on oma asetus ({0}), noudattamaan tätä",
+    "MBBS_IconMode_FollowBar": "Sama kuin koko palkilla ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "alkuperäinen",
-      "Vanilla.description": "Pelin oma painikkeiden ulkoasu."
+      "Vanilla.description": "Pelin oma painikkeiden ulkoasu.",
+      "MBBS_Imperial.label": "keisarillinen",
+      "MBBS_Imperial.description": "Syvä violetti ja kulta, Kuninkaallisuus-laajennuksen hovitunnelman innoittamana.",
+      "MBBS_Creed.label": "usko",
+      "MBBS_Creed.description": "Tumma nahka, pronssi ja pergamentinvärinen teksti, Maailmankatsomus-laajennuksen innoittamana.",
+      "MBBS_GeneLab.label": "geenilaboratorio",
+      "MBBS_GeneLab.description": "Tumma sinivihreä ja kirkkaan laboratorionvihreät reunat, Biotech-laajennuksen innoittamana.",
+      "MBBS_Void.label": "tyhjyys",
+      "MBBS_Void.description": "Lähes musta ja himmeä karmiininpunainen hehku, Anomaly-laajennuksen innoittamana.",
+      "MBBS_Starfarer.label": "tähtienkulkija",
+      "MBBS_Starfarer.description": "Syvä laivastonsininen ja teräksensininen sekä viistetyt kulmat, Odyssey-laajennuksen innoittamana."
     }
   }
 }

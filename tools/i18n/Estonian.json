@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: täida ekraani laius: {1}",
     "MBBS_Ref_Name": "{0}: uus nimi „{1}“",
     "MBBS_Ref_NoIcon": "{0}: ainult tekst",
-    "MBBS_Ref_Icon": "{0}: oma ikoon {1}"
+    "MBBS_Ref_Icon": "{0}: oma ikoon {1}",
+    "MBBS_IconModeAll": "Ikoon ja tekst (kõik nupud)",
+    "MBBS_IconModeAllTip": "Kuidas iga nupp ikooni ja teksti näitab, kui nupul pole oma seadet.",
+    "MBBS_IconModeClearAll": "Lase kõigil oma seadega nuppudel ({0}) seda järgida",
+    "MBBS_IconMode_FollowBar": "Sama mis kogu ribal ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "originaal",
-      "Vanilla.description": "Mängu enda nuppude välimus."
+      "Vanilla.description": "Mängu enda nuppude välimus.",
+      "MBBS_Imperial.label": "keiserlik",
+      "MBBS_Imperial.description": "Sügavlilla ja kuld, inspireeritud Royalty laienduse õukondlikust meeleolust.",
+      "MBBS_Creed.label": "kreedo",
+      "MBBS_Creed.description": "Tume nahk ja pronks pärgamendivärvi tekstiga, inspireeritud Ideology laiendusest.",
+      "MBBS_GeneLab.label": "geenilabor",
+      "MBBS_GeneLab.description": "Tume sinakasroheline erksate laboriroheliste servadega, inspireeritud Biotech laiendusest.",
+      "MBBS_Void.label": "tühjus",
+      "MBBS_Void.description": "Peaaegu must tuhmi karmiinpunase kumaga, inspireeritud Anomaly laiendusest.",
+      "MBBS_Starfarer.label": "tähtederändur",
+      "MBBS_Starfarer.description": "Sügav meresinine ja terassinine lõigatud nurkadega, inspireeritud Odyssey laiendusest."
     }
   }
 }

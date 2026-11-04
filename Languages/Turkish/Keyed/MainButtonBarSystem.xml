@@ -159,4 +159,8 @@ Ardından "Yenile" butonuna bas. Mod güncellendiğinde de orada kalırlar.</MBB
   <MBBS_Ref_Name>{0}: "{1}" olarak yeniden adlandırıldı</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: yalnızca yazı</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: özel ikon {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>İkon ve yazı (tüm butonlar)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Tüm butonların ikonu ve yazıyı nasıl göstereceği; kendi ayarı olan butonlar hariç.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Kendi ayarı olan tüm butonları ({0}) bu ayara uydur</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Tüm barla aynı ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

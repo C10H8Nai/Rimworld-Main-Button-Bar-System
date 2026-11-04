@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: riempi la larghezza dello schermo: {1}",
     "MBBS_Ref_Name": "{0}: rinominato in «{1}»",
     "MBBS_Ref_NoIcon": "{0}: solo testo",
-    "MBBS_Ref_Icon": "{0}: icona personalizzata {1}"
+    "MBBS_Ref_Icon": "{0}: icona personalizzata {1}",
+    "MBBS_IconModeAll": "Icona e testo (tutti i pulsanti)",
+    "MBBS_IconModeAllTip": "Come tutti i pulsanti mostrano icona ed etichetta, a meno che un pulsante non abbia un'impostazione propria.",
+    "MBBS_IconModeClearAll": "Fai seguire questa impostazione a tutti i pulsanti che ne hanno una propria ({0})",
+    "MBBS_IconMode_FollowBar": "Come la barra intera ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "originale",
-      "Vanilla.description": "L'aspetto originale dei pulsanti del gioco."
+      "Vanilla.description": "L'aspetto originale dei pulsanti del gioco.",
+      "MBBS_Imperial.label": "imperiale",
+      "MBBS_Imperial.description": "Viola intenso e oro, ispirato all'atmosfera di corte dell'espansione Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Cuoio scuro e bronzo con etichette color pergamena, ispirato all'espansione Ideology.",
+      "MBBS_GeneLab.label": "laboratorio genetico",
+      "MBBS_GeneLab.description": "Ottanio scuro con bordi verde laboratorio brillante, ispirato all'espansione Biotech.",
+      "MBBS_Void.label": "vuoto",
+      "MBBS_Void.description": "Quasi nero con un debole bagliore cremisi, ispirato all'espansione Anomaly.",
+      "MBBS_Starfarer.label": "navigatore stellare",
+      "MBBS_Starfarer.description": "Blu marino intenso e blu acciaio con angoli smussati, ispirato all'espansione Odyssey."
     }
   }
 }

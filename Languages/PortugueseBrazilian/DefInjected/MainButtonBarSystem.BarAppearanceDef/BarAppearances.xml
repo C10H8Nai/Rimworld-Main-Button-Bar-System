@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>original</Vanilla.label>
   <Vanilla.description>A aparência original dos botões do jogo.</Vanilla.description>
+  <MBBS_Imperial.label>imperial</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Roxo profundo e dourado, inspirado no clima da corte da expansão Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Couro escuro e bronze com texto cor de pergaminho, inspirado na expansão Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>laboratório genético</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Azul-petróleo escuro com bordas em um verde de laboratório vivo, inspirado na expansão Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>vazio</MBBS_Void.label>
+  <MBBS_Void.description>Quase preto com um leve brilho carmesim, inspirado na expansão Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>viajante estelar</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Azul-marinho profundo e azul-aço com cantos cortados, inspirado na expansão Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

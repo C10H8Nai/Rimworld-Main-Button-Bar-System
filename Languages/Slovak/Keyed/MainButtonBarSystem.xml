@@ -159,4 +159,8 @@ a stlačte „Obnoviť“. Pri aktualizáciách modu tam zostanú.</MBBS_IconPic
   <MBBS_Ref_Name>{0}: premenované na „{1}“</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: len text</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: vlastná ikona {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ikona a text (všetky tlačidlá)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Ako všetky tlačidlá zobrazujú ikonu a popis, ak tlačidlo nemá vlastné nastavenie.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Použiť pre všetky tlačidlá s vlastným nastavením ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Rovnako ako celá lišta ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

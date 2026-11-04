@@ -159,4 +159,8 @@ och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconP
   <MBBS_Ref_Name>{0}: nytt namn ”{1}”</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: bara text</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: egen ikon {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ikon och text (alla knappar)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Hur alla knappar visar ikon och text, om inte en knapp har en egen inställning.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Låt alla knappar med egen inställning ({0}) följa denna</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Samma som hela fältet ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

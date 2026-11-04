@@ -159,4 +159,8 @@ poi premi «Aggiorna». Restano lì anche quando la mod viene aggiornata.</MBBS_
   <MBBS_Ref_Name>{0}: rinominato in «{1}»</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: solo testo</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: icona personalizzata {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Icona e testo (tutti i pulsanti)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Come tutti i pulsanti mostrano icona ed etichetta, a meno che un pulsante non abbia un'impostazione propria.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Fai seguire questa impostazione a tutti i pulsanti che ne hanno una propria ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Come la barra intera ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

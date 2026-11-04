@@ -159,4 +159,8 @@ ja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.</MBBS_Ico
   <MBBS_Ref_Name>{0}: uusi nimi ”{1}”</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: vain teksti</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: oma kuvake {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Kuvake ja teksti (kaikki painikkeet)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Miten kaikki painikkeet näyttävät kuvakkeen ja tekstin, ellei painikkeella ole omaa asetusta.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Laita kaikki painikkeet, joilla on oma asetus ({0}), noudattamaan tätä</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Sama kuin koko palkilla ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

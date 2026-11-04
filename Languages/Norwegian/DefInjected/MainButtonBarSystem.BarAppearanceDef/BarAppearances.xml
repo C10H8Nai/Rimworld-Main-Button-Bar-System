@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>original</Vanilla.label>
   <Vanilla.description>Spillets eget knappeutseende.</Vanilla.description>
+  <MBBS_Imperial.label>keiserlig</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Dyp lilla og gull, inspirert av hoffstemningen i utvidelsen Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Mørkt lær og bronse med pergamentfarget tekst, inspirert av utvidelsen Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>genlaboratorium</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Mørk blågrønn med klare laboratoriegrønne kanter, inspirert av utvidelsen Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>tomrom</MBBS_Void.label>
+  <MBBS_Void.description>Nesten svart med et svakt karmosinrødt skjær, inspirert av utvidelsen Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>stjernefarer</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Dyp marineblå og stålblå med avskårne hjørner, inspirert av utvidelsen Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

@@ -159,4 +159,8 @@ en klik op Vernieuwen. Ze blijven daar staan, ook als de mod wordt bijgewerkt.</
   <MBBS_Ref_Name>{0}: hernoemd naar "{1}"</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: alleen tekst</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: eigen icoon {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Icoon en tekst (alle knoppen)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Hoe elke knop zijn icoon en tekst toont, tenzij een knop een eigen instelling heeft.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Alle knoppen met een eigen instelling ({0}) dit laten volgen</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Gelijk aan de hele balk ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

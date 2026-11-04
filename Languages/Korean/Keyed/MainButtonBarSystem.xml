@@ -159,4 +159,8 @@
   <MBBS_Ref_Name>{0}: 이름을 '{1}'(으)로 변경</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: 텍스트만</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: 사용자 지정 아이콘 {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>아이콘과 텍스트 (모든 버튼)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>모든 버튼에서 아이콘과 텍스트를 표시하는 방식입니다. 개별 설정이 있는 버튼은 그 설정을 따릅니다.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>개별 설정된 버튼 {0}개를 모두 이 설정에 맞추기</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>바 전체 설정을 따름 ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

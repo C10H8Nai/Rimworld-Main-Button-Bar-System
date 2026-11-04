@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>original</Vanilla.label>
   <Vanilla.description>L'apparence d'origine des boutons du jeu.</Vanilla.description>
+  <MBBS_Imperial.label>impérial</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Violet profond et or, inspiré de l'ambiance de cour de l'extension Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Cuir sombre et bronze avec des libellés couleur parchemin, inspiré de l'extension Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>labo génétique</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Bleu sarcelle foncé avec des bordures vert laboratoire éclatant, inspiré de l'extension Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>néant</MBBS_Void.label>
+  <MBBS_Void.description>Presque noir avec une faible lueur cramoisie, inspiré de l'extension Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>voyageur stellaire</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Bleu marine profond et bleu acier aux coins coupés, inspiré de l'extension Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

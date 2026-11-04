@@ -159,4 +159,8 @@ apoi apasă Reîncarcă. Rămân acolo și după actualizările modului.</MBBS_I
   <MBBS_Ref_Name>{0}: redenumit în „{1}”</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: doar text</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: pictogramă personalizată {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Pictogramă și text (toate butoanele)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Cum își afișează toate butoanele pictograma și textul, cu excepția celor care au propria setare.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Fă ca toate butoanele cu setare proprie ({0}) să urmeze această setare</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>La fel ca întreaga bară ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

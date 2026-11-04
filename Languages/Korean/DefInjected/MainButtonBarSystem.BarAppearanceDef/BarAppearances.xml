@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>바닐라</Vanilla.label>
   <Vanilla.description>게임 기본 버튼 모양입니다.</Vanilla.description>
+  <MBBS_Imperial.label>제국</MBBS_Imperial.label>
+  <MBBS_Imperial.description>짙은 보라색과 금색으로 로얄티 확장팩의 궁정 분위기를 담았습니다.</MBBS_Imperial.description>
+  <MBBS_Creed.label>신조</MBBS_Creed.label>
+  <MBBS_Creed.description>짙은 가죽과 청동에 양피지색 글자를 더해 이데올로기 확장팩의 분위기를 담았습니다.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>유전자 실험실</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>짙은 청록색에 밝은 실험실 녹색 테두리로 바이오테크 확장팩의 분위기를 담았습니다.</MBBS_GeneLab.description>
+  <MBBS_Void.label>공허</MBBS_Void.label>
+  <MBBS_Void.description>검정에 가까운 바탕에 희미한 진홍빛으로 아노말리 확장팩의 분위기를 담았습니다.</MBBS_Void.description>
+  <MBBS_Starfarer.label>별의 항해자</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>짙은 남색과 강철빛 파랑에 모서리를 깎아 오디세이 확장팩의 분위기를 담았습니다.</MBBS_Starfarer.description>
 </LanguageData>

@@ -159,4 +159,8 @@
   <MBBS_Ref_Name>{0}: перейменовано на «{1}»</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: лише текст</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: власна іконка {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Іконка та текст (усі кнопки)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Як усі кнопки показують іконку та напис, якщо кнопка не має власного налаштування.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Застосувати до всіх кнопок із власним налаштуванням ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Як у всієї панелі ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: umple lățimea ecranului: {1}",
     "MBBS_Ref_Name": "{0}: redenumit în „{1}”",
     "MBBS_Ref_NoIcon": "{0}: doar text",
-    "MBBS_Ref_Icon": "{0}: pictogramă personalizată {1}"
+    "MBBS_Ref_Icon": "{0}: pictogramă personalizată {1}",
+    "MBBS_IconModeAll": "Pictogramă și text (toate butoanele)",
+    "MBBS_IconModeAllTip": "Cum își afișează toate butoanele pictograma și textul, cu excepția celor care au propria setare.",
+    "MBBS_IconModeClearAll": "Fă ca toate butoanele cu setare proprie ({0}) să urmeze această setare",
+    "MBBS_IconMode_FollowBar": "La fel ca întreaga bară ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "Aspectul original al butoanelor jocului."
+      "Vanilla.description": "Aspectul original al butoanelor jocului.",
+      "MBBS_Imperial.label": "imperial",
+      "MBBS_Imperial.description": "Violet intens și auriu, inspirat de atmosfera de curte a expansiunii Regalitate.",
+      "MBBS_Creed.label": "crez",
+      "MBBS_Creed.description": "Piele închisă la culoare și bronz, cu text de culoarea pergamentului, inspirat de expansiunea Ideologie.",
+      "MBBS_GeneLab.label": "laborator genetic",
+      "MBBS_GeneLab.description": "Verde-albăstrui închis, cu margini de un verde de laborator aprins, inspirat de expansiunea Biotech.",
+      "MBBS_Void.label": "neant",
+      "MBBS_Void.description": "Aproape negru, cu o strălucire stacojie slabă, inspirat de expansiunea Anomaly.",
+      "MBBS_Starfarer.label": "călător stelar",
+      "MBBS_Starfarer.description": "Bleumarin intens și albastru-oțel, cu colțuri teșite, inspirat de expansiunea Odyssey."
     }
   }
 }

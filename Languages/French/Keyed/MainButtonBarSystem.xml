@@ -159,4 +159,8 @@ puis cliquez sur « Actualiser ». Ils y restent lors des mises à jour du mod.<
   <MBBS_Ref_Name>{0} : renommé en « {1} »</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0} : texte seul</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0} : icône personnalisée {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Icône et texte (tous les boutons)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Comment tous les boutons affichent leur icône et leur libellé, sauf ceux qui ont leur propre réglage.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Faire suivre ce réglage à tous les boutons qui ont le leur ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Identique à la barre entière ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

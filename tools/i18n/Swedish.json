@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: fyll skärmens bredd: {1}",
     "MBBS_Ref_Name": "{0}: nytt namn ”{1}”",
     "MBBS_Ref_NoIcon": "{0}: bara text",
-    "MBBS_Ref_Icon": "{0}: egen ikon {1}"
+    "MBBS_Ref_Icon": "{0}: egen ikon {1}",
+    "MBBS_IconModeAll": "Ikon och text (alla knappar)",
+    "MBBS_IconModeAllTip": "Hur alla knappar visar ikon och text, om inte en knapp har en egen inställning.",
+    "MBBS_IconModeClearAll": "Låt alla knappar med egen inställning ({0}) följa denna",
+    "MBBS_IconMode_FollowBar": "Samma som hela fältet ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "Spelets eget knapputseende."
+      "Vanilla.description": "Spelets eget knapputseende.",
+      "MBBS_Imperial.label": "kejserlig",
+      "MBBS_Imperial.description": "Djup lila och guld, inspirerat av hovstämningen i expansionen Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Mörkt läder och brons med pergamentfärgad text, inspirerat av expansionen Ideology.",
+      "MBBS_GeneLab.label": "genlabb",
+      "MBBS_GeneLab.description": "Mörk blågrön med klara labbgröna kanter, inspirerat av expansionen Biotech.",
+      "MBBS_Void.label": "tomrum",
+      "MBBS_Void.description": "Nästan svart med ett svagt karmosinrött sken, inspirerat av expansionen Anomaly.",
+      "MBBS_Starfarer.label": "stjärnfarare",
+      "MBBS_Starfarer.description": "Djup marinblå och stålblå med avfasade hörn, inspirerat av expansionen Odyssey."
     }
   }
 }

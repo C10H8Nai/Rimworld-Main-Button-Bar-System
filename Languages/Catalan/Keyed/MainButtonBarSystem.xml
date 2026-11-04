@@ -159,4 +159,8 @@ i després premeu Actualitza. Hi continuaran encara que s’actualitzi el mod.</
   <MBBS_Ref_Name>{0}: nom canviat a «{1}»</MBBS_Ref_Name>
   <MBBS_Ref_NoIcon>{0}: només text</MBBS_Ref_NoIcon>
   <MBBS_Ref_Icon>{0}: icona personalitzada {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Icona i text (tots els botons)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Com mostra cada botó la icona i el text, tret que el botó tingui una configuració pròpia.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Fes que tots els botons amb configuració pròpia ({0}) segueixin aquesta</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Igual que tota la barra ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

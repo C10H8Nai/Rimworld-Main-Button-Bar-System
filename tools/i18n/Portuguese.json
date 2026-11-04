@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: preencher a largura do ecrã: {1}",
     "MBBS_Ref_Name": "{0}: renomeado para \"{1}\"",
     "MBBS_Ref_NoIcon": "{0}: só texto",
-    "MBBS_Ref_Icon": "{0}: ícone personalizado {1}"
+    "MBBS_Ref_Icon": "{0}: ícone personalizado {1}",
+    "MBBS_IconModeAll": "Ícone e texto (todos os botões)",
+    "MBBS_IconModeAllTip": "Como todos os botões mostram o ícone e o texto, exceto os que têm uma definição própria.",
+    "MBBS_IconModeClearAll": "Fazer com que todos os botões com definição própria ({0}) sigam esta",
+    "MBBS_IconMode_FollowBar": "Igual à barra inteira ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "O aspeto original dos botões do jogo."
+      "Vanilla.description": "O aspeto original dos botões do jogo.",
+      "MBBS_Imperial.label": "imperial",
+      "MBBS_Imperial.description": "Roxo profundo e dourado, inspirado no ambiente de corte da expansão Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Couro escuro e bronze com texto cor de pergaminho, inspirado na expansão Ideology.",
+      "MBBS_GeneLab.label": "laboratório genético",
+      "MBBS_GeneLab.description": "Azul-petróleo escuro com contornos num verde de laboratório vivo, inspirado na expansão Biotech.",
+      "MBBS_Void.label": "vazio",
+      "MBBS_Void.description": "Quase preto com um ténue brilho carmesim, inspirado na expansão Anomaly.",
+      "MBBS_Starfarer.label": "viajante estelar",
+      "MBBS_Starfarer.description": "Azul-marinho profundo e azul-aço com cantos cortados, inspirado na expansão Odyssey."
     }
   }
 }

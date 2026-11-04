@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: wypełnij szerokość ekranu: {1}",
     "MBBS_Ref_Name": "{0}: nazwa zmieniona na „{1}”",
     "MBBS_Ref_NoIcon": "{0}: tylko tekst",
-    "MBBS_Ref_Icon": "{0}: własna ikona {1}"
+    "MBBS_Ref_Icon": "{0}: własna ikona {1}",
+    "MBBS_IconModeAll": "Ikona i tekst (wszystkie przyciski)",
+    "MBBS_IconModeAllTip": "Jak wszystkie przyciski pokazują ikonę i napis, chyba że przycisk ma własne ustawienie.",
+    "MBBS_IconModeClearAll": "Zastosuj do wszystkich przycisków z własnym ustawieniem ({0})",
+    "MBBS_IconMode_FollowBar": "Jak dla całego paska ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "jak w grze",
-      "Vanilla.description": "Własny wygląd przycisków z gry."
+      "Vanilla.description": "Własny wygląd przycisków z gry.",
+      "MBBS_Imperial.label": "imperialny",
+      "MBBS_Imperial.description": "Głęboki fiolet i złoto w dworskim klimacie rozszerzenia Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Ciemna skóra i brąz z napisami w kolorze pergaminu, w klimacie rozszerzenia Ideology.",
+      "MBBS_GeneLab.label": "laboratorium genetyczne",
+      "MBBS_GeneLab.description": "Ciemny turkus z jaskrawą, laboratoryjną zielenią na krawędziach, w klimacie rozszerzenia Biotech.",
+      "MBBS_Void.label": "pustka",
+      "MBBS_Void.description": "Niemal czerń z nikłą karmazynową poświatą, w klimacie rozszerzenia Anomaly.",
+      "MBBS_Starfarer.label": "gwiezdny wędrowiec",
+      "MBBS_Starfarer.description": "Głęboki granat i stalowy błękit ze ściętymi rogami, w klimacie rozszerzenia Odyssey."
     }
   }
 }

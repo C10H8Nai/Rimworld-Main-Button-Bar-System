@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: udfyld skærmens bredde: {1}",
     "MBBS_Ref_Name": "{0}: omdøbt til »{1}«",
     "MBBS_Ref_NoIcon": "{0}: kun tekst",
-    "MBBS_Ref_Icon": "{0}: eget ikon {1}"
+    "MBBS_Ref_Icon": "{0}: eget ikon {1}",
+    "MBBS_IconModeAll": "Ikon og tekst (alle knapper)",
+    "MBBS_IconModeAllTip": "Hvordan alle knapper viser ikon og tekst, medmindre en knap har sin egen indstilling.",
+    "MBBS_IconModeClearAll": "Lad alle knapper med egen indstilling ({0}) følge denne",
+    "MBBS_IconMode_FollowBar": "Samme som hele linjen ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "Spillets eget knapudseende."
+      "Vanilla.description": "Spillets eget knapudseende.",
+      "MBBS_Imperial.label": "kejserlig",
+      "MBBS_Imperial.description": "Dyb lilla og guld, inspireret af hofstemningen i udvidelsen Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Mørkt læder og bronze med pergamentfarvet tekst, inspireret af udvidelsen Ideology.",
+      "MBBS_GeneLab.label": "genlaboratorium",
+      "MBBS_GeneLab.description": "Mørk blågrøn med klare laboratoriegrønne kanter, inspireret af udvidelsen Biotech.",
+      "MBBS_Void.label": "tomrum",
+      "MBBS_Void.description": "Næsten sort med et svagt karmoisinrødt skær, inspireret af udvidelsen Anomaly.",
+      "MBBS_Starfarer.label": "stjernefarer",
+      "MBBS_Starfarer.description": "Dyb marineblå og stålblå med afskårne hjørner, inspireret af udvidelsen Odyssey."
     }
   }
 }

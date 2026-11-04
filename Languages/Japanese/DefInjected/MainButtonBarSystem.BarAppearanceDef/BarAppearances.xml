@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>バニラ</Vanilla.label>
   <Vanilla.description>ゲーム本体と同じボタンの見た目です.</Vanilla.description>
+  <MBBS_Imperial.label>帝国</MBBS_Imperial.label>
+  <MBBS_Imperial.description>深い紫と金色で,拡張版Royaltyの宮廷らしい雰囲気をイメージしています.</MBBS_Imperial.description>
+  <MBBS_Creed.label>信条</MBBS_Creed.label>
+  <MBBS_Creed.description>濃い色の革とブロンズに羊皮紙色のラベルを合わせ,拡張版Ideologyをイメージしています.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>遺伝子ラボ</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>暗い青緑に明るいラボグリーンの縁取りで,拡張版Biotechをイメージしています.</MBBS_GeneLab.description>
+  <MBBS_Void.label>ヴォイド</MBBS_Void.label>
+  <MBBS_Void.description>ほぼ黒に深紅の光がかすかに灯る配色で,拡張版Anomalyをイメージしています.</MBBS_Void.description>
+  <MBBS_Starfarer.label>星渡り</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>深いネイビーとスチールブルーに角を切り落とした形で,拡張版Odysseyをイメージしています.</MBBS_Starfarer.description>
 </LanguageData>

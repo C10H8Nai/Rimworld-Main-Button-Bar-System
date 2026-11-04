@@ -156,7 +156,11 @@
     "MBBS_Ref_Fill": "{0}: schermbreedte vullen: {1}",
     "MBBS_Ref_Name": "{0}: hernoemd naar \"{1}\"",
     "MBBS_Ref_NoIcon": "{0}: alleen tekst",
-    "MBBS_Ref_Icon": "{0}: eigen icoon {1}"
+    "MBBS_Ref_Icon": "{0}: eigen icoon {1}",
+    "MBBS_IconModeAll": "Icoon en tekst (alle knoppen)",
+    "MBBS_IconModeAllTip": "Hoe elke knop zijn icoon en tekst toont, tenzij een knop een eigen instelling heeft.",
+    "MBBS_IconModeClearAll": "Alle knoppen met een eigen instelling ({0}) dit laten volgen",
+    "MBBS_IconMode_FollowBar": "Gelijk aan de hele balk ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -171,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "origineel",
-      "Vanilla.description": "Het eigen uiterlijk van de knoppen van het spel."
+      "Vanilla.description": "Het eigen uiterlijk van de knoppen van het spel.",
+      "MBBS_Imperial.label": "keizerlijk",
+      "MBBS_Imperial.description": "Diep paars en goud, geïnspireerd op de hoofse sfeer van de uitbreiding Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Donker leer en brons met perkamentkleurige tekst, geïnspireerd op de uitbreiding Ideology.",
+      "MBBS_GeneLab.label": "genlab",
+      "MBBS_GeneLab.description": "Donker blauwgroen met felle labgroene randen, geïnspireerd op de uitbreiding Biotech.",
+      "MBBS_Void.label": "leegte",
+      "MBBS_Void.description": "Bijna zwart met een zwakke karmozijnrode gloed, geïnspireerd op de uitbreiding Anomaly.",
+      "MBBS_Starfarer.label": "sterrenreiziger",
+      "MBBS_Starfarer.description": "Diep marineblauw en staalblauw met afgeschuinde hoeken, geïnspireerd op de uitbreiding Odyssey."
     }
   }
 }
