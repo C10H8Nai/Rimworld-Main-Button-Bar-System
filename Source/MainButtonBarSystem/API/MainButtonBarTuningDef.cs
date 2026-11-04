@@ -17,6 +17,9 @@ namespace MainButtonBarSystem
 
         public static MainButtonBarTuningDef Current => current ??= DefDatabase<MainButtonBarTuningDef>.GetNamed(DefName);
 
+        /// <summary>Forget the cached def after play data was reloaded (the def is a new object then).</summary>
+        internal static void ResetCache() => current = null;
+
         /// <summary>Defaults of the settings players can change. Each has a "default" button in the settings window.</summary>
         public BarDefaults barDefaults;
 

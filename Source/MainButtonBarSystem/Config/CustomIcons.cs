@@ -59,6 +59,17 @@ namespace MainButtonBarSystem
             }
         }
 
+        /// <summary>
+        /// Forget textures found through ContentFinder: reloading play data destroys them. Imported PNGs are this mod's
+        /// own textures and stay valid.
+        /// </summary>
+        internal static void ForgetGameTextures()
+        {
+            foreach (var key in cache.Keys.Where(k => !IsFile(k)).ToList())
+                cache.Remove(key);
+            missing.Clear();
+        }
+
         /// <summary>Forget loaded files so new or changed PNGs in the folder are picked up.</summary>
         public static void Refresh()
         {

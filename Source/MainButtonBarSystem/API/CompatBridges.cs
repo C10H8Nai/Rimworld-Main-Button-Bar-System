@@ -11,6 +11,9 @@ namespace MainButtonBarSystem
 
         public static IEnumerable<CompatBridgeDef> All => DefDatabase<CompatBridgeDef>.AllDefs;
 
+        /// <summary>Reloaded defs have fresh workers; apply the priorities to them again (repeating a takeover is harmless).</summary>
+        internal static void ResetCache() => applied = false;
+
         public static IEnumerable<CompatBridgeDef> Detected => All.Where(d => d.Worker.Detected);
 
         /// <summary>True when a detected mod keeps the bar this session, so this mod must not draw it.</summary>

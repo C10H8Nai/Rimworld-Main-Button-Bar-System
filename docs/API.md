@@ -330,6 +330,7 @@ Harmony id: `NAI.MainButtonBarSystem`. Order your patches around it with `[Harmo
 | `CameraDriver.CameraDriverOnGUI` | prefix | Skips only for a scroll-wheel event over a scrolling bar, so the map does not zoom |
 | `Widgets.ButtonTextSubtle` | prefix + postfix | Acts only while this mod draws a bar button (label alignment, theme colour); never skips |
 | `Widgets.DrawAtlas(Rect, Texture2D, bool)` | prefix + postfix | Acts only while this mod draws a bar button (theme atlas); never skips |
+| `PlayDataLoader.LoadAllPlayData` | postfix | After a reload (for example a language change), refreshes this mod's cached defs once loading finishes |
 
 Compatibility bridges remove other mods' patches only when the player gives this mod priority, and log each
 removal.

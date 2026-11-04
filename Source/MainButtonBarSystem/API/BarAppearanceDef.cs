@@ -243,6 +243,8 @@ namespace MainButtonBarSystem
     /// alignment are applied by patches on Widgets.DrawAtlas and Widgets.ButtonTextSubtle. Nothing changes for any
     /// widget the game draws outside these calls.
     /// </summary>
+    // The attribute tells the game the static texture field is intended (it only holds the icon being drawn).
+    [StaticConstructorOnStartup]
     public static class ButtonPainter
     {
         /// <summary>Alignment requested for the button being drawn; Default outside this mod's drawing.</summary>
