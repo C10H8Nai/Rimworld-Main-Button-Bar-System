@@ -1,0 +1,62 @@
+[h1]Main Button Bar System[/h1]
+
+Take control of the bottom bar. With a big mod list it can hold dozens of buttons squeezed to unreadable widths; this mod lets you reorder, hide, rename and group them, scroll the bar, or tuck rarely used buttons into a "More" drawer, without breaking what other mods do to their buttons.
+
+[b]Nothing changes until you change something.[/b] A fresh install looks exactly like the game; the game keeps drawing the bar until you customise it.
+
+[h2]Features[/h2]
+[list]
+[*]Reorder by dragging, hide, rename, and set a width per button.
+[*]Four display modes: Vanilla, Collapse (a "More" drawer), Scroll (mouse wheel or arrows, the map does not zoom), Collapse + scroll.
+[*]Pin buttons to the left or right end; the game menu stays locked at the right unless you unlock it.
+[*]Text only, icon only, or icon and text per button; pick another button's icon or import your own PNG (kept outside the mod folder, so updates never delete it).
+[*]Label alignment, gap, minimum and default widths, drawer columns and cell width, every value with a Default button.
+[*]Hotkeys for every button, including ones the game gives none; hidden and drawer buttons keep their keys; conflicts are explained.
+[*]Settings are per save, with a default template for new games.
+[*]Export / import arrangements as a file or as text to paste in Discord, or ship one as a tiny XML mod.
+[*]Themes: an Appearance tab with previews. Theme mods need only XML and images.
+[*]Simple and Advanced views; 29 languages.
+[/list]
+
+[h2]Compatibility[/h2]
+[list]
+[*]Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]. RimWorld 1.7.
+[*]Buttons are still drawn by the game, so icon packs (Bradson's Main Button Icons, Vanilla Textures Expanded), replaced windows (Modern History Menu) and added buttons keep working.
+[*]Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected. You choose who draws the bar; their settings are shown for reference and can be imported. Default: the other mod keeps the bar.
+[*]Removing this mod from a save logs one "could not find class" message on the next load; this is harmless.
+[/list]
+
+[h2]For modders[/h2]
+Five extension points, the built-in features use them too: display modes, themes, compatibility bridges, per-button defaults in XML, and a query API (which buttons are on the bar, where the bar is). Arrangements and icon packs need only XML. See API.md in the mod folder.
+
+Settings: Options > Mod settings > Main Button Bar System, or the gear in the "More" drawer.
+
+[hr][/hr]
+
+[h1]主按钮栏系统 / 主按鈕列系統[/h1]
+
+[b]简体中文[/b]
+自定义游戏底部的主按钮栏：拖动排序、隐藏、改名、调宽度，把少用的按钮收进「更多」抽屉，或让整条栏左右滚动。没改任何设置之前，外观和原版完全一样。
+[list]
+[*]四种显示方式：原版、折叠、滚动、折叠＋滚动；滚轮滚动时地图不会缩放。
+[*]按钮可固定在左端或右端；菜单默认锁定在最右边。
+[*]每个按钮可选只显示文字、只显示图标、图标＋文字，可换图标或导入自己的 PNG（存放在模组文件夹外，更新不会被删）。
+[*]快捷键：原版没有快捷键的按钮也能设置；隐藏或收进抽屉的按钮快捷键照样有效。
+[*]设置跟着存档走，并有新游戏用的默认模板；可导出／导入排法。
+[*]外观分页与主题；只用 XML＋图片就能做主题模组。
+[*]兼容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可选择由谁绘制，并可导入对方的设置。
+[/list]
+需要 Harmony。从存档中移除本模组时，下次读档会出现一次「找不到类别」的记录，不影响游戏。
+
+[b]繁體中文[/b]
+自訂遊戲底部的主按鈕列：拖曳排序、隱藏、改名、調寬度，把少用的按鈕收進「更多」抽屜，或讓整條列左右捲動。沒改任何設定之前，外觀和原版完全一樣。
+[list]
+[*]四種顯示方式：原版、摺疊、捲動、摺疊＋捲動；滾輪捲動時地圖不會縮放。
+[*]按鈕可固定在左端或右端；選單預設鎖定在最右邊。
+[*]每顆按鈕可選只顯示文字、只顯示圖示、圖示＋文字，可換圖示或匯入自己的 PNG（放在模組資料夾外，更新不會被刪）。
+[*]快捷鍵：原版沒有快捷鍵的按鈕也能設定；隱藏或收進抽屜的按鈕快捷鍵照樣有效。
+[*]設定跟著存檔走，並有新遊戲用的預設範本；可匯出／匯入排法。
+[*]外觀分頁與主題；只用 XML＋圖片就能做主題模組。
+[*]相容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可選擇由誰繪製，並可匯入對方的設定。
+[/list]
+需要 Harmony。從存檔中移除本模組時，下次讀檔會出現一次「找不到類別」的紀錄，不影響遊戲。

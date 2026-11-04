@@ -74,6 +74,28 @@ before the game menu button.
 Leave out any field you do not want to set. Number fields left out (or `-1`) and switches left out (or `Default`)
 follow the player's tuning defaults; see below.
 
+## 2b. Icon packs (XML only)
+
+Players can give any button another icon. The picker's **Built-in** tab lists every icon the game's buttons use,
+plus the textures of every `MainButtonIconSetDef`. Ship the PNGs in your own `Textures/` folder:
+
+```xml
+<Defs>
+  <MainButtonBarSystem.MainButtonIconSetDef>
+    <defName>MyIcons</defName>
+    <label>my icons</label>
+    <icons>
+      <li>MyIcons/Factions</li>   <!-- Textures/MyIcons/Factions.png -->
+      <li>MyIcons/Research</li>
+    </icons>
+  </MainButtonBarSystem.MainButtonIconSetDef>
+</Defs>
+```
+
+To set an icon as a button's default, use `<icon>` in `MainButtonBarDefaults` (section 1). Players' own PNGs are
+not part of any mod: they live in `…/RimWorld by Ludeon Studios/MainButtonBarSystem/Icons/`, so Steam updates
+never delete them. In configs they are stored as `file:Name.png`.
+
 ## 3. Display modes
 
 How buttons are arranged. The built-in modes (`Vanilla`, `Collapse`, `Scroll`, `CollapseScroll`) are defs of
@@ -247,8 +269,18 @@ priority, and can import its settings.
 ```
 
 The default worker removes the other mod's Harmony patches on `MainButtonsRoot.DoButtons`,
-`MainButtonsRoot.MainButtonsOnGUI` and `MainButtonWorker.DoButton` when this mod has priority. Override
-`TakeOver`, `ReferenceValue`, `CanImport` and `ImportInto` for more. Priority changes apply after a restart.
+`MainButtonsRoot.MainButtonsOnGUI` and `MainButtonWorker.DoButton` when this mod has priority. Override for more:
+
+| Member | Purpose |
+|---|---|
+| `TakeOver()` | Switch the other mod off on the bar (called once per session when this mod has priority) |
+| `ReferenceValues(defName)` | Lines describing what the other mod set for one button, shown in the settings window |
+| `BarReferenceValues()` | The same for the whole bar |
+| `CanImport`, `ImportInto(BarConfig)` | Copy the other mod's arrangement into the player's working copy |
+
+`OtherModSettings` reads another mod's `ModSettings` by field name without failing (missing fields give null), and
+`ButtonDefaults.SetRuntimeDefault` sets a button default while the game runs. Priority changes apply after a
+restart.
 
 ## Depending on this mod softly
 

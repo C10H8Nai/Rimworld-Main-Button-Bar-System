@@ -28,8 +28,8 @@ RimWorld 1.7 模組。自訂遊戲畫面底部的主按鈕列：排序、隱藏�
 | `Languages/` | RimWorld 官方支援的 29 種語言，由 `tools/gen_translations.py` 從 `tools/i18n/*.json` 產生，不要直接改 |
 | `Source/MainButtonBarSystem/` | C# 原始碼；`Core/` 是不依賴遊戲的純邏輯（版面計算、排序合併） |
 | `Source/MainButtonBarSystem.Tests/` | `Core/` 的單元測試，不需要遊戲就能跑 |
-| `docs/` | 設計規格、調查資料、各階段測試清單（`docs/testing/`）、附屬模組作者說明（`docs/API.md`） |
-| `tools/` | 開發用腳本；`tools/i18n/` 是翻譯來源（英文為母本） |
+| `docs/` | 設計規格、調查資料、各階段測試清單（`docs/testing/`）、附屬模組作者說明（`docs/API.md`）、工作坊說明與發佈清單（`docs/workshop/`） |
+| `tools/` | 開發用腳本：`gen_translations.py`（翻譯，來源在 `tools/i18n/`，英文為母本）、`make_release.py`（產生乾淨的工作坊上傳資料夾） |
 
 ## 編譯
 
