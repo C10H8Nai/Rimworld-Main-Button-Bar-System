@@ -347,9 +347,11 @@ through the same `make_theme.py` a theme mod uses.
 ### Effects beyond textures
 
 Set `workerClass` to a class deriving from `BarAppearanceWorker` and override what you need:
-`DrawBarBackground`, `DrawBarBackgroundImage`, `DrawBarOverlay`, `DrawButton`, `DrawDrawerButton`,
+`DrawBarBackground`, `DrawBarBackgroundImage(Rect, float opacity)`, `DrawBarOverlay`, `DrawButton`, `DrawDrawerButton`,
 `DrawDrawerBackground`, `DrawDrawerBackgroundImage`, `DrawDrawerOverlay`, `DrawDecorations`, `DrawerSettingsIcon`,
-`ButtonAtlas`, `LabelColor`, `DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`. `DrawBarBackground` is the image
+`ButtonAtlas`, `LabelColor`, `DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`. Override the two-parameter
+`DrawBarBackgroundImage`: the one-parameter form only forwards to it with the player's opacity, and the Appearance
+tab's preview calls the two-parameter form with 1. `DrawBarBackground` is the image
 plus the decorations below the buttons, and a display mode is expected to call it with `BarDrawContext.BarRect`
 (the standard modes do); `DrawBarOverlay` is called with that same rect after every display mode's drawing, so
 decorations above the buttons work with any display mode, and a mode that never calls `DrawBarBackground` shows

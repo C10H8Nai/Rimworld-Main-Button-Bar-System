@@ -171,7 +171,7 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。三個選填的新�
 
 ### 貼圖以外的效果
 
-把 `workerClass` 設成繼承 `BarAppearanceWorker` 的類別，覆寫需要的方法：`DrawBarBackground`、`DrawBarBackgroundImage`、`DrawBarOverlay`、`DrawButton`、`DrawDrawerButton`、`DrawDrawerBackground`、`DrawDrawerBackgroundImage`、`DrawDrawerOverlay`、`DrawDecorations`、`DrawerSettingsIcon`、`ButtonAtlas`、`LabelColor`、`DrawMoreButton`、`MoreButtonWidth`、`DrawScrollArrow`。`DrawBarBackground` 是背景圖加按鈕下層的裝飾，顯示方式應該用 `BarDrawContext.BarRect` 呼叫它（內建的顯示方式都是）；`DrawBarOverlay` 在每種顯示方式畫完之後用同一個矩形呼叫，所以按鈕上層的裝飾對任何顯示方式都有效，沒呼叫 `DrawBarBackground` 的顯示方式只會有上層。畫按鈕請繼續走 `ButtonPainter.Draw`（或遊戲的 `DoButton`），其他模組對按鈕的修改才會保留。
+把 `workerClass` 設成繼承 `BarAppearanceWorker` 的類別，覆寫需要的方法：`DrawBarBackground`、`DrawBarBackgroundImage(Rect, float opacity)`、`DrawBarOverlay`、`DrawButton`、`DrawDrawerButton`、`DrawDrawerBackground`、`DrawDrawerBackgroundImage`、`DrawDrawerOverlay`、`DrawDecorations`、`DrawerSettingsIcon`、`ButtonAtlas`、`LabelColor`、`DrawMoreButton`、`MoreButtonWidth`、`DrawScrollArrow`。要覆寫的是雙參數的 `DrawBarBackgroundImage`：單參數版只是帶著玩家的不透明度轉呼叫它，外觀分頁的預覽則用 1 呼叫雙參數版。`DrawBarBackground` 是背景圖加按鈕下層的裝飾，顯示方式應該用 `BarDrawContext.BarRect` 呼叫它（內建的顯示方式都是）；`DrawBarOverlay` 在每種顯示方式畫完之後用同一個矩形呼叫，所以按鈕上層的裝飾對任何顯示方式都有效，沒呼叫 `DrawBarBackground` 的顯示方式只會有上層。畫按鈕請繼續走 `ButtonPainter.Draw`（或遊戲的 `DoButton`），其他模組對按鈕的修改才會保留。
 
 ## 軟性依賴本模組
 

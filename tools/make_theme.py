@@ -64,6 +64,7 @@
 ## 修改日誌
 ## V1.0：2026-11-04  從 gen_theme_textures.py 拆出；畫圖程式碼原樣搬入（像素不變），加上佔位圖、完整模組輸出
 ## V1.1：2026-11-04  review 後：JSON 列舉值與檔名衝突檢查、佔位圖文字依寬度縮字級、擺放算法提到模組層
+## V1.2：2026-11-04  第二輪 review：檔名衝突不分大小寫；palette 不是物件時報 ValueError
 import argparse
 import json
 import os
@@ -92,7 +93,7 @@ _THEME_BACKGROUND_DEFAULTS = {"barFit": "Atlas", "drawerFit": "Atlas", "barTileS
                               "bar": None, "drawer": None}
 _THEME_PALETTE_COLOR_KEYS  = ("base", "edge", "outline", "rule", "accent", "active", "icon", "tile", "rivet", "active_rule")
 _THEME_ORNAMENTS           = ("finial", "roundel", "genetab", "shard", "hull", "petal")   # 和 C# 無關，只有這支工具認得
-_THEME_FITS                = ("Atlas", "Tile", "Stretch", "Fit", "Cover")                  # 以下四組要和 C# 的列舉同名
+_THEME_FITS                = ("Atlas", "Tile", "Stretch", "Fit", "Cover")                  # 以下六組要和 C# 的列舉同名
 _THEME_TARGETS             = ("Bar", "Drawer")
 _THEME_ANCHORS             = ("Left", "Center", "Right")
 _THEME_VERTICAL_ANCHORS    = ("Bottom", "Center", "Top")
@@ -709,25 +710,27 @@ def _theme_json_validate_fields(theme, path):
             problems.append(f"missing '{required}'")
     if problems:
         raise ValueError(f"{path}: " + "; ".join(problems))
+    if not isinstance(theme["palette"], dict):
+        raise ValueError(f"{path}: palette must be an object")
     for required in ("base", "edge", "rule", "accent", "active", "ornament"):
         if not theme["palette"].get(required):
             problems.append(f"palette.{required} is missing")
-    if theme["palette"].get("ornament") not in _THEME_ORNAMENTS:
+    if theme["palette"].get("ornament") and theme["palette"]["ornament"] not in _THEME_ORNAMENTS:
         problems.append(f"palette.ornament must be one of {', '.join(_THEME_ORNAMENTS)}")
     background = theme.get("background") or {}
     for key in ("barFit", "drawerFit"):
         if key in background and background[key] not in _THEME_FITS:
             problems.append(f"background.{key} must be one of {', '.join(_THEME_FITS)}")
-    used_files = set(_THEME_TEXTURE_FILES) | {"Preview"}
+    used_files = {name.lower() for name in _THEME_TEXTURE_FILES} | {"preview"}   # 檔案系統不分大小寫，比對也不分
     for index, decoration in enumerate(theme.get("decorations") or []):
         where = f"decorations[{index}]"
         file_name = decoration.get("file")
         if not file_name:
             problems.append(f"{where}: file is missing")
-        elif file_name in used_files:
+        elif file_name.lower() in used_files:
             problems.append(f"{where}: file '{file_name}' clashes with another texture of the theme")
         else:
-            used_files.add(file_name)
+            used_files.add(file_name.lower())
         for key, allowed in (("target", _THEME_TARGETS), ("anchor", _THEME_ANCHORS), ("verticalAnchor", _THEME_VERTICAL_ANCHORS), ("layer", _THEME_LAYERS)):
             if key in decoration and decoration[key] not in allowed:
                 problems.append(f"{where}: {key} must be one of {', '.join(allowed)}")
