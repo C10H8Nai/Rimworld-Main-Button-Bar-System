@@ -177,15 +177,15 @@
       "Vanilla.label": "original",
       "Vanilla.description": "Spillets eget knappeutseende.",
       "MBBS_Imperial.label": "keiserlig",
-      "MBBS_Imperial.description": "Dyp lilla og gull, inspirert av hoffstemningen i utvidelsen Royalty.",
+      "MBBS_Imperial.description": "Marineblå og gull med kronede hjørner og et blågrønt psylink-skjær, i fargene fra utvidelsen Royalty.",
       "MBBS_Creed.label": "credo",
-      "MBBS_Creed.description": "Mørkt lær og bronse med pergamentfarget tekst, inspirert av utvidelsen Ideology.",
+      "MBBS_Creed.description": "Dyp blågrønn med korallrøde kanter og gullmedaljonger, i fargene fra utvidelsen Ideology.",
       "MBBS_GeneLab.label": "genlaboratorium",
-      "MBBS_GeneLab.description": "Mørk blågrønn med klare laboratoriegrønne kanter, inspirert av utvidelsen Biotech.",
+      "MBBS_GeneLab.description": "Blå med blågrønne kanter, lillarosa genfliser og genblå tekst, i fargene fra utvidelsen Biotech.",
       "MBBS_Void.label": "tomrom",
-      "MBBS_Void.description": "Nesten svart med et svakt karmosinrødt skjær, inspirert av utvidelsen Anomaly.",
+      "MBBS_Void.description": "Tomromssvart og monolittstein med et rødt skjær og hjørner skåret som splinter, i fargene fra utvidelsen Anomaly.",
       "MBBS_Starfarer.label": "stjernefarer",
-      "MBBS_Starfarer.description": "Dyp marineblå og stålblå med avskårne hjørner, inspirert av utvidelsen Odyssey."
+      "MBBS_Starfarer.description": "Skrogplater av stål med nagler og et cyanblått skjær fra motorene, inspirert av utvidelsen Odyssey."
     }
   }
 }

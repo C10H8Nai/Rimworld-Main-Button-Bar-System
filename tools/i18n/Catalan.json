@@ -177,15 +177,15 @@
       "Vanilla.label": "original",
       "Vanilla.description": "L’aspecte original dels botons del joc.",
       "MBBS_Imperial.label": "imperial",
-      "MBBS_Imperial.description": "Porpra fosc i or, inspirat en l’ambient de cort de l’expansió Reialesa.",
+      "MBBS_Imperial.description": "Blau marí i or amb cantonades coronades i una lluïssor verd blavosa de psicoenllaç, amb els colors de l’expansió Reialesa.",
       "MBBS_Creed.label": "credo",
-      "MBBS_Creed.description": "Cuir fosc i bronze amb el text de color pergamí, inspirat en l’expansió Ideologia.",
+      "MBBS_Creed.description": "Verd blavós fosc amb vores de color corall i medallons daurats, amb els colors de l’expansió Ideologia.",
       "MBBS_GeneLab.label": "laboratori genètic",
-      "MBBS_GeneLab.description": "Blau verdós fosc amb vores d’un verd de laboratori brillant, inspirat en l’expansió Biotecnologia.",
+      "MBBS_GeneLab.description": "Blau amb vores verd blavoses, caselles de gens de color malva i etiquetes en blau gènic, amb els colors de l’expansió Biotecnologia.",
       "MBBS_Void.label": "buit",
-      "MBBS_Void.description": "Gairebé negre amb una lluïssor carmesí tènue, inspirat en l’expansió Anomalia.",
+      "MBBS_Void.description": "Negre del buit i pedra del monòlit amb una lluïssor vermella i cantonades tallades com estelles, amb els colors de l’expansió Anomalia.",
       "MBBS_Starfarer.label": "navegant estel·lar",
-      "MBBS_Starfarer.description": "Blau marí fosc i blau acer amb cantonades tallades, inspirat en l’expansió Odissea."
+      "MBBS_Starfarer.description": "Planxes d’acer del buc amb reblons i una lluïssor cian dels propulsors, inspirat en l’expansió Odissea."
     }
   }
 }

@@ -177,15 +177,15 @@
       "Vanilla.label": "jako ve hře",
       "Vanilla.description": "Vlastní vzhled tlačítek hry.",
       "MBBS_Imperial.label": "imperiální",
-      "MBBS_Imperial.description": "Tmavě fialová a zlatá. Inspirováno dvorskou atmosférou rozšíření Royalty.",
+      "MBBS_Imperial.description": "Námořnická modř a zlatá, rohy zdobené korunkami a modrozelená záře psiovazby. V barvách rozšíření Royalty.",
       "MBBS_Creed.label": "krédo",
-      "MBBS_Creed.description": "Tmavá kůže a bronz s popisky barvy pergamenu. Inspirováno rozšířením Ideology.",
+      "MBBS_Creed.description": "Tmavá modrozelená s korálovými okraji a zlatými medailony. V barvách rozšíření Ideology.",
       "MBBS_GeneLab.label": "genetická laboratoř",
-      "MBBS_GeneLab.description": "Tmavě modrozelená s okraji v zářivé laboratorní zelené. Inspirováno rozšířením Biotech.",
+      "MBBS_GeneLab.description": "Modrá s modrozelenými okraji, fialovorůžovými genovými dlaždicemi a popisky v genové modři. V barvách rozšíření Biotech.",
       "MBBS_Void.label": "nicota",
-      "MBBS_Void.description": "Téměř černá s tlumenou karmínovou září. Inspirováno rozšířením Anomaly.",
+      "MBBS_Void.description": "Čerň nicoty a kámen monolitu s rudou září a rohy seříznutými jako střepy. V barvách rozšíření Anomaly.",
       "MBBS_Starfarer.label": "hvězdoplavec",
-      "MBBS_Starfarer.description": "Tmavá námořnická modř a ocelová modř se zkosenými rohy. Inspirováno rozšířením Odyssey."
+      "MBBS_Starfarer.description": "Ocelové pláty trupu s nýty a azurovou září trysek. Inspirováno rozšířením Odyssey."
     }
   }
 }

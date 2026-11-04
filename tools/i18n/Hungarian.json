@@ -177,15 +177,15 @@
       "Vanilla.label": "eredeti",
       "Vanilla.description": "A játék saját gombkinézete.",
       "MBBS_Imperial.label": "birodalmi",
-      "MBBS_Imperial.description": "Mélylila és arany, a Királyság kiegészítő udvari hangulatának ihletésére.",
+      "MBBS_Imperial.description": "Tengerészkék és arany, koronás sarkokkal és kékeszöld psylink-ragyogással, a Királyság kiegészítő színeiben.",
       "MBBS_Creed.label": "hitvallás",
-      "MBBS_Creed.description": "Sötét bőr és bronz pergamenszínű feliratokkal, az Ideológia kiegészítő ihletésére.",
+      "MBBS_Creed.description": "Mély kékeszöld korallszínű szegélyekkel és arany medalionokkal, az Ideológia kiegészítő színeiben.",
       "MBBS_GeneLab.label": "génlabor",
-      "MBBS_GeneLab.description": "Sötét kékeszöld élénk laborzöld szegélyekkel, a Biotech kiegészítő ihletésére.",
+      "MBBS_GeneLab.description": "Kék, kékeszöld szegélyekkel, mályvaszínű génlapkákkal és génkék feliratokkal, a Biotech kiegészítő színeiben.",
       "MBBS_Void.label": "üresség",
-      "MBBS_Void.description": "Szinte fekete, halvány karmazsinvörös izzással, az Anomália kiegészítő ihletésére.",
+      "MBBS_Void.description": "Ürességfekete és monolitkő, vörös izzással és szilánkosra vágott sarkokkal, az Anomália kiegészítő színeiben.",
       "MBBS_Starfarer.label": "csillagutazó",
-      "MBBS_Starfarer.description": "Mély tengerészkék és acélkék, levágott sarkokkal, az Odyssey kiegészítő ihletésére."
+      "MBBS_Starfarer.description": "Acél hajótestlemezek szegecsekkel és cián hajtóműizzással, az Odyssey kiegészítő ihletésére."
     }
   }
 }

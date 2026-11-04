@@ -177,15 +177,15 @@
       "Vanilla.label": "origineel",
       "Vanilla.description": "Het eigen uiterlijk van de knoppen van het spel.",
       "MBBS_Imperial.label": "keizerlijk",
-      "MBBS_Imperial.description": "Diep paars en goud, geïnspireerd op de hoofse sfeer van de uitbreiding Royalty.",
+      "MBBS_Imperial.description": "Marineblauw en goud met gekroonde hoeken en een blauwgroene psylinkgloed, in de kleuren van de uitbreiding Royalty.",
       "MBBS_Creed.label": "credo",
-      "MBBS_Creed.description": "Donker leer en brons met perkamentkleurige tekst, geïnspireerd op de uitbreiding Ideology.",
+      "MBBS_Creed.description": "Diep blauwgroen met koraalrode randen en gouden medaillons, in de kleuren van de uitbreiding Ideology.",
       "MBBS_GeneLab.label": "genlab",
-      "MBBS_GeneLab.description": "Donker blauwgroen met felle labgroene randen, geïnspireerd op de uitbreiding Biotech.",
+      "MBBS_GeneLab.description": "Blauw met blauwgroene randen, mauve gentegels en genblauwe labels, in de kleuren van de uitbreiding Biotech.",
       "MBBS_Void.label": "leegte",
-      "MBBS_Void.description": "Bijna zwart met een zwakke karmozijnrode gloed, geïnspireerd op de uitbreiding Anomaly.",
+      "MBBS_Void.description": "Leegtezwart en monolietsteen met een rode gloed en scherfvormig afgesneden hoeken, in de kleuren van de uitbreiding Anomaly.",
       "MBBS_Starfarer.label": "sterrenreiziger",
-      "MBBS_Starfarer.description": "Diep marineblauw en staalblauw met afgeschuinde hoeken, geïnspireerd op de uitbreiding Odyssey."
+      "MBBS_Starfarer.description": "Stalen rompplaten met klinknagels en een cyaan gloed van de stuwraketten, geïnspireerd op de uitbreiding Odyssey."
     }
   }
 }

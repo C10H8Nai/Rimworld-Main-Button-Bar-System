@@ -177,15 +177,15 @@
       "Vanilla.label": "ako v hre",
       "Vanilla.description": "Vlastný vzhľad tlačidiel hry.",
       "MBBS_Imperial.label": "imperiálny",
-      "MBBS_Imperial.description": "Sýta fialová a zlatá. Inšpirované dvornou atmosférou rozšírenia Royalty.",
+      "MBBS_Imperial.description": "Námornícka modrá a zlatá, rohy zdobené korunkami a modrozelená žiara psylinku. Vo farbách rozšírenia Royalty.",
       "MBBS_Creed.label": "krédo",
-      "MBBS_Creed.description": "Tmavá koža a bronz s popismi farby pergamenu. Inšpirované rozšírením Ideology.",
+      "MBBS_Creed.description": "Tmavá modrozelená s koralovými okrajmi a zlatými medailónmi. Vo farbách rozšírenia Ideology.",
       "MBBS_GeneLab.label": "genetické laboratórium",
-      "MBBS_GeneLab.description": "Tmavá modrozelená s okrajmi v žiarivej laboratórnej zelenej. Inšpirované rozšírením Biotech.",
+      "MBBS_GeneLab.description": "Modrá s modrozelenými okrajmi, fialovoružovými génovými dlaždicami a popismi v génovej modrej. Vo farbách rozšírenia Biotech.",
       "MBBS_Void.label": "prázdnota",
-      "MBBS_Void.description": "Takmer čierna s tlmenou karmínovou žiarou. Inšpirované rozšírením Anomaly.",
+      "MBBS_Void.description": "Čerň prázdnoty a kameň monolitu s červenou žiarou a rohmi zrezanými ako črepiny. Vo farbách rozšírenia Anomaly.",
       "MBBS_Starfarer.label": "hviezdny pútnik",
-      "MBBS_Starfarer.description": "Tmavá námornícka modrá a oceľová modrá so zrezanými rohmi. Inšpirované rozšírením Odyssey."
+      "MBBS_Starfarer.description": "Oceľové pláty trupu s nitmi a azúrovou žiarou trysiek. Inšpirované rozšírením Odyssey."
     }
   }
 }

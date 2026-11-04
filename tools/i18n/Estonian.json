@@ -177,15 +177,15 @@
       "Vanilla.label": "originaal",
       "Vanilla.description": "Mängu enda nuppude välimus.",
       "MBBS_Imperial.label": "keiserlik",
-      "MBBS_Imperial.description": "Sügavlilla ja kuld, inspireeritud Royalty laienduse õukondlikust meeleolust.",
+      "MBBS_Imperial.description": "Meresinine ja kuld, kroonitud nurkade ja sinakasrohelise psylink-kumaga, Royalty laienduse värvides.",
       "MBBS_Creed.label": "kreedo",
-      "MBBS_Creed.description": "Tume nahk ja pronks pärgamendivärvi tekstiga, inspireeritud Ideology laiendusest.",
+      "MBBS_Creed.description": "Sügav sinakasroheline korallpunaste servade ja kuldsete medaljonidega, Ideology laienduse värvides.",
       "MBBS_GeneLab.label": "geenilabor",
-      "MBBS_GeneLab.description": "Tume sinakasroheline erksate laboriroheliste servadega, inspireeritud Biotech laiendusest.",
+      "MBBS_GeneLab.description": "Sinine sinakasroheliste servade, roosakaslillade geeniruutude ja geenisiniste siltidega, Biotech laienduse värvides.",
       "MBBS_Void.label": "tühjus",
-      "MBBS_Void.description": "Peaaegu must tuhmi karmiinpunase kumaga, inspireeritud Anomaly laiendusest.",
+      "MBBS_Void.description": "Tühjusemust ja monoliidikivi punase kuma ja killukujuliselt lõigatud nurkadega, Anomaly laienduse värvides.",
       "MBBS_Starfarer.label": "tähtederändur",
-      "MBBS_Starfarer.description": "Sügav meresinine ja terassinine lõigatud nurkadega, inspireeritud Odyssey laiendusest."
+      "MBBS_Starfarer.description": "Terasest kerepaneelid needide ja tsüaansinise mootorikumaga, Odyssey laienduse eeskujul."
     }
   }
 }

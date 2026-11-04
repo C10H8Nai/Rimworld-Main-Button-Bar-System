@@ -3,13 +3,13 @@
   <Vanilla.label>Original</Vanilla.label>
   <Vanilla.description>Das ursprüngliche Aussehen der Schaltflächen des Spiels.</Vanilla.description>
   <MBBS_Imperial.label>Imperial</MBBS_Imperial.label>
-  <MBBS_Imperial.description>Tiefes Violett und Gold, angelehnt an die höfische Stimmung der Royalty-Erweiterung.</MBBS_Imperial.description>
+  <MBBS_Imperial.description>Marineblau und Gold mit gekrönten Ecken und petrolfarbenem Psylink-Leuchten, in den Farben der Royalty-Erweiterung.</MBBS_Imperial.description>
   <MBBS_Creed.label>Credo</MBBS_Creed.label>
-  <MBBS_Creed.description>Dunkles Leder und Bronze mit pergamentfarbener Beschriftung, angelehnt an die Ideology-Erweiterung.</MBBS_Creed.description>
+  <MBBS_Creed.description>Tiefes Petrol mit korallroten Rändern und goldenen Medaillons, in den Farben der Ideology-Erweiterung.</MBBS_Creed.description>
   <MBBS_GeneLab.label>Genlabor</MBBS_GeneLab.label>
-  <MBBS_GeneLab.description>Dunkles Petrol mit leuchtend laborgrünen Rändern, angelehnt an die Biotech-Erweiterung.</MBBS_GeneLab.description>
+  <MBBS_GeneLab.description>Blau mit petrolfarbenen Rändern, malvenfarbenen Genkacheln und genblauer Beschriftung, in den Farben der Biotech-Erweiterung.</MBBS_GeneLab.description>
   <MBBS_Void.label>Leere</MBBS_Void.label>
-  <MBBS_Void.description>Fast schwarz mit einem schwachen karmesinroten Glühen, angelehnt an die Anomaly-Erweiterung.</MBBS_Void.description>
+  <MBBS_Void.description>Leerenschwarz und Monolithstein mit rotem Glühen und splitterförmig abgeschnittenen Ecken, in den Farben der Anomaly-Erweiterung.</MBBS_Void.description>
   <MBBS_Starfarer.label>Sternenfahrer</MBBS_Starfarer.label>
-  <MBBS_Starfarer.description>Tiefes Marineblau und Stahlblau mit abgeschrägten Ecken, angelehnt an die Odyssey-Erweiterung.</MBBS_Starfarer.description>
+  <MBBS_Starfarer.description>Stählerne Rumpfplatten mit Nieten und cyanfarbenem Triebwerksleuchten, angelehnt an die Odyssey-Erweiterung.</MBBS_Starfarer.description>
 </LanguageData>

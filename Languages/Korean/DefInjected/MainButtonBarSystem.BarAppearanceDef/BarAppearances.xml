@@ -3,13 +3,13 @@
   <Vanilla.label>바닐라</Vanilla.label>
   <Vanilla.description>게임 기본 버튼 모양입니다.</Vanilla.description>
   <MBBS_Imperial.label>제국</MBBS_Imperial.label>
-  <MBBS_Imperial.description>짙은 보라색과 금색으로 로얄티 확장팩의 궁정 분위기를 담았습니다.</MBBS_Imperial.description>
+  <MBBS_Imperial.description>남색과 금색 바탕에 왕관 장식 모서리와 청록빛 초능력 광채를 더해 로얄티 확장팩의 색을 담았습니다.</MBBS_Imperial.description>
   <MBBS_Creed.label>신조</MBBS_Creed.label>
-  <MBBS_Creed.description>짙은 가죽과 청동에 양피지색 글자를 더해 이데올로기 확장팩의 분위기를 담았습니다.</MBBS_Creed.description>
+  <MBBS_Creed.description>짙은 청록색에 산호색 테두리와 금색 원형 문장을 더해 이데올로기 확장팩의 색을 담았습니다.</MBBS_Creed.description>
   <MBBS_GeneLab.label>유전자 실험실</MBBS_GeneLab.label>
-  <MBBS_GeneLab.description>짙은 청록색에 밝은 실험실 녹색 테두리로 바이오테크 확장팩의 분위기를 담았습니다.</MBBS_GeneLab.description>
+  <MBBS_GeneLab.description>파란색 바탕에 청록색 테두리, 분홍빛 보라색 유전자 타일, 유전자 파란색 글자를 더해 바이오테크 확장팩의 색을 담았습니다.</MBBS_GeneLab.description>
   <MBBS_Void.label>공허</MBBS_Void.label>
-  <MBBS_Void.description>검정에 가까운 바탕에 희미한 진홍빛으로 아노말리 확장팩의 분위기를 담았습니다.</MBBS_Void.description>
+  <MBBS_Void.description>공허의 검은색과 모노리스 석재 색에 붉은 광채와 파편처럼 깎인 모서리를 더해 아노말리 확장팩의 색을 담았습니다.</MBBS_Void.description>
   <MBBS_Starfarer.label>별의 항해자</MBBS_Starfarer.label>
-  <MBBS_Starfarer.description>짙은 남색과 강철빛 파랑에 모서리를 깎아 오디세이 확장팩의 분위기를 담았습니다.</MBBS_Starfarer.description>
+  <MBBS_Starfarer.description>강철 선체 판에 리벳과 시안색 추진기 광채를 더해 오디세이 확장팩을 본떴습니다.</MBBS_Starfarer.description>
 </LanguageData>

@@ -177,15 +177,15 @@
       "Vanilla.label": "alkuperäinen",
       "Vanilla.description": "Pelin oma painikkeiden ulkoasu.",
       "MBBS_Imperial.label": "keisarillinen",
-      "MBBS_Imperial.description": "Syvä violetti ja kulta, Kuninkaallisuus-laajennuksen hovitunnelman innoittamana.",
+      "MBBS_Imperial.description": "Laivastonsininen ja kulta, kruunatut kulmat ja sinivihreä psylink-hehku, Kuninkaallisuus-laajennuksen väreissä.",
       "MBBS_Creed.label": "usko",
-      "MBBS_Creed.description": "Tumma nahka, pronssi ja pergamentinvärinen teksti, Maailmankatsomus-laajennuksen innoittamana.",
+      "MBBS_Creed.description": "Syvä sinivihreä, korallinpunaiset reunat ja kultaiset medaljongit, Maailmankatsomus-laajennuksen väreissä.",
       "MBBS_GeneLab.label": "geenilaboratorio",
-      "MBBS_GeneLab.description": "Tumma sinivihreä ja kirkkaan laboratorionvihreät reunat, Biotech-laajennuksen innoittamana.",
+      "MBBS_GeneLab.description": "Sininen, sinivihreät reunat, malvanväriset geeniruudut ja geeninsiniset tekstit, Biotech-laajennuksen väreissä.",
       "MBBS_Void.label": "tyhjyys",
-      "MBBS_Void.description": "Lähes musta ja himmeä karmiininpunainen hehku, Anomaly-laajennuksen innoittamana.",
+      "MBBS_Void.description": "Tyhjyydenmusta ja monoliittikivi, punainen hehku ja sirpaleiksi viistetyt kulmat, Anomaly-laajennuksen väreissä.",
       "MBBS_Starfarer.label": "tähtienkulkija",
-      "MBBS_Starfarer.description": "Syvä laivastonsininen ja teräksensininen sekä viistetyt kulmat, Odyssey-laajennuksen innoittamana."
+      "MBBS_Starfarer.description": "Teräksiset runkolevyt, niitit ja syaaninen moottorien hehku, Odyssey-laajennuksen innoittamana."
     }
   }
 }

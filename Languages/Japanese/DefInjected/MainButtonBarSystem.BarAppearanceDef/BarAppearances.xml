@@ -3,13 +3,13 @@
   <Vanilla.label>バニラ</Vanilla.label>
   <Vanilla.description>ゲーム本体と同じボタンの見た目です.</Vanilla.description>
   <MBBS_Imperial.label>帝国</MBBS_Imperial.label>
-  <MBBS_Imperial.description>深い紫と金色で,拡張版Royaltyの宮廷らしい雰囲気をイメージしています.</MBBS_Imperial.description>
+  <MBBS_Imperial.description>ネイビーと金色に,王冠飾りの角とサイリンクの青緑の輝きを添えた,拡張版Royaltyの配色です.</MBBS_Imperial.description>
   <MBBS_Creed.label>信条</MBBS_Creed.label>
-  <MBBS_Creed.description>濃い色の革とブロンズに羊皮紙色のラベルを合わせ,拡張版Ideologyをイメージしています.</MBBS_Creed.description>
+  <MBBS_Creed.description>深い青緑に,珊瑚色の縁取りと金色の丸い紋章を添えた,拡張版Ideologyの配色です.</MBBS_Creed.description>
   <MBBS_GeneLab.label>遺伝子ラボ</MBBS_GeneLab.label>
-  <MBBS_GeneLab.description>暗い青緑に明るいラボグリーンの縁取りで,拡張版Biotechをイメージしています.</MBBS_GeneLab.description>
+  <MBBS_GeneLab.description>青地に青緑の縁取り,モーブ色の遺伝子タイル,遺伝子ブルーのラベルを添えた,拡張版Biotechの配色です.</MBBS_GeneLab.description>
   <MBBS_Void.label>ヴォイド</MBBS_Void.label>
-  <MBBS_Void.description>ほぼ黒に深紅の光がかすかに灯る配色で,拡張版Anomalyをイメージしています.</MBBS_Void.description>
+  <MBBS_Void.description>ヴォイドの黒とモノリスの石の色に,赤い輝きと破片のように切り欠いた角を添えた,拡張版Anomalyの配色です.</MBBS_Void.description>
   <MBBS_Starfarer.label>星渡り</MBBS_Starfarer.label>
-  <MBBS_Starfarer.description>深いネイビーとスチールブルーに角を切り落とした形で,拡張版Odysseyをイメージしています.</MBBS_Starfarer.description>
+  <MBBS_Starfarer.description>鋼の船体プレートにリベットとシアンのスラスター光を添えた,拡張版Odysseyをイメージしたデザインです.</MBBS_Starfarer.description>
 </LanguageData>

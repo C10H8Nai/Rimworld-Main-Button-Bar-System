@@ -3,13 +3,13 @@
   <Vanilla.label>як у грі</Vanilla.label>
   <Vanilla.description>Власний вигляд кнопок гри.</Vanilla.description>
   <MBBS_Imperial.label>імперська</MBBS_Imperial.label>
-  <MBBS_Imperial.description>Глибокий фіолетовий і золото в дусі придворної атмосфери доповнення Royalty.</MBBS_Imperial.description>
+  <MBBS_Imperial.description>Темно-синій і золото з коронами на кутах та бірюзовим сяйвом пси-зв'язку, у кольорах доповнення Royalty.</MBBS_Imperial.description>
   <MBBS_Creed.label>кредо</MBBS_Creed.label>
-  <MBBS_Creed.description>Темна шкіра та бронза з написами кольору пергаменту, у дусі доповнення Ideology.</MBBS_Creed.description>
+  <MBBS_Creed.description>Глибокий бірюзовий з кораловою облямівкою та золотими медальйонами, у кольорах доповнення Ideology.</MBBS_Creed.description>
   <MBBS_GeneLab.label>генна лабораторія</MBBS_GeneLab.label>
-  <MBBS_GeneLab.description>Темний бірюзовий з яскравою лабораторно-зеленою облямівкою, у дусі доповнення Biotech.</MBBS_GeneLab.description>
+  <MBBS_GeneLab.description>Синій з бірюзовою облямівкою, рожево-бузковими плитками генів і написами генного блакитного кольору, у кольорах доповнення Biotech.</MBBS_GeneLab.description>
   <MBBS_Void.label>порожнеча</MBBS_Void.label>
-  <MBBS_Void.description>Майже чорний із тьмяним багряним світінням, у дусі доповнення Anomaly.</MBBS_Void.description>
+  <MBBS_Void.description>Чорнота порожнечі й камінь моноліту з червоним сяйвом і кутами, зрізаними як уламки, у кольорах доповнення Anomaly.</MBBS_Void.description>
   <MBBS_Starfarer.label>зоряний мандрівник</MBBS_Starfarer.label>
-  <MBBS_Starfarer.description>Глибокий темно-синій і сталевий синій зі скошеними кутами, у дусі доповнення Odyssey.</MBBS_Starfarer.description>
+  <MBBS_Starfarer.description>Сталеві пластини корпусу із заклепками та яскраво-блакитним сяйвом двигунів, у дусі доповнення Odyssey.</MBBS_Starfarer.description>
 </LanguageData>
