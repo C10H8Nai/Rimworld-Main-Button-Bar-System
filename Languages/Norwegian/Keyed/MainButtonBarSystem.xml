@@ -128,4 +128,35 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Når to tastebindinger deler samme tast, utløser et trykk bare én av dem. Endre én av dem i Innstillinger &gt; Tastaturkonfigurasjon, eller velg en annen tast her.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Denne modden behandler tastene sine etter spillets egne, så tastebindingene ovenfor tar tasten først, og denne knappen reagerer ikke. Velg en annen tast her, eller endre den andre tastebindingen i Innstillinger &gt; Tastaturkonfigurasjon.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Ikon og tekst</MBBS_IconMode>
+  <MBBS_IconModeTip>Spillet viser bare ikonet hvis knappen har et, og ellers bare teksten.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Som i spillet</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Bare tekst</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Bare ikon</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Ikon og tekst</MBBS_IconMode_Both>
+  <MBBS_Icon>Ikon: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>knappens eget</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (ikke funnet)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Fant ikke det valgte ikonet, så knappens eget ikon brukes.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Velg...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Velg et ikon</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Innebygde</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importerte</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Ingen importerte ikoner ennå. Legg PNG-filer i
+{0}
+og trykk Oppdater. De blir liggende der når modden oppdateres.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Bruk knappens eget</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Åpne mappe</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Oppdater</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Innstillinger i andre mods for denne knappen (bare til referanse):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: på linjen</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: i eget popup-vindu</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: skjult</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: vises alltid</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: bredde {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: avstand {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: fyll skjermbredden: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: nytt navn «{1}»</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: bare tekst</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: eget ikon {1}</MBBS_Ref_Icon>
 </LanguageData>

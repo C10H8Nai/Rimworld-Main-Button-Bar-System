@@ -128,4 +128,35 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>2つの操作が同じキーに割り当てられていると,押したときにどちらか一方しか反応しません.「オプション → キーボード設定」でどちらかを変更するか,ここで別のキーを選んでください.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>このMODが管理するキーはゲーム本体のキーより後に処理されるため,上記の操作が先にこのキーを使い,このボタンは反応しません.ここで別のキーを選ぶか,「オプション → キーボード設定」でもう一方の割り当てを変更してください.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>アイコンとテキスト</MBBS_IconMode>
+  <MBBS_IconModeTip>ゲーム本体では,アイコンがあるボタンはアイコンだけ,ないボタンはテキストだけを表示します.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>ゲーム標準</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>テキストのみ</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>アイコンのみ</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>アイコンとテキスト</MBBS_IconMode_Both>
+  <MBBS_Icon>アイコン: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>ボタン本来のもの</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0}(見つかりません)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>選択したアイコンが見つからないため,ボタン本来のアイコンを使用しています.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>選択...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>アイコンを選択</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>組み込み</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>インポート済み</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>インポートしたアイコンはまだありません.次のフォルダにPNGファイルを置いてください:
+{0}
+置いたら「再読み込み」を押してください.MODを更新しても消えません.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>本来のアイコンを使う</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>フォルダを開く</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>再読み込み</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>他のMODでのこのボタンの設定(参考):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: バーに表示</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: 独自のポップアップ内</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: 非表示</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: 常に表示</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: 幅 {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: 間隔 {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: 画面の幅いっぱいに広げる: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: 名前を「{1}」に変更</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: テキストのみ</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: カスタムアイコン {1}</MBBS_Ref_Icon>
 </LanguageData>

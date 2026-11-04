@@ -128,4 +128,35 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Khi hai phím tắt dùng chung một phím, nhấn phím đó chỉ kích hoạt một trong hai. Hãy đổi một trong hai trong "Cài đặt &gt; Cấu hình bàn phím", hoặc chọn phím khác tại đây.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Mod này xử lý các phím do nó quản lý sau các phím của trò chơi, nên các phím tắt ở trên sẽ nhận phím này trước và nút này sẽ không phản hồi. Hãy chọn phím khác tại đây, hoặc đổi phím tắt kia trong "Cài đặt &gt; Cấu hình bàn phím".</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Biểu tượng và chữ</MBBS_IconMode>
+  <MBBS_IconModeTip>Trò chơi chỉ hiện biểu tượng nếu nút có biểu tượng, nếu không thì chỉ hiện chữ.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Như trò chơi gốc</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Chỉ hiện chữ</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Chỉ hiện biểu tượng</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Biểu tượng và chữ</MBBS_IconMode_Both>
+  <MBBS_Icon>Biểu tượng: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>gốc của nút</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (không tìm thấy)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Không tìm thấy biểu tượng đã chọn, nên nút dùng biểu tượng gốc của nó.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Chọn...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Chọn biểu tượng</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Có sẵn</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Đã nhập</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Chưa có biểu tượng nào được nhập. Hãy đặt tệp PNG vào
+{0}
+rồi nhấn "Làm mới". Các tệp vẫn được giữ lại khi cập nhật mod.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Dùng biểu tượng gốc</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Mở thư mục</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Làm mới</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Cài đặt của các mod khác cho nút này (chỉ để tham khảo):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: trên thanh</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: trong cửa sổ bật lên riêng</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: ẩn</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: luôn hiện</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: độ rộng {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: khoảng cách {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: lấp đầy chiều rộng màn hình: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: đổi tên thành "{1}"</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: chỉ hiện chữ</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: biểu tượng tùy chỉnh {1}</MBBS_Ref_Icon>
 </LanguageData>

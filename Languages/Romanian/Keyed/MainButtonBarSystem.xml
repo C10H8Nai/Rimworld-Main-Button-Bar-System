@@ -128,4 +128,35 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Când două asocieri de taste folosesc aceeași tastă, apăsarea ei declanșează doar una dintre ele. Schimbă una dintre ele în Setări &gt; Configurare tastatură sau alege altă tastă aici.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Acest mod tratează tastele pe care le păstrează după cele ale jocului, așa că asocierile de mai sus preiau primele această tastă și acest buton nu va reacționa. Alege altă tastă aici sau schimbă cealaltă asociere în Setări &gt; Configurare tastatură.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Pictogramă și text</MBBS_IconMode>
+  <MBBS_IconModeTip>Jocul afișează doar pictograma când butonul are una, altfel doar textul.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Ca în joc</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Doar text</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Doar pictogramă</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Pictogramă și text</MBBS_IconMode_Both>
+  <MBBS_Icon>Pictogramă: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>cea originală</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (negăsită)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Pictograma aleasă nu poate fi găsită, așa că se folosește pictograma originală a butonului.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Alege...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Alege o pictogramă</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Integrate</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importate</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Încă nu există pictograme importate. Pune fișiere PNG în
+{0}
+apoi apasă Reîncarcă. Rămân acolo și după actualizările modului.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Folosește originala</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Deschide dosarul</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Reîncarcă</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Setările altor moduri pentru acest buton (doar ca referință):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: pe bară</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: în propria fereastră pop-up</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: ascuns</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: afișat mereu</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: lățime {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: spațiu {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: umple lățimea ecranului: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: redenumit în „{1}”</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: doar text</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: pictogramă personalizată {1}</MBBS_Ref_Icon>
 </LanguageData>

@@ -128,4 +128,35 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Όταν δύο αντιστοιχίσεις μοιράζονται ένα πλήκτρο, το πάτημά του ενεργοποιεί μόνο μία από αυτές. Αλλάξτε μία από τις δύο στις «Επιλογές &gt; Πληκτρολόγιο» ή διαλέξτε άλλο πλήκτρο εδώ.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Αυτό το mod χειρίζεται τα πλήκτρα που διατηρεί μετά από εκείνα του παιχνιδιού, οπότε οι παραπάνω αντιστοιχίσεις παίρνουν πρώτες αυτό το πλήκτρο και αυτό το κουμπί δεν θα αντιδρά. Διαλέξτε άλλο πλήκτρο εδώ ή αλλάξτε την άλλη αντιστοίχιση στις «Επιλογές &gt; Πληκτρολόγιο».</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Εικονίδιο και κείμενο</MBBS_IconMode>
+  <MBBS_IconModeTip>Το παιχνίδι δείχνει μόνο το εικονίδιο όταν το κουμπί έχει εικονίδιο, αλλιώς μόνο το κείμενο.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Όπως στο παιχνίδι</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Μόνο κείμενο</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Μόνο εικονίδιο</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Εικονίδιο και κείμενο</MBBS_IconMode_Both>
+  <MBBS_Icon>Εικονίδιο: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>το αρχικό του κουμπιού</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (δεν βρέθηκε)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Το επιλεγμένο εικονίδιο δεν βρέθηκε, οπότε χρησιμοποιείται το αρχικό εικονίδιο του κουμπιού.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Επιλογή...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Επιλογή εικονιδίου</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Ενσωματωμένα</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Εισαγμένα</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Δεν υπάρχουν ακόμη εισαγμένα εικονίδια. Βάλτε αρχεία PNG στον φάκελο
+{0}
+και πατήστε «Ανανέωση». Παραμένουν εκεί και μετά από ενημερώσεις του mod.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Χρήση του αρχικού</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Άνοιγμα φακέλου</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Ανανέωση</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Ρυθμίσεις άλλων mods για αυτό το κουμπί (μόνο για αναφορά):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: στη γραμμή</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: στο δικό του αναδυόμενο παράθυρο</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: κρυμμένο</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: πάντα ορατό</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: πλάτος {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: απόσταση {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: κάλυψη όλου του πλάτους της οθόνης: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: μετονομάστηκε σε «{1}»</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: μόνο κείμενο</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: προσαρμοσμένο εικονίδιο {1}</MBBS_Ref_Icon>
 </LanguageData>

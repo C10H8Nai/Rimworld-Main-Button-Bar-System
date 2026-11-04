@@ -128,4 +128,35 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Als twee toetsbindingen dezelfde toets delen, activeert een druk erop er maar één. Wijzig er een in Instellingen &gt; Toetsinstellingen of kies hier een andere toets.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Deze mod verwerkt de toetsen die hij zelf bewaart pas na die van het spel, dus de toetsbindingen hierboven pakken deze toets eerst en deze knop reageert niet. Kies hier een andere toets of wijzig de andere toetsbinding in Instellingen &gt; Toetsinstellingen.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Icoon en tekst</MBBS_IconMode>
+  <MBBS_IconModeTip>Het spel toont alleen het icoon als een knop er een heeft, en anders alleen de tekst.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Zoals het spel</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Alleen tekst</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Alleen icoon</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Icoon en tekst</MBBS_IconMode_Both>
+  <MBBS_Icon>Icoon: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>origineel</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (niet gevonden)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Het gekozen icoon is niet te vinden, dus wordt het originele icoon van de knop gebruikt.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Kiezen...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Kies een icoon</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Ingebouwd</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Geïmporteerd</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Nog geen geïmporteerde iconen. Zet PNG-bestanden in
+{0}
+en klik op Vernieuwen. Ze blijven daar staan, ook als de mod wordt bijgewerkt.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Origineel gebruiken</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Map openen</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Vernieuwen</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Instellingen van andere mods voor deze knop (alleen ter referentie):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: op de balk</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: in het eigen pop-upvenster</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: verborgen</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: altijd getoond</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: breedte {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: ruimte {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: schermbreedte vullen: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: hernoemd naar "{1}"</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: alleen tekst</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: eigen icoon {1}</MBBS_Ref_Icon>
 </LanguageData>

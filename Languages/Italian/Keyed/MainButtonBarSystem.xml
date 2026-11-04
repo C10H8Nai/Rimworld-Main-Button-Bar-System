@@ -128,4 +128,35 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Quando due comandi condividono un tasto, premerlo ne attiva solo uno. Cambia uno dei due in Opzioni &gt; Configurazione tastiera, oppure scegli qui un altro tasto.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Questa mod gestisce i propri tasti dopo quelli del gioco, quindi i comandi qui sopra prendono questo tasto per primi e questo pulsante non risponderà. Scegli qui un altro tasto, oppure cambia l'altro comando in Opzioni &gt; Configurazione tastiera.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Icona e testo</MBBS_IconMode>
+  <MBBS_IconModeTip>Il gioco mostra solo l'icona se il pulsante ne ha una, altrimenti solo il testo.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Come nel gioco</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Solo testo</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Solo icona</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Icona e testo</MBBS_IconMode_Both>
+  <MBBS_Icon>Icona: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>originale</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (non trovata)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>L'icona scelta non si trova, quindi viene usata l'icona originale del pulsante.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Scegli...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Scegli un'icona</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Integrate</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importate</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Ancora nessuna icona importata. Metti dei file PNG in
+{0}
+poi premi «Aggiorna». Restano lì anche quando la mod viene aggiornata.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Usa l'originale</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Apri cartella</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Aggiorna</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Impostazioni di altre mod per questo pulsante (solo come riferimento):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: sulla barra</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: nella sua finestra pop-up</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: nascosto</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: sempre mostrato</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: larghezza {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: spazio {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: riempi la larghezza dello schermo: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: rinominato in «{1}»</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: solo testo</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: icona personalizzata {1}</MBBS_Ref_Icon>
 </LanguageData>
