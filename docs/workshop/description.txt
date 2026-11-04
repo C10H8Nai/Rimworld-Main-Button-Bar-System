@@ -14,7 +14,7 @@ Take control of the bottom bar. With a big mod list it can hold dozens of button
 [*]Hotkeys for every button, including ones the game gives none; hidden and drawer buttons keep their keys; conflicts are explained.
 [*]Settings are per save, with a default template for new games.
 [*]Export / import arrangements as a file or as text to paste in Discord, or ship one as a tiny XML mod.
-[*]Themes: the vanilla look by default, plus five built-in themes in colours inspired by the expansions (Imperial, Creed, Gene Lab, Void, Starfarer; no expansion needed), with previews in the Appearance tab. Theme mods need only XML and images.
+[*]Themes: the vanilla look by default, plus six built-in themes (five in colours inspired by the expansions: Imperial, Creed, Gene Lab, Void, Starfarer; no expansion needed; and Nai, an anime-style one with a character illustration), with previews in the Appearance tab. Theme mods need only XML and images: whole-image backgrounds, decorations such as a portrait at a corner of the bar, label colours per state. A theme template and a generator script ship in the mod's ThemeTemplate folder.
 [*]Simple and Advanced views; 29 languages.
 [/list]
 
