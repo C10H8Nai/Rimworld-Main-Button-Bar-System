@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Example Theme for Main Button Bar System</name>
+  <author>Your name</author>
+  <packageId>yourname.mbbstheme.example</packageId>
+  <modVersion>1.0.0</modVersion>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>NAI.MainButtonBarSystem</packageId>
+      <displayName>Main Button Bar System</displayName>
+      <downloadUrl>https://github.com/C10H8Nai/Rimworld-Main-Button-Bar-System</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>NAI.MainButtonBarSystem</li>
+  </loadAfter>
+  <description>An example theme for Main Button Bar System. Copy, rename, replace the images. Requires Main Button Bar System.</description>
+</ModMetaData>

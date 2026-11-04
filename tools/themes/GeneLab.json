@@ -1,0 +1,61 @@
+{
+  "_comment": "Biotech: teal-blue body, teal border (#66B0B5, from the expansion's preview art), deep red gene-tile corners (#A84457) and a deep red rule on the open button. Colours measured from the official logos and art and from the game's data (docs/research/dlc-visuals-2026-11-04.md). Built-in theme: textures only; the Def and translations live in Defs/ and tools/i18n/.",
+  "name": "GeneLab",
+  "defName": "MBBS_GeneLab",
+  "label": "gene lab",
+  "description": "Teal-blue with teal borders, deep red gene tiles and pale teal labels, from the Biotech expansion's colours.",
+  "author": "NAI",
+  "displayOrder": 30,
+  "labelColor": [
+    0.72,
+    0.9,
+    0.91,
+    1
+  ],
+  "labelMouseoverColor": [
+    0.9,
+    0.97,
+    0.97,
+    1
+  ],
+  "labelActiveColor": null,
+  "palette": {
+    "base": [
+      24,
+      56,
+      68
+    ],
+    "edge": [
+      102,
+      176,
+      181
+    ],
+    "outline": null,
+    "rule": [
+      60,
+      112,
+      120
+    ],
+    "accent": [
+      150,
+      220,
+      224
+    ],
+    "active": [
+      30,
+      70,
+      84
+    ],
+    "ornament": "genetab",
+    "tile": [
+      168,
+      68,
+      87
+    ],
+    "active_rule": [
+      168,
+      68,
+      87
+    ]
+  }
+}

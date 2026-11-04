@@ -1,0 +1,55 @@
+{
+  "_comment": "Ideology: deep teal body, heavy black outline with coral border (logo coral), teal inner rule, gold roundels. Colours measured from the official logos and art and from the game's data (docs/research/dlc-visuals-2026-11-04.md). Built-in theme: textures only; the Def and translations live in Defs/ and tools/i18n/.",
+  "name": "Creed",
+  "defName": "MBBS_Creed",
+  "label": "creed",
+  "description": "Deep teal with coral borders and gold roundels, from the Ideology expansion's colours.",
+  "author": "NAI",
+  "displayOrder": 20,
+  "labelColor": [
+    0.97,
+    0.71,
+    0.69,
+    1
+  ],
+  "labelMouseoverColor": [
+    0.94,
+    0.78,
+    0.43,
+    1
+  ],
+  "labelActiveColor": null,
+  "palette": {
+    "base": [
+      32,
+      64,
+      70
+    ],
+    "edge": [
+      224,
+      100,
+      98
+    ],
+    "outline": [
+      8,
+      8,
+      10
+    ],
+    "rule": [
+      57,
+      111,
+      115
+    ],
+    "accent": [
+      218,
+      162,
+      33
+    ],
+    "active": [
+      44,
+      84,
+      90
+    ],
+    "ornament": "roundel"
+  }
+}

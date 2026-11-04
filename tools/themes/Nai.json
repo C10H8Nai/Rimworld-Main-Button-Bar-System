@@ -1,0 +1,48 @@
+{
+  "_comment": "萘伊（作者 OC）二次元風主題。色票來自三視圖 v3：灰白髮 #dad4d8、暗紫瞳 #5a4a6e、石墨灰 #5b585d、柔白 #f6f2f1、深海軍藍 #2d354f。插圖目前全是佔位圖：成品（ComfyUI 生成）出來後，把 placeholder 換成 source 指向 PNG 再跑 gen_theme_textures.py。內建主題：這份只產生貼圖，Def 在 Defs/MainButtonBarSystem/BarAppearances.xml（欄位要和這裡的 decorations 一致），翻譯在 tools/i18n/。",
+  "name": "Nai",
+  "defName": "MBBS_Nai",
+  "label": "nai",
+  "description": "Anime-style theme in Nai's colours: deep navy buttons with grey-white borders, graphite lines and a violet glow, and a character illustration at the left end of the bar.",
+  "author": "NAI",
+  "displayOrder": 60,
+  "labelColor": [0.96, 0.95, 0.94, 1],
+  "labelMouseoverColor": [0.80, 0.72, 0.92, 1],
+  "labelActiveColor": [0.93, 0.90, 1, 1],
+  "palette": {
+    "base": [45, 53, 79],
+    "edge": [218, 212, 216],
+    "outline": null,
+    "rule": [91, 88, 93],
+    "accent": [138, 114, 170],
+    "active": [58, 66, 96],
+    "ornament": "petal",
+    "icon": [218, 212, 216]
+  },
+  "background": {
+    "barFit": "Stretch",
+    "bar": {"placeholder": {"size": [1024, 36], "color": [45, 53, 79], "text": "NAI BAR BACKGROUND (PLACEHOLDER)"}},
+    "drawerFit": "Atlas",
+    "drawer": null
+  },
+  "decorations": [
+    {
+      "file": "Portrait",
+      "placeholder": {"size": [200, 280], "color": [91, 88, 93], "text": "NAI PORTRAIT (PLACEHOLDER)"},
+      "target": "Bar", "anchor": "Left", "verticalAnchor": "Bottom", "offset": [0, 0], "size": [0, 0],
+      "opacity": 1, "layer": "BelowButtons", "showWhen": []
+    },
+    {
+      "file": "Mark",
+      "placeholder": {"size": [48, 48], "color": [90, 74, 110], "text": "MARK"},
+      "target": "Bar", "anchor": "Right", "verticalAnchor": "Bottom", "offset": [-8, -40], "size": [0, 0],
+      "opacity": 0.9, "layer": "AboveButtons", "showWhen": ["Mouseover"]
+    },
+    {
+      "file": "DrawerBadge",
+      "placeholder": {"size": [64, 64], "color": [45, 53, 79], "text": "BADGE"},
+      "target": "Drawer", "anchor": "Right", "verticalAnchor": "Top", "offset": [-4, 4], "size": [0, 0],
+      "opacity": 1, "layer": "AboveButtons", "showWhen": []
+    }
+  ]
+}

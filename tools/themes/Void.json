@@ -1,0 +1,52 @@
+{
+  "_comment": "Anomaly: void black body, sage border, arrows and gear (#AEBC7E, the expansion's main colour); red only as a thin inset line, glowing and underlined under the mouse. Colours measured from the official logos and art and from the game's data (docs/research/dlc-visuals-2026-11-04.md). Built-in theme: textures only; the Def and translations live in Defs/ and tools/i18n/.",
+  "name": "Void",
+  "defName": "MBBS_Void",
+  "label": "void",
+  "description": "Void black with sage-green borders, a thin red line that glows under the mouse, and shard-cut corners, from the Anomaly expansion's colours.",
+  "author": "NAI",
+  "displayOrder": 40,
+  "labelColor": [
+    0.8,
+    0.84,
+    0.64,
+    1
+  ],
+  "labelMouseoverColor": [
+    0.96,
+    0.96,
+    0.88,
+    1
+  ],
+  "labelActiveColor": null,
+  "palette": {
+    "base": [
+      17,
+      19,
+      17
+    ],
+    "edge": [
+      174,
+      188,
+      126
+    ],
+    "outline": null,
+    "rule": [
+      150,
+      44,
+      44
+    ],
+    "accent": [
+      196,
+      58,
+      54
+    ],
+    "active": [
+      30,
+      34,
+      26
+    ],
+    "ornament": "shard",
+    "glow_on_hover": true
+  }
+}
