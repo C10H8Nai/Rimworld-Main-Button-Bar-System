@@ -160,7 +160,19 @@
     "MBBS_IconModeAll": "Icona i text (tots els botons)",
     "MBBS_IconModeAllTip": "Com mostra cada botó la icona i el text, tret que el botó tingui una configuració pròpia.",
     "MBBS_IconModeClearAll": "Fes que tots els botons amb configuració pròpia ({0}) segueixin aquesta",
-    "MBBS_IconMode_FollowBar": "Igual que tota la barra ({0})"
+    "MBBS_IconMode_FollowBar": "Igual que tota la barra ({0})",
+    "MBBS_Section_Illustration": "Il·lustració i fons",
+    "MBBS_IllustrationNone": "Aquest tema no té imatge de fons ni decoracions; aquí no hi ha res a ajustar.",
+    "MBBS_BackgroundOpacity": "Opacitat del fons: {0} %",
+    "MBBS_DecorationsShown": "Mostra les decoracions",
+    "MBBS_DecorationsShownTip": "Imatges que el tema col·loca a la barra o al calaix, com un retrat de personatge. Desactiva-ho per amagar-les totes.",
+    "MBBS_DecorationOpacity": "Opacitat de les decoracions: {0} %",
+    "MBBS_DecorationScale": "Mida de les decoracions: {0} %",
+    "MBBS_DecorationOffsetX": "Desplaçament de les decoracions X: {0} px",
+    "MBBS_DecorationOffsetY": "Desplaçament de les decoracions Y: {0} px",
+    "MBBS_ReloadThemes": "Torna a carregar les textures dels temes",
+    "MBBS_ReloadThemesTip": "Mode desenvolupador: torna a llegir els PNG de cada tema des de la seva carpeta de mod, per veure una imatge editada sense reiniciar el joc. Després els temes es tornen a comprovar; mira el registre.",
+    "MBBS_ThemesReloaded": "Textures dels temes recarregades: {0} fitxer(s) tornat(s) a llegir."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -185,7 +197,9 @@
       "MBBS_Void.label": "buit",
       "MBBS_Void.description": "Negre del buit amb vores verd sàlvia, una fina línia vermella que s’il·lumina en passar-hi el ratolí i cantonades tallades com estelles, amb els colors de l’expansió Anomalia.",
       "MBBS_Starfarer.label": "navegant estel·lar",
-      "MBBS_Starfarer.description": "Porpra espacial amb planxes de buc porpra, reblons cian i una línia cian als propulsors, amb els colors de l’expansió Odissea."
+      "MBBS_Starfarer.description": "Porpra espacial amb planxes de buc porpra, reblons cian i una línia cian als propulsors, amb els colors de l’expansió Odissea.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Tema d'estil anime amb els colors de la Nai: botons blau marí amb vores gris clar, línies grafit i una lluentor violeta, amb una il·lustració del personatge a l'extrem esquerre de la barra."
     }
   }
 }

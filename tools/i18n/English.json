@@ -160,7 +160,19 @@
     "MBBS_IconModeAll": "Icon and text (all buttons)",
     "MBBS_IconModeAllTip": "How every button shows its icon and label, unless a button has its own setting.",
     "MBBS_IconModeClearAll": "Make all {0} buttons with their own setting follow this",
-    "MBBS_IconMode_FollowBar": "Same as the whole bar ({0})"
+    "MBBS_IconMode_FollowBar": "Same as the whole bar ({0})",
+    "MBBS_Section_Illustration": "Illustration and background",
+    "MBBS_IllustrationNone": "This theme has no background image or decorations, so there is nothing to adjust here.",
+    "MBBS_BackgroundOpacity": "Background opacity: {0}%",
+    "MBBS_DecorationsShown": "Show decorations",
+    "MBBS_DecorationsShownTip": "Images the theme places on the bar or in the drawer, such as a character portrait. Turn off to hide them all.",
+    "MBBS_DecorationOpacity": "Decoration opacity: {0}%",
+    "MBBS_DecorationScale": "Decoration size: {0}%",
+    "MBBS_DecorationOffsetX": "Decoration offset X: {0}px",
+    "MBBS_DecorationOffsetY": "Decoration offset Y: {0}px",
+    "MBBS_ReloadThemes": "Reload theme textures",
+    "MBBS_ReloadThemesTip": "Development mode: reads every theme's PNG files again from its mod folder, so an edited image shows without restarting the game. The themes are checked again afterwards; see the log.",
+    "MBBS_ThemesReloaded": "Theme textures reloaded: {0} file(s) read again."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -185,7 +197,9 @@
       "MBBS_Void.label": "void",
       "MBBS_Void.description": "Void black with sage-green borders, a thin red line that glows under the mouse, and shard-cut corners, from the Anomaly expansion's colours.",
       "MBBS_Starfarer.label": "starfarer",
-      "MBBS_Starfarer.description": "Space purple with purple hull plates, cyan rivets and a cyan thruster line, from the Odyssey expansion's colours."
+      "MBBS_Starfarer.description": "Space purple with purple hull plates, cyan rivets and a cyan thruster line, from the Odyssey expansion's colours.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Anime-style theme in Nai's colours: deep navy buttons with grey-white borders, graphite lines and a violet glow, and a character illustration at the left end of the bar."
     }
   }
 }

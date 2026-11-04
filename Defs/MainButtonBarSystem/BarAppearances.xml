@@ -111,4 +111,58 @@
     <drawerBackground>MainButtonBarSystem/Themes/Starfarer/Drawer</drawerBackground>
     <drawerSettingsIcon>MainButtonBarSystem/Themes/Starfarer/Gear</drawerSettingsIcon>
   </MainButtonBarSystem.BarAppearanceDef>
+
+  <!-- Nai: the author's character, anime style, in the colours of her character sheet. The illustrations are
+       placeholders drawn by tools/make_theme.py from tools/themes/Nai.json until the real art is ready (keep the
+       decorations below in step with that file). Also the built-in example of the illustration fields: a stretched
+       bar background, decorations below and above the buttons, labelActiveColor (docs/API.md section 4). -->
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>MBBS_Nai</defName>
+    <label>nai</label>
+    <description>Anime-style theme in Nai's colours: deep navy buttons with grey-white borders, graphite lines and a violet glow, and a character illustration at the left end of the bar.</description>
+    <author>NAI</author>
+    <displayOrder>60</displayOrder>
+    <button>MainButtonBarSystem/Themes/Nai/Button</button>
+    <buttonMouseover>MainButtonBarSystem/Themes/Nai/ButtonMouseover</buttonMouseover>
+    <buttonActive>MainButtonBarSystem/Themes/Nai/ButtonActive</buttonActive>
+    <buttonDisabled>MainButtonBarSystem/Themes/Nai/ButtonDisabled</buttonDisabled>
+    <labelColor>(0.96, 0.95, 0.94, 1)</labelColor>
+    <labelMouseoverColor>(0.80, 0.72, 0.92, 1)</labelMouseoverColor>
+    <labelActiveColor>(0.93, 0.90, 1, 1)</labelActiveColor>
+    <barBackground>MainButtonBarSystem/Themes/Nai/Bar</barBackground>
+    <barBackgroundFit>Stretch</barBackgroundFit>
+    <moreButton>MainButtonBarSystem/Themes/Nai/More</moreButton>
+    <arrowLeft>MainButtonBarSystem/Themes/Nai/ArrowLeft</arrowLeft>
+    <arrowRight>MainButtonBarSystem/Themes/Nai/ArrowRight</arrowRight>
+    <drawerBackground>MainButtonBarSystem/Themes/Nai/Drawer</drawerBackground>
+    <drawerSettingsIcon>MainButtonBarSystem/Themes/Nai/Gear</drawerSettingsIcon>
+    <decorations>
+      <!-- The character, behind the buttons, growing upwards out of the bar from its left end. -->
+      <li>
+        <texture>MainButtonBarSystem/Themes/Nai/Portrait</texture>
+        <anchor>Left</anchor>
+        <verticalAnchor>Bottom</verticalAnchor>
+        <layer>BelowButtons</layer>
+      </li>
+      <!-- A small mark above the right end, only while the mouse is over the bar. -->
+      <li>
+        <texture>MainButtonBarSystem/Themes/Nai/Mark</texture>
+        <anchor>Right</anchor>
+        <verticalAnchor>Bottom</verticalAnchor>
+        <offset>(-8, -40)</offset>
+        <opacity>0.9</opacity>
+        <layer>AboveButtons</layer>
+        <showWhen><li>Mouseover</li></showWhen>
+      </li>
+      <!-- A badge in the top-right corner of the More drawer. -->
+      <li>
+        <texture>MainButtonBarSystem/Themes/Nai/DrawerBadge</texture>
+        <target>Drawer</target>
+        <anchor>Right</anchor>
+        <verticalAnchor>Top</verticalAnchor>
+        <offset>(-4, 4)</offset>
+        <layer>AboveButtons</layer>
+      </li>
+    </decorations>
+  </MainButtonBarSystem.BarAppearanceDef>
 </Defs>

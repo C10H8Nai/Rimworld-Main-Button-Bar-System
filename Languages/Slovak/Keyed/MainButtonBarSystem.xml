@@ -163,4 +163,16 @@ a stlačte „Obnoviť“. Pri aktualizáciách modu tam zostanú.</MBBS_IconPic
   <MBBS_IconModeAllTip>Ako všetky tlačidlá zobrazujú ikonu a popis, ak tlačidlo nemá vlastné nastavenie.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Použiť pre všetky tlačidlá s vlastným nastavením ({0})</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Rovnako ako celá lišta ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Ilustrácia a pozadie</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Tento motív nemá obrázok pozadia ani ozdoby; tu nie je čo nastavovať.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Krytie pozadia: {0} %</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Zobraziť ozdoby</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Obrázky, ktoré motív umiestňuje na lištu alebo do zásuvky, napríklad portrét postavy. Vypnutím ich všetky skryjete.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Krytie ozdôb: {0} %</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Veľkosť ozdôb: {0} %</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Posun ozdôb X: {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Posun ozdôb Y: {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Znova načítať textúry motívov</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Vývojársky režim: znova načíta súbory PNG každého motívu z jeho priečinka modu, takže upravený obrázok sa zobrazí bez reštartu hry. Potom sa motívy znova skontrolujú; pozri záznam.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Textúry motívov znova načítané: znova prečítaných súborov: {0}.</MBBS_ThemesReloaded>
 </LanguageData>

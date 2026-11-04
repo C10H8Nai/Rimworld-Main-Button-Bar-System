@@ -163,4 +163,16 @@
   <MBBS_IconModeAllTip>所有按钮显示图标和文字的方式；个别按钮另有设置时以该按钮为准。</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>让 {0} 个有个别设置的按钮都改为跟随这里</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>跟随整条栏（{0}）</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>插图与背景</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>这个主题没有背景图或装饰图，这里没有可调整的项目。</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>背景不透明度：{0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>显示装饰图</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>主题放在底部栏或抽屉上的图片，例如角色立绘。关闭后全部隐藏。</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>装饰图不透明度：{0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>装饰图大小：{0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>装饰图位移 X：{0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>装饰图位移 Y：{0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>重新加载主题贴图</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>开发者模式：从各主题的模组文件夹重新读取 PNG，改过的图不用重开游戏就会显示。读完会再检查一次主题，结果在日志里。</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>主题贴图已重新加载：重新读取了 {0} 个文件。</MBBS_ThemesReloaded>
 </LanguageData>

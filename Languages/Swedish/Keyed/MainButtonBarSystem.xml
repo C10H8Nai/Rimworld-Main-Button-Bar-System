@@ -163,4 +163,16 @@ och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconP
   <MBBS_IconModeAllTip>Hur alla knappar visar ikon och text, om inte en knapp har en egen inställning.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Låt alla knappar med egen inställning ({0}) följa denna</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Samma som hela fältet ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Illustration och bakgrund</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Det här temat har varken bakgrundsbild eller dekorationer; det finns inget att justera här.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Bakgrundens opacitet: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Visa dekorationer</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Bilder som temat placerar på listen eller i lådan, till exempel ett karaktärsporträtt. Stäng av för att dölja alla.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Dekorationernas opacitet: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Dekorationernas storlek: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Dekorationernas förskjutning X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Dekorationernas förskjutning Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Läs in tematexturer på nytt</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Utvecklarläge: läser varje temas PNG-filer på nytt från dess modmapp, så att en redigerad bild visas utan omstart. Därefter kontrolleras temana igen; se loggen.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Tematexturer inlästa på nytt: {0} fil(er) lästa igen.</MBBS_ThemesReloaded>
 </LanguageData>

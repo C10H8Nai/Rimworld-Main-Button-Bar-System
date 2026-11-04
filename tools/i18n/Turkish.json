@@ -160,7 +160,19 @@
     "MBBS_IconModeAll": "İkon ve yazı (tüm butonlar)",
     "MBBS_IconModeAllTip": "Tüm butonların ikonu ve yazıyı nasıl göstereceği; kendi ayarı olan butonlar hariç.",
     "MBBS_IconModeClearAll": "Kendi ayarı olan tüm butonları ({0}) bu ayara uydur",
-    "MBBS_IconMode_FollowBar": "Tüm barla aynı ({0})"
+    "MBBS_IconMode_FollowBar": "Tüm barla aynı ({0})",
+    "MBBS_Section_Illustration": "Çizim ve arka plan",
+    "MBBS_IllustrationNone": "Bu temanın arka plan görseli veya süslemesi yok; burada ayarlanacak bir şey yok.",
+    "MBBS_BackgroundOpacity": "Arka plan opaklığı: %{0}",
+    "MBBS_DecorationsShown": "Süslemeleri göster",
+    "MBBS_DecorationsShownTip": "Temanın çubuğa veya çekmeceye yerleştirdiği görseller, örneğin bir karakter portresi. Kapatınca hepsi gizlenir.",
+    "MBBS_DecorationOpacity": "Süsleme opaklığı: %{0}",
+    "MBBS_DecorationScale": "Süsleme boyutu: %{0}",
+    "MBBS_DecorationOffsetX": "Süsleme kaydırma X: {0}px",
+    "MBBS_DecorationOffsetY": "Süsleme kaydırma Y: {0}px",
+    "MBBS_ReloadThemes": "Tema dokularını yeniden yükle",
+    "MBBS_ReloadThemesTip": "Geliştirici modu: her temanın PNG dosyalarını mod klasöründen yeniden okur, böylece düzenlenen bir görsel oyunu yeniden başlatmadan görünür. Ardından temalar yeniden denetlenir; günlüğe bakın.",
+    "MBBS_ThemesReloaded": "Tema dokuları yeniden yüklendi: {0} dosya yeniden okundu."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -185,7 +197,9 @@
       "MBBS_Void.label": "hiçlik",
       "MBBS_Void.description": "Anomaly genişleme paketinin renklerinden, adaçayı yeşili kenarlıklar, fareyle üzerine gelince parlayan ince kırmızı bir çizgi ve kıymık gibi kesik köşelerle hiçlik siyahı.",
       "MBBS_Starfarer.label": "yıldız gezgini",
-      "MBBS_Starfarer.description": "Odyssey genişleme paketinin renklerinden, mor gövde plakaları, camgöbeği perçinler ve camgöbeği itici çizgisiyle uzay moru."
+      "MBBS_Starfarer.description": "Odyssey genişleme paketinin renklerinden, mor gövde plakaları, camgöbeği perçinler ve camgöbeği itici çizgisiyle uzay moru.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Nai'nin renklerinde anime tarzı tema: gri-beyaz kenarlı lacivert düğmeler, grafit çizgiler ve mor bir parıltı, çubuğun sol ucunda bir karakter çizimi."
     }
   }
 }

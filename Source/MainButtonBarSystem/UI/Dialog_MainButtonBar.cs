@@ -246,29 +246,25 @@ namespace MainButtonBarSystem
 
         // ---------------------------------------------------------------- appearance tab
 
-        /// <summary>Theme cards with previews (themes come from this mod and from theme mods).</summary>
+        /// <summary>
+        /// Theme cards with previews (themes come from this mod and from theme mods), then the illustration settings
+        /// of the chosen theme; one scrolled column.
+        /// </summary>
         private void DrawAppearanceTab(Rect rect)
         {
-            var listing = new Listing_Standard();
-            var head = new Rect(rect.x, rect.y, rect.width, L.textRowHeight);
-            listing.Begin(head);
+            var listing = BeginScrolledListing(rect, ref themeScroll, themeListHeight);
             if (SectionHeader(listing, "MBBS_ThemeHeader".Translate(), working.appearance != BarConfig.VanillaAppearance, "MBBS_ThemeHeaderTip".Translate()))
                 working.appearance = BarConfig.VanillaAppearance;
-            listing.End();
-
-            var outRect = new Rect(rect.x, head.yMax + L.footerGap, rect.width, rect.yMax - head.yMax - L.footerGap);
-            var themes = BarModel.Appearances.ToList();
-            var view = new Rect(0f, 0f, outRect.width - GenUI.ScrollBarWidth, Mathf.Max(themeListHeight, outRect.height));
-            Widgets.BeginScrollView(outRect, ref themeScroll, view);
-            float y = 0f;
-            foreach (var theme in themes)
+            if (Prefs.DevMode) DrawReloadThemesButton(listing);
+            listing.Gap(L.footerGap);
+            foreach (var theme in BarModel.Appearances.ToList())
             {
-                var card = new Rect(0f, y, view.width, L.themeCardHeight);
-                DrawThemeCard(card, theme);
-                y += card.height + L.footerGap;
+                DrawThemeCard(listing.GetRect(L.themeCardHeight), theme);
+                listing.Gap(L.footerGap);
             }
-            themeListHeight = y;
-            Widgets.EndScrollView();
+            listing.Gap(L.themeSettingsGap);
+            DrawIllustrationSettings(listing);
+            themeListHeight = EndScrolledListing(listing);
         }
 
         private void DrawThemeCard(Rect card, BarAppearanceDef theme)
@@ -317,7 +313,8 @@ namespace MainButtonBarSystem
         private static void DrawThemePreview(BarAppearanceDef theme, Rect rect)
         {
             var worker = theme.Worker;
-            worker.DrawBarBackground(rect);
+            // The image only: decorations would grow out of the card (themes with decorations should set a preview).
+            worker.DrawBarBackgroundImage(rect);
             var samples = ButtonBaseline.All.Where(b => b.ButtonVisible && !b.Label.NullOrEmpty()).Take(L.themePreviewButtons).Select(b => b.Label.CapitalizeFirst()).ToList();
 
             // Layout as on the bar: < [buttons] > [More].
@@ -363,6 +360,43 @@ namespace MainButtonBarSystem
             {
                 ButtonPainter.DrawLabel(r, left ? "<" : ">", theme.Worker.LabelColor(ButtonVisualState.Normal) ?? Color.white, TextAnchor.MiddleCenter, false);
             }
+        }
+
+        /// <summary>Settings applied on top of the chosen theme's illustrations (spec 2026-11-04 §3.4); every row has a Default button.</summary>
+        private void DrawIllustrationSettings(Listing_Standard listing)
+        {
+            listing.GapLine();
+            listing.Label("MBBS_Section_Illustration".Translate());
+            var theme = working.AppearanceDef;
+            bool hasBackground = theme != null && (!theme.barBackground.NullOrEmpty() || !theme.drawerBackground.NullOrEmpty());
+            bool hasDecorations = theme != null && theme.HasDecorations;
+            if (!hasBackground && !hasDecorations)
+            {
+                Note(listing, "MBBS_IllustrationNone".Translate());
+                return;
+            }
+            if (hasBackground)
+                working.backgroundOpacity = IntSetting(listing, "MBBS_BackgroundOpacity".Translate(working.BackgroundOpacityPercent), working.backgroundOpacity, working.BackgroundOpacityPercent, R.backgroundOpacity, R.percentStep);
+            if (!hasDecorations) return;
+            working.decorationsShown = BoolSetting(listing, "MBBS_DecorationsShown".Translate(), working.decorationsShown, D.decorationsShown, "MBBS_DecorationsShownTip".Translate());
+            working.decorationOpacity = IntSetting(listing, "MBBS_DecorationOpacity".Translate(working.DecorationOpacityPercent), working.decorationOpacity, working.DecorationOpacityPercent, R.decorationOpacity, R.percentStep);
+            working.decorationScale = IntSetting(listing, "MBBS_DecorationScale".Translate(working.DecorationScalePercent), working.decorationScale, working.DecorationScalePercent, R.decorationScale, R.percentStep);
+            working.decorationOffsetX = OffsetSetting(listing, "MBBS_DecorationOffsetX".Translate(working.DecorationOffsetX), working.decorationOffsetX, working.DecorationOffsetX, R.decorationOffset);
+            working.decorationOffsetY = OffsetSetting(listing, "MBBS_DecorationOffsetY".Translate(working.DecorationOffsetY), working.decorationOffsetY, working.DecorationOffsetY, R.decorationOffset);
+        }
+
+        /// <summary>Development mode: reads every theme's PNG files again (<see cref="BarAppearanceDef.ReloadTextures"/>), then checks the themes.</summary>
+        private static void DrawReloadThemesButton(Listing_Standard listing)
+        {
+            var row = listing.GetRect(L.textRowHeight);
+            string label = "MBBS_ReloadThemes".Translate();
+            var rect = new Rect(row.x, row.y, UIUtil.FitButton(L.moveButtonWidth, label), row.height);
+            TooltipHandler.TipRegion(rect, "MBBS_ReloadThemesTip".Translate());
+            if (!Widgets.ButtonText(rect, label)) return;
+            int count = 0;
+            foreach (var theme in BarModel.Appearances) count += theme.ReloadTextures();
+            ThemeValidator.ValidateAll();
+            Messages.Message("MBBS_ThemesReloaded".Translate(count), MessageTypeDefOf.NeutralEvent, false);
         }
 
         // ---------------------------------------------------------------- list
@@ -1027,6 +1061,16 @@ namespace MainButtonBarSystem
             if (SectionHeader(listing, label, stored >= 0f)) return BarConfig.Unset;
             float value = NumberSlider(listing, resolved, range.min, range.max, step, id);
             return Mathf.Approximately(value, resolved) ? stored : value;
+        }
+
+        /// <summary>Like <see cref="IntSetting"/> for a value that may be negative: unchanged is <see cref="BarConfig.UnsetOffset"/>, the step is 1.</summary>
+        private static int OffsetSetting(Listing_Standard listing, string label, int stored, int resolved, IntRange range,
+            [CallerArgumentExpression("stored")] string id = null)
+        {
+            if (SectionHeader(listing, label, stored != BarConfig.UnsetOffset)) return BarConfig.UnsetOffset;
+            float raw = NumberSlider(listing, resolved, range.min, range.max, 1f, id);
+            int value = Mathf.Clamp(Mathf.RoundToInt(raw), range.min, range.max);
+            return value != resolved ? value : stored;
         }
 
         /// <summary>

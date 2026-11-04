@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using MainButtonBarSystem.Core;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -11,7 +13,9 @@ namespace MainButtonBarSystem
     /// Slot "appearance" (a theme): how the bar and each button are painted (spec 3.8). A theme needs only XML and
     /// images: every texture and colour below is optional and falls back to the game's look. Authors who want
     /// effects can still set <see cref="workerClass"/>.
-    /// <para>Button textures are nine-slice atlases, drawn like the game's <c>Widgets.ButtonSubtleAtlas</c>.</para>
+    /// <para>Button textures are nine-slice atlases, drawn like the game's <c>Widgets.ButtonSubtleAtlas</c>. The bar
+    /// and drawer backgrounds can instead be whole images (<see cref="barBackgroundFit"/>), and <see cref="decorations"/>
+    /// places any number of images, such as a character portrait, at the corners of the bar or the drawer.</para>
     /// </summary>
     public class BarAppearanceDef : Def
     {
@@ -58,6 +62,26 @@ namespace MainButtonBarSystem
         /// <summary>Image in the Appearance tab. Empty: a preview drawn from the textures above.</summary>
         public string preview;
 
+        /// <summary>How <see cref="barBackground"/> fills the bar: Atlas (nine-slice, the default), Tile, Stretch, Fit or Cover.</summary>
+        public BackgroundFit barBackgroundFit = BackgroundFit.Atlas;
+
+        /// <summary>Tile only: the image is repeated at its pixel size times this.</summary>
+        public float barBackgroundTileScale = 1f;
+
+        /// <summary>How <see cref="drawerBackground"/> fills the drawer window; see <see cref="barBackgroundFit"/>.</summary>
+        public BackgroundFit drawerBackgroundFit = BackgroundFit.Atlas;
+
+        public float drawerBackgroundTileScale = 1f;
+
+        /// <summary>Label colour while pressed or while its tab is open. Fully transparent uses <see cref="labelMouseoverColor"/>.</summary>
+        public Color labelActiveColor;
+
+        /// <summary>
+        /// Images placed at anchors of the bar or the drawer, below or above the buttons (a portrait growing out of
+        /// the bar, a badge that appears under the mouse). Empty: none. See <see cref="BarDecoration"/>.
+        /// </summary>
+        public List<BarDecoration> decorations;
+
         [Unsaved] private BarAppearanceWorker workerInt;
         [Unsaved] private readonly Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
 
@@ -90,16 +114,97 @@ namespace MainButtonBarSystem
 
         public bool HasLabelColor => labelColor.a > 0f;
 
+        public bool HasDecorations => decorations != null && decorations.Count > 0;
+
         /// <summary>True when the theme replaces anything inside the buttons themselves.</summary>
         public bool ChangesButtons =>
             !string.IsNullOrEmpty(button) || !string.IsNullOrEmpty(buttonMouseover) || !string.IsNullOrEmpty(buttonActive) ||
-            !string.IsNullOrEmpty(buttonDisabled) || HasLabelColor || labelMouseoverColor.a > 0f;
+            !string.IsNullOrEmpty(buttonDisabled) || HasLabelColor || labelMouseoverColor.a > 0f || labelActiveColor.a > 0f;
+
+        /// <summary>Every texture field of the def with its path (empty paths included), for checks and reloading.</summary>
+        public IEnumerable<(string field, string path)> TexturePaths()
+        {
+            yield return (nameof(button), button);
+            yield return (nameof(buttonMouseover), buttonMouseover);
+            yield return (nameof(buttonActive), buttonActive);
+            yield return (nameof(buttonDisabled), buttonDisabled);
+            yield return (nameof(moreButton), moreButton);
+            yield return (nameof(arrowLeft), arrowLeft);
+            yield return (nameof(arrowRight), arrowRight);
+            yield return (nameof(barBackground), barBackground);
+            yield return (nameof(drawerBackground), drawerBackground);
+            yield return (nameof(drawerSettingsIcon), drawerSettingsIcon);
+            yield return (nameof(preview), preview);
+            if (decorations == null) yield break;
+            for (int i = 0; i < decorations.Count; i++)
+                yield return ($"{nameof(decorations)}[{i}].{nameof(BarDecoration.texture)}", decorations[i]?.texture);
+        }
+
+        /// <summary>
+        /// Development mode: reads this theme's PNG files again from its own mod folder and uses them instead of the
+        /// game's cached textures, so an edited image shows without a restart. Paths with no file in the mod folder go
+        /// back to the game's texture. Returns how many files were read. The replaced textures are not destroyed, so a
+        /// session with many reloads keeps a few extra textures in memory.
+        /// </summary>
+        public int ReloadTextures()
+        {
+            textures.Clear();
+            int count = 0;
+            foreach (var (_, path) in TexturePaths())
+            {
+                if (string.IsNullOrEmpty(path) || textures.ContainsKey(path)) continue;
+                var tex = LoadFromModFolder(path);
+                if (tex == null) continue;
+                textures[path] = tex;
+                count++;
+            }
+            return count;
+        }
+
+        private Texture2D LoadFromModFolder(string path)
+        {
+            var pack = modContentPack;
+            if (pack?.foldersToLoadDescendingOrder == null) return null;
+            string relative = Path.Combine("Textures", path.Replace('/', Path.DirectorySeparatorChar) + ".png");
+            foreach (var folder in pack.foldersToLoadDescendingOrder)
+            {
+                string file = Path.Combine(folder, relative);
+                if (!File.Exists(file)) continue;
+                try
+                {
+                    var tex = new Texture2D(2, 2);
+                    if (!tex.LoadImage(File.ReadAllBytes(file))) return null;
+                    tex.filterMode = FilterMode.Bilinear;
+                    tex.wrapMode = TextureWrapMode.Clamp;
+                    tex.name = "MBBS_Reloaded_" + path;
+                    return tex;
+                }
+                catch (Exception e)
+                {
+                    Log.Warning($"{MainButtonBarSystemMod.LogPrefix}Theme {defName}: could not reload {file}: {e.Message}");
+                    return null;
+                }
+            }
+            return null;
+        }
 
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (var e in base.ConfigErrors()) yield return e;
             if (workerClass == null || !typeof(BarAppearanceWorker).IsAssignableFrom(workerClass))
                 yield return "workerClass must derive from " + nameof(BarAppearanceWorker);
+            if (barBackgroundTileScale <= 0f) yield return nameof(barBackgroundTileScale) + " must be positive";
+            if (drawerBackgroundTileScale <= 0f) yield return nameof(drawerBackgroundTileScale) + " must be positive";
+            if (decorations == null) yield break;
+            for (int i = 0; i < decorations.Count; i++)
+            {
+                if (decorations[i] == null)
+                {
+                    yield return $"{nameof(decorations)}[{i}] is empty";
+                    continue;
+                }
+                foreach (var e in decorations[i].ConfigErrors(i)) yield return e;
+            }
         }
     }
 
@@ -120,12 +225,22 @@ namespace MainButtonBarSystem
     {
         public BarAppearanceDef def;
 
-        /// <summary>Drawn once per event before any button.</summary>
+        /// <summary>Drawn once per event before any button: the background image, then the decorations below the buttons.</summary>
         public virtual void DrawBarBackground(Rect barRect)
         {
-            var tex = def.Tex(def.barBackground);
-            if (tex != null) Widgets.DrawAtlas(barRect, tex);
+            DrawBarBackgroundImage(barRect);
+            DrawDecorations(DecorationTarget.Bar, DecorationLayer.BelowButtons, barRect);
         }
+
+        /// <summary>Only the bar's background image, drawn the way <see cref="BarAppearanceDef.barBackgroundFit"/> says (the Appearance tab's preview uses this).</summary>
+        public virtual void DrawBarBackgroundImage(Rect barRect)
+        {
+            var tex = def.Tex(def.barBackground);
+            if (tex != null) TexturePainter.Draw(barRect, tex, def.barBackgroundFit, def.barBackgroundTileScale, BarConfigManager.Active.BackgroundOpacity);
+        }
+
+        /// <summary>Drawn once per event after every button and the More button: the decorations above the buttons.</summary>
+        public virtual void DrawBarOverlay(Rect barRect) => DrawDecorations(DecorationTarget.Bar, DecorationLayer.AboveButtons, barRect);
 
         public virtual void DrawButton(BarButton button, Rect rect)
         {
@@ -141,12 +256,58 @@ namespace MainButtonBarSystem
         /// <summary>Icon of the drawer's settings button, or null for the tuning def's gear.</summary>
         public virtual Texture2D DrawerSettingsIcon() => def.Tex(def.drawerSettingsIcon);
 
-        /// <summary>Background of the drawer window, covering the whole window.</summary>
+        /// <summary>Background of the drawer window, covering the whole window, then the decorations below its buttons.</summary>
         public virtual void DrawDrawerBackground(Rect windowRect)
         {
+            DrawDrawerBackgroundImage(windowRect);
+            DrawDecorations(DecorationTarget.Drawer, DecorationLayer.BelowButtons, windowRect);
+        }
+
+        /// <summary>Only the drawer's background image (the game's window background when the theme has none).</summary>
+        public virtual void DrawDrawerBackgroundImage(Rect windowRect)
+        {
             var tex = def.Tex(def.drawerBackground);
-            if (tex != null) Widgets.DrawAtlas(windowRect, tex);
+            if (tex != null) TexturePainter.Draw(windowRect, tex, def.drawerBackgroundFit, def.drawerBackgroundTileScale, BarConfigManager.Active.BackgroundOpacity);
             else Widgets.DrawWindowBackground(windowRect);
+        }
+
+        /// <summary>Drawn after the drawer's buttons and its settings gear: the decorations above them. The window clips anything outside it.</summary>
+        public virtual void DrawDrawerOverlay(Rect windowRect) => DrawDecorations(DecorationTarget.Drawer, DecorationLayer.AboveButtons, windowRect);
+
+        /// <summary>
+        /// Draws the def's decorations for one target and layer, placed by <see cref="DecorationLayout.Place"/> with the
+        /// player's scale, offset and opacity settings applied. Decorations whose texture is missing are skipped.
+        /// </summary>
+        public virtual void DrawDecorations(DecorationTarget target, DecorationLayer layer, Rect area)
+        {
+            if (!def.HasDecorations) return;
+            var config = BarConfigManager.Active;
+            if (!config.DecorationsShown) return;
+
+            bool mouseover = Mouse.IsOver(area);
+            bool drawerOpen = target == DecorationTarget.Bar && Window_ButtonDrawer.IsShowing;
+            float scale = config.DecorationScale;
+            var shift = config.DecorationOffset;
+            float opacity = config.DecorationOpacity;
+            var saved = GUI.color;
+            try
+            {
+                foreach (var decoration in def.decorations)
+                {
+                    if (decoration == null || decoration.target != target || decoration.layer != layer || !decoration.ShowsIn(mouseover, drawerOpen)) continue;
+                    var tex = def.Tex(decoration.texture);
+                    if (tex == null) continue;
+                    var box = DecorationLayout.Place(area.x, area.y, area.width, area.height, decoration.anchor, decoration.verticalAnchor,
+                        decoration.size.x, decoration.size.y, tex.width, tex.height, decoration.offset.x, decoration.offset.y, scale, shift.x, shift.y);
+                    if (box.IsEmpty) continue;
+                    GUI.color = new Color(saved.r, saved.g, saved.b, saved.a * Mathf.Clamp01(decoration.opacity) * opacity);
+                    GUI.DrawTexture(new Rect(Mathf.Round(box.X), Mathf.Round(box.Y), Mathf.Round(box.Width), Mathf.Round(box.Height)), tex);
+                }
+            }
+            finally
+            {
+                GUI.color = saved;
+            }
         }
 
         /// <summary>
@@ -180,9 +341,10 @@ namespace MainButtonBarSystem
             return def.Tex(def.button);
         }
 
-        /// <summary>Label colour for a state, or null to keep the game's.</summary>
+        /// <summary>Label colour for a state, or null to keep the game's. Active: labelActiveColor, else labelMouseoverColor, else labelColor.</summary>
         public virtual Color? LabelColor(ButtonVisualState state)
         {
+            if (state == ButtonVisualState.Active && def.labelActiveColor.a > 0f) return def.labelActiveColor;
             if (state == ButtonVisualState.Mouseover || state == ButtonVisualState.Active)
             {
                 if (def.labelMouseoverColor.a > 0f) return def.labelMouseoverColor;

@@ -163,4 +163,16 @@ og trykk Oppdater. De blir liggende der når modden oppdateres.</MBBS_IconPicker
   <MBBS_IconModeAllTip>Hvordan alle knapper viser ikon og tekst, med mindre en knapp har sin egen innstilling.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>La alle knapper med egen innstilling ({0}) følge denne</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Samme som hele linjen ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Illustrasjon og bakgrunn</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Dette temaet har verken bakgrunnsbilde eller pynt; det er ingenting å justere her.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Bakgrunnens dekkevne: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Vis pynt</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Bilder som temaet plasserer på linjen eller i skuffen, for eksempel et figurportrett. Slå av for å skjule alle.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Pyntens dekkevne: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Pyntens størrelse: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Pyntens forskyvning X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Pyntens forskyvning Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Last inn temateksturer på nytt</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Utviklermodus: leser hvert temas PNG-filer på nytt fra modmappen, slik at et redigert bilde vises uten omstart. Etterpå kontrolleres temaene igjen; se loggen.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Temateksturer lastet inn på nytt: {0} fil(er) lest på nytt.</MBBS_ThemesReloaded>
 </LanguageData>

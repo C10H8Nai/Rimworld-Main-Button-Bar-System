@@ -163,4 +163,16 @@ then press Refresh. They stay there through mod updates.</MBBS_IconPicker_Empty>
   <MBBS_IconModeAllTip>How every button shows its icon and label, unless a button has its own setting.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Make all {0} buttons with their own setting follow this</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Same as the whole bar ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Illustration and background</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>This theme has no background image or decorations, so there is nothing to adjust here.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Background opacity: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Show decorations</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Images the theme places on the bar or in the drawer, such as a character portrait. Turn off to hide them all.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Decoration opacity: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Decoration size: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Decoration offset X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Decoration offset Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Reload theme textures</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Development mode: reads every theme's PNG files again from its mod folder, so an edited image shows without restarting the game. The themes are checked again afterwards; see the log.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Theme textures reloaded: {0} file(s) read again.</MBBS_ThemesReloaded>
 </LanguageData>

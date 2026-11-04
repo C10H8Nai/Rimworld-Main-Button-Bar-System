@@ -160,7 +160,19 @@
     "MBBS_IconModeAll": "Symbol und Text (alle Schaltflächen)",
     "MBBS_IconModeAllTip": "Wie alle Schaltflächen Symbol und Beschriftung zeigen, sofern eine Schaltfläche keine eigene Einstellung hat.",
     "MBBS_IconModeClearAll": "Alle Schaltflächen mit eigener Einstellung ({0}) dieser Vorgabe folgen lassen",
-    "MBBS_IconMode_FollowBar": "Wie die gesamte Leiste ({0})"
+    "MBBS_IconMode_FollowBar": "Wie die gesamte Leiste ({0})",
+    "MBBS_Section_Illustration": "Illustration und Hintergrund",
+    "MBBS_IllustrationNone": "Dieses Thema hat weder Hintergrundbild noch Dekorationen; hier gibt es nichts einzustellen.",
+    "MBBS_BackgroundOpacity": "Deckkraft des Hintergrunds: {0} %",
+    "MBBS_DecorationsShown": "Dekorationen anzeigen",
+    "MBBS_DecorationsShownTip": "Bilder, die das Thema auf der Leiste oder in der Schublade platziert, etwa ein Charakterporträt. Ausschalten blendet alle aus.",
+    "MBBS_DecorationOpacity": "Deckkraft der Dekorationen: {0} %",
+    "MBBS_DecorationScale": "Größe der Dekorationen: {0} %",
+    "MBBS_DecorationOffsetX": "Versatz der Dekorationen X: {0} px",
+    "MBBS_DecorationOffsetY": "Versatz der Dekorationen Y: {0} px",
+    "MBBS_ReloadThemes": "Thementexturen neu laden",
+    "MBBS_ReloadThemesTip": "Entwicklermodus: liest die PNG-Dateien jedes Themas erneut aus seinem Mod-Ordner, damit ein geändertes Bild ohne Neustart erscheint. Danach werden die Themen erneut geprüft; siehe Protokoll.",
+    "MBBS_ThemesReloaded": "Thementexturen neu geladen: {0} Datei(en) erneut gelesen."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -185,7 +197,9 @@
       "MBBS_Void.label": "Leere",
       "MBBS_Void.description": "Leerenschwarz mit salbeigrünen Rändern, einer dünnen roten Linie, die unter der Maus aufleuchtet, und splitterförmig abgeschnittenen Ecken, in den Farben der Anomaly-Erweiterung.",
       "MBBS_Starfarer.label": "Sternenfahrer",
-      "MBBS_Starfarer.description": "Weltraumviolett mit violetten Rumpfplatten, cyanfarbenen Nieten und einer cyanfarbenen Triebwerkslinie, in den Farben der Odyssey-Erweiterung."
+      "MBBS_Starfarer.description": "Weltraumviolett mit violetten Rumpfplatten, cyanfarbenen Nieten und einer cyanfarbenen Triebwerkslinie, in den Farben der Odyssey-Erweiterung.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Anime-Thema in Nais Farben: marineblaue Schaltflächen mit grauweißen Rändern, Graphitlinien und violettem Schimmer, dazu eine Figurenillustration am linken Ende der Leiste."
     }
   }
 }

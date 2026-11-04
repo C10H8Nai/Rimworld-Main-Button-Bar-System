@@ -163,4 +163,16 @@ e depois clique em Atualizar. Eles continuam lá quando o mod é atualizado.</MB
   <MBBS_IconModeAllTip>Como todos os botões exibem o ícone e o texto, exceto os que têm configuração própria.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Fazer com que todos os botões com configuração própria ({0}) sigam esta</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Igual à barra inteira ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Ilustração e fundo</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Este tema não tem imagem de fundo nem decorações; não há nada para ajustar aqui.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Opacidade do fundo: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Mostrar decorações</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Imagens que o tema coloca na barra ou na gaveta, como um retrato de personagem. Desative para esconder todas.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Opacidade das decorações: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Tamanho das decorações: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Deslocamento das decorações X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Deslocamento das decorações Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Recarregar texturas dos temas</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Modo de desenvolvimento: relê os PNG de cada tema a partir da pasta do mod, para ver uma imagem editada sem reiniciar o jogo. Depois os temas são verificados de novo; veja o log.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Texturas dos temas recarregadas: {0} arquivo(s) relido(s).</MBBS_ThemesReloaded>
 </LanguageData>

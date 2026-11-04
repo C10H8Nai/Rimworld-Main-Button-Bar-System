@@ -160,7 +160,19 @@
     "MBBS_IconModeAll": "Pictogramă și text (toate butoanele)",
     "MBBS_IconModeAllTip": "Cum își afișează toate butoanele pictograma și textul, cu excepția celor care au propria setare.",
     "MBBS_IconModeClearAll": "Fă ca toate butoanele cu setare proprie ({0}) să urmeze această setare",
-    "MBBS_IconMode_FollowBar": "La fel ca întreaga bară ({0})"
+    "MBBS_IconMode_FollowBar": "La fel ca întreaga bară ({0})",
+    "MBBS_Section_Illustration": "Ilustrație și fundal",
+    "MBBS_IllustrationNone": "Această temă nu are imagine de fundal și nici decorațiuni; nu este nimic de reglat aici.",
+    "MBBS_BackgroundOpacity": "Opacitatea fundalului: {0}%",
+    "MBBS_DecorationsShown": "Afișează decorațiunile",
+    "MBBS_DecorationsShownTip": "Imagini pe care tema le așază pe bară sau în sertar, de exemplu un portret de personaj. Dezactivează pentru a le ascunde pe toate.",
+    "MBBS_DecorationOpacity": "Opacitatea decorațiunilor: {0}%",
+    "MBBS_DecorationScale": "Mărimea decorațiunilor: {0}%",
+    "MBBS_DecorationOffsetX": "Deplasarea decorațiunilor X: {0}px",
+    "MBBS_DecorationOffsetY": "Deplasarea decorațiunilor Y: {0}px",
+    "MBBS_ReloadThemes": "Reîncarcă texturile temelor",
+    "MBBS_ReloadThemesTip": "Mod dezvoltator: recitește fișierele PNG ale fiecărei teme din folderul modului, astfel încât o imagine modificată apare fără repornirea jocului. Apoi temele sunt verificate din nou; vezi jurnalul.",
+    "MBBS_ThemesReloaded": "Texturile temelor au fost reîncărcate: {0} fișier(e) recitit(e)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -185,7 +197,9 @@
       "MBBS_Void.label": "neant",
       "MBBS_Void.description": "Negrul neantului, cu margini verde-salvie, o linie roșie subțire care se aprinde sub cursor și colțuri tăiate ca niște cioburi, în culorile expansiunii Anomaly.",
       "MBBS_Starfarer.label": "călător stelar",
-      "MBBS_Starfarer.description": "Mov cosmic, cu plăci mov ale carenei, nituri cyan și o linie cyan a propulsoarelor, în culorile expansiunii Odyssey."
+      "MBBS_Starfarer.description": "Mov cosmic, cu plăci mov ale carenei, nituri cyan și o linie cyan a propulsoarelor, în culorile expansiunii Odyssey.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Temă în stil anime în culorile lui Nai: butoane bleumarin cu margini gri-albe, linii grafit și o strălucire violetă, cu o ilustrație a personajului la capătul stâng al barei."
     }
   }
 }

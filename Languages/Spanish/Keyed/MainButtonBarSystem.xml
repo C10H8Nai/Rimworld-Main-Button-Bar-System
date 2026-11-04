@@ -163,4 +163,16 @@ y luego pulsa «Actualizar». Se conservan aunque se actualice el mod.</MBBS_Ico
   <MBBS_IconModeAllTip>Cómo muestran todos los botones su icono y su texto, salvo los que tienen un ajuste propio.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Hacer que todos los botones con ajuste propio ({0}) sigan este</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Igual que la barra completa ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Ilustración y fondo</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Este tema no tiene imagen de fondo ni decoraciones; no hay nada que ajustar aquí.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Opacidad del fondo: {0} %</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Mostrar decoraciones</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Imágenes que el tema coloca en la barra o en el cajón, como un retrato de personaje. Desactívalo para ocultarlas todas.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Opacidad de las decoraciones: {0} %</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Tamaño de las decoraciones: {0} %</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Desplazamiento de las decoraciones X: {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Desplazamiento de las decoraciones Y: {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Recargar texturas de los temas</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Modo desarrollador: vuelve a leer los PNG de cada tema desde su carpeta de mod, para ver una imagen editada sin reiniciar el juego. Después se vuelven a comprobar los temas; consulta el registro.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Texturas de los temas recargadas: {0} archivo(s) leído(s) de nuevo.</MBBS_ThemesReloaded>
 </LanguageData>

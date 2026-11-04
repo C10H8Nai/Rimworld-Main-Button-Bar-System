@@ -163,4 +163,16 @@ en klik op Vernieuwen. Ze blijven daar staan, ook als de mod wordt bijgewerkt.</
   <MBBS_IconModeAllTip>Hoe elke knop zijn icoon en tekst toont, tenzij een knop een eigen instelling heeft.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Alle knoppen met een eigen instelling ({0}) dit laten volgen</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Gelijk aan de hele balk ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Illustratie en achtergrond</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Dit thema heeft geen achtergrondafbeelding of versieringen; hier valt niets in te stellen.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Dekking van de achtergrond: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Versieringen tonen</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Afbeeldingen die het thema op de balk of in de la plaatst, zoals een personageportret. Uitzetten verbergt ze allemaal.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Dekking van versieringen: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Grootte van versieringen: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Verschuiving van versieringen X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Verschuiving van versieringen Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Thematexturen opnieuw laden</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Ontwikkelaarsmodus: leest de PNG-bestanden van elk thema opnieuw uit zijn modmap, zodat een bewerkte afbeelding zonder herstart verschijnt. Daarna worden de thema's opnieuw gecontroleerd; zie het logboek.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Thematexturen opnieuw geladen: {0} bestand(en) opnieuw gelezen.</MBBS_ThemesReloaded>
 </LanguageData>

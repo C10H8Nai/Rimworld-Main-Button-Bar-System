@@ -163,4 +163,16 @@
   <MBBS_IconModeAllTip>Як усі кнопки показують іконку та напис, якщо кнопка не має власного налаштування.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Застосувати до всіх кнопок із власним налаштуванням ({0})</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Як у всієї панелі ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Ілюстрація та тло</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>У цієї теми немає фонового зображення й оздоблень; тут нічого налаштовувати.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Непрозорість тла: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Показувати оздоблення</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Зображення, які тема розміщує на панелі або в шухляді, наприклад портрет персонажа. Вимкніть, щоб сховати їх усі.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Непрозорість оздоблень: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Розмір оздоблень: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Зсув оздоблень по X: {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Зсув оздоблень по Y: {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Перезавантажити текстури тем</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Режим розробника: наново читає PNG-файли кожної теми з її теки мода, щоб змінене зображення з'явилося без перезапуску гри. Після цього теми перевіряються знову; див. журнал.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Текстури тем перезавантажено: наново прочитано файлів: {0}.</MBBS_ThemesReloaded>
 </LanguageData>

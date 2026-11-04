@@ -163,4 +163,16 @@ apoi apasă Reîncarcă. Rămân acolo și după actualizările modului.</MBBS_I
   <MBBS_IconModeAllTip>Cum își afișează toate butoanele pictograma și textul, cu excepția celor care au propria setare.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Fă ca toate butoanele cu setare proprie ({0}) să urmeze această setare</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>La fel ca întreaga bară ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Ilustrație și fundal</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Această temă nu are imagine de fundal și nici decorațiuni; nu este nimic de reglat aici.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Opacitatea fundalului: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Afișează decorațiunile</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Imagini pe care tema le așază pe bară sau în sertar, de exemplu un portret de personaj. Dezactivează pentru a le ascunde pe toate.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Opacitatea decorațiunilor: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Mărimea decorațiunilor: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Deplasarea decorațiunilor X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Deplasarea decorațiunilor Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Reîncarcă texturile temelor</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Mod dezvoltator: recitește fișierele PNG ale fiecărei teme din folderul modului, astfel încât o imagine modificată apare fără repornirea jocului. Apoi temele sunt verificate din nou; vezi jurnalul.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Texturile temelor au fost reîncărcate: {0} fișier(e) recitit(e).</MBBS_ThemesReloaded>
 </LanguageData>

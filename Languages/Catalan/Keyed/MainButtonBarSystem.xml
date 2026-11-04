@@ -163,4 +163,16 @@ i després premeu Actualitza. Hi continuaran encara que s’actualitzi el mod.</
   <MBBS_IconModeAllTip>Com mostra cada botó la icona i el text, tret que el botó tingui una configuració pròpia.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Fes que tots els botons amb configuració pròpia ({0}) segueixin aquesta</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>Igual que tota la barra ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>Il·lustració i fons</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>Aquest tema no té imatge de fons ni decoracions; aquí no hi ha res a ajustar.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>Opacitat del fons: {0} %</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>Mostra les decoracions</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>Imatges que el tema col·loca a la barra o al calaix, com un retrat de personatge. Desactiva-ho per amagar-les totes.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>Opacitat de les decoracions: {0} %</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>Mida de les decoracions: {0} %</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>Desplaçament de les decoracions X: {0} px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>Desplaçament de les decoracions Y: {0} px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>Torna a carregar les textures dels temes</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>Mode desenvolupador: torna a llegir els PNG de cada tema des de la seva carpeta de mod, per veure una imatge editada sense reiniciar el joc. Després els temes es tornen a comprovar; mira el registre.</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>Textures dels temes recarregades: {0} fitxer(s) tornat(s) a llegir.</MBBS_ThemesReloaded>
 </LanguageData>

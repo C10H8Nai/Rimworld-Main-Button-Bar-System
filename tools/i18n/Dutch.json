@@ -160,7 +160,19 @@
     "MBBS_IconModeAll": "Icoon en tekst (alle knoppen)",
     "MBBS_IconModeAllTip": "Hoe elke knop zijn icoon en tekst toont, tenzij een knop een eigen instelling heeft.",
     "MBBS_IconModeClearAll": "Alle knoppen met een eigen instelling ({0}) dit laten volgen",
-    "MBBS_IconMode_FollowBar": "Gelijk aan de hele balk ({0})"
+    "MBBS_IconMode_FollowBar": "Gelijk aan de hele balk ({0})",
+    "MBBS_Section_Illustration": "Illustratie en achtergrond",
+    "MBBS_IllustrationNone": "Dit thema heeft geen achtergrondafbeelding of versieringen; hier valt niets in te stellen.",
+    "MBBS_BackgroundOpacity": "Dekking van de achtergrond: {0}%",
+    "MBBS_DecorationsShown": "Versieringen tonen",
+    "MBBS_DecorationsShownTip": "Afbeeldingen die het thema op de balk of in de la plaatst, zoals een personageportret. Uitzetten verbergt ze allemaal.",
+    "MBBS_DecorationOpacity": "Dekking van versieringen: {0}%",
+    "MBBS_DecorationScale": "Grootte van versieringen: {0}%",
+    "MBBS_DecorationOffsetX": "Verschuiving van versieringen X: {0}px",
+    "MBBS_DecorationOffsetY": "Verschuiving van versieringen Y: {0}px",
+    "MBBS_ReloadThemes": "Thematexturen opnieuw laden",
+    "MBBS_ReloadThemesTip": "Ontwikkelaarsmodus: leest de PNG-bestanden van elk thema opnieuw uit zijn modmap, zodat een bewerkte afbeelding zonder herstart verschijnt. Daarna worden de thema's opnieuw gecontroleerd; zie het logboek.",
+    "MBBS_ThemesReloaded": "Thematexturen opnieuw geladen: {0} bestand(en) opnieuw gelezen."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -185,7 +197,9 @@
       "MBBS_Void.label": "leegte",
       "MBBS_Void.description": "Leegtezwart met saliegroene randen, een dunne rode lijn die oplicht onder de muis en scherfvormig afgesneden hoeken, in de kleuren van de uitbreiding Anomaly.",
       "MBBS_Starfarer.label": "sterrenreiziger",
-      "MBBS_Starfarer.description": "Ruimtepaars met paarse rompplaten, cyaan klinknagels en een cyaan lijn van de stuwraketten, in de kleuren van de uitbreiding Odyssey."
+      "MBBS_Starfarer.description": "Ruimtepaars met paarse rompplaten, cyaan klinknagels en een cyaan lijn van de stuwraketten, in de kleuren van de uitbreiding Odyssey.",
+      "MBBS_Nai.label": "nai",
+      "MBBS_Nai.description": "Thema in animestijl in Nai's kleuren: marineblauwe knoppen met grijswitte randen, grafietlijnen en een violette gloed, met een personage-illustratie aan het linkeruiteinde van de balk."
     }
   }
 }

@@ -42,6 +42,10 @@ namespace MainButtonBarSystem
                 yield return "barDefaults: defaultWidth, minWidth, arrowWidth and wheelScrollPixels must be positive";
             if (behaviour != null && (behaviour.buttonRectHeight <= 0f || behaviour.barTopFromBottom <= 0f || behaviour.drawerMaxAutoColumns <= 0))
                 yield return "behaviour: buttonRectHeight, barTopFromBottom and drawerMaxAutoColumns must be positive";
+            if (behaviour != null && (behaviour.themeAtlasMaxSize <= 0 || behaviour.themeDecorationMaxSize <= 0 || behaviour.themeTileMaxCount <= 0))
+                yield return "behaviour: themeAtlasMaxSize, themeDecorationMaxSize and themeTileMaxCount must be positive";
+            if (ranges != null && (ranges.widthStep <= 0 || ranges.percentStep <= 0))
+                yield return "ranges: widthStep and percentStep must be positive";
             if (settingsWindow != null && (settingsWindow.rowHeight <= 0f || settingsWindow.maxSize.x <= 0f || settingsWindow.maxSize.y <= 0f ||
                                            settingsWindow.customNameMaxLength <= 0 || settingsWindow.captureKeyDialogSize.x <= 0f))
                 yield return "settingsWindow: rowHeight, maxSize, customNameMaxLength and captureKeyDialogSize must be positive";
@@ -72,6 +76,22 @@ namespace MainButtonBarSystem
 
             /// <summary>0 uses the bar's default button width.</summary>
             public int drawerCellWidth;
+
+            /// <summary>Theme illustration settings, applied on top of the theme's own values: show decorations at all.</summary>
+            public bool decorationsShown;
+
+            /// <summary>Percent multiplied into every decoration's opacity.</summary>
+            public int decorationOpacity;
+
+            /// <summary>Percent multiplied into every decoration's size, anchored at its corner.</summary>
+            public int decorationScale;
+
+            /// <summary>Pixels added to every decoration's offset.</summary>
+            public int decorationOffsetX;
+            public int decorationOffsetY;
+
+            /// <summary>Percent opacity of the bar and drawer background images.</summary>
+            public int backgroundOpacity;
         }
 
         public class SettingRanges
@@ -85,9 +105,18 @@ namespace MainButtonBarSystem
             public FloatRange wheelScrollPixels;
             public IntRange drawerColumns;
             public IntRange drawerCellWidth;
+            public IntRange decorationOpacity;
+            public IntRange decorationScale;
+
+            /// <summary>Shared by the X and Y offset sliders; may be negative.</summary>
+            public IntRange decorationOffset;
+            public IntRange backgroundOpacity;
 
             /// <summary>Width sliders snap to multiples of this.</summary>
             public int widthStep;
+
+            /// <summary>Percent sliders (opacity, scale) snap to multiples of this.</summary>
+            public int percentStep;
         }
 
         public class Behaviour
@@ -130,6 +159,15 @@ namespace MainButtonBarSystem
 
             /// <summary>Texture of the drawer's settings gear (themes can replace it). This mod ships MainButtonBarSystem/UI/Gear.</summary>
             public string drawerSettingsIcon;
+
+            /// <summary>Theme checks in dev mode warn about atlases wider than this: on a bar button the corners cannot grow past half its height.</summary>
+            public int themeAtlasMaxSize;
+
+            /// <summary>Theme checks in dev mode warn about decoration or background images with a side longer than this.</summary>
+            public int themeDecorationMaxSize;
+
+            /// <summary>A tiled background that would need more tiles than this is stretched instead.</summary>
+            public int themeTileMaxCount;
         }
 
         public class SettingsWindowLayout
@@ -188,6 +226,9 @@ namespace MainButtonBarSystem
 
             /// <summary>Sample buttons in a drawn theme preview (a More button is added).</summary>
             public int themePreviewButtons;
+
+            /// <summary>Space between the theme cards and the illustration settings under them.</summary>
+            public float themeSettingsGap;
 
             /// <summary>Number box to the right of each slider; this mod draws its own sliders so other slider mods do not overlap them.</summary>
             public float numberFieldWidth;

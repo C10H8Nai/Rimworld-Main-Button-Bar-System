@@ -163,4 +163,16 @@
   <MBBS_IconModeAllTip>모든 버튼에서 아이콘과 텍스트를 표시하는 방식입니다. 개별 설정이 있는 버튼은 그 설정을 따릅니다.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>개별 설정된 버튼 {0}개를 모두 이 설정에 맞추기</MBBS_IconModeClearAll>
   <MBBS_IconMode_FollowBar>바 전체 설정을 따름 ({0})</MBBS_IconMode_FollowBar>
+  <MBBS_Section_Illustration>일러스트와 배경</MBBS_Section_Illustration>
+  <MBBS_IllustrationNone>이 테마에는 배경 이미지나 장식 이미지가 없어 조정할 항목이 없습니다.</MBBS_IllustrationNone>
+  <MBBS_BackgroundOpacity>배경 불투명도: {0}%</MBBS_BackgroundOpacity>
+  <MBBS_DecorationsShown>장식 이미지 표시</MBBS_DecorationsShown>
+  <MBBS_DecorationsShownTip>테마가 바나 서랍에 놓는 이미지(예: 캐릭터 일러스트)입니다. 끄면 모두 숨깁니다.</MBBS_DecorationsShownTip>
+  <MBBS_DecorationOpacity>장식 이미지 불투명도: {0}%</MBBS_DecorationOpacity>
+  <MBBS_DecorationScale>장식 이미지 크기: {0}%</MBBS_DecorationScale>
+  <MBBS_DecorationOffsetX>장식 이미지 이동 X: {0}px</MBBS_DecorationOffsetX>
+  <MBBS_DecorationOffsetY>장식 이미지 이동 Y: {0}px</MBBS_DecorationOffsetY>
+  <MBBS_ReloadThemes>테마 텍스처 다시 불러오기</MBBS_ReloadThemes>
+  <MBBS_ReloadThemesTip>개발자 모드: 각 테마의 PNG를 모드 폴더에서 다시 읽어 수정한 이미지를 게임 재시작 없이 표시합니다. 이후 테마를 다시 검사합니다(로그 참조).</MBBS_ReloadThemesTip>
+  <MBBS_ThemesReloaded>테마 텍스처를 다시 불러왔습니다: 파일 {0}개를 다시 읽었습니다.</MBBS_ThemesReloaded>
 </LanguageData>
