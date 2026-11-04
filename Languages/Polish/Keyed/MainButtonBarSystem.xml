@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Więcej ({0})</MBBS_More>
+  <MBBS_MoreTip>Przyciski zwinięte do panelu „Więcej”. Na dole panelu jest jego własny przycisk ustawień.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Ustawienia dolnego paska</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Otwarto w grze: zmiany dotyczą bieżącego zapisu.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Otwarto z menu głównego: zmiany dotyczą domyślnego szablonu, od którego zaczynają się nowe gry.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Zawsze rysuj pasek tym modem (do testów)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Dopóki niczego nie zmienisz, pasek rysuje sama gra. Włącz, aby porównać rysowanie tego modu z rysowaniem gry.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Ustawienia dolnego paska (ten zapis)</MBBS_Title_Save>
+  <MBBS_Title_Template>Ustawienia dolnego paska (domyślny szablon)</MBBS_Title_Template>
+  <MBBS_View_Simple>Podstawowe</MBBS_View_Simple>
+  <MBBS_View_Advanced>Zaawansowane</MBBS_View_Advanced>
+  <MBBS_ViewTip>Widok „Zaawansowane” pokazuje więcej opcji: szerokości, stałe pozycje, wyrównanie napisów, skróty klawiszowe i kompatybilność. Ten wybór obowiązuje we wszystkich zapisach.</MBBS_ViewTip>
+  <MBBS_Col_Visible>Pokaż</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Ikona</MBBS_Col_Icon>
+  <MBBS_Col_Name>Nazwa</MBBS_Col_Name>
+  <MBBS_Col_Source>Z modu</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Skrót</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Zwiń</MBBS_Col_Drawer>
+  <MBBS_BarRow>Cały pasek (domyślne)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Ukryte przez własny mod ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Te przyciski ich mod celowo trzyma poza paskiem. Aby umieścić któryś z nich na pasku, włącz „Zawsze pokazuj” w widoku „Zaawansowane”.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>W górę</MBBS_MoveUp>
+  <MBBS_MoveDown>W dół</MBBS_MoveDown>
+  <MBBS_OrderHint>Z góry na dół = od lewej do prawej na ekranie. Przeciągaj wiersze, aby zmienić kolejność.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(zablokowany)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(lewy koniec)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(prawy koniec)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Teraz nie ma go na pasku: własny warunek przycisku nie jest spełniony.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Tryb wyświetlania</MBBS_DisplayMode>
+  <MBBS_MinWidth>Minimalna szerokość przycisku przy przewijaniu: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Domyślna szerokość przycisku: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Odstęp między przyciskami: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Wypełnij szerokość ekranu</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Gdy przyciski się mieszczą, rozciągnij je na całą szerokość.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Zablokuj przycisk „Menu” na prawym końcu</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Zablokowanego przycisku „Menu” nie można ukryć, przesunąć ani zwinąć do panelu „Więcej” – można tylko zmienić jego nazwę.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Przycisk „Menu” został odblokowany w widoku „Zaawansowane”.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Przycisk „Menu” jest zablokowany na prawym końcu i można tylko zmienić jego nazwę. Odblokujesz go w widoku „Zaawansowane”, w wierszu „Cały pasek”.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Źródło przycisku: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Źródło ikony: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Jego mod celowo trzyma go poza paskiem; pojawia się tylko z opcją „Zawsze pokazuj”.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>brak</MBBS_None>
+  <MBBS_Unknown>nieznane</MBBS_Unknown>
+  <MBBS_Visible>Pokaż na pasku</MBBS_Visible>
+  <MBBS_InDrawer>Zwiń do panelu „Więcej”</MBBS_InDrawer>
+  <MBBS_CustomName>Własna nazwa (puste = oryginalna: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Szerokość: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Szerokość: jak dla całego paska</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Stała pozycja</MBBS_Pin>
+  <MBBS_Pin_None>Brak</MBBS_Pin_None>
+  <MBBS_Pin_Left>Lewy koniec</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Prawy koniec</MBBS_Pin_Right>
+  <MBBS_ForceShow>Zawsze pokazuj</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Pokazuj przycisk, nawet gdy jego własny warunek mówi, że nie powinien się pojawić. Kliknięcie go może wtedy nic nie dać.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Zapisz jako domyślny szablon</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Zastosuj domyślny szablon</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Zapisano jako domyślny szablon. Nowe gry zaczną się z tym układem.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Resetuj wszystko</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Przywrócić wszystkie ustawienia do nietkniętego paska (gra plus zmiany innych modów)? Szablon nie zostanie przy tym zastosowany.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Zapisz</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>Wykryto mod {0}: obecnie to on steruje paskiem, więc zmiany tutaj zadziałają dopiero wtedy, gdy pierwszeństwo będzie miał ten mod.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>Wykryto mod {0}: pierwszeństwo ma ten mod, więc wpływ modu {0} na pasek jest wyłączony.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Szczegóły w widoku „Zaawansowane”.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Kompatybilność: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Pierwszeństwo ma ten mod</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Pasek rysuje ten mod. Wpływ modu {0} na pasek jest wyłączony, a jego ustawienia służą tylko jako wartości odniesienia.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>Pierwszeństwo ma {0}</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>Paskiem steruje {0}. Z tego modu zostaje tylko okno ustawień.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Zadziała po ponownym uruchomieniu gry.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Importuj ustawienia z {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Zaimportowano układ z {0}. Naciśnij „Zapisz”, aby go zachować.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Skrót klawiszowy: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Ustaw</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Wyczyść</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Działa we wszystkich zapisach; to ten sam klawisz co w „Opcje &gt; Konfiguracja klawiszy”.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Działa we wszystkich zapisach. Ten przycisk nie ma pozycji w „Opcje &gt; Konfiguracja klawiszy”, więc klawisz przechowuje ten mod.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Wciśnij klawisz (Esc, aby anulować)</MBBS_PressKey>
+  <MBBS_Export>Eksport...</MBBS_Export>
+  <MBBS_Import>Import...</MBBS_Import>
+  <MBBS_Export_Clipboard>Kopiuj jako tekst (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Układ skopiowany do schowka.</MBBS_Export_Copied>
+  <MBBS_Export_File>Zapisz do pliku</MBBS_Export_File>
+  <MBBS_Export_Saved>Zapisano do pliku: {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Kopiuj jako XML modu (do stworzenia modu z układem)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Skopiowano Def w formacie XML. Umieść go w pliku .xml w folderze Defs swojego modu i zmień defName oraz label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Ze schowka</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Plik: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Układ: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Układ: {0} (autor: {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Zaimportowano układ do tego okna. Naciśnij „Zapisz”, aby go zachować.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Schowek jest pusty.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>To nie jest wyeksportowany układ (nieprawidłowy XML).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Ten tekst nie zawiera układu.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Ten tekst próbuje utworzyć klasy programu, których układ nigdy nie potrzebuje. Nie zaimportowano.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Utworzono w nowszej wersji tego modu (format {0}; ta wersja obsługuje do {1}). Najpierw zaktualizuj mod.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Nie udało się odczytać układu: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Domyślne</MBBS_Default>
+  <MBBS_DefaultTip>Przywróć wartość domyślną.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Panel „Więcej”</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Szerokość i odstępy</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Szerokość strzałek przewijania: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Szybkość kółka myszy: {0}px na skok</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Szerokość przycisku „Więcej”: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Szerokość przycisku „Więcej”: dopasowana do napisu</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Kolumny panelu „Więcej”: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Kolumny panelu „Więcej”: automatycznie</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Szerokość komórki panelu „Więcej”: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Szerokość komórki panelu „Więcej”: jak domyślna szerokość przycisku</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Wyrównanie napisów</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Położenie napisów na przyciskach. Nie dotyczy przycisków, które pokazują tylko ikonę.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Jak w grze</MBBS_Align_Default>
+  <MBBS_Align_Left>Do lewej</MBBS_Align_Left>
+  <MBBS_Align_Center>Do środka</MBBS_Align_Center>
+  <MBBS_Align_Right>Do prawej</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>zasoby samej gry</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Przyciski</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>Wygląd</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Motyw</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Motywy zmieniają wygląd paska i jego przycisków. Pojawiają się tu też mody z motywami, które mają Main Button Bar System jako zależność. Wybór jest przechowywany w tym zapisie (lub w szablonie, gdy okno otwarto z menu głównego).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>autor: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Strzałki pojawiają się tylko wtedy, gdy przyciski się nie mieszczą. Gdy się mieszczą, pasek nie musi się przewijać.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>To już wartość domyślna.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Przyciski dolnego paska (przechowuje ten mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Klawisz {0} jest też przypisany do:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Gdy dwa przypisania mają ten sam klawisz, jego wciśnięcie uruchamia tylko jedno z nich. Zmień jedno z nich w „Opcje &gt; Konfiguracja klawiszy” albo wybierz tu inny klawisz.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Ten mod obsługuje swoje klawisze po klawiszach gry, więc powyższe przypisania przechwytują ten klawisz jako pierwsze i ten przycisk nie zareaguje. Wybierz tu inny klawisz albo zmień tamto przypisanie w „Opcje &gt; Konfiguracja klawiszy”.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Ikona i tekst</MBBS_IconMode>
+  <MBBS_IconModeTip>Gra pokazuje tylko ikonę, jeśli przycisk ją ma, a w przeciwnym razie tylko tekst.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Jak w grze</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Tylko tekst</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Tylko ikona</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Ikona i tekst</MBBS_IconMode_Both>
+  <MBBS_Icon>Ikona: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>oryginalna</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (nie znaleziono)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Nie można znaleźć wybranej ikony, więc używana jest oryginalna ikona przycisku.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Wybierz...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Wybierz ikonę</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Wbudowane</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Zaimportowane</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Nie ma jeszcze zaimportowanych ikon. Umieść pliki PNG w folderze
+{0}
+a następnie naciśnij „Odśwież”. Pozostaną tam także po aktualizacjach modu.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Użyj oryginalnej</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Otwórz folder</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Odśwież</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Ustawienia tego przycisku w innych modach (tylko informacyjnie):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: na pasku</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: we własnym wyskakującym oknie</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: ukryty</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: zawsze pokazywany</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: szerokość {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: odstęp {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: wypełnij szerokość ekranu: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: nazwa zmieniona na „{1}”</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: tylko tekst</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: własna ikona {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ikona i tekst (wszystkie przyciski)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Jak wszystkie przyciski pokazują ikonę i napis, chyba że przycisk ma własne ustawienie.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Zastosuj do wszystkich przycisków z własnym ustawieniem ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Jak dla całego paska ({0})</MBBS_IconMode_FollowBar>
+</LanguageData>

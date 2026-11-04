@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Mais ({0})</MBBS_More>
+  <MBBS_MoreTip>Botões recolhidos na gaveta. A gaveta tem seu próprio botão de configurações na parte de baixo.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Configurações da barra de botões principais</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Aberto durante um jogo: as alterações se aplicam ao save atual.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Aberto no menu principal: as alterações se aplicam ao modelo padrão com que os novos jogos começam.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Sempre desenhar a barra com este mod (para testes)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Até você alterar alguma coisa, o próprio jogo continua desenhando a barra. Ative esta opção para comparar o desenho deste mod com o do jogo.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Configurações da barra de botões principais (este save)</MBBS_Title_Save>
+  <MBBS_Title_Template>Configurações da barra de botões principais (modelo padrão)</MBBS_Title_Template>
+  <MBBS_View_Simple>Simples</MBBS_View_Simple>
+  <MBBS_View_Advanced>Avançado</MBBS_View_Advanced>
+  <MBBS_ViewTip>O modo Avançado mostra mais opções: larguras, posições fixas, alinhamento do texto, teclas de atalho e compatibilidade. A escolha vale para todos os saves.</MBBS_ViewTip>
+  <MBBS_Col_Visible>Exibir</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Ícone</MBBS_Col_Icon>
+  <MBBS_Col_Name>Nome</MBBS_Col_Name>
+  <MBBS_Col_Source>Mod de origem</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Atalho</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Gaveta</MBBS_Col_Drawer>
+  <MBBS_BarRow>Barra inteira (padrões)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Ocultos pelo próprio mod ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Botões que o próprio mod deixa fora da barra de propósito. Ative "Sempre exibir" no modo Avançado para colocar um deles na barra.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Subir</MBBS_MoveUp>
+  <MBBS_MoveDown>Descer</MBBS_MoveDown>
+  <MBBS_OrderHint>De cima para baixo = da esquerda para a direita na tela. Arraste as linhas para reordenar.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(bloqueado)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(à esquerda)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(à direita)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Fora da barra no momento: a condição do próprio botão não foi atendida.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Modo de exibição</MBBS_DisplayMode>
+  <MBBS_MinWidth>Largura mínima dos botões com rolagem: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Largura padrão dos botões: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Espaço entre botões: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Preencher a largura da tela</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Quando os botões couberem, eles são esticados para ocupar toda a largura.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Bloquear o botão Menu do jogo na ponta direita</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Enquanto estiver bloqueado, o botão Menu não pode ser ocultado, movido nem colocado na gaveta; só pode ser renomeado.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>O botão Menu do jogo foi desbloqueado no modo Avançado.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>O botão Menu do jogo está bloqueado na ponta direita e só pode ser renomeado. Desbloqueie-o no modo Avançado, na linha da barra inteira.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Origem do botão: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Origem do ícone: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>O próprio mod o deixa fora da barra de propósito; ele só aparece com "Sempre exibir".</MBBS_Info_OriginallyHidden>
+  <MBBS_None>nenhum</MBBS_None>
+  <MBBS_Unknown>desconhecido</MBBS_Unknown>
+  <MBBS_Visible>Exibir na barra</MBBS_Visible>
+  <MBBS_InDrawer>Colocar na gaveta "Mais"</MBBS_InDrawer>
+  <MBBS_CustomName>Nome personalizado (vazio = original: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Largura: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Largura: igual à da barra inteira</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Posição fixa</MBBS_Pin>
+  <MBBS_Pin_None>Não fixa</MBBS_Pin_None>
+  <MBBS_Pin_Left>À esquerda</MBBS_Pin_Left>
+  <MBBS_Pin_Right>À direita</MBBS_Pin_Right>
+  <MBBS_ForceShow>Sempre exibir</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Exibe o botão mesmo quando a condição dele diz que ele não deveria aparecer. Nesse caso, clicar nele pode não fazer nada.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Salvar como modelo padrão</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Aplicar modelo padrão</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Salvo como modelo padrão. Os novos jogos começarão com esta disposição.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Redefinir tudo</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Redefinir todas as configurações para a barra sem alterações (o jogo mais o que outros mods mudaram)? Isso não aplica o modelo.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Salvar</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>{0} detectado: no momento ele controla a barra, então as alterações feitas aqui só terão efeito quando este mod tiver prioridade.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>{0} detectado: este mod tem prioridade, então o efeito dele na barra está desativado.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Detalhes no modo Avançado.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Compatibilidade: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Este mod primeiro</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Este mod desenha a barra. O efeito de {0} na barra é desativado; as configurações dele servem apenas como valores de referência.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0} primeiro</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} mantém a barra. Este mod mantém apenas a sua janela de configurações.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Entra em vigor após reiniciar o jogo.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Importar configurações de {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Disposição importada de {0}. Clique em Salvar para mantê-la.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Tecla de atalho: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Definir</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Limpar</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Compartilhada por todos os saves; é a mesma tecla de Opções &gt; Configuração do Teclado.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Compartilhada por todos os saves. Este botão não tem uma entrada em Opções &gt; Configuração do Teclado, então este mod guarda a tecla.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Pressione uma tecla (Esc para cancelar)</MBBS_PressKey>
+  <MBBS_Export>Exportar...</MBBS_Export>
+  <MBBS_Import>Importar...</MBBS_Import>
+  <MBBS_Export_Clipboard>Copiar como texto (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Disposição copiada para a área de transferência.</MBBS_Export_Copied>
+  <MBBS_Export_File>Salvar como arquivo</MBBS_Export_File>
+  <MBBS_Export_Saved>Salvo em {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Copiar como XML de mod (para criar um mod de disposição)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>XML da Def copiado. Coloque-o em um arquivo .xml dentro da pasta Defs do seu mod e altere defName e label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Da área de transferência</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Arquivo: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Disposição: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Disposição: {0} (por {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Disposição importada para esta janela. Clique em Salvar para mantê-la.</MBBS_Import_Done>
+  <MBBS_Import_Empty>A área de transferência está vazia.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Isso não é uma disposição exportada (XML inválido).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Esse texto não contém nenhuma disposição.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Esse texto pede para criar classes de programa, algo de que uma disposição nunca precisa. Nada foi importado.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Criado por uma versão mais nova deste mod (formato {0}; esta versão lê até o {1}). Atualize o mod primeiro.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Não foi possível ler a disposição: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Padrão</MBBS_Default>
+  <MBBS_DefaultTip>Voltar ao valor padrão.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Gaveta</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Largura e espaçamento</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Largura das setas de rolagem: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Velocidade da roda do mouse: {0}px por passo</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Largura do botão "Mais": {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Largura do botão "Mais": ajustar ao texto</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Colunas da gaveta: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Colunas da gaveta: automático</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Largura das células da gaveta: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Largura das células da gaveta: igual à largura padrão dos botões</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Alinhamento do texto</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Onde fica o texto dos botões. Botões que mostram só um ícone não são afetados.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Igual ao jogo</MBBS_Align_Default>
+  <MBBS_Align_Left>Esquerda</MBBS_Align_Left>
+  <MBBS_Align_Center>Centro</MBBS_Align_Center>
+  <MBBS_Align_Right>Direita</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>os próprios recursos do jogo</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Botões</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>Aparência</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Os temas mudam a aparência da barra e dos botões. Mods de tema que têm o Main Button Bar System como dependência também aparecem aqui. A escolha fica guardada neste save (ou no modelo, quando aberto no menu principal).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>por {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>As setas só aparecem quando os botões não cabem. Enquanto couberem, a barra não precisa rolar.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Já está no valor padrão.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Botões principais (guardados por este mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>A tecla {0} também é usada por:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Quando dois atalhos usam a mesma tecla, pressioná-la ativa só um deles. Altere um deles em Opções &gt; Configuração do Teclado ou escolha outra tecla aqui.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Este mod processa as teclas que guarda depois das do próprio jogo, então os atalhos acima usam esta tecla primeiro e este botão não vai responder. Escolha outra tecla aqui ou altere o outro atalho em Opções &gt; Configuração do Teclado.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Ícone e texto</MBBS_IconMode>
+  <MBBS_IconModeTip>O jogo exibe só o ícone quando o botão tem um e, caso contrário, só o texto.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Igual ao jogo</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Só texto</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Só ícone</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Ícone e texto</MBBS_IconMode_Both>
+  <MBBS_Icon>Ícone: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>o original do botão</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (não encontrado)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>O ícone escolhido não foi encontrado, então o ícone original do botão é usado.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Escolher...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Escolher um ícone</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Embutidos</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importados</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Ainda não há ícones importados. Coloque arquivos PNG em
+{0}
+e depois clique em Atualizar. Eles continuam lá quando o mod é atualizado.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Usar o original do botão</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Abrir pasta</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Atualizar</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Configurações de outros mods para este botão (apenas como referência):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: na barra</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: na própria janela pop-up</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: oculto</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: sempre exibido</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: largura {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: espaço {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: preencher a largura da tela: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: renomeado para "{1}"</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: só texto</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: ícone personalizado {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ícone e texto (todos os botões)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Como todos os botões exibem o ícone e o texto, exceto os que têm configuração própria.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Fazer com que todos os botões com configuração própria ({0}) sigam esta</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Igual à barra inteira ({0})</MBBS_IconMode_FollowBar>
+</LanguageData>

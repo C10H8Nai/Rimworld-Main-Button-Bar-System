@@ -21,12 +21,46 @@
     <defName>CustomBottomBar</defName>
     <label>Custom Bottom Bar</label>
     <modName>Custom Bottom Bar</modName>
-    <workerClass>MainButtonBarSystem.CompatBridgeWorker</workerClass>
+    <workerClass>MainButtonBarSystem.CompatBridgeWorker_CustomBottomBar</workerClass>
     <packageIds>
       <li>dogebm.custombuttons</li>
     </packageIds>
     <assemblyNames>
       <li>BottomBarSpacing</li>
     </assemblyNames>
+  </MainButtonBarSystem.CompatBridgeDef>
+
+  <!-- UI Not Included replaces the call to DoButtons inside MainButtonsOnGUI with its own bar (transpiler), so
+       while it keeps the bar this mod's drawing never runs. With this mod first, that transpiler is removed. -->
+  <MainButtonBarSystem.CompatBridgeDef>
+    <defName>UINotIncluded</defName>
+    <label>UI Not Included</label>
+    <modName>UI Not Included</modName>
+    <workerClass>MainButtonBarSystem.CompatBridgeWorker</workerClass>
+    <packageIds>
+      <li>GonDragon.UINotIncluded</li>
+    </packageIds>
+    <harmonyIds>
+      <li>GonDragon.UINotIncluded</li>
+    </harmonyIds>
+    <assemblyNames>
+      <li>UINotIncluded</li>
+    </assemblyNames>
+  </MainButtonBarSystem.CompatBridgeDef>
+
+  <!-- DragReorder hit-tests drags against the vanilla button positions in a MainButtonsOnGUI prefix, so drags
+       land in the wrong place while this mod draws the bar. With this mod first, its bar patches are removed
+       (this mod's settings window reorders by dragging). -->
+  <MainButtonBarSystem.CompatBridgeDef>
+    <defName>DragReorder</defName>
+    <label>DragReorder</label>
+    <modName>DragReorder</modName>
+    <workerClass>MainButtonBarSystem.CompatBridgeWorker</workerClass>
+    <packageIds>
+      <li>ifchen0.dragreorder</li>
+    </packageIds>
+    <harmonyIds>
+      <li>ifchen0.dragreorder</li>
+    </harmonyIds>
   </MainButtonBarSystem.CompatBridgeDef>
 </Defs>

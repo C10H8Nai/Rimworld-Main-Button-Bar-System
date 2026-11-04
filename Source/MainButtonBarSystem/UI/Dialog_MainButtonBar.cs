@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using MainButtonBarSystem.Core;
 using RimWorld;
 using UnityEngine;
@@ -17,13 +18,17 @@ namespace MainButtonBarSystem
     {
         private const string BarKey = "<bar>";
 
+        /// <summary>Pages of the window. Simple / Advanced is not a page but a switch on the Buttons page.</summary>
         private enum Tab
         {
-            Simple,
-            Advanced,
+            Buttons,
+            Appearance,
         }
 
-        private static Tab tab = Tab.Simple;
+        private static Tab tab = Tab.Buttons;
+
+        // Text of each number box while it has focus, keyed by the setting it edits.
+        private static readonly Dictionary<string, string> numberBuffers = new Dictionary<string, string>();
 
         private readonly bool editingTemplate;
         private BarConfig working;
@@ -39,8 +44,7 @@ namespace MainButtonBarSystem
         private float buttonDetailHeight;
         private Vector2 buttonDetailScroll;
 
-        // Dragging the window by any empty spot (the game only drags where no control takes the click).
-        private Rect listArea;
+        // Dragging the window by its title row only.
         private bool dragging;
         private Vector2 dragStartMouse;
         private Vector2 dragStartWindow;
@@ -50,7 +54,29 @@ namespace MainButtonBarSystem
         private static MainButtonBarTuningDef.SettingRanges R => T.ranges;
         private static MainButtonBarTuningDef.BarDefaults D => T.barDefaults;
 
-        private bool Advanced => tab == Tab.Advanced;
+        /// <summary>The Simple / Advanced switch, shared by every save and remembered (mod settings).</summary>
+        private static bool Advanced => MainButtonBarSystemMod.Settings.showAdvanced;
+
+        // Button widths: the tuning def's minimum, widened to fit the label in the current language.
+        private static float ResetWidth => FitButton(L.resetButtonWidth, "MBBS_Default");
+        private static float SmallButtonWidth => Mathf.Max(FitButton(L.smallButtonWidth, "MBBS_HotKeySet"), FitButton(L.smallButtonWidth, "MBBS_HotKeyClear"));
+        private static float MoveButtonWidth => Mathf.Max(FitButton(L.moveButtonWidth, "MBBS_MoveUp"), FitButton(L.moveButtonWidth, "MBBS_MoveDown"));
+
+        private static float FitButton(float minimum, string key)
+        {
+            var font = Text.Font;
+            Text.Font = GameFont.Small;
+            float width = Text.CalcSize(key.Translate()).x + L.buttonTextPadding * 2f;
+            Text.Font = font;
+            return Mathf.Max(minimum, width);
+        }
+
+        private Vector2 themeScroll;
+        private float themeListHeight;
+        private readonly List<TabRecord> tabs = new List<TabRecord>();
+
+        // Column widths of the button list, widened to fit their titles in the current language.
+        private float visibleColumn, iconColumn, hotKeyColumn, drawerColumn;
 
         public override Vector2 InitialSize =>
             new Vector2(Mathf.Min(L.maxSize.x, UI.screenWidth - L.screenMargin), Mathf.Min(L.maxSize.y, UI.screenHeight - L.screenMargin));
@@ -63,7 +89,8 @@ namespace MainButtonBarSystem
             closeOnCancel = true;
             absorbInputAroundWindow = false;
             preventCameraMotion = false;
-            draggable = true;
+            // Only the title row moves the window (DragByTitle); elsewhere a held mouse paints checkboxes.
+            draggable = false;
             onlyOneOfTypeAllowed = true;
         }
 
@@ -84,27 +111,79 @@ namespace MainButtonBarSystem
         public override void DoWindowContents(Rect inRect)
         {
             BuildRows();
+            MeasureColumns();
 
             var header = new Rect(inRect.x, inRect.y, inRect.width, L.headerHeight);
             DrawHeader(header);
 
             float noticeHeight = DrawCompatNotices(new Rect(inRect.x, header.yMax, inRect.width, 0f));
-            float top = header.yMax + noticeHeight + L.footerGap;
-            var body = new Rect(inRect.x, top, inRect.width, inRect.yMax - top);
-            var left = new Rect(body.x, body.y, Mathf.Floor(body.width * L.listFraction), body.height);
-            var right = new Rect(left.xMax + L.panelGap, body.y, body.width - left.width - L.panelGap, body.height);
+            float tabsTop = header.yMax + noticeHeight + L.footerGap;
+            var content = new Rect(inRect.x, tabsTop + TabDrawer.TabHeight, inRect.width, inRect.yMax - tabsTop - TabDrawer.TabHeight);
+            DrawTabs(content);
 
-            DrawList(left);
-            DrawRight(right);
+            Widgets.DrawMenuSection(content);
+            var body = content.ContractedBy(L.detailPadding);
+            if (tab == Tab.Appearance)
+            {
+                DrawAppearanceTab(body);
+            }
+            else
+            {
+                var switchRow = new Rect(body.x, body.y, body.width, L.textRowHeight);
+                DrawViewSwitch(switchRow);
+                float top = switchRow.yMax + L.footerGap;
+                var left = new Rect(body.x, top, Mathf.Floor(body.width * L.listFraction), body.yMax - top);
+                var right = new Rect(left.xMax + L.panelGap, top, body.width - left.width - L.panelGap, body.yMax - top);
+                DrawList(left);
+                DrawRight(right);
+            }
 
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.UpperLeft;
             GUI.color = Color.white;
 
-            DragByEmptyArea();
+            // The title row and the free part of the tab strip move the window.
+            DragByTitle(new Rect(inRect.x, inRect.y, inRect.width, tabsTop + TabDrawer.TabHeight - inRect.y));
         }
 
-        private void DragByEmptyArea()
+        private void DrawTabs(Rect content)
+        {
+            tabs.Clear();
+            tabs.Add(new TabRecord("MBBS_Tab_Buttons".Translate(), () => tab = Tab.Buttons, tab == Tab.Buttons));
+            tabs.Add(new TabRecord("MBBS_Tab_Appearance".Translate(), () => tab = Tab.Appearance, tab == Tab.Appearance));
+            TabDrawer.DrawTabs(content, tabs, L.tabButtonWidth);
+        }
+
+        /// <summary>Two-part Simple | Advanced switch; the chosen part is filled so the state is obvious.</summary>
+        private static void DrawViewSwitch(Rect row)
+        {
+            var area = new Rect(row.x, row.y, Mathf.Min(L.viewSwitchWidth, row.width), row.height);
+            float half = Mathf.Floor(area.width / 2f);
+            DrawViewPart(new Rect(area.x, area.y, half, area.height), "MBBS_View_Simple".Translate(), false);
+            DrawViewPart(new Rect(area.x + half, area.y, area.width - half, area.height), "MBBS_View_Advanced".Translate(), true);
+            TooltipHandler.TipRegion(area, "MBBS_ViewTip".Translate());
+        }
+
+        private static void DrawViewPart(Rect rect, string label, bool advanced)
+        {
+            bool chosen = Advanced == advanced;
+            Widgets.DrawBoxSolid(rect, chosen ? L.viewSwitchSelectedColor : L.viewSwitchColor);
+            Widgets.DrawBox(rect);
+            if (!chosen) Widgets.DrawHighlightIfMouseover(rect);
+            var color = GUI.color;
+            GUI.color = chosen ? Color.white : Color.gray;
+            Text.Anchor = TextAnchor.MiddleCenter;
+            Widgets.Label(rect, label);
+            Text.Anchor = TextAnchor.UpperLeft;
+            GUI.color = color;
+            if (!chosen && Widgets.ButtonInvisible(rect))
+            {
+                MainButtonBarSystemMod.Settings.showAdvanced = advanced;
+                MainButtonBarSystemMod.Instance.WriteSettings();
+            }
+        }
+
+        private void DragByTitle(Rect titleArea)
         {
             var ev = Event.current;
             var mouse = UI.MousePositionOnUIInverted;
@@ -120,9 +199,8 @@ namespace MainButtonBarSystem
                 return;
             }
 
-            // Reaching here with an unused mouse-down means no control took it. The list is excluded because
-            // dragging its rows reorders them.
-            if (ev.type == EventType.MouseDown && ev.button == 0 && !listArea.Contains(ev.mousePosition))
+            // Reaching here with an unused mouse-down means no control (a tab, the close button) took it.
+            if (ev.type == EventType.MouseDown && ev.button == 0 && titleArea.Contains(ev.mousePosition))
             {
                 dragging = true;
                 dragStartMouse = mouse;
@@ -137,19 +215,10 @@ namespace MainButtonBarSystem
         {
             Text.Font = GameFont.Medium;
             Text.Anchor = TextAnchor.MiddleLeft;
-            float tabs = L.tabButtonWidth * 2f + L.footerGap + L.closeButtonSpace;
-            Widgets.Label(new Rect(rect.x, rect.y, rect.width - tabs, rect.height),
+            Widgets.Label(new Rect(rect.x, rect.y, rect.width - L.closeButtonSpace, rect.height),
                 (editingTemplate ? "MBBS_Title_Template" : "MBBS_Title_Save").Translate());
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.UpperLeft;
-
-            float h = rect.height - L.tabButtonInset * 2f;
-            var advancedRect = new Rect(rect.xMax - L.closeButtonSpace - L.tabButtonWidth, rect.y + L.tabButtonInset, L.tabButtonWidth, h);
-            var simpleRect = new Rect(advancedRect.x - L.footerGap - L.tabButtonWidth, rect.y + L.tabButtonInset, L.tabButtonWidth, h);
-            if (Widgets.ButtonTextSubtle(simpleRect, "MBBS_Tab_Simple".Translate(), 0f, -1f, null, default, null, tab == Tab.Simple))
-                tab = Tab.Simple;
-            if (Widgets.ButtonTextSubtle(advancedRect, "MBBS_Tab_Advanced".Translate(), 0f, -1f, null, default, null, tab == Tab.Advanced))
-                tab = Tab.Advanced;
         }
 
         /// <summary>One line per detected bar-takeover mod (spec 3.7). Returns the height used.</summary>
@@ -175,6 +244,125 @@ namespace MainButtonBarSystem
             return y - at.y;
         }
 
+        // ---------------------------------------------------------------- appearance tab
+
+        /// <summary>Theme cards with previews (themes come from this mod and from theme mods).</summary>
+        private void DrawAppearanceTab(Rect rect)
+        {
+            var listing = new Listing_Standard();
+            var head = new Rect(rect.x, rect.y, rect.width, L.textRowHeight);
+            listing.Begin(head);
+            if (SectionHeader(listing, "MBBS_ThemeHeader".Translate(), working.appearance != BarConfig.VanillaAppearance, "MBBS_ThemeHeaderTip".Translate()))
+                working.appearance = BarConfig.VanillaAppearance;
+            listing.End();
+
+            var outRect = new Rect(rect.x, head.yMax + L.footerGap, rect.width, rect.yMax - head.yMax - L.footerGap);
+            var themes = BarModel.Appearances.ToList();
+            var view = new Rect(0f, 0f, outRect.width - GenUI.ScrollBarWidth, Mathf.Max(themeListHeight, outRect.height));
+            Widgets.BeginScrollView(outRect, ref themeScroll, view);
+            float y = 0f;
+            foreach (var theme in themes)
+            {
+                var card = new Rect(0f, y, view.width, L.themeCardHeight);
+                DrawThemeCard(card, theme);
+                y += card.height + L.footerGap;
+            }
+            themeListHeight = y;
+            Widgets.EndScrollView();
+        }
+
+        private void DrawThemeCard(Rect card, BarAppearanceDef theme)
+        {
+            bool selected = (working.appearance.NullOrEmpty() ? BarConfig.VanillaAppearance : working.appearance) == theme.defName;
+            Widgets.DrawMenuSection(card);
+            if (selected) Widgets.DrawHighlightSelected(card);
+            else Widgets.DrawHighlightIfMouseover(card);
+
+            var inner = card.ContractedBy(L.detailPadding);
+            float previewWidth = Mathf.Floor(inner.width * L.themePreviewFraction);
+            var preview = new Rect(inner.xMax - previewWidth, inner.y + (inner.height - L.themePreviewHeight) / 2f, previewWidth, L.themePreviewHeight);
+            var text = new Rect(inner.x, inner.y, inner.width - previewWidth - L.panelGap, inner.height);
+
+            bool clicked = Widgets.RadioButton(text.x, text.y, selected);
+            float tx = text.x + L.checkboxSize + L.footerGap;
+            Text.Font = GameFont.Medium;
+            Widgets.Label(new Rect(tx, text.y, text.xMax - tx, Text.LineHeight), theme.LabelCap);
+            Text.Font = GameFont.Small;
+            float ty = text.y + Text.LineHeightOf(GameFont.Medium);
+
+            GUI.color = Color.gray;
+            Text.Font = GameFont.Tiny;
+            string by = theme.author.NullOrEmpty() ? theme.modContentPack?.Name : "MBBS_ThemeBy".Translate(theme.author, theme.modContentPack?.Name ?? "?").ToString();
+            if (!by.NullOrEmpty())
+            {
+                Widgets.Label(new Rect(tx, ty, text.xMax - tx, Text.LineHeight), by);
+                ty += Text.LineHeight;
+            }
+            if (!theme.description.NullOrEmpty())
+                Widgets.Label(new Rect(tx, ty, text.xMax - tx, text.yMax - ty), theme.description);
+            Text.Font = GameFont.Small;
+            GUI.color = Color.white;
+
+            var image = theme.Tex(theme.preview);
+            if (image != null) Widgets.DrawTextureFitted(preview, image, 1f);
+            else DrawThemePreview(theme, preview);
+
+            if (clicked | Widgets.ButtonInvisible(card)) working.appearance = theme.defName;
+        }
+
+        /// <summary>
+        /// A still picture of a theme from its own textures: normal, mouse-over and active buttons, then More. It does
+        /// not run the game's button code, so it works at the main menu too.
+        /// </summary>
+        private static void DrawThemePreview(BarAppearanceDef theme, Rect rect)
+        {
+            var worker = theme.Worker;
+            worker.DrawBarBackground(rect);
+            var samples = ButtonBaseline.All.Where(b => b.ButtonVisible && !b.Label.NullOrEmpty()).Take(L.themePreviewButtons).Select(b => b.Label.CapitalizeFirst()).ToList();
+
+            // Layout as on the bar: < [buttons] > [More].
+            float arrow = Mathf.Min(D.arrowWidth, rect.width / 8f);
+            int count = samples.Count + 1;
+            float w = (rect.width - arrow * 2f) / count;
+            DrawPreviewArrow(theme, new Rect(rect.x, rect.y, arrow, rect.height), true);
+            DrawPreviewArrow(theme, new Rect(rect.x + arrow + w * samples.Count, rect.y, arrow, rect.height), false);
+
+            var states = new[] { ButtonVisualState.Normal, ButtonVisualState.Mouseover, ButtonVisualState.Active };
+            for (int i = 0; i < count; i++)
+            {
+                bool isMore = i == count - 1;
+                float x = rect.x + arrow + w * i + (isMore ? arrow : 0f);
+                var r = new Rect(x, rect.y, w, rect.height);
+                var state = i < states.Length ? states[i] : ButtonVisualState.Normal;
+                bool more = isMore;
+                var atlas = more ? theme.Tex(theme.moreButton) : null;
+                bool replacesTint = atlas != null;
+                atlas ??= worker.ButtonAtlas(state, out replacesTint) ?? Widgets.ButtonSubtleAtlas;
+                var color = GUI.color;
+                if (state != ButtonVisualState.Normal && !replacesTint) GUI.color = GenUI.MouseoverColor;
+                Widgets.DrawAtlas(r, atlas);
+                GUI.color = color;
+                string label = more ? worker.MoreButtonLabel(samples.Count) : samples[i];
+                ButtonPainter.DrawLabel(r, label.Truncate(r.width), worker.LabelColor(state) ?? Color.white, TextAnchor.MiddleCenter, state != ButtonVisualState.Normal);
+            }
+        }
+
+        private static void DrawPreviewArrow(BarAppearanceDef theme, Rect r, bool left)
+        {
+            var atlas = theme.Worker.ButtonAtlas(ButtonVisualState.Normal, out _) ?? Widgets.ButtonSubtleAtlas;
+            Widgets.DrawAtlas(r, atlas);
+            var icon = theme.Tex(left ? theme.arrowLeft : theme.arrowRight);
+            if (icon != null)
+            {
+                float size = Mathf.Min(r.width, r.height);
+                Widgets.DrawTextureFitted(new Rect(r.center.x - size / 2f, r.center.y - size / 2f, size, size), icon, 1f);
+            }
+            else
+            {
+                ButtonPainter.DrawLabel(r, left ? "<" : ">", theme.Worker.LabelColor(ButtonVisualState.Normal) ?? Color.white, TextAnchor.MiddleCenter, false);
+            }
+        }
+
         // ---------------------------------------------------------------- list
 
         private void BuildRows()
@@ -194,27 +382,39 @@ namespace MainButtonBarSystem
             public Rect Handle, Visible, Icon, Name, Source, HotKey, Drawer;
         }
 
+        /// <summary>Each narrow column is at least as wide as its title in the current language.</summary>
+        private void MeasureColumns()
+        {
+            var font = Text.Font;
+            Text.Font = GameFont.Tiny;
+            float Fit(float minimum, string key) => Mathf.Max(minimum, Text.CalcSize(key.Translate()).x + L.textInset * 2f);
+            visibleColumn = Fit(L.visibleColumn, "MBBS_Col_Visible");
+            iconColumn = Fit(L.iconColumn, "MBBS_Col_Icon");
+            hotKeyColumn = Fit(L.hotKeyColumn, "MBBS_Col_HotKey");
+            drawerColumn = Fit(L.drawerColumn, "MBBS_Col_Drawer");
+            Text.Font = font;
+        }
+
         private Columns ColumnsFor(Rect row)
         {
-            float hotKey = Advanced ? L.hotKeyColumn : 0f;
+            float hotKey = Advanced ? hotKeyColumn : 0f;
             float source = Mathf.Min(L.sourceColumnMax, row.width * L.sourceColumnFraction);
-            float name = row.width - L.handleColumn - L.visibleColumn - L.iconColumn - source - hotKey - L.drawerColumn;
+            float name = row.width - L.handleColumn - visibleColumn - iconColumn - source - hotKey - drawerColumn;
 
             var c = new Columns();
             float x = row.x;
             c.Handle = new Rect(x, row.y, L.handleColumn, row.height); x += L.handleColumn;
-            c.Visible = new Rect(x, row.y, L.visibleColumn, row.height); x += L.visibleColumn;
-            c.Icon = new Rect(x, row.y, L.iconColumn, row.height); x += L.iconColumn;
+            c.Visible = new Rect(x, row.y, visibleColumn, row.height); x += visibleColumn;
+            c.Icon = new Rect(x, row.y, iconColumn, row.height); x += iconColumn;
             c.Name = new Rect(x, row.y, name, row.height); x += name;
             c.Source = new Rect(x, row.y, source, row.height); x += source;
             c.HotKey = new Rect(x, row.y, hotKey, row.height); x += hotKey;
-            c.Drawer = new Rect(x, row.y, L.drawerColumn, row.height);
+            c.Drawer = new Rect(x, row.y, drawerColumn, row.height);
             return c;
         }
 
         private void DrawList(Rect rect)
         {
-            listArea = rect;
             var buttonsRow = new Rect(rect.x, rect.yMax - L.footerButtonHeight, rect.width, L.footerButtonHeight);
             var frame = new Rect(rect.x, rect.y, rect.width, rect.height - L.footerButtonHeight - L.footerGap);
             Widgets.DrawMenuSection(frame);
@@ -223,6 +423,7 @@ namespace MainButtonBarSystem
             // Column titles.
             var titles = ColumnsFor(new Rect(inner.x, inner.y, inner.width - GenUI.ScrollBarWidth, L.columnHeaderHeight));
             Text.Font = GameFont.Tiny;
+            Text.WordWrap = false;
             GUI.color = Color.gray;
             Text.Anchor = TextAnchor.MiddleCenter;
             Widgets.Label(titles.Visible, "MBBS_Col_Visible".Translate());
@@ -233,6 +434,7 @@ namespace MainButtonBarSystem
             Widgets.Label(new Rect(titles.Name.x + L.textInset, titles.Name.y, titles.Name.width - L.textInset, titles.Name.height), "MBBS_Col_Name".Translate());
             Widgets.Label(titles.Source, "MBBS_Col_Source".Translate());
             GUI.color = Color.white;
+            Text.WordWrap = true;
             Text.Font = GameFont.Small;
 
             float rowH = L.rowHeight;
@@ -251,7 +453,7 @@ namespace MainButtonBarSystem
             for (int i = 0; i < mainRows.Count; i++)
             {
                 var row = new Rect(0f, y, viewRect.width, rowH);
-                ReorderableWidget.Reorderable(group, row);
+                ReorderableWidget.Reorderable(group, ColumnsFor(row).Handle);
                 DrawButtonRow(row, mainRows[i], i);
                 y += rowH;
             }
@@ -284,10 +486,10 @@ namespace MainButtonBarSystem
             // Move buttons. Top to bottom in the list is left to right on screen.
             int index = mainRows.IndexOf(selected);
             bool movable = index >= 0 && !BarModel.IsLocked(working, selected);
-            var up = new Rect(buttonsRow.x, buttonsRow.y, L.moveButtonWidth, buttonsRow.height);
-            var down = new Rect(up.xMax + L.footerGap, buttonsRow.y, L.moveButtonWidth, buttonsRow.height);
-            if (Widgets.ButtonText(up, "MBBS_MoveUp".Translate(), true, true, movable) && movable) Step(index, -1);
-            if (Widgets.ButtonText(down, "MBBS_MoveDown".Translate(), true, true, movable) && movable) Step(index, 1);
+            var up = new Rect(buttonsRow.x, buttonsRow.y, MoveButtonWidth, buttonsRow.height);
+            var down = new Rect(up.xMax + L.footerGap, buttonsRow.y, MoveButtonWidth, buttonsRow.height);
+            if (DimmableButton(up, "MBBS_MoveUp".Translate(), movable)) Step(index, -1);
+            if (DimmableButton(down, "MBBS_MoveDown".Translate(), movable)) Step(index, 1);
             Text.Anchor = TextAnchor.MiddleLeft;
             GUI.color = Color.gray;
             var hint = new Rect(down.xMax + L.panelGap, buttonsRow.y, buttonsRow.xMax - down.xMax - L.panelGap, buttonsRow.height);
@@ -341,8 +543,8 @@ namespace MainButtonBarSystem
                 if (visible == o.hidden) working.GetOrCreate(name).hidden = !visible;
             }
 
-            // Icon (blank when the button has none)
-            var icon = SafeIcon(def);
+            // Icon the button shows with its settings (blank when it has none)
+            var icon = def == null ? null : ButtonPainter.EffectiveIcon(def, o);
             if (icon != null) Widgets.DrawTextureFitted(c.Icon.ContractedBy(L.rowIconPadding), icon, 1f);
 
             // Name
@@ -476,6 +678,7 @@ namespace MainButtonBarSystem
             {
                 listing.Gap();
                 working.minWidth = IntSetting(listing, "MBBS_MinWidth".Translate(working.MinWidth), working.minWidth, working.MinWidth, R.minWidth, R.widthStep);
+                Note(listing, "MBBS_ScrollArrowsNote".Translate());
                 if (Advanced)
                 {
                     working.arrowWidth = IntSetting(listing, "MBBS_ArrowWidth".Translate(working.ArrowWidth), working.arrowWidth, working.ArrowWidth, R.arrowWidth, 1);
@@ -513,20 +716,24 @@ namespace MainButtonBarSystem
                 }
 
                 listing.GapLine();
-                working.menuLocked = BoolSetting(listing, "MBBS_MenuLocked".Translate(), working.menuLocked, D.menuLocked, "MBBS_MenuLockedTip".Translate());
-
-                var appearances = BarModel.Appearances.ToList();
-                if (appearances.Count > 1)
+                if (SectionHeader(listing, "MBBS_IconModeAll".Translate(), working.iconMode != IconMode.Default, "MBBS_IconModeAllTip".Translate()))
+                    working.iconMode = IconMode.Default;
+                foreach (IconMode iconMode in Enum.GetValues(typeof(IconMode)))
                 {
-                    listing.GapLine();
-                    if (SectionHeader(listing, "MBBS_Appearance".Translate(), working.appearance != BarConfig.VanillaAppearance))
-                        working.appearance = BarConfig.VanillaAppearance;
-                    foreach (var appearance in appearances)
-                    {
-                        if (listing.RadioButton(appearance.LabelCap, working.appearance == appearance.defName, L.radioIndent, appearance.description))
-                            working.appearance = appearance.defName;
-                    }
+                    if (listing.RadioButton(("MBBS_IconMode_" + iconMode).Translate(), working.iconMode == iconMode, L.radioIndent))
+                        working.iconMode = iconMode;
                 }
+                int individual = working.overrides.Count(o => o.iconMode != IconMode.Default);
+                if (individual > 0)
+                {
+                    var row = listing.GetRect(L.textRowHeight);
+                    string clear = "MBBS_IconModeClearAll".Translate(individual);
+                    if (Widgets.ButtonText(new Rect(row.x, row.y, UIUtil.FitButton(L.moveButtonWidth, clear), row.height), clear))
+                        foreach (var o in working.overrides) o.iconMode = IconMode.Default;
+                }
+
+                listing.GapLine();
+                working.menuLocked = BoolSetting(listing, "MBBS_MenuLocked".Translate(), working.menuLocked, D.menuLocked, "MBBS_MenuLockedTip".Translate());
 
                 DrawCompatSettings(listing);
             }
@@ -562,6 +769,7 @@ namespace MainButtonBarSystem
                     listing.Label("MBBS_Compat_RestartNeeded".Translate());
                     GUI.color = Color.white;
                 }
+                foreach (var line in worker.BarReferenceValues()) Note(listing, line);
                 if (worker.CanImport && listing.ButtonText("MBBS_Compat_Import".Translate(bridge.ModNameOrLabel)))
                 {
                     worker.ImportInto(working);
@@ -588,7 +796,7 @@ namespace MainButtonBarSystem
             var listing = BeginScrolledListing(outer, ref buttonDetailScroll, buttonDetailHeight);
 
             var titleRow = listing.GetRect(L.titleIconSize);
-            var icon = SafeIcon(def);
+            var icon = def == null ? null : ButtonPainter.EffectiveIcon(def, o);
             if (icon != null) Widgets.DrawTextureFitted(new Rect(titleRow.x, titleRow.y, L.titleIconSize, L.titleIconSize), icon, 1f);
             float textX = L.titleIconSize + L.footerGap;
             Text.Font = GameFont.Medium;
@@ -631,7 +839,7 @@ namespace MainButtonBarSystem
             listing.Label("MBBS_CustomName".Translate(baseline?.Label?.CapitalizeFirst() ?? name));
             var nameRow = listing.GetRect(L.textRowHeight);
             string current = o.label ?? "";
-            var field = new Rect(nameRow.x, nameRow.y, nameRow.width - L.resetButtonWidth - L.footerGap, nameRow.height);
+            var field = new Rect(nameRow.x, nameRow.y, nameRow.width - ResetWidth - L.footerGap, nameRow.height);
             string edited = Widgets.TextField(field, current, L.customNameMaxLength);
             if (edited != current) working.GetOrCreate(name).label = edited.NullOrEmpty() ? null : edited;
             if (DefaultButton(nameRow, !o.label.NullOrEmpty()))
@@ -660,10 +868,63 @@ namespace MainButtonBarSystem
                 bool forceShow = ButtonBool(listing, "MBBS_ForceShow".Translate(), o.forceShow, dflt.forceShow, "MBBS_ForceShowTip".Translate());
                 if (forceShow != o.forceShow) working.GetOrCreate(name).forceShow = forceShow;
 
+                DrawIconSettings(listing, name, def, o, dflt);
+                DrawReferenceValues(listing, CompatBridges.Detected.SelectMany(b => b.Worker.ReferenceValues(name)));
+
                 if (def != null) DrawHotkey(listing, def);
             }
 
             buttonDetailHeight = EndScrolledListing(listing);
+        }
+
+        /// <summary>Text / icon / both, and a custom icon (spec 3.2).</summary>
+        private void DrawIconSettings(Listing_Standard listing, string name, MainButtonDef def, ButtonOverride o, ButtonOverride dflt)
+        {
+            listing.GapLine();
+            if (SectionHeader(listing, "MBBS_IconMode".Translate(), o.iconMode != dflt.iconMode, "MBBS_IconModeTip".Translate()))
+                working.GetOrCreate(name).iconMode = dflt.iconMode;
+            foreach (IconMode mode in Enum.GetValues(typeof(IconMode)))
+            {
+                string label = mode == IconMode.Default
+                    ? "MBBS_IconMode_FollowBar".Translate(("MBBS_IconMode_" + working.iconMode).Translate())
+                    : ("MBBS_IconMode_" + mode).Translate();
+                if (listing.RadioButton(label, o.iconMode == mode, L.radioIndent) && o.iconMode != mode)
+                    working.GetOrCreate(name).iconMode = mode;
+            }
+
+            var row = listing.GetRect(L.textRowHeight);
+            string choose = "MBBS_IconChoose".Translate();
+            float chooseWidth = UIUtil.FitButton(L.smallButtonWidth, choose);
+            float right = ResetWidth + L.footerGap + chooseWidth;
+            var preview = ButtonPainter.EffectiveIcon(def, o);
+            float x = row.x;
+            if (preview != null)
+            {
+                Widgets.DrawTextureFitted(new Rect(x, row.y, row.height, row.height), preview, 1f);
+                x += row.height + L.footerGap;
+            }
+            Text.Anchor = TextAnchor.MiddleLeft;
+            var labelRect = new Rect(x, row.y, row.xMax - right - L.footerGap - x, row.height);
+            string text = "MBBS_Icon".Translate(CustomIcons.Describe(o.icon));
+            Widgets.Label(labelRect, text.Truncate(labelRect.width));
+            TooltipHandler.TipRegion(labelRect, text);
+            Text.Anchor = TextAnchor.UpperLeft;
+            if (Widgets.ButtonText(new Rect(row.xMax - right, row.y, chooseWidth, row.height), choose))
+                Find.WindowStack.Add(new Dialog_IconPicker(o.icon, icon => working.GetOrCreate(name).icon = icon));
+            if (DefaultButton(row, (o.icon ?? "") != (dflt.icon ?? "")))
+                working.GetOrCreate(name).icon = dflt.icon;
+            if (CustomIcons.IsMissing(o.icon))
+                Note(listing, "MBBS_IconMissingNote".Translate());
+        }
+
+        /// <summary>What other bar mods have set for this button, as reference (spec 3.7).</summary>
+        private static void DrawReferenceValues(Listing_Standard listing, IEnumerable<string> lines)
+        {
+            var list = lines.ToList();
+            if (list.Count == 0) return;
+            listing.GapLine();
+            listing.Label("MBBS_RefHeader".Translate());
+            foreach (var line in list) Note(listing, line);
         }
 
         private void SetPin(string name, PinPosition pin)
@@ -677,13 +938,13 @@ namespace MainButtonBarSystem
         {
             listing.GapLine();
             var row = listing.GetRect(L.textRowHeight);
-            float buttons = L.smallButtonWidth * 2f + L.footerGap;
+            float buttons = SmallButtonWidth * 2f + L.footerGap;
             Text.Anchor = TextAnchor.MiddleLeft;
             Widgets.Label(new Rect(row.x, row.y, row.width - buttons - L.footerGap, row.height), "MBBS_HotKey".Translate(Hotkeys.Label(def)));
             Text.Anchor = TextAnchor.UpperLeft;
-            if (Widgets.ButtonText(new Rect(row.xMax - buttons, row.y, L.smallButtonWidth, row.height), "MBBS_HotKeySet".Translate()))
+            if (Widgets.ButtonText(new Rect(row.xMax - buttons, row.y, SmallButtonWidth, row.height), "MBBS_HotKeySet".Translate()))
                 Hotkeys.Define(def);
-            if (Widgets.ButtonText(new Rect(row.xMax - L.smallButtonWidth, row.y, L.smallButtonWidth, row.height), "MBBS_HotKeyClear".Translate(), true, true, Hotkeys.Get(def) != KeyCode.None))
+            if (DimmableButton(new Rect(row.xMax - SmallButtonWidth, row.y, SmallButtonWidth, row.height), "MBBS_HotKeyClear".Translate(), Hotkeys.Get(def) != KeyCode.None))
                 Hotkeys.Clear(def);
 
             GUI.color = Color.gray;
@@ -696,8 +957,11 @@ namespace MainButtonBarSystem
             if (conflicts.Count > 0)
             {
                 GUI.color = ColorLibrary.RedReadable;
-                listing.Label("MBBS_HotKeyConflict".Translate(string.Join(", ", conflicts)));
+                listing.Label("MBBS_HotKeyConflictHeader".Translate(Hotkeys.Label(def)));
+                foreach (var c in conflicts)
+                    listing.Label("  • " + (c.Category.NullOrEmpty() ? c.Label : "MBBS_HotKeyConflictItem".Translate(c.Category, c.Label).ToString()));
                 GUI.color = Color.white;
+                Note(listing, (Hotkeys.UsesGameBinding(def) ? "MBBS_HotKeyConflictExplainGame" : "MBBS_HotKeyConflictExplainCustom").Translate());
             }
         }
 
@@ -706,10 +970,29 @@ namespace MainButtonBarSystem
         /// <summary>The "Default" button at the right end of a row. Returns true when clicked while enabled.</summary>
         private static bool DefaultButton(Rect row, bool enabled)
         {
-            var rect = new Rect(row.xMax - L.resetButtonWidth, row.y, L.resetButtonWidth, row.height);
-            bool clicked = Widgets.ButtonText(rect, "MBBS_Default".Translate(), true, true, enabled);
-            if (enabled) TooltipHandler.TipRegion(rect, "MBBS_DefaultTip".Translate());
+            var rect = new Rect(row.xMax - ResetWidth, row.y, ResetWidth, row.height);
+            TooltipHandler.TipRegion(rect, enabled ? "MBBS_DefaultTip".Translate() : "MBBS_AlreadyDefaultTip".Translate());
+            return DimmableButton(rect, "MBBS_Default".Translate(), enabled);
+        }
+
+        /// <summary>A button drawn faded while it cannot be used (the game's inactive button looks the same as an active one).</summary>
+        private static bool DimmableButton(Rect rect, string label, bool enabled)
+        {
+            var color = GUI.color;
+            if (!enabled) GUI.color = new Color(color.r, color.g, color.b, color.a * L.dimmedAlpha);
+            bool clicked = Widgets.ButtonText(rect, label, true, true, enabled);
+            GUI.color = color;
             return clicked && enabled;
+        }
+
+        /// <summary>A small grey explanation line.</summary>
+        private static void Note(Listing_Standard listing, string text)
+        {
+            GUI.color = Color.gray;
+            Text.Font = GameFont.Tiny;
+            listing.Label(text);
+            Text.Font = GameFont.Small;
+            GUI.color = Color.white;
         }
 
         /// <summary>A section label with a "Default" button. Returns true when the button is clicked.</summary>
@@ -717,7 +1000,7 @@ namespace MainButtonBarSystem
         {
             var row = listing.GetRect(L.textRowHeight);
             Text.Anchor = TextAnchor.MiddleLeft;
-            Widgets.Label(new Rect(row.x, row.y, row.width - L.resetButtonWidth - L.footerGap, row.height), label);
+            Widgets.Label(new Rect(row.x, row.y, row.width - ResetWidth - L.footerGap, row.height), label);
             Text.Anchor = TextAnchor.UpperLeft;
             if (tooltip != null) TooltipHandler.TipRegion(row, tooltip);
             return DefaultButton(row, changed);
@@ -727,24 +1010,98 @@ namespace MainButtonBarSystem
         /// A label row with a "Default" button, then a slider. <paramref name="stored"/> is -1 while unchanged.
         /// Returns the new stored value.
         /// </summary>
-        private static int IntSetting(Listing_Standard listing, string label, int stored, int resolved, IntRange range, int step)
+        private static int IntSetting(Listing_Standard listing, string label, int stored, int resolved, IntRange range, int step,
+            [CallerArgumentExpression("stored")] string id = null)
         {
             if (SectionHeader(listing, label, stored != BarConfig.Unset)) return BarConfig.Unset;
-            var slider = listing.GetRect(L.sliderHeight);
-            float raw = Widgets.HorizontalSlider(slider, resolved, range.min, range.max, false, null, null, null, step);
-            int value = Mathf.Clamp(Mathf.RoundToInt(raw / Mathf.Max(1, step)) * Mathf.Max(1, step), range.min, range.max);
-            listing.Gap(listing.verticalSpacing);
+            float raw = NumberSlider(listing, resolved, range.min, range.max, Mathf.Max(1, step), id);
+            int value = Mathf.Clamp(Mathf.RoundToInt(raw), range.min, range.max);
             return value != resolved ? value : stored;
         }
 
-        private static float FloatSetting(Listing_Standard listing, string label, float stored, float resolved, FloatRange range, float step)
+        private static float FloatSetting(Listing_Standard listing, string label, float stored, float resolved, FloatRange range, float step,
+            [CallerArgumentExpression("stored")] string id = null)
         {
             if (SectionHeader(listing, label, stored >= 0f)) return BarConfig.Unset;
-            var slider = listing.GetRect(L.sliderHeight);
-            float raw = Widgets.HorizontalSlider(slider, resolved, range.min, range.max, false, null, null, null, step);
-            float value = Mathf.Clamp(Mathf.Round(raw / step) * step, range.min, range.max);
-            listing.Gap(listing.verticalSpacing);
+            float value = NumberSlider(listing, resolved, range.min, range.max, step, id);
             return Mathf.Approximately(value, resolved) ? stored : value;
+        }
+
+        /// <summary>
+        /// A slider with a number box at its right. Drawn by this mod rather than Widgets.HorizontalSlider, so
+        /// slider mods that patch that method (BetterSliders draws a box over its right end) do not cover it.
+        /// </summary>
+        private static float NumberSlider(Listing_Standard listing, float value, float min, float max, float step, string id)
+        {
+            var row = listing.GetRect(L.sliderHeight);
+            var field = new Rect(row.xMax - L.numberFieldWidth, row.y, L.numberFieldWidth, row.height);
+            var track = new Rect(row.x, row.y, row.width - L.numberFieldWidth - L.footerGap, row.height);
+            value = Slider(track, value, min, max, step);
+            value = NumberField(field, value, min, max, step, id);
+            listing.Gap(listing.verticalSpacing);
+            return value;
+        }
+
+        private static float Snap(float value, float min, float max, float step) =>
+            Mathf.Clamp(step > 0f ? Mathf.Round(value / step) * step : value, min, max);
+
+        private static float Slider(Rect rect, float value, float min, float max, float step)
+        {
+            int id = GUIUtility.GetControlID(FocusType.Passive, rect);
+            var handleSize = L.sliderHandleSize;
+            var rail = new Rect(rect.x + handleSize.x / 2f, rect.center.y - L.sliderRailHeight / 2f, Mathf.Max(1f, rect.width - handleSize.x), L.sliderRailHeight);
+            float t = max > min ? Mathf.Clamp01((value - min) / (max - min)) : 0f;
+
+            Widgets.DrawBoxSolid(rail, L.sliderRailColor);
+            Widgets.DrawBoxSolid(new Rect(rail.x, rail.y, rail.width * t, rail.height), L.sliderFillColor);
+            var handle = new Rect(rail.x + rail.width * t - handleSize.x / 2f, rect.center.y - handleSize.y / 2f, handleSize.x, handleSize.y);
+            Widgets.DrawBoxSolid(handle, L.sliderHandleColor);
+            Widgets.DrawBox(handle);
+            if (Mouse.IsOver(rect) || GUIUtility.hotControl == id) Widgets.DrawHighlight(handle);
+
+            var ev = Event.current;
+            float FromMouse() => Snap(min + Mathf.Clamp01((ev.mousePosition.x - rail.x) / rail.width) * (max - min), min, max, step);
+            switch (ev.GetTypeForControl(id))
+            {
+                case EventType.MouseDown:
+                    if (ev.button == 0 && rect.Contains(ev.mousePosition))
+                    {
+                        GUIUtility.hotControl = id;
+                        value = FromMouse();
+                        ev.Use();
+                    }
+                    break;
+                case EventType.MouseDrag:
+                    if (GUIUtility.hotControl == id)
+                    {
+                        value = FromMouse();
+                        ev.Use();
+                    }
+                    break;
+                case EventType.MouseUp:
+                    if (GUIUtility.hotControl == id)
+                    {
+                        GUIUtility.hotControl = 0;
+                        ev.Use();
+                    }
+                    break;
+            }
+            return value;
+        }
+
+        /// <summary>Type a value directly. While the box is not focused it always shows the current value.</summary>
+        private static float NumberField(Rect rect, float value, float min, float max, float step, string id)
+        {
+            string name = "MainButtonBarSystem.Number." + id;
+            bool focused = GUI.GetNameOfFocusedControl() == name;
+            if (!focused || !numberBuffers.TryGetValue(id, out var buffer))
+                buffer = step >= 1f ? Mathf.RoundToInt(value).ToString() : value.ToString("0.##");
+
+            float edited = value;
+            GUI.SetNextControlName(name);
+            Widgets.TextFieldNumeric(rect, ref edited, ref buffer, min, max);
+            numberBuffers[id] = buffer;
+            return Mathf.Approximately(edited, value) ? value : Snap(edited, min, max, step);
         }
 
         private static DefaultableBool BoolSetting(Listing_Standard listing, string label, DefaultableBool stored, bool fallback, string tooltip)
@@ -753,7 +1110,7 @@ namespace MainButtonBarSystem
             if (DefaultButton(row, stored != DefaultableBool.Default)) return DefaultableBool.Default;
             bool before = BarConfig.Resolve(stored, fallback);
             bool value = before;
-            Widgets.CheckboxLabeled(new Rect(row.x, row.y, row.width - L.resetButtonWidth - L.footerGap, row.height), label, ref value);
+            Widgets.CheckboxLabeled(new Rect(row.x, row.y, row.width - ResetWidth - L.footerGap, row.height), label, ref value);
             if (tooltip != null) TooltipHandler.TipRegion(row, tooltip);
             return value == before ? stored : value ? DefaultableBool.True : DefaultableBool.False;
         }
@@ -763,7 +1120,7 @@ namespace MainButtonBarSystem
         {
             var row = listing.GetRect(L.textRowHeight);
             if (DefaultButton(row, value != defaultValue)) return defaultValue;
-            Widgets.CheckboxLabeled(new Rect(row.x, row.y, row.width - L.resetButtonWidth - L.footerGap, row.height), label, ref value);
+            Widgets.CheckboxLabeled(new Rect(row.x, row.y, row.width - ResetWidth - L.footerGap, row.height), label, ref value);
             if (tooltip != null) TooltipHandler.TipRegion(row, tooltip);
             return value;
         }
@@ -783,7 +1140,7 @@ namespace MainButtonBarSystem
                     Messages.Message("MBBS_TemplateSaved".Translate(), MessageTypeDefOf.NeutralEvent, false);
                 }
                 bool hasTemplate = BarConfigManager.HasTemplate;
-                if (Widgets.ButtonText(new Rect(rect.x + half + gap, y, half, h), "MBBS_ApplyTemplate".Translate(), true, true, hasTemplate) && hasTemplate)
+                if (DimmableButton(new Rect(rect.x + half + gap, y, half, h), "MBBS_ApplyTemplate".Translate(), hasTemplate))
                     ReplaceWorking(BarConfigManager.Template.Clone());
                 y += h + gap;
             }

@@ -46,6 +46,11 @@
       <drawerReopenGuardSeconds>0.3</drawerReopenGuardSeconds>
       <moreButtonLabelPadding>24</moreButtonLabelPadding>
       <labelSidePadding>6</labelSidePadding>     <!-- left/right aligned button labels -->
+      <labelFont>Small</labelFont>               <!-- the game's button label font -->
+      <hoverLabelOffset>(2,-2)</hoverLabelOffset> <!-- the game's "pressed" shift under the mouse -->
+      <iconSize>32</iconSize>                    <!-- the game's main button icon size -->
+      <iconTextGap>4</iconTextGap>
+      <drawerSettingsIcon>MainButtonBarSystem/UI/Gear</drawerSettingsIcon> <!-- shipped with this mod; themes can replace it -->
     </behaviour>
 
     <!-- Layout of the settings window. -->
@@ -72,7 +77,8 @@
       <sourceColumnMax>170</sourceColumnMax>
       <sourceColumnFraction>0.26</sourceColumnFraction>
       <moveButtonWidth>110</moveButtonWidth>
-      <resetButtonWidth>70</resetButtonWidth>
+      <resetButtonWidth>70</resetButtonWidth>       <!-- button widths are minimums; they widen to fit the label -->
+      <buttonTextPadding>8</buttonTextPadding>
       <smallButtonWidth>84</smallButtonWidth>
       <titleIconSize>36</titleIconSize>
       <textRowHeight>30</textRowHeight>
@@ -86,6 +92,21 @@
       <customNameMaxLength>40</customNameMaxLength>
       <importMenuMaxFiles>15</importMenuMaxFiles>
       <captureKeyDialogSize>(400,160)</captureKeyDialogSize>
+      <themeCardHeight>110</themeCardHeight>
+      <themePreviewHeight>36</themePreviewHeight>
+      <themePreviewFraction>0.55</themePreviewFraction>
+      <themePreviewButtons>4</themePreviewButtons>
+      <numberFieldWidth>64</numberFieldWidth>
+      <sliderRailHeight>4</sliderRailHeight>
+      <sliderHandleSize>(10,18)</sliderHandleSize>
+      <sliderRailColor>(0.25, 0.25, 0.25, 1)</sliderRailColor>
+      <sliderFillColor>(0.55, 0.55, 0.55, 1)</sliderFillColor>
+      <sliderHandleColor>(0.85, 0.85, 0.85, 1)</sliderHandleColor>
+      <viewSwitchWidth>220</viewSwitchWidth>
+      <viewSwitchSelectedColor>(0.30, 0.45, 0.65, 1)</viewSwitchSelectedColor>
+      <viewSwitchColor>(0.18, 0.18, 0.18, 1)</viewSwitchColor>
+      <iconPickerSize>(680,560)</iconPickerSize>
+      <iconPickerCell>52</iconPickerCell>
     </settingsWindow>
   </MainButtonBarSystem.MainButtonBarTuningDef>
 </Defs>

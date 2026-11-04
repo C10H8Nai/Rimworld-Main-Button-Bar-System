@@ -9,8 +9,9 @@
   <MBBS_AlwaysDrawBarTip>在你改動任何設定之前，底部列仍由遊戲自己繪製。開啟後可以比較本模組和遊戲繪製的結果。</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>主按鈕列設定（目前存檔）</MBBS_Title_Save>
   <MBBS_Title_Template>主按鈕列設定（預設範本）</MBBS_Title_Template>
-  <MBBS_Tab_Simple>簡單</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>進階</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>簡單</MBBS_View_Simple>
+  <MBBS_View_Advanced>進階</MBBS_View_Advanced>
+  <MBBS_ViewTip>進階會顯示更多選項：寬度、固定位置、文字對齊、快捷鍵和相容設定。這個選擇所有存檔共用。</MBBS_ViewTip>
   <MBBS_Col_Visible>顯示</MBBS_Col_Visible>
   <MBBS_Col_Icon>圖示</MBBS_Col_Icon>
   <MBBS_Col_Name>名稱</MBBS_Col_Name>
@@ -71,13 +72,11 @@
   <MBBS_Compat_RestartNeeded>重新啟動遊戲後生效。</MBBS_Compat_RestartNeeded>
   <MBBS_Compat_Import>匯入 {0} 的設定</MBBS_Compat_Import>
   <MBBS_Compat_Imported>已匯入 {0} 的排法。按「儲存」才會保留。</MBBS_Compat_Imported>
-  <MBBS_Appearance>外觀</MBBS_Appearance>
   <MBBS_HotKey>快捷鍵：{0}</MBBS_HotKey>
   <MBBS_HotKeySet>設定</MBBS_HotKeySet>
   <MBBS_HotKeyClear>清除</MBBS_HotKeyClear>
   <MBBS_HotKeyGameNote>所有存檔共用，和「選項 → 鍵盤設定」裡的相同。</MBBS_HotKeyGameNote>
   <MBBS_HotKeyCustomNote>所有存檔共用。這個按鈕在「鍵盤設定」裡沒有項目，由本模組保存。</MBBS_HotKeyCustomNote>
-  <MBBS_HotKeyConflict>和這些按鍵衝突：{0}</MBBS_HotKeyConflict>
   <MBBS_PressKey>請按一個鍵（Esc 取消）</MBBS_PressKey>
   <MBBS_Export>匯出…</MBBS_Export>
   <MBBS_Import>匯入…</MBBS_Import>
@@ -117,4 +116,51 @@
   <MBBS_Align_Center>置中</MBBS_Align_Center>
   <MBBS_Align_Right>靠右</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>遊戲本體資源</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>按鈕</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>外觀</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>主題</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>主題會改變底部列和按鈕的外觀。以本模組為前置的主題模組也會出現在這裡。選擇會跟著這個存檔保存（在主選單時則存到範本）。</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>作者：{0}（{1}）</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>按鈕放不下時才會出現箭頭；放得下時不需要捲動。</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>已經是預設值。</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>主按鈕（本模組保存）</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>按鍵 {0} 也被這些功能使用：</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}：{1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>兩個功能共用同一個鍵時，按下去只會觸發其中一個。請到「選項 → 鍵盤設定」改掉其中一個，或在這裡換一個鍵。</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>本模組保存的快捷鍵在遊戲自己的快捷鍵之後才處理，所以上面的功能會先用掉這個鍵，這個按鈕不會有反應。請在這裡換一個鍵，或到「選項 → 鍵盤設定」改掉另一個。</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>圖示與文字</MBBS_IconMode>
+  <MBBS_IconModeTip>遊戲原本是：按鈕有圖示就只顯示圖示，沒有就只顯示文字。</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>照遊戲原本的</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>只顯示文字</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>只顯示圖示</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>圖示＋文字</MBBS_IconMode_Both>
+  <MBBS_Icon>圖示：{0}</MBBS_Icon>
+  <MBBS_IconOriginal>按鈕原本的</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0}（找不到）</MBBS_IconMissing>
+  <MBBS_IconMissingNote>找不到選擇的圖示，所以使用按鈕原本的圖示。</MBBS_IconMissingNote>
+  <MBBS_IconChoose>選擇…</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>選擇圖示</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>內建</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>匯入的</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>還沒有匯入的圖示。把 PNG 檔放進
+{0}
+再按「重新整理」。模組更新時它們不會被刪除。</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>使用按鈕原本的</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>打開資料夾</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>重新整理</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>其他模組對這顆按鈕的設定（僅供參考）：</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}：在列上</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}：在它的彈出視窗裡</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}：隱藏</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}：強制顯示</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}：寬度 {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}：間距 {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}：填滿畫面：{1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}：改名為「{1}」</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}：只顯示文字</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}：自訂圖示 {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>圖示與文字（所有按鈕）</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>所有按鈕顯示圖示和文字的方式；個別按鈕另有設定時以該按鈕為準。</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>讓 {0} 顆有個別設定的按鈕都改成跟這裡</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>跟整條列（{0}）</MBBS_IconMode_FollowBar>
 </LanguageData>

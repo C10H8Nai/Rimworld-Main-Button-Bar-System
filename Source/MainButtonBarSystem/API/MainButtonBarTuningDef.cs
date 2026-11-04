@@ -112,6 +112,21 @@ namespace MainButtonBarSystem
 
             /// <summary>Space between a left- or right-aligned button label and the button edge.</summary>
             public float labelSidePadding;
+
+            /// <summary>Font of button labels this mod draws itself (the game uses Small).</summary>
+            public GameFont labelFont;
+
+            /// <summary>Shift of a label under the mouse, like the game's "pressed" look: (2,-2).</summary>
+            public Vector2 hoverLabelOffset;
+
+            /// <summary>Icon size in buttons this mod lays out itself ("icon and text"); the game draws 32.</summary>
+            public float iconSize;
+
+            /// <summary>Space between the icon and the label in "icon and text" mode.</summary>
+            public float iconTextGap;
+
+            /// <summary>Texture of the drawer's settings gear (themes can replace it). This mod ships MainButtonBarSystem/UI/Gear.</summary>
+            public string drawerSettingsIcon;
         }
 
         public class SettingsWindowLayout
@@ -139,6 +154,9 @@ namespace MainButtonBarSystem
             public float sourceColumnFraction;
             public float moveButtonWidth;
             public float resetButtonWidth;
+
+            /// <summary>Space on each side of a button label; buttons widen to fit longer translations.</summary>
+            public float buttonTextPadding;
             public float smallButtonWidth;
             public float titleIconSize;
             public float textRowHeight;
@@ -158,6 +176,31 @@ namespace MainButtonBarSystem
             public int importMenuMaxFiles;
 
             public Vector2 captureKeyDialogSize;
+
+            public float themeCardHeight;
+            public float themePreviewHeight;
+
+            /// <summary>Share of a theme card's width used by its preview.</summary>
+            public float themePreviewFraction;
+
+            /// <summary>Sample buttons in a drawn theme preview (a More button is added).</summary>
+            public int themePreviewButtons;
+
+            /// <summary>Number box to the right of each slider; this mod draws its own sliders so other slider mods do not overlap them.</summary>
+            public float numberFieldWidth;
+            public float sliderRailHeight;
+            public Vector2 sliderHandleSize;
+            public Color sliderRailColor;
+            public Color sliderFillColor;
+            public Color sliderHandleColor;
+
+            /// <summary>The Simple / Advanced switch on the Buttons page.</summary>
+            public float viewSwitchWidth;
+            public Color viewSwitchSelectedColor;
+            public Color viewSwitchColor;
+
+            public Vector2 iconPickerSize;
+            public float iconPickerCell;
         }
     }
 }

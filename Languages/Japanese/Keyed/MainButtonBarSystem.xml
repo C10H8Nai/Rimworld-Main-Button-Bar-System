@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>その他({0})</MBBS_More>
+  <MBBS_MoreTip>「その他」メニューに格納されたボタンです.メニューの一番下に専用の設定ボタンがあります.</MBBS_MoreTip>
+  <MBBS_OpenSettings>メインボタンバーの設定</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>ゲーム中に開いています: 変更は現在のセーブデータに反映されます.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>タイトル画面から開いています: 変更は,新しいゲームの初期状態となるデフォルトテンプレートに反映されます.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>常にこのMODでバーを描画する(テスト用)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>設定を何か変更するまでは,バーの描画はゲーム本体が行います.オンにすると,このMODによる描画とゲーム本体の描画を見比べられます.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>メインボタンバーの設定(このセーブデータ)</MBBS_Title_Save>
+  <MBBS_Title_Template>メインボタンバーの設定(デフォルトテンプレート)</MBBS_Title_Template>
+  <MBBS_View_Simple>基本</MBBS_View_Simple>
+  <MBBS_View_Advanced>詳細</MBBS_View_Advanced>
+  <MBBS_ViewTip>「詳細」では設定項目が増えます: 幅,位置の固定,ラベルの位置揃え,ホットキー,互換性.この選択はすべてのセーブデータで共通です.</MBBS_ViewTip>
+  <MBBS_Col_Visible>表示</MBBS_Col_Visible>
+  <MBBS_Col_Icon>アイコン</MBBS_Col_Icon>
+  <MBBS_Col_Name>名前</MBBS_Col_Name>
+  <MBBS_Col_Source>提供元</MBBS_Col_Source>
+  <MBBS_Col_HotKey>ホットキー</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>格納</MBBS_Col_Drawer>
+  <MBBS_BarRow>バー全体(デフォルト値)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>MOD側で非表示({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>提供元のMODが意図的にバーに置いていないボタンです.バーに表示するには,「詳細」で「常に表示」をオンにしてください.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>上へ</MBBS_MoveUp>
+  <MBBS_MoveDown>下へ</MBBS_MoveDown>
+  <MBBS_OrderHint>リストの上→下が,画面の左→右に対応します.行をドラッグして並べ替えられます.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(ロック)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(左端固定)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(右端固定)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>現在バーにありません: ボタン自体の表示条件を満たしていません.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>表示モード</MBBS_DisplayMode>
+  <MBBS_MinWidth>スクロール時のボタン最小幅: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>ボタンのデフォルト幅: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>ボタンの間隔: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>画面の幅いっぱいに広げる</MBBS_FillScreen>
+  <MBBS_FillScreenTip>ボタンが収まる場合,画面の幅全体を使うように引き伸ばします.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>ゲームのメニューボタンを右端にロックする</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>ロック中のメニューボタンは,非表示,移動,「その他」メニューへの格納ができません.変更できるのは名前だけです.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>ゲームのメニューボタンは「詳細」でロックが解除されています.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>ゲームのメニューボタンは右端にロックされていて,名前しか変更できません.ロックは「詳細」の「バー全体」の行で解除できます.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>ボタンの提供元: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>アイコンの提供元: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>提供元のMODが意図的にバーに置いていないボタンです.「常に表示」をオンにしたときだけ表示されます.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>なし</MBBS_None>
+  <MBBS_Unknown>不明</MBBS_Unknown>
+  <MBBS_Visible>バーに表示</MBBS_Visible>
+  <MBBS_InDrawer>「その他」メニューに格納</MBBS_InDrawer>
+  <MBBS_CustomName>カスタム名(空欄で元の名前: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>幅: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>幅: バー全体の設定に従う</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>位置の固定</MBBS_Pin>
+  <MBBS_Pin_None>固定しない</MBBS_Pin_None>
+  <MBBS_Pin_Left>左端</MBBS_Pin_Left>
+  <MBBS_Pin_Right>右端</MBBS_Pin_Right>
+  <MBBS_ForceShow>常に表示</MBBS_ForceShow>
+  <MBBS_ForceShowTip>ボタン自体の条件では表示されない場合でも,ボタンを表示します.その場合,クリックしても何も起きないことがあります.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>デフォルトテンプレートとして保存</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>デフォルトテンプレートを適用</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>デフォルトテンプレートとして保存しました.新しいゲームはこの配置で始まります.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>すべてリセット</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>すべての設定を,手を加えていない状態のバー(ゲーム本体に他のMODの変更を加えた状態)に戻しますか?テンプレートは適用されません.</MBBS_ResetAllConfirm>
+  <MBBS_Save>保存</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>{0}を検出: 現在はそちらがバーを制御しているため,ここでの変更はこのMODを優先にしたときだけ反映されます.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>{0}を検出: このMODが優先されているため,そちらによるバーへの効果はオフになっています.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>詳しくは「詳細」を参照してください.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>互換性: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>このMODを優先</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>このMODがバーを描画します.{0}によるバーへの効果はオフになり,その設定は参考値としてのみ使われます.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0}を優先</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>バーは引き続き{0}が管理します.このMODは設定ウィンドウだけを残します.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>ゲームの再起動後に反映されます.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>{0}の設定をインポート</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>{0}の配置をインポートしました.保持するには「保存」を押してください.</MBBS_Compat_Imported>
+  <MBBS_HotKey>ホットキー: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>設定</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>クリア</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>すべてのセーブデータで共通です.「オプション → キーボード設定」と同じキーです.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>すべてのセーブデータで共通です.このボタンは「オプション → キーボード設定」に項目がないため,このMODがキーを管理します.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>キーを押してください(Escでキャンセル)</MBBS_PressKey>
+  <MBBS_Export>エクスポート...</MBBS_Export>
+  <MBBS_Import>インポート...</MBBS_Import>
+  <MBBS_Export_Clipboard>テキストとしてコピー(Discord,LINEなど)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>配置をクリップボードにコピーしました.</MBBS_Export_Copied>
+  <MBBS_Export_File>ファイルに保存</MBBS_Export_File>
+  <MBBS_Export_Saved>{0} に保存しました</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>MOD用XMLとしてコピー(配置MOD作成用)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def XMLをコピーしました.自作MODのDefsフォルダ内の.xmlファイルに貼り付けて,defNameとlabelを変更してください.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>クリップボードから</MBBS_Import_Clipboard>
+  <MBBS_Import_File>ファイル: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>配置: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>配置: {0}(作者: {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>配置をこのウィンドウにインポートしました.保持するには「保存」を押してください.</MBBS_Import_Done>
+  <MBBS_Import_Empty>クリップボードが空です.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>エクスポートされた配置ではありません(有効なXMLではありません).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>このテキストには配置が含まれていません.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>このテキストはプログラムのクラスを生成しようとしています.配置には不要な処理のため,インポートしませんでした.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>このMODの新しいバージョンで作成されています(フォーマット {0},このバージョンが読めるのは {1} まで).先にMODを更新してください.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>配置を読み込めませんでした: {0}</MBBS_Import_Failed>
+  <MBBS_Default>デフォルト</MBBS_Default>
+  <MBBS_DefaultTip>デフォルト値に戻します.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>その他メニュー</MBBS_Section_Drawer>
+  <MBBS_Section_Size>幅と間隔</MBBS_Section_Size>
+  <MBBS_ArrowWidth>スクロール矢印の幅: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>マウスホイールの速度: 1目盛りあたり{0}px</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>「その他」ボタンの幅: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>「その他」ボタンの幅: ラベルに合わせる</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>「その他」メニューの列数: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>「その他」メニューの列数: 自動</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>「その他」メニューの項目幅: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>「その他」メニューの項目幅: ボタンのデフォルト幅と同じ</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>ラベルの位置揃え</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>ボタンのラベルを表示する位置です.アイコンのみのボタンには影響しません.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>ゲーム標準</MBBS_Align_Default>
+  <MBBS_Align_Left>左揃え</MBBS_Align_Left>
+  <MBBS_Align_Center>中央揃え</MBBS_Align_Center>
+  <MBBS_Align_Right>右揃え</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>ゲーム本体のアセット</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>ボタン</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>外観</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>テーマ</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>テーマはバーとボタンの見た目を変更します.Main Button Bar Systemを前提MODに指定しているテーマMODもここに表示されます.選択はこのセーブデータと一緒に保存されます(タイトル画面ではテンプレートに保存されます).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>作者: {0}({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>矢印はボタンが収まりきらないときだけ表示されます.収まっている間は,バーをスクロールする必要はありません.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>すでにデフォルト値です.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>メインボタン(このMODで管理)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>キー {0} は次の操作にも使われています:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>2つの操作が同じキーに割り当てられていると,押したときにどちらか一方しか反応しません.「オプション → キーボード設定」でどちらかを変更するか,ここで別のキーを選んでください.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>このMODが管理するキーはゲーム本体のキーより後に処理されるため,上記の操作が先にこのキーを使い,このボタンは反応しません.ここで別のキーを選ぶか,「オプション → キーボード設定」でもう一方の割り当てを変更してください.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>アイコンとテキスト</MBBS_IconMode>
+  <MBBS_IconModeTip>ゲーム本体では,アイコンがあるボタンはアイコンだけ,ないボタンはテキストだけを表示します.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>ゲーム標準</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>テキストのみ</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>アイコンのみ</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>アイコンとテキスト</MBBS_IconMode_Both>
+  <MBBS_Icon>アイコン: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>ボタン本来のもの</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0}(見つかりません)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>選択したアイコンが見つからないため,ボタン本来のアイコンを使用しています.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>選択...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>アイコンを選択</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>組み込み</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>インポート済み</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>インポートしたアイコンはまだありません.次のフォルダにPNGファイルを置いてください:
+{0}
+置いたら「再読み込み」を押してください.MODを更新しても消えません.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>本来のアイコンを使う</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>フォルダを開く</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>再読み込み</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>他のMODでのこのボタンの設定(参考):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: バーに表示</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: 独自のポップアップ内</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: 非表示</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: 常に表示</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: 幅 {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: 間隔 {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: 画面の幅いっぱいに広げる: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: 名前を「{1}」に変更</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: テキストのみ</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: カスタムアイコン {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>アイコンとテキスト(すべてのボタン)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>すべてのボタンでのアイコンとテキストの表示方法です.個別に設定したボタンには,そのボタンの設定が使われます.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>個別に設定した{0}個のボタンをすべてこの設定に従わせる</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>バー全体の設定に従う({0})</MBBS_IconMode_FollowBar>
+</LanguageData>

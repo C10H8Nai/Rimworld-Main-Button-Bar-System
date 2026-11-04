@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>αρχικό</Vanilla.label>
+  <Vanilla.description>Η εμφάνιση κουμπιών του ίδιου του παιχνιδιού.</Vanilla.description>
+  <MBBS_Imperial.label>αυτοκρατορικό</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Ναυτικό μπλε και χρυσό με γωνίες διακοσμημένες με κορώνες και γαλαζοπράσινη λάμψη psylink, στα χρώματα της επέκτασης Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>πίστη</MBBS_Creed.label>
+  <MBBS_Creed.description>Βαθύ γαλαζοπράσινο με κοραλλί περιγράμματα και χρυσά στρογγυλά εμβλήματα, στα χρώματα της επέκτασης Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>γενετικό εργαστήριο</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Μπλε με γαλαζοπράσινα περιγράμματα, ροζ-μωβ πλακίδια γονιδίων και ετικέτες σε γονιδιακό μπλε, στα χρώματα της επέκτασης Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>κενό</MBBS_Void.label>
+  <MBBS_Void.description>Μαύρο του κενού και πέτρα μονόλιθου με κόκκινη λάμψη και γωνίες κομμένες σαν θραύσματα, στα χρώματα της επέκτασης Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>ταξιδιώτης των άστρων</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Ατσάλινες πλάκες κύτους με πριτσίνια και κυανή λάμψη προωθητήρων, εμπνευσμένο από την επέκταση Odyssey.</MBBS_Starfarer.description>
+</LanguageData>

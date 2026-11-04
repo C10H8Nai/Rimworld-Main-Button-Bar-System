@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Mer ({0})</MBBS_More>
+  <MBBS_MoreTip>Knappar som fällts ihop i lådan. Lådan har en egen inställningsknapp längst ned.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Inställningar för huvudknappsfältet</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Öppnad i ett spel: ändringarna gäller den aktuella sparfilen.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Öppnad från huvudmenyn: ändringarna gäller standardmallen som nya spel börjar med.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Låt alltid denna mod rita fältet (för test)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Tills du ändrar något ritar spelet fältet självt. Slå på detta för att jämföra hur denna mod ritar fältet med hur spelet gör det.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Inställningar för huvudknappsfältet (denna sparfil)</MBBS_Title_Save>
+  <MBBS_Title_Template>Inställningar för huvudknappsfältet (standardmall)</MBBS_Title_Template>
+  <MBBS_View_Simple>Enkel</MBBS_View_Simple>
+  <MBBS_View_Advanced>Avancerat</MBBS_View_Advanced>
+  <MBBS_ViewTip>Avancerat visar fler inställningar: bredder, fasta positioner, textjustering, snabbtangenter och kompatibilitet. Valet är gemensamt för alla sparfiler.</MBBS_ViewTip>
+  <MBBS_Col_Visible>Visa</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
+  <MBBS_Col_Name>Namn</MBBS_Col_Name>
+  <MBBS_Col_Source>Från mod</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Snabbtangent</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Låda</MBBS_Col_Drawer>
+  <MBBS_BarRow>Hela fältet (standard)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Dolda av egen mod ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Knappar som deras mod avsiktligt håller borta från fältet. Slå på ”Visa alltid” under Avancerat för att sätta en av dem på fältet.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Flytta upp</MBBS_MoveUp>
+  <MBBS_MoveDown>Flytta ned</MBBS_MoveDown>
+  <MBBS_OrderHint>Uppifrån och ned = vänster till höger på skärmen. Dra raderna för att ändra ordning.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(låst)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(vänsterkant)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(högerkant)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Inte på fältet just nu: knappens eget villkor är inte uppfyllt.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Visningsläge</MBBS_DisplayMode>
+  <MBBS_MinWidth>Minsta knappbredd vid rullning: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Standardbredd för knappar: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Avstånd mellan knappar: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Fyll skärmens bredd</MBBS_FillScreen>
+  <MBBS_FillScreenTip>När knapparna får plats sträcks de ut över hela bredden.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Lås spelets menyknapp vid högerkanten</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Medan menyknappen är låst kan den inte döljas, flyttas eller läggas i lådan; den kan bara byta namn.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Spelets menyknapp har låsts upp under Avancerat.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Spelets menyknapp är låst vid högerkanten och kan bara byta namn. Lås upp den under Avancerat, på raden ”Hela fältet”.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Knapp från: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Ikon från: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Dess mod håller den avsiktligt borta från fältet; den visas bara med ”Visa alltid”.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>ingen</MBBS_None>
+  <MBBS_Unknown>okänd</MBBS_Unknown>
+  <MBBS_Visible>Visa på fältet</MBBS_Visible>
+  <MBBS_InDrawer>Lägg i ”Mer”-lådan</MBBS_InDrawer>
+  <MBBS_CustomName>Eget namn (tomt = ursprungligt: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Bredd: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Bredd: samma som hela fältet</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Fast position</MBBS_Pin>
+  <MBBS_Pin_None>Inte fast</MBBS_Pin_None>
+  <MBBS_Pin_Left>Vänsterkant</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Högerkant</MBBS_Pin_Right>
+  <MBBS_ForceShow>Visa alltid</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Visa knappen även när dess eget villkor säger att den inte ska synas. Att klicka på den kanske då inte gör något.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Spara som standardmall</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Använd standardmall</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Sparad som standardmall. Nya spel börjar med denna layout.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Återställ allt</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Återställa alla inställningar till det orörda fältet (spelet plus det som andra moddar har ändrat)? Mallen tillämpas inte.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Spara</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>{0} hittades: den styr fältet just nu, så ändringar här får effekt bara när denna mod har företräde.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>{0} hittades: denna mod har företräde, så den andra moddens effekt på fältet är avstängd.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Detaljer under Avancerat.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Kompatibilitet: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Denna mod först</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Denna mod ritar fältet. Effekten från {0} på fältet är avstängd; dess inställningar används bara som referensvärden.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0} först</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} behåller fältet. Denna mod behåller bara sitt inställningsfönster.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Träder i kraft efter att spelet har startats om.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Importera inställningar från {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Layouten från {0} har importerats. Tryck på Spara för att behålla den.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Snabbtangent: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Välj</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Rensa</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Gemensam för alla sparfiler; samma tangent som i Inställningar &gt; Tangentbordskonfiguration.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Gemensam för alla sparfiler. Den här knappen finns inte i Inställningar &gt; Tangentbordskonfiguration, så denna mod sparar tangenten.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Tryck på en tangent (Esc för att avbryta)</MBBS_PressKey>
+  <MBBS_Export>Exportera...</MBBS_Export>
+  <MBBS_Import>Importera...</MBBS_Import>
+  <MBBS_Export_Clipboard>Kopiera som text (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Layouten har kopierats till urklipp.</MBBS_Export_Copied>
+  <MBBS_Export_File>Spara som fil</MBBS_Export_File>
+  <MBBS_Export_Saved>Sparad i {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Kopiera som mod-XML (för att göra en layoutmod)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def-XML kopierad. Lägg den i en .xml-fil i din mods Defs-mapp och ändra defName och label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Från urklipp</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Fil: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Layout: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Layout: {0} (av {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Layouten har importerats till detta fönster. Tryck på Spara för att behålla den.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Urklippet är tomt.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Det är inte en exporterad layout (inte giltig XML).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Texten innehåller ingen layout.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Texten begär att programklasser skapas, vilket en layout aldrig behöver. Inte importerad.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Skapad med en nyare version av denna mod (format {0}; denna version läser upp till {1}). Uppdatera denna mod först.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Kunde inte läsa layouten: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Standard</MBBS_Default>
+  <MBBS_DefaultTip>Tillbaka till standardvärdet.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Låda</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Bredd och avstånd</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Bredd på rullningspilar: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Mushjulets hastighet: {0}px per steg</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Bredd på ”Mer”-knappen: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Bredd på ”Mer”-knappen: anpassad efter texten</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Kolumner i lådan: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Kolumner i lådan: automatiskt</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Cellbredd i lådan: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Cellbredd i lådan: samma som standardbredden för knappar</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Textjustering</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Var knapparnas text placeras. Knappar som bara visar en ikon påverkas inte.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Som i spelet</MBBS_Align_Default>
+  <MBBS_Align_Left>Vänster</MBBS_Align_Left>
+  <MBBS_Align_Center>Centrerad</MBBS_Align_Center>
+  <MBBS_Align_Right>Höger</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>spelets egna resurser</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Knappar</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>Utseende</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Teman ändrar hur fältet och dess knappar ser ut. Temamoddar som har Main Button Bar System som beroende visas också här. Valet sparas med denna sparfil (eller med mallen i huvudmenyn).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>av {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Pilarna visas bara när knapparna inte får plats. Så länge de får plats behöver fältet inte rulla.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Redan standardvärdet.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Huvudknappar (sparade av denna mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Tangenten {0} används också av:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>När två kortkommandon delar en tangent utlöser ett tryck bara ett av dem. Ändra ett av dem i Inställningar &gt; Tangentbordskonfiguration, eller välj en annan tangent här.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Denna mod hanterar sina tangenter efter spelets egna, så kortkommandona ovan tar tangenten först och den här knappen reagerar inte. Välj en annan tangent här, eller ändra det andra kortkommandot i Inställningar &gt; Tangentbordskonfiguration.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Ikon och text</MBBS_IconMode>
+  <MBBS_IconModeTip>Spelet visar bara ikonen om knappen har en, och annars bara texten.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Som i spelet</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Bara text</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Bara ikon</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Ikon och text</MBBS_IconMode_Both>
+  <MBBS_Icon>Ikon: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>knappens egen</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (hittades inte)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Den valda ikonen hittas inte, så knappens egen ikon används.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Välj...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Välj en ikon</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Inbyggda</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importerade</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Inga importerade ikoner ännu. Lägg PNG-filer i
+{0}
+och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Använd knappens egen</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Öppna mapp</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Uppdatera</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Inställningar i andra moddar för denna knapp (endast som referens):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: på fältet</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: i eget popup-fönster</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: dold</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: visas alltid</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: bredd {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: avstånd {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: fyll skärmens bredd: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: nytt namn ”{1}”</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: bara text</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: egen ikon {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ikon och text (alla knappar)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Hur alla knappar visar ikon och text, om inte en knapp har en egen inställning.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Låt alla knappar med egen inställning ({0}) följa denna</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Samma som hela fältet ({0})</MBBS_IconMode_FollowBar>
+</LanguageData>

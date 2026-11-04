@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>original</Vanilla.label>
+  <Vanilla.description>Com al joc base: l’amplada de la pantalla es reparteix a parts iguals. Sense desplaçament ni calaix.</Vanilla.description>
+  <Collapse.label>plegat</Collapse.label>
+  <Collapse.description>Els botons marcats a «Calaix» passen al calaix «Més»; la resta es reparteixen la barra.</Collapse.description>
+  <Scroll.label>desplaçament</Scroll.label>
+  <Scroll.description>Els botons mantenen l’amplada; desplaceu la barra amb la roda del ratolí o amb les fletxes. No s’utilitza el calaix.</Scroll.description>
+  <CollapseScroll.label>plegat + desplaçament</CollapseScroll.label>
+  <CollapseScroll.description>El calaix funciona com en el mode plegat; els altres botons es desplacen.</CollapseScroll.description>
+</LanguageData>

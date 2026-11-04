@@ -16,6 +16,9 @@ namespace MainButtonBarSystem
         /// </summary>
         public bool alwaysDrawBar;
 
+        /// <summary>The settings window's Simple / Advanced switch; remembered for every save.</summary>
+        public bool showAdvanced;
+
         /// <summary>CompatBridgeDef defName -> who draws the bar when that mod is active.</summary>
         public Dictionary<string, CompatPriority> compatPriority = new Dictionary<string, CompatPriority>();
 
@@ -32,6 +35,7 @@ namespace MainButtonBarSystem
         {
             base.ExposeData();
             Scribe_Values.Look(ref alwaysDrawBar, "alwaysDrawBar");
+            Scribe_Values.Look(ref showAdvanced, "showAdvanced");
             Scribe_Collections.Look(ref compatPriority, "compatPriority", LookMode.Value, LookMode.Value);
             Scribe_Collections.Look(ref customHotkeys, "customHotkeys", LookMode.Value, LookMode.Value);
 

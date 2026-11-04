@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Mai multe ({0})</MBBS_More>
+  <MBBS_MoreTip>Butoane strânse în sertar. Sertarul are propriul buton de setări în partea de jos.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Setările barei de butoane principale</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Deschis în timpul jocului: modificările se aplică salvării curente.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Deschis din meniul principal: modificările se aplică șablonului implicit cu care încep jocurile noi.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Desenează mereu bara cu acest mod (pentru testare)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Până când schimbi ceva, jocul continuă să deseneze singur bara. Activează opțiunea pentru a compara desenul acestui mod cu cel al jocului.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Setările barei de butoane principale (această salvare)</MBBS_Title_Save>
+  <MBBS_Title_Template>Setările barei de butoane principale (șablon implicit)</MBBS_Title_Template>
+  <MBBS_View_Simple>Simplu</MBBS_View_Simple>
+  <MBBS_View_Advanced>Avansat</MBBS_View_Advanced>
+  <MBBS_ViewTip>Modul Avansat afișează mai multe opțiuni: lățimi, poziții fixe, alinierea textului, taste rapide și compatibilitate. Alegerea este comună pentru toate salvările.</MBBS_ViewTip>
+  <MBBS_Col_Visible>Vizibil</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Pictogramă</MBBS_Col_Icon>
+  <MBBS_Col_Name>Nume</MBBS_Col_Name>
+  <MBBS_Col_Source>Mod sursă</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Tastă rapidă</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Sertar</MBBS_Col_Drawer>
+  <MBBS_BarRow>Toată bara (valori implicite)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Ascunse de modul lor ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Butoane pe care modul lor le ține intenționat în afara barei. Activează „Afișează mereu” în modul Avansat pentru a pune unul pe bară.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Mută în sus</MBBS_MoveUp>
+  <MBBS_MoveDown>Mută în jos</MBBS_MoveDown>
+  <MBBS_OrderHint>De sus în jos = de la stânga la dreapta pe ecran. Trage rândurile pentru a le reordona.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(blocat)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(la stânga)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(la dreapta)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Nu este pe bară acum: condiția proprie a butonului nu este îndeplinită.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Mod de afișare</MBBS_DisplayMode>
+  <MBBS_MinWidth>Lățimea minimă a butoanelor la derulare: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Lățimea implicită a butoanelor: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Spațiu între butoane: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Umple lățimea ecranului</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Când butoanele încap, sunt întinse pentru a ocupa toată lățimea.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Blochează butonul Meniu al jocului la capătul din dreapta</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Cât timp este blocat, butonul Meniu nu poate fi ascuns, mutat sau pus în sertar; poate fi doar redenumit.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Butonul Meniu al jocului a fost deblocat în modul Avansat.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Butonul Meniu al jocului este blocat la capătul din dreapta și poate fi doar redenumit. Deblochează-l în modul Avansat, pe rândul pentru toată bara.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Butonul provine din: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Pictograma provine din: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Modul său îl ține intenționat în afara barei; apare doar cu „Afișează mereu”.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>niciunul</MBBS_None>
+  <MBBS_Unknown>necunoscut</MBBS_Unknown>
+  <MBBS_Visible>Afișează pe bară</MBBS_Visible>
+  <MBBS_InDrawer>Pune în sertarul „Mai multe”</MBBS_InDrawer>
+  <MBBS_CustomName>Nume personalizat (gol = originalul: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Lățime: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Lățime: aceeași ca a întregii bare</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Poziție fixă</MBBS_Pin>
+  <MBBS_Pin_None>Nefixat</MBBS_Pin_None>
+  <MBBS_Pin_Left>La stânga</MBBS_Pin_Left>
+  <MBBS_Pin_Right>La dreapta</MBBS_Pin_Right>
+  <MBBS_ForceShow>Afișează mereu</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Afișează butonul chiar și când propria lui condiție spune că nu ar trebui să apară. În acest caz, un clic pe el s-ar putea să nu facă nimic.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Salvează ca șablon implicit</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Aplică șablonul implicit</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Salvat ca șablon implicit. Jocurile noi vor începe cu acest aranjament.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Resetează tot</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Resetezi toate setările la bara neatinsă (jocul plus ce au schimbat alte moduri)? Șablonul nu va fi aplicat.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Salvează</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>A fost detectat {0}: momentan el controlează bara, așa că modificările de aici au efect doar când acest mod are prioritate.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>A fost detectat {0}: acest mod are prioritate, așa că efectul lui asupra barei este dezactivat.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Detalii în modul Avansat.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Compatibilitate: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Întâi acest mod</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Acest mod desenează bara. Efectul lui {0} asupra barei este dezactivat; setările sale sunt folosite doar ca valori de referință.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>Întâi {0}</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} păstrează bara. Acest mod își păstrează doar fereastra de setări.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Intră în vigoare după repornirea jocului.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Importă setările din {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Aranjamentul a fost importat din {0}. Apasă Salvează pentru a-l păstra.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Tastă rapidă: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Setează</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Șterge</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Comună pentru toate salvările; este aceeași tastă ca în Setări &gt; Configurare tastatură.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Comună pentru toate salvările. Acest buton nu are o intrare în Setări &gt; Configurare tastatură, așa că tasta este păstrată de acest mod.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Apasă o tastă (Esc pentru anulare)</MBBS_PressKey>
+  <MBBS_Export>Exportă...</MBBS_Export>
+  <MBBS_Import>Importă...</MBBS_Import>
+  <MBBS_Export_Clipboard>Copiază ca text (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Aranjamentul a fost copiat în clipboard.</MBBS_Export_Copied>
+  <MBBS_Export_File>Salvează ca fișier</MBBS_Export_File>
+  <MBBS_Export_Saved>Salvat în {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Copiază ca XML de mod (pentru a crea un mod de aranjament)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>XML-ul Def a fost copiat. Pune-l într-un fișier .xml din dosarul Defs al modului tău și schimbă defName și label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Din clipboard</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Fișier: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Aranjament: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Aranjament: {0} (de {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Aranjamentul a fost importat în această fereastră. Apasă Salvează pentru a-l păstra.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Clipboardul este gol.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Acesta nu este un aranjament exportat (nu este un XML valid).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Textul nu conține niciun aranjament.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Textul cere crearea unor clase de program, de care un aranjament nu are niciodată nevoie. Nu a fost importat.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Creat de o versiune mai nouă a acestui mod (formatul {0}; această versiune citește până la {1}). Actualizează mai întâi modul.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Aranjamentul nu a putut fi citit: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Implicit</MBBS_Default>
+  <MBBS_DefaultTip>Revine la valoarea implicită.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Sertar</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Lățime și spațiere</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Lățimea săgeților de derulare: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Viteza rotiței mouse-ului: {0}px pe pas</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Lățimea butonului „Mai multe”: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Lățimea butonului „Mai multe”: după text</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Coloane în sertar: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Coloane în sertar: automat</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Lățimea celulelor din sertar: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Lățimea celulelor din sertar: aceeași ca lățimea implicită a butoanelor</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Alinierea textului</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Unde stă textul butoanelor. Butoanele care afișează doar o pictogramă nu sunt afectate.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Ca în joc</MBBS_Align_Default>
+  <MBBS_Align_Left>Stânga</MBBS_Align_Left>
+  <MBBS_Align_Center>Centru</MBBS_Align_Center>
+  <MBBS_Align_Right>Dreapta</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>resursele proprii ale jocului</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Butoane</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>Aspect</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Temă</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Temele schimbă aspectul barei și al butoanelor ei. Modurile de teme care au Main Button Bar System ca dependență apar și ele aici. Alegerea este păstrată în această salvare (sau în șablon, când deschizi setările din meniul principal).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>de {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Săgețile apar doar când butoanele nu încap. Cât timp încap, bara nu are nevoie de derulare.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Are deja valoarea implicită.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Butoane principale (păstrate de acest mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Tasta {0} este folosită și de:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Când două asocieri de taste folosesc aceeași tastă, apăsarea ei declanșează doar una dintre ele. Schimbă una dintre ele în Setări &gt; Configurare tastatură sau alege altă tastă aici.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Acest mod tratează tastele pe care le păstrează după cele ale jocului, așa că asocierile de mai sus preiau primele această tastă și acest buton nu va reacționa. Alege altă tastă aici sau schimbă cealaltă asociere în Setări &gt; Configurare tastatură.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Pictogramă și text</MBBS_IconMode>
+  <MBBS_IconModeTip>Jocul afișează doar pictograma când butonul are una, altfel doar textul.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Ca în joc</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Doar text</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Doar pictogramă</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Pictogramă și text</MBBS_IconMode_Both>
+  <MBBS_Icon>Pictogramă: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>cea originală</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (negăsită)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Pictograma aleasă nu poate fi găsită, așa că se folosește pictograma originală a butonului.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Alege...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Alege o pictogramă</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Integrate</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importate</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Încă nu există pictograme importate. Pune fișiere PNG în
+{0}
+apoi apasă Reîncarcă. Rămân acolo și după actualizările modului.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Folosește originala</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Deschide dosarul</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Reîncarcă</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Setările altor moduri pentru acest buton (doar ca referință):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: pe bară</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: în propria fereastră pop-up</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: ascuns</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: afișat mereu</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: lățime {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: spațiu {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: umple lățimea ecranului: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: redenumit în „{1}”</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: doar text</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: pictogramă personalizată {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Pictogramă și text (toate butoanele)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Cum își afișează toate butoanele pictograma și textul, cu excepția celor care au propria setare.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Fă ca toate butoanele cu setare proprie ({0}) să urmeze această setare</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>La fel ca întreaga bară ({0})</MBBS_IconMode_FollowBar>
+</LanguageData>

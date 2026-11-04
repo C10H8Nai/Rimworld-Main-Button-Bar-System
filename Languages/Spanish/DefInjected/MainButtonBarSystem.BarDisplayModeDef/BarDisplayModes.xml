@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>original</Vanilla.label>
+  <Vanilla.description>Como en el juego base: el ancho de la pantalla se reparte a partes iguales. Sin desplazamiento ni cajón.</Vanilla.description>
+  <Collapse.label>compacto</Collapse.label>
+  <Collapse.description>Los botones marcados en «Cajón» pasan al cajón «Más»; el resto se reparte la barra.</Collapse.description>
+  <Scroll.label>desplazable</Scroll.label>
+  <Scroll.description>Los botones mantienen su ancho; desplaza la barra con la rueda del ratón o con las flechas. No se usa el cajón.</Scroll.description>
+  <CollapseScroll.label>compacto + desplazable</CollapseScroll.label>
+  <CollapseScroll.description>El cajón funciona como en el modo compacto; el resto de botones se desplaza.</CollapseScroll.description>
+</LanguageData>

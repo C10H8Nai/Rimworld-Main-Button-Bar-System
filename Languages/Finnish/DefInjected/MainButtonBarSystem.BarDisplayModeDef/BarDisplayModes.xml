@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>alkuperäinen</Vanilla.label>
+  <Vanilla.description>Kuten peruspelissä: näytön leveys jaetaan tasan. Ei vieritystä eikä laatikkoa.</Vanilla.description>
+  <Collapse.label>kutistus</Collapse.label>
+  <Collapse.description>Painikkeet, joissa on ”Laatikko”-merkintä, siirtyvät ”Muut”-laatikkoon; loput jakavat palkin.</Collapse.description>
+  <Scroll.label>vieritys</Scroll.label>
+  <Scroll.description>Painikkeet säilyttävät leveytensä; vieritä palkkia hiiren rullalla tai nuolilla. Laatikkoa ei käytetä.</Scroll.description>
+  <CollapseScroll.label>kutistus + vieritys</CollapseScroll.label>
+  <CollapseScroll.description>Laatikko toimii kuten tilassa ”Kutistus”; loput painikkeet vierivät.</CollapseScroll.description>
+</LanguageData>

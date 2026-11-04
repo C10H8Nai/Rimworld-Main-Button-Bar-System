@@ -42,6 +42,7 @@ namespace MainButtonBarSystem
             absorbInputAroundWindow = false;
             preventCameraMotion = false;
             drawShadow = true;
+            doWindowBackground = false; // the theme draws it (see DoWindowContents)
             soundAppear = SoundDefOf.TabOpen;
             soundClose = SoundDefOf.TabClose;
         }
@@ -75,7 +76,25 @@ namespace MainButtonBarSystem
         private static int Rows => Mathf.Max(1, Mathf.CeilToInt(BarRenderer.Drawer.Count / (float)Columns));
 
         public override Vector2 InitialSize =>
-            new Vector2(Columns * CellWidth + B.drawerPadding * 2f, Rows * CellHeight + B.drawerSettingsRowHeight + B.drawerPadding * 3f);
+            new Vector2(Mathf.Max(Columns * CellWidth, B.drawerSettingsRowHeight) + B.drawerPadding * 2f,
+                Rows * CellHeight + B.drawerSettingsRowHeight + B.drawerPadding * 3f);
+
+        private static Texture2D defaultSettingsIcon;
+
+        /// <summary>The settings gear: the theme's icon, else the tuning def's (this mod ships one).</summary>
+        private static Texture2D SettingsIcon(BarAppearanceWorker appearance)
+        {
+            var themed = appearance?.DrawerSettingsIcon();
+            if (themed != null) return themed;
+            if (defaultSettingsIcon == null)
+            {
+                var path = B.drawerSettingsIcon;
+                defaultSettingsIcon = string.IsNullOrEmpty(path) ? null : ContentFinder<Texture2D>.Get(path, false);
+                if (defaultSettingsIcon == null)
+                    Log.WarningOnce(MainButtonBarSystemMod.LogPrefix + "Drawer settings icon '" + path + "' not found.", 0x4D424254);
+            }
+            return defaultSettingsIcon;
+        }
 
         protected override void SetInitialSizeAndPosition()
         {
@@ -102,6 +121,9 @@ namespace MainButtonBarSystem
                 return;
             }
 
+            var appearance = BarRenderer.Appearance;
+            appearance.DrawDrawerBackground(inRect.ExpandedBy(B.drawerPadding));
+
             int columns = Columns;
             float cellWidth = CellWidth, cellHeight = CellHeight;
             bool activated = false;
@@ -112,14 +134,18 @@ namespace MainButtonBarSystem
 
                 var cell = new Rect(inRect.x + (i % columns) * cellWidth, inRect.y + (i / columns) * cellHeight, cellWidth, cellHeight);
                 var before = Event.current.type;
-                BarRenderer.Appearance.DrawDrawerButton(button, cell);
+                appearance.DrawDrawerButton(button, cell);
                 // Buttons fire on mouse up; closing on mouse down would swallow the click.
                 if (before == EventType.MouseUp && Event.current.type == EventType.Used && Mouse.IsOver(cell))
                     activated = true;
             }
 
-            var settingsRect = new Rect(inRect.x, inRect.yMax - B.drawerSettingsRowHeight, inRect.width, B.drawerSettingsRowHeight);
-            if (Widgets.ButtonText(settingsRect, "MBBS_OpenSettings".Translate()))
+            // A square gear at the bottom right: fits any drawer width and any language.
+            float gear = B.drawerSettingsRowHeight;
+            var settingsRect = new Rect(inRect.xMax - gear, inRect.yMax - gear, gear, gear);
+            TooltipHandler.TipRegion(settingsRect, "MBBS_OpenSettings".Translate());
+            var icon = SettingsIcon(appearance);
+            if (icon != null ? Widgets.ButtonImage(settingsRect, icon) : Widgets.ButtonText(settingsRect, "…"))
             {
                 MainButtonBarAPI.OpenSettings();
                 activated = true;

@@ -9,8 +9,9 @@
   <MBBS_AlwaysDrawBarTip>Until you change something, the game keeps drawing the bar itself. Turn this on to compare this mod's drawing with the game's.</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>Main button bar settings (this save)</MBBS_Title_Save>
   <MBBS_Title_Template>Main button bar settings (default template)</MBBS_Title_Template>
-  <MBBS_Tab_Simple>Simple</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>Advanced</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>Simple</MBBS_View_Simple>
+  <MBBS_View_Advanced>Advanced</MBBS_View_Advanced>
+  <MBBS_ViewTip>Advanced shows more options: widths, fixed positions, label alignment, hotkeys and compatibility. The choice is kept for every save.</MBBS_ViewTip>
   <MBBS_Col_Visible>Show</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icon</MBBS_Col_Icon>
   <MBBS_Col_Name>Name</MBBS_Col_Name>
@@ -71,13 +72,11 @@
   <MBBS_Compat_RestartNeeded>Takes effect after restarting the game.</MBBS_Compat_RestartNeeded>
   <MBBS_Compat_Import>Import settings from {0}</MBBS_Compat_Import>
   <MBBS_Compat_Imported>Imported the arrangement from {0}. Press Save to keep it.</MBBS_Compat_Imported>
-  <MBBS_Appearance>Appearance</MBBS_Appearance>
   <MBBS_HotKey>Hotkey: {0}</MBBS_HotKey>
   <MBBS_HotKeySet>Set</MBBS_HotKeySet>
   <MBBS_HotKeyClear>Clear</MBBS_HotKeyClear>
   <MBBS_HotKeyGameNote>Shared by all saves; the same key as in Options &gt; Keyboard.</MBBS_HotKeyGameNote>
   <MBBS_HotKeyCustomNote>Shared by all saves. This button has no entry in Options &gt; Keyboard, so this mod keeps the key.</MBBS_HotKeyCustomNote>
-  <MBBS_HotKeyConflict>Same key as: {0}</MBBS_HotKeyConflict>
   <MBBS_PressKey>Press a key (Esc to cancel)</MBBS_PressKey>
   <MBBS_Export>Export...</MBBS_Export>
   <MBBS_Import>Import...</MBBS_Import>
@@ -117,4 +116,51 @@
   <MBBS_Align_Center>Center</MBBS_Align_Center>
   <MBBS_Align_Right>Right</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>the game's own assets</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Buttons</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>Appearance</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Theme</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Themes change how the bar and its buttons look. Theme mods that list Main Button Bar System as a dependency appear here too. The choice is saved with this save (or with the template at the main menu).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>by {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Arrows appear only when the buttons do not fit. While they fit, the bar does not need to scroll.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Already the default value.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Main buttons (kept by this mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>The key {0} is also used by:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>When two bindings share a key, pressing it triggers only one of them. Change one of them in Options &gt; Keyboard, or pick another key here.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>This mod handles the keys it keeps after the game's own, so the bindings above take this key first and this button will not react. Pick another key here, or change the other binding in Options &gt; Keyboard.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Icon and text</MBBS_IconMode>
+  <MBBS_IconModeTip>The game shows only the icon when a button has one, and only the text otherwise.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>As the game draws it</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Text only</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Icon only</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Icon and text</MBBS_IconMode_Both>
+  <MBBS_Icon>Icon: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>the button's own</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (not found)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>The chosen icon cannot be found, so the button's own icon is used.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Choose...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Choose an icon</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Built-in</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Imported</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>No imported icons yet. Put PNG files in
+{0}
+then press Refresh. They stay there through mod updates.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Use the button's own</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Open folder</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Refresh</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Other mods' settings for this button (reference only):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: on the bar</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: in its pop-up</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: hidden</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: always shown</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: width {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: gap {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: fill the screen: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: renamed to "{1}"</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: text only</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: custom icon {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Icon and text (all buttons)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>How every button shows its icon and label, unless a button has its own setting.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Make all {0} buttons with their own setting follow this</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Same as the whole bar ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

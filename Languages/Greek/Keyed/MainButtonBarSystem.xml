@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Άλλα ({0})</MBBS_More>
+  <MBBS_MoreTip>Κουμπιά συμπτυγμένα στο συρτάρι. Το συρτάρι έχει δικό του κουμπί ρυθμίσεων στο κάτω μέρος.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Ρυθμίσεις γραμμής βασικών κουμπιών</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Άνοιγμα μέσα από παιχνίδι: οι αλλαγές ισχύουν για την τρέχουσα αποθήκευση.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Άνοιγμα από το κύριο μενού: οι αλλαγές ισχύουν για το προεπιλεγμένο πρότυπο με το οποίο ξεκινούν τα νέα παιχνίδια.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Να σχεδιάζεται πάντα η γραμμή από αυτό το mod (για δοκιμές)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Μέχρι να αλλάξετε κάτι, τη γραμμή τη σχεδιάζει το ίδιο το παιχνίδι. Ενεργοποιήστε το για να συγκρίνετε τη σχεδίαση αυτού του mod με εκείνη του παιχνιδιού.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Ρυθμίσεις γραμμής βασικών κουμπιών (αυτή η αποθήκευση)</MBBS_Title_Save>
+  <MBBS_Title_Template>Ρυθμίσεις γραμμής βασικών κουμπιών (προεπιλεγμένο πρότυπο)</MBBS_Title_Template>
+  <MBBS_View_Simple>Απλές</MBBS_View_Simple>
+  <MBBS_View_Advanced>Σύνθετες</MBBS_View_Advanced>
+  <MBBS_ViewTip>Στις Σύνθετες εμφανίζονται περισσότερες επιλογές: πλάτη, σταθερές θέσεις, στοίχιση ετικετών, πλήκτρα συντόμευσης και συμβατότητα. Η επιλογή είναι κοινή για όλες τις αποθηκεύσεις.</MBBS_ViewTip>
+  <MBBS_Col_Visible>Ορατό</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Εικονίδιο</MBBS_Col_Icon>
+  <MBBS_Col_Name>Όνομα</MBBS_Col_Name>
+  <MBBS_Col_Source>Προέλευση</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Πλήκτρο</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Συρτάρι</MBBS_Col_Drawer>
+  <MBBS_BarRow>Όλη η γραμμή (προεπιλογές)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Κρυμμένα από το mod τους ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Κουμπιά που το mod τους κρατά σκόπιμα εκτός γραμμής. Ενεργοποιήστε το «Πάντα ορατό» στις Σύνθετες για να βάλετε κάποιο στη γραμμή.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Πάνω</MBBS_MoveUp>
+  <MBBS_MoveDown>Κάτω</MBBS_MoveDown>
+  <MBBS_OrderHint>Από πάνω προς τα κάτω = από αριστερά προς τα δεξιά στην οθόνη. Σύρετε τις σειρές για αναδιάταξη.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(κλειδωμένο)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(αριστερό άκρο)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(δεξί άκρο)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Δεν είναι στη γραμμή αυτή τη στιγμή: η συνθήκη του ίδιου του κουμπιού δεν πληρείται.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Λειτουργία εμφάνισης</MBBS_DisplayMode>
+  <MBBS_MinWidth>Ελάχιστο πλάτος κουμπιού κατά την κύλιση: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Προεπιλεγμένο πλάτος κουμπιού: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Απόσταση μεταξύ κουμπιών: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Κάλυψη όλου του πλάτους της οθόνης</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Όταν τα κουμπιά χωρούν, τεντώνονται ώστε να καλύπτουν όλο το πλάτος.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Κλείδωμα του κουμπιού μενού του παιχνιδιού στο δεξί άκρο</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Όσο είναι κλειδωμένο, το κουμπί μενού δεν μπορεί να κρυφτεί, να μετακινηθεί ή να μπει στο συρτάρι· μπορεί μόνο να μετονομαστεί.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Το κουμπί μενού του παιχνιδιού έχει ξεκλειδωθεί στις Σύνθετες.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Το κουμπί μενού του παιχνιδιού είναι κλειδωμένο στο δεξί άκρο και μπορεί μόνο να μετονομαστεί. Ξεκλειδώστε το στις Σύνθετες, στη σειρά «Όλη η γραμμή».</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Προέλευση κουμπιού: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Προέλευση εικονιδίου: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Το mod του το κρατά σκόπιμα εκτός γραμμής· εμφανίζεται μόνο με το «Πάντα ορατό».</MBBS_Info_OriginallyHidden>
+  <MBBS_None>κανένα</MBBS_None>
+  <MBBS_Unknown>άγνωστο</MBBS_Unknown>
+  <MBBS_Visible>Εμφάνιση στη γραμμή</MBBS_Visible>
+  <MBBS_InDrawer>Τοποθέτηση στο συρτάρι «Άλλα»</MBBS_InDrawer>
+  <MBBS_CustomName>Προσαρμοσμένο όνομα (κενό = αρχικό: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Πλάτος: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Πλάτος: ίδιο με όλη τη γραμμή</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Σταθερή θέση</MBBS_Pin>
+  <MBBS_Pin_None>Ελεύθερη</MBBS_Pin_None>
+  <MBBS_Pin_Left>Αριστερό άκρο</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Δεξί άκρο</MBBS_Pin_Right>
+  <MBBS_ForceShow>Πάντα ορατό</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Εμφανίζει το κουμπί ακόμη κι όταν η δική του συνθήκη λέει ότι δεν πρέπει να εμφανίζεται. Τότε το πάτημά του μπορεί να μην κάνει τίποτα.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Αποθήκευση ως προεπιλεγμένο πρότυπο</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Εφαρμογή προεπιλεγμένου προτύπου</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Αποθηκεύτηκε ως προεπιλεγμένο πρότυπο. Τα νέα παιχνίδια θα ξεκινούν με αυτή τη διάταξη.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Επαναφορά όλων</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Επαναφορά όλων των ρυθμίσεων στην ανέγγιχτη γραμμή (το παιχνίδι μαζί με ό,τι άλλαξαν άλλα mods); Αυτό δεν εφαρμόζει το πρότυπο.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Αποθήκευση</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>Εντοπίστηκε το {0}: προς το παρόν η γραμμή ελέγχεται από εκείνο, οπότε οι αλλαγές εδώ ισχύουν μόνο όταν αυτό το mod έχει προτεραιότητα.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>Εντοπίστηκε το {0}: αυτό το mod έχει προτεραιότητα, οπότε η επίδραση εκείνου στη γραμμή είναι απενεργοποιημένη.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Λεπτομέρειες στις Σύνθετες.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Συμβατότητα: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Πρώτα αυτό το mod</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Αυτό το mod σχεδιάζει τη γραμμή. Η επίδραση του {0} στη γραμμή απενεργοποιείται· οι ρυθμίσεις του χρησιμοποιούνται μόνο ως τιμές αναφοράς.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>Πρώτα το {0}</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>Το {0} κρατά τη γραμμή. Αυτό το mod κρατά μόνο το παράθυρο ρυθμίσεών του.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Ισχύει μετά από επανεκκίνηση του παιχνιδιού.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Εισαγωγή ρυθμίσεων από το {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Η διάταξη εισήχθη από το {0}. Πατήστε «Αποθήκευση» για να τη διατηρήσετε.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Πλήκτρο συντόμευσης: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Ορισμός</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Διαγραφή</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Κοινό για όλες τις αποθηκεύσεις· το ίδιο πλήκτρο όπως στις «Επιλογές &gt; Πληκτρολόγιο».</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Κοινό για όλες τις αποθηκεύσεις. Αυτό το κουμπί δεν έχει καταχώριση στις «Επιλογές &gt; Πληκτρολόγιο», οπότε το πλήκτρο το κρατά αυτό το mod.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Πατήστε ένα πλήκτρο (Esc για ακύρωση)</MBBS_PressKey>
+  <MBBS_Export>Εξαγωγή...</MBBS_Export>
+  <MBBS_Import>Εισαγωγή...</MBBS_Import>
+  <MBBS_Export_Clipboard>Αντιγραφή ως κείμενο (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Η διάταξη αντιγράφηκε στο πρόχειρο.</MBBS_Export_Copied>
+  <MBBS_Export_File>Αποθήκευση ως αρχείο</MBBS_Export_File>
+  <MBBS_Export_Saved>Αποθηκεύτηκε σε: {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Αντιγραφή ως XML mod (για τη δημιουργία mod διάταξης)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Το Def XML αντιγράφηκε. Βάλτε το σε ένα αρχείο .xml στον φάκελο Defs του mod σας και αλλάξτε τα defName και label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Από το πρόχειρο</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Αρχείο: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Διάταξη: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Διάταξη: {0} (από {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Η διάταξη εισήχθη σε αυτό το παράθυρο. Πατήστε «Αποθήκευση» για να τη διατηρήσετε.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Το πρόχειρο είναι άδειο.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Αυτό δεν είναι διάταξη που έχει εξαχθεί (μη έγκυρο XML).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Αυτό το κείμενο δεν περιέχει διάταξη.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Αυτό το κείμενο ζητά τη δημιουργία κλάσεων προγράμματος, κάτι που μια διάταξη δεν χρειάζεται ποτέ. Δεν έγινε εισαγωγή.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Δημιουργήθηκε από νεότερη έκδοση αυτού του mod (μορφή {0}· αυτή η έκδοση διαβάζει έως {1}). Ενημερώστε πρώτα το mod.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Δεν ήταν δυνατή η ανάγνωση της διάταξης: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Προεπιλογή</MBBS_Default>
+  <MBBS_DefaultTip>Επαναφορά στην προεπιλεγμένη τιμή.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Συρτάρι</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Πλάτος και αποστάσεις</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Πλάτος βελών κύλισης: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Ταχύτητα ροδέλας ποντικιού: {0}px ανά βήμα</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Πλάτος κουμπιού «Άλλα»: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Πλάτος κουμπιού «Άλλα»: προσαρμογή στην ετικέτα</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Στήλες συρταριού: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Στήλες συρταριού: αυτόματα</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Πλάτος κελιού συρταριού: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Πλάτος κελιού συρταριού: ίδιο με το προεπιλεγμένο πλάτος κουμπιού</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Στοίχιση ετικετών</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Πού βρίσκονται οι ετικέτες των κουμπιών. Τα κουμπιά που δείχνουν μόνο εικονίδιο δεν επηρεάζονται.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Όπως στο παιχνίδι</MBBS_Align_Default>
+  <MBBS_Align_Left>Αριστερά</MBBS_Align_Left>
+  <MBBS_Align_Center>Κέντρο</MBBS_Align_Center>
+  <MBBS_Align_Right>Δεξιά</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>τα αρχεία του ίδιου του παιχνιδιού</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Κουμπιά</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>Εμφάνιση</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Θέμα</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Τα θέματα αλλάζουν την εμφάνιση της γραμμής και των κουμπιών της. Εδώ εμφανίζονται επίσης mods θεμάτων που δηλώνουν το Main Button Bar System ως εξάρτηση. Η επιλογή αποθηκεύεται μαζί με αυτή την αποθήκευση (ή με το πρότυπο, στο κύριο μενού).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>από {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Τα βέλη εμφανίζονται μόνο όταν τα κουμπιά δεν χωρούν. Όσο χωρούν, η γραμμή δεν χρειάζεται κύλιση.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Ήδη στην προεπιλεγμένη τιμή.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Βασικά κουμπιά (τα διατηρεί αυτό το mod)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Το πλήκτρο {0} χρησιμοποιείται επίσης από:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Όταν δύο αντιστοιχίσεις μοιράζονται ένα πλήκτρο, το πάτημά του ενεργοποιεί μόνο μία από αυτές. Αλλάξτε μία από τις δύο στις «Επιλογές &gt; Πληκτρολόγιο» ή διαλέξτε άλλο πλήκτρο εδώ.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Αυτό το mod χειρίζεται τα πλήκτρα που διατηρεί μετά από εκείνα του παιχνιδιού, οπότε οι παραπάνω αντιστοιχίσεις παίρνουν πρώτες αυτό το πλήκτρο και αυτό το κουμπί δεν θα αντιδρά. Διαλέξτε άλλο πλήκτρο εδώ ή αλλάξτε την άλλη αντιστοίχιση στις «Επιλογές &gt; Πληκτρολόγιο».</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Εικονίδιο και κείμενο</MBBS_IconMode>
+  <MBBS_IconModeTip>Το παιχνίδι δείχνει μόνο το εικονίδιο όταν το κουμπί έχει εικονίδιο, αλλιώς μόνο το κείμενο.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Όπως στο παιχνίδι</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Μόνο κείμενο</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Μόνο εικονίδιο</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Εικονίδιο και κείμενο</MBBS_IconMode_Both>
+  <MBBS_Icon>Εικονίδιο: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>το αρχικό του κουμπιού</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (δεν βρέθηκε)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Το επιλεγμένο εικονίδιο δεν βρέθηκε, οπότε χρησιμοποιείται το αρχικό εικονίδιο του κουμπιού.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Επιλογή...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Επιλογή εικονιδίου</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Ενσωματωμένα</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Εισαγμένα</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Δεν υπάρχουν ακόμη εισαγμένα εικονίδια. Βάλτε αρχεία PNG στον φάκελο
+{0}
+και πατήστε «Ανανέωση». Παραμένουν εκεί και μετά από ενημερώσεις του mod.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Χρήση του αρχικού</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Άνοιγμα φακέλου</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Ανανέωση</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Ρυθμίσεις άλλων mods για αυτό το κουμπί (μόνο για αναφορά):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: στη γραμμή</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: στο δικό του αναδυόμενο παράθυρο</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: κρυμμένο</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: πάντα ορατό</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: πλάτος {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: απόσταση {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: κάλυψη όλου του πλάτους της οθόνης: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: μετονομάστηκε σε «{1}»</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: μόνο κείμενο</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: προσαρμοσμένο εικονίδιο {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Εικονίδιο και κείμενο (όλα τα κουμπιά)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Πώς δείχνουν όλα τα κουμπιά το εικονίδιο και την ετικέτα τους, εκτός αν ένα κουμπί έχει δική του ρύθμιση.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Εφαρμογή σε όλα τα κουμπιά με δική τους ρύθμιση ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Ίδιο με όλη τη γραμμή ({0})</MBBS_IconMode_FollowBar>
+</LanguageData>

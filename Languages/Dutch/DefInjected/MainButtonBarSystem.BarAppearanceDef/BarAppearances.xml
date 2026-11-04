@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>origineel</Vanilla.label>
+  <Vanilla.description>Het eigen uiterlijk van de knoppen van het spel.</Vanilla.description>
+  <MBBS_Imperial.label>keizerlijk</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Marineblauw en goud met gekroonde hoeken en een blauwgroene psylinkgloed, in de kleuren van de uitbreiding Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Diep blauwgroen met koraalrode randen en gouden medaillons, in de kleuren van de uitbreiding Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>genlab</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Blauw met blauwgroene randen, mauve gentegels en genblauwe labels, in de kleuren van de uitbreiding Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>leegte</MBBS_Void.label>
+  <MBBS_Void.description>Leegtezwart en monolietsteen met een rode gloed en scherfvormig afgesneden hoeken, in de kleuren van de uitbreiding Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>sterrenreiziger</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Stalen rompplaten met klinknagels en een cyaan gloed van de stuwraketten, geïnspireerd op de uitbreiding Odyssey.</MBBS_Starfarer.description>
+</LanguageData>

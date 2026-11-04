@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>jako ve hře</Vanilla.label>
+  <Vanilla.description>Jako v základní hře: šířka obrazovky se dělí rovným dílem. Bez posouvání a bez panelu „Více“.</Vanilla.description>
+  <Collapse.label>sbalení</Collapse.label>
+  <Collapse.description>Tlačítka označená „Sbalit“ se přesunou do panelu „Více“; ostatní si dělí lištu.</Collapse.description>
+  <Scroll.label>posouvání</Scroll.label>
+  <Scroll.description>Tlačítka si zachovají šířku; lištu posouváš kolečkem myši nebo šipkami. Panel „Více“ se nepoužívá.</Scroll.description>
+  <CollapseScroll.label>sbalení + posouvání</CollapseScroll.label>
+  <CollapseScroll.description>Panel „Více“ funguje jako v režimu „Sbalení“; zbývající tlačítka se posouvají.</CollapseScroll.description>
+</LanguageData>

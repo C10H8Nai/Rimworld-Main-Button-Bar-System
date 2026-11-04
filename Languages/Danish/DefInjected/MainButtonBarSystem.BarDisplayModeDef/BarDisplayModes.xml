@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>original</Vanilla.label>
+  <Vanilla.description>Som i grundspillet: skærmens bredde deles ligeligt. Ingen rulning og ingen skuffe.</Vanilla.description>
+  <Collapse.label>sammenfoldning</Collapse.label>
+  <Collapse.description>Knapper markeret med »Skuffe« flyttes til »Mere«-skuffen; resten deler linjen.</Collapse.description>
+  <Scroll.label>rulning</Scroll.label>
+  <Scroll.description>Knapperne beholder deres bredde; rul linjen med musehjulet eller pilene. Skuffen bruges ikke.</Scroll.description>
+  <CollapseScroll.label>sammenfoldning + rulning</CollapseScroll.label>
+  <CollapseScroll.description>Skuffen virker som i »Sammenfoldning«; de øvrige knapper ruller.</CollapseScroll.description>
+</LanguageData>

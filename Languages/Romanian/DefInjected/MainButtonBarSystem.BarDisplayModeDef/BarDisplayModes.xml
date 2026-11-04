@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>original</Vanilla.label>
+  <Vanilla.description>Ca în jocul de bază: lățimea ecranului este împărțită în mod egal. Fără derulare și fără sertar.</Vanilla.description>
+  <Collapse.label>restrângere</Collapse.label>
+  <Collapse.description>Butoanele bifate la „Sertar” trec în sertarul „Mai multe”; restul împart bara.</Collapse.description>
+  <Scroll.label>derulare</Scroll.label>
+  <Scroll.description>Butoanele își păstrează lățimea; derulează bara cu rotița mouse-ului sau cu săgețile. Sertarul nu este folosit.</Scroll.description>
+  <CollapseScroll.label>restrângere + derulare</CollapseScroll.label>
+  <CollapseScroll.description>Sertarul funcționează ca la Restrângere; restul butoanelor se derulează.</CollapseScroll.description>
+</LanguageData>

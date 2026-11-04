@@ -9,8 +9,9 @@
   <MBBS_AlwaysDrawBarTip>在你改动任何设置之前，底部栏仍由游戏自己绘制。开启后可以比较本模组和游戏绘制的结果。</MBBS_AlwaysDrawBarTip>
   <MBBS_Title_Save>主按钮栏设置（当前存档）</MBBS_Title_Save>
   <MBBS_Title_Template>主按钮栏设置（默认模板）</MBBS_Title_Template>
-  <MBBS_Tab_Simple>简单</MBBS_Tab_Simple>
-  <MBBS_Tab_Advanced>进阶</MBBS_Tab_Advanced>
+  <MBBS_View_Simple>简单</MBBS_View_Simple>
+  <MBBS_View_Advanced>进阶</MBBS_View_Advanced>
+  <MBBS_ViewTip>进阶会显示更多选项：宽度、固定位置、文字对齐、快捷键和兼容设置。这个选择所有存档共用。</MBBS_ViewTip>
   <MBBS_Col_Visible>显示</MBBS_Col_Visible>
   <MBBS_Col_Icon>图标</MBBS_Col_Icon>
   <MBBS_Col_Name>名称</MBBS_Col_Name>
@@ -71,13 +72,11 @@
   <MBBS_Compat_RestartNeeded>重新启动游戏后生效。</MBBS_Compat_RestartNeeded>
   <MBBS_Compat_Import>导入 {0} 的设置</MBBS_Compat_Import>
   <MBBS_Compat_Imported>已导入 {0} 的排法。按「保存」才会保留。</MBBS_Compat_Imported>
-  <MBBS_Appearance>外观</MBBS_Appearance>
   <MBBS_HotKey>快捷键：{0}</MBBS_HotKey>
   <MBBS_HotKeySet>设置</MBBS_HotKeySet>
   <MBBS_HotKeyClear>清除</MBBS_HotKeyClear>
   <MBBS_HotKeyGameNote>所有存档共用，和「选项 → 键盘设置」里的相同。</MBBS_HotKeyGameNote>
   <MBBS_HotKeyCustomNote>所有存档共用。这个按钮在「键盘设置」里没有项目，由本模组保存。</MBBS_HotKeyCustomNote>
-  <MBBS_HotKeyConflict>和这些按键冲突：{0}</MBBS_HotKeyConflict>
   <MBBS_PressKey>请按一个键（Esc 取消）</MBBS_PressKey>
   <MBBS_Export>导出…</MBBS_Export>
   <MBBS_Import>导入…</MBBS_Import>
@@ -117,4 +116,51 @@
   <MBBS_Align_Center>置中</MBBS_Align_Center>
   <MBBS_Align_Right>靠右</MBBS_Align_Right>
   <MBBS_IconFromGameAssets>游戏本体资源</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>按钮</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>外观</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>主题</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>主题会改变底部栏和按钮的外观。以本模组为前置的主题模组也会出现在这里。选择会跟着这个存档保存（在主菜单时则保存到模板）。</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>作者：{0}（{1}）</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>按钮放不下时才会出现箭头；放得下时不需要滚动。</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>已经是默认值。</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>主按钮（本模组保存）</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>按键 {0} 也被这些功能使用：</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}：{1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>两个功能共用同一个键时，按下去只会触发其中一个。请到「选项 → 键盘设置」改掉其中一个，或在这里换一个键。</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>本模组保存的快捷键在游戏自己的快捷键之后才处理，所以上面的功能会先用掉这个键，这个按钮不会有反应。请在这里换一个键，或到「选项 → 键盘设置」改掉另一个。</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>图标与文字</MBBS_IconMode>
+  <MBBS_IconModeTip>游戏原本是：按钮有图标就只显示图标，没有就只显示文字。</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>照游戏原本的</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>只显示文字</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>只显示图标</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>图标＋文字</MBBS_IconMode_Both>
+  <MBBS_Icon>图标：{0}</MBBS_Icon>
+  <MBBS_IconOriginal>按钮原本的</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0}（找不到）</MBBS_IconMissing>
+  <MBBS_IconMissingNote>找不到选择的图标，所以使用按钮原本的图标。</MBBS_IconMissingNote>
+  <MBBS_IconChoose>选择…</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>选择图标</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>内置</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>导入的</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>还没有导入的图标。把 PNG 文件放进
+{0}
+再按「重新整理」。模组更新时它们不会被删除。</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>使用按钮原本的</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>打开文件夹</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>重新整理</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>其他模组对这个按钮的设置（仅供参考）：</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}：在栏上</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}：在它的弹出窗口里</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}：隐藏</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}：强制显示</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}：宽度 {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}：间距 {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}：填满画面：{1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}：改名为「{1}」</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}：只显示文字</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}：自定义图标 {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>图标与文字（所有按钮）</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>所有按钮显示图标和文字的方式；个别按钮另有设置时以该按钮为准。</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>让 {0} 个有个别设置的按钮都改为跟随这里</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>跟随整条栏（{0}）</MBBS_IconMode_FollowBar>
 </LanguageData>

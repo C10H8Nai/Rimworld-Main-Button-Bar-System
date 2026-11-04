@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>original</Vanilla.label>
+  <Vanilla.description>Som i grunnspillet: skjermbredden deles likt. Ingen rulling og ingen skuff.</Vanilla.description>
+  <Collapse.label>sammenfolding</Collapse.label>
+  <Collapse.description>Knapper merket «Skuff» flyttes til «Mer»-skuffen; resten deler linjen.</Collapse.description>
+  <Scroll.label>rulling</Scroll.label>
+  <Scroll.description>Knappene beholder bredden sin; rull linjen med musehjulet eller pilene. Skuffen brukes ikke.</Scroll.description>
+  <CollapseScroll.label>sammenfolding + rulling</CollapseScroll.label>
+  <CollapseScroll.description>Skuffen fungerer som i «Sammenfolding»; de øvrige knappene ruller.</CollapseScroll.description>
+</LanguageData>

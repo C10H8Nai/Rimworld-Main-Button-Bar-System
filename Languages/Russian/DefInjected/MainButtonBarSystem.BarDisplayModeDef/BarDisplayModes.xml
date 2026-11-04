@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>как в игре</Vanilla.label>
+  <Vanilla.description>Как в основной игре: ширина экрана делится поровну. Без прокрутки и без меню «Ещё».</Vanilla.description>
+  <Collapse.label>сворачивание</Collapse.label>
+  <Collapse.description>Кнопки с отметкой «Свернуть» уходят в меню «Ещё»; остальные делят панель.</Collapse.description>
+  <Scroll.label>прокрутка</Scroll.label>
+  <Scroll.description>Кнопки сохраняют ширину; панель прокручивается колёсиком мыши или стрелками. Меню «Ещё» не используется.</Scroll.description>
+  <CollapseScroll.label>сворачивание + прокрутка</CollapseScroll.label>
+  <CollapseScroll.description>Меню «Ещё» работает как в режиме «Сворачивание»; остальные кнопки прокручиваются.</CollapseScroll.description>
+</LanguageData>

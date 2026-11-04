@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>jako ve hře</Vanilla.label>
+  <Vanilla.description>Vlastní vzhled tlačítek hry.</Vanilla.description>
+  <MBBS_Imperial.label>imperiální</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Námořnická modř a zlatá, rohy zdobené korunkami a modrozelená záře psiovazby. V barvách rozšíření Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>krédo</MBBS_Creed.label>
+  <MBBS_Creed.description>Tmavá modrozelená s korálovými okraji a zlatými medailony. V barvách rozšíření Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>genetická laboratoř</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Modrá s modrozelenými okraji, fialovorůžovými genovými dlaždicemi a popisky v genové modři. V barvách rozšíření Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>nicota</MBBS_Void.label>
+  <MBBS_Void.description>Čerň nicoty a kámen monolitu s rudou září a rohy seříznutými jako střepy. V barvách rozšíření Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>hvězdoplavec</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Ocelové pláty trupu s nýty a azurovou září trysek. Inspirováno rozšířením Odyssey.</MBBS_Starfarer.description>
+</LanguageData>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Muut ({0})</MBBS_More>
+  <MBBS_MoreTip>Laatikkoon kootut painikkeet. Laatikon alareunassa on oma asetuspainike.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Pääpainikepalkin asetukset</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Avattu pelissä: muutokset koskevat nykyistä tallennusta.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Avattu päävalikosta: muutokset koskevat oletusmallia, jolla uudet pelit alkavat.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Piirrä palkki aina tällä modilla (testausta varten)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Ennen kuin muutat jotain, peli piirtää palkin itse. Ota tämä käyttöön, niin voit verrata tämän modin piirtämää palkkia pelin omaan.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Pääpainikepalkin asetukset (tämä tallennus)</MBBS_Title_Save>
+  <MBBS_Title_Template>Pääpainikepalkin asetukset (oletusmalli)</MBBS_Title_Template>
+  <MBBS_View_Simple>Perus</MBBS_View_Simple>
+  <MBBS_View_Advanced>Edistynyt</MBBS_View_Advanced>
+  <MBBS_ViewTip>Edistynyt-näkymässä näkyy lisää asetuksia: leveydet, kiinteät paikat, tekstin tasaus, pikanäppäimet ja yhteensopivuus. Valinta on yhteinen kaikille tallennuksille.</MBBS_ViewTip>
+  <MBBS_Col_Visible>Näytä</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Kuvake</MBBS_Col_Icon>
+  <MBBS_Col_Name>Nimi</MBBS_Col_Name>
+  <MBBS_Col_Source>Modi</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Pikanäppäin</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Laatikko</MBBS_Col_Drawer>
+  <MBBS_BarRow>Koko palkki (oletukset)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Oman modinsa piilottamat ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Painikkeet, jotka niiden oma modi pitää tarkoituksella poissa palkista. Tuo painike palkkiin ottamalla ”Näytä aina” käyttöön Edistynyt-näkymässä.</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Siirrä ylös</MBBS_MoveUp>
+  <MBBS_MoveDown>Siirrä alas</MBBS_MoveDown>
+  <MBBS_OrderHint>Ylhäältä alas = vasemmalta oikealle näytöllä. Muuta järjestystä vetämällä rivejä.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(lukittu)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(vasen reuna)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(oikea reuna)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Ei tällä hetkellä palkissa: painikkeen oma ehto ei täyty.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Näyttötila</MBBS_DisplayMode>
+  <MBBS_MinWidth>Painikkeen vähimmäisleveys vieritettäessä: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Painikkeen oletusleveys: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Painikkeiden väli: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Täytä näytön leveys</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Kun painikkeet mahtuvat, ne venytetään koko leveydelle.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Lukitse pelin Valikko-painike oikeaan reunaan</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Lukittua Valikko-painiketta ei voi piilottaa, siirtää eikä laittaa laatikkoon; sen voi vain nimetä uudelleen.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Pelin Valikko-painikkeen lukitus on avattu Edistynyt-näkymässä.</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Pelin Valikko-painike on lukittu oikeaan reunaan, ja sen voi vain nimetä uudelleen. Avaa lukitus Edistynyt-näkymässä rivillä ”Koko palkki”.</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Painikkeen lähde: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Kuvakkeen lähde: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Sen oma modi pitää sen tarkoituksella poissa palkista; se näkyy vain, kun ”Näytä aina” on käytössä.</MBBS_Info_OriginallyHidden>
+  <MBBS_None>ei mitään</MBBS_None>
+  <MBBS_Unknown>tuntematon</MBBS_Unknown>
+  <MBBS_Visible>Näytä palkissa</MBBS_Visible>
+  <MBBS_InDrawer>Laita ”Muut”-laatikkoon</MBBS_InDrawer>
+  <MBBS_CustomName>Oma nimi (tyhjä = alkuperäinen: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Leveys: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Leveys: sama kuin koko palkilla</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Kiinteä paikka</MBBS_Pin>
+  <MBBS_Pin_None>Vapaa</MBBS_Pin_None>
+  <MBBS_Pin_Left>Vasen reuna</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Oikea reuna</MBBS_Pin_Right>
+  <MBBS_ForceShow>Näytä aina</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Näytä painike, vaikka sen oma ehto sanoo, ettei sen pitäisi näkyä. Sen napsauttaminen ei silloin välttämättä tee mitään.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Tallenna oletusmalliksi</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Käytä oletusmallia</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Tallennettu oletusmalliksi. Uudet pelit alkavat tällä järjestelyllä.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Nollaa kaikki</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Palautetaanko kaikki asetukset koskemattomaan palkkiin (peli sekä muiden modien tekemät muutokset)? Tämä ei ota mallia käyttöön.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Tallenna</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>Havaittiin {0}: se hallitsee tällä hetkellä palkkia, joten tässä tehdyt muutokset tulevat voimaan vasta, kun tällä modilla on etusija.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>Havaittiin {0}: tällä modilla on etusija, joten toisen modin vaikutus palkkiin on poistettu käytöstä.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Lisätietoja Edistynyt-näkymässä.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Yhteensopivuus: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Tämä modi ensin</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Tämä modi piirtää palkin. Modin {0} vaikutus palkkiin on poistettu käytöstä; sen asetuksia käytetään vain viitearvoina.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>{0} ensin</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>{0} hallitsee palkkia. Tästä modista jää käyttöön vain asetusikkuna.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Tulee voimaan, kun peli käynnistetään uudelleen.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Tuo asetukset modista {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Järjestely tuotiin modista {0}. Säilytä se painamalla Tallenna.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Pikanäppäin: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Aseta</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Poista</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Yhteinen kaikille tallennuksille; sama näppäin kuin kohdassa Asetukset &gt; Näppäinasetukset.</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Yhteinen kaikille tallennuksille. Tätä painiketta ei löydy kohdasta Asetukset &gt; Näppäinasetukset, joten tämä modi säilyttää näppäimen.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Paina näppäintä (Esc peruuttaa)</MBBS_PressKey>
+  <MBBS_Export>Vie...</MBBS_Export>
+  <MBBS_Import>Tuo...</MBBS_Import>
+  <MBBS_Export_Clipboard>Kopioi tekstinä (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Järjestely kopioitiin leikepöydälle.</MBBS_Export_Copied>
+  <MBBS_Export_File>Tallenna tiedostoksi</MBBS_Export_File>
+  <MBBS_Export_Saved>Tallennettu: {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Kopioi mod-XML:nä (järjestelymodin tekemistä varten)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def-XML kopioitu. Laita se .xml-tiedostoon modisi Defs-kansioon ja muuta defName ja label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Leikepöydältä</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Tiedosto: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Järjestely: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Järjestely: {0} (tekijä: {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Järjestely tuotiin tähän ikkunaan. Säilytä se painamalla Tallenna.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Leikepöytä on tyhjä.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Tämä ei ole viety järjestely (ei kelvollista XML:ää).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>Tekstissä ei ole järjestelyä.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Teksti yrittää luoda ohjelmaluokkia, joita järjestely ei koskaan tarvitse. Ei tuotu.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Tehty tämän modin uudemmalla versiolla (muoto {0}; tämä versio lukee enintään muotoa {1}). Päivitä modi ensin.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Järjestelyä ei voitu lukea: {0}</MBBS_Import_Failed>
+  <MBBS_Default>Oletus</MBBS_Default>
+  <MBBS_DefaultTip>Palauta oletusarvo.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Laatikko</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Leveys ja välit</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Vieritysnuolten leveys: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Hiiren rullan nopeus: {0}px pykälää kohden</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>”Muut”-painikkeen leveys: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>”Muut”-painikkeen leveys: tekstin mukaan</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Laatikon sarakkeet: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Laatikon sarakkeet: automaattinen</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Laatikon solun leveys: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Laatikon solun leveys: sama kuin painikkeen oletusleveys</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Tekstin tasaus</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Mihin painikkeiden tekstit sijoittuvat. Tämä ei vaikuta painikkeisiin, joissa näkyy vain kuvake.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Kuten pelissä</MBBS_Align_Default>
+  <MBBS_Align_Left>Vasen</MBBS_Align_Left>
+  <MBBS_Align_Center>Keskitetty</MBBS_Align_Center>
+  <MBBS_Align_Right>Oikea</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>pelin omat resurssit</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Painikkeet</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>Ulkoasu</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Teema</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Teemat muuttavat palkin ja sen painikkeiden ulkoasua. Myös teemamodit, joiden riippuvuutena on Main Button Bar System, näkyvät täällä. Valinta tallennetaan tähän tallennukseen (tai päävalikossa malliin).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>tekijä: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Nuolet näkyvät vain, kun painikkeet eivät mahdu. Kun ne mahtuvat, palkkia ei tarvitse vierittää.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Oletusarvo on jo käytössä.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Pääpainikkeet (tämän modin säilyttämät)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Näppäintä {0} käyttävät myös:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Kun kaksi toimintoa käyttää samaa näppäintä, painallus laukaisee vain toisen niistä. Vaihda jommankumman näppäin kohdassa Asetukset &gt; Näppäinasetukset tai valitse tässä toinen näppäin.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Tämä modi käsittelee säilyttämänsä näppäimet vasta pelin omien jälkeen, joten yllä olevat toiminnot vievät tämän näppäimen ensin, eikä tämä painike reagoi. Valitse tässä toinen näppäin tai vaihda toisen toiminnon näppäin kohdassa Asetukset &gt; Näppäinasetukset.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Kuvake ja teksti</MBBS_IconMode>
+  <MBBS_IconModeTip>Peli näyttää painikkeessa vain kuvakkeen, jos sillä on sellainen, ja muuten vain tekstin.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Kuten pelissä</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Vain teksti</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Vain kuvake</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Kuvake ja teksti</MBBS_IconMode_Both>
+  <MBBS_Icon>Kuvake: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>painikkeen oma</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (ei löydy)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Valittua kuvaketta ei löydy, joten käytetään painikkeen omaa kuvaketta.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Valitse...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Valitse kuvake</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Valmiit</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Tuodut</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Tuotuja kuvakkeita ei vielä ole. Laita PNG-tiedostoja kansioon
+{0}
+ja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Käytä painikkeen omaa</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Avaa kansio</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Päivitä</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Muiden modien asetukset tälle painikkeelle (vain viitteeksi):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: palkissa</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: omassa ponnahdusikkunassaan</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: piilotettu</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: näytetään aina</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: leveys {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: väli {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: täytä näytön leveys: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: uusi nimi ”{1}”</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: vain teksti</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: oma kuvake {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Kuvake ja teksti (kaikki painikkeet)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Miten kaikki painikkeet näyttävät kuvakkeen ja tekstin, ellei painikkeella ole omaa asetusta.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Laita kaikki painikkeet, joilla on oma asetus ({0}), noudattamaan tätä</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Sama kuin koko palkilla ({0})</MBBS_IconMode_FollowBar>
+</LanguageData>

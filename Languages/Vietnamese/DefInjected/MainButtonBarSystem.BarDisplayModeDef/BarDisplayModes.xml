@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>nguyên bản</Vanilla.label>
+  <Vanilla.description>Giống trò chơi gốc: chia đều chiều rộng màn hình. Không cuộn và không có ngăn kéo.</Vanilla.description>
+  <Collapse.label>thu gọn</Collapse.label>
+  <Collapse.description>Các nút được đánh dấu "Ngăn kéo" sẽ vào ngăn kéo "Khác"; các nút còn lại chia nhau thanh nút.</Collapse.description>
+  <Scroll.label>cuộn</Scroll.label>
+  <Scroll.description>Các nút giữ nguyên độ rộng; cuộn thanh nút bằng con lăn chuột hoặc mũi tên. Không dùng ngăn kéo.</Scroll.description>
+  <CollapseScroll.label>thu gọn + cuộn</CollapseScroll.label>
+  <CollapseScroll.description>Ngăn kéo hoạt động như ở chế độ Thu gọn; các nút còn lại có thể cuộn.</CollapseScroll.description>
+</LanguageData>

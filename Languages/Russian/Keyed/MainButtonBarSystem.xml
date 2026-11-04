@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MBBS_More>Ещё ({0})</MBBS_More>
+  <MBBS_MoreTip>Кнопки, убранные в меню «Ещё». Внизу меню есть собственная кнопка настроек.</MBBS_MoreTip>
+  <MBBS_OpenSettings>Настройки нижней панели</MBBS_OpenSettings>
+  <MBBS_ModSettings_InGame>Открыто в игре: изменения применяются к текущему сохранению.</MBBS_ModSettings_InGame>
+  <MBBS_ModSettings_MainMenu>Открыто из главного меню: изменения применяются к шаблону по умолчанию, с которым начинаются новые игры.</MBBS_ModSettings_MainMenu>
+  <MBBS_AlwaysDrawBar>Всегда отрисовывать панель этим модом (для проверки)</MBBS_AlwaysDrawBar>
+  <MBBS_AlwaysDrawBarTip>Пока вы ничего не изменили, панель отрисовывает сама игра. Включите, чтобы сравнить отрисовку этого мода с игровой.</MBBS_AlwaysDrawBarTip>
+  <MBBS_Title_Save>Настройки нижней панели (это сохранение)</MBBS_Title_Save>
+  <MBBS_Title_Template>Настройки нижней панели (шаблон по умолчанию)</MBBS_Title_Template>
+  <MBBS_View_Simple>Основные</MBBS_View_Simple>
+  <MBBS_View_Advanced>Расширенные</MBBS_View_Advanced>
+  <MBBS_ViewTip>В режиме «Расширенные» доступно больше настроек: ширина, закрепление, выравнивание надписей, клавиши и совместимость. Выбор общий для всех сохранений.</MBBS_ViewTip>
+  <MBBS_Col_Visible>Показ</MBBS_Col_Visible>
+  <MBBS_Col_Icon>Иконка</MBBS_Col_Icon>
+  <MBBS_Col_Name>Название</MBBS_Col_Name>
+  <MBBS_Col_Source>Из мода</MBBS_Col_Source>
+  <MBBS_Col_HotKey>Клавиша</MBBS_Col_HotKey>
+  <MBBS_Col_Drawer>Свернуть</MBBS_Col_Drawer>
+  <MBBS_BarRow>Вся панель (по умолчанию)</MBBS_BarRow>
+  <MBBS_OriginallyHidden>Скрытые собственным модом ({0})</MBBS_OriginallyHidden>
+  <MBBS_OriginallyHiddenTip>Эти кнопки их мод намеренно не выводит на панель. Чтобы поместить такую кнопку на панель, включите «Всегда показывать» в режиме «Расширенные».</MBBS_OriginallyHiddenTip>
+  <MBBS_MoveUp>Вверх</MBBS_MoveUp>
+  <MBBS_MoveDown>Вниз</MBBS_MoveDown>
+  <MBBS_OrderHint>Сверху вниз = слева направо на экране. Перетаскивайте строки, чтобы изменить порядок.</MBBS_OrderHint>
+  <MBBS_LockedSuffix>(заблокировано)</MBBS_LockedSuffix>
+  <MBBS_PinnedLeftSuffix>(левый край)</MBBS_PinnedLeftSuffix>
+  <MBBS_PinnedRightSuffix>(правый край)</MBBS_PinnedRightSuffix>
+  <MBBS_NotShowingNowTip>Сейчас не на панели: собственное условие кнопки не выполнено.</MBBS_NotShowingNowTip>
+  <MBBS_DisplayMode>Режим отображения</MBBS_DisplayMode>
+  <MBBS_MinWidth>Минимальная ширина кнопки при прокрутке: {0}px</MBBS_MinWidth>
+  <MBBS_DefaultWidth>Ширина кнопки по умолчанию: {0}px</MBBS_DefaultWidth>
+  <MBBS_Gap>Расстояние между кнопками: {0}px</MBBS_Gap>
+  <MBBS_FillScreen>Растягивать на всю ширину экрана</MBBS_FillScreen>
+  <MBBS_FillScreenTip>Если кнопки помещаются, растягивать их на всю ширину.</MBBS_FillScreenTip>
+  <MBBS_MenuLocked>Заблокировать кнопку «Меню» у правого края</MBBS_MenuLocked>
+  <MBBS_MenuLockedTip>Пока кнопка «Меню» заблокирована, её нельзя скрыть, переместить или убрать в меню «Ещё» — только переименовать.</MBBS_MenuLockedTip>
+  <MBBS_MenuUnlockedNote>Кнопка «Меню» разблокирована в режиме «Расширенные».</MBBS_MenuUnlockedNote>
+  <MBBS_MenuLockedNote>Кнопка «Меню» заблокирована у правого края, её можно только переименовать. Разблокировать её можно в режиме «Расширенные», в строке «Вся панель».</MBBS_MenuLockedNote>
+  <MBBS_Info_ButtonSource>Источник кнопки: {0}</MBBS_Info_ButtonSource>
+  <MBBS_Info_IconSource>Источник иконки: {0}</MBBS_Info_IconSource>
+  <MBBS_Info_DefName>defName: {0}</MBBS_Info_DefName>
+  <MBBS_Info_OriginallyHidden>Мод этой кнопки намеренно не выводит её на панель; она появится только при включённом «Всегда показывать».</MBBS_Info_OriginallyHidden>
+  <MBBS_None>нет</MBBS_None>
+  <MBBS_Unknown>неизвестно</MBBS_Unknown>
+  <MBBS_Visible>Показывать на панели</MBBS_Visible>
+  <MBBS_InDrawer>Убрать в меню «Ещё»</MBBS_InDrawer>
+  <MBBS_CustomName>Своё название (пусто = исходное: {0})</MBBS_CustomName>
+  <MBBS_ButtonWidth>Ширина: {0}px</MBBS_ButtonWidth>
+  <MBBS_ButtonWidthFollow>Ширина: как у всей панели</MBBS_ButtonWidthFollow>
+  <MBBS_Pin>Закрепление</MBBS_Pin>
+  <MBBS_Pin_None>Нет</MBBS_Pin_None>
+  <MBBS_Pin_Left>Левый край</MBBS_Pin_Left>
+  <MBBS_Pin_Right>Правый край</MBBS_Pin_Right>
+  <MBBS_ForceShow>Всегда показывать</MBBS_ForceShow>
+  <MBBS_ForceShowTip>Показывать кнопку, даже если её собственное условие говорит, что она не должна появляться. Нажатие на неё тогда может ничего не делать.</MBBS_ForceShowTip>
+  <MBBS_SaveAsTemplate>Сохранить как шаблон по умолчанию</MBBS_SaveAsTemplate>
+  <MBBS_ApplyTemplate>Применить шаблон по умолчанию</MBBS_ApplyTemplate>
+  <MBBS_TemplateSaved>Сохранено как шаблон по умолчанию. Новые игры будут начинаться с этой расстановкой.</MBBS_TemplateSaved>
+  <MBBS_ResetAll>Сбросить всё</MBBS_ResetAll>
+  <MBBS_ResetAllConfirm>Вернуть все настройки к исходной панели (игра плюс изменения других модов)? Шаблон при этом не применяется.</MBBS_ResetAllConfirm>
+  <MBBS_Save>Сохранить</MBBS_Save>
+  <MBBS_Compat_TheirsNotice>Обнаружен мод {0}: сейчас панелью управляет он, поэтому изменения здесь вступят в силу, только когда приоритет будет у этого мода.</MBBS_Compat_TheirsNotice>
+  <MBBS_Compat_OursNotice>Обнаружен мод {0}: приоритет у этого мода, поэтому влияние мода {0} на панель отключено.</MBBS_Compat_OursNotice>
+  <MBBS_Compat_SeeAdvanced>Подробности в режиме «Расширенные».</MBBS_Compat_SeeAdvanced>
+  <MBBS_Compat_Header>Совместимость: {0}</MBBS_Compat_Header>
+  <MBBS_Compat_Ours>Приоритет у этого мода</MBBS_Compat_Ours>
+  <MBBS_Compat_Ours_Desc>Панель отрисовывает этот мод. Влияние мода {0} на панель отключено, его настройки используются только как справочные значения.</MBBS_Compat_Ours_Desc>
+  <MBBS_Compat_Theirs>Приоритет у {0}</MBBS_Compat_Theirs>
+  <MBBS_Compat_Theirs_Desc>Панелью управляет {0}. От этого мода остаётся только окно настроек.</MBBS_Compat_Theirs_Desc>
+  <MBBS_Compat_RestartNeeded>Вступит в силу после перезапуска игры.</MBBS_Compat_RestartNeeded>
+  <MBBS_Compat_Import>Импортировать настройки из {0}</MBBS_Compat_Import>
+  <MBBS_Compat_Imported>Расстановка импортирована из {0}. Нажмите «Сохранить», чтобы оставить её.</MBBS_Compat_Imported>
+  <MBBS_HotKey>Клавиша: {0}</MBBS_HotKey>
+  <MBBS_HotKeySet>Задать</MBBS_HotKeySet>
+  <MBBS_HotKeyClear>Очистить</MBBS_HotKeyClear>
+  <MBBS_HotKeyGameNote>Общая для всех сохранений; та же клавиша, что в разделе «Настройки &gt; Настройки клавиатуры».</MBBS_HotKeyGameNote>
+  <MBBS_HotKeyCustomNote>Общая для всех сохранений. У этой кнопки нет строки в разделе «Настройки &gt; Настройки клавиатуры», поэтому клавишу хранит этот мод.</MBBS_HotKeyCustomNote>
+  <MBBS_PressKey>Нажмите клавишу (Esc — отмена)</MBBS_PressKey>
+  <MBBS_Export>Экспорт...</MBBS_Export>
+  <MBBS_Import>Импорт...</MBBS_Import>
+  <MBBS_Export_Clipboard>Копировать как текст (Discord, LINE...)</MBBS_Export_Clipboard>
+  <MBBS_Export_Copied>Расстановка скопирована в буфер обмена.</MBBS_Export_Copied>
+  <MBBS_Export_File>Сохранить в файл</MBBS_Export_File>
+  <MBBS_Export_Saved>Сохранено в файл: {0}</MBBS_Export_Saved>
+  <MBBS_Export_ModXml>Копировать как XML для мода (чтобы сделать мод с расстановкой)</MBBS_Export_ModXml>
+  <MBBS_Export_ModXmlCopied>Def в формате XML скопирован. Поместите его в файл .xml в папке Defs вашего мода и измените defName и label.</MBBS_Export_ModXmlCopied>
+  <MBBS_Import_Clipboard>Из буфера обмена</MBBS_Import_Clipboard>
+  <MBBS_Import_File>Файл: {0}</MBBS_Import_File>
+  <MBBS_Import_Def>Расстановка: {0}</MBBS_Import_Def>
+  <MBBS_Import_DefBy>Расстановка: {0} (автор: {1})</MBBS_Import_DefBy>
+  <MBBS_Import_Done>Расстановка импортирована в это окно. Нажмите «Сохранить», чтобы оставить её.</MBBS_Import_Done>
+  <MBBS_Import_Empty>Буфер обмена пуст.</MBBS_Import_Empty>
+  <MBBS_Import_NotXml>Это не экспортированная расстановка (некорректный XML).</MBBS_Import_NotXml>
+  <MBBS_Import_NoConfig>В этом тексте нет расстановки.</MBBS_Import_NoConfig>
+  <MBBS_Import_Unsafe>Этот текст требует создать программные классы, а расстановке они никогда не нужны. Импорт отменён.</MBBS_Import_Unsafe>
+  <MBBS_Import_TooNew>Создано более новой версией этого мода (формат {0}; эта версия поддерживает до {1}). Сначала обновите мод.</MBBS_Import_TooNew>
+  <MBBS_Import_Failed>Не удалось прочитать расстановку: {0}</MBBS_Import_Failed>
+  <MBBS_Default>По умолчанию</MBBS_Default>
+  <MBBS_DefaultTip>Вернуть значение по умолчанию.</MBBS_DefaultTip>
+  <MBBS_Section_Drawer>Меню «Ещё»</MBBS_Section_Drawer>
+  <MBBS_Section_Size>Ширина и отступы</MBBS_Section_Size>
+  <MBBS_ArrowWidth>Ширина стрелок прокрутки: {0}px</MBBS_ArrowWidth>
+  <MBBS_WheelSpeed>Скорость колёсика мыши: {0}px за шаг</MBBS_WheelSpeed>
+  <MBBS_MoreWidth>Ширина кнопки «Ещё»: {0}px</MBBS_MoreWidth>
+  <MBBS_MoreWidthAuto>Ширина кнопки «Ещё»: по надписи</MBBS_MoreWidthAuto>
+  <MBBS_DrawerColumns>Столбцы меню «Ещё»: {0}</MBBS_DrawerColumns>
+  <MBBS_DrawerColumnsAuto>Столбцы меню «Ещё»: автоматически</MBBS_DrawerColumnsAuto>
+  <MBBS_DrawerCellWidth>Ширина ячейки меню «Ещё»: {0}px</MBBS_DrawerCellWidth>
+  <MBBS_DrawerCellWidthFollow>Ширина ячейки меню «Ещё»: как ширина кнопки по умолчанию</MBBS_DrawerCellWidthFollow>
+  <MBBS_LabelAlign>Выравнивание надписей</MBBS_LabelAlign>
+  <MBBS_LabelAlignTip>Положение надписей на кнопках. На кнопки, которые показывают только иконку, не влияет.</MBBS_LabelAlignTip>
+  <MBBS_Align_Default>Как в игре</MBBS_Align_Default>
+  <MBBS_Align_Left>Слева</MBBS_Align_Left>
+  <MBBS_Align_Center>По центру</MBBS_Align_Center>
+  <MBBS_Align_Right>Справа</MBBS_Align_Right>
+  <MBBS_IconFromGameAssets>ресурсы самой игры</MBBS_IconFromGameAssets>
+  <MBBS_Tab_Buttons>Кнопки</MBBS_Tab_Buttons>
+  <MBBS_Tab_Appearance>Внешний вид</MBBS_Tab_Appearance>
+  <MBBS_ThemeHeader>Тема</MBBS_ThemeHeader>
+  <MBBS_ThemeHeaderTip>Темы меняют внешний вид панели и её кнопок. Здесь также появляются моды тем, у которых Main Button Bar System указан в зависимостях. Выбор хранится в этом сохранении (или в шаблоне, если окно открыто из главного меню).</MBBS_ThemeHeaderTip>
+  <MBBS_ThemeBy>автор: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_ScrollArrowsNote>Стрелки появляются, только когда кнопки не помещаются. Пока они помещаются, прокручивать панель не нужно.</MBBS_ScrollArrowsNote>
+  <MBBS_AlreadyDefaultTip>Уже значение по умолчанию.</MBBS_AlreadyDefaultTip>
+  <MBBS_HotKeyCustomCategory>Кнопки нижней панели (хранит этот мод)</MBBS_HotKeyCustomCategory>
+  <MBBS_HotKeyConflictHeader>Клавиша {0} также назначена для:</MBBS_HotKeyConflictHeader>
+  <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
+  <MBBS_HotKeyConflictExplainGame>Если двум действиям назначена одна клавиша, при её нажатии сработает только одно из них. Измените одно из назначений в разделе «Настройки &gt; Настройки клавиатуры» или выберите здесь другую клавишу.</MBBS_HotKeyConflictExplainGame>
+  <MBBS_HotKeyConflictExplainCustom>Этот мод обрабатывает свои клавиши после игровых, поэтому назначения выше перехватывают эту клавишу первыми и эта кнопка не сработает. Выберите здесь другую клавишу или измените другое назначение в разделе «Настройки &gt; Настройки клавиатуры».</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Иконка и текст</MBBS_IconMode>
+  <MBBS_IconModeTip>Игра показывает только иконку, если она есть у кнопки, а иначе только текст.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Как в игре</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Только текст</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Только иконка</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Иконка и текст</MBBS_IconMode_Both>
+  <MBBS_Icon>Иконка: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>исходная</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (не найдена)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Выбранная иконка не найдена, поэтому используется исходная иконка кнопки.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Выбрать...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Выбор иконки</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Встроенные</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Импортированные</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Импортированных иконок пока нет. Поместите PNG-файлы в папку
+{0}
+и нажмите «Обновить». Они останутся там и после обновлений мода.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Использовать исходную</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Открыть папку</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Обновить</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Настройки этой кнопки в других модах (только для справки):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: на панели</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: в своём всплывающем окне</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: скрыта</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: всегда показывается</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: ширина {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: расстояние {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: растягивать на всю ширину экрана: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: переименована в «{1}»</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: только текст</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: своя иконка {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Иконка и текст (все кнопки)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Как все кнопки показывают иконку и надпись, если у кнопки нет собственной настройки.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Применить ко всем кнопкам с собственной настройкой ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Как у всей панели ({0})</MBBS_IconMode_FollowBar>
+</LanguageData>

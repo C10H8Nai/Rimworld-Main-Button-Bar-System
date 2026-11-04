@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Vanilla.label>バニラ</Vanilla.label>
+  <Vanilla.description>ゲーム本体と同じく,画面の幅を均等に分け合います.スクロールも「その他」メニューもありません.</Vanilla.description>
+  <Collapse.label>折りたたみ</Collapse.label>
+  <Collapse.description>「格納」にチェックしたボタンは「その他」メニューに入り,残りのボタンでバーを分け合います.</Collapse.description>
+  <Scroll.label>スクロール</Scroll.label>
+  <Scroll.description>ボタンの幅はそのままで,マウスホイールか矢印でバーをスクロールします.「その他」メニューは使いません.</Scroll.description>
+  <CollapseScroll.label>折りたたみ + スクロール</CollapseScroll.label>
+  <CollapseScroll.description>「その他」メニューは「折りたたみ」と同じように働き,残りのボタンはスクロールします.</CollapseScroll.description>
+</LanguageData>
