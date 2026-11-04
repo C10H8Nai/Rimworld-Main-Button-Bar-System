@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "Tasta {0} este folosită și de:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "Când două asocieri de taste folosesc aceeași tastă, apăsarea ei declanșează doar una dintre ele. Schimbă una dintre ele în Setări > Configurare tastatură sau alege altă tastă aici.",
-    "MBBS_HotKeyConflictExplainCustom": "Acest mod tratează tastele pe care le păstrează după cele ale jocului, așa că asocierile de mai sus preiau primele această tastă și acest buton nu va reacționa. Alege altă tastă aici sau schimbă cealaltă asociere în Setări > Configurare tastatură."
+    "MBBS_HotKeyConflictExplainCustom": "Acest mod tratează tastele pe care le păstrează după cele ale jocului, așa că asocierile de mai sus preiau primele această tastă și acest buton nu va reacționa. Alege altă tastă aici sau schimbă cealaltă asociere în Setări > Configurare tastatură.",
+    "MBBS_IconMode": "Pictogramă și text",
+    "MBBS_IconModeTip": "Jocul afișează doar pictograma când butonul are una, altfel doar textul.",
+    "MBBS_IconMode_Default": "Ca în joc",
+    "MBBS_IconMode_Text": "Doar text",
+    "MBBS_IconMode_Icon": "Doar pictogramă",
+    "MBBS_IconMode_Both": "Pictogramă și text",
+    "MBBS_Icon": "Pictogramă: {0}",
+    "MBBS_IconOriginal": "cea originală",
+    "MBBS_IconMissing": "{0} (negăsită)",
+    "MBBS_IconMissingNote": "Pictograma aleasă nu poate fi găsită, așa că se folosește pictograma originală a butonului.",
+    "MBBS_IconChoose": "Alege...",
+    "MBBS_IconPickerTitle": "Alege o pictogramă",
+    "MBBS_IconPicker_BuiltIn": "Integrate",
+    "MBBS_IconPicker_Imported": "Importate",
+    "MBBS_IconPicker_Empty": "Încă nu există pictograme importate. Pune fișiere PNG în\n{0}\napoi apasă Reîncarcă. Rămân acolo și după actualizările modului.",
+    "MBBS_IconPicker_UseOriginal": "Folosește originala",
+    "MBBS_IconPicker_OpenFolder": "Deschide dosarul",
+    "MBBS_IconPicker_Refresh": "Reîncarcă",
+    "MBBS_RefHeader": "Setările altor moduri pentru acest buton (doar ca referință):",
+    "MBBS_Ref_Bar": "{0}: pe bară",
+    "MBBS_Ref_Popup": "{0}: în propria fereastră pop-up",
+    "MBBS_Ref_Hidden": "{0}: ascuns",
+    "MBBS_Ref_ForceShow": "{0}: afișat mereu",
+    "MBBS_Ref_Width": "{0}: lățime {1}px",
+    "MBBS_Ref_Gap": "{0}: spațiu {1}px",
+    "MBBS_Ref_Fill": "{0}: umple lățimea ecranului: {1}",
+    "MBBS_Ref_Name": "{0}: redenumit în „{1}”",
+    "MBBS_Ref_NoIcon": "{0}: doar text",
+    "MBBS_Ref_Icon": "{0}: pictogramă personalizată {1}",
+    "MBBS_IconModeAll": "Pictogramă și text (toate butoanele)",
+    "MBBS_IconModeAllTip": "Cum își afișează toate butoanele pictograma și textul, cu excepția celor care au propria setare.",
+    "MBBS_IconModeClearAll": "Fă ca toate butoanele cu setare proprie ({0}) să urmeze această setare",
+    "MBBS_IconMode_FollowBar": "La fel ca întreaga bară ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "Aspectul original al butoanelor jocului."
+      "Vanilla.description": "Aspectul original al butoanelor jocului.",
+      "MBBS_Imperial.label": "imperial",
+      "MBBS_Imperial.description": "Bleumarin și auriu, cu colțuri încoronate și o strălucire psylink verde-albăstruie, în culorile expansiunii Regalitate.",
+      "MBBS_Creed.label": "crez",
+      "MBBS_Creed.description": "Verde-albăstrui intens, cu margini corai și medalioane aurii, în culorile expansiunii Ideologie.",
+      "MBBS_GeneLab.label": "laborator genetic",
+      "MBBS_GeneLab.description": "Albastru, cu margini verde-albăstrui, plăcuțe de gene mov-rozalii și etichete în albastrul genelor, în culorile expansiunii Biotech.",
+      "MBBS_Void.label": "neant",
+      "MBBS_Void.description": "Negrul neantului și piatra monolitului, cu o strălucire roșie și colțuri tăiate ca niște cioburi, în culorile expansiunii Anomaly.",
+      "MBBS_Starfarer.label": "călător stelar",
+      "MBBS_Starfarer.description": "Plăci de oțel ale carenei cu nituri și o strălucire cyan a propulsoarelor, inspirat de expansiunea Odyssey."
     }
   }
 }

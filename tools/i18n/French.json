@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "La touche {0} est aussi utilisée par :",
     "MBBS_HotKeyConflictItem": "{0} : {1}",
     "MBBS_HotKeyConflictExplainGame": "Quand deux raccourcis partagent une touche, l'appui n'en déclenche qu'un seul. Modifiez l'un d'eux dans Options > Configuration du clavier, ou choisissez une autre touche ici.",
-    "MBBS_HotKeyConflictExplainCustom": "Ce mod traite ses propres touches après celles du jeu : les raccourcis ci-dessus captent donc cette touche en premier et ce bouton ne réagira pas. Choisissez une autre touche ici, ou modifiez l'autre raccourci dans Options > Configuration du clavier."
+    "MBBS_HotKeyConflictExplainCustom": "Ce mod traite ses propres touches après celles du jeu : les raccourcis ci-dessus captent donc cette touche en premier et ce bouton ne réagira pas. Choisissez une autre touche ici, ou modifiez l'autre raccourci dans Options > Configuration du clavier.",
+    "MBBS_IconMode": "Icône et texte",
+    "MBBS_IconModeTip": "Le jeu affiche uniquement l'icône si le bouton en a une, sinon uniquement le texte.",
+    "MBBS_IconMode_Default": "Comme le jeu",
+    "MBBS_IconMode_Text": "Texte seul",
+    "MBBS_IconMode_Icon": "Icône seule",
+    "MBBS_IconMode_Both": "Icône et texte",
+    "MBBS_Icon": "Icône : {0}",
+    "MBBS_IconOriginal": "d'origine",
+    "MBBS_IconMissing": "{0} (introuvable)",
+    "MBBS_IconMissingNote": "L'icône choisie est introuvable ; l'icône d'origine du bouton est donc utilisée.",
+    "MBBS_IconChoose": "Choisir...",
+    "MBBS_IconPickerTitle": "Choisir une icône",
+    "MBBS_IconPicker_BuiltIn": "Intégrées",
+    "MBBS_IconPicker_Imported": "Importées",
+    "MBBS_IconPicker_Empty": "Aucune icône importée pour l'instant. Placez des fichiers PNG dans\n{0}\npuis cliquez sur « Actualiser ». Ils y restent lors des mises à jour du mod.",
+    "MBBS_IconPicker_UseOriginal": "Utiliser l'icône d'origine",
+    "MBBS_IconPicker_OpenFolder": "Ouvrir le dossier",
+    "MBBS_IconPicker_Refresh": "Actualiser",
+    "MBBS_RefHeader": "Paramètres des autres mods pour ce bouton (à titre indicatif) :",
+    "MBBS_Ref_Bar": "{0} : sur la barre",
+    "MBBS_Ref_Popup": "{0} : dans sa fenêtre pop-up",
+    "MBBS_Ref_Hidden": "{0} : masqué",
+    "MBBS_Ref_ForceShow": "{0} : toujours affiché",
+    "MBBS_Ref_Width": "{0} : largeur {1}px",
+    "MBBS_Ref_Gap": "{0} : espace {1}px",
+    "MBBS_Ref_Fill": "{0} : occuper toute la largeur de l'écran : {1}",
+    "MBBS_Ref_Name": "{0} : renommé en « {1} »",
+    "MBBS_Ref_NoIcon": "{0} : texte seul",
+    "MBBS_Ref_Icon": "{0} : icône personnalisée {1}",
+    "MBBS_IconModeAll": "Icône et texte (tous les boutons)",
+    "MBBS_IconModeAllTip": "Comment tous les boutons affichent leur icône et leur libellé, sauf ceux qui ont leur propre réglage.",
+    "MBBS_IconModeClearAll": "Faire suivre ce réglage à tous les boutons qui ont le leur ({0})",
+    "MBBS_IconMode_FollowBar": "Identique à la barre entière ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "L'apparence d'origine des boutons du jeu."
+      "Vanilla.description": "L'apparence d'origine des boutons du jeu.",
+      "MBBS_Imperial.label": "impérial",
+      "MBBS_Imperial.description": "Bleu marine et or, coins couronnés et lueur bleu sarcelle de lien psychique, aux couleurs de l'extension Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Bleu sarcelle profond, bordures corail et médaillons dorés, aux couleurs de l'extension Ideology.",
+      "MBBS_GeneLab.label": "labo génétique",
+      "MBBS_GeneLab.description": "Bleu, bordures bleu sarcelle, tuiles de gènes mauves et libellés bleu gène, aux couleurs de l'extension Biotech.",
+      "MBBS_Void.label": "néant",
+      "MBBS_Void.description": "Noir du néant et pierre du monolithe, lueur rouge et coins taillés en éclats, aux couleurs de l'extension Anomaly.",
+      "MBBS_Starfarer.label": "voyageur stellaire",
+      "MBBS_Starfarer.description": "Plaques de coque en acier rivetées et lueur cyan des propulseurs, d'après l'extension Odyssey."
     }
   }
 }

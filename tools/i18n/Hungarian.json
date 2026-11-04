@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "A(z) {0} billentyűt ezek is használják:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "Ha két hozzárendelés ugyanazt a billentyűt használja, a lenyomása csak az egyiket indítja el. Módosítsd az egyiket a „Beállítások > Billentyűzet beállítása” menüben, vagy válassz itt másik billentyűt.",
-    "MBBS_HotKeyConflictExplainCustom": "Ez a mod az általa tárolt billentyűket a játék saját billentyűi után kezeli, ezért a fenti hozzárendelések előbb kapják meg ezt a billentyűt, és ez a gomb nem fog reagálni. Válassz itt másik billentyűt, vagy módosítsd a másik hozzárendelést a „Beállítások > Billentyűzet beállítása” menüben."
+    "MBBS_HotKeyConflictExplainCustom": "Ez a mod az általa tárolt billentyűket a játék saját billentyűi után kezeli, ezért a fenti hozzárendelések előbb kapják meg ezt a billentyűt, és ez a gomb nem fog reagálni. Válassz itt másik billentyűt, vagy módosítsd a másik hozzárendelést a „Beállítások > Billentyűzet beállítása” menüben.",
+    "MBBS_IconMode": "Ikon és szöveg",
+    "MBBS_IconModeTip": "A játék csak az ikont mutatja, ha a gombnak van ikonja, különben csak a szöveget.",
+    "MBBS_IconMode_Default": "Ahogy a játékban",
+    "MBBS_IconMode_Text": "Csak szöveg",
+    "MBBS_IconMode_Icon": "Csak ikon",
+    "MBBS_IconMode_Both": "Ikon és szöveg",
+    "MBBS_Icon": "Ikon: {0}",
+    "MBBS_IconOriginal": "eredeti",
+    "MBBS_IconMissing": "{0} (nem található)",
+    "MBBS_IconMissingNote": "A kiválasztott ikon nem található, ezért a gomb az eredeti ikonját használja.",
+    "MBBS_IconChoose": "Választás...",
+    "MBBS_IconPickerTitle": "Ikon kiválasztása",
+    "MBBS_IconPicker_BuiltIn": "Beépített",
+    "MBBS_IconPicker_Imported": "Importált",
+    "MBBS_IconPicker_Empty": "Még nincsenek importált ikonok. Tegyél PNG-fájlokat ebbe a mappába:\n{0}\nmajd nyomd meg a „Frissítés” gombot. A mod frissítésekor is ott maradnak.",
+    "MBBS_IconPicker_UseOriginal": "Eredeti használata",
+    "MBBS_IconPicker_OpenFolder": "Mappa megnyitása",
+    "MBBS_IconPicker_Refresh": "Frissítés",
+    "MBBS_RefHeader": "Más modok beállításai ehhez a gombhoz (csak referenciaként):",
+    "MBBS_Ref_Bar": "{0}: a gombsoron",
+    "MBBS_Ref_Popup": "{0}: a saját felugró ablakában",
+    "MBBS_Ref_Hidden": "{0}: elrejtve",
+    "MBBS_Ref_ForceShow": "{0}: mindig látható",
+    "MBBS_Ref_Width": "{0}: szélesség {1}px",
+    "MBBS_Ref_Gap": "{0}: távolság {1}px",
+    "MBBS_Ref_Fill": "{0}: a teljes képernyőszélesség kitöltése: {1}",
+    "MBBS_Ref_Name": "{0}: átnevezve „{1}” névre",
+    "MBBS_Ref_NoIcon": "{0}: csak szöveg",
+    "MBBS_Ref_Icon": "{0}: egyéni ikon {1}",
+    "MBBS_IconModeAll": "Ikon és szöveg (minden gomb)",
+    "MBBS_IconModeAllTip": "Hogyan mutatja minden gomb az ikonját és a feliratát, hacsak a gombnak nincs saját beállítása.",
+    "MBBS_IconModeClearAll": "Az összes saját beállítású gomb ({0}) igazítása ehhez",
+    "MBBS_IconMode_FollowBar": "Ugyanaz, mint a teljes gombsoré ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "eredeti",
-      "Vanilla.description": "A játék saját gombkinézete."
+      "Vanilla.description": "A játék saját gombkinézete.",
+      "MBBS_Imperial.label": "birodalmi",
+      "MBBS_Imperial.description": "Tengerészkék és arany, koronás sarkokkal és kékeszöld psylink-ragyogással, a Királyság kiegészítő színeiben.",
+      "MBBS_Creed.label": "hitvallás",
+      "MBBS_Creed.description": "Mély kékeszöld korallszínű szegélyekkel és arany medalionokkal, az Ideológia kiegészítő színeiben.",
+      "MBBS_GeneLab.label": "génlabor",
+      "MBBS_GeneLab.description": "Kék, kékeszöld szegélyekkel, mályvaszínű génlapkákkal és génkék feliratokkal, a Biotech kiegészítő színeiben.",
+      "MBBS_Void.label": "üresség",
+      "MBBS_Void.description": "Ürességfekete és monolitkő, vörös izzással és szilánkosra vágott sarkokkal, az Anomália kiegészítő színeiben.",
+      "MBBS_Starfarer.label": "csillagutazó",
+      "MBBS_Starfarer.description": "Acél hajótestlemezek szegecsekkel és cián hajtóműizzással, az Odyssey kiegészítő ihletésére."
     }
   }
 }

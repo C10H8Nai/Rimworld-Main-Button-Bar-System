@@ -128,4 +128,39 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Kun kaksi toimintoa käyttää samaa näppäintä, painallus laukaisee vain toisen niistä. Vaihda jommankumman näppäin kohdassa Asetukset &gt; Näppäinasetukset tai valitse tässä toinen näppäin.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Tämä modi käsittelee säilyttämänsä näppäimet vasta pelin omien jälkeen, joten yllä olevat toiminnot vievät tämän näppäimen ensin, eikä tämä painike reagoi. Valitse tässä toinen näppäin tai vaihda toisen toiminnon näppäin kohdassa Asetukset &gt; Näppäinasetukset.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Kuvake ja teksti</MBBS_IconMode>
+  <MBBS_IconModeTip>Peli näyttää painikkeessa vain kuvakkeen, jos sillä on sellainen, ja muuten vain tekstin.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Kuten pelissä</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Vain teksti</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Vain kuvake</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Kuvake ja teksti</MBBS_IconMode_Both>
+  <MBBS_Icon>Kuvake: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>painikkeen oma</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (ei löydy)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Valittua kuvaketta ei löydy, joten käytetään painikkeen omaa kuvaketta.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Valitse...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Valitse kuvake</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Valmiit</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Tuodut</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Tuotuja kuvakkeita ei vielä ole. Laita PNG-tiedostoja kansioon
+{0}
+ja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Käytä painikkeen omaa</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Avaa kansio</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Päivitä</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Muiden modien asetukset tälle painikkeelle (vain viitteeksi):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: palkissa</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: omassa ponnahdusikkunassaan</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: piilotettu</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: näytetään aina</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: leveys {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: väli {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: täytä näytön leveys: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: uusi nimi ”{1}”</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: vain teksti</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: oma kuvake {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Kuvake ja teksti (kaikki painikkeet)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Miten kaikki painikkeet näyttävät kuvakkeen ja tekstin, ellei painikkeella ole omaa asetusta.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Laita kaikki painikkeet, joilla on oma asetus ({0}), noudattamaan tätä</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Sama kuin koko palkilla ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

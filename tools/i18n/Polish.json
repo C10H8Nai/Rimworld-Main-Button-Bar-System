@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "Klawisz {0} jest też przypisany do:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "Gdy dwa przypisania mają ten sam klawisz, jego wciśnięcie uruchamia tylko jedno z nich. Zmień jedno z nich w „Opcje > Konfiguracja klawiszy” albo wybierz tu inny klawisz.",
-    "MBBS_HotKeyConflictExplainCustom": "Ten mod obsługuje swoje klawisze po klawiszach gry, więc powyższe przypisania przechwytują ten klawisz jako pierwsze i ten przycisk nie zareaguje. Wybierz tu inny klawisz albo zmień tamto przypisanie w „Opcje > Konfiguracja klawiszy”."
+    "MBBS_HotKeyConflictExplainCustom": "Ten mod obsługuje swoje klawisze po klawiszach gry, więc powyższe przypisania przechwytują ten klawisz jako pierwsze i ten przycisk nie zareaguje. Wybierz tu inny klawisz albo zmień tamto przypisanie w „Opcje > Konfiguracja klawiszy”.",
+    "MBBS_IconMode": "Ikona i tekst",
+    "MBBS_IconModeTip": "Gra pokazuje tylko ikonę, jeśli przycisk ją ma, a w przeciwnym razie tylko tekst.",
+    "MBBS_IconMode_Default": "Jak w grze",
+    "MBBS_IconMode_Text": "Tylko tekst",
+    "MBBS_IconMode_Icon": "Tylko ikona",
+    "MBBS_IconMode_Both": "Ikona i tekst",
+    "MBBS_Icon": "Ikona: {0}",
+    "MBBS_IconOriginal": "oryginalna",
+    "MBBS_IconMissing": "{0} (nie znaleziono)",
+    "MBBS_IconMissingNote": "Nie można znaleźć wybranej ikony, więc używana jest oryginalna ikona przycisku.",
+    "MBBS_IconChoose": "Wybierz...",
+    "MBBS_IconPickerTitle": "Wybierz ikonę",
+    "MBBS_IconPicker_BuiltIn": "Wbudowane",
+    "MBBS_IconPicker_Imported": "Zaimportowane",
+    "MBBS_IconPicker_Empty": "Nie ma jeszcze zaimportowanych ikon. Umieść pliki PNG w folderze\n{0}\na następnie naciśnij „Odśwież”. Pozostaną tam także po aktualizacjach modu.",
+    "MBBS_IconPicker_UseOriginal": "Użyj oryginalnej",
+    "MBBS_IconPicker_OpenFolder": "Otwórz folder",
+    "MBBS_IconPicker_Refresh": "Odśwież",
+    "MBBS_RefHeader": "Ustawienia tego przycisku w innych modach (tylko informacyjnie):",
+    "MBBS_Ref_Bar": "{0}: na pasku",
+    "MBBS_Ref_Popup": "{0}: we własnym wyskakującym oknie",
+    "MBBS_Ref_Hidden": "{0}: ukryty",
+    "MBBS_Ref_ForceShow": "{0}: zawsze pokazywany",
+    "MBBS_Ref_Width": "{0}: szerokość {1}px",
+    "MBBS_Ref_Gap": "{0}: odstęp {1}px",
+    "MBBS_Ref_Fill": "{0}: wypełnij szerokość ekranu: {1}",
+    "MBBS_Ref_Name": "{0}: nazwa zmieniona na „{1}”",
+    "MBBS_Ref_NoIcon": "{0}: tylko tekst",
+    "MBBS_Ref_Icon": "{0}: własna ikona {1}",
+    "MBBS_IconModeAll": "Ikona i tekst (wszystkie przyciski)",
+    "MBBS_IconModeAllTip": "Jak wszystkie przyciski pokazują ikonę i napis, chyba że przycisk ma własne ustawienie.",
+    "MBBS_IconModeClearAll": "Zastosuj do wszystkich przycisków z własnym ustawieniem ({0})",
+    "MBBS_IconMode_FollowBar": "Jak dla całego paska ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "jak w grze",
-      "Vanilla.description": "Własny wygląd przycisków z gry."
+      "Vanilla.description": "Własny wygląd przycisków z gry.",
+      "MBBS_Imperial.label": "imperialny",
+      "MBBS_Imperial.description": "Granat i złoto z koronami w narożnikach i turkusową poświatą łącza psychicznego, w barwach rozszerzenia Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Głęboki turkus z koralowymi krawędziami i złotymi medalionami, w barwach rozszerzenia Ideology.",
+      "MBBS_GeneLab.label": "laboratorium genetyczne",
+      "MBBS_GeneLab.description": "Niebieski z turkusowymi krawędziami, różowofioletowymi kafelkami genów i napisami w genowym błękicie, w barwach rozszerzenia Biotech.",
+      "MBBS_Void.label": "pustka",
+      "MBBS_Void.description": "Czerń pustki i kamień monolitu z czerwoną poświatą i narożnikami ściętymi jak odłamki, w barwach rozszerzenia Anomaly.",
+      "MBBS_Starfarer.label": "gwiezdny wędrowiec",
+      "MBBS_Starfarer.description": "Stalowe płyty kadłuba z nitami i cyjanową poświatą silników, w klimacie rozszerzenia Odyssey."
     }
   }
 }

@@ -128,4 +128,39 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Wenn zwei Tastenzuweisungen dieselbe Taste nutzen, löst ein Druck darauf nur eine davon aus. Ändere eine davon unter Optionen &gt; Tastaturbelegung oder wähle hier eine andere Taste.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Diese Mod verarbeitet ihre eigenen Tasten erst nach denen des Spiels. Die oben genannten Zuweisungen greifen daher zuerst, und diese Schaltfläche reagiert nicht. Wähle hier eine andere Taste oder ändere die andere Zuweisung unter Optionen &gt; Tastaturbelegung.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Symbol und Text</MBBS_IconMode>
+  <MBBS_IconModeTip>Das Spiel zeigt nur das Symbol, wenn eine Schaltfläche eines hat, sonst nur den Text.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Wie im Spiel</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Nur Text</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Nur Symbol</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Symbol und Text</MBBS_IconMode_Both>
+  <MBBS_Icon>Symbol: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>Original</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (nicht gefunden)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Das gewählte Symbol wurde nicht gefunden, daher wird das Originalsymbol der Schaltfläche verwendet.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Auswählen...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Symbol auswählen</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Integriert</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importiert</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Noch keine importierten Symbole. Kopiere PNG-Dateien nach
+{0}
+und klicke dann auf „Aktualisieren“. Sie bleiben dort auch bei Mod-Updates erhalten.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Original verwenden</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Ordner öffnen</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Aktualisieren</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Einstellungen anderer Mods für diese Schaltfläche (nur zur Referenz):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: auf der Leiste</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: im eigenen Pop-up-Fenster</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: ausgeblendet</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: immer angezeigt</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: Breite {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: Abstand {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: volle Bildschirmbreite nutzen: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: umbenannt in „{1}“</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: nur Text</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: eigenes Symbol {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Symbol und Text (alle Schaltflächen)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Wie alle Schaltflächen Symbol und Beschriftung zeigen, sofern eine Schaltfläche keine eigene Einstellung hat.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Alle Schaltflächen mit eigener Einstellung ({0}) dieser Vorgabe folgen lassen</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Wie die gesamte Leiste ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

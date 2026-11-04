@@ -3,7 +3,7 @@
   <name>Main Button Bar System</name>
   <author>NAI</author>
   <packageId>NAI.MainButtonBarSystem</packageId>
-  <modVersion>0.6.0</modVersion>
+  <modVersion>0.7.0</modVersion>
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
@@ -18,5 +18,11 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <description>Customize the main button bar: reorder, hide, rename, and group buttons into a drawer, with collapse and scroll display modes. Designed to work alongside other mods that add or modify main buttons.</description>
+  <description>Customise the bottom main button bar: reorder by dragging, hide, rename, set widths, pin to either end, and collapse rarely used buttons into a "More" drawer or let the bar scroll. Per-save settings with a default template, hotkeys for every button, custom and imported icons, themes, export/import of arrangements, 29 languages.
+
+Nothing changes until you change something: a fresh install looks exactly like the game.
+
+Works with mods that add icons, windows or buttons. Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected; you choose who draws it.
+
+Settings: Options > Mod settings > Main Button Bar System, or the gear in the "More" drawer. For modders: API.md in the mod folder.</description>
 </ModMetaData>

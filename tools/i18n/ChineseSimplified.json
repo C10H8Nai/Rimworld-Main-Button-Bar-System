@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "按键 {0} 也被这些功能使用：",
     "MBBS_HotKeyConflictItem": "{0}：{1}",
     "MBBS_HotKeyConflictExplainGame": "两个功能共用同一个键时，按下去只会触发其中一个。请到「选项 → 键盘设置」改掉其中一个，或在这里换一个键。",
-    "MBBS_HotKeyConflictExplainCustom": "本模组保存的快捷键在游戏自己的快捷键之后才处理，所以上面的功能会先用掉这个键，这个按钮不会有反应。请在这里换一个键，或到「选项 → 键盘设置」改掉另一个。"
+    "MBBS_HotKeyConflictExplainCustom": "本模组保存的快捷键在游戏自己的快捷键之后才处理，所以上面的功能会先用掉这个键，这个按钮不会有反应。请在这里换一个键，或到「选项 → 键盘设置」改掉另一个。",
+    "MBBS_IconMode": "图标与文字",
+    "MBBS_IconModeTip": "游戏原本是：按钮有图标就只显示图标，没有就只显示文字。",
+    "MBBS_IconMode_Default": "照游戏原本的",
+    "MBBS_IconMode_Text": "只显示文字",
+    "MBBS_IconMode_Icon": "只显示图标",
+    "MBBS_IconMode_Both": "图标＋文字",
+    "MBBS_Icon": "图标：{0}",
+    "MBBS_IconOriginal": "按钮原本的",
+    "MBBS_IconMissing": "{0}（找不到）",
+    "MBBS_IconMissingNote": "找不到选择的图标，所以使用按钮原本的图标。",
+    "MBBS_IconChoose": "选择…",
+    "MBBS_IconPickerTitle": "选择图标",
+    "MBBS_IconPicker_BuiltIn": "内置",
+    "MBBS_IconPicker_Imported": "导入的",
+    "MBBS_IconPicker_Empty": "还没有导入的图标。把 PNG 文件放进\n{0}\n再按「重新整理」。模组更新时它们不会被删除。",
+    "MBBS_IconPicker_UseOriginal": "使用按钮原本的",
+    "MBBS_IconPicker_OpenFolder": "打开文件夹",
+    "MBBS_IconPicker_Refresh": "重新整理",
+    "MBBS_RefHeader": "其他模组对这个按钮的设置（仅供参考）：",
+    "MBBS_Ref_Bar": "{0}：在栏上",
+    "MBBS_Ref_Popup": "{0}：在它的弹出窗口里",
+    "MBBS_Ref_Hidden": "{0}：隐藏",
+    "MBBS_Ref_ForceShow": "{0}：强制显示",
+    "MBBS_Ref_Width": "{0}：宽度 {1}px",
+    "MBBS_Ref_Gap": "{0}：间距 {1}px",
+    "MBBS_Ref_Fill": "{0}：填满画面：{1}",
+    "MBBS_Ref_Name": "{0}：改名为「{1}」",
+    "MBBS_Ref_NoIcon": "{0}：只显示文字",
+    "MBBS_Ref_Icon": "{0}：自定义图标 {1}",
+    "MBBS_IconModeAll": "图标与文字（所有按钮）",
+    "MBBS_IconModeAllTip": "所有按钮显示图标和文字的方式；个别按钮另有设置时以该按钮为准。",
+    "MBBS_IconModeClearAll": "让 {0} 个有个别设置的按钮都改为跟随这里",
+    "MBBS_IconMode_FollowBar": "跟随整条栏（{0}）"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "原版",
-      "Vanilla.description": "游戏原本的按钮外观。"
+      "Vanilla.description": "游戏原本的按钮外观。",
+      "MBBS_Imperial.label": "帝国",
+      "MBBS_Imperial.description": "海军蓝配金色，皇冠尖角与灵能青光，取自「皇权」扩展的配色。",
+      "MBBS_Creed.label": "信条",
+      "MBBS_Creed.description": "深青配珊瑚红边框与金色圆章，取自「文化」扩展的配色。",
+      "MBBS_GeneLab.label": "基因实验室",
+      "MBBS_GeneLab.description": "蓝底配青色边框、紫红基因方块与基因蓝文字，取自「生物技术」扩展的配色。",
+      "MBBS_Void.label": "虚空",
+      "MBBS_Void.description": "虚空黑与巨石灰，透着红光，碎裂切角，取自「异象」扩展的配色。",
+      "MBBS_Starfarer.label": "星航",
+      "MBBS_Starfarer.description": "钢制船壳与铆钉，配青色推进器光，取自「奥德赛」扩展。"
     }
   }
 }

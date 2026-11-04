@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>原版</Vanilla.label>
   <Vanilla.description>游戏原本的按钮外观。</Vanilla.description>
+  <MBBS_Imperial.label>帝国</MBBS_Imperial.label>
+  <MBBS_Imperial.description>海军蓝配金色，皇冠尖角与灵能青光，取自「皇权」扩展的配色。</MBBS_Imperial.description>
+  <MBBS_Creed.label>信条</MBBS_Creed.label>
+  <MBBS_Creed.description>深青配珊瑚红边框与金色圆章，取自「文化」扩展的配色。</MBBS_Creed.description>
+  <MBBS_GeneLab.label>基因实验室</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>蓝底配青色边框、紫红基因方块与基因蓝文字，取自「生物技术」扩展的配色。</MBBS_GeneLab.description>
+  <MBBS_Void.label>虚空</MBBS_Void.label>
+  <MBBS_Void.description>虚空黑与巨石灰，透着红光，碎裂切角，取自「异象」扩展的配色。</MBBS_Void.description>
+  <MBBS_Starfarer.label>星航</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>钢制船壳与铆钉，配青色推进器光，取自「奥德赛」扩展。</MBBS_Starfarer.description>
 </LanguageData>

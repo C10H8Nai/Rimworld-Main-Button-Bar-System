@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "The key {0} is also used by:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "When two bindings share a key, pressing it triggers only one of them. Change one of them in Options > Keyboard, or pick another key here.",
-    "MBBS_HotKeyConflictExplainCustom": "This mod handles the keys it keeps after the game's own, so the bindings above take this key first and this button will not react. Pick another key here, or change the other binding in Options > Keyboard."
+    "MBBS_HotKeyConflictExplainCustom": "This mod handles the keys it keeps after the game's own, so the bindings above take this key first and this button will not react. Pick another key here, or change the other binding in Options > Keyboard.",
+    "MBBS_IconMode": "Icon and text",
+    "MBBS_IconModeTip": "The game shows only the icon when a button has one, and only the text otherwise.",
+    "MBBS_IconMode_Default": "As the game draws it",
+    "MBBS_IconMode_Text": "Text only",
+    "MBBS_IconMode_Icon": "Icon only",
+    "MBBS_IconMode_Both": "Icon and text",
+    "MBBS_Icon": "Icon: {0}",
+    "MBBS_IconOriginal": "the button's own",
+    "MBBS_IconMissing": "{0} (not found)",
+    "MBBS_IconMissingNote": "The chosen icon cannot be found, so the button's own icon is used.",
+    "MBBS_IconChoose": "Choose...",
+    "MBBS_IconPickerTitle": "Choose an icon",
+    "MBBS_IconPicker_BuiltIn": "Built-in",
+    "MBBS_IconPicker_Imported": "Imported",
+    "MBBS_IconPicker_Empty": "No imported icons yet. Put PNG files in\n{0}\nthen press Refresh. They stay there through mod updates.",
+    "MBBS_IconPicker_UseOriginal": "Use the button's own",
+    "MBBS_IconPicker_OpenFolder": "Open folder",
+    "MBBS_IconPicker_Refresh": "Refresh",
+    "MBBS_RefHeader": "Other mods' settings for this button (reference only):",
+    "MBBS_Ref_Bar": "{0}: on the bar",
+    "MBBS_Ref_Popup": "{0}: in its pop-up",
+    "MBBS_Ref_Hidden": "{0}: hidden",
+    "MBBS_Ref_ForceShow": "{0}: always shown",
+    "MBBS_Ref_Width": "{0}: width {1}px",
+    "MBBS_Ref_Gap": "{0}: gap {1}px",
+    "MBBS_Ref_Fill": "{0}: fill the screen: {1}",
+    "MBBS_Ref_Name": "{0}: renamed to \"{1}\"",
+    "MBBS_Ref_NoIcon": "{0}: text only",
+    "MBBS_Ref_Icon": "{0}: custom icon {1}",
+    "MBBS_IconModeAll": "Icon and text (all buttons)",
+    "MBBS_IconModeAllTip": "How every button shows its icon and label, unless a button has its own setting.",
+    "MBBS_IconModeClearAll": "Make all {0} buttons with their own setting follow this",
+    "MBBS_IconMode_FollowBar": "Same as the whole bar ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "vanilla",
-      "Vanilla.description": "The game's own button look."
+      "Vanilla.description": "The game's own button look.",
+      "MBBS_Imperial.label": "imperial",
+      "MBBS_Imperial.description": "Navy and gold with crowned corners and a psy-teal glow, from the Royalty expansion's colours.",
+      "MBBS_Creed.label": "creed",
+      "MBBS_Creed.description": "Deep teal with coral borders and gold roundels, from the Ideology expansion's colours.",
+      "MBBS_GeneLab.label": "gene lab",
+      "MBBS_GeneLab.description": "Blue with teal borders, mauve gene tiles and gene-blue labels, from the Biotech expansion's colours.",
+      "MBBS_Void.label": "void",
+      "MBBS_Void.description": "Void black and monolith stone with a red glow and shard-cut corners, from the Anomaly expansion's colours.",
+      "MBBS_Starfarer.label": "starfarer",
+      "MBBS_Starfarer.description": "Steel hull plates with rivets and a cyan thruster glow, after the Odyssey expansion."
     }
   }
 }

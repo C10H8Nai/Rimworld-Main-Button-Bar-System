@@ -128,4 +128,39 @@
   <MBBS_HotKeyConflictItem>{0}：{1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>两个功能共用同一个键时，按下去只会触发其中一个。请到「选项 → 键盘设置」改掉其中一个，或在这里换一个键。</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>本模组保存的快捷键在游戏自己的快捷键之后才处理，所以上面的功能会先用掉这个键，这个按钮不会有反应。请在这里换一个键，或到「选项 → 键盘设置」改掉另一个。</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>图标与文字</MBBS_IconMode>
+  <MBBS_IconModeTip>游戏原本是：按钮有图标就只显示图标，没有就只显示文字。</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>照游戏原本的</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>只显示文字</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>只显示图标</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>图标＋文字</MBBS_IconMode_Both>
+  <MBBS_Icon>图标：{0}</MBBS_Icon>
+  <MBBS_IconOriginal>按钮原本的</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0}（找不到）</MBBS_IconMissing>
+  <MBBS_IconMissingNote>找不到选择的图标，所以使用按钮原本的图标。</MBBS_IconMissingNote>
+  <MBBS_IconChoose>选择…</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>选择图标</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>内置</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>导入的</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>还没有导入的图标。把 PNG 文件放进
+{0}
+再按「重新整理」。模组更新时它们不会被删除。</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>使用按钮原本的</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>打开文件夹</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>重新整理</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>其他模组对这个按钮的设置（仅供参考）：</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}：在栏上</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}：在它的弹出窗口里</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}：隐藏</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}：强制显示</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}：宽度 {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}：间距 {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}：填满画面：{1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}：改名为「{1}」</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}：只显示文字</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}：自定义图标 {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>图标与文字（所有按钮）</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>所有按钮显示图标和文字的方式；个别按钮另有设置时以该按钮为准。</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>让 {0} 个有个别设置的按钮都改为跟随这里</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>跟随整条栏（{0}）</MBBS_IconMode_FollowBar>
 </LanguageData>

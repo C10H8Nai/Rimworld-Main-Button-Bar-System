@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "Tasten {0} bruges også af:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "Når to tastetildelinger deler en tast, udløser et tryk kun den ene af dem. Ret en af dem under Indstillinger > Tastaturkonfiguration, eller vælg en anden tast her.",
-    "MBBS_HotKeyConflictExplainCustom": "Dette mod behandler sine egne taster efter spillets, så tildelingerne ovenfor får tasten først, og denne knap reagerer ikke. Vælg en anden tast her, eller ret den anden tildeling under Indstillinger > Tastaturkonfiguration."
+    "MBBS_HotKeyConflictExplainCustom": "Dette mod behandler sine egne taster efter spillets, så tildelingerne ovenfor får tasten først, og denne knap reagerer ikke. Vælg en anden tast her, eller ret den anden tildeling under Indstillinger > Tastaturkonfiguration.",
+    "MBBS_IconMode": "Ikon og tekst",
+    "MBBS_IconModeTip": "Spillet viser kun ikonet, hvis knappen har et, og ellers kun teksten.",
+    "MBBS_IconMode_Default": "Som i spillet",
+    "MBBS_IconMode_Text": "Kun tekst",
+    "MBBS_IconMode_Icon": "Kun ikon",
+    "MBBS_IconMode_Both": "Ikon og tekst",
+    "MBBS_Icon": "Ikon: {0}",
+    "MBBS_IconOriginal": "knappens eget",
+    "MBBS_IconMissing": "{0} (ikke fundet)",
+    "MBBS_IconMissingNote": "Det valgte ikon kan ikke findes, så knappens eget ikon bruges.",
+    "MBBS_IconChoose": "Vælg...",
+    "MBBS_IconPickerTitle": "Vælg et ikon",
+    "MBBS_IconPicker_BuiltIn": "Indbyggede",
+    "MBBS_IconPicker_Imported": "Importerede",
+    "MBBS_IconPicker_Empty": "Ingen importerede ikoner endnu. Læg PNG-filer i\n{0}\nog tryk på Opdatér. De bliver liggende, når modet opdateres.",
+    "MBBS_IconPicker_UseOriginal": "Brug knappens eget",
+    "MBBS_IconPicker_OpenFolder": "Åbn mappe",
+    "MBBS_IconPicker_Refresh": "Opdatér",
+    "MBBS_RefHeader": "Indstillinger i andre mods for denne knap (kun til reference):",
+    "MBBS_Ref_Bar": "{0}: på linjen",
+    "MBBS_Ref_Popup": "{0}: i eget pop op-vindue",
+    "MBBS_Ref_Hidden": "{0}: skjult",
+    "MBBS_Ref_ForceShow": "{0}: vises altid",
+    "MBBS_Ref_Width": "{0}: bredde {1}px",
+    "MBBS_Ref_Gap": "{0}: afstand {1}px",
+    "MBBS_Ref_Fill": "{0}: udfyld skærmens bredde: {1}",
+    "MBBS_Ref_Name": "{0}: omdøbt til »{1}«",
+    "MBBS_Ref_NoIcon": "{0}: kun tekst",
+    "MBBS_Ref_Icon": "{0}: eget ikon {1}",
+    "MBBS_IconModeAll": "Ikon og tekst (alle knapper)",
+    "MBBS_IconModeAllTip": "Hvordan alle knapper viser ikon og tekst, medmindre en knap har sin egen indstilling.",
+    "MBBS_IconModeClearAll": "Lad alle knapper med egen indstilling ({0}) følge denne",
+    "MBBS_IconMode_FollowBar": "Samme som hele linjen ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "Spillets eget knapudseende."
+      "Vanilla.description": "Spillets eget knapudseende.",
+      "MBBS_Imperial.label": "kejserlig",
+      "MBBS_Imperial.description": "Marineblå og guld med kronede hjørner og et blågrønt psylink-skær, i farverne fra udvidelsen Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Dyb blågrøn med koralrøde kanter og guldmedaljoner, i farverne fra udvidelsen Ideology.",
+      "MBBS_GeneLab.label": "genlaboratorium",
+      "MBBS_GeneLab.description": "Blå med blågrønne kanter, lillarosa genfelter og genblå tekst, i farverne fra udvidelsen Biotech.",
+      "MBBS_Void.label": "tomrum",
+      "MBBS_Void.description": "Tomrumssort og monolitsten med et rødt skær og hjørner skåret som splinter, i farverne fra udvidelsen Anomaly.",
+      "MBBS_Starfarer.label": "stjernefarer",
+      "MBBS_Starfarer.description": "Skrogplader af stål med nitter og et cyanblåt skær fra motorerne, inspireret af udvidelsen Odyssey."
     }
   }
 }

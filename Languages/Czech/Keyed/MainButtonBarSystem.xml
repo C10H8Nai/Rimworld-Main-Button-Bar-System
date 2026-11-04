@@ -128,4 +128,39 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Když dvě přiřazení sdílejí stejnou klávesu, její stisknutí spustí jen jedno z nich. Změň jedno z nich v „Nastavení &gt; Nastavení rozložení kláves“, nebo tu vyber jinou klávesu.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Tento mod zpracovává své klávesy až po klávesách hry, takže přiřazení výše tuto klávesu zachytí dřív a toto tlačítko nezareaguje. Vyber tu jinou klávesu, nebo změň to druhé přiřazení v „Nastavení &gt; Nastavení rozložení kláves“.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Ikona a text</MBBS_IconMode>
+  <MBBS_IconModeTip>Hra u tlačítka s ikonou ukazuje jen ikonu, u ostatních jen text.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Jako ve hře</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Jen text</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Jen ikona</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Ikona a text</MBBS_IconMode_Both>
+  <MBBS_Icon>Ikona: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>původní</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (nenalezeno)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Vybranou ikonu nelze najít, proto se používá původní ikona tlačítka.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Vybrat...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Výběr ikony</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Vestavěné</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importované</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Zatím tu nejsou žádné importované ikony. Vlož soubory PNG do složky
+{0}
+a stiskni „Obnovit“. Při aktualizacích modu tam zůstanou.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Použít původní</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Otevřít složku</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Obnovit</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Nastavení tohoto tlačítka v jiných modech (jen pro informaci):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: na liště</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: ve vlastním vyskakovacím okně</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: skryté</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: vždy zobrazené</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: šířka {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: mezera {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: vyplnit šířku obrazovky: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: přejmenováno na „{1}“</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: jen text</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: vlastní ikona {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ikona a text (všechna tlačítka)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Jak všechna tlačítka zobrazují ikonu a popisek, pokud tlačítko nemá vlastní nastavení.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Použít pro všechna tlačítka s vlastním nastavením ({0})</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Stejně jako celá lišta ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

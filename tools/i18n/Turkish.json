@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "{0} tuşunu şunlar da kullanıyor:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "İki atama aynı tuşu paylaştığında, tuşa basmak yalnızca birini tetikler. Birini \"Ayarlar > Klavye konfigürasyonu\" içinden değiştir ya da burada başka bir tuş seç.",
-    "MBBS_HotKeyConflictExplainCustom": "Bu mod, sakladığı tuşları oyunun kendi tuşlarından sonra işler; bu yüzden yukarıdaki atamalar bu tuşu önce alır ve bu buton tepki vermez. Burada başka bir tuş seç ya da diğer atamayı \"Ayarlar > Klavye konfigürasyonu\" içinden değiştir."
+    "MBBS_HotKeyConflictExplainCustom": "Bu mod, sakladığı tuşları oyunun kendi tuşlarından sonra işler; bu yüzden yukarıdaki atamalar bu tuşu önce alır ve bu buton tepki vermez. Burada başka bir tuş seç ya da diğer atamayı \"Ayarlar > Klavye konfigürasyonu\" içinden değiştir.",
+    "MBBS_IconMode": "İkon ve yazı",
+    "MBBS_IconModeTip": "Oyun, ikonu olan butonlarda yalnızca ikonu, diğerlerinde yalnızca yazıyı gösterir.",
+    "MBBS_IconMode_Default": "Oyundaki gibi",
+    "MBBS_IconMode_Text": "Yalnızca yazı",
+    "MBBS_IconMode_Icon": "Yalnızca ikon",
+    "MBBS_IconMode_Both": "İkon ve yazı",
+    "MBBS_Icon": "İkon: {0}",
+    "MBBS_IconOriginal": "orijinal",
+    "MBBS_IconMissing": "{0} (bulunamadı)",
+    "MBBS_IconMissingNote": "Seçilen ikon bulunamadığı için butonun orijinal ikonu kullanılıyor.",
+    "MBBS_IconChoose": "Seç...",
+    "MBBS_IconPickerTitle": "İkon seç",
+    "MBBS_IconPicker_BuiltIn": "Yerleşik",
+    "MBBS_IconPicker_Imported": "İçe aktarılan",
+    "MBBS_IconPicker_Empty": "Henüz içe aktarılmış ikon yok. PNG dosyalarını şu klasöre koy:\n{0}\nArdından \"Yenile\" butonuna bas. Mod güncellendiğinde de orada kalırlar.",
+    "MBBS_IconPicker_UseOriginal": "Orijinali kullan",
+    "MBBS_IconPicker_OpenFolder": "Klasörü aç",
+    "MBBS_IconPicker_Refresh": "Yenile",
+    "MBBS_RefHeader": "Diğer modlardaki bu buton ayarları (yalnızca referans için):",
+    "MBBS_Ref_Bar": "{0}: barda",
+    "MBBS_Ref_Popup": "{0}: kendi açılır penceresinde",
+    "MBBS_Ref_Hidden": "{0}: gizli",
+    "MBBS_Ref_ForceShow": "{0}: her zaman gösterilir",
+    "MBBS_Ref_Width": "{0}: genişlik {1}px",
+    "MBBS_Ref_Gap": "{0}: boşluk {1}px",
+    "MBBS_Ref_Fill": "{0}: ekran genişliğini doldur: {1}",
+    "MBBS_Ref_Name": "{0}: \"{1}\" olarak yeniden adlandırıldı",
+    "MBBS_Ref_NoIcon": "{0}: yalnızca yazı",
+    "MBBS_Ref_Icon": "{0}: özel ikon {1}",
+    "MBBS_IconModeAll": "İkon ve yazı (tüm butonlar)",
+    "MBBS_IconModeAllTip": "Tüm butonların ikonu ve yazıyı nasıl göstereceği; kendi ayarı olan butonlar hariç.",
+    "MBBS_IconModeClearAll": "Kendi ayarı olan tüm butonları ({0}) bu ayara uydur",
+    "MBBS_IconMode_FollowBar": "Tüm barla aynı ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "orijinal",
-      "Vanilla.description": "Oyunun kendi buton görünümü."
+      "Vanilla.description": "Oyunun kendi buton görünümü.",
+      "MBBS_Imperial.label": "imparatorluk",
+      "MBBS_Imperial.description": "Royalty genişleme paketinin renklerinden, taçlı köşeler ve petrol mavisi psi-bağ ışıltısıyla lacivert ve altın.",
+      "MBBS_Creed.label": "inanç",
+      "MBBS_Creed.description": "Ideology genişleme paketinin renklerinden, mercan rengi kenarlıklar ve altın madalyonlarla koyu petrol mavisi.",
+      "MBBS_GeneLab.label": "gen laboratuvarı",
+      "MBBS_GeneLab.description": "Biotech genişleme paketinin renklerinden, petrol mavisi kenarlıklar, leylak rengi gen kareleri ve gen mavisi yazılarla mavi.",
+      "MBBS_Void.label": "hiçlik",
+      "MBBS_Void.description": "Anomaly genişleme paketinin renklerinden, kırmızı ışıltı ve kıymık gibi kesik köşelerle hiçlik siyahı ve monolit taşı.",
+      "MBBS_Starfarer.label": "yıldız gezgini",
+      "MBBS_Starfarer.description": "Odyssey genişleme paketinden esinlenen, perçinli çelik gövde plakaları ve camgöbeği itici ışıltısı."
     }
   }
 }

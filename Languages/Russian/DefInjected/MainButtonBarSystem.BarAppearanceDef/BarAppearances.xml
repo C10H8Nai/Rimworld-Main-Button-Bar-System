@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>как в игре</Vanilla.label>
   <Vanilla.description>Собственный вид кнопок игры.</Vanilla.description>
+  <MBBS_Imperial.label>имперская</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Тёмно-синий и золото с коронами по углам и бирюзовым свечением пси-связи, в цветах дополнения Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>кредо</MBBS_Creed.label>
+  <MBBS_Creed.description>Глубокий бирюзовый с коралловой окантовкой и золотыми медальонами, в цветах дополнения Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>генная лаборатория</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Синий с бирюзовой окантовкой, розовато-лиловыми плитками генов и надписями генного голубого цвета, в цветах дополнения Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>пустота</MBBS_Void.label>
+  <MBBS_Void.description>Чернота пустоты и камень монолита с красным свечением и углами, срезанными как осколки, в цветах дополнения Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>звёздный странник</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Стальные листы обшивки с заклёпками и ярко-голубым свечением двигателей, в духе дополнения Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

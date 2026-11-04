@@ -119,6 +119,12 @@ namespace MainButtonBarSystem
             /// <summary>Shift of a label under the mouse, like the game's "pressed" look: (2,-2).</summary>
             public Vector2 hoverLabelOffset;
 
+            /// <summary>Icon size in buttons this mod lays out itself ("icon and text"); the game draws 32.</summary>
+            public float iconSize;
+
+            /// <summary>Space between the icon and the label in "icon and text" mode.</summary>
+            public float iconTextGap;
+
             /// <summary>Texture of the drawer's settings gear (themes can replace it). This mod ships MainButtonBarSystem/UI/Gear.</summary>
             public string drawerSettingsIcon;
         }
@@ -192,6 +198,9 @@ namespace MainButtonBarSystem
             public float viewSwitchWidth;
             public Color viewSwitchSelectedColor;
             public Color viewSwitchColor;
+
+            public Vector2 iconPickerSize;
+            public float iconPickerCell;
         }
     }
 }

@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>original</Vanilla.label>
   <Vanilla.description>El aspecto original de los botones del juego.</Vanilla.description>
+  <MBBS_Imperial.label>imperial</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Azul marino y oro con esquinas coronadas y un resplandor verde azulado de psienlace, con los colores de la expansión Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Verde azulado intenso con bordes coral y medallones dorados, con los colores de la expansión Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>laboratorio genético</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Azul con bordes verde azulado, casillas de genes malva y etiquetas azul gen, con los colores de la expansión Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>vacío</MBBS_Void.label>
+  <MBBS_Void.description>Negro del vacío y piedra del monolito con un resplandor rojo y esquinas cortadas como esquirlas, con los colores de la expansión Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>viajero estelar</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Placas de acero del casco con remaches y un resplandor cian de propulsores, inspirado en la expansión Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

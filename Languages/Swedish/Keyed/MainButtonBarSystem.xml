@@ -128,4 +128,39 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>När två kortkommandon delar en tangent utlöser ett tryck bara ett av dem. Ändra ett av dem i Inställningar &gt; Tangentbordskonfiguration, eller välj en annan tangent här.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Denna mod hanterar sina tangenter efter spelets egna, så kortkommandona ovan tar tangenten först och den här knappen reagerar inte. Välj en annan tangent här, eller ändra det andra kortkommandot i Inställningar &gt; Tangentbordskonfiguration.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Ikon och text</MBBS_IconMode>
+  <MBBS_IconModeTip>Spelet visar bara ikonen om knappen har en, och annars bara texten.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Som i spelet</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Bara text</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Bara ikon</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Ikon och text</MBBS_IconMode_Both>
+  <MBBS_Icon>Ikon: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>knappens egen</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (hittades inte)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>Den valda ikonen hittas inte, så knappens egen ikon används.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Välj...</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Välj en ikon</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Inbyggda</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importerade</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Inga importerade ikoner ännu. Lägg PNG-filer i
+{0}
+och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Använd knappens egen</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Öppna mapp</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Uppdatera</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Inställningar i andra moddar för denna knapp (endast som referens):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: på fältet</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: i eget popup-fönster</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: dold</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: visas alltid</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: bredd {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: avstånd {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: fyll skärmens bredd: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: nytt namn ”{1}”</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: bara text</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: egen ikon {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Ikon och text (alla knappar)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Hur alla knappar visar ikon och text, om inte en knapp har en egen inställning.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Låt alla knappar med egen inställning ({0}) följa denna</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Samma som hela fältet ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

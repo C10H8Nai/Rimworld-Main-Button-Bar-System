@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "キー {0} は次の操作にも使われています:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "2つの操作が同じキーに割り当てられていると,押したときにどちらか一方しか反応しません.「オプション → キーボード設定」でどちらかを変更するか,ここで別のキーを選んでください.",
-    "MBBS_HotKeyConflictExplainCustom": "このMODが管理するキーはゲーム本体のキーより後に処理されるため,上記の操作が先にこのキーを使い,このボタンは反応しません.ここで別のキーを選ぶか,「オプション → キーボード設定」でもう一方の割り当てを変更してください."
+    "MBBS_HotKeyConflictExplainCustom": "このMODが管理するキーはゲーム本体のキーより後に処理されるため,上記の操作が先にこのキーを使い,このボタンは反応しません.ここで別のキーを選ぶか,「オプション → キーボード設定」でもう一方の割り当てを変更してください.",
+    "MBBS_IconMode": "アイコンとテキスト",
+    "MBBS_IconModeTip": "ゲーム本体では,アイコンがあるボタンはアイコンだけ,ないボタンはテキストだけを表示します.",
+    "MBBS_IconMode_Default": "ゲーム標準",
+    "MBBS_IconMode_Text": "テキストのみ",
+    "MBBS_IconMode_Icon": "アイコンのみ",
+    "MBBS_IconMode_Both": "アイコンとテキスト",
+    "MBBS_Icon": "アイコン: {0}",
+    "MBBS_IconOriginal": "ボタン本来のもの",
+    "MBBS_IconMissing": "{0}(見つかりません)",
+    "MBBS_IconMissingNote": "選択したアイコンが見つからないため,ボタン本来のアイコンを使用しています.",
+    "MBBS_IconChoose": "選択...",
+    "MBBS_IconPickerTitle": "アイコンを選択",
+    "MBBS_IconPicker_BuiltIn": "組み込み",
+    "MBBS_IconPicker_Imported": "インポート済み",
+    "MBBS_IconPicker_Empty": "インポートしたアイコンはまだありません.次のフォルダにPNGファイルを置いてください:\n{0}\n置いたら「再読み込み」を押してください.MODを更新しても消えません.",
+    "MBBS_IconPicker_UseOriginal": "本来のアイコンを使う",
+    "MBBS_IconPicker_OpenFolder": "フォルダを開く",
+    "MBBS_IconPicker_Refresh": "再読み込み",
+    "MBBS_RefHeader": "他のMODでのこのボタンの設定(参考):",
+    "MBBS_Ref_Bar": "{0}: バーに表示",
+    "MBBS_Ref_Popup": "{0}: 独自のポップアップ内",
+    "MBBS_Ref_Hidden": "{0}: 非表示",
+    "MBBS_Ref_ForceShow": "{0}: 常に表示",
+    "MBBS_Ref_Width": "{0}: 幅 {1}px",
+    "MBBS_Ref_Gap": "{0}: 間隔 {1}px",
+    "MBBS_Ref_Fill": "{0}: 画面の幅いっぱいに広げる: {1}",
+    "MBBS_Ref_Name": "{0}: 名前を「{1}」に変更",
+    "MBBS_Ref_NoIcon": "{0}: テキストのみ",
+    "MBBS_Ref_Icon": "{0}: カスタムアイコン {1}",
+    "MBBS_IconModeAll": "アイコンとテキスト(すべてのボタン)",
+    "MBBS_IconModeAllTip": "すべてのボタンでのアイコンとテキストの表示方法です.個別に設定したボタンには,そのボタンの設定が使われます.",
+    "MBBS_IconModeClearAll": "個別に設定した{0}個のボタンをすべてこの設定に従わせる",
+    "MBBS_IconMode_FollowBar": "バー全体の設定に従う({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "バニラ",
-      "Vanilla.description": "ゲーム本体と同じボタンの見た目です."
+      "Vanilla.description": "ゲーム本体と同じボタンの見た目です.",
+      "MBBS_Imperial.label": "帝国",
+      "MBBS_Imperial.description": "ネイビーと金色に,王冠飾りの角とサイリンクの青緑の輝きを添えた,拡張版Royaltyの配色です.",
+      "MBBS_Creed.label": "信条",
+      "MBBS_Creed.description": "深い青緑に,珊瑚色の縁取りと金色の丸い紋章を添えた,拡張版Ideologyの配色です.",
+      "MBBS_GeneLab.label": "遺伝子ラボ",
+      "MBBS_GeneLab.description": "青地に青緑の縁取り,モーブ色の遺伝子タイル,遺伝子ブルーのラベルを添えた,拡張版Biotechの配色です.",
+      "MBBS_Void.label": "ヴォイド",
+      "MBBS_Void.description": "ヴォイドの黒とモノリスの石の色に,赤い輝きと破片のように切り欠いた角を添えた,拡張版Anomalyの配色です.",
+      "MBBS_Starfarer.label": "星渡り",
+      "MBBS_Starfarer.description": "鋼の船体プレートにリベットとシアンのスラスター光を添えた,拡張版Odysseyをイメージしたデザインです."
     }
   }
 }

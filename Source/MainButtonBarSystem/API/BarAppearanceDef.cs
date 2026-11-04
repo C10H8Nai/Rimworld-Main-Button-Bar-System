@@ -254,32 +254,115 @@ namespace MainButtonBarSystem
         /// <summary>Whether the button being drawn is pressed, open or disabled; mouse-over is decided per rect.</summary>
         public static ButtonVisualState ActiveBaseState { get; private set; }
 
+        /// <summary>Icon to draw left of the label ("icon and text" mode); null otherwise.</summary>
+        public static Texture2D ActiveBothIcon { get; private set; }
+
         private static MainButtonBarTuningDef.Behaviour B => MainButtonBarTuningDef.Current.behaviour;
 
+        private static readonly HarmonyLib.AccessTools.FieldRef<MainButtonDef, Texture2D> IconField =
+            HarmonyLib.AccessTools.FieldRefAccess<MainButtonDef, Texture2D>("icon");
+
+        /// <summary>
+        /// Draws through the game's DoButton. Icon settings work by swapping the def's icon only for this call (the
+        /// game draws the icon when MainButtonDef.Icon is set and the label otherwise), then restoring it.
+        /// </summary>
         public static void Draw(BarButton button, Rect rect, BarAppearanceWorker theme)
         {
             var def = button.Def;
             var align = BarConfigManager.Active.labelAlign;
             bool themed = theme != null && theme.def.ChangesButtons;
-            if (align == LabelAlign.Default && !themed)
+            var settings = button.Settings ?? ButtonOverride.Empty;
+            var custom = CustomIcons.Resolve(settings.icon);
+            var mode = BarConfigManager.Active.IconModeFor(settings);
+            if (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default)
             {
                 def.Worker.DoButton(rect);
                 return;
             }
+
+            var savedIcon = IconField(def);
+            var savedPath = def.iconPath;
+            Texture2D effective = custom ?? SafeIcon(def);
 
             ActiveAlign = align;
             ActiveTheme = themed ? theme : null;
             ActiveBaseState = BaseState(def, rect);
             try
             {
+                switch (mode)
+                {
+                    case IconMode.Text:
+                        HideIcon(def);
+                        break;
+                    case IconMode.Both:
+                        if (effective != null)
+                        {
+                            HideIcon(def);
+                            ActiveBothIcon = effective;
+                        }
+                        break;
+                    default: // Default and Icon: the game shows the icon whenever there is one.
+                        if (custom != null) IconField(def) = custom;
+                        break;
+                }
                 def.Worker.DoButton(rect);
             }
             finally
             {
+                IconField(def) = savedIcon;
+                def.iconPath = savedPath;
                 ActiveAlign = LabelAlign.Default;
                 ActiveTheme = null;
                 ActiveBaseState = ButtonVisualState.Normal;
+                ActiveBothIcon = null;
             }
+        }
+
+        private static void HideIcon(MainButtonDef def)
+        {
+            IconField(def) = null;
+            def.iconPath = null;
+        }
+
+        /// <summary>The button's own icon (after other mods' patches), loading it if needed.</summary>
+        public static Texture2D SafeIcon(MainButtonDef def)
+        {
+            if (def == null || string.IsNullOrEmpty(def.iconPath)) return IconField(def);
+            try
+            {
+                return def.Icon;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        /// <summary>The icon a button shows with its settings: the custom one, else its own.</summary>
+        public static Texture2D EffectiveIcon(MainButtonDef def, ButtonOverride settings) =>
+            CustomIcons.Resolve(settings?.icon) ?? SafeIcon(def);
+
+        /// <summary>"Icon and text": icon at the left, label in the rest, both shifted under the mouse like the game's.</summary>
+        internal static void DrawIconAndLabel(Rect rect, string label, Color? labelColor)
+        {
+            bool over = Mouse.IsOver(rect);
+            float size = Mathf.Min(B.iconSize, rect.height - B.labelSidePadding);
+            var icon = new Rect(rect.x + B.labelSidePadding, rect.center.y - size / 2f, size, size);
+            if (over) icon.position += B.hoverLabelOffset;
+            var color = GUI.color;
+            GUI.color = Color.white;
+            GUI.DrawTexture(icon, ActiveBothIcon);
+            GUI.color = color;
+
+            float textX = rect.x + B.labelSidePadding + size + B.iconTextGap;
+            var textRect = new Rect(textX - B.labelSidePadding, rect.y, rect.xMax - textX + B.labelSidePadding, rect.height);
+            var anchor = ActiveAlign switch
+            {
+                LabelAlign.Center => TextAnchor.MiddleCenter,
+                LabelAlign.Right => TextAnchor.MiddleRight,
+                _ => TextAnchor.MiddleLeft,
+            };
+            DrawLabel(textRect, label, labelColor ?? Color.white, anchor, over);
         }
 
         /// <summary>A subtle button (More, arrows) drawn with the theme's atlas and label colour.</summary>

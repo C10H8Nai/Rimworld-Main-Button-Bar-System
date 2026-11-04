@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "Tangenten {0} används också av:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "När två kortkommandon delar en tangent utlöser ett tryck bara ett av dem. Ändra ett av dem i Inställningar > Tangentbordskonfiguration, eller välj en annan tangent här.",
-    "MBBS_HotKeyConflictExplainCustom": "Denna mod hanterar sina tangenter efter spelets egna, så kortkommandona ovan tar tangenten först och den här knappen reagerar inte. Välj en annan tangent här, eller ändra det andra kortkommandot i Inställningar > Tangentbordskonfiguration."
+    "MBBS_HotKeyConflictExplainCustom": "Denna mod hanterar sina tangenter efter spelets egna, så kortkommandona ovan tar tangenten först och den här knappen reagerar inte. Välj en annan tangent här, eller ändra det andra kortkommandot i Inställningar > Tangentbordskonfiguration.",
+    "MBBS_IconMode": "Ikon och text",
+    "MBBS_IconModeTip": "Spelet visar bara ikonen om knappen har en, och annars bara texten.",
+    "MBBS_IconMode_Default": "Som i spelet",
+    "MBBS_IconMode_Text": "Bara text",
+    "MBBS_IconMode_Icon": "Bara ikon",
+    "MBBS_IconMode_Both": "Ikon och text",
+    "MBBS_Icon": "Ikon: {0}",
+    "MBBS_IconOriginal": "knappens egen",
+    "MBBS_IconMissing": "{0} (hittades inte)",
+    "MBBS_IconMissingNote": "Den valda ikonen hittas inte, så knappens egen ikon används.",
+    "MBBS_IconChoose": "Välj...",
+    "MBBS_IconPickerTitle": "Välj en ikon",
+    "MBBS_IconPicker_BuiltIn": "Inbyggda",
+    "MBBS_IconPicker_Imported": "Importerade",
+    "MBBS_IconPicker_Empty": "Inga importerade ikoner ännu. Lägg PNG-filer i\n{0}\noch tryck på Uppdatera. De ligger kvar där när modden uppdateras.",
+    "MBBS_IconPicker_UseOriginal": "Använd knappens egen",
+    "MBBS_IconPicker_OpenFolder": "Öppna mapp",
+    "MBBS_IconPicker_Refresh": "Uppdatera",
+    "MBBS_RefHeader": "Inställningar i andra moddar för denna knapp (endast som referens):",
+    "MBBS_Ref_Bar": "{0}: på fältet",
+    "MBBS_Ref_Popup": "{0}: i eget popup-fönster",
+    "MBBS_Ref_Hidden": "{0}: dold",
+    "MBBS_Ref_ForceShow": "{0}: visas alltid",
+    "MBBS_Ref_Width": "{0}: bredd {1}px",
+    "MBBS_Ref_Gap": "{0}: avstånd {1}px",
+    "MBBS_Ref_Fill": "{0}: fyll skärmens bredd: {1}",
+    "MBBS_Ref_Name": "{0}: nytt namn ”{1}”",
+    "MBBS_Ref_NoIcon": "{0}: bara text",
+    "MBBS_Ref_Icon": "{0}: egen ikon {1}",
+    "MBBS_IconModeAll": "Ikon och text (alla knappar)",
+    "MBBS_IconModeAllTip": "Hur alla knappar visar ikon och text, om inte en knapp har en egen inställning.",
+    "MBBS_IconModeClearAll": "Låt alla knappar med egen inställning ({0}) följa denna",
+    "MBBS_IconMode_FollowBar": "Samma som hela fältet ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "Spelets eget knapputseende."
+      "Vanilla.description": "Spelets eget knapputseende.",
+      "MBBS_Imperial.label": "kejserlig",
+      "MBBS_Imperial.description": "Marinblå och guld med krönta hörn och ett blågrönt psylink-sken, i färgerna från expansionen Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Djup blågrön med korallröda kanter och guldmedaljonger, i färgerna från expansionen Ideology.",
+      "MBBS_GeneLab.label": "genlabb",
+      "MBBS_GeneLab.description": "Blå med blågröna kanter, malvafärgade genrutor och genblå text, i färgerna från expansionen Biotech.",
+      "MBBS_Void.label": "tomrum",
+      "MBBS_Void.description": "Tomrumssvart och monolitsten med ett rött sken och hörn skurna som skärvor, i färgerna från expansionen Anomaly.",
+      "MBBS_Starfarer.label": "stjärnfarare",
+      "MBBS_Starfarer.description": "Skrovplåtar av stål med nitar och ett cyanblått sken från motorerna, inspirerat av expansionen Odyssey."
     }
   }
 }

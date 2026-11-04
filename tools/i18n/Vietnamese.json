@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "Phím {0} cũng đang được dùng cho:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "Khi hai phím tắt dùng chung một phím, nhấn phím đó chỉ kích hoạt một trong hai. Hãy đổi một trong hai trong \"Cài đặt > Cấu hình bàn phím\", hoặc chọn phím khác tại đây.",
-    "MBBS_HotKeyConflictExplainCustom": "Mod này xử lý các phím do nó quản lý sau các phím của trò chơi, nên các phím tắt ở trên sẽ nhận phím này trước và nút này sẽ không phản hồi. Hãy chọn phím khác tại đây, hoặc đổi phím tắt kia trong \"Cài đặt > Cấu hình bàn phím\"."
+    "MBBS_HotKeyConflictExplainCustom": "Mod này xử lý các phím do nó quản lý sau các phím của trò chơi, nên các phím tắt ở trên sẽ nhận phím này trước và nút này sẽ không phản hồi. Hãy chọn phím khác tại đây, hoặc đổi phím tắt kia trong \"Cài đặt > Cấu hình bàn phím\".",
+    "MBBS_IconMode": "Biểu tượng và chữ",
+    "MBBS_IconModeTip": "Trò chơi chỉ hiện biểu tượng nếu nút có biểu tượng, nếu không thì chỉ hiện chữ.",
+    "MBBS_IconMode_Default": "Như trò chơi gốc",
+    "MBBS_IconMode_Text": "Chỉ hiện chữ",
+    "MBBS_IconMode_Icon": "Chỉ hiện biểu tượng",
+    "MBBS_IconMode_Both": "Biểu tượng và chữ",
+    "MBBS_Icon": "Biểu tượng: {0}",
+    "MBBS_IconOriginal": "gốc của nút",
+    "MBBS_IconMissing": "{0} (không tìm thấy)",
+    "MBBS_IconMissingNote": "Không tìm thấy biểu tượng đã chọn, nên nút dùng biểu tượng gốc của nó.",
+    "MBBS_IconChoose": "Chọn...",
+    "MBBS_IconPickerTitle": "Chọn biểu tượng",
+    "MBBS_IconPicker_BuiltIn": "Có sẵn",
+    "MBBS_IconPicker_Imported": "Đã nhập",
+    "MBBS_IconPicker_Empty": "Chưa có biểu tượng nào được nhập. Hãy đặt tệp PNG vào\n{0}\nrồi nhấn \"Làm mới\". Các tệp vẫn được giữ lại khi cập nhật mod.",
+    "MBBS_IconPicker_UseOriginal": "Dùng biểu tượng gốc",
+    "MBBS_IconPicker_OpenFolder": "Mở thư mục",
+    "MBBS_IconPicker_Refresh": "Làm mới",
+    "MBBS_RefHeader": "Cài đặt của các mod khác cho nút này (chỉ để tham khảo):",
+    "MBBS_Ref_Bar": "{0}: trên thanh",
+    "MBBS_Ref_Popup": "{0}: trong cửa sổ bật lên riêng",
+    "MBBS_Ref_Hidden": "{0}: ẩn",
+    "MBBS_Ref_ForceShow": "{0}: luôn hiện",
+    "MBBS_Ref_Width": "{0}: độ rộng {1}px",
+    "MBBS_Ref_Gap": "{0}: khoảng cách {1}px",
+    "MBBS_Ref_Fill": "{0}: lấp đầy chiều rộng màn hình: {1}",
+    "MBBS_Ref_Name": "{0}: đổi tên thành \"{1}\"",
+    "MBBS_Ref_NoIcon": "{0}: chỉ hiện chữ",
+    "MBBS_Ref_Icon": "{0}: biểu tượng tùy chỉnh {1}",
+    "MBBS_IconModeAll": "Biểu tượng và chữ (tất cả các nút)",
+    "MBBS_IconModeAllTip": "Cách tất cả các nút hiện biểu tượng và chữ, trừ khi nút đó có cài đặt riêng.",
+    "MBBS_IconModeClearAll": "Cho cả {0} nút có cài đặt riêng theo cài đặt này",
+    "MBBS_IconMode_FollowBar": "Theo cài đặt toàn thanh ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "nguyên bản",
-      "Vanilla.description": "Kiểu nút gốc của trò chơi."
+      "Vanilla.description": "Kiểu nút gốc của trò chơi.",
+      "MBBS_Imperial.label": "đế chế",
+      "MBBS_Imperial.description": "Xanh hải quân và vàng kim với góc trang trí vương miện và ánh sáng xanh mòng két của liên kết tâm linh, mang màu sắc của bản mở rộng Royalty.",
+      "MBBS_Creed.label": "tín điều",
+      "MBBS_Creed.description": "Xanh mòng két đậm với viền đỏ san hô và huy hiệu tròn vàng kim, mang màu sắc của bản mở rộng Ideology.",
+      "MBBS_GeneLab.label": "phòng thí nghiệm gen",
+      "MBBS_GeneLab.description": "Xanh lam với viền xanh mòng két, ô gen màu tím hồng và chữ màu xanh gen, mang màu sắc của bản mở rộng Biotech.",
+      "MBBS_Void.label": "hư không",
+      "MBBS_Void.description": "Đen hư không và đá monolith với ánh đỏ và các góc cắt như mảnh vỡ, mang màu sắc của bản mở rộng Anomaly.",
+      "MBBS_Starfarer.label": "lữ khách các vì sao",
+      "MBBS_Starfarer.description": "Tấm thép vỏ tàu có đinh tán và ánh sáng xanh lơ của động cơ đẩy, lấy cảm hứng từ bản mở rộng Odyssey."
     }
   }
 }

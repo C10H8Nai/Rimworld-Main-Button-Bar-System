@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "Klahvi {0} kasutavad ka:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "Kui kaks funktsiooni jagavad sama klahvi, käivitab vajutus ainult ühe neist. Muuda üht neist jaotises Valikud > Klaviatuuri konfiguratsioon või vali siin teine klahv.",
-    "MBBS_HotKeyConflictExplainCustom": "See modifikatsioon töötleb oma klahve alles pärast mängu omi, seega võtavad ülaltoodud funktsioonid selle klahvi enne ja see nupp ei reageeri. Vali siin teine klahv või muuda teist funktsiooni jaotises Valikud > Klaviatuuri konfiguratsioon."
+    "MBBS_HotKeyConflictExplainCustom": "See modifikatsioon töötleb oma klahve alles pärast mängu omi, seega võtavad ülaltoodud funktsioonid selle klahvi enne ja see nupp ei reageeri. Vali siin teine klahv või muuda teist funktsiooni jaotises Valikud > Klaviatuuri konfiguratsioon.",
+    "MBBS_IconMode": "Ikoon ja tekst",
+    "MBBS_IconModeTip": "Mäng näitab ikooniga nupul ainult ikooni ja muidu ainult teksti.",
+    "MBBS_IconMode_Default": "Nagu mängus",
+    "MBBS_IconMode_Text": "Ainult tekst",
+    "MBBS_IconMode_Icon": "Ainult ikoon",
+    "MBBS_IconMode_Both": "Ikoon ja tekst",
+    "MBBS_Icon": "Ikoon: {0}",
+    "MBBS_IconOriginal": "nupu algne",
+    "MBBS_IconMissing": "{0} (ei leitud)",
+    "MBBS_IconMissingNote": "Valitud ikooni ei leita, seega kasutatakse nupu algset ikooni.",
+    "MBBS_IconChoose": "Vali...",
+    "MBBS_IconPickerTitle": "Vali ikoon",
+    "MBBS_IconPicker_BuiltIn": "Sisseehitatud",
+    "MBBS_IconPicker_Imported": "Imporditud",
+    "MBBS_IconPicker_Empty": "Imporditud ikoone veel pole. Pane PNG-failid kausta\n{0}\nja vajuta „Värskenda“. Need jäävad sinna alles ka modifikatsiooni uuendamisel.",
+    "MBBS_IconPicker_UseOriginal": "Kasuta nupu algset",
+    "MBBS_IconPicker_OpenFolder": "Ava kaust",
+    "MBBS_IconPicker_Refresh": "Värskenda",
+    "MBBS_RefHeader": "Teiste modifikatsioonide seaded selle nupu jaoks (ainult võrdluseks):",
+    "MBBS_Ref_Bar": "{0}: ribal",
+    "MBBS_Ref_Popup": "{0}: oma hüpikaknas",
+    "MBBS_Ref_Hidden": "{0}: peidetud",
+    "MBBS_Ref_ForceShow": "{0}: alati näidatud",
+    "MBBS_Ref_Width": "{0}: laius {1}px",
+    "MBBS_Ref_Gap": "{0}: vahe {1}px",
+    "MBBS_Ref_Fill": "{0}: täida ekraani laius: {1}",
+    "MBBS_Ref_Name": "{0}: uus nimi „{1}“",
+    "MBBS_Ref_NoIcon": "{0}: ainult tekst",
+    "MBBS_Ref_Icon": "{0}: oma ikoon {1}",
+    "MBBS_IconModeAll": "Ikoon ja tekst (kõik nupud)",
+    "MBBS_IconModeAllTip": "Kuidas iga nupp ikooni ja teksti näitab, kui nupul pole oma seadet.",
+    "MBBS_IconModeClearAll": "Lase kõigil oma seadega nuppudel ({0}) seda järgida",
+    "MBBS_IconMode_FollowBar": "Sama mis kogu ribal ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "originaal",
-      "Vanilla.description": "Mängu enda nuppude välimus."
+      "Vanilla.description": "Mängu enda nuppude välimus.",
+      "MBBS_Imperial.label": "keiserlik",
+      "MBBS_Imperial.description": "Meresinine ja kuld, kroonitud nurkade ja sinakasrohelise psylink-kumaga, Royalty laienduse värvides.",
+      "MBBS_Creed.label": "kreedo",
+      "MBBS_Creed.description": "Sügav sinakasroheline korallpunaste servade ja kuldsete medaljonidega, Ideology laienduse värvides.",
+      "MBBS_GeneLab.label": "geenilabor",
+      "MBBS_GeneLab.description": "Sinine sinakasroheliste servade, roosakaslillade geeniruutude ja geenisiniste siltidega, Biotech laienduse värvides.",
+      "MBBS_Void.label": "tühjus",
+      "MBBS_Void.description": "Tühjusemust ja monoliidikivi punase kuma ja killukujuliselt lõigatud nurkadega, Anomaly laienduse värvides.",
+      "MBBS_Starfarer.label": "tähtederändur",
+      "MBBS_Starfarer.description": "Terasest kerepaneelid needide ja tsüaansinise mootorikumaga, Odyssey laienduse eeskujul."
     }
   }
 }

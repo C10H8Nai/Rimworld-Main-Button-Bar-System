@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "La tecla {0} también está asignada a:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "Cuando dos asignaciones comparten una tecla, al presionarla solo se activa una de ellas. Cambia una en Opciones > Configuración del teclado o elige otra tecla aquí.",
-    "MBBS_HotKeyConflictExplainCustom": "Este mod procesa sus propias teclas después de las del juego, así que las asignaciones de arriba toman esta tecla primero y este botón no responderá. Elige otra tecla aquí o cambia la otra asignación en Opciones > Configuración del teclado."
+    "MBBS_HotKeyConflictExplainCustom": "Este mod procesa sus propias teclas después de las del juego, así que las asignaciones de arriba toman esta tecla primero y este botón no responderá. Elige otra tecla aquí o cambia la otra asignación en Opciones > Configuración del teclado.",
+    "MBBS_IconMode": "Ícono y texto",
+    "MBBS_IconModeTip": "El juego solo muestra el ícono si el botón tiene uno; si no, solo el texto.",
+    "MBBS_IconMode_Default": "Como en el juego",
+    "MBBS_IconMode_Text": "Solo texto",
+    "MBBS_IconMode_Icon": "Solo ícono",
+    "MBBS_IconMode_Both": "Ícono y texto",
+    "MBBS_Icon": "Ícono: {0}",
+    "MBBS_IconOriginal": "el original del botón",
+    "MBBS_IconMissing": "{0} (no encontrado)",
+    "MBBS_IconMissingNote": "No se encuentra el ícono elegido, así que se usa el ícono original del botón.",
+    "MBBS_IconChoose": "Elegir...",
+    "MBBS_IconPickerTitle": "Elegir un ícono",
+    "MBBS_IconPicker_BuiltIn": "Integrados",
+    "MBBS_IconPicker_Imported": "Importados",
+    "MBBS_IconPicker_Empty": "Todavía no hay íconos importados. Coloca archivos PNG en\n{0}\ny luego haz clic en “Actualizar”. Se conservan aunque se actualice el mod.",
+    "MBBS_IconPicker_UseOriginal": "Usar el original del botón",
+    "MBBS_IconPicker_OpenFolder": "Abrir carpeta",
+    "MBBS_IconPicker_Refresh": "Actualizar",
+    "MBBS_RefHeader": "Configuración de otros mods para este botón (solo como referencia):",
+    "MBBS_Ref_Bar": "{0}: en la barra",
+    "MBBS_Ref_Popup": "{0}: en su propia ventana emergente",
+    "MBBS_Ref_Hidden": "{0}: oculto",
+    "MBBS_Ref_ForceShow": "{0}: se muestra siempre",
+    "MBBS_Ref_Width": "{0}: ancho {1}px",
+    "MBBS_Ref_Gap": "{0}: espacio {1}px",
+    "MBBS_Ref_Fill": "{0}: ocupar todo el ancho de la pantalla: {1}",
+    "MBBS_Ref_Name": "{0}: renombrado a “{1}”",
+    "MBBS_Ref_NoIcon": "{0}: solo texto",
+    "MBBS_Ref_Icon": "{0}: ícono personalizado {1}",
+    "MBBS_IconModeAll": "Ícono y texto (todos los botones)",
+    "MBBS_IconModeAllTip": "Cómo muestran todos los botones su ícono y su texto, salvo los que tienen una configuración propia.",
+    "MBBS_IconModeClearAll": "Hacer que todos los botones con configuración propia ({0}) sigan esta",
+    "MBBS_IconMode_FollowBar": "Igual que la barra completa ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "original",
-      "Vanilla.description": "La apariencia original de los botones del juego."
+      "Vanilla.description": "La apariencia original de los botones del juego.",
+      "MBBS_Imperial.label": "imperial",
+      "MBBS_Imperial.description": "Azul marino y dorado con esquinas coronadas y un brillo verde azulado de psicoenlace, con los colores de la expansión Royalty.",
+      "MBBS_Creed.label": "credo",
+      "MBBS_Creed.description": "Verde azulado intenso con bordes color coral y medallones dorados, con los colores de la expansión Ideology.",
+      "MBBS_GeneLab.label": "laboratorio genético",
+      "MBBS_GeneLab.description": "Azul con bordes verde azulado, casillas de genes color malva y etiquetas azul gen, con los colores de la expansión Biotech.",
+      "MBBS_Void.label": "vacío",
+      "MBBS_Void.description": "Negro del vacío y piedra del monolito con un brillo rojo y esquinas cortadas como esquirlas, con los colores de la expansión Anomaly.",
+      "MBBS_Starfarer.label": "viajero estelar",
+      "MBBS_Starfarer.description": "Placas de acero del casco con remaches y un brillo cian de propulsores, inspirado en la expansión Odyssey."
     }
   }
 }

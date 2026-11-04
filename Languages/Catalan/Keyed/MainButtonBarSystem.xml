@@ -128,4 +128,39 @@
   <MBBS_HotKeyConflictItem>{0}: {1}</MBBS_HotKeyConflictItem>
   <MBBS_HotKeyConflictExplainGame>Quan dues assignacions comparteixen una tecla, en prémer-la només se n’activa una. Canvieu-ne una a Opcions &gt; Configuració del teclat o trieu una altra tecla aquí.</MBBS_HotKeyConflictExplainGame>
   <MBBS_HotKeyConflictExplainCustom>Aquest mod gestiona les tecles que desa després de les del joc, de manera que les assignacions de dalt agafen aquesta tecla primer i aquest botó no respondrà. Trieu una altra tecla aquí o canvieu l’altra assignació a Opcions &gt; Configuració del teclat.</MBBS_HotKeyConflictExplainCustom>
+  <MBBS_IconMode>Icona i text</MBBS_IconMode>
+  <MBBS_IconModeTip>El joc mostra només la icona quan el botó en té, i si no, només el text.</MBBS_IconModeTip>
+  <MBBS_IconMode_Default>Com al joc</MBBS_IconMode_Default>
+  <MBBS_IconMode_Text>Només text</MBBS_IconMode_Text>
+  <MBBS_IconMode_Icon>Només icona</MBBS_IconMode_Icon>
+  <MBBS_IconMode_Both>Icona i text</MBBS_IconMode_Both>
+  <MBBS_Icon>Icona: {0}</MBBS_Icon>
+  <MBBS_IconOriginal>l’original del botó</MBBS_IconOriginal>
+  <MBBS_IconMissing>{0} (no s’ha trobat)</MBBS_IconMissing>
+  <MBBS_IconMissingNote>No es troba la icona triada, així que s’utilitza la icona original del botó.</MBBS_IconMissingNote>
+  <MBBS_IconChoose>Tria…</MBBS_IconChoose>
+  <MBBS_IconPickerTitle>Tria una icona</MBBS_IconPickerTitle>
+  <MBBS_IconPicker_BuiltIn>Integrades</MBBS_IconPicker_BuiltIn>
+  <MBBS_IconPicker_Imported>Importades</MBBS_IconPicker_Imported>
+  <MBBS_IconPicker_Empty>Encara no hi ha icones importades. Poseu fitxers PNG a
+{0}
+i després premeu Actualitza. Hi continuaran encara que s’actualitzi el mod.</MBBS_IconPicker_Empty>
+  <MBBS_IconPicker_UseOriginal>Usa l’original del botó</MBBS_IconPicker_UseOriginal>
+  <MBBS_IconPicker_OpenFolder>Obre la carpeta</MBBS_IconPicker_OpenFolder>
+  <MBBS_IconPicker_Refresh>Actualitza</MBBS_IconPicker_Refresh>
+  <MBBS_RefHeader>Configuració d’altres mods per a aquest botó (només com a referència):</MBBS_RefHeader>
+  <MBBS_Ref_Bar>{0}: a la barra</MBBS_Ref_Bar>
+  <MBBS_Ref_Popup>{0}: a la seva finestra emergent</MBBS_Ref_Popup>
+  <MBBS_Ref_Hidden>{0}: amagat</MBBS_Ref_Hidden>
+  <MBBS_Ref_ForceShow>{0}: es mostra sempre</MBBS_Ref_ForceShow>
+  <MBBS_Ref_Width>{0}: amplada {1}px</MBBS_Ref_Width>
+  <MBBS_Ref_Gap>{0}: espai {1}px</MBBS_Ref_Gap>
+  <MBBS_Ref_Fill>{0}: omple l’amplada de la pantalla: {1}</MBBS_Ref_Fill>
+  <MBBS_Ref_Name>{0}: nom canviat a «{1}»</MBBS_Ref_Name>
+  <MBBS_Ref_NoIcon>{0}: només text</MBBS_Ref_NoIcon>
+  <MBBS_Ref_Icon>{0}: icona personalitzada {1}</MBBS_Ref_Icon>
+  <MBBS_IconModeAll>Icona i text (tots els botons)</MBBS_IconModeAll>
+  <MBBS_IconModeAllTip>Com mostra cada botó la icona i el text, tret que el botó tingui una configuració pròpia.</MBBS_IconModeAllTip>
+  <MBBS_IconModeClearAll>Fes que tots els botons amb configuració pròpia ({0}) segueixin aquesta</MBBS_IconModeClearAll>
+  <MBBS_IconMode_FollowBar>Igual que tota la barra ({0})</MBBS_IconMode_FollowBar>
 </LanguageData>

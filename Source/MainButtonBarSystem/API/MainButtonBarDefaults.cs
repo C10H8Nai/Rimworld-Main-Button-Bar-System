@@ -68,6 +68,18 @@ namespace MainButtonBarSystem
             }
         }
 
+        private static readonly Dictionary<string, ButtonOverride> runtime = new Dictionary<string, ButtonOverride>();
+
+        /// <summary>
+        /// A default set while the game runs, for example by a compatibility bridge (TooManyButtons' own button
+        /// starts hidden when this mod has priority, spec 4.14). It wins over XML defaults.
+        /// </summary>
+        public static void SetRuntimeDefault(ButtonOverride defaults)
+        {
+            runtime[defaults.defName] = defaults;
+            byDefName = null;
+        }
+
         private static void Build()
         {
             byDefName = new Dictionary<string, ButtonOverride>();
@@ -76,6 +88,7 @@ namespace MainButtonBarSystem
                 var ext = def.GetModExtension<MainButtonBarDefaults>();
                 if (ext != null) byDefName[def.defName] = ext.ToOverride(def.defName);
             }
+            foreach (var pair in runtime) byDefName[pair.Key] = pair.Value;
         }
     }
 }

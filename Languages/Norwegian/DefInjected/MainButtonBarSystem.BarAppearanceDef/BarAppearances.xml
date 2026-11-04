@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>original</Vanilla.label>
   <Vanilla.description>Spillets eget knappeutseende.</Vanilla.description>
+  <MBBS_Imperial.label>keiserlig</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Marineblå og gull med kronede hjørner og et blågrønt psylink-skjær, i fargene fra utvidelsen Royalty.</MBBS_Imperial.description>
+  <MBBS_Creed.label>credo</MBBS_Creed.label>
+  <MBBS_Creed.description>Dyp blågrønn med korallrøde kanter og gullmedaljonger, i fargene fra utvidelsen Ideology.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>genlaboratorium</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Blå med blågrønne kanter, lillarosa genfliser og genblå tekst, i fargene fra utvidelsen Biotech.</MBBS_GeneLab.description>
+  <MBBS_Void.label>tomrom</MBBS_Void.label>
+  <MBBS_Void.description>Tomromssvart og monolittstein med et rødt skjær og hjørner skåret som splinter, i fargene fra utvidelsen Anomaly.</MBBS_Void.description>
+  <MBBS_Starfarer.label>stjernefarer</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Skrogplater av stål med nagler og et cyanblått skjær fra motorene, inspirert av utvidelsen Odyssey.</MBBS_Starfarer.description>
 </LanguageData>

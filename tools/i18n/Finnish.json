@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "Näppäintä {0} käyttävät myös:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "Kun kaksi toimintoa käyttää samaa näppäintä, painallus laukaisee vain toisen niistä. Vaihda jommankumman näppäin kohdassa Asetukset > Näppäinasetukset tai valitse tässä toinen näppäin.",
-    "MBBS_HotKeyConflictExplainCustom": "Tämä modi käsittelee säilyttämänsä näppäimet vasta pelin omien jälkeen, joten yllä olevat toiminnot vievät tämän näppäimen ensin, eikä tämä painike reagoi. Valitse tässä toinen näppäin tai vaihda toisen toiminnon näppäin kohdassa Asetukset > Näppäinasetukset."
+    "MBBS_HotKeyConflictExplainCustom": "Tämä modi käsittelee säilyttämänsä näppäimet vasta pelin omien jälkeen, joten yllä olevat toiminnot vievät tämän näppäimen ensin, eikä tämä painike reagoi. Valitse tässä toinen näppäin tai vaihda toisen toiminnon näppäin kohdassa Asetukset > Näppäinasetukset.",
+    "MBBS_IconMode": "Kuvake ja teksti",
+    "MBBS_IconModeTip": "Peli näyttää painikkeessa vain kuvakkeen, jos sillä on sellainen, ja muuten vain tekstin.",
+    "MBBS_IconMode_Default": "Kuten pelissä",
+    "MBBS_IconMode_Text": "Vain teksti",
+    "MBBS_IconMode_Icon": "Vain kuvake",
+    "MBBS_IconMode_Both": "Kuvake ja teksti",
+    "MBBS_Icon": "Kuvake: {0}",
+    "MBBS_IconOriginal": "painikkeen oma",
+    "MBBS_IconMissing": "{0} (ei löydy)",
+    "MBBS_IconMissingNote": "Valittua kuvaketta ei löydy, joten käytetään painikkeen omaa kuvaketta.",
+    "MBBS_IconChoose": "Valitse...",
+    "MBBS_IconPickerTitle": "Valitse kuvake",
+    "MBBS_IconPicker_BuiltIn": "Valmiit",
+    "MBBS_IconPicker_Imported": "Tuodut",
+    "MBBS_IconPicker_Empty": "Tuotuja kuvakkeita ei vielä ole. Laita PNG-tiedostoja kansioon\n{0}\nja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.",
+    "MBBS_IconPicker_UseOriginal": "Käytä painikkeen omaa",
+    "MBBS_IconPicker_OpenFolder": "Avaa kansio",
+    "MBBS_IconPicker_Refresh": "Päivitä",
+    "MBBS_RefHeader": "Muiden modien asetukset tälle painikkeelle (vain viitteeksi):",
+    "MBBS_Ref_Bar": "{0}: palkissa",
+    "MBBS_Ref_Popup": "{0}: omassa ponnahdusikkunassaan",
+    "MBBS_Ref_Hidden": "{0}: piilotettu",
+    "MBBS_Ref_ForceShow": "{0}: näytetään aina",
+    "MBBS_Ref_Width": "{0}: leveys {1}px",
+    "MBBS_Ref_Gap": "{0}: väli {1}px",
+    "MBBS_Ref_Fill": "{0}: täytä näytön leveys: {1}",
+    "MBBS_Ref_Name": "{0}: uusi nimi ”{1}”",
+    "MBBS_Ref_NoIcon": "{0}: vain teksti",
+    "MBBS_Ref_Icon": "{0}: oma kuvake {1}",
+    "MBBS_IconModeAll": "Kuvake ja teksti (kaikki painikkeet)",
+    "MBBS_IconModeAllTip": "Miten kaikki painikkeet näyttävät kuvakkeen ja tekstin, ellei painikkeella ole omaa asetusta.",
+    "MBBS_IconModeClearAll": "Laita kaikki painikkeet, joilla on oma asetus ({0}), noudattamaan tätä",
+    "MBBS_IconMode_FollowBar": "Sama kuin koko palkilla ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "alkuperäinen",
-      "Vanilla.description": "Pelin oma painikkeiden ulkoasu."
+      "Vanilla.description": "Pelin oma painikkeiden ulkoasu.",
+      "MBBS_Imperial.label": "keisarillinen",
+      "MBBS_Imperial.description": "Laivastonsininen ja kulta, kruunatut kulmat ja sinivihreä psylink-hehku, Kuninkaallisuus-laajennuksen väreissä.",
+      "MBBS_Creed.label": "usko",
+      "MBBS_Creed.description": "Syvä sinivihreä, korallinpunaiset reunat ja kultaiset medaljongit, Maailmankatsomus-laajennuksen väreissä.",
+      "MBBS_GeneLab.label": "geenilaboratorio",
+      "MBBS_GeneLab.description": "Sininen, sinivihreät reunat, malvanväriset geeniruudut ja geeninsiniset tekstit, Biotech-laajennuksen väreissä.",
+      "MBBS_Void.label": "tyhjyys",
+      "MBBS_Void.description": "Tyhjyydenmusta ja monoliittikivi, punainen hehku ja sirpaleiksi viistetyt kulmat, Anomaly-laajennuksen väreissä.",
+      "MBBS_Starfarer.label": "tähtienkulkija",
+      "MBBS_Starfarer.description": "Teräksiset runkolevyt, niitit ja syaaninen moottorien hehku, Odyssey-laajennuksen innoittamana."
     }
   }
 }

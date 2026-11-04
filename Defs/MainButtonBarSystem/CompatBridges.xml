@@ -21,7 +21,7 @@
     <defName>CustomBottomBar</defName>
     <label>Custom Bottom Bar</label>
     <modName>Custom Bottom Bar</modName>
-    <workerClass>MainButtonBarSystem.CompatBridgeWorker</workerClass>
+    <workerClass>MainButtonBarSystem.CompatBridgeWorker_CustomBottomBar</workerClass>
     <packageIds>
       <li>dogebm.custombuttons</li>
     </packageIds>

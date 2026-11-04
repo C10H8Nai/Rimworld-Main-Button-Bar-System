@@ -2,4 +2,14 @@
 <LanguageData>
   <Vanilla.label>orijinal</Vanilla.label>
   <Vanilla.description>Oyunun kendi buton görünümü.</Vanilla.description>
+  <MBBS_Imperial.label>imparatorluk</MBBS_Imperial.label>
+  <MBBS_Imperial.description>Royalty genişleme paketinin renklerinden, taçlı köşeler ve petrol mavisi psi-bağ ışıltısıyla lacivert ve altın.</MBBS_Imperial.description>
+  <MBBS_Creed.label>inanç</MBBS_Creed.label>
+  <MBBS_Creed.description>Ideology genişleme paketinin renklerinden, mercan rengi kenarlıklar ve altın madalyonlarla koyu petrol mavisi.</MBBS_Creed.description>
+  <MBBS_GeneLab.label>gen laboratuvarı</MBBS_GeneLab.label>
+  <MBBS_GeneLab.description>Biotech genişleme paketinin renklerinden, petrol mavisi kenarlıklar, leylak rengi gen kareleri ve gen mavisi yazılarla mavi.</MBBS_GeneLab.description>
+  <MBBS_Void.label>hiçlik</MBBS_Void.label>
+  <MBBS_Void.description>Anomaly genişleme paketinin renklerinden, kırmızı ışıltı ve kıymık gibi kesik köşelerle hiçlik siyahı ve monolit taşı.</MBBS_Void.description>
+  <MBBS_Starfarer.label>yıldız gezgini</MBBS_Starfarer.label>
+  <MBBS_Starfarer.description>Odyssey genişleme paketinden esinlenen, perçinli çelik gövde plakaları ve camgöbeği itici ışıltısı.</MBBS_Starfarer.description>
 </LanguageData>

@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "Kláves {0} používa aj:",
     "MBBS_HotKeyConflictItem": "{0}: {1}",
     "MBBS_HotKeyConflictExplainGame": "Keď dve priradenia zdieľajú ten istý kláves, jeho stlačenie spustí len jedno z nich. Zmeňte jedno z nich v „Nastavenia > Nastavenie klávesnice“ alebo tu vyberte iný kláves.",
-    "MBBS_HotKeyConflictExplainCustom": "Tento mod spracúva svoje klávesy až po klávesoch hry, takže priradenia vyššie zachytia tento kláves skôr a toto tlačidlo nezareaguje. Vyberte tu iný kláves alebo zmeňte to druhé priradenie v „Nastavenia > Nastavenie klávesnice“."
+    "MBBS_HotKeyConflictExplainCustom": "Tento mod spracúva svoje klávesy až po klávesoch hry, takže priradenia vyššie zachytia tento kláves skôr a toto tlačidlo nezareaguje. Vyberte tu iný kláves alebo zmeňte to druhé priradenie v „Nastavenia > Nastavenie klávesnice“.",
+    "MBBS_IconMode": "Ikona a text",
+    "MBBS_IconModeTip": "Hra pri tlačidle s ikonou ukazuje len ikonu, pri ostatných len text.",
+    "MBBS_IconMode_Default": "Ako v hre",
+    "MBBS_IconMode_Text": "Len text",
+    "MBBS_IconMode_Icon": "Len ikona",
+    "MBBS_IconMode_Both": "Ikona a text",
+    "MBBS_Icon": "Ikona: {0}",
+    "MBBS_IconOriginal": "pôvodná",
+    "MBBS_IconMissing": "{0} (nenájdené)",
+    "MBBS_IconMissingNote": "Vybraná ikona sa nedá nájsť, preto sa používa pôvodná ikona tlačidla.",
+    "MBBS_IconChoose": "Vybrať...",
+    "MBBS_IconPickerTitle": "Výber ikony",
+    "MBBS_IconPicker_BuiltIn": "Vstavané",
+    "MBBS_IconPicker_Imported": "Importované",
+    "MBBS_IconPicker_Empty": "Zatiaľ tu nie sú žiadne importované ikony. Vložte súbory PNG do priečinka\n{0}\na stlačte „Obnoviť“. Pri aktualizáciách modu tam zostanú.",
+    "MBBS_IconPicker_UseOriginal": "Použiť pôvodnú",
+    "MBBS_IconPicker_OpenFolder": "Otvoriť priečinok",
+    "MBBS_IconPicker_Refresh": "Obnoviť",
+    "MBBS_RefHeader": "Nastavenia tohto tlačidla v iných modoch (len pre informáciu):",
+    "MBBS_Ref_Bar": "{0}: na lište",
+    "MBBS_Ref_Popup": "{0}: vo vlastnom vyskakovacom okne",
+    "MBBS_Ref_Hidden": "{0}: skryté",
+    "MBBS_Ref_ForceShow": "{0}: vždy zobrazené",
+    "MBBS_Ref_Width": "{0}: šírka {1}px",
+    "MBBS_Ref_Gap": "{0}: medzera {1}px",
+    "MBBS_Ref_Fill": "{0}: vyplniť šírku obrazovky: {1}",
+    "MBBS_Ref_Name": "{0}: premenované na „{1}“",
+    "MBBS_Ref_NoIcon": "{0}: len text",
+    "MBBS_Ref_Icon": "{0}: vlastná ikona {1}",
+    "MBBS_IconModeAll": "Ikona a text (všetky tlačidlá)",
+    "MBBS_IconModeAllTip": "Ako všetky tlačidlá zobrazujú ikonu a popis, ak tlačidlo nemá vlastné nastavenie.",
+    "MBBS_IconModeClearAll": "Použiť pre všetky tlačidlá s vlastným nastavením ({0})",
+    "MBBS_IconMode_FollowBar": "Rovnako ako celá lišta ({0})"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "ako v hre",
-      "Vanilla.description": "Vlastný vzhľad tlačidiel hry."
+      "Vanilla.description": "Vlastný vzhľad tlačidiel hry.",
+      "MBBS_Imperial.label": "imperiálny",
+      "MBBS_Imperial.description": "Námornícka modrá a zlatá, rohy zdobené korunkami a modrozelená žiara psylinku. Vo farbách rozšírenia Royalty.",
+      "MBBS_Creed.label": "krédo",
+      "MBBS_Creed.description": "Tmavá modrozelená s koralovými okrajmi a zlatými medailónmi. Vo farbách rozšírenia Ideology.",
+      "MBBS_GeneLab.label": "genetické laboratórium",
+      "MBBS_GeneLab.description": "Modrá s modrozelenými okrajmi, fialovoružovými génovými dlaždicami a popismi v génovej modrej. Vo farbách rozšírenia Biotech.",
+      "MBBS_Void.label": "prázdnota",
+      "MBBS_Void.description": "Čerň prázdnoty a kameň monolitu s červenou žiarou a rohmi zrezanými ako črepiny. Vo farbách rozšírenia Anomaly.",
+      "MBBS_Starfarer.label": "hviezdny pútnik",
+      "MBBS_Starfarer.description": "Oceľové pláty trupu s nitmi a azúrovou žiarou trysiek. Inšpirované rozšírením Odyssey."
     }
   }
 }

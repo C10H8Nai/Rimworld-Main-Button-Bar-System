@@ -127,7 +127,40 @@
     "MBBS_HotKeyConflictHeader": "按鍵 {0} 也被這些功能使用：",
     "MBBS_HotKeyConflictItem": "{0}：{1}",
     "MBBS_HotKeyConflictExplainGame": "兩個功能共用同一個鍵時，按下去只會觸發其中一個。請到「選項 → 鍵盤設定」改掉其中一個，或在這裡換一個鍵。",
-    "MBBS_HotKeyConflictExplainCustom": "本模組保存的快捷鍵在遊戲自己的快捷鍵之後才處理，所以上面的功能會先用掉這個鍵，這個按鈕不會有反應。請在這裡換一個鍵，或到「選項 → 鍵盤設定」改掉另一個。"
+    "MBBS_HotKeyConflictExplainCustom": "本模組保存的快捷鍵在遊戲自己的快捷鍵之後才處理，所以上面的功能會先用掉這個鍵，這個按鈕不會有反應。請在這裡換一個鍵，或到「選項 → 鍵盤設定」改掉另一個。",
+    "MBBS_IconMode": "圖示與文字",
+    "MBBS_IconModeTip": "遊戲原本是：按鈕有圖示就只顯示圖示，沒有就只顯示文字。",
+    "MBBS_IconMode_Default": "照遊戲原本的",
+    "MBBS_IconMode_Text": "只顯示文字",
+    "MBBS_IconMode_Icon": "只顯示圖示",
+    "MBBS_IconMode_Both": "圖示＋文字",
+    "MBBS_Icon": "圖示：{0}",
+    "MBBS_IconOriginal": "按鈕原本的",
+    "MBBS_IconMissing": "{0}（找不到）",
+    "MBBS_IconMissingNote": "找不到選擇的圖示，所以使用按鈕原本的圖示。",
+    "MBBS_IconChoose": "選擇…",
+    "MBBS_IconPickerTitle": "選擇圖示",
+    "MBBS_IconPicker_BuiltIn": "內建",
+    "MBBS_IconPicker_Imported": "匯入的",
+    "MBBS_IconPicker_Empty": "還沒有匯入的圖示。把 PNG 檔放進\n{0}\n再按「重新整理」。模組更新時它們不會被刪除。",
+    "MBBS_IconPicker_UseOriginal": "使用按鈕原本的",
+    "MBBS_IconPicker_OpenFolder": "打開資料夾",
+    "MBBS_IconPicker_Refresh": "重新整理",
+    "MBBS_RefHeader": "其他模組對這顆按鈕的設定（僅供參考）：",
+    "MBBS_Ref_Bar": "{0}：在列上",
+    "MBBS_Ref_Popup": "{0}：在它的彈出視窗裡",
+    "MBBS_Ref_Hidden": "{0}：隱藏",
+    "MBBS_Ref_ForceShow": "{0}：強制顯示",
+    "MBBS_Ref_Width": "{0}：寬度 {1}px",
+    "MBBS_Ref_Gap": "{0}：間距 {1}px",
+    "MBBS_Ref_Fill": "{0}：填滿畫面：{1}",
+    "MBBS_Ref_Name": "{0}：改名為「{1}」",
+    "MBBS_Ref_NoIcon": "{0}：只顯示文字",
+    "MBBS_Ref_Icon": "{0}：自訂圖示 {1}",
+    "MBBS_IconModeAll": "圖示與文字（所有按鈕）",
+    "MBBS_IconModeAllTip": "所有按鈕顯示圖示和文字的方式；個別按鈕另有設定時以該按鈕為準。",
+    "MBBS_IconModeClearAll": "讓 {0} 顆有個別設定的按鈕都改成跟這裡",
+    "MBBS_IconMode_FollowBar": "跟整條列（{0}）"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -142,7 +175,17 @@
     },
     "MainButtonBarSystem.BarAppearanceDef": {
       "Vanilla.label": "原版",
-      "Vanilla.description": "遊戲原本的按鈕外觀。"
+      "Vanilla.description": "遊戲原本的按鈕外觀。",
+      "MBBS_Imperial.label": "帝國",
+      "MBBS_Imperial.description": "海軍藍配金色，皇冠尖角與靈能青光，取自「皇權」擴充的配色。",
+      "MBBS_Creed.label": "信條",
+      "MBBS_Creed.description": "深青配珊瑚紅邊框與金色圓章，取自「文化」擴充的配色。",
+      "MBBS_GeneLab.label": "基因實驗室",
+      "MBBS_GeneLab.description": "藍底配青色邊框、紫紅基因方塊與基因藍文字，取自「生物技術」擴充的配色。",
+      "MBBS_Void.label": "虛空",
+      "MBBS_Void.description": "虛空黑與巨石灰，透著紅光，碎裂切角，取自「異象」擴充的配色。",
+      "MBBS_Starfarer.label": "星航",
+      "MBBS_Starfarer.description": "鋼製船殼與鉚釘，配青色推進器光，取自「奧德賽」擴充。"
     }
   }
 }
