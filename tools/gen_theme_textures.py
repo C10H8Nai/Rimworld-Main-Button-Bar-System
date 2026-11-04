@@ -5,8 +5,9 @@ Usage (from the repository root):
     python3 tools/gen_theme_textures.py
 
 Writes Textures/MainButtonBarSystem/Themes/<Theme>/*.png and About/ModIcon.png. Everything is drawn from the
-palettes below, so tweak a colour and run again. Nothing is taken from the game's or any DLC's art; the themes
-only borrow each expansion's general colour mood.
+palettes below, so tweak a colour and run again. Nothing is taken from the game's or any DLC's art: the colours
+were measured from the expansions' logos and art and the game's data (docs/research/dlc-visuals-2026-11-04.md),
+and the shapes are simple corner ornaments.
 
 Atlases follow the game's nine-slice rules (docs/API.md section 4): square 64x64, so corners are 16px on screen,
 with all border art inside the outer 16px.
@@ -19,13 +20,26 @@ OUT = os.path.join(ROOT, "Textures", "MainButtonBarSystem", "Themes")
 N = 64          # atlas size
 Q = N // 4      # outer quarter: border art must stay inside this
 
-# base: button fill; edge: border/accent; active: fill of an open/pressed button; ornament: corner style.
+# Palettes measured from the official logos and art and from the game's data (docs/research/dlc-visuals-2026-11-04.md).
+# base: button fill; edge: main border; outline: dark line outside the border (or None); rule: thin inner line;
+# accent: hover/active underline; icon: arrows and gear (defaults to edge); ornament: corner style (corners only:
+# the game stretches the middle of each edge).
 THEMES = {
-    "Imperial": dict(base=(54, 32, 78), edge=(204, 166, 78), active=(96, 60, 124), ornament="diamond"),
-    "Creed": dict(base=(60, 45, 33), edge=(166, 116, 62), active=(96, 68, 42), ornament="dot"),
-    "GeneLab": dict(base=(20, 50, 48), edge=(92, 214, 174), active=(30, 84, 76), ornament="bracket"),
-    "Void": dict(base=(24, 17, 20), edge=(156, 34, 44), active=(64, 20, 27), ornament="glow"),
-    "Starfarer": dict(base=(19, 28, 50), edge=(112, 154, 206), active=(32, 54, 96), ornament="chamfer"),
+    # Royalty: navy body, gold double hairline (logo gold), ivory labels, psy-teal underline, gold finials.
+    "Imperial": dict(base=(36, 42, 48), edge=(226, 208, 109), outline=None, rule=(150, 136, 70), accent=(189, 247, 204),
+                     active=(48, 56, 66), ornament="finial", double=True),
+    # Ideology: deep teal body, heavy black outline with coral border (logo coral), teal inner rule, gold roundels.
+    "Creed": dict(base=(32, 64, 70), edge=(224, 100, 98), outline=(8, 8, 10), rule=(57, 111, 115), accent=(218, 162, 33),
+                  active=(44, 84, 90), ornament="roundel"),
+    # Biotech: blue body, teal border (primaryColor), mauve gene-tile corners, crimson active rule.
+    "GeneLab": dict(base=(29, 50, 92), edge=(125, 179, 179), outline=None, rule=(143, 103, 146), accent=(149, 208, 252),
+                    active=(40, 66, 118), ornament="genetab", active_rule=(192, 73, 83)),
+    # Anomaly: void black body, monolith-stone border, red glowing inset line, faceted shard corners.
+    "Void": dict(base=(16, 18, 22), edge=(75, 64, 64), outline=None, rule=(166, 49, 49), accent=(166, 49, 49),
+                 active=(36, 22, 24), ornament="shard", icon=(190, 64, 64)),
+    # Odyssey (unverified palette): space-black body, steel hull border, rivets, cyan thruster strip.
+    "Starfarer": dict(base=(26, 28, 34), edge=(109, 110, 118), outline=None, rule=(70, 72, 80), accent=(80, 230, 236),
+                      active=(36, 40, 50), ornament="hull", icon=(80, 230, 236)),
 }
 
 
@@ -48,70 +62,107 @@ def gradient_fill(img, top, bottom):
         d.line([(0, y), (N - 1, y)], fill=mix(top, bottom, y / (N - 1)) + (255,))
 
 
-def ornament(d, style, color, inset):
-    """Corner decoration, kept inside the outer quarter."""
-    for cx, cy in ((inset, inset), (N - 1 - inset, inset), (inset, N - 1 - inset), (N - 1 - inset, N - 1 - inset)):
-        sx = 1 if cx < N / 2 else -1
-        sy = 1 if cy < N / 2 else -1
-        if style == "diamond":
-            x, y = cx + 4 * sx, cy + 4 * sy
-            d.polygon([(x, y - 3), (x + 3, y), (x, y + 3), (x - 3, y)], fill=color)
-        elif style == "dot":
-            x, y = cx + 4 * sx, cy + 4 * sy
-            d.ellipse([x - 2, y - 2, x + 2, y + 2], fill=color)
-        elif style == "bracket":
-            d.line([(cx, cy), (cx + 8 * sx, cy)], fill=color, width=2)
-            d.line([(cx, cy), (cx, cy + 8 * sy)], fill=color, width=2)
-        elif style == "chamfer":
-            d.line([(cx, cy + 6 * sy), (cx + 6 * sx, cy)], fill=color, width=2)
+def corners():
+    for cx, cy in ((0, 0), (N - 1, 0), (0, N - 1), (N - 1, N - 1)):
+        yield cx, cy, (1 if cx < N / 2 else -1), (1 if cy < N / 2 else -1)
 
 
-def button(theme, fill, edge, border=2, inner=None):
+def cut_corners(img, size):
+    """Transparent 45-degree cuts in the corners (hull plates, shards)."""
+    px = img.load()
+    for cx, cy, sx, sy in corners():
+        for i in range(size):
+            for j in range(size - i):
+                px[cx + sx * i, cy + sy * j] = (0, 0, 0, 0)
+
+
+def ornament(d, theme, color):
+    """Corner decoration, always inside the outer quarter."""
+    style = theme["ornament"]
+    for cx, cy, sx, sy in corners():
+        if style == "finial":
+            x = cx + 6 * sx
+            if sy == 1:  # crown point and finial dot on the top corners
+                d.polygon([(x - 3, cy + 9), (x, cy + 3), (x + 3, cy + 9)], fill=color)
+                d.ellipse([x - 1.5, cy + 1, x + 1.5, cy + 4], fill=color)
+            else:
+                d.ellipse([x - 1.5, cy - 6, x + 1.5, cy - 3], fill=color)
+        elif style == "roundel":
+            x, y = cx + 7 * sx, cy + 7 * sy
+            d.ellipse([x - 4, y - 4, x + 4, y + 4], fill=(8, 8, 10, 255))
+            d.ellipse([x - 3, y - 3, x + 3, y + 3], fill=color)
+            d.ellipse([x - 1, y - 1, x + 1, y + 1], fill=theme["accent"] + (255,))
+        elif style == "genetab":
+            x, y = cx + 4 * sx, cy + 4 * sy
+            d.rectangle([min(x, x + 5 * sx), min(y, y + 5 * sy), max(x, x + 5 * sx), max(y, y + 5 * sy)], fill=theme["rule"] + (255,))
+        elif style == "shard":
+            d.line([(cx + 7 * sx, cy), (cx, cy + 7 * sy)], fill=theme["rule"] + (255,), width=1)
+            d.line([(cx + 11 * sx, cy + 2 * sy), (cx + 2 * sx, cy + 11 * sy)], fill=shade(theme["edge"], 20) + (255,), width=1)
+        elif style == "hull":
+            x, y = cx + 9 * sx, cy + 4 * sy
+            d.ellipse([x - 1.5, y - 1.5, x + 1.5, y + 1.5], fill=shade(theme["edge"], 50) + (255,))
+            x, y = cx + 4 * sx, cy + 9 * sy
+            d.ellipse([x - 1.5, y - 1.5, x + 1.5, y + 1.5], fill=shade(theme["edge"], 50) + (255,))
+
+
+def button(theme, fill, edge, state="normal"):
     img = Image.new("RGBA", (N, N))
     gradient_fill(img, shade(fill, 10), shade(fill, -10))
     d = ImageDraw.Draw(img)
     style = theme["ornament"]
-    if style == "chamfer":
-        # Cut corners: transparent triangles, then the edge along the cut.
-        for i in range(5):
-            for (x, y) in ((i, 0), (0, i), (N - 1 - i, 0), (N - 1, i), (i, N - 1), (0, N - 1 - i), (N - 1 - i, N - 1), (N - 1, N - 1 - i)):
-                for k in range(5 - i):
-                    px = x + (k if x < N / 2 else -k) if y in (0, N - 1) else x
-                    py = y + (k if y < N / 2 else -k) if x in (0, N - 1) else y
-                    img.putpixel((px, py), (0, 0, 0, 0))
-    d.rectangle([0, 0, N - 1, N - 1], outline=edge + (255,), width=border)
-    if inner:
-        d.rectangle([border + 2, border + 2, N - 3 - border, N - 3 - border], outline=inner + (255,), width=1)
-    if style == "glow":
-        glow = Image.new("RGBA", (N, N))
-        gd = ImageDraw.Draw(glow)
-        gd.rectangle([1, 1, N - 2, N - 2], outline=edge + (200,), width=3)
-        glow = glow.filter(ImageFilter.GaussianBlur(2))
-        img = Image.alpha_composite(img, glow)
-        d = ImageDraw.Draw(img)
-        d.rectangle([0, 0, N - 1, N - 1], outline=edge + (255,), width=1)
+    o = 0
+    if theme.get("outline"):
+        d.rectangle([0, 0, N - 1, N - 1], outline=theme["outline"] + (255,), width=1)
+        o = 1
+    width = 3 if state == "active" else 2
+    if theme.get("double"):
+        d.rectangle([o, o, N - 1 - o, N - 1 - o], outline=edge + (255,), width=1)
+        d.rectangle([o + 2, o + 2, N - 3 - o, N - 3 - o], outline=edge + (255,), width=1 if state != "active" else 2)
+        inner = o + 5
     else:
-        ornament(d, style, edge + (255,), border + 1)
+        d.rectangle([o, o, N - 1 - o, N - 1 - o], outline=edge + (255,), width=width)
+        inner = o + width + 1
+    if style in ("roundel", "shard"):
+        d.rectangle([inner + 1, inner + 1, N - 2 - inner, N - 2 - inner], outline=theme["rule"] + (255,), width=1)
+    if state == "active" and theme.get("active_rule"):
+        d.rectangle([inner + 1, inner + 1, N - 2 - inner, N - 2 - inner], outline=theme["active_rule"] + (255,), width=1)
+    if state in ("mouseover", "active"):
+        # Accent underline: psy teal, gold, gene blue, red glow or thruster cyan.
+        y = N - 1 - inner - 1
+        d.line([(inner + 1, y), (N - 2 - inner, y)], fill=theme["accent"] + (255,), width=2)
+    if style == "shard" and state != "disabled":
+        glow = Image.new("RGBA", (N, N))
+        ImageDraw.Draw(glow).rectangle([inner, inner, N - 1 - inner, N - 1 - inner], outline=theme["rule"] + (180 if state == "normal" else 255,), width=2)
+        img = Image.alpha_composite(img, glow.filter(ImageFilter.GaussianBlur(1.5)))
+        d = ImageDraw.Draw(img)
+    ornament(d, theme, (edge if state != "disabled" else grey(edge)) + (255,))
+    if style in ("shard", "hull"):
+        cut_corners(img, 4 if style == "hull" else 3)
+        d = ImageDraw.Draw(img)
+        for cx, cy, sx, sy in corners():  # edge along the cut
+            n = 4 if style == "hull" else 3
+            d.line([(cx + n * sx, cy), (cx, cy + n * sy)], fill=edge + (255,), width=2)
     return img
 
 
 def bar(theme):
     img = Image.new("RGBA", (N, N))
-    gradient_fill(img, shade(theme["base"], -8), shade(theme["base"], -22))
+    gradient_fill(img, shade(theme["base"], -6), shade(theme["base"], -18))
     d = ImageDraw.Draw(img)
     d.line([(0, 0), (N - 1, 0)], fill=theme["edge"] + (255,), width=2)
-    d.line([(0, 3), (N - 1, 3)], fill=shade(theme["edge"], -70) + (255,), width=1)
+    d.line([(0, 3), (N - 1, 3)], fill=theme["rule"] + (255,), width=1)
     return img
 
 
 def drawer(theme):
     img = Image.new("RGBA", (N, N))
-    gradient_fill(img, shade(theme["base"], -4), shade(theme["base"], -20))
+    gradient_fill(img, shade(theme["base"], -2), shade(theme["base"], -16))
     d = ImageDraw.Draw(img)
-    d.rectangle([0, 0, N - 1, N - 1], outline=theme["edge"] + (255,), width=2)
-    d.rectangle([4, 4, N - 5, N - 5], outline=shade(theme["edge"], -80) + (255,), width=1)
-    if theme["ornament"] != "glow":
-        ornament(d, theme["ornament"], theme["edge"] + (255,), 3)
+    if theme.get("outline"):
+        d.rectangle([0, 0, N - 1, N - 1], outline=theme["outline"] + (255,), width=1)
+    d.rectangle([1, 1, N - 2, N - 2], outline=theme["edge"] + (255,), width=2)
+    d.rectangle([5, 5, N - 6, N - 6], outline=theme["rule"] + (255,), width=1)
+    ornament(d, theme, theme["edge"] + (255,))
     return img
 
 
@@ -121,14 +172,14 @@ def arrow(theme, left):
     d = ImageDraw.Draw(img)
     pts = [(20, 7), (10, 16), (20, 25)] if left else [(12, 7), (22, 16), (12, 25)]
     pts = [(x * S, y * S) for x, y in pts]
-    d.line(pts, fill=(10, 10, 10, 220), width=7 * S, joint="curve")
-    d.line(pts, fill=shade(theme["edge"], 30) + (255,), width=4 * S, joint="curve")
+    d.line(pts, fill=(8, 8, 10, 230), width=7 * S, joint="curve")
+    d.line(pts, fill=theme.get("icon", theme["edge"]) + (255,), width=4 * S, joint="curve")
     return img.resize((32, 32), Image.LANCZOS)
 
 
 def tinted_gear(theme):
     gear = Image.open(os.path.join(ROOT, "Textures", "MainButtonBarSystem", "UI", "Gear.png")).convert("RGBA")
-    accent = shade(theme["edge"], 30)
+    accent = theme.get("icon", theme["edge"])
     px = gear.load()
     for y in range(gear.height):
         for x in range(gear.width):
@@ -168,11 +219,11 @@ def main():
         os.makedirs(folder, exist_ok=True)
         files = {
             "Button": button(t, t["base"], t["edge"]),
-            "ButtonMouseover": button(t, shade(t["base"], 18), shade(t["edge"], 35)),
-            "ButtonActive": button(t, t["active"], shade(t["edge"], 45), border=3, inner=shade(t["edge"], -20)),
-            "ButtonDisabled": button(t, grey(shade(t["base"], -6)), grey(shade(t["edge"], -60))),
+            "ButtonMouseover": button(t, shade(t["base"], 14), shade(t["edge"], 25), "mouseover"),
+            "ButtonActive": button(t, t["active"], shade(t["edge"], 35), "active"),
+            "ButtonDisabled": button(t, grey(shade(t["base"], -4)), grey(shade(t["edge"], -60)), "disabled"),
             "Bar": bar(t),
-            "More": button(t, mix(t["base"], t["active"], 0.5), t["edge"], inner=shade(t["edge"], -40)),
+            "More": button(t, mix(t["base"], t["active"], 0.6), t["edge"]),
             "Drawer": drawer(t),
             "ArrowLeft": arrow(t, True),
             "ArrowRight": arrow(t, False),

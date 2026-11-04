@@ -177,15 +177,15 @@
       "Vanilla.label": "vanilla",
       "Vanilla.description": "The game's own button look.",
       "MBBS_Imperial.label": "imperial",
-      "MBBS_Imperial.description": "Deep purple and gold, after the courtly mood of the Royalty expansion.",
+      "MBBS_Imperial.description": "Navy and gold with crowned corners and a psy-teal glow, from the Royalty expansion's colours.",
       "MBBS_Creed.label": "creed",
-      "MBBS_Creed.description": "Dark leather and bronze with parchment labels, after the Ideology expansion.",
+      "MBBS_Creed.description": "Deep teal with coral borders and gold roundels, from the Ideology expansion's colours.",
       "MBBS_GeneLab.label": "gene lab",
-      "MBBS_GeneLab.description": "Dark teal with bright lab-green edges, after the Biotech expansion.",
+      "MBBS_GeneLab.description": "Blue with teal borders, mauve gene tiles and gene-blue labels, from the Biotech expansion's colours.",
       "MBBS_Void.label": "void",
-      "MBBS_Void.description": "Near-black with a dim crimson glow, after the Anomaly expansion.",
+      "MBBS_Void.description": "Void black and monolith stone with a red glow and shard-cut corners, from the Anomaly expansion's colours.",
       "MBBS_Starfarer.label": "starfarer",
-      "MBBS_Starfarer.description": "Deep navy and steel blue with cut corners, after the Odyssey expansion."
+      "MBBS_Starfarer.description": "Steel hull plates with rivets and a cyan thruster glow, after the Odyssey expansion."
     }
   }
 }
