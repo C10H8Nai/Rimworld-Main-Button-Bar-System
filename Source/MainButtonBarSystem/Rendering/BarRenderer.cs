@@ -14,9 +14,6 @@ namespace MainButtonBarSystem
     /// </summary>
     public static class BarRenderer
     {
-        private static readonly AccessTools.FieldRef<MainButtonsRoot, List<MainButtonDef>> AllButtonsInOrder =
-            SafeAccess.FieldRef<MainButtonsRoot, List<MainButtonDef>>("allButtonsInOrder");
-
         private static readonly BarDrawContext ctx = new BarDrawContext();
         private static readonly List<BarButton> buttons = new List<BarButton>();
         private static readonly List<BarButton> pool = new List<BarButton>();
@@ -92,7 +89,7 @@ namespace MainButtonBarSystem
             ScrollCaptureRect = Rect.zero;
             drawer.Clear();
             vanillaVisible.Clear();
-            var list = root == null || AllButtonsInOrder == null ? null : AllButtonsInOrder(root);
+            var list = root == null || BarModel.AllButtonsInOrder == null ? null : BarModel.AllButtonsInOrder(root);
             if (list != null)
             {
                 foreach (var def in list)

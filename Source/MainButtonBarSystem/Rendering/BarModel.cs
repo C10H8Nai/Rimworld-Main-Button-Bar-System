@@ -11,25 +11,70 @@ namespace MainButtonBarSystem
     {
         public const string MenuDefName = "Menu";
 
+        internal static readonly HarmonyLib.AccessTools.FieldRef<MainButtonsRoot, List<MainButtonDef>> AllButtonsInOrder =
+            SafeAccess.FieldRef<MainButtonsRoot, List<MainButtonDef>>("allButtonsInOrder");
+
         private static List<string> currentNames;
 
-        /// <summary>Every MainButtonDef in the game's own order (baseline order, then anything added later).</summary>
+        /// <summary>The game's list <see cref="currentNames"/> was built from; empty when it came from the baseline.</summary>
+        private static readonly List<MainButtonDef> currentSource = new List<MainButtonDef>();
+
+        /// <summary>
+        /// Every MainButtonDef in the game's own order right now: in a game, the order MainButtonsRoot draws (so mods
+        /// that reorder or add buttons at runtime are followed while the player has not set an order); at the main
+        /// menu, the baseline order. Defs missing from that list follow in def order.
+        /// </summary>
         public static List<string> CurrentNames
         {
             get
             {
-                if (currentNames == null)
+                var live = LiveOrder();
+                if (currentNames != null && SameSource(live)) return currentNames;
+
+                var names = new List<string>();
+                var known = new HashSet<string>();
+                currentSource.Clear();
+                if (live != null)
                 {
-                    var names = ButtonBaseline.All.Select(b => b.DefName).ToList();
-                    var known = new HashSet<string>(names);
-                    names.AddRange(DefDatabase<MainButtonDef>.AllDefs.OrderBy(d => d.order).Select(d => d.defName).Where(n => !known.Contains(n)));
-                    currentNames = names;
+                    currentSource.AddRange(live);
+                    foreach (var def in live)
+                        if (def != null && known.Add(def.defName)) names.Add(def.defName);
                 }
+                else
+                {
+                    foreach (var b in ButtonBaseline.All)
+                        if (known.Add(b.DefName)) names.Add(b.DefName);
+                }
+                foreach (var def in DefDatabase<MainButtonDef>.AllDefs.OrderBy(d => d.order))
+                    if (known.Add(def.defName)) names.Add(def.defName);
+                currentNames = names;
                 return currentNames;
             }
         }
 
-        internal static void ResetCache() => currentNames = null;
+        private static List<MainButtonDef> LiveOrder()
+        {
+            if (AllButtonsInOrder == null || Current.ProgramState != ProgramState.Playing) return null;
+            var root = (Find.UIRoot as UIRoot_Play)?.mainButtonsRoot;
+            var list = root == null ? null : AllButtonsInOrder(root);
+            return list == null || list.Count == 0 ? null : list;
+        }
+
+        /// <summary>Whether the cached names were built from exactly this list, in this order (no allocation).</summary>
+        private static bool SameSource(List<MainButtonDef> live)
+        {
+            if (live == null) return currentSource.Count == 0;
+            if (live.Count != currentSource.Count) return false;
+            for (int i = 0; i < live.Count; i++)
+                if (!ReferenceEquals(live[i], currentSource[i])) return false;
+            return true;
+        }
+
+        internal static void ResetCache()
+        {
+            currentNames = null;
+            currentSource.Clear();
+        }
 
         public static bool IsLocked(BarConfig config, string defName) => config.MenuLocked && defName == MenuDefName;
 

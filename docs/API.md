@@ -559,9 +559,9 @@ removal.
 - Exception: with "icon only" or "icon and text" chosen, the game gets the button without its icon and this mod
   draws the icon itself (inside `Widgets.ButtonTextSubtle`), so patches that move the icon or add the label back
   (Vanilla Textures Expanded's icon-and-label mode) only affect buttons left on "default".
-- The order on screen comes from the player's settings and the game's defs, not from
-  `MainButtonsRoot.allButtonsInOrder`; mods that rewrite that list do not change this mod's order (an import is
-  planned instead).
+- While the player has not set an order, the bar follows the game's `MainButtonsRoot.allButtonsInOrder`, so mods
+  that reorder or add buttons at runtime are followed (at the main menu, the order recorded at startup is shown).
+  Once the player sets an order, theirs wins; buttons it does not list are inserted before the menu button.
 - A display mode may report a bar taller than one row (`ReportBarRect`), but the game and mods such as RimHUD
   place the inspect pane assuming the vanilla height.
 - Renaming a button changes `MainButtonDef.label` for the whole game, so other mods see the new name too.
