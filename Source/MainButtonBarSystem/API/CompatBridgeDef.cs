@@ -173,8 +173,10 @@ namespace MainButtonBarSystem
         {
             base.TakeOver();
             RemovePatchesFromOtherMod(AccessTools.Method(typeof(Game), nameof(Game.FinalizeInit)));
+            // Also puts the game's MainButtonDef list back in its loaded order, for the games after this one.
             RestoreBaselineDefFields();
-            // It already rewrote this game's button list; follow the restored order instead (not by changing the list).
+            // This game's MainButtonsRoot already built its list from TooManyButtons' order; follow the restored order
+            // instead of that list (MainButtonsRoot's own list is never changed).
             BarModel.IgnoreLiveOrderOf((Find.UIRoot as UIRoot_Play)?.mainButtonsRoot);
             RegisterRuntimeDefaults();
         }
@@ -199,6 +201,28 @@ namespace MainButtonBarSystem
                 def.buttonVisible = b.ButtonVisible;
                 def.order = b.Order;
             }
+            RestoreDefListOrder();
+        }
+
+        /// <summary>
+        /// It also re-sorts the game's MainButtonDef list in place with an unstable sort, so buttons with the same order
+        /// came out swapped in every later game (MainButtonsRoot sorts that list by order, keeping ties as listed). The
+        /// game numbered the list (Def.index) when it loaded it; put it back in that order. This also undoes any other
+        /// mod's re-sort of the list, which only matters for buttons with the same order. Called outside any loop over
+        /// the list.
+        /// </summary>
+        private static void RestoreDefListOrder()
+        {
+            var list = DefDatabase<MainButtonDef>.AllDefsListForReading;
+            bool sorted = true;
+            for (int i = 1; i < list.Count && sorted; i++)
+                sorted = list[i - 1].index <= list[i].index;
+            if (sorted) return;
+
+            // Stable: a def without its own index (added at runtime outside DefDatabase.Add) keeps its place among equals.
+            var byIndex = list.Select((def, position) => (def, position)).OrderBy(p => p.def.index).ThenBy(p => p.position).Select(p => p.def).ToList();
+            list.Clear();
+            list.AddRange(byIndex);
         }
 
         private enum Slot

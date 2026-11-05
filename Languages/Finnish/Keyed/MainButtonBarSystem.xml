@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>Havaittiin {0}: se hallitsee tällä hetkellä palkkia, joten tässä tehdyt muutokset tulevat voimaan vasta, kun tällä modilla on etusija.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Havaittiin {0}: tällä modilla on etusija, joten toisen modin vaikutus palkkiin on poistettu käytöstä.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Lisätietoja Edistynyt-näkymässä.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} piirtää nyt alapalkin, joten näillä asetuksilla ei ole vaikutusta. Jos haluat käyttää tämän modin palkkia, poista ”Main bar” -asetus käytöstä kyseisen modin asetuksista tai siirrä tämä modi sen yläpuolelle modilistassa.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>Modissa {0} on myös ”Main bar” käytössä: se asettelee oikean alakulman säätimet ja ikkunat ikään kuin sen oma palkki olisi näkyvissä, joten osa elementeistä voi olla väärässä paikassa. Suosittelemme poistamaan ”Main bar” -asetuksen käytöstä kyseisen modin asetuksista.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Tällä modilla ei ole vielä asetuksia, joten se jättää alapalkin modille {0}. Jos haluat käyttää tämän modin palkkia, muuta mitä tahansa asetusta täällä ja poista sitten ”Main bar” käytöstä myös modissa {0}, muuten oikean alakulman aikasäätimet, päivämäärä ja sää katoavat.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} on modilistassa tämän modin yläpuolella ja piirtää alapalkin, joten täällä olevilla asetuksilla ei ole vaikutusta. Jos haluat käyttää tämän modin palkkia, poista ”Main bar” käytöstä modissa {0} tai siirrä tämä modi sen yläpuolelle modilistassa.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>Modissa {0} on myös ”Main bar” käytössä. Kun tämä modi piirtää palkin, oikean alakulman aikasäätimet, päivämäärä ja sää katoavat ja jotkin ikkunat avautuvat hieman väärään paikkaan. Poista ”Main bar” käytöstä modissa {0}.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>Poista ”Main bar” käytöstä</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>Asetus muutettiin modissa {0} ja sen modiasetukset tallennettiin.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>Asetus muutettiin modissa {0} tätä istuntoa varten, mutta sen modiasetuksia ei voitu tallentaa. Muuta asetus myös sen modiasetuksissa.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>Asetusta ei voitu muuttaa modissa {0}. Muuta se sen modiasetuksissa.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Yhteensopivuus: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Tämä modi ensin</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Tämä modi piirtää palkin. Modin {0} vaikutus palkkiin on poistettu käytöstä; sen asetuksia käytetään vain viitearvoina.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ ja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.</MBBS_Ico
   <MBBS_Look_Color_1>Tekstin väri hiiren alla</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Tekstin väri auki ollessa</MBBS_Look_Color_2>
   <MBBS_Look_Icon>Kuvake</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>Jos painikkeen kuvakkeen kokoa tai sijaintia on muutettu, tämä modi piirtää sen kuvakkeen, joten kuvakkeita siirtävät modit (kuten Vanilla Textures Expanded) eivät vaikuta siihen.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>Painikkeen kuvakkeen piirtää tämä modi, jos sen kokoa tai sijaintia on muutettu, siihen paikkaan, johon tämä ulkoasu sen asettaa. Näkyykö painikkeen teksti, määräytyy edelleen pelin ja sellaisten modien kuten Vanilla Textures Expanded mukaan; esikatselu näyttää aina pelin oman tavan.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>Kuvakkeen koko: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>Kuvakkeen sijainti (vain kuvake: missä kohtaa painiketta; kuvake ja teksti: tekstin vasemmalla vai oikealla puolella)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>Kuvakkeen siirto vaakasuunnassa: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Käynnistä peli uudelleen ja ota modi käyttöön modilistassa kokeillaksesi si
   <MBBS_ImportReport_NoList>Tässä järjestelyssä ei ole luetteloa sen pelin painikkeista, jossa se tehtiin (vanhempi versio). Painikkeet, joita se ei mainitse, säilyttävät asetuksesi.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Teema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Teemaa {0} (modista {1}) ei ole asennettu; siihen asti käytetään alkuperäistä ulkoasua.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Sen päällä on oma teema ({0} painiketta, joilla on oma tyyli).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>Näyttötilaa {0} (modista {1}) ei ole asennettu; siihen asti käytetään alkuperäistä palkkia.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Tuodut kuvakkeet, jotka sinulta puuttuvat: {0} ({1}). Laita PNG-tiedostot kansioon {2}; siihen asti nämä painikkeet käyttävät omaa kuvakettaan.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Kuvakkeet modeista, joita sinulla ei ole: {0} ({1}). Nämä painikkeet käyttävät omaa kuvakettaan.</MBBS_ImportReport_IconTexturesMissing>

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
@@ -43,6 +43,12 @@ namespace MainButtonBarSystem
 
         /// <summary>Translation key of the text; <c>{0}</c> is the other mod's name.</summary>
         public string textKey;
+
+        /// <summary>
+        /// Optional translation key of a button next to the text that turns the other mod's switch off and saves its
+        /// settings (<c>{0}</c> is the other mod's name). Shown only while the switch reads as on.
+        /// </summary>
+        public string turnOffKey;
 
         public bool Matches(bool? settingValue, CompatBarOwner? owner)
         {
@@ -121,54 +127,15 @@ namespace MainButtonBarSystem
 
         private bool? TryRead(out string problem)
         {
-            problem = null;
             try
             {
-                var parts = settingMember.Split('.');
-                object value;
-                int start;
-                if (settingType.NullOrEmpty())
+                if (!ResolveOwner(out object owner, out Type staticOwner, out string member, out problem)) return null;
+                object value = staticOwner != null ? StaticMember(staticOwner, member) : OtherModSettings.Get(owner, member);
+                if (value == null)
                 {
-                    value = OtherModSettings.Of(packageIds);
-                    start = 0;
-                    if (value == null)
-                    {
-                        problem = "its mod settings were not found";
-                        return null;
-                    }
+                    problem = "member " + member + " not found or null";
+                    return null;
                 }
-                else
-                {
-                    if (!typeResolved)
-                    {
-                        typeResolved = true;
-                        resolvedType = GenTypes.GetTypeInAnyAssembly(settingType);
-                    }
-                    var type = resolvedType;
-                    if (type == null)
-                    {
-                        problem = "type not found";
-                        return null;
-                    }
-                    value = StaticMember(type, parts[0]);
-                    start = 1;
-                    if (value == null)
-                    {
-                        problem = "static member " + parts[0] + " not found or null";
-                        return null;
-                    }
-                }
-
-                for (int i = start; i < parts.Length; i++)
-                {
-                    value = OtherModSettings.Get(value, parts[i]);
-                    if (value == null)
-                    {
-                        problem = "member " + parts[i] + " not found or null";
-                        return null;
-                    }
-                }
-
                 if (value is bool b) return b;
                 problem = "it is " + value.GetType().Name + ", not bool";
                 return null;
@@ -180,6 +147,111 @@ namespace MainButtonBarSystem
             }
         }
 
+        /// <summary>
+        /// Turns the other mod's switch off and saves its mod settings, for a notice's <see cref="CompatNotice.turnOffKey"/>
+        /// button. False (with the reason) when the switch could not be written; true but with a problem when it was
+        /// written for this session and its settings could not be saved.
+        /// </summary>
+        public bool TryTurnOff(out string problem)
+        {
+            try
+            {
+                if (!Detected || settingMember.NullOrEmpty())
+                {
+                    problem = "not active or no switch declared";
+                    return false;
+                }
+                if (!ResolveOwner(out object owner, out Type staticOwner, out string member, out problem)) return false;
+                bool written = staticOwner != null ? SetStaticMember(staticOwner, member, false) : OtherModSettings.Set(owner, member, false);
+                if (!written)
+                {
+                    problem = "member " + member + " cannot be written";
+                    return false;
+                }
+                // The switch is off from here on; a save that fails only means it comes back after a restart.
+                var mod = OtherModSettings.ModOf(packageIds);
+                if (mod == null)
+                {
+                    problem = "its mod was not found, so the change lasts only until the game restarts";
+                    return true;
+                }
+                try
+                {
+                    mod.WriteSettings();
+                }
+                catch (Exception e)
+                {
+                    problem = "saving its settings failed (" + e.GetType().Name + ": " + e.Message + "), so the change lasts only until the game restarts";
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                problem = e.GetType().Name + ": " + e.Message;
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Follows <see cref="settingMember"/> up to its last part. That part is a member of <paramref name="owner"/>,
+        /// or a static member of <paramref name="staticOwner"/> when the path has only one part after <see cref="settingType"/>.
+        /// </summary>
+        private bool ResolveOwner(out object owner, out Type staticOwner, out string member, out string problem)
+        {
+            owner = null;
+            staticOwner = null;
+            problem = null;
+            var parts = settingMember.Split('.');
+            member = parts[parts.Length - 1];
+            int start;
+            if (settingType.NullOrEmpty())
+            {
+                owner = OtherModSettings.Of(packageIds);
+                start = 0;
+                if (owner == null)
+                {
+                    problem = "its mod settings were not found";
+                    return false;
+                }
+            }
+            else
+            {
+                if (!typeResolved)
+                {
+                    typeResolved = true;
+                    resolvedType = GenTypes.GetTypeInAnyAssembly(settingType);
+                }
+                if (resolvedType == null)
+                {
+                    problem = "type not found";
+                    return false;
+                }
+                if (parts.Length == 1)
+                {
+                    staticOwner = resolvedType;
+                    return true;
+                }
+                owner = StaticMember(resolvedType, parts[0]);
+                start = 1;
+                if (owner == null)
+                {
+                    problem = "static member " + parts[0] + " not found or null";
+                    return false;
+                }
+            }
+
+            for (int i = start; i < parts.Length - 1; i++)
+            {
+                owner = OtherModSettings.Get(owner, parts[i]);
+                if (owner == null)
+                {
+                    problem = "member " + parts[i] + " not found or null";
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private static object StaticMember(Type type, string name)
         {
             var field = AccessTools.Field(type, name);
@@ -187,6 +259,21 @@ namespace MainButtonBarSystem
             var property = AccessTools.Property(type, name);
             var getter = property?.GetGetMethod(true);
             return getter != null && getter.IsStatic && property.GetIndexParameters().Length == 0 ? property.GetValue(null) : null;
+        }
+
+        private static bool SetStaticMember(Type type, string name, object value)
+        {
+            var field = AccessTools.Field(type, name);
+            if (field != null)
+            {
+                if (!field.IsStatic || field.IsInitOnly) return false;
+                field.SetValue(null, value);
+                return true;
+            }
+            var setter = AccessTools.Property(type, name)?.GetSetMethod(true);
+            if (setter == null || !setter.IsStatic || setter.GetParameters().Length != 1) return false;
+            setter.Invoke(null, new[] { value });
+            return true;
         }
 
         public override IEnumerable<string> ConfigErrors()
@@ -199,6 +286,8 @@ namespace MainButtonBarSystem
                 if (notices.Any(n => n == null || n.textKey.NullOrEmpty())) yield return "every notice needs a textKey";
                 if (settingMember.NullOrEmpty() && notices.Any(n => n != null && (n.setting == CompatSettingState.On || n.setting == CompatSettingState.Off)))
                     yield return "notices that depend on the setting need settingMember";
+                if (settingMember.NullOrEmpty() && notices.Any(n => n != null && !n.turnOffKey.NullOrEmpty()))
+                    yield return "notices with turnOffKey need settingMember";
             }
         }
     }
@@ -224,11 +313,12 @@ namespace MainButtonBarSystem
             }
         }
 
-        /// <summary>The text to show for this def now, or null.</summary>
-        public static string TextFor(CompatNoticeDef def)
+        /// <summary>The notice to show for this def now, or null; <paramref name="settingOn"/> is whether its switch reads as on.</summary>
+        public static CompatNotice NoticeFor(CompatNoticeDef def, out bool settingOn)
         {
-            var notice = def.CurrentNotice(def.ReadSetting(), CurrentOwner);
-            return notice == null ? null : notice.textKey.Translate(def.ModNameOrLabel).ToString();
+            var setting = def.ReadSetting();
+            settingOn = setting == true;
+            return def.CurrentNotice(setting, CurrentOwner);
         }
 
         private static bool logged;

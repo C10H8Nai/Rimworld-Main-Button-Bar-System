@@ -607,6 +607,24 @@ namespace MainButtonBarSystem
         /// <summary>True when <see cref="ActiveIcon"/> is drawn alone, with no label.</summary>
         public static bool ActiveIconOnly { get; private set; }
 
+        /// <summary>
+        /// <see cref="ActiveIcon"/> replaces an icon the game draws invisibly: alone when the game gives the button no
+        /// label, beside the label when it (or another mod) does. Decided by <see cref="NoteGameLabel"/>.
+        /// </summary>
+        internal static bool ActiveIconFollowsGame { get; private set; }
+
+        /// <summary>Called by the label patch with the label the game passes for the button being drawn.</summary>
+        internal static void NoteGameLabel(string label)
+        {
+            if (ActiveIconFollowsGame) ActiveIconOnly = string.IsNullOrEmpty(label);
+        }
+
+        /// <summary>
+        /// The button being drawn is too narrow for its icon or label (<c>contentMinButtonWidth</c>): only its
+        /// background is drawn.
+        /// </summary>
+        public static bool ActiveBlank { get; private set; }
+
         /// <summary>Label font of the button being drawn; null for the tuning def's.</summary>
         internal static GameFont? ActiveFont { get; private set; }
 
@@ -654,8 +672,10 @@ namespace MainButtonBarSystem
                 font = theme.LabelFontFor(def);
                 iconLook = theme.IconLookFor(def, out iconSize, out anchor, out offset);
             }
+            // Squeezed by other buttons' widths (equal split): an icon or label would spill over the neighbours.
+            bool blank = B.contentMinButtonWidth > 0 && rect.width < B.contentMinButtonWidth;
             // With only the font changed, align stays Default and the label patch draws it where the game would.
-            if (IconField == null || (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default))
+            if (IconField == null || (!blank && align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default))
             {
                 def.Worker.DoButton(rect);
                 return;
@@ -667,7 +687,6 @@ namespace MainButtonBarSystem
             var savedIcon = IconField(def);
             var savedPath = def.iconPath;
             Texture2D effective = custom ?? own;
-            if (iconLook && mode == IconMode.Default && effective != null) mode = IconMode.Icon;
 
             ActiveAlign = align;
             ActiveFont = font;
@@ -680,7 +699,13 @@ namespace MainButtonBarSystem
             ActiveBaseState = BaseState(def, rect);
             try
             {
-                switch (mode)
+                if (blank)
+                {
+                    // The game then draws the label instead, which the label patch drops.
+                    HideIcon(def);
+                    ActiveBlank = true;
+                }
+                else switch (mode)
                 {
                     case IconMode.Text:
                         HideIcon(def);
@@ -696,7 +721,16 @@ namespace MainButtonBarSystem
                         }
                         break;
                     default: // Default: the game (and mods changing DoButton) decide, with the custom icon if set.
-                        if (custom != null) IconField(def) = custom;
+                        if (iconLook && effective != null)
+                        {
+                            // A custom icon size or position (spec 4.9): the game still decides whether the label
+                            // shows (it does with Vanilla Textures Expanded), but draws an invisible icon; the label
+                            // patch draws the real one where the look puts it.
+                            IconField(def) = BaseContent.ClearTex;
+                            ActiveIcon = effective;
+                            ActiveIconFollowsGame = true;
+                        }
+                        else if (custom != null) IconField(def) = custom;
                         break;
                 }
                 def.Worker.DoButton(rect);
@@ -712,6 +746,8 @@ namespace MainButtonBarSystem
                 ActiveBaseState = ButtonVisualState.Normal;
                 ActiveIcon = null;
                 ActiveIconOnly = false;
+                ActiveIconFollowsGame = false;
+                ActiveBlank = false;
                 ActiveFont = null;
                 ActiveIconSize = -1f;
                 ActiveIconAnchor = Core.IconAnchor.Default;

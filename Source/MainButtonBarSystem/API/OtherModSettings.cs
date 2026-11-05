@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +32,52 @@ namespace MainButtonBarSystem
                 Log.WarningOnce(MainButtonBarSystemMod.LogPrefix + "Could not read another mod's settings: " + e.Message, 0x4D424255);
             }
             return null;
+        }
+
+        /// <summary>
+        /// The Mod object of the first active mod with one of these package ids, or null, to save its settings with
+        /// <see cref="Mod.WriteSettings"/>. Ignores the "_steam" suffix the game adds when a local and a Steam copy of
+        /// the mod both exist.
+        /// </summary>
+        public static Mod ModOf(IEnumerable<string> packageIds)
+        {
+            var ids = new HashSet<string>(packageIds.Select(p => p.ToLowerInvariant()));
+            foreach (var mod in LoadedModManager.ModHandles)
+            {
+                var id = mod?.Content?.PackageId?.ToLowerInvariant();
+                if (id == null) continue;
+                if (id.EndsWith(SteamSuffix)) id = id.Substring(0, id.Length - SteamSuffix.Length);
+                if (ids.Contains(id)) return mod;
+            }
+            return null;
+        }
+
+        private const string SteamSuffix = "_steam";
+
+        /// <summary>
+        /// Sets a field or a settable parameterless property; false when there is none or it cannot be set, and for a
+        /// struct (the write would only change a boxed copy).
+        /// </summary>
+        public static bool Set(object obj, string name, object value)
+        {
+            if (obj == null || obj.GetType().IsValueType) return false;
+            try
+            {
+                var field = AccessTools.Field(obj.GetType(), name);
+                if (field != null && !field.IsStatic && !field.IsInitOnly)
+                {
+                    field.SetValue(obj, value);
+                    return true;
+                }
+                var setter = AccessTools.Property(obj.GetType(), name)?.GetSetMethod(true);
+                if (setter == null || setter.IsStatic || setter.GetParameters().Length != 1) return false;
+                setter.Invoke(obj, new[] { value });
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>The root folder of the first active mod with one of these package ids, or null.</summary>

@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>Tuvastati {0}: see juhib praegu riba, seega jõustuvad siinsed muudatused alles siis, kui sellel modifikatsioonil on eesõigus.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Tuvastati {0}: sellel modifikatsioonil on eesõigus, seega on tuvastatud modifikatsiooni mõju ribale välja lülitatud.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Üksikasjad vaates Täpsem.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} joonistab praegu alumist riba, seega pole siinsetel seadetel mõju. Selle modifikatsiooni riba kasutamiseks lülita tuvastatud modifikatsiooni seadetes „Main bar“ välja või tõsta see modifikatsioon modifikatsioonide nimekirjas sellest ülespoole.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>Modifikatsioonil {0} on ka „Main bar“ sisse lülitatud: see paigutab paremas alanurgas olevad juhtelemendid ja aknad nii, nagu oleks näha selle enda riba, seega võivad asjad olla paigast ära. Soovitatav on tuvastatud modifikatsiooni seadetes „Main bar“ välja lülitada.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Sellel modifikatsioonil pole veel ühtegi seadet, seega jätab see alumise riba modifikatsioonile {0}. Selle modifikatsiooni riba kasutamiseks muuda siin mis tahes seadet; seejärel lülita „Main bar“ välja ka modifikatsioonis {0}, muidu kaovad paremast alanurgast ajajuhtnupud, kuupäev ja ilm.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>Modifikatsioon {0} on modifikatsioonide nimekirjas selle kohal ja joonistab alumist riba, seega pole siinsetel seadetel mõju. Selle modifikatsiooni riba kasutamiseks lülita „Main bar“ modifikatsioonis {0} välja või tõsta see modifikatsioon nimekirjas sellest ülespoole.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>Modifikatsioonil {0} on ka „Main bar“ sisse lülitatud. Kui riba joonistab see modifikatsioon, kaovad paremast alanurgast ajajuhtnupud, kuupäev ja ilm ning mõned aknad avanevad veidi paigast ära. Lülita „Main bar“ modifikatsioonis {0} välja.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>Lülita „Main bar“ välja</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>Seade modifikatsioonis {0} muudeti ja selle modifikatsiooni seaded salvestati.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>Seade modifikatsioonis {0} muudeti selleks seansiks, kuid selle modifikatsiooni seadeid ei õnnestunud salvestada. Muuda seda ka selle modifikatsiooni seadetes.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>Seadet modifikatsioonis {0} ei õnnestunud muuta. Muuda seda selle modifikatsiooni seadetes.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Ühilduvus: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Esmalt see modifikatsioon</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Riba joonistab see modifikatsioon. Modifikatsiooni {0} mõju ribale on välja lülitatud; selle seadeid kasutatakse ainult võrdlusväärtustena.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ ja vajuta „Värskenda“. Need jäävad sinna alles ka modifikatsiooni uuendam
   <MBBS_Look_Color_1>Teksti värv hiire all</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Teksti värv avatuna</MBBS_Look_Color_2>
   <MBBS_Look_Icon>Ikoon</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>Kui nupu ikooni suurust või asukohta on muudetud, joonistab ikooni see modifikatsioon, nii et ikoone liigutavad modifikatsioonid (nt Vanilla Textures Expanded) seda ei mõjuta.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>Nupu puhul, mille ikooni suurust või asukohta on muudetud, joonistab ikooni see modifikatsioon sinna, kuhu see kujundus selle paneb. Kas silt kuvatakse, sõltub endiselt mängust ja modifikatsioonidest nagu Vanilla Textures Expanded; eelvaade näitab alati mängu enda viisi.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>Ikooni suurus: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>Ikooni asukoht (ainult ikoon: kus nupus; ikoon ja tekst: tekstist vasakul või paremal)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>Ikooni nihe, horisontaalne: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Taaskäivita mäng ja lülita modifikatsioon proovimiseks modifikatsioonide nime
   <MBBS_ImportReport_NoList>See paigutus ei loetle selle mängu nuppe, kus see loodi (vanem versioon). Nupud, mida see ei maini, säilitavad sinu seaded.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Teema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Teema {0} (modifikatsioonist {1}) pole paigaldatud; seni kasutatakse originaalset välimust.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Peal on kohandatud teema ({0} nuppu oma stiiliga).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>Kuvarežiim {0} (modifikatsioonist {1}) pole paigaldatud; seni kasutatakse originaalset riba.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Imporditud ikoonid, mis sul puuduvad: {0} ({1}). Pane PNG-failid kausta {2}; seni kasutavad need nupud oma ikooni.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Ikoonid modifikatsioonidest, mida sul pole: {0} ({1}). Need nupud kasutavad oma ikooni.</MBBS_ImportReport_IconTexturesMissing>

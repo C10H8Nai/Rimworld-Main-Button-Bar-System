@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>{0} wurde erkannt und steuert derzeit die Leiste. Änderungen hier wirken daher erst, wenn diese Mod Vorrang hat.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>{0} wurde erkannt: Diese Mod hat Vorrang, daher ist die Wirkung von {0} auf die Leiste abgeschaltet.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Details unter „Erweitert“.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} zeichnet gerade die untere Leiste, daher haben die Einstellungen hier keine Wirkung. Um die Leiste dieser Mod zu nutzen, schalte „Main bar“ in den dortigen Mod-Einstellungen ab oder setze diese Mod in der Mod-Liste darüber.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>Bei {0} ist ebenfalls „Main bar“ eingeschaltet: Die Mod platziert die Steuerelemente unten rechts und die Fenster so, als würde ihre eigene Leiste angezeigt, daher kann einiges verrutscht sein. Es wird empfohlen, „Main bar“ in den dortigen Mod-Einstellungen abzuschalten.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Diese Mod hat noch keine Einstellungen und überlässt die untere Leiste daher {0}. Um die Leiste dieser Mod zu nutzen, ändere hier eine beliebige Einstellung und schalte dann auch „Main bar“ in {0} ab, sonst verschwinden unten rechts die Zeitsteuerung, das Datum und das Wetter.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} steht in der Mod-Liste über dieser Mod und zeichnet die untere Leiste, daher haben die Einstellungen hier keine Wirkung. Um die Leiste dieser Mod zu nutzen, schalte „Main bar“ in {0} ab oder setze diese Mod in der Mod-Liste darüber.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>Bei {0} ist ebenfalls „Main bar“ eingeschaltet. Solange diese Mod die Leiste zeichnet, verschwinden unten rechts die Zeitsteuerung, das Datum und das Wetter, und manche Fenster öffnen sich leicht verschoben. Schalte „Main bar“ in {0} ab.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>„Main bar“ abschalten</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>Die Einstellung in {0} wurde geändert und die Mod-Einstellungen wurden gespeichert.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>Die Einstellung in {0} wurde für diese Sitzung geändert, aber die Mod-Einstellungen konnten nicht gespeichert werden. Ändere sie auch in den dortigen Mod-Einstellungen.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>Die Einstellung in {0} konnte nicht geändert werden. Ändere sie in den dortigen Mod-Einstellungen.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Kompatibilität: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Diese Mod hat Vorrang</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Diese Mod zeichnet die Leiste. Die Wirkung von {0} auf die Leiste ist abgeschaltet; die dortigen Einstellungen dienen nur als Referenzwerte.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ und klicke dann auf „Aktualisieren“. Sie bleiben dort auch bei Mod-Updates e
   <MBBS_Look_Color_1>Textfarbe unter der Maus</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Textfarbe im geöffneten Zustand</MBBS_Look_Color_2>
   <MBBS_Look_Icon>Symbol</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>Bei einer Schaltfläche, deren Symbolgröße oder -position geändert wurde, zeichnet diese Mod das Symbol, daher wirken Mods, die Symbole verschieben (etwa Vanilla Textures Expanded), nicht darauf.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>Bei einer Schaltfläche, deren Symbolgröße oder -position geändert wurde, zeichnet diese Mod das Symbol dort, wo dieses Aussehen es hinsetzt. Ob ihre Beschriftung angezeigt wird, richtet sich weiterhin nach dem Spiel und Mods wie Vanilla Textures Expanded; die Vorschau zeigt immer die Spielweise.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>Symbolgröße: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>Symbolposition (nur Symbol: wo in der Schaltfläche; Symbol und Text: links oder rechts vom Text)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>Symbolversatz, horizontal: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Starte das Spiel neu und aktiviere die Mod in der Mod-Liste, um sie auszuprobier
   <MBBS_ImportReport_NoList>Diese Anordnung enthält keine Liste der Schaltflächen des Spiels, in dem sie erstellt wurde (ältere Version). Nicht erwähnte Schaltflächen behalten deine Einstellungen.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Design: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Design {0} (aus {1}) ist nicht installiert; bis dahin wird das Original-Aussehen verwendet.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Darüber liegt ein eigenes Design ({0} Schaltflächen mit eigenem Stil).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>Anzeigemodus {0} (aus {1}) ist nicht installiert; bis dahin wird die Original-Leiste verwendet.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Importierte Symbole, die dir fehlen: {0} ({1}). Lege die PNG-Dateien in {2} ab; bis dahin behalten diese Schaltflächen ihr eigenes Symbol.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Symbole aus Mods, die du nicht hast: {0} ({1}). Diese Schaltflächen behalten ihr eigenes Symbol.</MBBS_ImportReport_IconTexturesMissing>

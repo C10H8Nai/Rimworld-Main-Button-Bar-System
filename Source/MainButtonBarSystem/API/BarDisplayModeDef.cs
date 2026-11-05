@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MainButtonBarSystem.Core;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -70,6 +71,30 @@ namespace MainButtonBarSystem
         private readonly List<BarButton> drawer = new List<BarButton>();
         private float scrollOffset;
 
+        private string menuLabel;
+        private GameFont menuLabelFont;
+        private float menuLabelWidth;
+
+        /// <summary>Least width of the menu button when the equal split shrinks every button (tuning def).</summary>
+        private int MenuSplitMinWidth(MainButtonDef menu, BarAppearanceWorker theme)
+        {
+            var b = MainButtonBarTuningDef.Current.behaviour;
+            if (b.splitMenuMinWidth != 0 || menu == null) return Mathf.Max(0, b.splitMenuMinWidth);
+            string label = menu.LabelCap;
+            // The font the label is drawn in: a custom look may set its own (ButtonPainter.Draw).
+            var labelFont = (theme != null && theme.ChangesButtons ? theme.LabelFontFor(menu) : null) ?? b.labelFont;
+            if (!ReferenceEquals(label, menuLabel) || labelFont != menuLabelFont)
+            {
+                var font = Text.Font;
+                Text.Font = labelFont;
+                menuLabelWidth = Text.CalcSize(label).x;
+                Text.Font = font;
+                menuLabel = label;
+                menuLabelFont = labelFont;
+            }
+            return Mathf.CeilToInt(menuLabelWidth + b.moreButtonLabelPadding);
+        }
+
         public override void DrawBar(BarDrawContext ctx)
         {
             items.Clear();
@@ -88,6 +113,7 @@ namespace MainButtonBarSystem
                 item.Width = b.Width;
                 item.Pin = b.Pin;
                 item.InDrawer = b.InDrawer;
+                item.SplitMinWidth = b.Key == BarModel.MenuDefName ? MenuSplitMinWidth(b.Def, ctx.Appearance) : 0;
                 items.Add(item);
                 if (b.InDrawer && def.usesDrawer) drawerCount++;
             }
@@ -101,7 +127,9 @@ namespace MainButtonBarSystem
             options.FillScreen = config.FillScreen;
             options.MoreButtonWidth = Mathf.CeilToInt(ctx.Appearance.MoreButtonWidth(config, drawerCount));
             options.ArrowWidth = config.ArrowWidth;
-            options.SplitMinWidth = MainButtonBarTuningDef.Current.behaviour.splitMinButtonWidth;
+            var tuning = MainButtonBarTuningDef.Current.behaviour;
+            options.SplitMinWidth = tuning.splitMinButtonWidth;
+            options.SplitMoreMinWidth = tuning.splitMoreMinWidth < 0 ? 0 : tuning.splitMoreMinWidth > 0 ? tuning.splitMoreMinWidth : options.MoreButtonWidth;
             var layout = BarLayout.Compute(items, options);
 
             float x0 = ctx.BarRect.x, y = ctx.BarRect.y, h = ctx.BarRect.height;

@@ -265,18 +265,39 @@ namespace MainButtonBarSystem
 
             foreach (var def in CompatNotices.Detected)
             {
-                string text = CompatNotices.TextFor(def);
-                if (text.NullOrEmpty()) continue;
-                float height = Mathf.Max(L.noticeLineHeight, Text.CalcHeight(text, at.width));
-                var block = new Rect(at.x, y, at.width, height);
+                var notice = CompatNotices.NoticeFor(def, out bool settingOn);
+                if (notice == null) continue;
+                string text = notice.textKey.Translate(def.ModNameOrLabel);
+                string turnOff = settingOn && !notice.turnOffKey.NullOrEmpty() ? notice.turnOffKey.Translate(def.ModNameOrLabel).ToString() : null;
+                float buttonWidth = turnOff == null ? 0f : Mathf.Min(UIUtil.FitButton(L.smallButtonWidth, turnOff), at.width * L.noticeButtonMaxFraction);
+                float textWidth = turnOff == null ? at.width : at.width - buttonWidth - L.footerGap;
+                float height = Mathf.Max(L.noticeLineHeight, Text.CalcHeight(text, textWidth));
                 GUI.color = ColorLibrary.Gold;
                 Text.Anchor = TextAnchor.MiddleLeft;
-                Widgets.Label(block, text);
+                Widgets.Label(new Rect(at.x, y, textWidth, height), text);
                 Text.Anchor = TextAnchor.UpperLeft;
                 GUI.color = Color.white;
+                // Level with the middle of the text, like the label.
+                var button = new Rect(at.xMax - buttonWidth, y + (height - L.noticeLineHeight) / 2f, buttonWidth, L.noticeLineHeight);
+                if (turnOff != null && UIUtil.ButtonText(button, turnOff))
+                    TurnOff(def);
                 y += height;
             }
             return y - at.y;
+        }
+
+        /// <summary>The notice's button: turns the other mod's switch off and saves its settings.</summary>
+        private static void TurnOff(CompatNoticeDef def)
+        {
+            bool done = def.TryTurnOff(out string problem);
+            if (problem != null && Prefs.DevMode)
+                Log.Message(MainButtonBarSystemMod.LogPrefix + def.ModNameOrLabel + ": turning off " + def.SettingPath + ": " + problem);
+            if (!done)
+                Messages.Message("MBBS_Notice_TurnOffFailed".Translate(def.ModNameOrLabel), MessageTypeDefOf.RejectInput, false);
+            else if (problem != null)
+                Messages.Message("MBBS_Notice_TurnedOffNotSaved".Translate(def.ModNameOrLabel), MessageTypeDefOf.CautionInput, false);
+            else
+                Messages.Message("MBBS_Notice_TurnedOff".Translate(def.ModNameOrLabel), MessageTypeDefOf.NeutralEvent, false);
         }
 
         // ---------------------------------------------------------------- appearance tab
@@ -1077,7 +1098,10 @@ namespace MainButtonBarSystem
         {
             var color = GUI.color;
             if (!enabled) GUI.color = new Color(color.r, color.g, color.b, color.a * L.dimmedAlpha);
+            var font = Text.Font;
+            Text.Font = UIUtil.ButtonFont(label, rect.width);
             bool clicked = Widgets.ButtonText(rect, label, true, enabled, true);
+            Text.Font = font;
             GUI.color = color;
             return clicked && enabled;
         }
@@ -1095,12 +1119,14 @@ namespace MainButtonBarSystem
         /// <summary>A section label with a "Default" button. Returns true when the button is clicked.</summary>
         private static bool SectionHeader(Listing_Standard listing, string label, bool changed, string tooltip = null)
         {
-            var row = listing.GetRect(L.textRowHeight);
+            // A label longer than one line (some translations) gets more lines; the button stays on the first.
+            float labelWidth = listing.ColumnWidth - ResetWidth - L.footerGap;
+            var row = listing.GetRect(Mathf.Max(L.textRowHeight, Text.CalcHeight(label, labelWidth)));
             Text.Anchor = TextAnchor.MiddleLeft;
-            Widgets.Label(new Rect(row.x, row.y, row.width - ResetWidth - L.footerGap, row.height), label);
+            Widgets.Label(new Rect(row.x, row.y, labelWidth, row.height), label);
             Text.Anchor = TextAnchor.UpperLeft;
             if (tooltip != null) TooltipHandler.TipRegion(row, tooltip);
-            return DefaultButton(row, changed);
+            return DefaultButton(new Rect(row.x, row.y, row.width, L.textRowHeight), changed);
         }
 
         /// <summary>
@@ -1284,7 +1310,7 @@ namespace MainButtonBarSystem
             float half = (rect.width - gap) / 2f;
             if (!editingTemplate)
             {
-                if (Widgets.ButtonText(new Rect(rect.x, y, half, h), "MBBS_SaveAsTemplate".Translate()))
+                if (UIUtil.ButtonText(new Rect(rect.x, y, half, h), "MBBS_SaveAsTemplate".Translate()))
                 {
                     BarConfigManager.SaveTemplate(working);
                     Messages.Message("MBBS_TemplateSaved".Translate(), MessageTypeDefOf.NeutralEvent, false);
@@ -1295,18 +1321,18 @@ namespace MainButtonBarSystem
                 y += h + gap;
             }
 
-            if (Widgets.ButtonText(new Rect(rect.x, y, half, h), "MBBS_Export".Translate()))
+            if (UIUtil.ButtonText(new Rect(rect.x, y, half, h), "MBBS_Export".Translate()))
                 Find.WindowStack.Add(new FloatMenu(ExportOptions()));
-            if (Widgets.ButtonText(new Rect(rect.x + half + gap, y, half, h), "MBBS_Import".Translate()))
+            if (UIUtil.ButtonText(new Rect(rect.x + half + gap, y, half, h), "MBBS_Import".Translate()))
                 Find.WindowStack.Add(new FloatMenu(ImportOptions()));
             y += h + gap;
 
             float third = (rect.width - gap * 2f) / 3f;
-            if (Widgets.ButtonText(new Rect(rect.x, y, third, h), "MBBS_ResetAll".Translate()))
+            if (UIUtil.ButtonText(new Rect(rect.x, y, third, h), "MBBS_ResetAll".Translate()))
                 Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("MBBS_ResetAllConfirm".Translate(), () => working.ResetToUntouched(), destructive: true));
-            if (Widgets.ButtonText(new Rect(rect.x + third + gap, y, third, h), "CancelButton".Translate()))
+            if (UIUtil.ButtonText(new Rect(rect.x + third + gap, y, third, h), "CancelButton".Translate()))
                 Close();
-            if (Widgets.ButtonText(new Rect(rect.x + (third + gap) * 2f, y, third, h), "MBBS_Save".Translate()))
+            if (UIUtil.ButtonText(new Rect(rect.x + (third + gap) * 2f, y, third, h), "MBBS_Save".Translate()))
             {
                 BarConfigManager.Store(working.Clone());
                 Close();

@@ -229,6 +229,8 @@ namespace MainButtonBarSystem
                 var theme = DefDatabase<BarAppearanceDef>.GetNamedSilentFail(config.appearance);
                 if (theme != null) report.Add(("MBBS_ImportReport_Theme".Translate(theme.LabelCap), false));
                 else report.Add(("MBBS_ImportReport_ThemeMissing".Translate(config.appearance, meta?.appearanceMod ?? "?"), true));
+                if (config.UsesCustomTheme && !config.customTheme.IsEmpty)
+                    report.Add(("MBBS_ImportReport_CustomTheme".Translate(config.customTheme.buttons.Count(b => b != null && !b.IsEmpty)), false));
             }
             if ((config.displayMode ?? BarConfig.VanillaMode) != BarConfig.VanillaMode && DefDatabase<BarDisplayModeDef>.GetNamedSilentFail(config.displayMode) == null)
                 report.Add(("MBBS_ImportReport_ModeMissing".Translate(config.displayMode, meta?.displayModeMod ?? "?"), true));

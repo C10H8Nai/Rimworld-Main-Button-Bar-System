@@ -35,6 +35,12 @@ namespace MainButtonBarSystem.Core
         /// <summary>User wants this button in the "More" drawer. Ignored by modes without a drawer and by pinned buttons.</summary>
         public bool InDrawer;
 
+        /// <summary>
+        /// Equal split: the least width this button keeps when buttons with their own width squeeze the others (the
+        /// menu button, so it stays usable); 0 for none.
+        /// </summary>
+        public int SplitMinWidth;
+
         public LayoutItem(string key, bool minimized = false, int? width = null, PinPosition pin = PinPosition.None, bool inDrawer = false)
         {
             Key = key;
@@ -71,6 +77,9 @@ namespace MainButtonBarSystem.Core
 
         /// <summary>Equal split: the least width a button without its own width keeps (tuning def).</summary>
         public int SplitMinWidth;
+
+        /// <summary>Equal split: like <see cref="LayoutItem.SplitMinWidth"/>, for the More button; 0 for none.</summary>
+        public int SplitMoreMinWidth;
     }
 
     public readonly struct PlacedItem
@@ -165,7 +174,8 @@ namespace MainButtonBarSystem.Core
             else if (options.Mode == DisplayMode.Collapse && !options.FillScreen)
                 LayoutNatural(left, center, right, hasMore, barWidth, options, result, allowScroll: false);
             else
-                LayoutSplit(left, center, right, hasMore, barWidth, options.Mode == DisplayMode.Vanilla ? 0 : Math.Max(0, options.Gap), Math.Max(1, options.SplitMinWidth), result);
+                LayoutSplit(left, center, right, hasMore, barWidth, options.Mode == DisplayMode.Vanilla ? 0 : Math.Max(0, options.Gap), Math.Max(1, options.SplitMinWidth),
+                    Math.Max(0, options.SplitMoreMinWidth), result);
 
             return result;
         }
@@ -174,9 +184,11 @@ namespace MainButtonBarSystem.Core
         /// Vanilla-style equal split: buttons with their own width keep it (design spec 3.10), the others share what is
         /// left equally (half buttons get half), and the last of those takes the rounding so the bar spans exactly the
         /// full width. When the set widths leave less than <paramref name="minWidth"/> for each of the others, every
-        /// button shrinks in proportion instead, so nothing runs past the bar.
+        /// button shrinks in proportion instead, so nothing runs past the bar; in that case More and buttons with a split
+        /// minimum (the menu) keep at least that much, and the others give up the difference.
         /// </summary>
-        private static void LayoutSplit(List<LayoutItem> left, List<LayoutItem> center, List<LayoutItem> right, bool hasMore, int barWidth, int gap, int minWidth, LayoutResult result)
+        private static void LayoutSplit(List<LayoutItem> left, List<LayoutItem> center, List<LayoutItem> right, bool hasMore, int barWidth, int gap, int minWidth,
+            int moreMinWidth, LayoutResult result)
         {
             var sequence = new List<(LayoutItem item, int region)>();
             foreach (var i in left) sequence.Add((i, 0));
@@ -221,7 +233,14 @@ namespace MainButtonBarSystem.Core
             // Space left over when every button has its own width and they fit: kept before More and the
             // right-pinned buttons, so those stay at the right edge.
             int slack = 0;
-            if (shrink) ScaleTo(widths, available);
+            if (shrink)
+            {
+                ScaleTo(widths, available);
+                var minimums = new int[sequence.Count];
+                for (int n = 0; n < sequence.Count; n++)
+                    minimums[n] = sequence[n].item == null ? moreMinWidth : Math.Max(0, sequence[n].item.SplitMinWidth);
+                KeepMinimums(widths, minimums, available);
+            }
             else
             {
                 long sum = 0;
@@ -366,6 +385,65 @@ namespace MainButtonBarSystem.Core
                 sx += naturals[i] + gap;
             }
             result.ContentWidth = sx - gap;
+        }
+
+        /// <summary>
+        /// Raises widths below their minimum to it and scales the others down so the total stays
+        /// <paramref name="target"/>. When the minimums alone are wider than the target, only those buttons share it,
+        /// in proportion to their minimums.
+        /// </summary>
+        private static void KeepMinimums(int[] widths, int[] minimums, int target)
+        {
+            var raised = new bool[widths.Length];
+            // Scaling the others down can push another one below its minimum: repeat until none is.
+            for (int round = 0; round < widths.Length; round++)
+            {
+                bool changed = false;
+                long raisedTotal = 0;
+                for (int i = 0; i < widths.Length; i++)
+                {
+                    if (!raised[i] && widths[i] < minimums[i])
+                    {
+                        raised[i] = true;
+                        changed = true;
+                    }
+                    if (raised[i]) raisedTotal += minimums[i];
+                }
+                if (!changed) return;
+
+                if (raisedTotal >= target)
+                {
+                    var shares = new int[widths.Length];
+                    for (int i = 0; i < widths.Length; i++) shares[i] = raised[i] ? minimums[i] : 0;
+                    ScaleTo(shares, Math.Max(0, target));
+                    Array.Copy(shares, widths, widths.Length);
+                    return;
+                }
+
+                var rest = new List<int>();
+                for (int i = 0; i < widths.Length; i++)
+                {
+                    if (raised[i]) widths[i] = minimums[i];
+                    else rest.Add(i);
+                }
+                if (rest.Count == 0) return;
+                var restWidths = new int[rest.Count];
+                long restTotal = 0;
+                for (int k = 0; k < rest.Count; k++)
+                {
+                    restWidths[k] = widths[rest[k]];
+                    restTotal += restWidths[k];
+                }
+                int restTarget = (int)(target - raisedTotal);
+                if (restTotal > 0) ScaleTo(restWidths, restTarget);
+                else
+                {
+                    // Nothing to scale (all already squeezed to 0): share the rest evenly, so the bar still spans its width.
+                    for (int k = 0; k < rest.Count; k++) restWidths[k] = restTarget / rest.Count;
+                    restWidths[rest.Count - 1] += restTarget % rest.Count;
+                }
+                for (int k = 0; k < rest.Count; k++) widths[rest[k]] = restWidths[k];
+            }
         }
 
         /// <summary>Scales widths proportionally so they sum to exactly <paramref name="target"/>; the last absorbs rounding.</summary>

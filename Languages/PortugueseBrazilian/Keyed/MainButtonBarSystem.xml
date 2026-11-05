@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>{0} detectado: no momento ele controla a barra, então as alterações feitas aqui só terão efeito quando este mod tiver prioridade.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>{0} detectado: este mod tem prioridade, então o efeito dele na barra está desativado.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Detalhes no modo Avançado.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} está desenhando a barra inferior, então as configurações aqui não têm efeito. Para usar a barra deste mod, desative "Main bar" nas configurações desse mod ou coloque este mod acima dele na lista de mods.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>{0} também está com "Main bar" ativado: ele posiciona os controles do canto inferior direito e as janelas como se a própria barra estivesse visível, então alguns elementos podem ficar fora do lugar. Recomenda-se desativar "Main bar" nas configurações desse mod.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Este mod ainda não tem configurações, então deixa a barra inferior para {0}. Para usar a barra deste mod, altere qualquer configuração aqui; depois desative também "Main bar" em {0}, ou os controles de tempo, a data e o clima no canto inferior direito somem.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} está acima deste mod na lista de mods e desenha a barra inferior, então as configurações aqui não têm efeito. Para usar a barra deste mod, desative "Main bar" em {0} ou coloque este mod acima dele na lista de mods.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} também está com "Main bar" ativado. Enquanto este mod desenha a barra, os controles de tempo, a data e o clima no canto inferior direito somem e algumas janelas abrem levemente fora do lugar. Desative "Main bar" em {0}.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>Desativar "Main bar"</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>A configuração em {0} foi alterada e as configurações de mod dele foram salvas.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>A configuração em {0} foi alterada nesta sessão, mas não foi possível salvar as configurações de mod dele. Altere-a também nas configurações desse mod.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>Não foi possível alterar a configuração em {0}. Altere-a nas configurações desse mod.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Compatibilidade: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Este mod primeiro</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Este mod desenha a barra. O efeito de {0} na barra é desativado; as configurações dele servem apenas como valores de referência.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ e depois clique em Atualizar. Eles continuam lá quando o mod é atualizado.</MB
   <MBBS_Look_Color_1>Cor do texto com o mouse em cima</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Cor do texto quando aberto</MBBS_Look_Color_2>
   <MBBS_Look_Icon>Ícone</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>Em um botão cujo tamanho ou posição do ícone foi alterado, o ícone é desenhado por este mod, então mods que movem ícones (como o Vanilla Textures Expanded) não o afetam.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>Em um botão cujo tamanho ou posição do ícone foi alterado, o ícone é desenhado por este mod, onde este visual o coloca. Se o rótulo aparece continua dependendo do jogo e de mods como o Vanilla Textures Expanded; a prévia sempre mostra a maneira do próprio jogo.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>Tamanho do ícone: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>Posição do ícone (só ícone: onde fica no botão; ícone e texto: à esquerda ou à direita do texto)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>Deslocamento do ícone, horizontal: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Reinicie o jogo e ative-o na lista de mods para testar; de lá você também pod
   <MBBS_ImportReport_NoList>Esta disposição não lista os botões do jogo em que foi criada (versão antiga). Os botões que ela não menciona mantêm suas configurações.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>O tema {0} (de {1}) não está instalado; até lá, a aparência original é usada.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Um tema personalizado por cima ({0} botões com estilo próprio).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>O modo de exibição {0} (de {1}) não está instalado; até lá, a barra original é usada.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Ícones importados que você não tem: {0} ({1}). Coloque os arquivos PNG em {2}; até lá, esses botões mantêm o próprio ícone.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Ícones de mods que você não tem: {0} ({1}). Esses botões mantêm o próprio ícone.</MBBS_ImportReport_IconTexturesMissing>

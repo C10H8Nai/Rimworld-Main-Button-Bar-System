@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>偵測到 {0}：目前由它控制底部列，這裡的改動要等改成本模組優先才會生效。</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>偵測到 {0}：本模組優先，它對底部列的效果已關閉。</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>詳細請到進階。</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} 正在畫底部列，這裡的設定不會生效。要改用本模組，請在它的模組設定關掉 Main bar，或把本模組排在它前面。</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>{0} 的 Main bar 也開著，它會把右下角控制項和視窗位置排成它自己的列的樣子，畫面可能錯位。建議在它的模組設定關掉 Main bar。</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>本模組還沒有任何設定，所以底部列交給 {0} 畫。要改用本模組，在這裡改任一項設定即可；改了之後也要關掉 {0} 的 Main bar，否則右下角的時間控制、日期和天氣會消失。</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} 在模組列表中排在本模組前面，正在畫底部列，這裡的設定不會生效。要改用本模組，請關掉 {0} 的 Main bar，或把本模組排在它前面。</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} 的 Main bar 也開著。本模組畫列時，右下角的時間控制、日期和天氣會消失，有些視窗的位置也會偏掉。請關掉 {0} 的 Main bar。</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>關掉 Main bar</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>已改好 {0} 的設定，並存進它的模組設定。</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>這次遊戲中已改好 {0} 的設定，但沒辦法存進它的模組設定，請在它的模組設定裡也關掉。</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>沒辦法改 {0} 的設定，請到它的模組設定裡改。</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>相容：{0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>本模組優先</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>由本模組繪製底部列。{0} 對底部列的效果會關閉，它的設定只當參考值。</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@
   <MBBS_Look_Color_1>滑鼠移上時的文字顏色</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>開啟中的文字顏色</MBBS_Look_Color_2>
   <MBBS_Look_Icon>圖示</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>改了圖示大小或位置的按鈕，圖示改由本模組畫，所以 Vanilla Textures Expanded 這類移動圖示的模組對它沒有作用。</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>改了圖示大小或位置的按鈕，圖示改由本模組照這裡的設定畫；文字要不要顯示，仍照遊戲和 Vanilla Textures Expanded 這類模組。預覽一律照遊戲本身的畫法。</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>圖示大小：{0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>圖示位置（只顯示圖示：放在按鈕的哪裡；圖示＋文字：在文字的左邊或右邊）</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>圖示位移（水平）：{0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@
   <MBBS_ImportReport_NoList>這份排序沒有記錄製作時的按鈕清單（舊版匯出）。它沒提到的按鈕會保留你的設定。</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>主題：{0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>主題 {0}（來自 {1}）沒有安裝；裝好之前會用原版外觀。</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>上面還有自訂主題（{0} 顆按鈕有自己的樣式）。</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>顯示方式 {0}（來自 {1}）沒有安裝；裝好之前會用原版的列。</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>你沒有的匯入圖示：{0} 個（{1}）。把 PNG 放進 {2}；在那之前這些按鈕顯示原本的圖示。</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>來自你沒裝的模組的圖示：{0} 個（{1}）。這些按鈕顯示原本的圖示。</MBBS_ImportReport_IconTexturesMissing>

@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>Phát hiện {0}: mod đó đang điều khiển thanh nút, nên các thay đổi ở đây chỉ có hiệu lực khi mod này được ưu tiên.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Phát hiện {0}: mod này đang được ưu tiên, nên tác động của mod đó lên thanh nút đã bị tắt.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Xem chi tiết trong chế độ Nâng cao.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} đang vẽ thanh nút dưới cùng, nên các cài đặt ở đây không có tác dụng. Để dùng thanh nút của mod này, hãy tắt "Main bar" trong cài đặt của mod đó, hoặc xếp mod này lên trên mod đó trong danh sách mod.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>{0} cũng đang bật "Main bar": mod đó sắp xếp các nút điều khiển ở góc dưới bên phải và vị trí các cửa sổ như thể thanh nút của chính nó đang hiện, nên giao diện có thể bị lệch. Bạn nên tắt "Main bar" trong cài đặt của mod đó.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Mod này chưa có cài đặt nào, nên thanh nút dưới cùng được giao cho {0}. Để dùng thanh nút của mod này, hãy đổi một cài đặt bất kỳ ở đây; sau đó tắt cả "Main bar" trong {0}, nếu không các nút điều khiển thời gian, ngày và thời tiết ở góc dưới bên phải sẽ biến mất.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} nằm trên mod này trong danh sách mod và đang vẽ thanh nút dưới cùng, nên các cài đặt ở đây không có tác dụng. Để dùng thanh nút của mod này, hãy tắt "Main bar" trong {0}, hoặc xếp mod này lên trên mod đó trong danh sách mod.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} cũng đang bật "Main bar". Khi mod này vẽ thanh nút, các nút điều khiển thời gian, ngày và thời tiết ở góc dưới bên phải sẽ biến mất và một số cửa sổ mở lệch vị trí một chút. Hãy tắt "Main bar" trong {0}.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>Tắt "Main bar"</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>Đã đổi cài đặt trong {0} và lưu cài đặt mod của nó.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>Đã đổi cài đặt trong {0} cho phiên này, nhưng không lưu được cài đặt mod của nó. Hãy đổi cả trong cài đặt mod của nó.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>Không đổi được cài đặt trong {0}. Hãy đổi trong cài đặt mod của nó.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Tương thích: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Ưu tiên mod này</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Mod này vẽ thanh nút. Tác động của {0} lên thanh nút bị tắt; cài đặt của nó chỉ được dùng làm giá trị tham khảo.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ rồi nhấn "Làm mới". Các tệp vẫn được giữ lại khi cập nhậ
   <MBBS_Look_Color_1>Màu chữ khi rê chuột</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Màu chữ khi đang mở</MBBS_Look_Color_2>
   <MBBS_Look_Icon>Biểu tượng</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>Nút nào đã đổi kích thước hoặc vị trí biểu tượng sẽ do mod này vẽ biểu tượng, nên các mod di chuyển biểu tượng (như Vanilla Textures Expanded) không ảnh hưởng đến nút đó.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>Nút nào đã đổi kích thước hoặc vị trí biểu tượng sẽ do mod này vẽ biểu tượng, ở chỗ mà kiểu giao diện này đặt. Nhãn có hiện hay không vẫn theo trò chơi và các mod như Vanilla Textures Expanded; bản xem trước luôn hiển thị theo cách của chính trò chơi.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>Kích thước biểu tượng: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>Vị trí biểu tượng (chỉ hiện biểu tượng: đặt ở đâu trong nút; biểu tượng và chữ: bên trái hay bên phải chữ)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>Dịch biểu tượng theo chiều ngang: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Hãy khởi động lại trò chơi và bật mod trong danh sách mod để d�
   <MBBS_ImportReport_NoList>Bố cục này không liệt kê các nút của trò chơi nơi nó được tạo (phiên bản cũ). Các nút không được nhắc đến sẽ giữ cài đặt của bạn.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Chủ đề: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Chủ đề {0} (từ {1}) chưa được cài đặt; trong lúc đó sẽ dùng giao diện nguyên bản.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Có thêm một chủ đề tùy chỉnh bên trên ({0} nút có kiểu riêng).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>Chế độ hiển thị {0} (từ {1}) chưa được cài đặt; trong lúc đó sẽ dùng thanh nút nguyên bản.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Biểu tượng đã nhập mà bạn không có: {0} ({1}). Hãy đặt các tệp PNG vào {2}; trước đó, các nút này dùng biểu tượng gốc của chúng.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Biểu tượng từ các mod bạn không có: {0} ({1}). Các nút này dùng biểu tượng gốc của chúng.</MBBS_ImportReport_IconTexturesMissing>
