@@ -18,6 +18,9 @@
 ##                   shard / hull / petal；double, glow_on_hover, hollow：布林；icon, tile, rivet, active_rule：[r,g,b] 或 null
 ##                   hollow：true 時四種狀態的按鈕 atlas 不填底色（只留邊框、內線、底線、角落裝飾），按鈕圖才透得出來；
 ##                   More 的 atlas 照舊有底色（它不會有按鈕圖）；捲動箭頭用的是 Button，所以也是中空、透出底部列背景
+##                   frame："theme"（預設，用上面的配色畫框）或 "vanilla"：四種狀態的按鈕、More、Bar 換成原版風格
+##                   （灰邊＋一條暗內線、中間透明；原版的深色按鈕底改由 Bar 提供），等於一定是 hollow；
+##                   抽屜、捲動箭頭、齒輪照舊用配色，所以 palette 的必填欄位不變
 ##   background      barFit / drawerFit：Atlas / Tile / Stretch / Fit / Cover；barTileScale / drawerTileScale；
 ##                   bar / drawer：null（內建畫法）、{"placeholder": {"size": [w,h], "color": [r,g,b], "text": "…"}}
 ##                   或 {"source": "相對於 JSON 的 PNG 路徑"}
@@ -42,6 +45,7 @@
 ##   _theme_atlas_build_hover_glow()     — Void 風格的滑鼠移上紅光
 ##   _theme_atlas_build_button()         — 按鈕 atlas（normal / mouseover / active / disabled）
 ##   _theme_atlas_build_bar()            — 整條列背景 atlas
+##   _theme_atlas_build_vanilla()        — palette.frame＝vanilla 時的原版風格按鈕框、More、Bar
 ##   _theme_atlas_build_drawer()         — 抽屜背景 atlas
 ##   _theme_icon_build_arrow()           — 捲動箭頭圖示
 ##   _theme_icon_build_gear()            — 用主題色染過的齒輪
@@ -76,6 +80,7 @@
 ## V1.2：2026-11-04  第二輪 review：檔名衝突不分大小寫；palette 不是物件時報 ValueError
 ## V1.3：2026-11-04  按鈕背景圖：JSON 的 buttonImage／buttonImages（寫進 Defs、產貼圖、驗證、預覽條先畫圖再畫框）；
 ##                   palette 的 hollow（按鈕 atlas 不填底色）
+## V1.4：2026-11-05  palette 的 frame＝vanilla：原版風格的中空按鈕框（顏色量自原版按鈕列）
 import argparse
 import json
 import os
@@ -110,6 +115,11 @@ _THEME_TARGETS             = ("Bar", "Drawer")
 _THEME_ANCHORS             = ("Left", "Center", "Right")
 _THEME_VERTICAL_ANCHORS    = ("Bottom", "Center", "Top")
 _THEME_LAYERS              = ("BelowButtons", "AboveButtons")
+_THEME_FRAMES              = ("theme", "vanilla")                                           # palette.frame，只有這支工具認得
+_THEME_VANILLA_FILL        = (25, 34, 41)                                                   # 原版按鈕底（量自原版按鈕列截圖）
+_THEME_VANILLA_INNER       = (41, 46, 49)                                                   # 原版邊框內側的暗線
+_THEME_VANILLA_STATES      = {"normal": ((100, 108, 112), 0), "mouseover": ((150, 158, 164), 22),   # 狀態 → (邊框色, 白色薄層的 alpha)
+                              "active": ((196, 202, 206), 38), "disabled": ((70, 74, 78), 0)}
 _THEME_STATES              = ("Normal", "Mouseover", "DrawerOpen")
 _THEME_PREVIEW_LABELS      = ("Architect", "Work", "Schedule", "Assign")                 # 預覽條的按鈕，也是原版的 defName（找按鈕圖用）
 _THEME_PREVIEW_BACKGROUND  = (30, 33, 38, 255)
@@ -293,6 +303,29 @@ def _theme_atlas_build_bar(palette):
     draw = ImageDraw.Draw(image)
     draw.line([(0, 0), (size - 1, 0)], fill=palette["edge"] + (255,), width=2)
     draw.line([(0, 3), (size - 1, 3)], fill=palette["rule"] + (255,), width=1)
+    return image
+
+
+############################################################################################################
+#   _theme_atlas_build_vanilla — 原版風格的 atlas（palette.frame＝vanilla）。part：Button 的四種狀態
+#   （"normal"／"mouseover"／"active"／"disabled"）、"more" 或 "bar"。原版的按鈕底幾乎不透明，會蓋掉按鈕圖，
+#   所以按鈕框中間透明，原版的深色底改由整條列的背景（bar）提供：按鈕圖 → 框 → 文字，看起來仍是原版按鈕。
+#   原版滑鼠移上是整顆變亮，這裡改成邊框變亮加一層很淡的白，不會把按鈕圖洗白。More 沒有按鈕圖，維持實心
+############################################################################################################
+def _theme_atlas_build_vanilla(part):
+    size = _THEME_ATLAS_SIZE
+    fill = _THEME_VANILLA_FILL + (255,)
+    if part == "bar":
+        return Image.new("RGBA", (size, size), fill)
+    if part == "more":
+        image = Image.new("RGBA", (size, size), fill)
+        ImageDraw.Draw(image).rectangle([0, 0, size - 1, size - 1], outline=_THEME_VANILLA_STATES["normal"][0] + (255,), width=2)
+        return image
+    edge, glow = _THEME_VANILLA_STATES[part]
+    image = Image.new("RGBA", (size, size), (255, 255, 255, glow))
+    draw = ImageDraw.Draw(image)
+    draw.rectangle([0, 0, size - 1, size - 1], outline=edge + (255,), width=2)
+    draw.rectangle([2, 2, size - 3, size - 3], outline=_THEME_VANILLA_INNER + (255,), width=1)
     return image
 
 
@@ -747,6 +780,10 @@ def theme_build_textures(theme, gear_source, with_preview=False):
         "ArrowRight": _theme_icon_build_arrow(palette, False),
         "Gear": _theme_icon_build_gear(palette, gear_source),
     }
+    if palette.get("frame") == "vanilla":                               # 原版風格框：蓋掉四種狀態的按鈕、More、Bar
+        for file_name, part in (("Button", "normal"), ("ButtonMouseover", "mouseover"), ("ButtonActive", "active"),
+                                ("ButtonDisabled", "disabled"), ("More", "more"), ("Bar", "bar")):
+            textures[file_name] = _theme_atlas_build_vanilla(part)
     background = theme["background"]
     for key, file_name in (("bar", "Bar"), ("drawer", "Drawer")):
         spec = background.get(key)
@@ -815,6 +852,8 @@ def _theme_json_validate_fields(theme, path):
             problems.append(f"palette.{required} is missing")
     if theme["palette"].get("ornament") and theme["palette"]["ornament"] not in _THEME_ORNAMENTS:
         problems.append(f"palette.ornament must be one of {', '.join(_THEME_ORNAMENTS)}")
+    if "frame" in theme["palette"] and theme["palette"]["frame"] not in _THEME_FRAMES:
+        problems.append(f"palette.frame must be one of {', '.join(_THEME_FRAMES)}")
     background = theme.get("background") or {}
     for key in ("barFit", "drawerFit"):
         if key in background and background[key] not in _THEME_FITS:

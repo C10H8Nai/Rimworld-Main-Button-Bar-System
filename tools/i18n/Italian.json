@@ -297,7 +297,7 @@
       "MBBS_Starfarer.label": "navigatore stellare",
       "MBBS_Starfarer.description": "Viola spaziale con piastre di scafo viola, rivetti ciano e una linea ciano dei propulsori, nei colori dell'espansione Odyssey.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Tema in stile anime nei colori di Nai: pulsanti blu navy con bordi grigio chiaro, linee grafite e un bagliore viola, con un'illustrazione del personaggio all'estremità sinistra della barra."
+      "MBBS_Nai.description": "Tema pixel art con Nai: cornici in stile gioco originale e un'immagine di Nai dentro ogni pulsante principale. Sui pulsanti con un'icona regge un oggetto adatto al pulsante (una planimetria, una fiaschetta, un kit medico...); sui pulsanti senza icona fa capolino da dietro una lavagna su cui poggia l'etichetta. Le immagini sono previste per i pulsanti del gioco base, delle espansioni e di molte mod; ogni altro pulsante riceve la lavagna."
     }
   }
 }

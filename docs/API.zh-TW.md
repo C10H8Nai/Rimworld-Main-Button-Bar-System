@@ -169,7 +169,7 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。四個選填的新�
 
 `Cover` 保持比例縮放到蓋滿按鈕，超出的裁掉；錨點決定保留哪一側（`verticalAnchor` 設 `Top` 保留上緣，臉就不會被裁掉）。`Fit` 顯示整張圖，放在錨點那一側；`Stretch` 拉伸填滿、會變形。同一顆按鈕寫兩次時，後面的贏。
 
-繪製順序（底部列的每顆按鈕、「更多」抽屜的每一格，所有狀態都一樣，停用也畫）：先畫圖，再畫按鈕 atlas，最後畫文字和圖示。所以 atlas 是圖的框：按鈕 atlas 要畫成中間透明的框（`make_theme.py` 的 palette 設 `"hollow": true`），不然圖會被蓋住。滑鼠移上和按下的效果留在框上，圖本身不會被染色。主題沒有自己的按鈕 atlas 時，圖會壓在遊戲幾乎不透明的按鈕底下，幾乎看不到。「更多」按鈕和捲動箭頭不會有圖。
+繪製順序（底部列的每顆按鈕、「更多」抽屜的每一格，所有狀態都一樣，停用也畫）：先畫圖，再畫按鈕 atlas，最後畫文字和圖示。所以 atlas 是圖的框：按鈕 atlas 要畫成中間透明的框（`make_theme.py` 的 palette 設 `"hollow": true`；或設 `"frame": "vanilla"`，畫原版風格的中空框，原版的按鈕底色改由底部列背景提供），不然圖會被蓋住。滑鼠移上和按下的效果留在框上，圖本身不會被染色。主題沒有自己的按鈕 atlas 時，圖會壓在遊戲幾乎不透明的按鈕底下，幾乎看不到。「更多」按鈕和捲動箭頭不會有圖。
 
 實務建議：
 
@@ -178,7 +178,7 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。四個選填的新�
 - 用 `inset` 讓圖留在框的邊線以內。
 - 找不到的按鈕圖什麼都不畫（只報一次，見下節），按鈕仍然有框。開發者模式的檢查也會指出 `buttonImages` 裡寫了沒載入的按鈕（打錯字，或那個模組沒啟用），以及同一顆按鈕寫了兩次。
 - 玩家的裝飾圖設定（顯示、不透明度、大小、位移）和背景不透明度不影響按鈕圖。
-- 用 `make_theme.py` 的 `hollow` 時，捲動箭頭也是中空的（它們用 `button` atlas），會透出底部列背景，而且不會有圖；「更多」按鈕照舊有底色。
+- 用 `make_theme.py` 的 `hollow` 或 `"frame": "vanilla"` 時，捲動箭頭也是中空的（它們用 `button` atlas），會透出底部列背景，而且不會有圖；「更多」按鈕照舊有底色。
 
 外觀分頁自己畫的預覽會畫背景圖、按鈕和按鈕裡的圖，不畫裝飾圖（會長出卡片外），所以有裝飾圖的主題請附 `preview` 圖。
 
@@ -200,7 +200,7 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。四個選填的新�
 
 ### 內建主題就是範例
 
-本模組內建六款照這個方式做的主題，Def 在 `Defs/MainButtonBarSystem/BarAppearances.xml`，貼圖在 `Textures/MainButtonBarSystem/Themes/`：`MBBS_Imperial`、`MBBS_Creed`、`MBBS_GeneLab`、`MBBS_Void`、`MBBS_Starfarer` 只用 atlas；`MBBS_Nai` 多了按鈕後面一張半透明的立繪（裝飾圖）和 `labelActiveColor`。其他插圖欄位看 `docs/examples/ExampleTheme`：拉伸的底部列背景、滑鼠移上或抽屜裡才出現的裝飾圖、配中空框的按鈕圖。貼圖由 `tools/gen_theme_textures.py` 從 `tools/themes/<主題>.json` 產生，用的就是主題模組用的那支 `make_theme.py`。
+本模組內建六款照這個方式做的主題，Def 在 `Defs/MainButtonBarSystem/BarAppearances.xml`，貼圖在 `Textures/MainButtonBarSystem/Themes/`：`MBBS_Imperial`、`MBBS_Creed`、`MBBS_GeneLab`、`MBBS_Void`、`MBBS_Starfarer` 只用 atlas；`MBBS_Nai` 在每顆主按鈕裡放一張像素圖（共用的 `buttonImage` 加 77 筆 `buttonImages`，圖在 `tools/themes/Nai/Buttons/`），配原版風格的中空框，另外設了 `labelActiveColor`。其他插圖欄位看 `docs/examples/ExampleTheme`：拉伸的底部列背景、滑鼠移上或抽屜裡才出現的裝飾圖、配中空框的按鈕圖。貼圖由 `tools/gen_theme_textures.py` 從 `tools/themes/<主題>.json` 產生，用的就是主題模組用的那支 `make_theme.py`。
 
 ### 貼圖以外的效果
 
