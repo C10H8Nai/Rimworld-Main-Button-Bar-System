@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using MainButtonBarSystem.Core;
@@ -1140,19 +1141,46 @@ namespace MainButtonBarSystem
             return value;
         }
 
-        /// <summary>Type a value directly. While the box is not focused it always shows the current value.</summary>
+        /// <summary>
+        /// Type a value directly. While the box is focused it keeps what is typed (an empty box, or a number still out
+        /// of range while typing); the value changes whenever the text is a number in range. Unfocused, it shows the
+        /// current value. The game's Widgets.TextFieldNumeric names its own control, so focus could not be told
+        /// apart from outside it; this uses the plain text field and parses here.
+        /// </summary>
         private static float NumberField(Rect rect, float value, float min, float max, float step, string id)
         {
             string name = "MainButtonBarSystem.Number." + id;
             bool focused = GUI.GetNameOfFocusedControl() == name;
             if (!focused || !numberBuffers.TryGetValue(id, out var buffer))
-                buffer = step >= 1f ? Mathf.RoundToInt(value).ToString() : value.ToString("0.##");
+                buffer = step >= 1f ? Mathf.RoundToInt(value).ToString(CultureInfo.InvariantCulture) : value.ToString("0.##", CultureInfo.InvariantCulture);
 
-            float edited = value;
             GUI.SetNextControlName(name);
-            Widgets.TextFieldNumeric(rect, ref edited, ref buffer, min, max);
+            string typed = Widgets.TextField(rect, buffer);
+            if (typed != buffer && IsPartialNumber(typed, min, step < 1f)) buffer = typed;
             numberBuffers[id] = buffer;
-            return Mathf.Approximately(edited, value) ? value : Snap(edited, min, max, step);
+
+            if (!focused || !float.TryParse(buffer, NumberStyles.Float, CultureInfo.InvariantCulture, out float parsed) || parsed < min || parsed > max)
+                return value;
+            return Mathf.Approximately(parsed, value) ? value : Snap(parsed, min, max, step);
+        }
+
+        /// <summary>Text that is, or can still become, a number: digits, a leading minus when negatives are allowed, one point for fractions.</summary>
+        private static bool IsPartialNumber(string text, float min, bool allowFraction)
+        {
+            bool point = false;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                if (c >= '0' && c <= '9') continue;
+                if (c == '-' && i == 0 && min < 0f) continue;
+                if (c == '.' && allowFraction && !point)
+                {
+                    point = true;
+                    continue;
+                }
+                return false;
+            }
+            return true;
         }
 
         private static DefaultableBool BoolSetting(Listing_Standard listing, string label, DefaultableBool stored, bool fallback, string tooltip)
