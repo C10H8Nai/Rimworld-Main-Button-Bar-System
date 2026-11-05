@@ -167,6 +167,43 @@ a następnie naciśnij „Odśwież”. Pozostaną tam także po aktualizacjach 
   <MBBS_WidthClearAll>Zastosuj szerokość paska do wszystkich przycisków z własną szerokością ({0})</MBBS_WidthClearAll>
   <MBBS_ResetButton>Resetuj ten przycisk</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Wszystkie ustawienia tego przycisku wracają do wartości dziedziczonych: domyślnych z jego modu, a jeśli ich nie ma – z samej gry. Skróty klawiszowe się nie zmieniają.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Gotowe motywy</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Własny motyw</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Gotowe motywy: wybierz gotowy, wcześniej przygotowany motyw. Własny motyw: zmień wygląd wszystkich przycisków lub pojedynczych przycisków na bazie motywu wybranego w „Gotowe motywy”. Twoje zmiany zostają zachowane, gdy wrócisz do gotowego motywu.</MBBS_ModeTip>
+  <MBBS_Look_All>Wszystkie przyciski</MBBS_Look_All>
+  <MBBS_Look_AllTip>Zmiany tutaj dotyczą każdego przycisku, który sam nie zmienił tego samego elementu. Niezmienione elementy biorą ustawienia z motywu ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Zmiany tutaj dotyczą tylko tego przycisku. Niezmienione elementy biorą ustawienia z pozycji „Wszystkie przyciski”, a potem z motywu ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(zmieniony)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Resetuj ten wygląd</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Przycisk</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Zwykły</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Pod myszą</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Otwarty</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Wyłączony</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Tekst</MBBS_Look_Text>
+  <MBBS_Look_Font>Rozmiar czcionki</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Mała</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Średnia</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Duża</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Jak w „Wszystkie przyciski”</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Jak w motywie</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Kolor tekstu</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Kolor tekstu pod myszą</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Kolor tekstu, gdy jest otwarty</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Ikona</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>Przycisk, któremu zmieniono rozmiar lub położenie ikony, ma ikonę rysowaną przez ten mod, więc mody przesuwające ikony (np. Vanilla Textures Expanded) na niego nie wpływają.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Rozmiar ikony: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Położenie ikony (tylko ikona: gdzie w przycisku; ikona i tekst: po lewej lub po prawej stronie tekstu)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Przesunięcie ikony w poziomie: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Przesunięcie ikony w pionie: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Tło przycisku</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (niezainstalowany)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>zwykły</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>pod myszą</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>otwarty</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>wyłączony</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Żaden zainstalowany motyw nie ma własnych teł przycisków.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Jak dla całego paska ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Utwórz mod z układem (gotowy do publikacji)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Otwórz folder z układami</MBBS_OpenExportsFolder>

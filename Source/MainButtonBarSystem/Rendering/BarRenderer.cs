@@ -29,7 +29,7 @@ namespace MainButtonBarSystem
         /// <summary>Buttons in the "More" drawer as of the last draw.</summary>
         public static IReadOnlyList<BarButton> Drawer => drawer;
 
-        public static BarAppearanceWorker Appearance => ctx.Appearance ?? BarConfigManager.Active.AppearanceDef?.Worker ?? new BarAppearanceWorker();
+        public static BarAppearanceWorker Appearance => ctx.Appearance ?? BarConfigManager.Active.AppearanceWorker ?? new BarAppearanceWorker();
 
         /// <summary>The bar exactly where the game draws it (see the tuning def's behaviour section).</summary>
         public static Rect DefaultBarRect
@@ -132,7 +132,7 @@ namespace MainButtonBarSystem
             ctx.Config = config;
             ctx.Buttons = buttons;
             ctx.BarRect = DefaultBarRect;
-            ctx.Appearance = config.AppearanceDef?.Worker ?? new BarAppearanceWorker();
+            ctx.Appearance = config.AppearanceWorker ?? new BarAppearanceWorker();
             ctx.Reset();
 
             GUI.color = Color.white;

@@ -167,6 +167,43 @@ ja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.</MBBS_Ico
   <MBBS_WidthClearAll>Laita kaikki painikkeet, joilla on oma leveys ({0}), noudattamaan palkkia</MBBS_WidthClearAll>
   <MBBS_ResetButton>Nollaa tämä painike</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Kaikki tämän painikkeen asetukset palaavat perittyihin arvoihin: sen modin oletuksiin, muuten pelin omiin. Pikanäppäimiä ei muuteta.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Valmiit teemat</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Oma teema</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Valmiit teemat: valitse valmiiksi suunniteltu teema. Oma teema: muuta kaikkien painikkeiden tai yksittäisten painikkeiden ulkoasua kohdassa ”Valmiit teemat” valitun teeman päälle. Omat muutoksesi säilyvät, kun palaat valmiiseen teemaan.</MBBS_ModeTip>
+  <MBBS_Look_All>Kaikki painikkeet</MBBS_Look_All>
+  <MBBS_Look_AllTip>Täällä tehdyt muutokset koskevat jokaista painiketta, joka ei ole itse muuttanut samaa kohtaa. Muuttamattomat kohdat seuraavat teemaa ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Täällä tehdyt muutokset koskevat vain tätä painiketta. Muuttamattomat kohdat seuraavat kohtaa ”Kaikki painikkeet” ja sitten teemaa ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(muutettu)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Nollaa tämä ulkoasu</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Painike</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Normaali</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Hiiri päällä</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Auki</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Ei käytössä</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Teksti</MBBS_Look_Text>
+  <MBBS_Look_Font>Fonttikoko</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Pieni</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Keskikoko</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Suuri</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Sama kuin kohdassa ”Kaikki painikkeet”</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Sama kuin teemassa</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Tekstin väri</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Tekstin väri hiiren alla</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Tekstin väri auki ollessa</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Kuvake</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>Jos painikkeen kuvakkeen kokoa tai sijaintia on muutettu, tämä modi piirtää sen kuvakkeen, joten kuvakkeita siirtävät modit (kuten Vanilla Textures Expanded) eivät vaikuta siihen.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Kuvakkeen koko: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Kuvakkeen sijainti (vain kuvake: missä kohtaa painiketta; kuvake ja teksti: tekstin vasemmalla vai oikealla puolella)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Kuvakkeen siirto vaakasuunnassa: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Kuvakkeen siirto pystysuunnassa: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Painikkeen tausta</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (ei asennettu)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>normaali</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>hiiri päällä</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>auki</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>ei käytössä</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Millään asennetulla teemalla ei ole omia painiketaustoja.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Sama kuin koko palkilla ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Tee järjestelymodi (valmis julkaistavaksi)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Avaa järjestelykansio</MBBS_OpenExportsFolder>

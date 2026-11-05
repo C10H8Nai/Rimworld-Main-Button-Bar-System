@@ -167,6 +167,43 @@ apoi apasă Reîncarcă. Rămân acolo și după actualizările modului.</MBBS_I
   <MBBS_WidthClearAll>Fă ca toate butoanele cu lățime proprie ({0}) să urmeze bara</MBBS_WidthClearAll>
   <MBBS_ResetButton>Resetează acest buton</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Fiecare setare a acestui buton revine la ce moștenește: valorile implicite ale modului său, altfel cele ale jocului. Tastele rapide nu se schimbă.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Predefinite</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Personalizată</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Predefinite: alege o temă gata făcută. Personalizată: schimbă aspectul tuturor butoanelor sau al unor butoane anume, pornind de la tema aleasă la „Predefinite”. Modificările tale rămân păstrate când revii la o temă predefinită.</MBBS_ModeTip>
+  <MBBS_Look_All>Toate butoanele</MBBS_Look_All>
+  <MBBS_Look_AllTip>Modificările de aici se aplică fiecărui buton care nu a modificat el însuși același element. Elementele nemodificate urmează tema ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Modificările de aici se aplică doar acestui buton. Elementele nemodificate urmează „Toate butoanele”, apoi tema ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(modificat)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Resetează acest aspect</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Buton</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Normal</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Mouse deasupra</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Deschis</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Dezactivat</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Text</MBBS_Look_Text>
+  <MBBS_Look_Font>Mărimea fontului</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Mic</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Mediu</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Mare</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>La fel ca „Toate butoanele”</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>La fel ca tema</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Culoarea textului</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Culoarea textului sub mouse</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Culoarea textului când e deschis</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Pictogramă</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>Un buton căruia i s-a schimbat mărimea sau poziția pictogramei are pictograma desenată de acest mod, așa că modurile care mută pictogramele (cum ar fi Vanilla Textures Expanded) nu îl afectează.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Mărimea pictogramei: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Poziția pictogramei (doar pictogramă: unde în buton; pictogramă și text: la stânga sau la dreapta textului)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Deplasarea pictogramei, orizontal: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Deplasarea pictogramei, vertical: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Fundalul butonului</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (neinstalată)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>normal</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>mouse deasupra</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>deschis</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>dezactivat</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Nicio temă instalată nu are fundaluri proprii pentru butoane.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>La fel ca întreaga bară ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Creează un mod de aranjament (gata de încărcat)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Deschide dosarul cu aranjamente</MBBS_OpenExportsFolder>

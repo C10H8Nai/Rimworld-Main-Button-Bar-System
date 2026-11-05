@@ -167,6 +167,43 @@
   <MBBS_WidthClearAll>Застосувати ширину панелі до всіх кнопок із власною шириною ({0})</MBBS_WidthClearAll>
   <MBBS_ResetButton>Скинути цю кнопку</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Усі налаштування цієї кнопки повертаються до успадкованих: стандартних значень її мода, а якщо їх немає — до значень самої гри. Гарячі клавіші не змінюються.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Готові теми</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Власна тема</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Готові теми: виберіть заздалегідь підготовлену тему. Власна тема: змінюйте вигляд усіх кнопок або окремих кнопок поверх теми, вибраної в «Готових темах». Ваші зміни зберігаються, коли ви повертаєтеся до готової теми.</MBBS_ModeTip>
+  <MBBS_Look_All>Усі кнопки</MBBS_Look_All>
+  <MBBS_Look_AllTip>Зміни тут діють на кожну кнопку, у якої той самий пункт не змінено окремо. Для незмінених пунктів діє тема ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Зміни тут діють лише на цю кнопку. Для незмінених пунктів діє «Усі кнопки», потім тема ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(змінено)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Скинути цей вигляд</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Кнопка</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Звичайний</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Наведення</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Відкрито</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Вимкнено</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Текст</MBBS_Look_Text>
+  <MBBS_Look_Font>Розмір шрифту</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Дрібний</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Середній</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Великий</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Як у «Усі кнопки»</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Як у темі</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Колір тексту</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Колір тексту при наведенні</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Колір тексту, коли відкрито</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Іконка</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>Якщо в кнопки змінено розмір або положення іконки, її іконку малює цей мод, тому моди, які зсувають іконки (наприклад, Vanilla Textures Expanded), на неї не впливають.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Розмір іконки: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Положення іконки (лише іконка: де всередині кнопки; іконка та текст: ліворуч чи праворуч від тексту)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Зсув іконки по горизонталі: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Зсув іконки по вертикалі: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Тло кнопки</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (не встановлено)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>звичайний</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>наведення</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>відкрито</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>вимкнено</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Жодна встановлена тема не має власного тла для кнопок.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Як у всієї панелі ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Створити мод із розташуванням (готовий до завантаження)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Відкрити теку з розташуваннями</MBBS_OpenExportsFolder>

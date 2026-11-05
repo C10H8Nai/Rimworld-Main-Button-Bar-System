@@ -167,6 +167,43 @@ then press Refresh. They stay there through mod updates.</MBBS_IconPicker_Empty>
   <MBBS_WidthClearAll>Make all {0} buttons with their own width follow the bar</MBBS_WidthClearAll>
   <MBBS_ResetButton>Reset this button</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Every setting of this button goes back to what it inherits: its mod's defaults, else the game's own. Hotkeys are not changed.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Preset themes</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Custom theme</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Preset themes: pick a ready-made theme. Custom theme: change the look of all buttons or of single buttons, on top of the theme picked under Preset themes. Your custom changes are kept when you go back to a preset.</MBBS_ModeTip>
+  <MBBS_Look_All>All buttons</MBBS_Look_All>
+  <MBBS_Look_AllTip>Changes here apply to every button that has not changed the same item itself. Unchanged items follow the theme ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Changes here apply to this button only. Unchanged items follow All buttons, then the theme ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(changed)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Reset this look</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Button</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Normal</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Mouse over</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Open</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Disabled</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Text</MBBS_Look_Text>
+  <MBBS_Look_Font>Font size</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Small</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Medium</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Large</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Same as All buttons</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Same as the theme</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Text colour</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Text colour under the mouse</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Text colour while open</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Icon</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>A button whose icon size or position is changed has its icon drawn by this mod, so mods that move icons (such as Vanilla Textures Expanded) do not affect it.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Icon size: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Icon position (icon only: where in the button; icon and text: left or right of the text)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Icon shift, horizontal: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Icon shift, vertical: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Button background</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (not installed)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>normal</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>mouse over</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>open</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>disabled</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>No installed theme has its own button backgrounds.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Same as the whole bar ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Create an arrangement mod (ready to upload)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Open the arrangements folder</MBBS_OpenExportsFolder>

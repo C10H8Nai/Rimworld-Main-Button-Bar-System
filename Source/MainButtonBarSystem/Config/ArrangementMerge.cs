@@ -63,7 +63,13 @@ namespace MainButtonBarSystem
                 result.drawerCellWidth = imported.drawerCellWidth;
             }
             if ((parts & ArrangementParts.Icons) != 0) result.iconMode = imported.iconMode;
-            if ((parts & ArrangementParts.Theme) != 0) result.appearance = imported.appearance;
+            if ((parts & ArrangementParts.Theme) != 0)
+            {
+                result.appearance = imported.appearance;
+                result.appearanceMode = imported.appearanceMode;
+                // A preset import keeps the player's own custom look (kept for later, like going back to a preset).
+                if (imported.UsesCustomTheme) result.customTheme = imported.customTheme.Clone();
+            }
 
             if ((parts & (ArrangementParts.Layout | ArrangementParts.Sizes | ArrangementParts.Names | ArrangementParts.Icons)) != 0)
             {
@@ -117,7 +123,7 @@ namespace MainButtonBarSystem
                 parts |= ArrangementParts.Sizes;
             if (o.Any(x => !x.label.NullOrEmpty())) parts |= ArrangementParts.Names;
             if (c.iconMode != IconMode.Default || o.Any(x => x.iconMode != ButtonIconMode.Default || !x.icon.NullOrEmpty())) parts |= ArrangementParts.Icons;
-            if ((c.appearance ?? BarConfig.VanillaAppearance) != BarConfig.VanillaAppearance) parts |= ArrangementParts.Theme;
+            if ((c.appearance ?? BarConfig.VanillaAppearance) != BarConfig.VanillaAppearance || c.UsesCustomTheme) parts |= ArrangementParts.Theme;
             return parts;
         }
     }

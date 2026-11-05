@@ -29,6 +29,7 @@ namespace MainButtonBarSystem
             ButtonDefaults.ResetCache();
             LabelOverrides.ResetCache();
             CustomIcons.ForgetGameTextures();
+            CustomThemes.ResetCache();
             Window_ButtonDrawer.ResetCache();
             CompatBridges.ResetCache();
             ButtonBaseline.Capture();

@@ -167,6 +167,43 @@ en klik op Vernieuwen. Ze blijven daar staan, ook als de mod wordt bijgewerkt.</
   <MBBS_WidthClearAll>Alle knoppen met een eigen breedte ({0}) de balk laten volgen</MBBS_WidthClearAll>
   <MBBS_ResetButton>Deze knop herstellen</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Elke instelling van deze knop gaat terug naar wat hij erft: de standaardwaarden van zijn mod, anders die van het spel zelf. Sneltoetsen veranderen niet.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Kant-en-klaar</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Eigen thema</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Kant-en-klaar: kies een kant-en-klaar thema. Eigen thema: pas het uiterlijk van alle knoppen of van losse knoppen aan, bovenop het thema dat onder "Kant-en-klaar" is gekozen. Je eigen wijzigingen blijven bewaard als je teruggaat naar een kant-en-klaar thema.</MBBS_ModeTip>
+  <MBBS_Look_All>Alle knoppen</MBBS_Look_All>
+  <MBBS_Look_AllTip>Wijzigingen hier gelden voor elke knop die hetzelfde onderdeel niet zelf heeft gewijzigd. Ongewijzigde onderdelen volgen het thema ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Wijzigingen hier gelden alleen voor deze knop. Ongewijzigde onderdelen volgen "Alle knoppen" en daarna het thema ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(gewijzigd)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Dit uiterlijk herstellen</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Knop</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Normaal</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Muis erover</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Open</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Uitgeschakeld</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Tekst</MBBS_Look_Text>
+  <MBBS_Look_Font>Lettergrootte</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Klein</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Middel</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Groot</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Gelijk aan "Alle knoppen"</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Gelijk aan het thema</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Tekstkleur</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Tekstkleur onder de muis</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Tekstkleur wanneer open</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Icoon</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>Bij een knop waarvan de icoongrootte of -positie is gewijzigd, tekent deze mod het icoon, dus mods die iconen verplaatsen (zoals Vanilla Textures Expanded) hebben er geen invloed op.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Icoongrootte: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Icoonpositie (alleen icoon: waar in de knop; icoon en tekst: links of rechts van de tekst)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Icoonverschuiving, horizontaal: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Icoonverschuiving, verticaal: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Knopachtergrond</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (niet geïnstalleerd)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>normaal</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>muis erover</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>open</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>uitgeschakeld</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Geen enkel geïnstalleerd thema heeft eigen knopachtergronden.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Gelijk aan de hele balk ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Indelingsmod maken (klaar om te uploaden)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Map met indelingen openen</MBBS_OpenExportsFolder>

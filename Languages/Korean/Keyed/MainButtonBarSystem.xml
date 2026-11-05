@@ -167,6 +167,43 @@
   <MBBS_WidthClearAll>너비를 따로 설정한 버튼 {0}개를 모두 바 전체 설정에 맞추기</MBBS_WidthClearAll>
   <MBBS_ResetButton>이 버튼 초기화</MBBS_ResetButton>
   <MBBS_ResetButtonTip>이 버튼의 모든 설정을 물려받는 값으로 되돌립니다. 출처 모드의 기본값이 있으면 그 값을, 없으면 게임 본래 설정을 따릅니다. 단축키는 바뀌지 않습니다.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>프리셋 테마</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>커스텀 테마</MBBS_Mode_Custom>
+  <MBBS_ModeTip>프리셋 테마: 미리 만들어진 테마를 고릅니다. 커스텀 테마: '프리셋 테마'에서 고른 테마 위에 모든 버튼 또는 개별 버튼의 모양을 바꿉니다. 프리셋 테마로 돌아가도 커스텀 변경 사항은 유지됩니다.</MBBS_ModeTip>
+  <MBBS_Look_All>모든 버튼</MBBS_Look_All>
+  <MBBS_Look_AllTip>여기서 바꾼 내용은 같은 항목을 따로 바꾸지 않은 모든 버튼에 적용됩니다. 바꾸지 않은 항목은 테마({0})를 따릅니다.</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>여기서 바꾼 내용은 이 버튼에만 적용됩니다. 바꾸지 않은 항목은 '모든 버튼'을, 그다음 테마({0})를 따릅니다.</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(변경됨)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>이 모양 초기화</MBBS_Look_Reset>
+  <MBBS_Look_Sample>버튼</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>일반</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>마우스 오버</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>열림</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>비활성</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>텍스트</MBBS_Look_Text>
+  <MBBS_Look_Font>글자 크기</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>작음</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>보통</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>큼</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>'모든 버튼'을 따름</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>테마를 따름</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>텍스트 색</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>마우스 오버 시 텍스트 색</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>열려 있을 때 텍스트 색</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>아이콘</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>아이콘 크기나 위치를 바꾼 버튼은 이 모드가 아이콘을 그리므로, 아이콘을 옮기는 모드(Vanilla Textures Expanded 등)의 영향을 받지 않습니다.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>아이콘 크기: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>아이콘 위치 (아이콘만: 버튼 안 어디에 둘지 / 아이콘과 텍스트: 텍스트의 왼쪽 또는 오른쪽)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>아이콘 이동 (가로): {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>아이콘 이동 (세로): {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>버튼 배경</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (설치되지 않음)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>일반</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>마우스 오버</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>열림</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>비활성</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>설치된 테마 중 자체 버튼 배경이 있는 테마가 없습니다.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>바 전체 설정을 따름 ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>배치 모드 만들기 (바로 업로드 가능)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>배치 폴더 열기</MBBS_OpenExportsFolder>

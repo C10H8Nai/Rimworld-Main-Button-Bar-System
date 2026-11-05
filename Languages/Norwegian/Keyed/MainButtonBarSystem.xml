@@ -167,6 +167,43 @@ og trykk Oppdater. De blir liggende der når modden oppdateres.</MBBS_IconPicker
   <MBBS_WidthClearAll>La alle knapper med egen bredde ({0}) følge linjen</MBBS_WidthClearAll>
   <MBBS_ResetButton>Tilbakestill denne knappen</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Alle innstillinger for denne knappen går tilbake til det den arver: standardverdiene fra modden dens, ellers spillets egne. Hurtigtaster endres ikke.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Ferdige temaer</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Eget tema</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Ferdige temaer: velg et tema som allerede er laget. Eget tema: endre utseendet på alle knapper eller enkeltknapper, oppå temaet som er valgt under «Ferdige temaer». Dine egne endringer beholdes når du går tilbake til et ferdig tema.</MBBS_ModeTip>
+  <MBBS_Look_All>Alle knapper</MBBS_Look_All>
+  <MBBS_Look_AllTip>Endringer her gjelder alle knapper som ikke selv har endret det samme punktet. Uendrede punkter følger temaet ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Endringer her gjelder bare denne knappen. Uendrede punkter følger «Alle knapper», deretter temaet ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(endret)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Tilbakestill dette utseendet</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Knapp</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Normal</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Mus over</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Åpen</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Deaktivert</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Tekst</MBBS_Look_Text>
+  <MBBS_Look_Font>Skriftstørrelse</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Liten</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Middels</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Stor</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Samme som «Alle knapper»</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Samme som temaet</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Tekstfarge</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Tekstfarge under musen</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Tekstfarge når den er åpen</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Ikon</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>En knapp der ikonets størrelse eller plassering er endret, får ikonet tegnet av denne modden, så modder som flytter ikoner (som Vanilla Textures Expanded) påvirker den ikke.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Ikonstørrelse: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Ikonplassering (bare ikon: hvor i knappen; ikon og tekst: til venstre eller høyre for teksten)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Ikonforskyvning, vannrett: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Ikonforskyvning, loddrett: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Knappebakgrunn</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (ikke installert)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>normal</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>mus over</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>åpen</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>deaktivert</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Ingen installerte temaer har egne knappebakgrunner.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Samme som hele linjen ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Lag en oppsettsmod (klar til opplasting)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Åpne mappen med oppsett</MBBS_OpenExportsFolder>

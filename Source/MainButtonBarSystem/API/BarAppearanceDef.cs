@@ -314,6 +314,27 @@ namespace MainButtonBarSystem
     {
         public BarAppearanceDef def;
 
+        /// <summary>Whether this look changes main buttons at all (else they are drawn exactly as the game does).</summary>
+        public virtual bool ChangesButtons => def != null && def.ChangesButtons;
+
+        /// <summary>Label alignment for one button; Default uses the bar's setting.</summary>
+        public virtual LabelAlign LabelAlignFor(MainButtonDef button) => LabelAlign.Default;
+
+        /// <summary>Label font for one button; null keeps the game's.</summary>
+        public virtual GameFont? LabelFontFor(MainButtonDef button) => null;
+
+        /// <summary>
+        /// Icon size and placement for one button. True when changed: this mod then draws that button's icon itself
+        /// (as with "icon only"), so mods that move icons in DoButton do not apply to it.
+        /// </summary>
+        public virtual bool IconLookFor(MainButtonDef button, out float size, out Core.IconAnchor anchor, out Vector2 offset)
+        {
+            size = 0f;
+            anchor = Core.IconAnchor.Default;
+            offset = Vector2.zero;
+            return false;
+        }
+
         /// <summary>Drawn once per event before any button: the background image, then the decorations below the buttons.</summary>
         public virtual void DrawBarBackground(Rect barRect)
         {
@@ -586,6 +607,17 @@ namespace MainButtonBarSystem
         /// <summary>True when <see cref="ActiveIcon"/> is drawn alone, with no label.</summary>
         public static bool ActiveIconOnly { get; private set; }
 
+        /// <summary>Label font of the button being drawn; null for the tuning def's.</summary>
+        internal static GameFont? ActiveFont { get; private set; }
+
+        /// <summary>Icon size of a custom look for the button being drawn; negative for the tuning def's.</summary>
+        internal static float ActiveIconSize { get; private set; } = -1f;
+
+        internal static Core.IconAnchor ActiveIconAnchor { get; private set; }
+        internal static Vector2 ActiveIconOffset { get; private set; }
+
+        private static float IconSizeNow => ActiveIconSize >= 0f ? ActiveIconSize : B.iconSize;
+
         private static MainButtonBarTuningDef.Behaviour B => MainButtonBarTuningDef.Current.behaviour;
 
         // Null when a game update renamed the field: buttons are then drawn by the game as they are, without icon settings.
@@ -602,11 +634,27 @@ namespace MainButtonBarSystem
         public static void Draw(BarButton button, Rect rect, BarAppearanceWorker theme)
         {
             var def = button.Def;
-            var align = BarConfigManager.Active.labelAlign;
-            bool themed = theme != null && theme.def.ChangesButtons;
+            var config = BarConfigManager.Active;
+            var align = config.labelAlign;
+            bool themed = theme != null && theme.ChangesButtons;
             var settings = button.Settings;
             var custom = CustomIcons.Resolve(settings.icon);
-            var mode = BarConfigManager.Active.IconModeFor(settings);
+            var mode = config.IconModeFor(settings);
+
+            // A custom look can align, size and place per button (design spec 2026-11-05 §4.8, 4.9).
+            GameFont? font = null;
+            bool iconLook = false;
+            float iconSize = 0f;
+            var anchor = Core.IconAnchor.Default;
+            var offset = Vector2.zero;
+            if (themed)
+            {
+                var ownAlign = theme.LabelAlignFor(def);
+                if (ownAlign != LabelAlign.Default) align = ownAlign;
+                font = theme.LabelFontFor(def);
+                iconLook = theme.IconLookFor(def, out iconSize, out anchor, out offset);
+            }
+            // With only the font changed, align stays Default and the label patch draws it where the game would.
             if (IconField == null || (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default))
             {
                 def.Worker.DoButton(rect);
@@ -619,8 +667,13 @@ namespace MainButtonBarSystem
             var savedIcon = IconField(def);
             var savedPath = def.iconPath;
             Texture2D effective = custom ?? own;
+            if (iconLook && mode == IconMode.Default && effective != null) mode = IconMode.Icon;
 
             ActiveAlign = align;
+            ActiveFont = font;
+            ActiveIconSize = iconLook ? iconSize : -1f;
+            ActiveIconAnchor = anchor;
+            ActiveIconOffset = iconLook ? offset : Vector2.zero;
             ActiveTheme = themed ? theme : null;
             ActiveButton = themed ? def : null;
             ActiveButtonImageDrawn = false;
@@ -659,6 +712,10 @@ namespace MainButtonBarSystem
                 ActiveBaseState = ButtonVisualState.Normal;
                 ActiveIcon = null;
                 ActiveIconOnly = false;
+                ActiveFont = null;
+                ActiveIconSize = -1f;
+                ActiveIconAnchor = Core.IconAnchor.Default;
+                ActiveIconOffset = Vector2.zero;
             }
         }
 
@@ -691,16 +748,16 @@ namespace MainButtonBarSystem
         internal static void DrawIconAndLabel(Rect rect, string label, Color? labelColor)
         {
             bool over = Mouse.IsOver(rect);
-            float size = Mathf.Min(B.iconSize, rect.height - B.labelSidePadding);
-            var icon = new Rect(rect.x + B.labelSidePadding, rect.center.y - size / 2f, size, size);
+            var box = Core.IconPlacement.Beside(rect.x, rect.y, rect.width, rect.height, IconSizeNow, ActiveIconAnchor, B.labelSidePadding, B.iconTextGap,
+                ActiveIconOffset.x, ActiveIconOffset.y, out float textLeft, out float textRight);
+            var icon = new Rect(box.X, box.Y, box.Width, box.Height);
             if (over) icon.position += B.hoverLabelOffset;
             var color = GUI.color;
             GUI.color = Color.white;
             GUI.DrawTexture(icon, ActiveIcon);
             GUI.color = color;
 
-            float textX = rect.x + B.labelSidePadding + size + B.iconTextGap;
-            var textRect = new Rect(textX - B.labelSidePadding, rect.y, rect.xMax - textX + B.labelSidePadding, rect.height);
+            var textRect = new Rect(textLeft, rect.y, Mathf.Max(0f, textRight - textLeft), rect.height);
             var anchor = ActiveAlign switch
             {
                 LabelAlign.Center => TextAnchor.MiddleCenter,
@@ -713,8 +770,9 @@ namespace MainButtonBarSystem
         /// <summary>"Icon only": the icon centred, shifted under the mouse like the game's own icons.</summary>
         internal static void DrawIconOnly(Rect rect)
         {
-            float size = Mathf.Min(B.iconSize, rect.height, rect.width);
-            var icon = new Rect(rect.center.x - size / 2f, rect.center.y - size / 2f, size, size);
+            var box = Core.IconPlacement.Alone(rect.x, rect.y, rect.width, rect.height, IconSizeNow, ActiveIconAnchor, B.labelSidePadding,
+                ActiveIconOffset.x, ActiveIconOffset.y);
+            var icon = new Rect(box.X, box.Y, box.Width, box.Height);
             if (Mouse.IsOver(rect)) icon.position += B.hoverLabelOffset;
             var color = GUI.color;
             GUI.color = Color.white;
@@ -725,7 +783,7 @@ namespace MainButtonBarSystem
         /// <summary>A subtle button (More, arrows) drawn with the theme's atlas and label colour.</summary>
         internal static bool ThemedSubtleButton(BarAppearanceWorker theme, Rect rect, string label, bool active, TextAnchor? anchor = null)
         {
-            bool themed = theme != null && theme.def.ChangesButtons;
+            bool themed = theme != null && theme.ChangesButtons;
             var previousTheme = ActiveTheme;
             var previousButton = ActiveButton;
             var previousState = ActiveBaseState;
@@ -769,6 +827,13 @@ namespace MainButtonBarSystem
         /// <summary>Draws a button label at the active alignment, with the game's 2px "pressed" shift under the mouse.</summary>
         internal static void DrawAlignedLabel(Rect rect, string label, Color? labelColor)
         {
+            if (ActiveAlign == LabelAlign.Default)
+            {
+                // Where the game's subtle button puts it: left, after a margin of part of the button's width.
+                float margin = rect.width * B.gameLabelLeftMarginFraction - B.labelSidePadding;
+                DrawLabel(new Rect(rect.x + margin, rect.y, rect.width - margin, rect.height), label, labelColor ?? Color.white, TextAnchor.MiddleLeft, Mouse.IsOver(rect));
+                return;
+            }
             var anchor = ActiveAlign switch
             {
                 LabelAlign.Left => TextAnchor.MiddleLeft,
@@ -788,7 +853,7 @@ namespace MainButtonBarSystem
             {
                 Text.Anchor = anchor;
                 Text.WordWrap = false;
-                Text.Font = B.labelFont;
+                Text.Font = ActiveFont ?? B.labelFont;
                 GUI.color = color;
                 float pad = B.labelSidePadding;
                 var r = new Rect(rect.x + pad, rect.y, Mathf.Max(0f, rect.width - pad * 2f), rect.height);

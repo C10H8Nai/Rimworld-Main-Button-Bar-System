@@ -4,6 +4,20 @@
 
 ---
 
+## 0. 2026-11-05 雲端第二段結束時的狀態（先看這裡）
+
+| PR | 內容 | 狀態 |
+|---|---|---|
+| #13 | 規格：作者 2026-11-05 的決定（主設計 3.10）、預設主題與自訂主題設計、整體計畫 `docs/superpowers/plans/2026-11-05-roadmap.md` | 等合併（只有文件） |
+| #14 | 第十輪：穩定性與效能、UI Rethemed - Main Bar 相容提示 | 等實機測、合併 |
+| #15 | 第十一輪：每個欄位各自記「沒改過」（存檔格式 3）、平分時尊重單顆寬度 | 疊在 #14 上 |
+| #16 | 第十二輪：預設主題／自訂主題（一） | 疊在 #15 上 |
+
+- 合併順序：#14 → #15 → #16；#13 隨時都可以合併。
+- 實機測試清單：`docs/testing/round-10.md`、`round-11.md`、`round-12.md`（還有舊的 round-8、round-9、theme-addons 也沒測）。
+- 下一輪：照 `docs/superpowers/plans/2026-11-05-round-13-custom-theme-2.md` 做，先做任務 0（第十二輪審查留下的）。
+- 作者 2026-11-05 的定位：主按鈕的平台，**承上**（按鈕本身功能正常）、**接下**（可自定義設計）。
+
 ## 1. 專案是什麼
 
 - RimWorld 1.7 模組 **Main Button Bar System**，作者 NAI，packageId `NAI.MainButtonBarSystem`，`modVersion` 0.9.0，`MainButtonBarAPI.ApiVersion` 1.1。
@@ -96,6 +110,12 @@
 - `CompatNoticeDef`（2026-11-05）：只提示、不切換優先也不拿掉補丁的相容定義，全部寫在 XML（packageId、用反射讀的開關、「開關狀態 × 誰畫列 → 提示文字」）。內建 [LFS] UI Rethemed - Main Bar，在 `Defs/MainButtonBarSystem/CompatNotices.xml`。
 - `MainButtonArrangementDef`：排序積木，訂閱後出現在匯入選單。
 - `MainButtonIconSetDef`：圖示包。
+
+**自訂主題（2026-11-05 起，第 12 輪）**
+- 外觀分頁上方切換「預設主題／自訂主題」，兩種模式都有和按鈕分頁一樣的底部按鈕。
+- 資料：`BarConfig.appearanceMode`、`customTheme`（`Config/CustomTheme.cs`：`CustomThemeData` 有「所有按鈕」一層和每顆按鈕一層的 `ButtonLook`）。每一項：這顆 → 所有按鈕 → 預設主題選的那款 → 遊戲。
+- 繪製：`BarAppearanceWorker_Custom` 疊在選的主題上；worker 新增 `ChangesButtons`、`LabelAlignFor`、`LabelFontFor`、`IconLookFor`，由 `ButtonPainter` 套到每顆按鈕。圖示擺放在 `Core/IconPlacement.cs`（有測試）。
+- 介面：`UI/Dialog_MainButtonBar.Appearance.cs`（設定視窗改成 partial）。
 
 **主題系統（API 1.1）**
 - 按鈕外觀是 64×64 九宮格 atlas，四角是貼圖寬的 1/4，最多 18px，所以超過 72×72 沒意義；中段會拉伸。
