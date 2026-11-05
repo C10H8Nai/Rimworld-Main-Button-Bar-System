@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -25,6 +24,8 @@ namespace MainButtonBarSystem
         /// <summary>defName -> label this class last wrote.</summary>
         private static readonly Dictionary<string, string> applied = new Dictionary<string, string>();
 
+        private static readonly List<string> appliedKeys = new List<string>();
+
         /// <summary>Reloaded defs carry their own labels again; renames are applied anew on the next sync.</summary>
         internal static void ResetCache() => applied.Clear();
 
@@ -42,7 +43,9 @@ namespace MainButtonBarSystem
             }
 
             if (applied.Count == 0) return;
-            foreach (var defName in applied.Keys.ToList())
+            appliedKeys.Clear();
+            appliedKeys.AddRange(applied.Keys);
+            foreach (var defName in appliedKeys)
             {
                 if (!config.Get(defName).label.NullOrEmpty()) continue;
                 var def = DefDatabase<MainButtonDef>.GetNamedSilentFail(defName);

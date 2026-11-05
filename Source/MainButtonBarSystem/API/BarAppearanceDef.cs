@@ -473,17 +473,43 @@ namespace MainButtonBarSystem
             return def.HasLabelColor ? def.labelColor : (Color?)null;
         }
 
-        public virtual string MoreButtonLabel(int drawerCount) => "MBBS_More".Translate(drawerCount);
+        private int moreLabelCount = -1;
+        private LoadedLanguage moreLabelLanguage;
+        private string moreLabel;
+
+        /// <summary>"More (N)" in the current language; translated again only when N or the language changes.</summary>
+        public virtual string MoreButtonLabel(int drawerCount)
+        {
+            var language = LanguageDatabase.activeLanguage;
+            if (moreLabel == null || drawerCount != moreLabelCount || language != moreLabelLanguage)
+            {
+                moreLabel = "MBBS_More".Translate(drawerCount);
+                moreLabelCount = drawerCount;
+                moreLabelLanguage = language;
+            }
+            return moreLabel;
+        }
+
+        private string measuredLabel;
+        private GameFont measuredFont;
+        private float measuredWidth;
 
         /// <summary>Width of the More button: the player's setting, or the label's width when that is 0.</summary>
         public virtual float MoreButtonWidth(BarConfig config, int drawerCount)
         {
             if (config.MoreButtonWidth > 0) return config.MoreButtonWidth;
-            var font = Text.Font;
-            Text.Font = MainButtonBarTuningDef.Current.behaviour.labelFont;
-            float width = Text.CalcSize(MoreButtonLabel(drawerCount)).x;
-            Text.Font = font;
-            return width + MainButtonBarTuningDef.Current.behaviour.moreButtonLabelPadding;
+            var b = MainButtonBarTuningDef.Current.behaviour;
+            string label = MoreButtonLabel(drawerCount);
+            if (!ReferenceEquals(label, measuredLabel) || b.labelFont != measuredFont)
+            {
+                var font = Text.Font;
+                Text.Font = b.labelFont;
+                measuredWidth = Text.CalcSize(label).x;
+                Text.Font = font;
+                measuredLabel = label;
+                measuredFont = b.labelFont;
+            }
+            return measuredWidth + b.moreButtonLabelPadding;
         }
 
         /// <summary>Returns true when clicked.</summary>

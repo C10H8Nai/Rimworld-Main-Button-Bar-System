@@ -219,7 +219,15 @@ namespace MainButtonBarSystem
         /// </summary>
         public bool IsUntouched =>
             (displayMode ?? VanillaMode) == VanillaMode && (appearance ?? VanillaAppearance) == VanillaAppearance && order == null &&
-            labelAlign == LabelAlign.Default && iconMode == IconMode.Default && overrides.All(IsRedundant) && !ButtonDefaults.AnyChangesVanillaBar;
+            labelAlign == LabelAlign.Default && iconMode == IconMode.Default && AllRedundant() && !ButtonDefaults.AnyChangesVanillaBar;
+
+        // A plain loop: this runs on every GUI event of the bar.
+        private bool AllRedundant()
+        {
+            for (int i = 0; i < overrides.Count; i++)
+                if (!IsRedundant(overrides[i])) return false;
+            return true;
+        }
 
         /// <summary>Effective settings of a button: the user's override, else its mod's defaults, else empty. Never null; do not modify.</summary>
         public ButtonOverride Get(string defName)

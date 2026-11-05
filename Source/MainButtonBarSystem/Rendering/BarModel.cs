@@ -74,6 +74,8 @@ namespace MainButtonBarSystem
         {
             currentNames = null;
             currentSource.Clear();
+            orderCache = null;
+            orderConfig = null;
         }
 
         public static bool IsLocked(BarConfig config, string defName) => config.MenuLocked && defName == MenuDefName;
@@ -81,9 +83,35 @@ namespace MainButtonBarSystem
         public static PinPosition PinOf(BarConfig config, string defName) =>
             IsLocked(config, defName) ? PinPosition.Right : config.Get(defName).pin;
 
-        /// <summary>Order on screen, left to right: saved order merged with current buttons, then pins applied.</summary>
-        public static List<string> EffectiveOrder(BarConfig config) =>
-            ButtonOrder.Effective(ButtonOrder.Merge(config.order, CurrentNames, MenuDefName), n => PinOf(config, n));
+        private static BarConfig orderConfig;
+        private static List<string> orderNames;
+        private static int orderDefaultsVersion;
+        private static List<string> orderCache;
+
+        /// <summary>
+        /// Order on screen, left to right: saved order merged with current buttons, then pins applied. Do not modify the
+        /// result. Stored configs only change by being replaced, so their result is kept until the config, the game's
+        /// button list or the declared defaults change; the settings window's working copy changes in place and is
+        /// computed every time.
+        /// </summary>
+        public static List<string> EffectiveOrder(BarConfig config)
+        {
+            var names = CurrentNames;
+            bool cacheable = !ReferenceEquals(config, BarConfigManager.Preview);
+            if (cacheable && orderCache != null && ReferenceEquals(config, orderConfig) && ReferenceEquals(names, orderNames) &&
+                orderDefaultsVersion == ButtonDefaults.Version)
+                return orderCache;
+
+            var result = ButtonOrder.Effective(ButtonOrder.Merge(config.order, names, MenuDefName), n => PinOf(config, n));
+            if (cacheable)
+            {
+                orderConfig = config;
+                orderNames = names;
+                orderDefaultsVersion = ButtonDefaults.Version;
+                orderCache = result;
+            }
+            return result;
+        }
 
         /// <summary>Whether a button can go into the drawer in the current mode.</summary>
         public static bool DrawerApplies(BarConfig config, string defName) =>
