@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "{0}を検出: 現在はそちらがバーを制御しているため,ここでの変更はこのMODを優先にしたときだけ反映されます.",
     "MBBS_Compat_OursNotice": "{0}を検出: このMODが優先されているため,そちらによるバーへの効果はオフになっています.",
     "MBBS_Compat_SeeAdvanced": "詳しくは「詳細」を参照してください.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "{0}が画面下部のバーを描画しているため,ここでの設定は反映されません.このMODのバーを使うには,そちらのMOD設定で「Main bar」をオフにするか,MODリストでこのMODをそちらより上に置いてください.",
+    "MBBS_Notice_UIRethemed_BothOn": "{0}の「Main bar」もオンになっています: そちらは自身のバーが表示されている前提で右下のコントロールやウィンドウの位置を配置するため,表示がずれることがあります.そちらのMOD設定で「Main bar」をオフにすることを推奨します.",
     "MBBS_Compat_Header": "互換性: {0}",
     "MBBS_Compat_Ours": "このMODを優先",
     "MBBS_Compat_Ours_Desc": "このMODがバーを描画します.{0}によるバーへの効果はオフになり,その設定は参考値としてのみ使われます.",

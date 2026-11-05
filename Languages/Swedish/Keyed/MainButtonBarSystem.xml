@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>{0} hittades: den styr fältet just nu, så ändringar här får effekt bara när denna mod har företräde.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>{0} hittades: denna mod har företräde, så den andra moddens effekt på fältet är avstängd.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Detaljer under Avancerat.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} ritar fältet längst ned, så inställningarna här har ingen effekt. Om du vill använda fältet från denna mod stänger du av ”Main bar” i den andra moddens inställningar eller placerar denna mod ovanför den i modlistan.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} har också alternativet ”Main bar” påslaget: den placerar kontrollerna längst ned till höger och fönstren som om dess eget fält visades, så saker kan hamna fel. Vi rekommenderar att du stänger av ”Main bar” i den andra moddens inställningar.</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>Kompatibilitet: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Denna mod först</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Denna mod ritar fältet. Effekten från {0} på fältet är avstängd; dess inställningar används bara som referensvärden.</MBBS_Compat_Ours_Desc>

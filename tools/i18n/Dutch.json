@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "{0} gedetecteerd: die beheert nu de balk, dus wijzigingen hier werken pas als deze mod voorrang heeft.",
     "MBBS_Compat_OursNotice": "{0} gedetecteerd: deze mod heeft voorrang, dus het effect ervan op de balk is uitgeschakeld.",
     "MBBS_Compat_SeeAdvanced": "Details in Geavanceerd.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "{0} tekent de onderste balk, dus de instellingen hier hebben geen effect. Wil je de balk van deze mod gebruiken, zet dan \"Main bar\" uit in de instellingen van die mod, of zet deze mod erboven in de modlijst.",
+    "MBBS_Notice_UIRethemed_BothOn": "{0} heeft \"Main bar\" ook aan: die plaatst de bedieningselementen rechtsonder en de vensters alsof de eigen balk zichtbaar is, dus sommige dingen kunnen verkeerd staan. Het is aan te raden om \"Main bar\" uit te zetten in de instellingen van die mod.",
     "MBBS_Compat_Header": "Compatibiliteit: {0}",
     "MBBS_Compat_Ours": "Deze mod eerst",
     "MBBS_Compat_Ours_Desc": "Deze mod tekent de balk. Het effect van {0} op de balk is uitgeschakeld; de instellingen ervan dienen alleen als referentiewaarden.",

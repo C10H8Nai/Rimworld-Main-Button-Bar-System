@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>Fant {0}: den styrer linjen nå, så endringer her trer bare i kraft når denne modden har prioritet.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Fant {0}: denne modden har prioritet, så den andre moddens virkning på linjen er slått av.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Detaljer under Avansert.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} tegner linjen nederst på skjermen, så innstillingene her har ingen virkning. For å bruke denne moddens linje må du slå av «Main bar» i den andre moddens innstillinger, eller plassere denne modden over den i modlisten.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} har også «Main bar» slått på: den plasserer kontrollene nederst til høyre og vinduene som om dens egen linje ble vist, så ting kan havne på feil sted. Det anbefales å slå av «Main bar» i den andre moddens innstillinger.</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>Kompatibilitet: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Denne modden først</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Denne modden tegner linjen. Virkningen fra {0} på linjen er slått av; innstillingene dens brukes bare som referanseverdier.</MBBS_Compat_Ours_Desc>

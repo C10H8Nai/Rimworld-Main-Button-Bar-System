@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>Havaittiin {0}: se hallitsee tällä hetkellä palkkia, joten tässä tehdyt muutokset tulevat voimaan vasta, kun tällä modilla on etusija.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Havaittiin {0}: tällä modilla on etusija, joten toisen modin vaikutus palkkiin on poistettu käytöstä.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Lisätietoja Edistynyt-näkymässä.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} piirtää nyt alapalkin, joten näillä asetuksilla ei ole vaikutusta. Jos haluat käyttää tämän modin palkkia, poista ”Main bar” -asetus käytöstä kyseisen modin asetuksista tai siirrä tämä modi sen yläpuolelle modilistassa.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>Modissa {0} on myös ”Main bar” käytössä: se asettelee oikean alakulman säätimet ja ikkunat ikään kuin sen oma palkki olisi näkyvissä, joten osa elementeistä voi olla väärässä paikassa. Suosittelemme poistamaan ”Main bar” -asetuksen käytöstä kyseisen modin asetuksista.</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>Yhteensopivuus: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Tämä modi ensin</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Tämä modi piirtää palkin. Modin {0} vaikutus palkkiin on poistettu käytöstä; sen asetuksia käytetään vain viitearvoina.</MBBS_Compat_Ours_Desc>

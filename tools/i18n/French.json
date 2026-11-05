@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "{0} détecté : il contrôle actuellement la barre, les modifications faites ici ne prennent donc effet que si ce mod a la priorité.",
     "MBBS_Compat_OursNotice": "{0} détecté : ce mod a la priorité, l'effet de {0} sur la barre est donc désactivé.",
     "MBBS_Compat_SeeAdvanced": "Détails en mode Avancé.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "{0} dessine actuellement la barre du bas, les paramètres définis ici n'ont donc aucun effet. Pour utiliser la barre de ce mod, désactivez « Main bar » dans ses paramètres de mod, ou placez ce mod au-dessus de lui dans la liste des mods.",
+    "MBBS_Notice_UIRethemed_BothOn": "{0} a aussi « Main bar » activé : il dispose les commandes en bas à droite et les fenêtres comme si sa propre barre était affichée, certains éléments peuvent donc être mal placés. Il est recommandé de désactiver « Main bar » dans ses paramètres de mod.",
     "MBBS_Compat_Header": "Compatibilité : {0}",
     "MBBS_Compat_Ours": "Priorité à ce mod",
     "MBBS_Compat_Ours_Desc": "Ce mod dessine la barre. L'effet de {0} sur la barre est désactivé ; ses paramètres servent uniquement de valeurs de référence.",

@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>Phát hiện {0}: mod đó đang điều khiển thanh nút, nên các thay đổi ở đây chỉ có hiệu lực khi mod này được ưu tiên.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Phát hiện {0}: mod này đang được ưu tiên, nên tác động của mod đó lên thanh nút đã bị tắt.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Xem chi tiết trong chế độ Nâng cao.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} đang vẽ thanh nút dưới cùng, nên các cài đặt ở đây không có tác dụng. Để dùng thanh nút của mod này, hãy tắt "Main bar" trong cài đặt của mod đó, hoặc xếp mod này lên trên mod đó trong danh sách mod.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} cũng đang bật "Main bar": mod đó sắp xếp các nút điều khiển ở góc dưới bên phải và vị trí các cửa sổ như thể thanh nút của chính nó đang hiện, nên giao diện có thể bị lệch. Bạn nên tắt "Main bar" trong cài đặt của mod đó.</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>Tương thích: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Ưu tiên mod này</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Mod này vẽ thanh nút. Tác động của {0} lên thanh nút bị tắt; cài đặt của nó chỉ được dùng làm giá trị tham khảo.</MBBS_Compat_Ours_Desc>

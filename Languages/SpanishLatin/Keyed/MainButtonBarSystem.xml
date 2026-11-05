@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>Se detectó {0}: en este momento controla la barra, así que los cambios hechos aquí solo tienen efecto cuando este mod tiene prioridad.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Se detectó {0}: este mod tiene prioridad, así que el efecto de {0} sobre la barra está desactivado.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Más detalles en el modo Avanzado.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} está dibujando la barra inferior, así que la configuración de aquí no tiene efecto. Para usar la barra de este mod, desactiva “Main bar” en la configuración de ese mod, o coloca este mod por encima de él en la lista de mods.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} también tiene activado “Main bar”: ubica los controles de la esquina inferior derecha y las ventanas como si se mostrara su propia barra, así que algunos elementos pueden quedar fuera de lugar. Se recomienda desactivar “Main bar” en la configuración de ese mod.</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>Compatibilidad: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Prioridad a este mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Este mod dibuja la barra. El efecto de {0} sobre la barra está desactivado; su configuración solo se usa como valores de referencia.</MBBS_Compat_Ours_Desc>

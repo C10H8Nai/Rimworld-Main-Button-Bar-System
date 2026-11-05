@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>Zjištěn mod {0}: lištu teď ovládá on, takže změny zde se projeví, jen když bude mít přednost tento mod.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Zjištěn mod {0}: přednost má tento mod, takže vliv modu {0} na lištu je vypnutý.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Podrobnosti najdeš v režimu „Pokročilé“.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>Dolní lištu teď vykresluje mod {0}, takže nastavení zde se neprojeví. Pokud chceš používat lištu tohoto modu, vypni volbu „Main bar“ v nastavení toho modu, nebo tento mod v seznamu modů přesuň nad něj.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>Mod {0} má zapnutou i volbu „Main bar“: rozmisťuje ovládací prvky v pravém dolním rohu a okna tak, jako by byla zobrazená jeho vlastní lišta, takže některé prvky mohou být posunuté. Doporučujeme volbu „Main bar“ v nastavení toho modu vypnout.</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>Kompatibilita: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Přednost má tento mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Lištu vykresluje tento mod. Vliv modu {0} na lištu je vypnutý a jeho nastavení slouží jen jako referenční hodnoty.</MBBS_Compat_Ours_Desc>
