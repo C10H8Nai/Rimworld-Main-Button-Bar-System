@@ -167,6 +167,43 @@
   <MBBS_WidthClearAll>Εφαρμογή του πλάτους της γραμμής σε όλα τα κουμπιά με δικό τους πλάτος ({0})</MBBS_WidthClearAll>
   <MBBS_ResetButton>Επαναφορά αυτού του κουμπιού</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Κάθε ρύθμιση αυτού του κουμπιού επιστρέφει σε ό,τι κληρονομεί: τις προεπιλογές του mod του, αλλιώς του ίδιου του παιχνιδιού. Τα πλήκτρα συντόμευσης δεν αλλάζουν.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Έτοιμα θέματα</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Δικό σας θέμα</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Έτοιμα θέματα: διαλέξτε ένα έτοιμο θέμα. Δικό σας θέμα: αλλάξτε την εμφάνιση όλων των κουμπιών ή μεμονωμένων κουμπιών, πάνω στο θέμα που επιλέξατε στα «Έτοιμα θέματα». Οι αλλαγές σας διατηρούνται όταν επιστρέφετε σε έτοιμο θέμα.</MBBS_ModeTip>
+  <MBBS_Look_All>Όλα τα κουμπιά</MBBS_Look_All>
+  <MBBS_Look_AllTip>Οι αλλαγές εδώ ισχύουν για κάθε κουμπί που δεν έχει αλλάξει το ίδιο στοιχείο μόνο του. Τα στοιχεία χωρίς αλλαγές ακολουθούν το θέμα ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Οι αλλαγές εδώ ισχύουν μόνο για αυτό το κουμπί. Τα στοιχεία χωρίς αλλαγές ακολουθούν τα «Όλα τα κουμπιά» και μετά το θέμα ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(αλλαγμένο)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Επαναφορά αυτής της εμφάνισης</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Κουμπί</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Κανονικό</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Ποντίκι από πάνω</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Ανοιχτό</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Ανενεργό</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Κείμενο</MBBS_Look_Text>
+  <MBBS_Look_Font>Μέγεθος γραμμάτων</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Μικρό</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Μεσαίο</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Μεγάλο</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Ίδιο με «Όλα τα κουμπιά»</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Ίδιο με το θέμα</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Χρώμα κειμένου</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Χρώμα κειμένου με το ποντίκι από πάνω</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Χρώμα κειμένου όταν είναι ανοιχτό</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Εικονίδιο</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>Σε ένα κουμπί με αλλαγμένο μέγεθος ή θέση εικονιδίου, το εικονίδιο σχεδιάζεται από αυτό το mod, οπότε τα mods που μετακινούν εικονίδια (όπως το Vanilla Textures Expanded) δεν το επηρεάζουν.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Μέγεθος εικονιδίου: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Θέση εικονιδίου (μόνο εικονίδιο: πού μέσα στο κουμπί· εικονίδιο και κείμενο: αριστερά ή δεξιά από το κείμενο)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Μετατόπιση εικονιδίου, οριζόντια: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Μετατόπιση εικονιδίου, κάθετη: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Φόντο κουμπιού</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (δεν είναι εγκατεστημένο)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>κανονικό</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>ποντίκι από πάνω</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>ανοιχτό</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>ανενεργό</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Κανένα εγκατεστημένο θέμα δεν έχει δικά του φόντα κουμπιών.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Ίδιο με όλη τη γραμμή ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Δημιουργία mod διάταξης (έτοιμο για ανέβασμα)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Άνοιγμα φακέλου διατάξεων</MBBS_OpenExportsFolder>

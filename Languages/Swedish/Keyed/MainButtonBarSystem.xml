@@ -167,6 +167,43 @@ och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconP
   <MBBS_WidthClearAll>Låt alla knappar med egen bredd ({0}) följa fältet</MBBS_WidthClearAll>
   <MBBS_ResetButton>Återställ denna knapp</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Alla inställningar för denna knapp återgår till det den ärver: standardvärdena från dess mod, annars spelets egna. Snabbtangenter ändras inte.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Färdiga teman</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Eget tema</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Färdiga teman: välj ett tema som redan är gjort. Eget tema: ändra utseendet på alla knappar eller enskilda knappar, ovanpå temat som valts under ”Färdiga teman”. Dina egna ändringar sparas när du går tillbaka till ett färdigt tema.</MBBS_ModeTip>
+  <MBBS_Look_All>Alla knappar</MBBS_Look_All>
+  <MBBS_Look_AllTip>Ändringar här gäller alla knappar som inte själva har ändrat samma punkt. Oändrade punkter följer temat ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Ändringar här gäller bara den här knappen. Oändrade punkter följer ”Alla knappar” och sedan temat ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(ändrad)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Återställ detta utseende</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Knapp</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Normal</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Mus över</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Öppen</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Inaktiverad</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Text</MBBS_Look_Text>
+  <MBBS_Look_Font>Teckenstorlek</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Liten</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Mellan</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Stor</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Samma som ”Alla knappar”</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Samma som temat</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Textfärg</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Textfärg under musen</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Textfärg när den är öppen</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Ikon</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>En knapp vars ikonstorlek eller ikonposition har ändrats får sin ikon ritad av denna mod, så moddar som flyttar ikoner (som Vanilla Textures Expanded) påverkar den inte.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Ikonstorlek: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Ikonposition (bara ikon: var i knappen; ikon och text: till vänster eller höger om texten)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Ikonförskjutning, vågrätt: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Ikonförskjutning, lodrätt: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Knappbakgrund</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (inte installerat)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>normal</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>mus över</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>öppen</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>inaktiverad</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Inget installerat tema har egna knappbakgrunder.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Samma som hela fältet ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Skapa en layoutmod (redo att laddas upp)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Öppna mappen med layouter</MBBS_OpenExportsFolder>

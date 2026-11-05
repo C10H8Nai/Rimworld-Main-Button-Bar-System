@@ -167,6 +167,43 @@ poi premi «Aggiorna». Restano lì anche quando la mod viene aggiornata.</MBBS_
   <MBBS_WidthClearAll>Fai seguire la larghezza della barra a tutti i pulsanti che ne hanno una propria ({0})</MBBS_WidthClearAll>
   <MBBS_ResetButton>Reimposta questo pulsante</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Ogni impostazione di questo pulsante torna a ciò che eredita: i valori predefiniti della sua mod, altrimenti quelli del gioco. I tasti rapidi non cambiano.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Temi pronti</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Personalizzato</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Temi pronti: scegli un tema già fatto. Personalizzato: cambia l'aspetto di tutti i pulsanti o di singoli pulsanti, partendo dal tema scelto in «Temi pronti». Le tue modifiche restano salvate quando torni a un tema pronto.</MBBS_ModeTip>
+  <MBBS_Look_All>Tutti i pulsanti</MBBS_Look_All>
+  <MBBS_Look_AllTip>Le modifiche fatte qui valgono per ogni pulsante che non ha cambiato da sé la stessa voce. Le voci non modificate seguono il tema ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Le modifiche fatte qui valgono solo per questo pulsante. Le voci non modificate seguono «Tutti i pulsanti», poi il tema ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(modificato)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Reimposta questo aspetto</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Pulsante</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Normale</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Mouse sopra</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Aperto</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Disattivato</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Testo</MBBS_Look_Text>
+  <MBBS_Look_Font>Dimensione del testo</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Piccola</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Media</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Grande</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Come «Tutti i pulsanti»</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Come il tema</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Colore del testo</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Colore del testo sotto il mouse</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Colore del testo quando è aperto</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Icona</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>Per un pulsante a cui è stata cambiata la dimensione o la posizione dell'icona, l'icona viene disegnata da questa mod, quindi le mod che spostano le icone (come Vanilla Textures Expanded) non hanno effetto su di esso.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Dimensione dell'icona: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Posizione dell'icona (solo icona: dove nel pulsante; icona e testo: a sinistra o a destra del testo)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Spostamento dell'icona, orizzontale: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Spostamento dell'icona, verticale: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Sfondo del pulsante</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (non installato)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>normale</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>mouse sopra</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>aperto</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>disattivato</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Nessun tema installato ha sfondi propri per i pulsanti.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Come la barra intera ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Crea una mod di disposizione (pronta da caricare)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Apri la cartella delle disposizioni</MBBS_OpenExportsFolder>

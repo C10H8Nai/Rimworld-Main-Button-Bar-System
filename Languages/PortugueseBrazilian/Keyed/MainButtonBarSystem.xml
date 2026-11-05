@@ -167,6 +167,43 @@ e depois clique em Atualizar. Eles continuam lá quando o mod é atualizado.</MB
   <MBBS_WidthClearAll>Fazer com que todos os botões com largura própria ({0}) sigam a barra</MBBS_WidthClearAll>
   <MBBS_ResetButton>Redefinir este botão</MBBS_ResetButton>
   <MBBS_ResetButtonTip>Todas as configurações deste botão voltam ao que ele herda: os padrões do seu mod ou, se não houver, os do próprio jogo. As teclas de atalho não são alteradas.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Temas prontos</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Personalizado</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Temas prontos: escolha um dos temas já prontos. Personalizado: mude a aparência de todos os botões ou de botões individuais, por cima do tema escolhido em "Temas prontos". Suas alterações são mantidas quando você volta a um tema pronto.</MBBS_ModeTip>
+  <MBBS_Look_All>Todos os botões</MBBS_Look_All>
+  <MBBS_Look_AllTip>As alterações feitas aqui valem para todo botão que não alterou o mesmo item por conta própria. Os itens não alterados seguem o tema ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>As alterações feitas aqui valem só para este botão. Os itens não alterados seguem "Todos os botões" e depois o tema ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(alterado)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Redefinir esta aparência</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Botão</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Normal</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Mouse em cima</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Aberto</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Desativado</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Texto</MBBS_Look_Text>
+  <MBBS_Look_Font>Tamanho da fonte</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Pequena</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Média</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Grande</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Igual a "Todos os botões"</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Igual ao tema</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Cor do texto</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Cor do texto com o mouse em cima</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Cor do texto quando aberto</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Ícone</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>Em um botão cujo tamanho ou posição do ícone foi alterado, o ícone é desenhado por este mod, então mods que movem ícones (como o Vanilla Textures Expanded) não o afetam.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Tamanho do ícone: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Posição do ícone (só ícone: onde fica no botão; ícone e texto: à esquerda ou à direita do texto)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Deslocamento do ícone, horizontal: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Deslocamento do ícone, vertical: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Fundo do botão</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (não instalado)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>normal</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>mouse em cima</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>aberto</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>desativado</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Nenhum tema instalado tem fundos de botão próprios.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Igual à barra inteira ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Criar um mod de disposição (pronto para enviar)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Abrir a pasta de disposições</MBBS_OpenExportsFolder>

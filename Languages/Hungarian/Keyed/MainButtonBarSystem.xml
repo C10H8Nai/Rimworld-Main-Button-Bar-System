@@ -167,6 +167,43 @@ majd nyomd meg a „Frissítés” gombot. A mod frissítésekor is ott maradnak
   <MBBS_WidthClearAll>Az összes saját szélességű gomb ({0}) igazítása a gombsorhoz</MBBS_WidthClearAll>
   <MBBS_ResetButton>Gomb alapállapotba</MBBS_ResetButton>
   <MBBS_ResetButtonTip>A gomb minden beállítása visszaáll arra, amit örököl: a saját modja alapértékeire, ezek hiányában a játék sajátjaira. A gyorsbillentyűk nem változnak.</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>Kész témák</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>Egyéni téma</MBBS_Mode_Custom>
+  <MBBS_ModeTip>Kész témák: válassz egy előre elkészített témát. Egyéni téma: az összes gomb vagy egyes gombok kinézetét módosíthatod a „Kész témák” alatt választott téma alapján. Az egyéni módosításaid megmaradnak, ha visszaváltasz egy kész témára.</MBBS_ModeTip>
+  <MBBS_Look_All>Minden gomb</MBBS_Look_All>
+  <MBBS_Look_AllTip>Az itteni módosítások minden olyan gombra érvényesek, amely ugyanazt az elemet nem módosította saját maga. A nem módosított elemek a témát követik ({0}).</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>Az itteni módosítások csak erre a gombra érvényesek. A nem módosított elemek a „Minden gomb” beállítást, majd a témát követik ({0}).</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>(módosítva)</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>Kinézet alapállapotba</MBBS_Look_Reset>
+  <MBBS_Look_Sample>Gomb</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>Normál</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>Egér felette</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>Nyitva</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>Letiltva</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>Szöveg</MBBS_Look_Text>
+  <MBBS_Look_Font>Betűméret</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>Kicsi</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>Közepes</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>Nagy</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>Ugyanaz, mint a „Minden gomb”</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>Ugyanaz, mint a témáé</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>Szövegszín</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>Szövegszín az egér alatt</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>Szövegszín nyitott állapotban</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>Ikon</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>Ha egy gombnál módosítod az ikon méretét vagy helyzetét, az ikonját ez a mod rajzolja, így az ikonokat mozgató modok (például a Vanilla Textures Expanded) nem hatnak rá.</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>Ikonméret: {0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>Ikon helyzete (csak ikon: hol legyen a gombon belül; ikon és szöveg: a szövegtől balra vagy jobbra)</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>Ikon eltolása vízszintesen: {0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>Ikon eltolása függőlegesen: {0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>Gomb háttere</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}, {1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0} (nincs telepítve)</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>normál</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>egér felette</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>nyitva</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>letiltva</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>Egyik telepített témának sincs saját gombháttere.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Ugyanaz, mint a teljes gombsoré ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Elrendezés-mod készítése (feltöltésre kész)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Elrendezések mappájának megnyitása</MBBS_OpenExportsFolder>

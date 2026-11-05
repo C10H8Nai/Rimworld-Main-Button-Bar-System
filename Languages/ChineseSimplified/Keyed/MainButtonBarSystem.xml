@@ -167,6 +167,43 @@
   <MBBS_WidthClearAll>让 {0} 个有自己宽度的按钮都改为跟随整条栏</MBBS_WidthClearAll>
   <MBBS_ResetButton>重置这个按钮</MBBS_ResetButton>
   <MBBS_ResetButtonTip>这个按钮的每一项设置都恢复成继承的值：它所属模组的默认值，没有的话就是游戏原本的样子。快捷键不受影响。</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>预设主题</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>自定义主题</MBBS_Mode_Custom>
+  <MBBS_ModeTip>预设主题：从预先设计好的主题中挑一款。自定义主题：在「预设主题」所选主题的基础上，修改所有按钮或单个按钮的样子。切回预设主题时，自定义的修改会保留。</MBBS_ModeTip>
+  <MBBS_Look_All>所有按钮</MBBS_Look_All>
+  <MBBS_Look_AllTip>这里的修改会应用到每一个没有自行修改同一项的按钮。未修改的项目跟随主题（{0}）。</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>这里的修改只应用到这个按钮。未修改的项目跟随「所有按钮」，再跟随主题（{0}）。</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>（已修改）</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>重置这个样式</MBBS_Look_Reset>
+  <MBBS_Look_Sample>按钮</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>普通</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>鼠标悬停</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>已打开</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>禁用</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>文字</MBBS_Look_Text>
+  <MBBS_Look_Font>字号</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>小</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>中</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>大</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>跟随「所有按钮」</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>跟随主题</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>文字颜色</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>鼠标悬停时的文字颜色</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>打开时的文字颜色</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>图标</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>改了图标大小或位置的按钮，图标改由本模组绘制，因此 Vanilla Textures Expanded 这类移动图标的模组对它不起作用。</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>图标大小：{0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>图标位置（只显示图标：放在按钮的哪里；图标＋文字：在文字的左边或右边）</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>图标位移（水平）：{0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>图标位移（垂直）：{0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>按钮背景</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}（{1}）</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0}（未安装）</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>普通</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>鼠标悬停</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>已打开</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>禁用</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>已安装的主题都没有自己的按钮背景。</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>跟随整条栏（{0}）</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>做成排序模组（可直接上传）</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>打开排序文件夹</MBBS_OpenExportsFolder>

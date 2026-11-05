@@ -195,7 +195,7 @@
     "MBBS_Look_IconOffsetX": "圖示位移（水平）：{0}px",
     "MBBS_Look_IconOffsetY": "圖示位移（垂直）：{0}px",
     "MBBS_Look_Background": "按鈕背景",
-    "MBBS_Look_AtlasFrom": "{0}：{1}",
+    "MBBS_Look_AtlasFrom": "{0}（{1}）",
     "MBBS_Look_AtlasMissing": "{0}（未安裝）",
     "MBBS_Look_Field_button": "一般",
     "MBBS_Look_Field_buttonMouseover": "滑鼠移上",
