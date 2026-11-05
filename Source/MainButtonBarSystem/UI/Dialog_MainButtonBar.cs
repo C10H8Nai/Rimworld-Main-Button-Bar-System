@@ -224,7 +224,10 @@ namespace MainButtonBarSystem
             Text.Anchor = TextAnchor.UpperLeft;
         }
 
-        /// <summary>One line per detected bar-takeover mod (spec 3.7). Returns the height used.</summary>
+        /// <summary>
+        /// One line per detected bar-takeover mod (spec 3.7), then the notices of overlapping mods that are left alone
+        /// (wrapped, since they explain what to change). Returns the height used.
+        /// </summary>
         private float DrawCompatNotices(Rect at)
         {
             float y = at.y;
@@ -243,6 +246,20 @@ namespace MainButtonBarSystem
                 GUI.color = Color.white;
                 TooltipHandler.TipRegion(line, text);
                 y += line.height;
+            }
+
+            foreach (var def in CompatNotices.Detected)
+            {
+                string text = CompatNotices.TextFor(def);
+                if (text.NullOrEmpty()) continue;
+                float height = Mathf.Max(L.noticeLineHeight, Text.CalcHeight(text, at.width));
+                var block = new Rect(at.x, y, at.width, height);
+                GUI.color = ColorLibrary.Gold;
+                Text.Anchor = TextAnchor.MiddleLeft;
+                Widgets.Label(block, text);
+                Text.Anchor = TextAnchor.UpperLeft;
+                GUI.color = Color.white;
+                y += height;
             }
             return y - at.y;
         }

@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>偵測到 {0}：目前由它控制底部列，這裡的改動要等改成本模組優先才會生效。</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>偵測到 {0}：本模組優先，它對底部列的效果已關閉。</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>詳細請到進階。</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} 正在畫底部列，這裡的設定不會生效。要改用本模組，請在它的模組設定關掉 Main bar，或把本模組排在它前面。</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} 的 Main bar 也開著，它會把右下角控制項和視窗位置排成它自己的列的樣子，畫面可能錯位。建議在它的模組設定關掉 Main bar。</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>相容：{0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>本模組優先</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>由本模組繪製底部列。{0} 對底部列的效果會關閉，它的設定只當參考值。</MBBS_Compat_Ours_Desc>

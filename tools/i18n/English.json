@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "Detected {0}: it currently controls the bar, so changes here take effect only when this mod has priority.",
     "MBBS_Compat_OursNotice": "Detected {0}: this mod has priority, so its effect on the bar is switched off.",
     "MBBS_Compat_SeeAdvanced": "Details in Advanced.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "{0} is drawing the bottom bar, so the settings here have no effect. To use this mod's bar, turn off \"Main bar\" in its mod settings, or put this mod above it in the mod list.",
+    "MBBS_Notice_UIRethemed_BothOn": "{0} also has \"Main bar\" on: it places the bottom-right controls and window positions as if its own bar were shown, so things may be out of place. Turning off \"Main bar\" in its mod settings is recommended.",
     "MBBS_Compat_Header": "Compatibility: {0}",
     "MBBS_Compat_Ours": "This mod first",
     "MBBS_Compat_Ours_Desc": "This mod draws the bar. {0}'s effect on the bar is switched off; its settings are only used as reference values.",

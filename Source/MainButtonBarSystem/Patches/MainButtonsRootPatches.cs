@@ -45,6 +45,7 @@ namespace MainButtonBarSystem
             {
                 StartupDiagnostics.ReportPatchesOnce();
                 if (!ran) BarRenderer.ReportGameDrawn(__instance);
+                CompatNotices.LogOnce();
             }
             catch (Exception e) when (!(e is ExitGUIException))
             {
