@@ -87,7 +87,8 @@ namespace MainButtonBarSystem
         {
             editingTemplate = !BarConfigManager.InGame;
             doCloseX = true;
-            closeOnAccept = false;
+            // Enter is handled here (it ends number editing) instead of reaching the game's mod settings window below.
+            closeOnAccept = true;
             closeOnCancel = true;
             absorbInputAroundWindow = false;
             preventCameraMotion = false;
@@ -103,6 +104,20 @@ namespace MainButtonBarSystem
             Window_ButtonDrawer.CloseIfOpen();
             working = BarConfigManager.Saved.Clone();
             BarConfigManager.Preview = working;
+        }
+
+        /// <summary>Enter ends typing in a box; it never closes this window or the one below it.</summary>
+        public override void OnAcceptKeyPressed()
+        {
+            UI.UnfocusCurrentControl();
+            Event.current.Use();
+        }
+
+        /// <summary>A click on the map or the bar ends typing too, so later keys do not change a number.</summary>
+        public override void Notify_ClickOutsideWindow()
+        {
+            base.Notify_ClickOutsideWindow();
+            UI.UnfocusCurrentControl();
         }
 
         public override void PostClose()
@@ -1037,12 +1052,16 @@ namespace MainButtonBarSystem
             return DimmableButton(rect, "MBBS_Default".Translate(), enabled);
         }
 
-        /// <summary>A button drawn faded while it cannot be used (the game's inactive button looks the same as an active one).</summary>
+        /// <summary>
+        /// A button drawn faded while it cannot be used (the game's inactive button looks the same as an active one).
+        /// It is always a real control: an inactive game button creates none, so a "Default" button turning active
+        /// while a number is typed would shift the control ids and take the focus away from the number box.
+        /// </summary>
         private static bool DimmableButton(Rect rect, string label, bool enabled)
         {
             var color = GUI.color;
             if (!enabled) GUI.color = new Color(color.r, color.g, color.b, color.a * L.dimmedAlpha);
-            bool clicked = Widgets.ButtonText(rect, label, true, true, enabled);
+            bool clicked = Widgets.ButtonText(rect, label, true, enabled, true);
             GUI.color = color;
             return clicked && enabled;
         }

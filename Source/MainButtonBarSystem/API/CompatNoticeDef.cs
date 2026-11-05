@@ -25,8 +25,14 @@ namespace MainButtonBarSystem
         Any,
         ThisMod,
 
-        /// <summary>The game or another mod (in a game only).</summary>
+        /// <summary>The game or another mod (in a game only): either of the two below.</summary>
         NotThisMod,
+
+        /// <summary>This mod's prefix ran and left the bar to the game or a later mod (its settings are untouched).</summary>
+        ThisModYielded,
+
+        /// <summary>An earlier prefix drew the bar, so this mod's prefix did not run (that mod is above this one).</summary>
+        ThisModSkipped,
     }
 
     /// <summary>One notice of a <see cref="CompatNoticeDef"/>; the first one whose conditions hold is shown.</summary>
@@ -47,7 +53,8 @@ namespace MainButtonBarSystem
                 case CompatSettingState.Unknown when settingValue.HasValue:
                     return false;
             }
-            return bar == CompatBarOwner.Any || owner == bar;
+            if (bar == CompatBarOwner.Any || owner == bar) return true;
+            return bar == CompatBarOwner.NotThisMod && (owner == CompatBarOwner.ThisModYielded || owner == CompatBarOwner.ThisModSkipped);
         }
     }
 
@@ -84,7 +91,8 @@ namespace MainButtonBarSystem
 
         public string ModNameOrLabel => modName ?? LabelCap;
 
-        public bool Detected => detected ??= packageIds.Any(id => ModsConfig.IsActive(id) || ModsConfig.IsActive(id.ToLowerInvariant()));
+        // Ignoring the "_steam" suffix the game adds when a local and a Steam copy of the mod both exist.
+        public bool Detected => detected ??= ModLister.AnyModActiveNoSuffix(packageIds);
 
         /// <summary>The other mod's switch, or null when it is not active or the switch cannot be read (logged once in development mode).</summary>
         public bool? ReadSetting()
@@ -200,9 +208,21 @@ namespace MainButtonBarSystem
     {
         public static IEnumerable<CompatNoticeDef> Detected => DefDatabase<CompatNoticeDef>.AllDefs.Where(d => d.Detected);
 
+        private static bool lastPrefixRan;
+
+        /// <summary>Called by the DoButtons postfix: whether this mod's prefix ran in that call.</summary>
+        internal static void NoteDraw(bool prefixRan) => lastPrefixRan = prefixRan;
+
         /// <summary>Who drew the bar on the last draw; null at the main menu, where there is no bar.</summary>
-        public static CompatBarOwner? CurrentOwner =>
-            BarConfigManager.InGame ? (MainButtonBarAPI.DrawnByThisMod ? CompatBarOwner.ThisMod : CompatBarOwner.NotThisMod) : (CompatBarOwner?)null;
+        public static CompatBarOwner? CurrentOwner
+        {
+            get
+            {
+                if (!BarConfigManager.InGame) return null;
+                if (MainButtonBarAPI.DrawnByThisMod) return CompatBarOwner.ThisMod;
+                return lastPrefixRan ? CompatBarOwner.ThisModYielded : CompatBarOwner.ThisModSkipped;
+            }
+        }
 
         /// <summary>The text to show for this def now, or null.</summary>
         public static string TextFor(CompatNoticeDef def)
@@ -227,7 +247,12 @@ namespace MainButtonBarSystem
                     continue;
                 }
                 var value = def.ReadSetting();
-                string owner = MainButtonBarAPI.DrawnByThisMod ? "this mod" : "the game or another mod";
+                string owner = CurrentOwner switch
+                {
+                    CompatBarOwner.ThisMod => "this mod",
+                    CompatBarOwner.ThisModYielded => "the game or a later mod (this mod left it: its settings are untouched)",
+                    _ => "an earlier mod (this mod's prefix was skipped)",
+                };
                 Log.Message(MainButtonBarSystemMod.LogPrefix + def.ModNameOrLabel + ": active; " + def.SettingPath + " = " +
                             (value.HasValue ? value.Value.ToString() : "unknown") + "; bar drawn by " + owner + ".");
             }

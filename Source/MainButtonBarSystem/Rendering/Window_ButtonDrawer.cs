@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
@@ -139,20 +138,7 @@ namespace MainButtonBarSystem
 
                 var cell = new Rect(inRect.x + (i % columns) * cellWidth, inRect.y + (i / columns) * cellHeight, cellWidth, cellHeight);
                 var before = Event.current.type;
-                try
-                {
-                    appearance.DrawDrawerButton(button, cell);
-                }
-                catch (Exception e) when (!(e is ExitGUIException))
-                {
-                    var appearanceFailure = ButtonGuard.Recover(button, cell, e, appearance);
-                    if (appearanceFailure != null)
-                    {
-                        BarRenderer.HandBack(appearanceFailure);
-                        Close(false);
-                        return;
-                    }
-                }
+                ButtonGuard.Draw(button, cell, appearance, drawer: true);
                 // Buttons fire on mouse up; closing on mouse down would swallow the click.
                 if (before == EventType.MouseUp && Event.current.type == EventType.Used && Mouse.IsOver(cell))
                     activated = true;

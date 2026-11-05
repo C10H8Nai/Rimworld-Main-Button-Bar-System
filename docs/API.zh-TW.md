@@ -227,4 +227,4 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。四個選填的新�
 
 ## API 穩定性
 
-`MainButtonBarAPI.ApiVersion`（屬性，目前 `1.1`）涵蓋英文文件裡的所有東西：五個接口的 Def 欄位和 worker、`MainButtonBarDefaults`、`MainButtonArrangementDef`、`BarDrawContext`、`BarButton`、`BarDecoration`、`BarButtonImage`、`DecorationLayout`、`ImageFit`、`ButtonPainter.Draw` 和 `MainButtonBarAPI`。新增提高次版本號；移除或改變意義提高主版本號，而且被移除的成員會先標 `[Obsolete]` 保留一個版本。排序檔有自己的 `formatVersion`。沒列出來的都是內部實作，可能會變。
+`MainButtonBarAPI.ApiVersion`（屬性，目前 `1.1`）涵蓋英文文件裡的所有東西：五個接口的 Def 欄位和 worker、`CompatNoticeDef`、`MainButtonBarDefaults`、`MainButtonArrangementDef`、`BarDrawContext`、`BarButton`、`BarDecoration`、`BarButtonImage`、`DecorationLayout`、`ImageFit`、`ButtonPainter.Draw` 和 `MainButtonBarAPI`。新增提高次版本號；移除或改變意義提高主版本號，而且被移除的成員會先標 `[Obsolete]` 保留一個版本。排序檔有自己的 `formatVersion`。沒列出來的都是內部實作，可能會變。

@@ -90,7 +90,10 @@
 | G6 | 本模組在前 | 關 | 改一項 | 沒有黃字 | 本模組的列；位置正常 |
 
 另外：
-1. 每種情況的 log 裡有一行「UI Rethemed - Main Bar: active; UIRethemed.MainBar.MainBar.Settings.mainButtons = True／False; bar drawn by this mod／the game or another mod.」，值要和那一格一致。
+1. 每種情況的 log 裡有一行「UI Rethemed - Main Bar: active; UIRethemed.MainBar.MainBar.Settings.mainButtons = True／False; bar drawn by …」。這行只記**讀檔後第一次畫列**的狀態，所以看的是存檔裡原本的設定，不是後來在視窗裡改的：
+   - `mainButtons` 的值要和它的 Main bar 開關一致。
+   - UI Rethemed 在前、Main bar 開（G1、G2）：「an earlier mod (this mod's prefix was skipped)」。
+   - 本模組在前（G4～G6），或 Main bar 關（G3）：存檔還沒改過本模組設定時是「the game or a later mod (this mod left it: its settings are untouched)」；改過的存檔是「this mod」。
 2. 主選單打開設定視窗（編輯範本）：不顯示 UI Rethemed 的黃字（主選單沒有底部列，判斷不了誰畫）。
 3. 黃字很長時會換行，不會被切掉、不會壓到下面的分頁。換成英文、日文各看一次。
 4. 只裝本模組、不裝 UI Rethemed：沒有黃字；log 是「UI Rethemed - Main Bar: not active.」。

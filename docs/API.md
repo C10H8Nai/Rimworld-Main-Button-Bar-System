@@ -503,7 +503,7 @@ and from who drew the bar on the last draw. The built-in one, for [LFS] UI Rethe
 | Field | Values |
 |---|---|
 | `setting` | `Any` (default), `On`, `Off`, `Unknown` (the switch could not be read: the other mod changed, or the path is wrong) |
-| `bar` | `Any` (default; also matches at the main menu, where no bar is drawn), `ThisMod`, `NotThisMod` (the game or another mod drew it) |
+| `bar` | `Any` (default; also matches at the main menu, where no bar is drawn), `ThisMod`, `NotThisMod` (the game or another mod drew it: either of the next two), `ThisModYielded` (this mod's prefix ran and left the bar to the game or a later mod, because its settings are untouched), `ThisModSkipped` (an earlier prefix drew the bar, so this mod's did not run: that mod is above this one in the mod list) |
 
 A switch that cannot be read never shows an error: it counts as `Unknown`, and development mode logs one line.
 Development mode also logs, on the first bar draw, each notice def's state (active, switch value, who drew).

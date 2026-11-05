@@ -73,7 +73,8 @@ namespace MainButtonBarSystem
         private bool? detected;
         private bool tookOver;
 
-        public bool Detected => detected ??= def.packageIds.Any(id => ModsConfig.IsActive(id) || ModsConfig.IsActive(id.ToLowerInvariant()));
+        // Ignoring the "_steam" suffix the game adds when a local and a Steam copy of the mod both exist.
+        public bool Detected => detected ??= ModLister.AnyModActiveNoSuffix(def.packageIds);
 
         /// <summary>The priority chosen in settings, else the def's default.</summary>
         public CompatPriority Priority => MainButtonBarSystemMod.Settings.PriorityFor(def);

@@ -83,13 +83,6 @@ namespace MainButtonBarSystem
             }
         }
 
-        /// <summary>The drawer found that the appearance cannot draw buttons: the game draws the bar for the session.</summary>
-        internal static void HandBack(Exception e)
-        {
-            Fail("Drawing the main button bar failed; handing it back to the game for this session", e);
-            drawer.Clear();
-        }
-
         private static bool reportBroken;
 
         /// <summary>After a failure the query API is updated if it can be; if that fails too, it is left alone.</summary>

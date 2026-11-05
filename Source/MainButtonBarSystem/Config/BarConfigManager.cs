@@ -36,19 +36,14 @@ namespace MainButtonBarSystem
                     var component = Component;
                     if (component?.config != null) return component.config;
                 }
-                else if (componentList != null)
-                {
-                    // Out of a game: let the old game's components go before the next one loads.
-                    componentList = null;
-                    component = null;
-                }
                 return Template ?? Untouched;
             }
         }
 
-        private static List<GameComponent> componentList;
+        // Weak, so a game left for the main menu is not kept alive by this cache.
+        private static readonly System.WeakReference<List<GameComponent>> componentList = new System.WeakReference<List<GameComponent>>(null);
+        private static readonly System.WeakReference<MainButtonBarGameComponent> component = new System.WeakReference<MainButtonBarGameComponent>(null);
         private static int componentCount;
-        private static MainButtonBarGameComponent component;
 
         /// <summary>
         /// This game's component, looked up again only when the game's component list changes (a new or loaded game).
@@ -60,13 +55,15 @@ namespace MainButtonBarSystem
             {
                 var list = Current.Game?.components;
                 if (list == null) return null;
-                if (component == null || !ReferenceEquals(list, componentList) || list.Count != componentCount)
+                if (!component.TryGetTarget(out var found) || !componentList.TryGetTarget(out var cachedList) ||
+                    !ReferenceEquals(list, cachedList) || list.Count != componentCount)
                 {
-                    componentList = list;
+                    found = Current.Game.GetComponent<MainButtonBarGameComponent>();
+                    componentList.SetTarget(list);
+                    component.SetTarget(found);
                     componentCount = list.Count;
-                    component = Current.Game.GetComponent<MainButtonBarGameComponent>();
                 }
-                return component;
+                return found;
             }
         }
 
