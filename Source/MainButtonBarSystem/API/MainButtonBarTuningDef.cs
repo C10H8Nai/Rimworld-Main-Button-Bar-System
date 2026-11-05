@@ -155,6 +155,9 @@ namespace MainButtonBarSystem
             /// <summary>Space between a left- or right-aligned button label and the button edge.</summary>
             public float labelSidePadding;
 
+            /// <summary>Where the game's subtle button starts its label: this share of the button width from the left (vanilla 0.15).</summary>
+            public float gameLabelLeftMarginFraction;
+
             /// <summary>Font of button labels this mod draws itself (the game uses Small).</summary>
             public GameFont labelFont;
 

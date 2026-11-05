@@ -61,6 +61,7 @@
       <drawerReopenGuardSeconds>0.3</drawerReopenGuardSeconds>
       <moreButtonLabelPadding>24</moreButtonLabelPadding>
       <labelSidePadding>6</labelSidePadding>     <!-- left/right aligned button labels -->
+      <gameLabelLeftMarginFraction>0.15</gameLabelLeftMarginFraction> <!-- vanilla subtle button label margin, share of the width -->
       <labelFont>Small</labelFont>               <!-- the game's button label font -->
       <hoverLabelOffset>(2,-2)</hoverLabelOffset> <!-- the game's "pressed" shift under the mouse -->
       <iconSize>32</iconSize>                    <!-- the game's main button icon size -->

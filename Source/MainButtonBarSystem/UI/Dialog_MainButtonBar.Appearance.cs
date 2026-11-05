@@ -41,8 +41,9 @@ namespace MainButtonBarSystem
             var left = new Rect(area.x, area.y, Mathf.Floor(area.width * L.listFraction), area.height);
             var right = new Rect(left.xMax + L.panelGap, area.y, area.width - left.width - L.panelGap, area.height);
 
-            if (working.UsesCustomTheme)
+            if (working.appearanceMode == AppearanceMode.Custom)
             {
+                working.customTheme ??= new CustomThemeData();
                 DrawLookList(left);
                 var detail = new Rect(right.x, right.y, right.width, right.height - FooterHeight - L.footerGap);
                 Widgets.DrawMenuSection(detail);
@@ -187,12 +188,12 @@ namespace MainButtonBarSystem
         {
             var data = working.customTheme;
             var baseWorker = BaseWorker;
-            var tex = data.AtlasFor(key, state, out bool replacesTint) ?? baseWorker.ButtonAtlas(state, out replacesTint) ?? Widgets.ButtonSubtleAtlas;
+            var tex = data.AtlasFor(key, state, working.AppearanceDef, out bool replacesTint) ?? Widgets.ButtonSubtleAtlas;
             Widgets.DrawAtlas(rect, tex);
             if (!replacesTint && (state == ButtonVisualState.Mouseover || state == ButtonVisualState.Active)) Widgets.DrawHighlight(rect);
             if (state == ButtonVisualState.Disabled) return;   // the game draws no label on a disabled button
 
-            var color = data.LabelColorFor(key, state) ?? baseWorker.LabelColor(state) ?? Color.white;
+            var color = data.LabelColorFor(key, state, working.AppearanceDef) ?? Color.white;
             var font = data.FontFor(key) switch
             {
                 LookFont.Tiny => GameFont.Tiny,
@@ -281,7 +282,7 @@ namespace MainButtonBarSystem
             var state = which == 1 ? ButtonVisualState.Mouseover : which == 2 ? ButtonVisualState.Active : ButtonVisualState.Normal;
             var layer = data.Layer(key);
             bool set = layer != null && ButtonLook.IsSet(layer.ColorOf(which));
-            var resolved = data.LabelColorFor(key, state) ?? BaseWorker.LabelColor(state) ?? Color.white;
+            var resolved = data.LabelColorFor(key, state, working.AppearanceDef) ?? Color.white;
 
             if (SectionHeader(listing, ("MBBS_Look_Color_" + which).Translate(), set))
             {
@@ -355,7 +356,7 @@ namespace MainButtonBarSystem
             bool set = !stored.NullOrEmpty();
             var row = listing.GetRect(L.textRowHeight);
 
-            var shown = set ? CustomThemes.AtlasTexture(stored) : data.AtlasFor(key, state, out _) ?? BaseWorker.ButtonAtlas(state, out _) ?? Widgets.ButtonSubtleAtlas;
+            var shown = set ? CustomThemes.AtlasTexture(stored) : data.AtlasFor(key, state, working.AppearanceDef, out _) ?? Widgets.ButtonSubtleAtlas;
             var thumb = new Rect(row.x, row.y, row.height * 2f, row.height);
             if (shown != null) Widgets.DrawAtlas(thumb, shown);
 
@@ -396,7 +397,7 @@ namespace MainButtonBarSystem
                     string reference = CustomThemes.AtlasRef(theme, field);
                     var tex = CustomThemes.AtlasTexture(reference);
                     if (tex == null) continue;
-                    options.Add(new FloatMenuOption(AtlasName(reference), () => working.customTheme.GetOrCreate(key).SetAtlas(state, reference), tex, Color.white));
+                    options.Add(new FloatMenuOption(AtlasName(reference), () => (working.customTheme ??= new CustomThemeData()).GetOrCreate(key).SetAtlas(state, reference), tex, Color.white));
                 }
             }
             if (options.Count == 0) options.Add(new FloatMenuOption("MBBS_Look_NoAtlas".Translate(), null));

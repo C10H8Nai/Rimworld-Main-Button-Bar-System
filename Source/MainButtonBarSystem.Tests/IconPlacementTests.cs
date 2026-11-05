@@ -27,6 +27,17 @@ namespace MainButtonBarSystem.Tests
         }
 
         [Fact]
+        public void Alone_LargeIconStaysInsideAndInOrder()
+        {
+            // 32px in a 36px-high button with 6px padding: only 2px of room above and below.
+            var top = IconPlacement.Alone(0f, 0f, 100f, 36f, 32f, IconAnchor.Top, 6f, 0f, 0f);
+            var mid = IconPlacement.Alone(0f, 0f, 100f, 36f, 32f, IconAnchor.Center, 6f, 0f, 0f);
+            var bottom = IconPlacement.Alone(0f, 0f, 100f, 36f, 32f, IconAnchor.Bottom, 6f, 0f, 0f);
+            Assert.True(top.Y <= mid.Y && mid.Y <= bottom.Y);
+            Assert.True(top.Y >= 0f && bottom.Y + bottom.Height <= 36f);
+        }
+
+        [Fact]
         public void Alone_OffsetMovesAndSizeNeverExceedsButton()
         {
             var b = IconPlacement.Alone(0f, 0f, 40f, 36f, 64f, IconAnchor.Center, 6f, 5f, -3f);

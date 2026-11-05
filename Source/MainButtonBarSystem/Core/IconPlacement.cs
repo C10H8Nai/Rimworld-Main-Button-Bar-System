@@ -43,16 +43,19 @@ namespace MainButtonBarSystem.Core
         public static DecorationBox Alone(float x, float y, float width, float height, float size, IconAnchor anchor, float padding, float offsetX, float offsetY)
         {
             size = Math.Max(0f, Math.Min(size, Math.Min(width, height)));
+            // Never more padding than the room around the icon, so an edge anchor is never past the centre or the button.
+            float padX = Math.Min(padding, Math.Max(0f, (width - size) / 2f));
+            float padY = Math.Min(padding, Math.Max(0f, (height - size) / 2f));
             float left = Column(anchor) switch
             {
-                0 => x + padding,
-                2 => x + width - padding - size,
+                0 => x + padX,
+                2 => x + width - padX - size,
                 _ => x + (width - size) / 2f,
             };
             float top = Row(anchor) switch
             {
-                0 => y + padding,
-                2 => y + height - padding - size,
+                0 => y + padY,
+                2 => y + height - padY - size,
                 _ => y + (height - size) / 2f,
             };
             return new DecorationBox(left + offsetX, top + offsetY, size, size);

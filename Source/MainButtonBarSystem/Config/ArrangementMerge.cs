@@ -67,7 +67,8 @@ namespace MainButtonBarSystem
             {
                 result.appearance = imported.appearance;
                 result.appearanceMode = imported.appearanceMode;
-                result.customTheme = imported.customTheme?.Clone();
+                // A preset import keeps the player's own custom look (kept for later, like going back to a preset).
+                if (imported.UsesCustomTheme) result.customTheme = imported.customTheme.Clone();
             }
 
             if ((parts & (ArrangementParts.Layout | ArrangementParts.Sizes | ArrangementParts.Names | ArrangementParts.Icons)) != 0)

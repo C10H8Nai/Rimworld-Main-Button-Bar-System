@@ -172,8 +172,7 @@ namespace MainButtonBarSystem
 
         public void Prune()
         {
-            buttons.RemoveAll(b => b == null || b.defName.NullOrEmpty() || b.IsEmpty);
-            index = null;
+            if (buttons.RemoveAll(b => b == null || b.defName.NullOrEmpty() || b.IsEmpty) > 0) index = null;
         }
 
         public bool IsEmpty
@@ -217,24 +216,33 @@ namespace MainButtonBarSystem
             return b != null && b.font != LookFont.Default ? b.font : all.font;
         }
 
-        /// <summary>A colour of the layers, falling back like themes do: open → mouse-over → normal. Null leaves it to the theme.</summary>
-        public Color? LabelColorFor(string defName, ButtonVisualState state)
+        /// <summary>
+        /// Label colour for a state (design spec 4.5): this button's colour for the state, else all buttons', else the
+        /// theme's own for that state; only then the next state down (open → mouse-over → normal). Null keeps the game's.
+        /// </summary>
+        public Color? LabelColorFor(string defName, ButtonVisualState state, BarAppearanceDef theme)
         {
             var b = Layer(defName);
-            if (state == ButtonVisualState.Active && Pick(b, 2, out var c)) return c;
-            if ((state == ButtonVisualState.Active || state == ButtonVisualState.Mouseover) && Pick(b, 1, out c)) return c;
-            return Pick(b, 0, out c) ? c : (Color?)null;
+            if (state == ButtonVisualState.Active && Exact(b, 2, theme, out var c)) return c;
+            if ((state == ButtonVisualState.Active || state == ButtonVisualState.Mouseover) && Exact(b, 1, theme, out c)) return c;
+            return Exact(b, 0, theme, out c) ? c : (Color?)null;
         }
 
-        private bool Pick(ButtonLook b, int which, out Color color)
+        private bool Exact(ButtonLook b, int which, BarAppearanceDef theme, out Color color)
         {
-            if (b != null && ButtonLook.IsSet(b.ColorOf(which)))
+            if (b != null && ButtonLook.IsSet(b.ColorOf(which))) color = b.ColorOf(which);
+            else if (ButtonLook.IsSet(all.ColorOf(which))) color = all.ColorOf(which);
+            else
             {
-                color = b.ColorOf(which);
-                return true;
+                color = theme == null ? default : which switch
+                {
+                    2 => theme.labelActiveColor,
+                    1 => theme.labelMouseoverColor,
+                    _ => theme.labelColor,
+                };
+                return color.a > 0f;
             }
-            color = all.ColorOf(which);
-            return ButtonLook.IsSet(color);
+            return true;
         }
 
         /// <summary>True when any icon field is changed for this button (or all buttons); unchanged fields come back as the game's.</summary>
@@ -251,30 +259,44 @@ namespace MainButtonBarSystem
         }
 
         /// <summary>
-        /// The background for a state from the layers, falling back like themes do (open → mouse-over → normal,
-        /// disabled → normal). Null leaves it to the theme. Only a texture chosen for the state itself replaces the
-        /// game's tint for that state.
+        /// The background for a state (design spec 4.5): this button's for the state, else all buttons', else the
+        /// theme's own for that state; only then the next state down (open → mouse-over → normal, disabled → normal).
+        /// A texture found for a state other than normal replaces the game's tint, like themes do. Null keeps the game's.
         /// </summary>
-        public Texture2D AtlasFor(string defName, ButtonVisualState state, out bool replacesTint)
+        public Texture2D AtlasFor(string defName, ButtonVisualState state, BarAppearanceDef theme, out bool replacesTint)
         {
             var b = Layer(defName);
-            replacesTint = true;
-            var own = Resolve(b, state);
-            if (own != null) return own;
-            if (state == ButtonVisualState.Active)
+            var s = state;
+            while (true)
             {
-                own = Resolve(b, ButtonVisualState.Mouseover);
-                if (own != null) return own;
+                var tex = ExactAtlas(b, s, theme);
+                if (tex != null)
+                {
+                    replacesTint = s != ButtonVisualState.Normal;
+                    return tex;
+                }
+                if (s == ButtonVisualState.Normal)
+                {
+                    replacesTint = false;
+                    return null;
+                }
+                s = s == ButtonVisualState.Active ? ButtonVisualState.Mouseover : ButtonVisualState.Normal;
             }
-            replacesTint = false;
-            return state == ButtonVisualState.Normal ? null : Resolve(b, ButtonVisualState.Normal);
         }
 
-        private Texture2D Resolve(ButtonLook b, ButtonVisualState state)
+        private Texture2D ExactAtlas(ButtonLook b, ButtonVisualState state, BarAppearanceDef theme)
         {
             string r = b?.AtlasOf(state);
             if (r.NullOrEmpty()) r = all.AtlasOf(state);
-            return r.NullOrEmpty() ? null : CustomThemes.AtlasTexture(r);
+            if (!r.NullOrEmpty()) return CustomThemes.AtlasTexture(r);
+            if (theme == null) return null;
+            return theme.Tex(state switch
+            {
+                ButtonVisualState.Mouseover => theme.buttonMouseover,
+                ButtonVisualState.Active => theme.buttonActive,
+                ButtonVisualState.Disabled => theme.buttonDisabled,
+                _ => theme.button,
+            });
         }
 
         public void ExposeData()
@@ -362,18 +384,14 @@ namespace MainButtonBarSystem
         public override Texture2D ButtonAtlas(ButtonVisualState state, out bool replacesTint)
         {
             var button = ButtonPainter.ActiveButton;
-            if (button != null)
-            {
-                var own = data.AtlasFor(button.defName, state, out replacesTint);
-                if (own != null) return own;
-            }
-            return base.ButtonAtlas(state, out replacesTint);
+            if (button == null) return base.ButtonAtlas(state, out replacesTint);
+            return data.AtlasFor(button.defName, state, def, out replacesTint);
         }
 
         public override Color? LabelColor(ButtonVisualState state)
         {
             var button = ButtonPainter.ActiveButton;
-            return (button != null ? data.LabelColorFor(button.defName, state) : null) ?? base.LabelColor(state);
+            return button != null ? data.LabelColorFor(button.defName, state, def) : base.LabelColor(state);
         }
 
         public override LabelAlign LabelAlignFor(MainButtonDef button) => data.AlignFor(button?.defName);

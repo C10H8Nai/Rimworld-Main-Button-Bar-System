@@ -109,7 +109,7 @@ namespace MainButtonBarSystem
             var theme = ButtonPainter.ActiveTheme;
             if (theme != null) labelColor = theme.LabelColor(ButtonPainter.StateFor(rect)) ?? labelColor;
             bool ownIcon = ButtonPainter.ActiveIcon != null;
-            if (ButtonPainter.ActiveAlign == LabelAlign.Default && !ownIcon) return;
+            if (ButtonPainter.ActiveAlign == LabelAlign.Default && !ownIcon && ButtonPainter.ActiveFont == null) return;
             // Icon only: a label put back by another mod is dropped too (the game passes "" when it draws an icon).
             if (string.IsNullOrEmpty(label) && !ownIcon) return;
             __state = label ?? "";

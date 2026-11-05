@@ -654,8 +654,7 @@ namespace MainButtonBarSystem
                 font = theme.LabelFontFor(def);
                 iconLook = theme.IconLookFor(def, out iconSize, out anchor, out offset);
             }
-            // A font the game does not draw needs this mod to draw the label (centred, like the game's).
-            if (font != null && align == LabelAlign.Default) align = LabelAlign.Center;
+            // With only the font changed, align stays Default and the label patch draws it where the game would.
             if (IconField == null || (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default))
             {
                 def.Worker.DoButton(rect);
@@ -828,6 +827,13 @@ namespace MainButtonBarSystem
         /// <summary>Draws a button label at the active alignment, with the game's 2px "pressed" shift under the mouse.</summary>
         internal static void DrawAlignedLabel(Rect rect, string label, Color? labelColor)
         {
+            if (ActiveAlign == LabelAlign.Default)
+            {
+                // Where the game's subtle button puts it: left, after a margin of part of the button's width.
+                float margin = rect.width * B.gameLabelLeftMarginFraction - B.labelSidePadding;
+                DrawLabel(new Rect(rect.x + margin, rect.y, rect.width - margin, rect.height), label, labelColor ?? Color.white, TextAnchor.MiddleLeft, Mouse.IsOver(rect));
+                return;
+            }
             var anchor = ActiveAlign switch
             {
                 LabelAlign.Left => TextAnchor.MiddleLeft,
