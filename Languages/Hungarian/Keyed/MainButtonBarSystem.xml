@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>Észlelt mod: {0}. Jelenleg az irányítja a gombsort, ezért az itteni változtatások csak akkor lépnek érvénybe, ha ez a mod kap elsőbbséget.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Észlelt mod: {0}. Ez a mod élvez elsőbbséget, ezért annak a gombsorra gyakorolt hatása ki van kapcsolva.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Részletek a Haladó nézetben.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>A(z) {0} rajzolja most az alsó gombsort, ezért az itteni beállításoknak nincs hatása. Ha ennek a modnak a gombsorát szeretnéd használni, kapcsold ki a „Main bar” opciót annak a modnak a beállításaiban, vagy tedd ezt a modot fölé a modlistában.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>A(z) {0} „Main bar” opciója is be van kapcsolva: a jobb alsó sarokban lévő vezérlőket és az ablakokat úgy helyezi el, mintha a saját gombsora látszana, ezért egyes elemek rossz helyre kerülhetnek. Ajánlott kikapcsolni a „Main bar” opciót annak a modnak a beállításaiban.</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>Kompatibilitás: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Ez a mod az első</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Ez a mod rajzolja a gombsort. A(z) {0} gombsorra gyakorolt hatása ki van kapcsolva; a beállításai csak referenciaértékként szolgálnak.</MBBS_Compat_Ours_Desc>

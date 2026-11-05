@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -12,17 +11,21 @@ namespace MainButtonBarSystem
     /// </summary>
     public static class LabelOverrides
     {
+        // Null when a game update renamed the field: def.label still changes, but where the game reads that cached
+        // text the old name may show until the cache is rebuilt (for example after a language change).
         private static readonly AccessTools.FieldRef<Def, TaggedString> CachedLabelCap =
-            AccessTools.FieldRefAccess<Def, TaggedString>("cachedLabelCap");
+            SafeAccess.FieldRef<Def, TaggedString>("cachedLabelCap");
         private static readonly AccessTools.FieldRef<MainButtonDef, string> CachedShortenedLabelCap =
-            AccessTools.FieldRefAccess<MainButtonDef, string>("cachedShortenedLabelCap");
+            SafeAccess.FieldRef<MainButtonDef, string>("cachedShortenedLabelCap");
         private static readonly AccessTools.FieldRef<MainButtonDef, float> CachedLabelCapWidth =
-            AccessTools.FieldRefAccess<MainButtonDef, float>("cachedLabelCapWidth");
+            SafeAccess.FieldRef<MainButtonDef, float>("cachedLabelCapWidth");
         private static readonly AccessTools.FieldRef<MainButtonDef, float> CachedShortenedLabelCapWidth =
-            AccessTools.FieldRefAccess<MainButtonDef, float>("cachedShortenedLabelCapWidth");
+            SafeAccess.FieldRef<MainButtonDef, float>("cachedShortenedLabelCapWidth");
 
         /// <summary>defName -> label this class last wrote.</summary>
         private static readonly Dictionary<string, string> applied = new Dictionary<string, string>();
+
+        private static readonly List<string> appliedKeys = new List<string>();
 
         /// <summary>Reloaded defs carry their own labels again; renames are applied anew on the next sync.</summary>
         internal static void ResetCache() => applied.Clear();
@@ -41,7 +44,9 @@ namespace MainButtonBarSystem
             }
 
             if (applied.Count == 0) return;
-            foreach (var defName in applied.Keys.ToList())
+            appliedKeys.Clear();
+            appliedKeys.AddRange(applied.Keys);
+            foreach (var defName in appliedKeys)
             {
                 if (!config.Get(defName).label.NullOrEmpty()) continue;
                 var def = DefDatabase<MainButtonDef>.GetNamedSilentFail(defName);
@@ -54,10 +59,10 @@ namespace MainButtonBarSystem
         private static void SetLabel(MainButtonDef def, string label)
         {
             def.label = label;
-            CachedLabelCap(def) = default;
-            CachedShortenedLabelCap(def) = null;
-            CachedLabelCapWidth(def) = -1f;
-            CachedShortenedLabelCapWidth(def) = -1f;
+            if (CachedLabelCap != null) CachedLabelCap(def) = default;
+            if (CachedShortenedLabelCap != null) CachedShortenedLabelCap(def) = null;
+            if (CachedLabelCapWidth != null) CachedLabelCapWidth(def) = -1f;
+            if (CachedShortenedLabelCapWidth != null) CachedShortenedLabelCapWidth(def) = -1f;
         }
     }
 }

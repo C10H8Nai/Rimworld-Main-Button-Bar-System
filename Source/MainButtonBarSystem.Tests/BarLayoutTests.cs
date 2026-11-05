@@ -118,12 +118,52 @@ namespace MainButtonBarSystem.Tests
         }
 
         [Fact]
-        public void Collapse_WithoutFill_UsesNaturalWidthsAndNeverScrolls()
+        public void Collapse_WithoutFill_UsesNaturalWidthsWhenTheyFit()
         {
-            var r = BarLayout.Compute(Items("a", "b", "c"), Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 200, DefaultWidth = 100, MinWidth = 50 }, fill: false));
+            var r = BarLayout.Compute(Items("a", "b", "c"), Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 400, DefaultWidth = 100, MinWidth = 50 }, fill: false));
 
             Assert.Equal(new[] { 100, 100, 100 }, r.Center.Select(c => c.Width));
             Assert.False(r.NeedsScroll);
+        }
+
+        [Fact]
+        public void Collapse_WithoutFill_ShrinksToFitInsteadOfOverflowing()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b", width: 200), new LayoutItem("c") };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 200, DefaultWidth = 100, MinWidth = 50 }, fill: false));
+
+            Assert.False(r.NeedsScroll);
+            Assert.Equal(new[] { 50, 100, 50 }, r.Center.Select(c => c.Width));
+            Assert.Equal(200, r.ContentWidth);
+            Assert.True(r.Center.All(c => c.X + c.Width <= r.ViewportWidth));
+        }
+
+        [Fact]
+        public void Collapse_WithoutFill_ShrinksWithGapsAndHalfButtons()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b", minimized: true), new LayoutItem("c") };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 210, DefaultWidth = 100, MinWidth = 50, Gap = 5 }, fill: false));
+
+            // Naturals 100 + 50 + 100 plus two 5px gaps do not fit 210: the 200px left for buttons is shared in proportion.
+            Assert.Equal(new[] { 80, 40, 80 }, r.Center.Select(c => c.Width));
+            Assert.Equal(210, r.ContentWidth);
+            Assert.False(r.NeedsScroll);
+        }
+
+        [Fact]
+        public void Collapse_WithoutFill_ShrinksAroundMoreAndPinnedButtons()
+        {
+            var items = new List<LayoutItem>
+            {
+                new LayoutItem("a"), new LayoutItem("b"), new LayoutItem("c"), new LayoutItem("d", inDrawer: true),
+                new LayoutItem("menu", pin: PinPosition.Right),
+            };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 300, DefaultWidth = 100, MinWidth = 50, MoreButtonWidth = 60 }, fill: false));
+
+            var more = r.More.Value;
+            Assert.Equal(300, r.Right.Last().X + r.Right.Last().Width);
+            Assert.True(r.ViewportX + r.ContentWidth <= more.X);
+            Assert.Equal(new[] { "a", "b", "c" }, r.Center.Select(c => c.Key));
         }
 
         [Fact]

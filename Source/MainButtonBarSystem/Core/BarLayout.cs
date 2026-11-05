@@ -287,8 +287,13 @@ namespace MainButtonBarSystem.Core
 
             if (content <= viewportWidth || !allowScroll)
             {
+                int target = viewportWidth - gap * Math.Max(0, center.Count - 1);
                 if (options.FillScreen && center.Count > 0 && content < viewportWidth)
-                    Stretch(naturals, viewportWidth - gap * (center.Count - 1));
+                    ScaleTo(naturals, target);
+                // A mode that cannot scroll shrinks the buttons to fit instead of letting them run past the
+                // viewport (under More and the pinned buttons, or off the screen).
+                else if (content > viewportWidth)
+                    ScaleTo(naturals, Math.Max(0, target));
 
                 int cx = 0;
                 for (int i = 0; i < center.Count; i++)
@@ -318,12 +323,12 @@ namespace MainButtonBarSystem.Core
             result.ContentWidth = sx - gap;
         }
 
-        /// <summary>Scales widths up proportionally so they sum to exactly <paramref name="target"/>; the last absorbs rounding.</summary>
-        private static void Stretch(int[] widths, int target)
+        /// <summary>Scales widths proportionally so they sum to exactly <paramref name="target"/>; the last absorbs rounding.</summary>
+        private static void ScaleTo(int[] widths, int target)
         {
             long total = 0;
             foreach (int w in widths) total += w;
-            if (total <= 0 || target <= total) return;
+            if (widths.Length == 0 || total <= 0 || target < 0 || target == total) return;
 
             int assigned = 0;
             for (int i = 0; i < widths.Length - 1; i++)

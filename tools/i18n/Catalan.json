@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "S’ha detectat {0}: ara mateix controla la barra, de manera que els canvis d’aquí només tindran efecte quan aquest mod tingui prioritat.",
     "MBBS_Compat_OursNotice": "S’ha detectat {0}: aquest mod té prioritat, de manera que s’ha desactivat el seu efecte sobre la barra.",
     "MBBS_Compat_SeeAdvanced": "Detalls al mode Avançat.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "{0} està dibuixant la barra inferior, de manera que la configuració d’aquí no té cap efecte. Per a fer servir la barra d’aquest mod, desactiveu «Main bar» a la configuració d’aquell mod, o col·loqueu aquest mod per sobre d’aquell a la llista de mods.",
+    "MBBS_Notice_UIRethemed_BothOn": "{0} també té activat «Main bar»: col·loca els controls de la cantonada inferior dreta i les finestres com si es mostrés la seva pròpia barra, de manera que alguns elements poden quedar desplaçats. Es recomana desactivar «Main bar» a la configuració d’aquell mod.",
     "MBBS_Compat_Header": "Compatibilitat: {0}",
     "MBBS_Compat_Ours": "Primer aquest mod",
     "MBBS_Compat_Ours_Desc": "Aquest mod dibuixa la barra. L’efecte de {0} sobre la barra es desactiva; la seva configuració només s’utilitza com a valors de referència.",

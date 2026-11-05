@@ -473,17 +473,43 @@ namespace MainButtonBarSystem
             return def.HasLabelColor ? def.labelColor : (Color?)null;
         }
 
-        public virtual string MoreButtonLabel(int drawerCount) => "MBBS_More".Translate(drawerCount);
+        private int moreLabelCount = -1;
+        private LoadedLanguage moreLabelLanguage;
+        private string moreLabel;
+
+        /// <summary>"More (N)" in the current language; translated again only when N or the language changes.</summary>
+        public virtual string MoreButtonLabel(int drawerCount)
+        {
+            var language = LanguageDatabase.activeLanguage;
+            if (moreLabel == null || drawerCount != moreLabelCount || language != moreLabelLanguage)
+            {
+                moreLabel = "MBBS_More".Translate(drawerCount);
+                moreLabelCount = drawerCount;
+                moreLabelLanguage = language;
+            }
+            return moreLabel;
+        }
+
+        private string measuredLabel;
+        private GameFont measuredFont;
+        private float measuredWidth;
 
         /// <summary>Width of the More button: the player's setting, or the label's width when that is 0.</summary>
         public virtual float MoreButtonWidth(BarConfig config, int drawerCount)
         {
             if (config.MoreButtonWidth > 0) return config.MoreButtonWidth;
-            var font = Text.Font;
-            Text.Font = MainButtonBarTuningDef.Current.behaviour.labelFont;
-            float width = Text.CalcSize(MoreButtonLabel(drawerCount)).x;
-            Text.Font = font;
-            return width + MainButtonBarTuningDef.Current.behaviour.moreButtonLabelPadding;
+            var b = MainButtonBarTuningDef.Current.behaviour;
+            string label = MoreButtonLabel(drawerCount);
+            if (!ReferenceEquals(label, measuredLabel) || b.labelFont != measuredFont)
+            {
+                var font = Text.Font;
+                Text.Font = b.labelFont;
+                measuredWidth = Text.CalcSize(label).x;
+                Text.Font = font;
+                measuredLabel = label;
+                measuredFont = b.labelFont;
+            }
+            return measuredWidth + b.moreButtonLabelPadding;
         }
 
         /// <summary>Returns true when clicked.</summary>
@@ -562,8 +588,9 @@ namespace MainButtonBarSystem
 
         private static MainButtonBarTuningDef.Behaviour B => MainButtonBarTuningDef.Current.behaviour;
 
+        // Null when a game update renamed the field: buttons are then drawn by the game as they are, without icon settings.
         private static readonly HarmonyLib.AccessTools.FieldRef<MainButtonDef, Texture2D> IconField =
-            HarmonyLib.AccessTools.FieldRefAccess<MainButtonDef, Texture2D>("icon");
+            SafeAccess.FieldRef<MainButtonDef, Texture2D>("icon");
 
         /// <summary>
         /// Draws through the game's DoButton. Icon settings work by swapping the def's icon only for this call (the
@@ -580,15 +607,18 @@ namespace MainButtonBarSystem
             var settings = button.Settings ?? ButtonOverride.Empty;
             var custom = CustomIcons.Resolve(settings.icon);
             var mode = BarConfigManager.Active.IconModeFor(settings);
-            if (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default)
+            if (IconField == null || (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default))
             {
                 def.Worker.DoButton(rect);
                 return;
             }
 
+            // Load the button's own icon before remembering the field: restoring a field saved before the first load
+            // would put null back, and the game would look the icon up again through every mod on each draw.
+            Texture2D own = SafeIcon(def);
             var savedIcon = IconField(def);
             var savedPath = def.iconPath;
-            Texture2D effective = custom ?? SafeIcon(def);
+            Texture2D effective = custom ?? own;
 
             ActiveAlign = align;
             ActiveTheme = themed ? theme : null;
@@ -641,7 +671,8 @@ namespace MainButtonBarSystem
         /// <summary>The button's own icon (after other mods' patches), loading it if needed.</summary>
         public static Texture2D SafeIcon(MainButtonDef def)
         {
-            if (def == null || string.IsNullOrEmpty(def.iconPath)) return IconField(def);
+            if (def == null) return null;
+            if (string.IsNullOrEmpty(def.iconPath)) return IconField != null ? IconField(def) : def.Icon;
             try
             {
                 return def.Icon;

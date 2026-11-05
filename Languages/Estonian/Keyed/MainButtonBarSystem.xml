@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>Tuvastati {0}: see juhib praegu riba, seega jõustuvad siinsed muudatused alles siis, kui sellel modifikatsioonil on eesõigus.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Tuvastati {0}: sellel modifikatsioonil on eesõigus, seega on tuvastatud modifikatsiooni mõju ribale välja lülitatud.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Üksikasjad vaates Täpsem.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} joonistab praegu alumist riba, seega pole siinsetel seadetel mõju. Selle modifikatsiooni riba kasutamiseks lülita tuvastatud modifikatsiooni seadetes „Main bar“ välja või tõsta see modifikatsioon modifikatsioonide nimekirjas sellest ülespoole.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>Modifikatsioonil {0} on ka „Main bar“ sisse lülitatud: see paigutab paremas alanurgas olevad juhtelemendid ja aknad nii, nagu oleks näha selle enda riba, seega võivad asjad olla paigast ära. Soovitatav on tuvastatud modifikatsiooni seadetes „Main bar“ välja lülitada.</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>Ühilduvus: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Esmalt see modifikatsioon</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Riba joonistab see modifikatsioon. Modifikatsiooni {0} mõju ribale on välja lülitatud; selle seadeid kasutatakse ainult võrdlusväärtustena.</MBBS_Compat_Ours_Desc>

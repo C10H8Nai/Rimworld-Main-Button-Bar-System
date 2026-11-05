@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "{0} wurde erkannt und steuert derzeit die Leiste. Änderungen hier wirken daher erst, wenn diese Mod Vorrang hat.",
     "MBBS_Compat_OursNotice": "{0} wurde erkannt: Diese Mod hat Vorrang, daher ist die Wirkung von {0} auf die Leiste abgeschaltet.",
     "MBBS_Compat_SeeAdvanced": "Details unter „Erweitert“.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "{0} zeichnet gerade die untere Leiste, daher haben die Einstellungen hier keine Wirkung. Um die Leiste dieser Mod zu nutzen, schalte „Main bar“ in den dortigen Mod-Einstellungen ab oder setze diese Mod in der Mod-Liste darüber.",
+    "MBBS_Notice_UIRethemed_BothOn": "Bei {0} ist ebenfalls „Main bar“ eingeschaltet: Die Mod platziert die Steuerelemente unten rechts und die Fenster so, als würde ihre eigene Leiste angezeigt, daher kann einiges verrutscht sein. Es wird empfohlen, „Main bar“ in den dortigen Mod-Einstellungen abzuschalten.",
     "MBBS_Compat_Header": "Kompatibilität: {0}",
     "MBBS_Compat_Ours": "Diese Mod hat Vorrang",
     "MBBS_Compat_Ours_Desc": "Diese Mod zeichnet die Leiste. Die Wirkung von {0} auf die Leiste ist abgeschaltet; die dortigen Einstellungen dienen nur als Referenzwerte.",

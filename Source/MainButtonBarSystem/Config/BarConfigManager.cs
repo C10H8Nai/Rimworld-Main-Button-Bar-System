@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Verse;
 
@@ -32,10 +33,37 @@ namespace MainButtonBarSystem
             {
                 if (InGame)
                 {
-                    var component = Current.Game.GetComponent<MainButtonBarGameComponent>();
+                    var component = Component;
                     if (component?.config != null) return component.config;
                 }
                 return Template ?? Untouched;
+            }
+        }
+
+        // Weak, so a game left for the main menu is not kept alive by this cache.
+        private static readonly System.WeakReference<List<GameComponent>> componentList = new System.WeakReference<List<GameComponent>>(null);
+        private static readonly System.WeakReference<MainButtonBarGameComponent> component = new System.WeakReference<MainButtonBarGameComponent>(null);
+        private static int componentCount;
+
+        /// <summary>
+        /// This game's component, looked up again only when the game's component list changes (a new or loaded game).
+        /// The settings are read several times per button on every GUI event, and the list can be long with many mods.
+        /// </summary>
+        private static MainButtonBarGameComponent Component
+        {
+            get
+            {
+                var list = Current.Game?.components;
+                if (list == null) return null;
+                if (!component.TryGetTarget(out var found) || !componentList.TryGetTarget(out var cachedList) ||
+                    !ReferenceEquals(list, cachedList) || list.Count != componentCount)
+                {
+                    found = Current.Game.GetComponent<MainButtonBarGameComponent>();
+                    componentList.SetTarget(list);
+                    component.SetTarget(found);
+                    componentCount = list.Count;
+                }
+                return found;
             }
         }
 
@@ -59,7 +87,7 @@ namespace MainButtonBarSystem
             config.Prune();
             if (InGame)
             {
-                var component = Current.Game.GetComponent<MainButtonBarGameComponent>();
+                var component = Component;
                 if (component != null)
                 {
                     component.config = config;

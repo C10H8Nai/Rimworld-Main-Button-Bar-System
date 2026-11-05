@@ -23,6 +23,7 @@ Take control of the bottom bar. With a big mod list it can hold dozens of button
 [*]Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]. RimWorld 1.7.
 [*]Buttons are still drawn by the game, so icon packs (Bradson's Main Button Icons, Vanilla Textures Expanded), replaced windows (Modern History Menu) and added buttons keep working.
 [*]Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected. You choose who draws the bar; default: the other mod keeps it. Their settings are shown for reference; importing them is experimental.
+[*]UI Rethemed - Main Bar also draws the main button bar. With both installed, the mod higher in the mod list draws it; to use this mod's bar, turn off "Main bar" in its settings. The settings window tells you which case you are in.
 [*]Works with Better Sliders: this mod draws its own sliders with a number box, so nothing overlaps.
 [*]Removing this mod from a save logs one "could not find class" message on the next load; this is harmless.
 [/list]
@@ -47,6 +48,7 @@ Settings: Options > Mod settings > Main Button Bar System, or the gear in the "M
 [*]分享排法：取名后导出成文件或文本（可贴到 Discord）。导入前会先列出哪些按钮来自你没装的模组、缺少的主题或图标，并可勾选只导入哪几部分。一键做成可上传创意工坊的排序模组，PNG 图标一并打包。
 [*]外观标签页与主题：默认为原版外观，另有 6 款内置主题（5 款参考各扩展配色：帝国、信条、基因实验室、虚空、星航，不需要扩展；以及有角色立绘的二次元风主题萘伊）。只用 XML＋图片就能做主题模组：整张背景图、栏角的立绘等装饰图、每个按钮里的图、各状态的文字颜色。主题模板和生成脚本在模组的 ThemeTemplate 文件夹。
 [*]兼容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可选择由谁绘制（默认由对方绘制）；导入对方设置为实验性功能。
+[*]UI Rethemed - Main Bar 也会绘制主按钮栏，两个都装时由排在前面的模组绘制；要用本模组的按钮栏，请在它的设置里关掉「Main bar」。设置窗口会提示目前的情况。
 [*]兼容 Better Sliders：本模组的滑块自行绘制并附数字框，不会被盖住。
 [/list]
 需要 Harmony。从存档中移除本模组时，下次读档会出现一次「找不到类」的记录，不影响游戏。
@@ -62,6 +64,7 @@ Settings: Options > Mod settings > Main Button Bar System, or the gear in the "M
 [*]分享排法：取名後匯出成檔案或文字（可貼到 Discord）。匯入前會先列出哪些按鈕來自你沒裝的模組、缺少的主題或圖示，並可勾選只匯入哪幾部分。一鍵做成可上傳工作坊的排序模組，PNG 圖示一起打包。
 [*]外觀分頁與主題：預設為原版外觀，另有 6 款內建主題（5 款參考各擴充配色：帝國、信條、基因實驗室、虛空、星航，不需要擴充；以及有角色立繪的二次元風主題萘伊）。只用 XML＋圖片就能做主題模組：整張背景圖、列角的立繪等裝飾圖、每顆按鈕裡的圖、各狀態的文字顏色。主題範本和產生腳本在模組的 ThemeTemplate 資料夾。
 [*]相容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可選擇由誰繪製（預設由對方繪製）；匯入對方設定為實驗性功能。
+[*]UI Rethemed - Main Bar 也會畫主按鈕列，兩個都裝時由排前面的模組畫；要用本模組的列，請在它的設定關掉「Main bar」。設定視窗會提示目前的情況。
 [*]相容 Better Sliders：本模組的滑桿自行繪製並附數字框，不會被蓋住。
 [/list]
 需要 Harmony。從存檔中移除本模組時，下次讀檔會出現一次「找不到類別」的紀錄，不影響遊戲。

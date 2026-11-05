@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using MainButtonBarSystem.Core;
 using RimWorld;
 using UnityEngine;
+using Verse;
 
 namespace MainButtonBarSystem
 {
@@ -62,7 +64,7 @@ namespace MainButtonBarSystem
         public void DrawButton(BarButton button, Rect rect)
         {
             onBar.Add(button.Def);
-            Appearance.DrawButton(button, rect);
+            ButtonGuard.Draw(button, rect, Appearance, drawer: false);
         }
 
         /// <summary>Records a button that is reachable through a drawer instead of the bar.</summary>
@@ -79,5 +81,108 @@ namespace MainButtonBarSystem
 
         /// <summary>While the mouse is inside this area, the mouse wheel scrolls the bar instead of zooming the map.</summary>
         public void CaptureScrollWheel(Rect rect) => ScrollCaptureRect = rect;
+    }
+
+    /// <summary>
+    /// Draws one button through the appearance, so that one failing button cannot take the bar down. A failure on an
+    /// input event (a click opening the button's window, for example) is the button's own: it is logged once and the
+    /// event skipped. A failure on Layout or Repaint is told apart by drawing the button again plainly, through its
+    /// own MainButtonWorker.DoButton as the game would: if that throws too, the button's own worker is at fault
+    /// (logged once, skipped); if it works, this mod's drawing of that button is at fault (a theme worker, an icon
+    /// setting another mod's patch does not expect), and from then on that button is drawn the game's way with this
+    /// appearance, so a broken theme costs one exception per button, not one per button and event.
+    /// </summary>
+    internal static class ButtonGuard
+    {
+        /// <summary>Buttons whose own worker threw; not drawn again plainly, so a broken one costs one exception per event.</summary>
+        private static readonly HashSet<string> ownFailures = new HashSet<string>();
+
+        /// <summary>Buttons whose own worker threw on input; logged once.</summary>
+        private static readonly HashSet<string> inputFailures = new HashSet<string>();
+
+        /// <summary>Appearance and button pairs that only draw the game's way.</summary>
+        private static readonly HashSet<(BarAppearanceWorker, MainButtonDef)> plain = new HashSet<(BarAppearanceWorker, MainButtonDef)>();
+
+        private static bool appearanceFailureLogged;
+
+        public static void Draw(BarButton button, Rect rect, BarAppearanceWorker appearance, bool drawer)
+        {
+            var def = button.Def;
+            if (plain.Count > 0 && plain.Contains((appearance, def)))
+            {
+                DrawPlain(button, rect);
+                return;
+            }
+
+            var type = Event.current.type;
+            try
+            {
+                if (drawer) appearance.DrawDrawerButton(button, rect);
+                else appearance.DrawButton(button, rect);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                ResetGui();
+                string key = def?.defName ?? "?";
+                if (type != EventType.Layout && type != EventType.Repaint)
+                {
+                    if (inputFailures.Add(key)) LogOwn(def, key, e, "while handling input");
+                    return;
+                }
+                if (ownFailures.Contains(key)) return;
+
+                try
+                {
+                    def?.Worker?.DoButton(rect);
+                }
+                catch (Exception own) when (!(own is ExitGUIException))
+                {
+                    ResetGui();
+                    ownFailures.Add(key);
+                    LogOwn(def, key, own, "while being drawn");
+                    return;
+                }
+
+                plain.Add((appearance, def));
+                string theme = appearance?.def?.LabelCap.ToString() ?? "?";
+                if (!appearanceFailureLogged)
+                {
+                    appearanceFailureLogged = true;
+                    Log.Error(MainButtonBarSystemMod.LogPrefix + "Main button " + key + " could not be drawn with the appearance '" + theme +
+                              "' and this mod's button settings; it, and any other button failing the same way, is drawn the game's way from now on. " + e);
+                }
+                else if (Prefs.DevMode)
+                {
+                    Log.Message(MainButtonBarSystemMod.LogPrefix + "Main button " + key + " is also drawn the game's way with the appearance '" + theme + "': " + e.Message);
+                }
+            }
+        }
+
+        private static void DrawPlain(BarButton button, Rect rect)
+        {
+            try
+            {
+                button.Def.Worker.DoButton(rect);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                ResetGui();
+                string key = button.Def?.defName ?? "?";
+                if (ownFailures.Add(key)) LogOwn(button.Def, key, e, "while being drawn");
+            }
+        }
+
+        private static void LogOwn(MainButtonDef def, string key, Exception e, string when)
+        {
+            string mod = def?.modContentPack?.Name ?? "?";
+            Log.Error(MainButtonBarSystemMod.LogPrefix + "Main button " + key + " (from " + mod + ") threw " + when + "; the rest of the bar keeps working. " + e);
+        }
+
+        private static void ResetGui()
+        {
+            GUI.color = Color.white;
+            Text.Font = GameFont.Small;
+            Text.Anchor = TextAnchor.UpperLeft;
+        }
     }
 }

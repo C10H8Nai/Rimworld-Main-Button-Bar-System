@@ -46,6 +46,9 @@ namespace MainButtonBarSystem
     {
         private static Dictionary<string, ButtonOverride> byDefName;
 
+        /// <summary>Changes whenever the declared or runtime defaults may have changed, for caches built from them.</summary>
+        public static int Version { get; private set; }
+
         /// <summary>Defaults for a button, or null when its mod declared none.</summary>
         public static ButtonOverride For(string defName)
         {
@@ -78,10 +81,15 @@ namespace MainButtonBarSystem
         {
             runtime[defaults.defName] = defaults;
             byDefName = null;
+            Version++;
         }
 
         /// <summary>Rebuild from the (new) defs on next use; runtime defaults are kept.</summary>
-        internal static void ResetCache() => byDefName = null;
+        internal static void ResetCache()
+        {
+            byDefName = null;
+            Version++;
+        }
 
         private static void Build()
         {

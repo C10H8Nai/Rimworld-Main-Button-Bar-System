@@ -64,6 +64,8 @@ namespace MainButtonBarSystem
         private static readonly Vector2 Unreachable = new Vector2(-100000f, -100000f);
 
         private readonly List<LayoutItem> items = new List<LayoutItem>();
+        private readonly List<LayoutItem> itemPool = new List<LayoutItem>();
+        private readonly LayoutOptions options = new LayoutOptions();
         private readonly Dictionary<string, BarButton> byKey = new Dictionary<string, BarButton>();
         private readonly List<BarButton> drawer = new List<BarButton>();
         private float scrollOffset;
@@ -74,26 +76,32 @@ namespace MainButtonBarSystem
             byKey.Clear();
             drawer.Clear();
 
+            // Layout inputs are reused between GUI events instead of allocated for every button each time.
             int drawerCount = 0;
             foreach (var b in ctx.Buttons)
             {
                 byKey[b.Key] = b;
-                items.Add(new LayoutItem(b.Key, b.Minimized, b.Width, b.Pin, b.InDrawer));
+                if (items.Count == itemPool.Count) itemPool.Add(new LayoutItem(b.Key));
+                var item = itemPool[items.Count];
+                item.Key = b.Key;
+                item.Minimized = b.Minimized;
+                item.Width = b.Width;
+                item.Pin = b.Pin;
+                item.InDrawer = b.InDrawer;
+                items.Add(item);
                 if (b.InDrawer && def.usesDrawer) drawerCount++;
             }
 
             var config = ctx.Config;
-            var layout = BarLayout.Compute(items, new LayoutOptions
-            {
-                Mode = def.layout,
-                BarWidth = (int)ctx.BarRect.width,
-                DefaultWidth = config.DefaultWidth,
-                MinWidth = config.MinWidth,
-                Gap = config.Gap,
-                FillScreen = config.FillScreen,
-                MoreButtonWidth = Mathf.CeilToInt(ctx.Appearance.MoreButtonWidth(config, drawerCount)),
-                ArrowWidth = config.ArrowWidth,
-            });
+            options.Mode = def.layout;
+            options.BarWidth = (int)ctx.BarRect.width;
+            options.DefaultWidth = config.DefaultWidth;
+            options.MinWidth = config.MinWidth;
+            options.Gap = config.Gap;
+            options.FillScreen = config.FillScreen;
+            options.MoreButtonWidth = Mathf.CeilToInt(ctx.Appearance.MoreButtonWidth(config, drawerCount));
+            options.ArrowWidth = config.ArrowWidth;
+            var layout = BarLayout.Compute(items, options);
 
             float x0 = ctx.BarRect.x, y = ctx.BarRect.y, h = ctx.BarRect.height;
             ctx.Appearance.DrawBarBackground(ctx.BarRect);

@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "{0} 감지됨: 지금은 해당 모드가 바를 제어하므로, 여기서 바꾼 내용은 이 모드를 우선으로 해야 적용됩니다.",
     "MBBS_Compat_OursNotice": "{0} 감지됨: 이 모드가 우선이므로, 해당 모드가 바에 주는 효과는 꺼져 있습니다.",
     "MBBS_Compat_SeeAdvanced": "자세한 내용은 '고급'에서 확인하세요.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "{0} 모드가 하단 바를 그리고 있으므로 여기서 한 설정은 적용되지 않습니다. 이 모드의 바를 쓰려면 해당 모드의 설정에서 'Main bar'를 끄거나, 모드 목록에서 이 모드를 해당 모드보다 위에 두세요.",
+    "MBBS_Notice_UIRethemed_BothOn": "{0} 모드의 'Main bar'도 켜져 있습니다. 해당 모드는 자신의 바가 표시된 것처럼 오른쪽 아래 컨트롤과 창 위치를 배치하므로 화면 요소가 어긋날 수 있습니다. 해당 모드의 설정에서 'Main bar'를 끄는 것을 권장합니다.",
     "MBBS_Compat_Header": "호환성: {0}",
     "MBBS_Compat_Ours": "이 모드 우선",
     "MBBS_Compat_Ours_Desc": "이 모드가 바를 그립니다. {0} 모드가 바에 주는 효과는 꺼지고, 그 설정은 참고값으로만 쓰입니다.",

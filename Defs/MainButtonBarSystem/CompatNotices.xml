@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Mods that overlap with this one but are left alone: the settings window only shows a notice. Nothing is
+    switched off and no patches are removed (compare CompatBridges.xml). The first notice whose conditions hold
+    is shown; textKey is a translation key and {0} is modName.
+    setting: Any / On / Off / Unknown (the switch could not be read).  bar: Any / ThisMod / NotThisMod (who drew
+    the bar on the last draw; at the main menu only Any matches).
+  -->
+
+  <!-- [LFS] UI Rethemed - Main Bar draws its own bar in a DoButtons prefix of the same priority as this mod's, so
+       whichever mod is earlier in the mod list draws. Its other changes (controls moved into the bar, free area,
+       camera edges, tab window and world inspect pane positions) follow its "Main bar" switch, not whether it
+       actually drew, so with both bars on the layout can be off. -->
+  <MainButtonBarSystem.CompatNoticeDef>
+    <defName>UIRethemedMainBar</defName>
+    <label>UI Rethemed - Main Bar</label>
+    <modName>UI Rethemed - Main Bar</modName>
+    <packageIds>
+      <li>LazyFridayStudio.UIRethemed.MainBar</li>
+    </packageIds>
+    <settingType>UIRethemed.MainBar.MainBar</settingType>
+    <settingMember>Settings.mainButtons</settingMember>
+    <notices>
+      <li>
+        <setting>On</setting>
+        <bar>NotThisMod</bar>
+        <textKey>MBBS_Notice_UIRethemed_TheyDraw</textKey>
+      </li>
+      <li>
+        <setting>On</setting>
+        <bar>ThisMod</bar>
+        <textKey>MBBS_Notice_UIRethemed_BothOn</textKey>
+      </li>
+    </notices>
+  </MainButtonBarSystem.CompatNoticeDef>
+</Defs>

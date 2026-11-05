@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "Wykryto mod {0}: obecnie to on steruje paskiem, więc zmiany tutaj zadziałają dopiero wtedy, gdy pierwszeństwo będzie miał ten mod.",
     "MBBS_Compat_OursNotice": "Wykryto mod {0}: pierwszeństwo ma ten mod, więc wpływ modu {0} na pasek jest wyłączony.",
     "MBBS_Compat_SeeAdvanced": "Szczegóły w widoku „Zaawansowane”.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "Dolny pasek rysuje teraz mod {0}, więc ustawienia tutaj nie mają żadnego efektu. Aby używać paska z tego modu, wyłącz opcję „Main bar” w ustawieniach tamtego modu albo umieść ten mod nad nim na liście modów.",
+    "MBBS_Notice_UIRethemed_BothOn": "Mod {0} ma też włączoną opcję „Main bar”: rozmieszcza elementy sterujące w prawym dolnym rogu i okna tak, jakby wyświetlany był jego własny pasek, więc niektóre elementy mogą być przesunięte. Zalecamy wyłączenie opcji „Main bar” w ustawieniach tamtego modu.",
     "MBBS_Compat_Header": "Kompatybilność: {0}",
     "MBBS_Compat_Ours": "Pierwszeństwo ma ten mod",
     "MBBS_Compat_Ours_Desc": "Pasek rysuje ten mod. Wpływ modu {0} na pasek jest wyłączony, a jego ustawienia służą tylko jako wartości odniesienia.",

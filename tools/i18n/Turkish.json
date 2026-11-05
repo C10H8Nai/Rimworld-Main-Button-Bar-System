@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "{0} algılandı: bar şu an onun kontrolünde, bu yüzden buradaki değişiklikler yalnızca bu mod öncelikliyken geçerli olur.",
     "MBBS_Compat_OursNotice": "{0} algılandı: öncelik bu modda, bu yüzden onun bar üzerindeki etkisi kapatıldı.",
     "MBBS_Compat_SeeAdvanced": "Ayrıntılar Gelişmiş görünümde.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "Alttaki barı şu an {0} çiziyor, bu yüzden buradaki ayarların etkisi yok. Bu modun barını kullanmak için o modun ayarlarından \"Main bar\" seçeneğini kapat veya mod listesinde bu modu onun üstüne taşı.",
+    "MBBS_Notice_UIRethemed_BothOn": "{0} modunda \"Main bar\" seçeneği de açık: sağ alttaki kontrolleri ve pencere konumlarını kendi barı gösteriliyormuş gibi yerleştiriyor, bu yüzden bazı öğeler kayabilir. O modun ayarlarından \"Main bar\" seçeneğini kapatman önerilir.",
     "MBBS_Compat_Header": "Uyumluluk: {0}",
     "MBBS_Compat_Ours": "Önce bu mod",
     "MBBS_Compat_Ours_Desc": "Barı bu mod çizer. {0} modunun bar üzerindeki etkisi kapatılır; ayarları yalnızca referans değeri olarak kullanılır.",

@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "Rilevata la mod {0}: al momento è lei a controllare la barra, quindi le modifiche fatte qui hanno effetto solo se questa mod ha la priorità.",
     "MBBS_Compat_OursNotice": "Rilevata la mod {0}: questa mod ha la priorità, quindi l'effetto di {0} sulla barra è disattivato.",
     "MBBS_Compat_SeeAdvanced": "Dettagli in Avanzate.",
+    "MBBS_Notice_UIRethemed_TheyDraw": "{0} sta disegnando la barra inferiore, quindi le impostazioni qui non hanno alcun effetto. Per usare la barra di questa mod, disattiva «Main bar» nelle impostazioni di quella mod, oppure metti questa mod sopra di essa nella lista delle mod.",
+    "MBBS_Notice_UIRethemed_BothOn": "{0} ha attivo anche «Main bar»: dispone i controlli in basso a destra e le finestre come se fosse visibile la sua barra, quindi alcuni elementi potrebbero risultare fuori posto. Si consiglia di disattivare «Main bar» nelle impostazioni di quella mod.",
     "MBBS_Compat_Header": "Compatibilità: {0}",
     "MBBS_Compat_Ours": "Priorità a questa mod",
     "MBBS_Compat_Ours_Desc": "Questa mod disegna la barra. L'effetto di {0} sulla barra è disattivato; le sue impostazioni servono solo come valori di riferimento.",

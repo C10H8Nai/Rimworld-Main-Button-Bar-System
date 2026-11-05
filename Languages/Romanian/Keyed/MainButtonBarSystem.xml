@@ -64,6 +64,8 @@
   <MBBS_Compat_TheirsNotice>A fost detectat {0}: momentan el controlează bara, așa că modificările de aici au efect doar când acest mod are prioritate.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>A fost detectat {0}: acest mod are prioritate, așa că efectul lui asupra barei este dezactivat.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Detalii în modul Avansat.</MBBS_Compat_SeeAdvanced>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} desenează acum bara de jos, așa că setările de aici nu au niciun efect. Ca să folosești bara acestui mod, dezactivează opțiunea „Main bar” în setările acelui mod sau pune acest mod deasupra lui în lista de moduri.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} are activată și opțiunea „Main bar”: așază controalele din colțul din dreapta jos și ferestrele ca și cum propria lui bară ar fi afișată, așa că unele elemente pot apărea deplasate. Se recomandă dezactivarea opțiunii „Main bar” în setările acelui mod.</MBBS_Notice_UIRethemed_BothOn>
   <MBBS_Compat_Header>Compatibilitate: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Întâi acest mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Acest mod desenează bara. Efectul lui {0} asupra barei este dezactivat; setările sale sunt folosite doar ca valori de referință.</MBBS_Compat_Ours_Desc>

@@ -64,6 +64,8 @@
     "MBBS_Compat_TheirsNotice": "检测到 {0}：目前由它控制底部栏，这里的改动要等改成本模组优先才会生效。",
     "MBBS_Compat_OursNotice": "检测到 {0}：本模组优先，它对底部栏的效果已关闭。",
     "MBBS_Compat_SeeAdvanced": "详细请到进阶。",
+    "MBBS_Notice_UIRethemed_TheyDraw": "{0} 正在绘制底部栏，这里的设置不会生效。要改用本模组，请在它的模组设置中关闭「Main bar」，或在模组列表中把本模组排在它前面。",
+    "MBBS_Notice_UIRethemed_BothOn": "{0} 的「Main bar」也开着，它会把右下角控件和窗口位置按它自己的栏来摆放，画面可能错位。建议在它的模组设置中关闭「Main bar」。",
     "MBBS_Compat_Header": "兼容：{0}",
     "MBBS_Compat_Ours": "本模组优先",
     "MBBS_Compat_Ours_Desc": "由本模组绘制底部栏。{0} 对底部栏的效果会关闭，它的设置只当参考值。",

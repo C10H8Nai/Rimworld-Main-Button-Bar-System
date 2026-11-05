@@ -14,9 +14,6 @@ namespace MainButtonBarSystem
     /// </summary>
     public static class BarRenderer
     {
-        private static readonly AccessTools.FieldRef<MainButtonsRoot, List<MainButtonDef>> AllButtonsInOrder =
-            AccessTools.FieldRefAccess<MainButtonsRoot, List<MainButtonDef>>("allButtonsInOrder");
-
         private static readonly BarDrawContext ctx = new BarDrawContext();
         private static readonly List<BarButton> buttons = new List<BarButton>();
         private static readonly List<BarButton> pool = new List<BarButton>();
@@ -48,21 +45,28 @@ namespace MainButtonBarSystem
         public static bool TryDraw(MainButtonsRoot root)
         {
             ScrollCaptureRect = Rect.zero;
-            var config = BarConfigManager.Active;
+            if (failed)
+            {
+                SafeReportGameDrawn(root);
+                return false;
+            }
 
+            BarConfig config;
             try
             {
+                config = BarConfigManager.Active;
                 LabelOverrides.Sync(config);
+                bool forceOwn = MainButtonBarSystemMod.Settings?.alwaysDrawBar ?? false;
+                if (CompatBridges.AnyControlsBar || (config.IsUntouched && !forceOwn))
+                {
+                    ReportGameDrawn(root);
+                    return false;
+                }
             }
-            catch (Exception e)
+            catch (Exception e) when (!(e is ExitGUIException))
             {
-                Fail("Applying custom button names failed", e);
-            }
-
-            bool forceOwn = MainButtonBarSystemMod.Settings?.alwaysDrawBar ?? false;
-            if (failed || CompatBridges.AnyControlsBar || (config.IsUntouched && !forceOwn))
-            {
-                ReportGameDrawn(root);
+                Fail("Reading the main button bar settings failed; handing the bar back to the game for this session", e);
+                SafeReportGameDrawn(root);
                 return false;
             }
 
@@ -71,11 +75,30 @@ namespace MainButtonBarSystem
                 Draw(config);
                 return true;
             }
-            catch (Exception e)
+            catch (Exception e) when (!(e is ExitGUIException))
             {
                 Fail("Drawing the main button bar failed; handing it back to the game for this session", e);
-                ReportGameDrawn(root);
+                SafeReportGameDrawn(root);
                 return false;
+            }
+        }
+
+        private static bool reportBroken;
+
+        /// <summary>After a failure the query API is updated if it can be; if that fails too, it is left alone.</summary>
+        private static void SafeReportGameDrawn(MainButtonsRoot root)
+        {
+            if (reportBroken) return;
+            try
+            {
+                ReportGameDrawn(root);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                reportBroken = true;
+                ScrollCaptureRect = Rect.zero;
+                drawer.Clear();
+                if (Prefs.DevMode) Log.Message(MainButtonBarSystemMod.LogPrefix + "The query API is not updated after the failure above: " + e.Message);
             }
         }
 
@@ -85,7 +108,7 @@ namespace MainButtonBarSystem
             ScrollCaptureRect = Rect.zero;
             drawer.Clear();
             vanillaVisible.Clear();
-            var list = root == null ? null : AllButtonsInOrder(root);
+            var list = root == null || BarModel.AllButtonsInOrder == null ? null : BarModel.AllButtonsInOrder(root);
             if (list != null)
             {
                 foreach (var def in list)

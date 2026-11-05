@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using MainButtonBarSystem.Core;
@@ -28,7 +29,8 @@ namespace MainButtonBarSystem
         private static Tab tab = Tab.Buttons;
 
         // Text of each number box while it has focus, keyed by the setting it edits.
-        private static readonly Dictionary<string, string> numberBuffers = new Dictionary<string, string>();
+        /// <summary>What each number box shows while it has focus, and the value that text was made for.</summary>
+        private static readonly Dictionary<string, (string text, float value)> numberBuffers = new Dictionary<string, (string text, float value)>();
 
         private readonly bool editingTemplate;
         private BarConfig working;
@@ -85,7 +87,8 @@ namespace MainButtonBarSystem
         {
             editingTemplate = !BarConfigManager.InGame;
             doCloseX = true;
-            closeOnAccept = false;
+            // Enter is handled here (it ends number editing) instead of reaching the game's mod settings window below.
+            closeOnAccept = true;
             closeOnCancel = true;
             absorbInputAroundWindow = false;
             preventCameraMotion = false;
@@ -97,9 +100,24 @@ namespace MainButtonBarSystem
         public override void PreOpen()
         {
             base.PreOpen();
+            numberBuffers.Clear();
             Window_ButtonDrawer.CloseIfOpen();
             working = BarConfigManager.Saved.Clone();
             BarConfigManager.Preview = working;
+        }
+
+        /// <summary>Enter ends typing in a box; it never closes this window or the one below it.</summary>
+        public override void OnAcceptKeyPressed()
+        {
+            UI.UnfocusCurrentControl();
+            Event.current.Use();
+        }
+
+        /// <summary>A click on the map or the bar ends typing too, so later keys do not change a number.</summary>
+        public override void Notify_ClickOutsideWindow()
+        {
+            base.Notify_ClickOutsideWindow();
+            UI.UnfocusCurrentControl();
         }
 
         public override void PostClose()
@@ -221,7 +239,10 @@ namespace MainButtonBarSystem
             Text.Anchor = TextAnchor.UpperLeft;
         }
 
-        /// <summary>One line per detected bar-takeover mod (spec 3.7). Returns the height used.</summary>
+        /// <summary>
+        /// One line per detected bar-takeover mod (spec 3.7), then the notices of overlapping mods that are left alone
+        /// (wrapped, since they explain what to change). Returns the height used.
+        /// </summary>
         private float DrawCompatNotices(Rect at)
         {
             float y = at.y;
@@ -240,6 +261,20 @@ namespace MainButtonBarSystem
                 GUI.color = Color.white;
                 TooltipHandler.TipRegion(line, text);
                 y += line.height;
+            }
+
+            foreach (var def in CompatNotices.Detected)
+            {
+                string text = CompatNotices.TextFor(def);
+                if (text.NullOrEmpty()) continue;
+                float height = Mathf.Max(L.noticeLineHeight, Text.CalcHeight(text, at.width));
+                var block = new Rect(at.x, y, at.width, height);
+                GUI.color = ColorLibrary.Gold;
+                Text.Anchor = TextAnchor.MiddleLeft;
+                Widgets.Label(block, text);
+                Text.Anchor = TextAnchor.UpperLeft;
+                GUI.color = Color.white;
+                y += height;
             }
             return y - at.y;
         }
@@ -891,7 +926,8 @@ namespace MainButtonBarSystem
                 listing.GapLine();
                 int resolvedWidth = o.width;
                 string widthLabel = resolvedWidth > 0 ? "MBBS_ButtonWidth".Translate(resolvedWidth).ToString() : "MBBS_ButtonWidthFollow".Translate().ToString();
-                int width = IntSetting(listing, widthLabel, o.width == dflt.width ? BarConfig.Unset : o.width, o.width, R.buttonWidth, R.widthStep);
+                // Every button's panel has the same layout, so the box is told apart by the button's name.
+                int width = IntSetting(listing, widthLabel, o.width == dflt.width ? BarConfig.Unset : o.width, o.width, R.buttonWidth, R.widthStep, "buttonWidth." + name);
                 int newWidth = width == BarConfig.Unset ? dflt.width : width;
                 if (newWidth != o.width) working.GetOrCreate(name).width = newWidth;
 
@@ -1016,12 +1052,16 @@ namespace MainButtonBarSystem
             return DimmableButton(rect, "MBBS_Default".Translate(), enabled);
         }
 
-        /// <summary>A button drawn faded while it cannot be used (the game's inactive button looks the same as an active one).</summary>
+        /// <summary>
+        /// A button drawn faded while it cannot be used (the game's inactive button looks the same as an active one).
+        /// It is always a real control: an inactive game button creates none, so a "Default" button turning active
+        /// while a number is typed would shift the control ids and take the focus away from the number box.
+        /// </summary>
         private static bool DimmableButton(Rect rect, string label, bool enabled)
         {
             var color = GUI.color;
             if (!enabled) GUI.color = new Color(color.r, color.g, color.b, color.a * L.dimmedAlpha);
-            bool clicked = Widgets.ButtonText(rect, label, true, true, enabled);
+            bool clicked = Widgets.ButtonText(rect, label, true, enabled, true);
             GUI.color = color;
             return clicked && enabled;
         }
@@ -1140,19 +1180,62 @@ namespace MainButtonBarSystem
             return value;
         }
 
-        /// <summary>Type a value directly. While the box is not focused it always shows the current value.</summary>
+        /// <summary>
+        /// Type a value directly. Only typing changes the value: a keystroke that leaves a number in range applies it
+        /// at once, while an empty box or a number still out of range is kept as text until it is one. When the value
+        /// changes from elsewhere (the slider, "Default", another button selected) the box shows the new value. A
+        /// click outside the box or Enter ends the editing. The game's Widgets.TextFieldNumeric names its own
+        /// control, so its focus cannot be checked from outside; this uses the plain text field and parses here.
+        /// </summary>
         private static float NumberField(Rect rect, float value, float min, float max, float step, string id)
         {
             string name = "MainButtonBarSystem.Number." + id;
             bool focused = GUI.GetNameOfFocusedControl() == name;
-            if (!focused || !numberBuffers.TryGetValue(id, out var buffer))
-                buffer = step >= 1f ? Mathf.RoundToInt(value).ToString() : value.ToString("0.##");
+            var ev = Event.current;
+            if (focused && (ev.rawType == EventType.MouseDown && !Mouse.IsOver(rect) ||
+                            ev.type == EventType.KeyDown && (ev.keyCode == KeyCode.Return || ev.keyCode == KeyCode.KeypadEnter)))
+            {
+                UI.UnfocusCurrentControl();
+                focused = false;
+            }
 
-            float edited = value;
+            if (!focused || !numberBuffers.TryGetValue(id, out var state) || !Mathf.Approximately(state.value, value))
+                state = (Format(value, step), value);
+
             GUI.SetNextControlName(name);
-            Widgets.TextFieldNumeric(rect, ref edited, ref buffer, min, max);
-            numberBuffers[id] = buffer;
-            return Mathf.Approximately(edited, value) ? value : Snap(edited, min, max, step);
+            string typed = GUI.TextField(rect, state.text, Text.CurTextFieldStyle);
+            float result = value;
+            if (typed != state.text && IsPartialNumber(typed, min, step < 1f))
+            {
+                state.text = typed;
+                if (float.TryParse(typed, NumberStyles.Float, CultureInfo.InvariantCulture, out float parsed) && parsed >= min && parsed <= max)
+                    result = Snap(parsed, min, max, step);
+                state.value = result;
+            }
+            numberBuffers[id] = state;
+            return result;
+        }
+
+        private static string Format(float value, float step) =>
+            step >= 1f ? Mathf.RoundToInt(value).ToString(CultureInfo.InvariantCulture) : value.ToString("0.##", CultureInfo.InvariantCulture);
+
+        /// <summary>Text that is, or can still become, a number: digits, a leading minus when negatives are allowed, one point for fractions.</summary>
+        private static bool IsPartialNumber(string text, float min, bool allowFraction)
+        {
+            bool point = false;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                if (c >= '0' && c <= '9') continue;
+                if (c == '-' && i == 0 && min < 0f) continue;
+                if (c == '.' && allowFraction && !point)
+                {
+                    point = true;
+                    continue;
+                }
+                return false;
+            }
+            return true;
         }
 
         private static DefaultableBool BoolSetting(Listing_Standard listing, string label, DefaultableBool stored, bool fallback, string tooltip)
