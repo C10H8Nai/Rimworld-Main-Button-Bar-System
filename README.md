@@ -6,6 +6,8 @@ RimWorld 1.7 模組。自訂遊戲畫面底部的主按鈕列：排序、隱藏�
 
 設計規格：[docs/superpowers/specs/2026-11-03-main-button-bar-system-design.md](docs/superpowers/specs/2026-11-03-main-button-bar-system-design.md)
 
+交接摘要（新的 Claude 對話先讀這份）：[docs/HANDOFF.md](docs/HANDOFF.md)
+
 ## 安裝（測試用）
 
 需要先訂閱或安裝 [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077)。這個 repo 本身就是模組資料夾，以下兩種方式擇一：
