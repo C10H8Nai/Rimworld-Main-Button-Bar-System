@@ -586,9 +586,12 @@ namespace MainButtonBarSystem
                 return;
             }
 
+            // Load the button's own icon before remembering the field: restoring a field saved before the first load
+            // would put null back, and the game would look the icon up again through every mod on each draw.
+            Texture2D own = SafeIcon(def);
             var savedIcon = IconField(def);
             var savedPath = def.iconPath;
-            Texture2D effective = custom ?? SafeIcon(def);
+            Texture2D effective = custom ?? own;
 
             ActiveAlign = align;
             ActiveTheme = themed ? theme : null;
