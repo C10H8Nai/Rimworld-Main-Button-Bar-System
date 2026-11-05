@@ -65,7 +65,10 @@
 
 **資料**
 - `Config/BarConfig.cs`：一份完整排法，包含顯示方式、外觀、順序、各種寬度、對齊、圖示模式、插圖設定，以及每顆按鈕的 `ButtonOverride`（hidden、inDrawer、label、width、pin、forceShow、iconMode、icon）。
-- 存放：跟著存檔走（`MainButtonBarGameComponent`）；主選單時存成預設範本檔；格式版本 `formatVersion` 2。
+  - 2026-11-05（格式 3）起，`ButtonOverride` 每個欄位各自有「沒改過」的值，沒改過就跟繼承的值：執行期預設 → 模組 XML 預設（`ButtonDefaults.Inherited`）→ 遊戲原本。
+  - 讀用 `BarConfig.Get` 回傳的 `ButtonSettings`（struct，合併好的結果）；寫用 `BarConfig.SetHidden`、`SetWidth` 這類 setter，等於繼承值時自動存成「沒改過」。
+  - 舊格式（1、2 是整顆快照）讀進來時用 `UpgradeOverrides`／`InCurrentFormat` 轉換。
+- 存放：跟著存檔走（`MainButtonBarGameComponent`）；主選單時存成預設範本檔；格式版本 `formatVersion` 3。
 - `Baseline/ButtonBaseline.cs`：所有 Def 和 XML 補丁載入後、任何模組在執行期改按鈕之前的原貌，包括每顆按鈕來自哪個模組、圖示來自哪個模組。「全部重設」回到這個狀態。玩家沒設順序時，遊戲中的順序跟著 `MainButtonsRoot.allButtonsInOrder`（其他模組在執行期的改動會保留，2026-11-05 起），主選單用這裡記下的順序。
 
 **繪製**
