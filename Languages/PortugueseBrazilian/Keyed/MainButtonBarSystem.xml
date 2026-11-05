@@ -164,6 +164,9 @@ e depois clique em Atualizar. Eles continuam lá quando o mod é atualizado.</MB
   <MBBS_IconModeAll>Ícone e texto (todos os botões)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Como todos os botões exibem o ícone e o texto, exceto os que têm configuração própria.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Fazer com que todos os botões com configuração própria ({0}) sigam esta</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Fazer com que todos os botões com largura própria ({0}) sigam a barra</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Redefinir este botão</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Todas as configurações deste botão voltam ao que ele herda: os padrões do seu mod ou, se não houver, os do próprio jogo. As teclas de atalho não são alteradas.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Igual à barra inteira ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Criar um mod de disposição (pronto para enviar)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Abrir a pasta de disposições</MBBS_OpenExportsFolder>

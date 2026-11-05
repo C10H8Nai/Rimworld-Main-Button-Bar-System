@@ -164,6 +164,9 @@ apoi apasă Reîncarcă. Rămân acolo și după actualizările modului.</MBBS_I
   <MBBS_IconModeAll>Pictogramă și text (toate butoanele)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Cum își afișează toate butoanele pictograma și textul, cu excepția celor care au propria setare.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Fă ca toate butoanele cu setare proprie ({0}) să urmeze această setare</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Fă ca toate butoanele cu lățime proprie ({0}) să urmeze bara</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Resetează acest buton</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Fiecare setare a acestui buton revine la ce moștenește: valorile implicite ale modului său, altfel cele ale jocului. Tastele rapide nu se schimbă.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>La fel ca întreaga bară ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Creează un mod de aranjament (gata de încărcat)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Deschide dosarul cu aranjamente</MBBS_OpenExportsFolder>

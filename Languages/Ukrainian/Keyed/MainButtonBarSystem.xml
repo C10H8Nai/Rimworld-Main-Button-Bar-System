@@ -164,6 +164,9 @@
   <MBBS_IconModeAll>Іконка та текст (усі кнопки)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Як усі кнопки показують іконку та напис, якщо кнопка не має власного налаштування.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Застосувати до всіх кнопок із власним налаштуванням ({0})</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Застосувати ширину панелі до всіх кнопок із власною шириною ({0})</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Скинути цю кнопку</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Усі налаштування цієї кнопки повертаються до успадкованих: стандартних значень її мода, а якщо їх немає — до значень самої гри. Гарячі клавіші не змінюються.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Як у всієї панелі ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Створити мод із розташуванням (готовий до завантаження)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Відкрити теку з розташуваннями</MBBS_OpenExportsFolder>

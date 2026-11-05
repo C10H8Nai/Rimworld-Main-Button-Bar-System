@@ -164,6 +164,9 @@ majd nyomd meg a „Frissítés” gombot. A mod frissítésekor is ott maradnak
   <MBBS_IconModeAll>Ikon és szöveg (minden gomb)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Hogyan mutatja minden gomb az ikonját és a feliratát, hacsak a gombnak nincs saját beállítása.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Az összes saját beállítású gomb ({0}) igazítása ehhez</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Az összes saját szélességű gomb ({0}) igazítása a gombsorhoz</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Gomb alapállapotba</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>A gomb minden beállítása visszaáll arra, amit örököl: a saját modja alapértékeire, ezek hiányában a játék sajátjaira. A gyorsbillentyűk nem változnak.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Ugyanaz, mint a teljes gombsoré ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Elrendezés-mod készítése (feltöltésre kész)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Elrendezések mappájának megnyitása</MBBS_OpenExportsFolder>

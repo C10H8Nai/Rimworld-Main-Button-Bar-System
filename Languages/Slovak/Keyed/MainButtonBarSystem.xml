@@ -164,6 +164,9 @@ a stlačte „Obnoviť“. Pri aktualizáciách modu tam zostanú.</MBBS_IconPic
   <MBBS_IconModeAll>Ikona a text (všetky tlačidlá)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Ako všetky tlačidlá zobrazujú ikonu a popis, ak tlačidlo nemá vlastné nastavenie.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Použiť pre všetky tlačidlá s vlastným nastavením ({0})</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Použiť šírku lišty pre všetky tlačidlá s vlastnou šírkou ({0})</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Resetovať toto tlačidlo</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Všetky nastavenia tohto tlačidla sa vrátia na zdedené hodnoty: predvolené hodnoty jeho modu, inak hodnoty samotnej hry. Klávesové skratky sa nemenia.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Rovnako ako celá lišta ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Vytvoriť mod s usporiadaním (pripravený na nahratie)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Otvoriť priečinok s usporiadaniami</MBBS_OpenExportsFolder>

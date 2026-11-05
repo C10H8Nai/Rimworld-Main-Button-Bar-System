@@ -164,6 +164,9 @@ og tryk på Opdatér. De bliver liggende, når modet opdateres.</MBBS_IconPicker
   <MBBS_IconModeAll>Ikon og tekst (alle knapper)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Hvordan alle knapper viser ikon og tekst, medmindre en knap har sin egen indstilling.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Lad alle knapper med egen indstilling ({0}) følge denne</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Lad alle knapper med egen bredde ({0}) følge linjen</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Nulstil denne knap</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Alle indstillinger for denne knap går tilbage til det, den arver: standardværdierne fra dens mod, ellers spillets egne. Genvejstaster ændres ikke.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Samme som hele linjen ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Lav et opstillingsmod (klar til upload)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Åbn mappen med opstillinger</MBBS_OpenExportsFolder>

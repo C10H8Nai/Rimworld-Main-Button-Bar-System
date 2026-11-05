@@ -164,6 +164,9 @@ ja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.</MBBS_Ico
   <MBBS_IconModeAll>Kuvake ja teksti (kaikki painikkeet)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Miten kaikki painikkeet näyttävät kuvakkeen ja tekstin, ellei painikkeella ole omaa asetusta.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Laita kaikki painikkeet, joilla on oma asetus ({0}), noudattamaan tätä</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Laita kaikki painikkeet, joilla on oma leveys ({0}), noudattamaan palkkia</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Nollaa tämä painike</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Kaikki tämän painikkeen asetukset palaavat perittyihin arvoihin: sen modin oletuksiin, muuten pelin omiin. Pikanäppäimiä ei muuteta.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Sama kuin koko palkilla ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Tee järjestelymodi (valmis julkaistavaksi)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Avaa järjestelykansio</MBBS_OpenExportsFolder>

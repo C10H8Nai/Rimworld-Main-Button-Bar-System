@@ -164,6 +164,9 @@ och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconP
   <MBBS_IconModeAll>Ikon och text (alla knappar)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Hur alla knappar visar ikon och text, om inte en knapp har en egen inställning.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Låt alla knappar med egen inställning ({0}) följa denna</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Låt alla knappar med egen bredd ({0}) följa fältet</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Återställ denna knapp</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Alla inställningar för denna knapp återgår till det den ärver: standardvärdena från dess mod, annars spelets egna. Snabbtangenter ändras inte.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Samma som hela fältet ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Skapa en layoutmod (redo att laddas upp)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Öppna mappen med layouter</MBBS_OpenExportsFolder>

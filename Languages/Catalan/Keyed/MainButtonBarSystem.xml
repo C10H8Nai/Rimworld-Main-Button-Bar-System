@@ -164,6 +164,9 @@ i després premeu Actualitza. Hi continuaran encara que s’actualitzi el mod.</
   <MBBS_IconModeAll>Icona i text (tots els botons)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Com mostra cada botó la icona i el text, tret que el botó tingui una configuració pròpia.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Fes que tots els botons amb configuració pròpia ({0}) segueixin aquesta</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Fes que tots els botons amb amplada pròpia ({0}) segueixin la barra</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Restableix aquest botó</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Tota la configuració d’aquest botó torna al que hereta: els valors per defecte del seu mod o, si no n’hi ha, els del mateix joc. Les dreceres no canvien.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Igual que tota la barra ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Crea un mod de disposició (a punt per a pujar)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Obre la carpeta de disposicions</MBBS_OpenExportsFolder>
