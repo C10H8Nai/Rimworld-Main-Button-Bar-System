@@ -616,7 +616,7 @@ namespace MainButtonBarSystem
             {
                 bool visible = !o.hidden;
                 Widgets.Checkbox(c.Visible.x + (c.Visible.width - box) / 2f, c.Visible.y + (c.Visible.height - box) / 2f, ref visible, box, false, true);
-                if (visible == o.hidden) working.GetOrCreate(name).hidden = !visible;
+                if (visible == o.hidden) working.SetHidden(name, !visible);
             }
 
             // Icon the button shows with its settings (blank when it has none)
@@ -655,7 +655,7 @@ namespace MainButtonBarSystem
             {
                 bool inDrawer = o.inDrawer;
                 Widgets.Checkbox(c.Drawer.x + (c.Drawer.width - box) / 2f, c.Drawer.y + (c.Drawer.height - box) / 2f, ref inDrawer, box, false, true);
-                if (inDrawer != o.inDrawer) working.GetOrCreate(name).inDrawer = inDrawer;
+                if (inDrawer != o.inDrawer) working.SetInDrawer(name, inDrawer);
             }
             else
             {
@@ -779,6 +779,14 @@ namespace MainButtonBarSystem
                 listing.GapLine();
                 listing.Label("MBBS_Section_Size".Translate());
                 working.defaultWidth = IntSetting(listing, "MBBS_DefaultWidth".Translate(working.DefaultWidth), working.defaultWidth, working.DefaultWidth, R.defaultWidth, R.widthStep);
+                int ownWidths = BarModel.CurrentNames.Count(n => working.Get(n).width > 0);
+                if (ownWidths > 0)
+                {
+                    var row = listing.GetRect(L.textRowHeight);
+                    string clear = "MBBS_WidthClearAll".Translate(ownWidths);
+                    if (Widgets.ButtonText(new Rect(row.x, row.y, UIUtil.FitButton(L.moveButtonWidth, clear), row.height), clear))
+                        foreach (var n in BarModel.CurrentNames) working.SetWidth(n, 0);
+                }
                 working.gap = IntSetting(listing, "MBBS_Gap".Translate(working.Gap), working.gap, working.Gap, R.gap, 1);
                 working.fillScreen = BoolSetting(listing, "MBBS_FillScreen".Translate(), working.fillScreen, D.fillScreen, "MBBS_FillScreenTip".Translate());
 
@@ -799,13 +807,13 @@ namespace MainButtonBarSystem
                     if (listing.RadioButton(("MBBS_IconMode_" + iconMode).Translate(), working.iconMode == iconMode, L.radioIndent))
                         working.iconMode = iconMode;
                 }
-                int individual = working.overrides.Count(o => o.iconMode != IconMode.Default);
+                int individual = BarModel.CurrentNames.Count(n => working.Get(n).iconMode != IconMode.Default);
                 if (individual > 0)
                 {
                     var row = listing.GetRect(L.textRowHeight);
                     string clear = "MBBS_IconModeClearAll".Translate(individual);
                     if (Widgets.ButtonText(new Rect(row.x, row.y, UIUtil.FitButton(L.moveButtonWidth, clear), row.height), clear))
-                        foreach (var o in working.overrides) o.iconMode = IconMode.Default;
+                        foreach (var n in BarModel.CurrentNames) working.SetIconMode(n, IconMode.Default);
                 }
 
                 listing.GapLine();
@@ -866,7 +874,7 @@ namespace MainButtonBarSystem
             var def = DefDatabase<MainButtonDef>.GetNamedSilentFail(name);
             var baseline = ButtonBaseline.Get(name);
             var o = working.Get(name);
-            var dflt = ButtonDefaults.For(name) ?? ButtonOverride.Empty;
+            var dflt = ButtonDefaults.Inherited(name);
             bool locked = BarModel.IsLocked(working, name);
 
             var listing = BeginScrolledListing(outer, ref buttonDetailScroll, buttonDetailHeight);
@@ -890,6 +898,14 @@ namespace MainButtonBarSystem
             else if (BarConfigManager.InGame && def != null && !BarModel.SafeVisible(def)) listing.Label("MBBS_NotShowingNowTip".Translate());
             Text.Font = GameFont.Small;
             GUI.color = Color.white;
+
+            // Every field back to what the button inherits (hotkeys are kept elsewhere and stay).
+            var resetRow = listing.GetRect(L.textRowHeight);
+            string reset = "MBBS_ResetButton".Translate();
+            var resetRect = new Rect(resetRow.x, resetRow.y, UIUtil.FitButton(L.moveButtonWidth, reset), resetRow.height);
+            bool changed = working.OverrideOf(name) != null;
+            TooltipHandler.TipRegion(resetRect, "MBBS_ResetButtonTip".Translate());
+            if (DimmableButton(resetRect, reset, changed)) working.ResetButton(name);
             listing.GapLine();
 
             if (locked)
@@ -901,12 +917,12 @@ namespace MainButtonBarSystem
             else
             {
                 bool visible = ButtonBool(listing, "MBBS_Visible".Translate(), !o.hidden, !dflt.hidden, null);
-                if (visible == o.hidden) working.GetOrCreate(name).hidden = !visible;
+                if (visible == o.hidden) working.SetHidden(name, !visible);
 
                 if (BarModel.DrawerApplies(working, name))
                 {
                     bool inDrawer = ButtonBool(listing, "MBBS_InDrawer".Translate(), o.inDrawer, dflt.inDrawer, null);
-                    if (inDrawer != o.inDrawer) working.GetOrCreate(name).inDrawer = inDrawer;
+                    if (inDrawer != o.inDrawer) working.SetInDrawer(name, inDrawer);
                 }
             }
 
@@ -917,9 +933,9 @@ namespace MainButtonBarSystem
             string current = o.label ?? "";
             var field = new Rect(nameRow.x, nameRow.y, nameRow.width - ResetWidth - L.footerGap, nameRow.height);
             string edited = Widgets.TextField(field, current, L.customNameMaxLength);
-            if (edited != current) working.GetOrCreate(name).label = edited.NullOrEmpty() ? null : edited;
-            if (DefaultButton(nameRow, !o.label.NullOrEmpty()))
-                working.GetOrCreate(name).label = null;
+            if (edited != current) working.SetLabel(name, edited);
+            if (DefaultButton(nameRow, o.label != dflt.label))
+                working.SetLabel(name, null);
 
             if (Advanced)
             {
@@ -929,7 +945,7 @@ namespace MainButtonBarSystem
                 // Every button's panel has the same layout, so the box is told apart by the button's name.
                 int width = IntSetting(listing, widthLabel, o.width == dflt.width ? BarConfig.Unset : o.width, o.width, R.buttonWidth, R.widthStep, "buttonWidth." + name);
                 int newWidth = width == BarConfig.Unset ? dflt.width : width;
-                if (newWidth != o.width) working.GetOrCreate(name).width = newWidth;
+                if (newWidth != o.width) working.SetWidth(name, newWidth);
 
                 if (!locked)
                 {
@@ -943,7 +959,7 @@ namespace MainButtonBarSystem
                 }
 
                 bool forceShow = ButtonBool(listing, "MBBS_ForceShow".Translate(), o.forceShow, dflt.forceShow, "MBBS_ForceShowTip".Translate());
-                if (forceShow != o.forceShow) working.GetOrCreate(name).forceShow = forceShow;
+                if (forceShow != o.forceShow) working.SetForceShow(name, forceShow);
 
                 DrawIconSettings(listing, name, def, o, dflt);
                 DrawReferenceValues(listing, CompatBridges.Detected.SelectMany(b => b.Worker.ReferenceValues(name)));
@@ -955,18 +971,18 @@ namespace MainButtonBarSystem
         }
 
         /// <summary>Text / icon / both, and a custom icon (spec 3.2).</summary>
-        private void DrawIconSettings(Listing_Standard listing, string name, MainButtonDef def, ButtonOverride o, ButtonOverride dflt)
+        private void DrawIconSettings(Listing_Standard listing, string name, MainButtonDef def, ButtonSettings o, ButtonSettings dflt)
         {
             listing.GapLine();
             if (SectionHeader(listing, "MBBS_IconMode".Translate(), o.iconMode != dflt.iconMode, "MBBS_IconModeTip".Translate()))
-                working.GetOrCreate(name).iconMode = dflt.iconMode;
+                working.SetIconMode(name, dflt.iconMode);
             foreach (IconMode mode in Enum.GetValues(typeof(IconMode)))
             {
                 string label = mode == IconMode.Default
                     ? "MBBS_IconMode_FollowBar".Translate(("MBBS_IconMode_" + working.iconMode).Translate())
                     : ("MBBS_IconMode_" + mode).Translate();
                 if (listing.RadioButton(label, o.iconMode == mode, L.radioIndent) && o.iconMode != mode)
-                    working.GetOrCreate(name).iconMode = mode;
+                    working.SetIconMode(name, mode);
             }
 
             var row = listing.GetRect(L.textRowHeight);
@@ -987,9 +1003,9 @@ namespace MainButtonBarSystem
             TooltipHandler.TipRegion(labelRect, text);
             Text.Anchor = TextAnchor.UpperLeft;
             if (Widgets.ButtonText(new Rect(row.xMax - right, row.y, chooseWidth, row.height), choose))
-                Find.WindowStack.Add(new Dialog_IconPicker(o.icon, icon => working.GetOrCreate(name).icon = icon));
-            if (DefaultButton(row, (o.icon ?? "") != (dflt.icon ?? "")))
-                working.GetOrCreate(name).icon = dflt.icon;
+                Find.WindowStack.Add(new Dialog_IconPicker(o.icon, icon => working.SetIcon(name, icon)));
+            if (DefaultButton(row, o.icon != dflt.icon))
+                working.SetIcon(name, null);
             if (CustomIcons.IsMissing(o.icon))
                 Note(listing, "MBBS_IconMissingNote".Translate());
         }
@@ -1006,9 +1022,8 @@ namespace MainButtonBarSystem
 
         private void SetPin(string name, PinPosition pin)
         {
-            var o = working.GetOrCreate(name);
-            o.pin = pin;
-            if (pin != PinPosition.None) o.inDrawer = false;
+            working.SetPin(name, pin);
+            if (pin != PinPosition.None) working.SetInDrawer(name, false);
         }
 
         private void DrawHotkey(Listing_Standard listing, MainButtonDef def)
@@ -1401,7 +1416,7 @@ namespace MainButtonBarSystem
             return baseline.IconFromGameAssets ? "MBBS_IconFromGameAssets".Translate() : "MBBS_Unknown".Translate();
         }
 
-        private static string DisplayLabel(string name, ButtonOverride o)
+        private static string DisplayLabel(string name, in ButtonSettings o)
         {
             if (!o.label.NullOrEmpty()) return o.label;
             var label = ButtonBaseline.Get(name)?.Label;

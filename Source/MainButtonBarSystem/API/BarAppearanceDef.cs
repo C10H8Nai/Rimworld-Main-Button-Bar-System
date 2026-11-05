@@ -604,7 +604,7 @@ namespace MainButtonBarSystem
             var def = button.Def;
             var align = BarConfigManager.Active.labelAlign;
             bool themed = theme != null && theme.def.ChangesButtons;
-            var settings = button.Settings ?? ButtonOverride.Empty;
+            var settings = button.Settings;
             var custom = CustomIcons.Resolve(settings.icon);
             var mode = BarConfigManager.Active.IconModeFor(settings);
             if (IconField == null || (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default))
@@ -684,8 +684,8 @@ namespace MainButtonBarSystem
         }
 
         /// <summary>The icon a button shows with its settings: the custom one, else its own.</summary>
-        public static Texture2D EffectiveIcon(MainButtonDef def, ButtonOverride settings) =>
-            CustomIcons.Resolve(settings?.icon) ?? SafeIcon(def);
+        public static Texture2D EffectiveIcon(MainButtonDef def, in ButtonSettings settings) =>
+            CustomIcons.Resolve(settings.icon) ?? SafeIcon(def);
 
         /// <summary>"Icon and text": icon at the left, label in the rest, both shifted under the mouse like the game's.</summary>
         internal static void DrawIconAndLabel(Rect rect, string label, Color? labelColor)

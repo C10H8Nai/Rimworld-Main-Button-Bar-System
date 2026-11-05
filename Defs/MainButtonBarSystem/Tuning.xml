@@ -52,6 +52,7 @@
       <barTopFromBottom>35</barTopFromBottom>    <!-- vanilla -->
       <buttonRectHeight>36</buttonRectHeight>    <!-- vanilla draws 36, one pixel past the screen bottom -->
       <arrowPageFraction>0.6</arrowPageFraction>
+      <splitMinButtonWidth>12</splitMinButtonWidth> <!-- equal split: least width left for buttons without their own -->
       <drawerMaxAutoColumns>4</drawerMaxAutoColumns>
       <drawerPadding>6</drawerPadding>
       <drawerSettingsRowHeight>30</drawerSettingsRowHeight>

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MainButtonBarSystem.Core;
@@ -15,20 +16,90 @@ namespace MainButtonBarSystem
         Both,
     }
 
+    /// <summary>A pin as stored on a button: <see cref="Default"/> means "not changed".</summary>
+    public enum ButtonPin
+    {
+        Default,
+        None,
+        Left,
+        Right,
+    }
+
     /// <summary>
-    /// What the user changed on one button. A button without an override uses the defaults its mod declared
-    /// (<see cref="MainButtonBarDefaults"/>), else stays exactly as the game and other mods made it (spec 3.7).
+    /// An icon display as stored on a button: <see cref="Default"/> means "not changed", <see cref="FollowBar"/>
+    /// uses the bar's setting even when the button's mod declared another.
+    /// </summary>
+    public enum ButtonIconMode
+    {
+        Default,
+        FollowBar,
+        Text,
+        Icon,
+        Both,
+    }
+
+    /// <summary>
+    /// The settings a button really uses: the player's changes over what its mod declared (and what is set at runtime,
+    /// see <see cref="ButtonDefaults"/>), over the game's own. A value, so reading it allocates nothing.
+    /// </summary>
+    public readonly struct ButtonSettings
+    {
+        public readonly string defName;
+        public readonly bool hidden;
+        public readonly bool inDrawer;
+
+        /// <summary>Custom name; null keeps the game's.</summary>
+        public readonly string label;
+
+        /// <summary>Pixels; 0 follows the bar.</summary>
+        public readonly int width;
+
+        public readonly PinPosition pin;
+        public readonly bool forceShow;
+
+        /// <summary><see cref="IconMode.Default"/> follows the bar (<see cref="BarConfig.IconModeFor"/>).</summary>
+        public readonly IconMode iconMode;
+
+        /// <summary>Custom icon reference; null keeps the button's own.</summary>
+        public readonly string icon;
+
+        public ButtonSettings(string defName, bool hidden, bool inDrawer, string label, int width, PinPosition pin, bool forceShow, IconMode iconMode, string icon)
+        {
+            this.defName = defName;
+            this.hidden = hidden;
+            this.inDrawer = inDrawer;
+            this.label = string.IsNullOrEmpty(label) ? null : label;
+            this.width = width;
+            this.pin = pin;
+            this.forceShow = forceShow;
+            this.iconMode = iconMode;
+            this.icon = string.IsNullOrEmpty(icon) ? null : icon;
+        }
+
+        /// <summary>A button nobody changed.</summary>
+        public static ButtonSettings Plain(string defName) => new ButtonSettings(defName, false, false, null, 0, PinPosition.None, false, IconMode.Default, null);
+    }
+
+    /// <summary>
+    /// What the user changed on one button (also used for defaults set at runtime). Every field has its own "not
+    /// changed" value: <see cref="DefaultableBool.Default"/>, -1 (<see cref="BarConfig.Unset"/>) for the width,
+    /// <see cref="ButtonPin.Default"/>, <see cref="ButtonIconMode.Default"/>, null for texts. A field not changed
+    /// follows what the button inherits (its mod's defaults, else the game), so a later change there still shows
+    /// (design spec 3.10). Read <see cref="BarConfig.Get"/>; write through the BarConfig setters.
     /// </summary>
     public class ButtonOverride : IExposable
     {
         public string defName;
-        public bool hidden;
-        public bool inDrawer;
+        public DefaultableBool hidden;
+        public DefaultableBool inDrawer;
         public string label;
-        public int width;
-        public PinPosition pin;
-        public bool forceShow;
-        public IconMode iconMode;
+
+        /// <summary>Pixels, 0 to follow the bar explicitly, -1 not changed.</summary>
+        public int width = BarConfig.Unset;
+
+        public ButtonPin pin;
+        public DefaultableBool forceShow;
+        public ButtonIconMode iconMode;
         public string icon;
 
         public ButtonOverride()
@@ -40,11 +111,13 @@ namespace MainButtonBarSystem
             this.defName = defName;
         }
 
-        public bool IsEmpty => SameSettings(Empty);
+        public bool IsEmpty =>
+            hidden == DefaultableBool.Default && inDrawer == DefaultableBool.Default && string.IsNullOrEmpty(label) && width < 0 &&
+            pin == ButtonPin.Default && forceShow == DefaultableBool.Default && iconMode == ButtonIconMode.Default && string.IsNullOrEmpty(icon);
 
         public bool SameSettings(ButtonOverride other) =>
             hidden == other.hidden && inDrawer == other.inDrawer && NullIfEmpty(label) == NullIfEmpty(other.label) &&
-            width == other.width && pin == other.pin && forceShow == other.forceShow && iconMode == other.iconMode &&
+            Math.Max(-1, width) == Math.Max(-1, other.width) && pin == other.pin && forceShow == other.forceShow && iconMode == other.iconMode &&
             NullIfEmpty(icon) == NullIfEmpty(other.icon);
 
         public ButtonOverride Clone() => (ButtonOverride)MemberwiseClone();
@@ -56,20 +129,82 @@ namespace MainButtonBarSystem
             return copy;
         }
 
-        internal static readonly ButtonOverride Empty = new ButtonOverride();
+        /// <summary>This override's changes on top of <paramref name="inherited"/>.</summary>
+        public ButtonSettings Over(in ButtonSettings inherited) => new ButtonSettings(
+            defName ?? inherited.defName,
+            BarConfig.Resolve(hidden, inherited.hidden),
+            BarConfig.Resolve(inDrawer, inherited.inDrawer),
+            string.IsNullOrEmpty(label) ? inherited.label : label,
+            width >= 0 ? width : inherited.width,
+            pin == ButtonPin.Default ? inherited.pin : ToPosition(pin),
+            BarConfig.Resolve(forceShow, inherited.forceShow),
+            iconMode == ButtonIconMode.Default ? inherited.iconMode : ToIconMode(iconMode),
+            string.IsNullOrEmpty(icon) ? inherited.icon : icon);
+
+        public static PinPosition ToPosition(ButtonPin pin) => pin switch
+        {
+            ButtonPin.Left => PinPosition.Left,
+            ButtonPin.Right => PinPosition.Right,
+            _ => PinPosition.None,
+        };
+
+        public static ButtonPin FromPosition(PinPosition pin) => pin switch
+        {
+            PinPosition.Left => ButtonPin.Left,
+            PinPosition.Right => ButtonPin.Right,
+            _ => ButtonPin.None,
+        };
+
+        public static IconMode ToIconMode(ButtonIconMode mode) => mode switch
+        {
+            ButtonIconMode.Text => IconMode.Text,
+            ButtonIconMode.Icon => IconMode.Icon,
+            ButtonIconMode.Both => IconMode.Both,
+            _ => IconMode.Default,
+        };
+
+        public static ButtonIconMode FromIconMode(IconMode mode) => mode switch
+        {
+            IconMode.Text => ButtonIconMode.Text,
+            IconMode.Icon => ButtonIconMode.Icon,
+            IconMode.Both => ButtonIconMode.Both,
+            _ => ButtonIconMode.FollowBar,
+        };
+
+        /// <summary>
+        /// Format 1 and 2 stored the whole button once it was edited (its mod's defaults copied in first), and a
+        /// field missing from the file meant false, 0, None or "follow the bar". Reads those values and keeps only the
+        /// fields that differ from what the button inherits now.
+        /// </summary>
+        internal void UpgradeFromSnapshot(in ButtonSettings inherited)
+        {
+            hidden = Changed(hidden == DefaultableBool.True, inherited.hidden);
+            inDrawer = Changed(inDrawer == DefaultableBool.True, inherited.inDrawer);
+            forceShow = Changed(forceShow == DefaultableBool.True, inherited.forceShow);
+            int w = Math.Max(0, width);
+            width = w == inherited.width ? BarConfig.Unset : w;
+            var p = ToPosition(pin);
+            pin = p == inherited.pin ? ButtonPin.Default : FromPosition(p);
+            var m = ToIconMode(iconMode);
+            iconMode = m == inherited.iconMode ? ButtonIconMode.Default : FromIconMode(m);
+            if (NullIfEmpty(label) == inherited.label) label = null;
+            if (NullIfEmpty(icon) == inherited.icon) icon = null;
+        }
+
+        private static DefaultableBool Changed(bool value, bool inherited) => BarConfig.Store(value, inherited);
 
         private static string NullIfEmpty(string s) => string.IsNullOrEmpty(s) ? null : s;
 
         public void ExposeData()
         {
             Scribe_Values.Look(ref defName, "defName");
-            Scribe_Values.Look(ref hidden, "hidden");
-            Scribe_Values.Look(ref inDrawer, "inDrawer");
+            Scribe_Values.Look(ref hidden, "hidden", DefaultableBool.Default);
+            Scribe_Values.Look(ref inDrawer, "inDrawer", DefaultableBool.Default);
             Scribe_Values.Look(ref label, "label");
-            Scribe_Values.Look(ref width, "width");
-            Scribe_Values.Look(ref pin, "pin", PinPosition.None);
-            Scribe_Values.Look(ref forceShow, "forceShow");
-            Scribe_Values.Look(ref iconMode, "iconMode", IconMode.Default);
+            Scribe_Values.Look(ref width, "width", BarConfig.Unset);
+            Scribe_Values.Look(ref pin, "pin", ButtonPin.Default);
+            Scribe_Values.Look(ref forceShow, "forceShow", DefaultableBool.Default);
+            Scribe_Values.Look(ref iconMode, "iconMode", ButtonIconMode.Default);
             Scribe_Values.Look(ref icon, "icon");
         }
     }
@@ -105,8 +240,11 @@ namespace MainButtonBarSystem
     /// </summary>
     public class BarConfig : IExposable
     {
-        /// <summary>2: number fields may be -1 (use default) and switches may be Default.</summary>
-        public const int CurrentFormatVersion = 2;
+        /// <summary>
+        /// 2: number fields may be -1 (use default) and switches may be Default. 3: each field of a button override
+        /// has its own "not changed" value (older overrides are upgraded on load, see <see cref="UpgradeOverrides"/>).
+        /// </summary>
+        public const int CurrentFormatVersion = 3;
         public const int Unset = -1;
 
         /// <summary>"Not changed" for the decoration offsets, which may be negative so -1 cannot mark them.</summary>
@@ -139,8 +277,8 @@ namespace MainButtonBarSystem
         public IconMode iconMode = IconMode.Default;
 
         /// <summary>The display a button really uses: its own setting, else the bar's.</summary>
-        public IconMode IconModeFor(ButtonOverride button) =>
-            button != null && button.iconMode != IconMode.Default ? button.iconMode : iconMode;
+        public IconMode IconModeFor(in ButtonSettings button) =>
+            button.iconMode != IconMode.Default ? button.iconMode : iconMode;
 
         /// <summary>Game menu button stays at the right end and cannot be hidden or moved (spec 3.3, 4.16).</summary>
         public DefaultableBool menuLocked;
@@ -229,36 +367,96 @@ namespace MainButtonBarSystem
             return true;
         }
 
-        /// <summary>Effective settings of a button: the user's override, else its mod's defaults, else empty. Never null; do not modify.</summary>
-        public ButtonOverride Get(string defName)
+        /// <summary>Effective settings of a button: the player's changes over what it inherits (see <see cref="ButtonSettings"/>).</summary>
+        public ButtonSettings Get(string defName)
         {
             EnsureIndex();
-            if (defName != null && index.TryGetValue(defName, out var o)) return o;
-            return ButtonDefaults.For(defName) ?? ButtonOverride.Empty;
+            var inherited = ButtonDefaults.Inherited(defName);
+            return defName != null && index.TryGetValue(defName, out var o) ? o.Over(inherited) : inherited;
         }
 
-        /// <summary>The user's override for editing, created from the button's defaults if there is none yet.</summary>
+        /// <summary>The player's changes to one button, or null.</summary>
+        public ButtonOverride OverrideOf(string defName)
+        {
+            EnsureIndex();
+            return defName != null && index.TryGetValue(defName, out var o) ? o : null;
+        }
+
+        /// <summary>The player's changes to one button for editing, created empty (every field "not changed") if needed.</summary>
         public ButtonOverride GetOrCreate(string defName)
         {
             EnsureIndex();
             if (!index.TryGetValue(defName, out var o))
             {
-                o = ButtonDefaults.For(defName)?.CloneFor(defName) ?? new ButtonOverride(defName);
+                o = new ButtonOverride(defName);
                 overrides.Add(o);
                 index[defName] = o;
             }
             return o;
         }
 
-        /// <summary>Drops overrides that equal what the button would have anyway, so files only list real changes.</summary>
+        // Setters: a value equal to what the button inherits is stored as "not changed", so it keeps following its
+        // mod's defaults; an override left with nothing changed is dropped.
+        public void SetHidden(string defName, bool value) => Edit(defName, (o, i) => o.hidden = Store(value, i.hidden));
+        public void SetInDrawer(string defName, bool value) => Edit(defName, (o, i) => o.inDrawer = Store(value, i.inDrawer));
+        public void SetForceShow(string defName, bool value) => Edit(defName, (o, i) => o.forceShow = Store(value, i.forceShow));
+        public void SetLabel(string defName, string value) => Edit(defName, (o, i) => o.label = string.IsNullOrEmpty(value) || value == i.label ? null : value);
+        public void SetWidth(string defName, int value) => Edit(defName, (o, i) => o.width = value == i.width ? Unset : Math.Max(0, value));
+        public void SetPin(string defName, PinPosition value) => Edit(defName, (o, i) => o.pin = value == i.pin ? ButtonPin.Default : ButtonOverride.FromPosition(value));
+        public void SetIcon(string defName, string value) => Edit(defName, (o, i) => o.icon = string.IsNullOrEmpty(value) || value == i.icon ? null : value);
+
+        /// <summary><see cref="IconMode.Default"/> means "follow the bar" here.</summary>
+        public void SetIconMode(string defName, IconMode value) =>
+            Edit(defName, (o, i) => o.iconMode = value == i.iconMode ? ButtonIconMode.Default : ButtonOverride.FromIconMode(value));
+
+        /// <summary>Back to what the button inherits, for every field.</summary>
+        public void ResetButton(string defName)
+        {
+            EnsureIndex();
+            if (defName == null || !index.TryGetValue(defName, out var o)) return;
+            overrides.Remove(o);
+            index.Remove(defName);
+        }
+
+        private void Edit(string defName, Action<ButtonOverride, ButtonSettings> edit)
+        {
+            if (defName == null) return;
+            var o = GetOrCreate(defName);
+            edit(o, ButtonDefaults.Inherited(defName));
+            if (o.IsEmpty) ResetButton(defName);
+        }
+
+        /// <summary>Drops overrides that change nothing, so files only list real changes.</summary>
         public void Prune()
         {
-            overrides.RemoveAll(o => o == null || o.defName.NullOrEmpty() || IsRedundant(o));
+            overrides.RemoveAll(o => o == null || o.defName.NullOrEmpty() || o.IsEmpty);
             index = null;
         }
 
-        private static bool IsRedundant(ButtonOverride o) =>
-            o == null || o.SameSettings(ButtonDefaults.For(o.defName) ?? ButtonOverride.Empty);
+        private static bool IsRedundant(ButtonOverride o) => o == null || o.IsEmpty;
+
+        /// <summary>
+        /// Brings button overrides written before format 3 (whole snapshots) to per-field changes, then marks the
+        /// config current. Called on load; configs from defs (arrangement mods) go through <see cref="InCurrentFormat"/>.
+        /// </summary>
+        public void UpgradeOverrides()
+        {
+            if (formatVersion >= 3) return;
+            overrides ??= new List<ButtonOverride>();
+            foreach (var o in overrides)
+                if (o?.defName != null) o.UpgradeFromSnapshot(ButtonDefaults.Inherited(o.defName));
+            formatVersion = CurrentFormatVersion;
+            Prune();
+        }
+
+        /// <summary>This config if it is current, else an upgraded copy (the original stays as loaded, for example in a def).</summary>
+        public BarConfig InCurrentFormat()
+        {
+            if (formatVersion >= 3) return this;
+            var copy = Clone();
+            copy.UpgradeOverrides();
+            return copy;
+        }
 
         public BarConfig Clone()
         {
@@ -339,6 +537,7 @@ namespace MainButtonBarSystem
                 overrides ??= new List<ButtonOverride>();
                 overrides.RemoveAll(o => o == null || o.defName.NullOrEmpty());
                 if (formatVersion <= 0) formatVersion = CurrentFormatVersion;
+                else if (formatVersion < 3) UpgradeOverrides();
                 displayMode ??= VanillaMode;
                 appearance ??= VanillaAppearance;
                 index = null;

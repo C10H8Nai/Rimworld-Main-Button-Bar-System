@@ -164,6 +164,9 @@
   <MBBS_IconModeAll>圖示與文字（所有按鈕）</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>所有按鈕顯示圖示和文字的方式；個別按鈕另有設定時以該按鈕為準。</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>讓 {0} 顆有個別設定的按鈕都改成跟這裡</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>讓 {0} 顆有自己寬度的按鈕都改成跟整條列</MBBS_WidthClearAll>
+  <MBBS_ResetButton>重設這一顆</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>這顆按鈕的每一項設定都回到繼承的值：它所屬模組的預設，沒有的話就是遊戲原本的樣子。快捷鍵不受影響。</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>跟整條列（{0}）</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>做成排序模組（可直接上傳）</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>開啟排序資料夾</MBBS_OpenExportsFolder>

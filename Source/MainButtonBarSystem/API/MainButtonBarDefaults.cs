@@ -30,30 +30,26 @@ namespace MainButtonBarSystem
         /// <summary>Texture path of a built-in icon, as for MainButtonDef.iconPath.</summary>
         public string icon;
 
-        public ButtonOverride ToOverride(string defName) => new ButtonOverride(defName)
-        {
-            hidden = hidden,
-            inDrawer = inDrawer,
-            width = width,
-            pin = pin,
-            iconMode = iconMode,
-            icon = icon,
-        };
+        public ButtonSettings ToSettings(string defName) =>
+            new ButtonSettings(defName, hidden, inDrawer, null, System.Math.Max(0, width), pin, false, iconMode, icon);
     }
 
     /// <summary>Lookup of the defaults that mods declared on their buttons.</summary>
     public static class ButtonDefaults
     {
-        private static Dictionary<string, ButtonOverride> byDefName;
+        private static Dictionary<string, ButtonSettings> byDefName;
 
         /// <summary>Changes whenever the declared or runtime defaults may have changed, for caches built from them.</summary>
         public static int Version { get; private set; }
 
-        /// <summary>Defaults for a button, or null when its mod declared none.</summary>
-        public static ButtonOverride For(string defName)
+        /// <summary>
+        /// What a button inherits before the player's changes: runtime defaults over its mod's XML defaults over the
+        /// game's own (not hidden, not in the drawer, following the bar).
+        /// </summary>
+        public static ButtonSettings Inherited(string defName)
         {
             if (byDefName == null) Build();
-            return defName != null && byDefName.TryGetValue(defName, out var o) ? o : null;
+            return defName != null && byDefName.TryGetValue(defName, out var s) ? s : ButtonSettings.Plain(defName);
         }
 
         /// <summary>True when some declared default changes the bar even in vanilla display mode.</summary>
@@ -64,7 +60,7 @@ namespace MainButtonBarSystem
                 if (byDefName == null) Build();
                 foreach (var o in byDefName.Values)
                 {
-                    if (o.hidden || o.pin != PinPosition.None || o.iconMode != IconMode.Default || !o.icon.NullOrEmpty())
+                    if (o.hidden || o.pin != PinPosition.None || o.iconMode != IconMode.Default || o.icon != null || o.width > 0)
                         return true;
                 }
                 return false;
@@ -75,7 +71,8 @@ namespace MainButtonBarSystem
 
         /// <summary>
         /// A default set while the game runs, for example by a compatibility bridge (TooManyButtons' own button
-        /// starts hidden when this mod has priority, spec 4.14). It wins over XML defaults.
+        /// starts hidden when this mod has priority, spec 4.14). Its changed fields win over XML defaults; fields left
+        /// "not changed" keep the XML default.
         /// </summary>
         public static void SetRuntimeDefault(ButtonOverride defaults)
         {
@@ -93,13 +90,17 @@ namespace MainButtonBarSystem
 
         private static void Build()
         {
-            byDefName = new Dictionary<string, ButtonOverride>();
+            byDefName = new Dictionary<string, ButtonSettings>();
             foreach (var def in DefDatabase<MainButtonDef>.AllDefs)
             {
                 var ext = def.GetModExtension<MainButtonBarDefaults>();
-                if (ext != null) byDefName[def.defName] = ext.ToOverride(def.defName);
+                if (ext != null) byDefName[def.defName] = ext.ToSettings(def.defName);
             }
-            foreach (var pair in runtime) byDefName[pair.Key] = pair.Value;
+            foreach (var pair in runtime)
+            {
+                var below = byDefName.TryGetValue(pair.Key, out var xml) ? xml : ButtonSettings.Plain(pair.Key);
+                byDefName[pair.Key] = pair.Value.Over(below);
+            }
         }
     }
 }

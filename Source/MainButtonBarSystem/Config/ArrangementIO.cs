@@ -267,7 +267,8 @@ namespace MainButtonBarSystem
             if (meta.name.NullOrEmpty()) meta.name = def.LabelCap;
             if (meta.author.NullOrEmpty()) meta.author = def.author;
             if (meta.description.NullOrEmpty()) meta.description = def.description;
-            return new SharedArrangement { config = def.config, meta = meta, source = def.modContentPack?.Name ?? def.defName };
+            // Arrangement mods written before format 3 hold whole-button snapshots; read them as per-field changes.
+            return new SharedArrangement { config = def.config.InCurrentFormat(), meta = meta, source = def.modContentPack?.Name ?? def.defName };
         }
 
         /// <summary>Arrangement files in the exports folder, newest first.</summary>
