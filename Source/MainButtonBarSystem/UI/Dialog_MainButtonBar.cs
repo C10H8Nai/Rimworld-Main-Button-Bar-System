@@ -435,6 +435,7 @@ namespace MainButtonBarSystem
             if (!Widgets.ButtonText(rect, label)) return;
             int count = 0;
             foreach (var theme in BarModel.Appearances) count += theme.ReloadTextures();
+            CustomThemes.ResetCache();
             ThemeValidator.ValidateAll();
             Messages.Message("MBBS_ThemesReloaded".Translate(count), MessageTypeDefOf.NeutralEvent, false);
         }

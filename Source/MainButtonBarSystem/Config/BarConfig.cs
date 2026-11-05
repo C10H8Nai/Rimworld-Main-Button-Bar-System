@@ -271,8 +271,20 @@ namespace MainButtonBarSystem
         /// <summary>defName of a <see cref="BarDisplayModeDef"/>.</summary>
         public string displayMode = VanillaMode;
 
-        /// <summary>defName of a <see cref="BarAppearanceDef"/>.</summary>
+        /// <summary>defName of a <see cref="BarAppearanceDef"/>; in custom mode, the theme the custom look is drawn over.</summary>
         public string appearance = VanillaAppearance;
+
+        /// <summary>Preset: the theme as it is. Custom: <see cref="customTheme"/> on top of it.</summary>
+        public AppearanceMode appearanceMode = AppearanceMode.Preset;
+
+        /// <summary>The player's custom look; kept when switching back to a preset, so nothing is lost. May be null.</summary>
+        public CustomThemeData customTheme;
+
+        public bool UsesCustomTheme => appearanceMode == AppearanceMode.Custom && customTheme != null;
+
+        /// <summary>Draws buttons and the bar: the theme's worker, or the custom look over it.</summary>
+        public BarAppearanceWorker AppearanceWorker =>
+            UsesCustomTheme ? CustomThemes.WorkerFor(customTheme, AppearanceDef) : AppearanceDef?.Worker;
 
         /// <summary>Saved order of defNames; null means the game's own order.</summary>
         public List<string> order;
@@ -369,7 +381,7 @@ namespace MainButtonBarSystem
         /// True when the bar would look exactly like the game draws it, so the game can keep drawing it.
         /// </summary>
         public bool IsUntouched =>
-            (displayMode ?? VanillaMode) == VanillaMode && (appearance ?? VanillaAppearance) == VanillaAppearance && order == null &&
+            (displayMode ?? VanillaMode) == VanillaMode && (appearance ?? VanillaAppearance) == VanillaAppearance && !UsesCustomTheme && order == null &&
             labelAlign == LabelAlign.Default && iconMode == IconMode.Default && AllRedundant() && !ButtonDefaults.AnyChangesVanillaBar;
 
         // A plain loop: this runs on every GUI event of the bar.
@@ -482,6 +494,7 @@ namespace MainButtonBarSystem
         {
             var copy = (BarConfig)MemberwiseClone();
             copy.order = order?.ToList();
+            copy.customTheme = customTheme?.Clone();
             copy.overrides = (overrides ?? new List<ButtonOverride>()).Where(o => o != null).Select(o => o.Clone()).ToList();
             copy.index = null;
             return copy;
@@ -492,6 +505,8 @@ namespace MainButtonBarSystem
             var fresh = new BarConfig();
             displayMode = fresh.displayMode;
             appearance = fresh.appearance;
+            appearanceMode = fresh.appearanceMode;
+            customTheme = null;
             order = null;
             defaultWidth = fresh.defaultWidth;
             minWidth = fresh.minWidth;
@@ -531,6 +546,8 @@ namespace MainButtonBarSystem
             Scribe_Values.Look(ref formatVersion, "formatVersion", 0);
             Scribe_Values.Look(ref displayMode, "displayMode", VanillaMode);
             Scribe_Values.Look(ref appearance, "appearance", VanillaAppearance);
+            Scribe_Values.Look(ref appearanceMode, "appearanceMode", AppearanceMode.Preset);
+            Scribe_Deep.Look(ref customTheme, "customTheme");
             Scribe_Collections.Look(ref order, "order", LookMode.Value);
             Scribe_Values.Look(ref defaultWidth, "defaultWidth", Unset);
             Scribe_Values.Look(ref minWidth, "minWidth", Unset);
