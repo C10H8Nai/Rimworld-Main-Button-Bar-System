@@ -12,14 +12,15 @@ namespace MainButtonBarSystem
     /// </summary>
     public static class LabelOverrides
     {
+        // Null when a game update renamed the field: the label still changes, only that cache is not cleared.
         private static readonly AccessTools.FieldRef<Def, TaggedString> CachedLabelCap =
-            AccessTools.FieldRefAccess<Def, TaggedString>("cachedLabelCap");
+            SafeAccess.FieldRef<Def, TaggedString>("cachedLabelCap");
         private static readonly AccessTools.FieldRef<MainButtonDef, string> CachedShortenedLabelCap =
-            AccessTools.FieldRefAccess<MainButtonDef, string>("cachedShortenedLabelCap");
+            SafeAccess.FieldRef<MainButtonDef, string>("cachedShortenedLabelCap");
         private static readonly AccessTools.FieldRef<MainButtonDef, float> CachedLabelCapWidth =
-            AccessTools.FieldRefAccess<MainButtonDef, float>("cachedLabelCapWidth");
+            SafeAccess.FieldRef<MainButtonDef, float>("cachedLabelCapWidth");
         private static readonly AccessTools.FieldRef<MainButtonDef, float> CachedShortenedLabelCapWidth =
-            AccessTools.FieldRefAccess<MainButtonDef, float>("cachedShortenedLabelCapWidth");
+            SafeAccess.FieldRef<MainButtonDef, float>("cachedShortenedLabelCapWidth");
 
         /// <summary>defName -> label this class last wrote.</summary>
         private static readonly Dictionary<string, string> applied = new Dictionary<string, string>();
@@ -54,10 +55,10 @@ namespace MainButtonBarSystem
         private static void SetLabel(MainButtonDef def, string label)
         {
             def.label = label;
-            CachedLabelCap(def) = default;
-            CachedShortenedLabelCap(def) = null;
-            CachedLabelCapWidth(def) = -1f;
-            CachedShortenedLabelCapWidth(def) = -1f;
+            if (CachedLabelCap != null) CachedLabelCap(def) = default;
+            if (CachedShortenedLabelCap != null) CachedShortenedLabelCap(def) = null;
+            if (CachedLabelCapWidth != null) CachedLabelCapWidth(def) = -1f;
+            if (CachedShortenedLabelCapWidth != null) CachedShortenedLabelCapWidth(def) = -1f;
         }
     }
 }

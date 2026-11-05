@@ -1,3 +1,4 @@
+using System;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
@@ -11,6 +12,9 @@ namespace MainButtonBarSystem
         /// <summary>True while this mod's prefix ran in the current call (so the postfix knows who drew).</summary>
         private static bool prefixRan;
 
+        /// <summary>Set after this mod's bar code threw: the game draws the bar for the rest of the session.</summary>
+        private static bool broken;
+
         // Last, so other mods' prefixes run first. If one of them returns false (Custom Bottom Bar, Multiplayer's
         // spectator view), Harmony skips every later prefix that can affect the original, including this one:
         // the bar is then theirs, and the postfix below records what they show. When this mod has priority, the
@@ -18,16 +22,41 @@ namespace MainButtonBarSystem
         [HarmonyPriority(Priority.Last)]
         public static bool Prefix(MainButtonsRoot __instance)
         {
+            if (broken) return true;
             prefixRan = true;
-            return !BarRenderer.TryDraw(__instance);
+            try
+            {
+                return !BarRenderer.TryDraw(__instance);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                Break(e);
+                return true;
+            }
         }
 
         // Postfixes always run, so this is where to observe calls in which another mod drew the bar.
         public static void Postfix(MainButtonsRoot __instance)
         {
-            StartupDiagnostics.ReportPatchesOnce();
-            if (!prefixRan) BarRenderer.ReportGameDrawn(__instance);
+            bool ran = prefixRan;
             prefixRan = false;
+            if (broken) return;
+            try
+            {
+                StartupDiagnostics.ReportPatchesOnce();
+                if (!ran) BarRenderer.ReportGameDrawn(__instance);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                Break(e);
+            }
+        }
+
+        private static void Break(Exception e)
+        {
+            if (broken) return;
+            broken = true;
+            Log.Error(MainButtonBarSystemMod.LogPrefix + "The main button bar code failed; the game draws the bar for the rest of this session. " + e);
         }
     }
 
@@ -36,7 +65,14 @@ namespace MainButtonBarSystem
     {
         public static void Postfix()
         {
-            Hotkeys.HandleCustomHotkeys();
+            try
+            {
+                Hotkeys.HandleCustomHotkeys();
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                Log.ErrorOnce(MainButtonBarSystemMod.LogPrefix + "A custom main button hotkey failed. " + e, 0x4D424256);
+            }
         }
     }
 
@@ -49,9 +85,25 @@ namespace MainButtonBarSystem
     [HarmonyPatch(typeof(Widgets), nameof(Widgets.ButtonTextSubtle))]
     public static class Widgets_ButtonTextSubtle_Patch
     {
+        /// <summary>Set after this patch's code threw: every subtle button is left to the game for the rest of the session.</summary>
+        private static bool broken;
+
         public static void Prefix(Rect rect, ref string label, ref Color? labelColor, out string __state)
         {
             __state = null;
+            if (broken) return;
+            try
+            {
+                PrefixBody(rect, ref label, ref labelColor, ref __state);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                Break(e);
+            }
+        }
+
+        private static void PrefixBody(Rect rect, ref string label, ref Color? labelColor, ref string __state)
+        {
             var theme = ButtonPainter.ActiveTheme;
             if (theme != null) labelColor = theme.LabelColor(ButtonPainter.StateFor(rect)) ?? labelColor;
             bool ownIcon = ButtonPainter.ActiveIcon != null;
@@ -64,10 +116,24 @@ namespace MainButtonBarSystem
 
         public static void Postfix(Rect rect, Color? labelColor, string __state)
         {
-            if (__state == null) return;
-            if (ButtonPainter.ActiveIconOnly) ButtonPainter.DrawIconOnly(rect);
-            else if (ButtonPainter.ActiveIcon != null) ButtonPainter.DrawIconAndLabel(rect, __state, labelColor);
-            else ButtonPainter.DrawAlignedLabel(rect, __state, labelColor);
+            if (__state == null || broken) return;
+            try
+            {
+                if (ButtonPainter.ActiveIconOnly) ButtonPainter.DrawIconOnly(rect);
+                else if (ButtonPainter.ActiveIcon != null) ButtonPainter.DrawIconAndLabel(rect, __state, labelColor);
+                else ButtonPainter.DrawAlignedLabel(rect, __state, labelColor);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                Break(e);
+            }
+        }
+
+        private static void Break(Exception e)
+        {
+            if (broken) return;
+            broken = true;
+            Log.Error(MainButtonBarSystemMod.LogPrefix + "Drawing button labels and icons failed; alignment, theme label colours and icon modes are off for this session. " + e);
         }
     }
 
@@ -79,9 +145,26 @@ namespace MainButtonBarSystem
     /// </summary>
     public static class ThemeAtlasSwap
     {
+        /// <summary>Set after this patch's code threw: every atlas is left to the game for the rest of the session.</summary>
+        private static bool broken;
+
         public static void Prefix(Rect rect, ref Texture2D atlas, out Color? __state)
         {
             __state = null;
+            if (broken) return;
+            try
+            {
+                PrefixBody(rect, ref atlas, ref __state);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                broken = true;
+                Log.Error(MainButtonBarSystemMod.LogPrefix + "Drawing theme button backgrounds failed; themes keep the game's button background for this session. " + e);
+            }
+        }
+
+        private static void PrefixBody(Rect rect, ref Texture2D atlas, ref Color? __state)
+        {
             var theme = ButtonPainter.ActiveTheme;
             if (theme == null || atlas != Widgets.ButtonSubtleAtlas) return;
             var button = ButtonPainter.ActiveButton;
@@ -124,8 +207,16 @@ namespace MainButtonBarSystem
         {
             var ev = Event.current;
             if (ev == null || ev.type != EventType.ScrollWheel) return true;
-            var area = BarRenderer.ScrollCaptureRect;
-            return area.width <= 0f || !area.Contains(UI.MousePositionOnUIInverted);
+            try
+            {
+                var area = BarRenderer.ScrollCaptureRect;
+                return area.width <= 0f || !area.Contains(UI.MousePositionOnUIInverted);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                Log.ErrorOnce(MainButtonBarSystemMod.LogPrefix + "Checking the bar's scroll area failed; the wheel zooms the map as usual. " + e, 0x4D424257);
+                return true;
+            }
         }
     }
 }

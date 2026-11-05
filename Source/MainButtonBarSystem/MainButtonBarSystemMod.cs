@@ -1,3 +1,4 @@
+using System;
 using HarmonyLib;
 using UnityEngine;
 using Verse;
@@ -16,8 +17,29 @@ namespace MainButtonBarSystem
         {
             Instance = this;
             Settings = GetSettings<MainButtonBarSystemSettings>();
-            new Harmony(HarmonyId).PatchAll(typeof(MainButtonBarSystemMod).Assembly);
+            ApplyPatches();
             Log.Message(LogPrefix + "Loaded.");
+        }
+
+        /// <summary>
+        /// Applies each patch class on its own, so a game update that breaks one target only turns off the feature that
+        /// patch serves (for example label alignment) instead of every patch after it.
+        /// </summary>
+        private static void ApplyPatches()
+        {
+            var harmony = new Harmony(HarmonyId);
+            foreach (var type in AccessTools.GetTypesFromAssembly(typeof(MainButtonBarSystemMod).Assembly))
+            {
+                if (!type.IsDefined(typeof(HarmonyPatch), false)) continue;
+                try
+                {
+                    harmony.CreateClassProcessor(type).Patch();
+                }
+                catch (Exception e)
+                {
+                    Log.Warning(LogPrefix + "Could not apply " + type.Name + "; the feature it serves is off for this session. " + e.Message);
+                }
+            }
         }
 
         public override string SettingsCategory() => "Main Button Bar System";

@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using MainButtonBarSystem.Core;
 using RimWorld;
 using UnityEngine;
+using Verse;
 
 namespace MainButtonBarSystem
 {
@@ -62,7 +64,14 @@ namespace MainButtonBarSystem
         public void DrawButton(BarButton button, Rect rect)
         {
             onBar.Add(button.Def);
-            Appearance.DrawButton(button, rect);
+            try
+            {
+                Appearance.DrawButton(button, rect);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                ButtonGuard.Report(button, e);
+            }
         }
 
         /// <summary>Records a button that is reachable through a drawer instead of the bar.</summary>
@@ -79,5 +88,26 @@ namespace MainButtonBarSystem
 
         /// <summary>While the mouse is inside this area, the mouse wheel scrolls the bar instead of zooming the map.</summary>
         public void CaptureScrollWheel(Rect rect) => ScrollCaptureRect = rect;
+    }
+
+    /// <summary>
+    /// One button that throws while it is drawn (usually in its own worker) is logged once and skipped for that event;
+    /// the rest of the bar and the drawer keep working.
+    /// </summary>
+    internal static class ButtonGuard
+    {
+        private static readonly HashSet<string> reported = new HashSet<string>();
+
+        public static void Report(BarButton button, Exception e)
+        {
+            GUI.color = Color.white;
+            Text.Font = GameFont.Small;
+            Text.Anchor = TextAnchor.UpperLeft;
+            var def = button?.Def;
+            string key = def?.defName ?? "?";
+            if (!reported.Add(key)) return;
+            string mod = def?.modContentPack?.Name ?? "?";
+            Log.Error(MainButtonBarSystemMod.LogPrefix + "Main button " + key + " (from " + mod + ") threw while being drawn; the rest of the bar keeps working. " + e);
+        }
     }
 }

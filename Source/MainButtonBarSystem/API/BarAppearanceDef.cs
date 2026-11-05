@@ -562,8 +562,9 @@ namespace MainButtonBarSystem
 
         private static MainButtonBarTuningDef.Behaviour B => MainButtonBarTuningDef.Current.behaviour;
 
+        // Null when a game update renamed the field: buttons are then drawn by the game as they are, without icon settings.
         private static readonly HarmonyLib.AccessTools.FieldRef<MainButtonDef, Texture2D> IconField =
-            HarmonyLib.AccessTools.FieldRefAccess<MainButtonDef, Texture2D>("icon");
+            SafeAccess.FieldRef<MainButtonDef, Texture2D>("icon");
 
         /// <summary>
         /// Draws through the game's DoButton. Icon settings work by swapping the def's icon only for this call (the
@@ -580,7 +581,7 @@ namespace MainButtonBarSystem
             var settings = button.Settings ?? ButtonOverride.Empty;
             var custom = CustomIcons.Resolve(settings.icon);
             var mode = BarConfigManager.Active.IconModeFor(settings);
-            if (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default)
+            if (IconField == null || (align == LabelAlign.Default && !themed && custom == null && mode == IconMode.Default))
             {
                 def.Worker.DoButton(rect);
                 return;
@@ -644,7 +645,8 @@ namespace MainButtonBarSystem
         /// <summary>The button's own icon (after other mods' patches), loading it if needed.</summary>
         public static Texture2D SafeIcon(MainButtonDef def)
         {
-            if (def == null || string.IsNullOrEmpty(def.iconPath)) return IconField(def);
+            if (def == null) return null;
+            if (string.IsNullOrEmpty(def.iconPath)) return IconField != null ? IconField(def) : def.Icon;
             try
             {
                 return def.Icon;
