@@ -116,7 +116,7 @@
 - `BarButtonImage`：`button`、`texture`（任意解析度）、`fit`（預設 `Cover` 等比填滿裁掉超出、不拉伸；`Fit`、`Stretch` 可選；`Atlas`、`Tile` 視同 `Stretch`）、`anchor`／`verticalAnchor`（Cover 保留哪一側、Fit 放哪邊，預設置中）、`opacity`（預設 1）、`inset`（預設 0）。
 - 繪製順序：圖 → 按鈕 atlas（框）→ 文字與圖示；所有狀態（停用也畫）、底部列與抽屜格子都適用；框中央透明時圖透出來，滑鼠移上／按下的效果留在框上（圖只沿用目前 GUI 顏色的 alpha，不被染色）。More 與捲動箭頭沒有圖。
 - `make_theme.py`：JSON 的 `buttonImage`／`buttonImages`；palette 的 `hollow`（四種狀態的按鈕 atlas 不填底色；More 照舊）。內建五款不加 hollow，重產後像素不變。`ExampleTheme` 示範預設圖、兩顆指定按鈕與 hollow；萘伊主題不加（圖由作者另外提供）。
-- ApiVersion 維持 1.1（這批還沒發佈）；不加新的玩家滑桿。
+- ApiVersion 維持 1.1（這批還沒發佈）；不加新的玩家滑桿。【作者 2026-11-05】這條只限主題模式；外觀分頁的「單一模式」會開放每顆按鈕的外觀設定，見主設計文件 3.10。
 
 ## 4. 實作者的判斷（作者可檢查）
 
