@@ -99,6 +99,15 @@ namespace MainButtonBarSystem
             if (CompatBridges.FixSessionPriority(def, Priority) == CompatPriority.Ours) TakeOver();
         }
 
+        /// <summary>
+        /// Called once at startup, before any settings are read, when this mod has priority this session. Set button
+        /// defaults here (<see cref="ButtonDefaults.SetRuntimeDefault"/>), so settings saved in older formats are read
+        /// against the same defaults the game will use.
+        /// </summary>
+        public virtual void RegisterRuntimeDefaults()
+        {
+        }
+
         /// <summary>Removes the other mod's patches on the bar. Override to also undo changes it already made.</summary>
         protected virtual void TakeOver()
         {
@@ -167,13 +176,17 @@ namespace MainButtonBarSystem
             RestoreBaselineDefFields();
             // It already rewrote this game's button list; follow the restored order instead (not by changing the list).
             BarModel.IgnoreLiveOrderOf((Find.UIRoot as UIRoot_Play)?.mainButtonsRoot);
+            RegisterRuntimeDefaults();
+        }
 
-            // Spec 4.14: its own drawer button is listed like any other, starting hidden (this mod's drawer replaces it).
+        /// <summary>Spec 4.14: its own drawer button is listed like any other, starting hidden (this mod's drawer replaces it).</summary>
+        public override void RegisterRuntimeDefaults()
+        {
             foreach (var button in DefDatabase<MainButtonDef>.AllDefs)
             {
                 var id = button.modContentPack?.PackageId;
                 if (id != null && def.packageIds.Any(p => string.Equals(p, id, StringComparison.OrdinalIgnoreCase)))
-                    ButtonDefaults.SetRuntimeDefault(new ButtonOverride(button.defName) { hidden = true });
+                    ButtonDefaults.SetRuntimeDefault(new ButtonOverride(button.defName) { hidden = DefaultableBool.True });
             }
         }
 
@@ -235,10 +248,9 @@ namespace MainButtonBarSystem
             foreach (var pair in Slots(settings))
             {
                 if (DefDatabase<MainButtonDef>.GetNamedSilentFail(pair.Key) == null) continue;
-                var o = config.GetOrCreate(pair.Key);
-                o.hidden = pair.Value == Slot.Hidden;
-                o.inDrawer = pair.Value == Slot.Popup;
-                anyInDrawer |= o.inDrawer;
+                config.SetHidden(pair.Key, pair.Value == Slot.Hidden);
+                config.SetInDrawer(pair.Key, pair.Value == Slot.Popup);
+                anyInDrawer |= pair.Value == Slot.Popup;
             }
             if (anyInDrawer && !(config.DisplayModeDef?.usesDrawer ?? false)) config.displayMode = "Collapse";
         }
@@ -308,15 +320,14 @@ namespace MainButtonBarSystem
             {
                 var name = OtherModSettings.String(o, "defName");
                 if (name.NullOrEmpty() || DefDatabase<MainButtonDef>.GetNamedSilentFail(name) == null) continue;
-                var ours = config.GetOrCreate(name);
-                if (OtherModSettings.Bool(o, "hidden") is bool hidden) ours.hidden = hidden;
-                if (OtherModSettings.Bool(o, "forceShow") is bool force) ours.forceShow = force;
-                if (Custom(o, "customWidth", "width") is object width && float.TryParse(width.ToString(), out var px) && px > 0f) ours.width = UnityEngine.Mathf.RoundToInt(px);
+                if (OtherModSettings.Bool(o, "hidden") is bool hidden) config.SetHidden(name, hidden);
+                if (OtherModSettings.Bool(o, "forceShow") is bool force) config.SetForceShow(name, force);
+                if (Custom(o, "customWidth", "width") is object width && float.TryParse(width.ToString(), out var px) && px > 0f) config.SetWidth(name, UnityEngine.Mathf.RoundToInt(px));
                 var label = OtherModSettings.String(o, "customName");
-                if (!label.NullOrEmpty()) ours.label = label;
-                if (Custom(o, "customHideIcon", "hideIcon") is bool hide && hide) ours.iconMode = IconMode.Text;
+                if (!label.NullOrEmpty()) config.SetLabel(name, label);
+                if (Custom(o, "customHideIcon", "hideIcon") is bool hide && hide) config.SetIconMode(name, IconMode.Text);
                 var icon = CopyIcon(iconDir, OtherModSettings.String(o, "customIcon"));
-                if (icon != null) ours.icon = icon;
+                if (icon != null) config.SetIcon(name, icon);
             }
         }
 

@@ -164,6 +164,9 @@ og trykk Oppdater. De blir liggende der når modden oppdateres.</MBBS_IconPicker
   <MBBS_IconModeAll>Ikon og tekst (alle knapper)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Hvordan alle knapper viser ikon og tekst, med mindre en knapp har sin egen innstilling.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>La alle knapper med egen innstilling ({0}) følge denne</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>La alle knapper med egen bredde ({0}) følge linjen</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Tilbakestill denne knappen</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Alle innstillinger for denne knappen går tilbake til det den arver: standardverdiene fra modden dens, ellers spillets egne. Hurtigtaster endres ikke.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Samme som hele linjen ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Lag en oppsettsmod (klar til opplasting)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Åpne mappen med oppsett</MBBS_OpenExportsFolder>

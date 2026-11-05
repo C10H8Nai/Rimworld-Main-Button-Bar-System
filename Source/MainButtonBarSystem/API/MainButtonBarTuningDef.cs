@@ -40,8 +40,8 @@ namespace MainButtonBarSystem
             if (settingsWindow == null) yield return "settingsWindow is missing";
             if (barDefaults != null && (barDefaults.defaultWidth <= 0 || barDefaults.minWidth <= 0 || barDefaults.arrowWidth <= 0 || barDefaults.wheelScrollPixels <= 0f))
                 yield return "barDefaults: defaultWidth, minWidth, arrowWidth and wheelScrollPixels must be positive";
-            if (behaviour != null && (behaviour.buttonRectHeight <= 0f || behaviour.barTopFromBottom <= 0f || behaviour.drawerMaxAutoColumns <= 0))
-                yield return "behaviour: buttonRectHeight, barTopFromBottom and drawerMaxAutoColumns must be positive";
+            if (behaviour != null && (behaviour.buttonRectHeight <= 0f || behaviour.barTopFromBottom <= 0f || behaviour.drawerMaxAutoColumns <= 0 || behaviour.splitMinButtonWidth <= 0))
+                yield return "behaviour: buttonRectHeight, barTopFromBottom, drawerMaxAutoColumns and splitMinButtonWidth must be positive";
             if (behaviour != null && (behaviour.themeAtlasMaxSize <= 0 || behaviour.themeDecorationMaxSize <= 0 || behaviour.themeTileMaxCount <= 0))
                 yield return "behaviour: themeAtlasMaxSize, themeDecorationMaxSize and themeTileMaxCount must be positive";
             if (ranges != null && (ranges.widthStep <= 0 || ranges.percentStep <= 0))
@@ -129,6 +129,12 @@ namespace MainButtonBarSystem
 
             /// <summary>Share of the visible scroll area one arrow click moves.</summary>
             public float arrowPageFraction;
+
+            /// <summary>
+            /// Equal split with per-button widths: the least a button without its own width keeps. When the set widths
+            /// leave less than this for each of the others, every button shrinks in proportion instead.
+            /// </summary>
+            public int splitMinButtonWidth;
 
             /// <summary>Upper limit of columns when the drawer picks them automatically.</summary>
             public int drawerMaxAutoColumns;

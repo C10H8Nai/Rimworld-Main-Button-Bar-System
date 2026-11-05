@@ -15,6 +15,7 @@ namespace MainButtonBarSystem.Tests
             if (o.MinWidth == 0) o.MinWidth = 80;
             if (o.MoreButtonWidth == 0) o.MoreButtonWidth = 70;
             if (o.ArrowWidth == 0) o.ArrowWidth = 24;
+            if (o.SplitMinWidth == 0) o.SplitMinWidth = 12;
             return o;
         }
 
@@ -106,6 +107,76 @@ namespace MainButtonBarSystem.Tests
             // Order on the bar: center, More, pinned right; four equal units filling 400px.
             Assert.Equal(new[] { "a", "c", BarLayout.MoreKey, "menu" }, AllInBarCoordinates(r).Select(p => p.Key));
             Assert.All(AllInBarCoordinates(r), p => Assert.Equal(100, p.Width));
+        }
+
+        [Fact]
+        public void Vanilla_KeepsOwnWidthsAndSplitsTheRest()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b", width: 200), new LayoutItem("c") };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 500 }));
+
+            Assert.Equal(new[] { 150, 200, 150 }, r.Center.Select(c => c.Width));
+            Assert.Equal(500, r.Center.Last().X + r.Center.Last().Width);
+        }
+
+        [Fact]
+        public void Vanilla_OwnWidthWithHalfButtonAndRounding()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a", width: 100), new LayoutItem("b", minimized: true), new LayoutItem("c") };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 401 }));
+
+            // 301 left for 1.5 units: 200 each, half for b, the last flexible takes the rounding.
+            Assert.Equal(new[] { 100, 100, 201 }, r.Center.Select(c => c.Width));
+            Assert.Equal(401, r.Center.Last().X + r.Center.Last().Width);
+        }
+
+        [Fact]
+        public void Vanilla_OwnWidthsTooWideShrinkEverything()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b", width: 290), new LayoutItem("c") };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 300, SplitMinWidth = 10 }));
+
+            // 5px each would be left for a and c, below the 10px floor: 10 + 290 + 10 scaled down to 300.
+            var widths = r.Center.Select(c => c.Width).ToArray();
+            Assert.Equal(300, widths.Sum());
+            Assert.True(widths[0] >= 9 && widths[2] >= 9);
+            Assert.True(widths[1] < 290);
+        }
+
+        [Fact]
+        public void Vanilla_OnlyOwnWidthsThatFitAreKept()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a", width: 100), new LayoutItem("b", width: 150) };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 400 }));
+
+            Assert.Equal(new[] { 100, 150 }, r.Center.Select(c => c.Width));
+        }
+
+        [Fact]
+        public void Vanilla_AllOwnWidthsKeepPinnedRightAtTheEdge()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a", width: 100), new LayoutItem("menu", width: 80, pin: PinPosition.Right) };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 400 }));
+
+            Assert.Equal(0, r.Center[0].X + r.ViewportX);
+            Assert.Equal(320, r.Right[0].X);
+            Assert.Equal(80, r.Right[0].Width);
+        }
+
+        [Fact]
+        public void CollapseFill_KeepsOwnWidthsWithMoreAndGaps()
+        {
+            var items = new List<LayoutItem>
+            {
+                new LayoutItem("a"), new LayoutItem("b", width: 150), new LayoutItem("d", inDrawer: true),
+                new LayoutItem("menu", pin: PinPosition.Right),
+            };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 615, Gap = 5 }));
+
+            // a, b, More, menu with three 5px gaps: 600 - 150 = 450 for three units.
+            Assert.Equal(new[] { 150, 150 }, r.Center.Select(c => c.Width));
+            Assert.Equal(150, r.More.Value.Width);
+            Assert.Equal(615, r.Right.Last().X + r.Right.Last().Width);
         }
 
         [Fact]

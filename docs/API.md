@@ -74,7 +74,7 @@ settings. `meta` is optional; files without it import as before, and older versi
     <label>tidy colony</label>
     <author>Me</author>
     <config>
-      <formatVersion>1</formatVersion>
+      <formatVersion>3</formatVersion>
       <displayMode>Collapse</displayMode>
       <order>
         <li>Architect</li>
@@ -95,7 +95,7 @@ settings. `meta` is optional; files without it import as before, and older versi
 On import, buttons the player does not have are skipped, and buttons the arrangement does not mention go just
 before the game menu button.
 
-`config` fields: `formatVersion` (currently 2), `displayMode` (a `BarDisplayModeDef` defName), `appearance` (a
+`config` fields: `formatVersion` (currently 3), `displayMode` (a `BarDisplayModeDef` defName), `appearance` (a
 `BarAppearanceDef` defName), `order`, `defaultWidth`, `minWidth`, `gap`, `fillScreen`, `labelAlign`
 (`Default` / `Left` / `Center` / `Right`), `menuLocked`, `moreButtonWidth`, `arrowWidth`, `wheelScrollPixels`,
 `drawerColumns`, `drawerCellWidth`, and `overrides` (each with `defName`, `hidden`, `inDrawer`, `label`, `width`,
@@ -103,6 +103,17 @@ before the game menu button.
 
 Leave out any field you do not want to set. Number fields left out (or `-1`) and switches left out (or `Default`)
 follow the player's tuning defaults; see below.
+
+Each field of an override is set on its own: a field left out keeps what the button inherits (its mod's button
+defaults, section 1, else the game's own), so it still follows if those change. Switches take `True` / `False`
+(`Default` = left out); `width` is pixels, `0` to follow the bar explicitly (`-1` = left out); `pin` is `None` /
+`Left` / `Right`; `iconMode` is `FollowBar` / `Text` / `Icon` / `Both`; `icon` is a texture path, a `file:` icon, or
+`@own` for the button's own icon even when its mod declared another. Values are case-sensitive: write `True`, not
+`true`.
+
+Format 1 and 2 stored a whole button once it was edited, and a field left out meant false, 0, `None` or "follow
+the bar". Such arrangements (files, saves and defs) still load: fields equal to what the button inherits are read as
+left out, the rest as set.
 
 `meta` fields (all optional, in a def beside `config`): `name`, `author`, `description`, `gameVersion`, `modVersion`,
 `exported`, `buttons` (each `li` with `defName`, `mod`, `packageId`: every button of the game it was made in, which
@@ -154,7 +165,7 @@ public class DisplayModeWorker_TwoRows : BarDisplayModeWorker
     public override void DrawBar(BarDrawContext ctx)
     {
         // ctx.Buttons: visible buttons, left to right, user settings already resolved
-        //   (Def, Settings, Pin, InDrawer, Minimized, Width)
+        //   (Def, Settings — a ButtonSettings value —, Pin, InDrawer, Minimized, Width)
         // ctx.BarRect: the normal one-row bar area; ctx.Config: the whole-bar settings
         var rowHeight = ctx.BarRect.height;
         var top = new Rect(ctx.BarRect.x, ctx.BarRect.y - rowHeight, ctx.BarRect.width, rowHeight * 2f);
@@ -473,7 +484,9 @@ The default worker removes the other mod's Harmony patches on `MainButtonsRoot.D
 | `CanImport`, `ImportInto(BarConfig)` | Copy the other mod's arrangement into the player's working copy |
 
 `OtherModSettings` reads another mod's `ModSettings` by field name without failing (missing fields give null), and
-`ButtonDefaults.SetRuntimeDefault` sets a button default while the game runs. Priority changes apply after a
+`ButtonDefaults.SetRuntimeDefault` sets a button default while the game runs: pass a `ButtonOverride` whose changed
+fields win over the button's XML defaults (fields left at their "not changed" value keep them), and read what a
+button inherits with `ButtonDefaults.Inherited(defName)`. Priority changes apply after a
 restart.
 
 ## 5b. Compatibility notices (XML only)
@@ -567,7 +580,10 @@ Most add-ons should work with or without Main Button Bar System. Common ways:
 `MainButtonBarAPI.ApiVersion` (a property; currently `1.1`) covers everything in this document: the five
 slots' def fields and workers, `CompatNoticeDef`, `MainButtonBarDefaults`, `MainButtonArrangementDef`, `BarDrawContext`,
 `BarButton`, `BarDecoration`, `BarButtonImage`, `DecorationLayout`, `ImageFit`, `ButtonPainter.Draw` and `MainButtonBarAPI`. Additions raise the minor number; removals or changed
-meanings raise the major number, and removed members stay for one release marked `[Obsolete]`. Arrangements carry
+meanings raise the major number, and removed members stay for one release marked `[Obsolete]`. Version 1.1 has not
+been released yet, and until it is, its members may still change; on 2026-11-05 `BarButton.Settings` became a
+`ButtonSettings` value, the fields of `ButtonOverride` gained a "not changed" value, `ButtonDefaults.For` became
+`ButtonDefaults.Inherited`, and `ButtonPainter.EffectiveIcon` takes a `ButtonSettings`. Arrangements carry
 their own `formatVersion`. Anything not listed here is internal and may change.
 
 ## Harmony patches and ordering

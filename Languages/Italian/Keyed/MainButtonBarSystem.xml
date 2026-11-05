@@ -164,6 +164,9 @@ poi premi «Aggiorna». Restano lì anche quando la mod viene aggiornata.</MBBS_
   <MBBS_IconModeAll>Icona e testo (tutti i pulsanti)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Come tutti i pulsanti mostrano icona ed etichetta, a meno che un pulsante non abbia un'impostazione propria.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Fai seguire questa impostazione a tutti i pulsanti che ne hanno una propria ({0})</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Fai seguire la larghezza della barra a tutti i pulsanti che ne hanno una propria ({0})</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Reimposta questo pulsante</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Ogni impostazione di questo pulsante torna a ciò che eredita: i valori predefiniti della sua mod, altrimenti quelli del gioco. I tasti rapidi non cambiano.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Come la barra intera ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Crea una mod di disposizione (pronta da caricare)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Apri la cartella delle disposizioni</MBBS_OpenExportsFolder>

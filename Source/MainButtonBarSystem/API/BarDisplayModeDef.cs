@@ -101,6 +101,7 @@ namespace MainButtonBarSystem
             options.FillScreen = config.FillScreen;
             options.MoreButtonWidth = Mathf.CeilToInt(ctx.Appearance.MoreButtonWidth(config, drawerCount));
             options.ArrowWidth = config.ArrowWidth;
+            options.SplitMinWidth = MainButtonBarTuningDef.Current.behaviour.splitMinButtonWidth;
             var layout = BarLayout.Compute(items, options);
 
             float x0 = ctx.BarRect.x, y = ctx.BarRect.y, h = ctx.BarRect.height;

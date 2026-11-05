@@ -164,6 +164,9 @@
   <MBBS_IconModeAll>Εικονίδιο και κείμενο (όλα τα κουμπιά)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Πώς δείχνουν όλα τα κουμπιά το εικονίδιο και την ετικέτα τους, εκτός αν ένα κουμπί έχει δική του ρύθμιση.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Εφαρμογή σε όλα τα κουμπιά με δική τους ρύθμιση ({0})</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Εφαρμογή του πλάτους της γραμμής σε όλα τα κουμπιά με δικό τους πλάτος ({0})</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Επαναφορά αυτού του κουμπιού</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Κάθε ρύθμιση αυτού του κουμπιού επιστρέφει σε ό,τι κληρονομεί: τις προεπιλογές του mod του, αλλιώς του ίδιου του παιχνιδιού. Τα πλήκτρα συντόμευσης δεν αλλάζουν.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Ίδιο με όλη τη γραμμή ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Δημιουργία mod διάταξης (έτοιμο για ανέβασμα)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Άνοιγμα φακέλου διατάξεων</MBBS_OpenExportsFolder>

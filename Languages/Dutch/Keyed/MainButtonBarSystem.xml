@@ -164,6 +164,9 @@ en klik op Vernieuwen. Ze blijven daar staan, ook als de mod wordt bijgewerkt.</
   <MBBS_IconModeAll>Icoon en tekst (alle knoppen)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Hoe elke knop zijn icoon en tekst toont, tenzij een knop een eigen instelling heeft.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Alle knoppen met een eigen instelling ({0}) dit laten volgen</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Alle knoppen met een eigen breedte ({0}) de balk laten volgen</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Deze knop herstellen</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Elke instelling van deze knop gaat terug naar wat hij erft: de standaardwaarden van zijn mod, anders die van het spel zelf. Sneltoetsen veranderen niet.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Gelijk aan de hele balk ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Indelingsmod maken (klaar om te uploaden)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Map met indelingen openen</MBBS_OpenExportsFolder>

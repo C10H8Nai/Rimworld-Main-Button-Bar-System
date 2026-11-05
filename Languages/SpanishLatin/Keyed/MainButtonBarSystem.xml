@@ -164,6 +164,9 @@ y luego haz clic en “Actualizar”. Se conservan aunque se actualice el mod.</
   <MBBS_IconModeAll>Ícono y texto (todos los botones)</MBBS_IconModeAll>
   <MBBS_IconModeAllTip>Cómo muestran todos los botones su ícono y su texto, salvo los que tienen una configuración propia.</MBBS_IconModeAllTip>
   <MBBS_IconModeClearAll>Hacer que todos los botones con configuración propia ({0}) sigan esta</MBBS_IconModeClearAll>
+  <MBBS_WidthClearAll>Hacer que todos los botones con ancho propio ({0}) sigan la barra</MBBS_WidthClearAll>
+  <MBBS_ResetButton>Restablecer este botón</MBBS_ResetButton>
+  <MBBS_ResetButtonTip>Toda la configuración de este botón vuelve a lo que hereda: los valores predeterminados de su mod o, si no los hay, los del propio juego. Los atajos no cambian.</MBBS_ResetButtonTip>
   <MBBS_IconMode_FollowBar>Igual que la barra completa ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Crear un mod de disposición (listo para subir)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Abrir la carpeta de disposiciones</MBBS_OpenExportsFolder>

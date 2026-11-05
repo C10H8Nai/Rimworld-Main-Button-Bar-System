@@ -68,6 +68,9 @@ namespace MainButtonBarSystem.Core
 
         public int MoreButtonWidth;
         public int ArrowWidth;
+
+        /// <summary>Equal split: the least width a button without its own width keeps (tuning def).</summary>
+        public int SplitMinWidth;
     }
 
     public readonly struct PlacedItem
@@ -162,16 +165,18 @@ namespace MainButtonBarSystem.Core
             else if (options.Mode == DisplayMode.Collapse && !options.FillScreen)
                 LayoutNatural(left, center, right, hasMore, barWidth, options, result, allowScroll: false);
             else
-                LayoutSplit(left, center, right, hasMore, barWidth, options.Mode == DisplayMode.Vanilla ? 0 : Math.Max(0, options.Gap), result);
+                LayoutSplit(left, center, right, hasMore, barWidth, options.Mode == DisplayMode.Vanilla ? 0 : Math.Max(0, options.Gap), Math.Max(1, options.SplitMinWidth), result);
 
             return result;
         }
 
         /// <summary>
-        /// Vanilla-style equal split: every visible button gets the same integer width (half buttons get half of it),
-        /// and the last button takes whatever is left so the bar always spans exactly the full width.
+        /// Vanilla-style equal split: buttons with their own width keep it (design spec 3.10), the others share what is
+        /// left equally (half buttons get half), and the last of those takes the rounding so the bar spans exactly the
+        /// full width. When the set widths leave less than <paramref name="minWidth"/> for each of the others, every
+        /// button shrinks in proportion instead, so nothing runs past the bar.
         /// </summary>
-        private static void LayoutSplit(List<LayoutItem> left, List<LayoutItem> center, List<LayoutItem> right, bool hasMore, int barWidth, int gap, LayoutResult result)
+        private static void LayoutSplit(List<LayoutItem> left, List<LayoutItem> center, List<LayoutItem> right, bool hasMore, int barWidth, int gap, int minWidth, LayoutResult result)
         {
             var sequence = new List<(LayoutItem item, int region)>();
             foreach (var i in left) sequence.Add((i, 0));
@@ -183,20 +188,60 @@ namespace MainButtonBarSystem.Core
             result.ViewportWidth = 0;
             if (sequence.Count == 0) return;
 
-            float units = 0f;
-            foreach (var (item, _) in sequence) units += item != null && item.Minimized ? 0.5f : 1f;
-
             int available = Math.Max(0, barWidth - gap * (sequence.Count - 1));
-            int full = (int)(available / units);
-            int half = full / 2;
+            var widths = new int[sequence.Count];
+            float flexibleUnits = 0f;
+            long fixedTotal = 0;
+            int lastFlexible = -1;
+            for (int n = 0; n < sequence.Count; n++)
+            {
+                var item = sequence[n].item;
+                if (item?.Width is int own && own > 0)
+                {
+                    widths[n] = own;
+                    fixedTotal += own;
+                }
+                else
+                {
+                    flexibleUnits += item != null && item.Minimized ? 0.5f : 1f;
+                    lastFlexible = n;
+                }
+            }
+
+            int full = flexibleUnits > 0f ? (int)((available - fixedTotal) / flexibleUnits) : 0;
+            bool shrink = fixedTotal > 0 && (flexibleUnits > 0f ? full < minWidth : fixedTotal > available);
+            for (int n = 0; n < sequence.Count; n++)
+            {
+                if (widths[n] > 0) continue; // its own width
+                var item = sequence[n].item;
+                int share = shrink ? minWidth : full;
+                widths[n] = item != null && item.Minimized ? share / 2 : share;
+            }
+
+            // Space left over when every button has its own width and they fit: kept before More and the
+            // right-pinned buttons, so those stay at the right edge.
+            int slack = 0;
+            if (shrink) ScaleTo(widths, available);
+            else
+            {
+                long sum = 0;
+                foreach (int w in widths) sum += w;
+                if (lastFlexible >= 0) widths[lastFlexible] = Math.Max(0, widths[lastFlexible] + (int)(available - sum));
+                else slack = (int)Math.Max(0, available - sum);
+            }
 
             int x = 0;
             int centerStart = -1, centerEnd = 0;
+            bool slackPlaced = false;
             for (int n = 0; n < sequence.Count; n++)
             {
                 var (item, region) = sequence[n];
-                int width = item != null && item.Minimized ? half : full;
-                if (n == sequence.Count - 1) width = Math.Max(0, barWidth - x);
+                int width = widths[n];
+                if (!slackPlaced && region >= 2)
+                {
+                    x += slack;
+                    slackPlaced = true;
+                }
 
                 switch (region)
                 {

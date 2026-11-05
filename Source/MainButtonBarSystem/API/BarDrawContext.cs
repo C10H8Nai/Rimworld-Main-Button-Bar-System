@@ -15,8 +15,8 @@ namespace MainButtonBarSystem
     {
         public MainButtonDef Def;
 
-        /// <summary>Effective settings: the user's override, else the button's XML defaults, else empty.</summary>
-        public ButtonOverride Settings;
+        /// <summary>Effective settings: the player's changes over what the button inherits.</summary>
+        public ButtonSettings Settings;
 
         public PinPosition Pin;
         public bool InDrawer;
