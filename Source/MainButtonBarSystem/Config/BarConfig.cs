@@ -100,7 +100,12 @@ namespace MainButtonBarSystem
         public ButtonPin pin;
         public DefaultableBool forceShow;
         public ButtonIconMode iconMode;
+
+        /// <summary>Custom icon reference; null not changed; <see cref="OwnIcon"/> the button's own icon even when its mod declared another.</summary>
         public string icon;
+
+        /// <summary>Stored icon meaning "the button's own icon" (the inherited one may be a mod's declared icon).</summary>
+        public const string OwnIcon = "@own";
 
         public ButtonOverride()
         {
@@ -139,7 +144,7 @@ namespace MainButtonBarSystem
             pin == ButtonPin.Default ? inherited.pin : ToPosition(pin),
             BarConfig.Resolve(forceShow, inherited.forceShow),
             iconMode == ButtonIconMode.Default ? inherited.iconMode : ToIconMode(iconMode),
-            string.IsNullOrEmpty(icon) ? inherited.icon : icon);
+            string.IsNullOrEmpty(icon) ? inherited.icon : icon == OwnIcon ? null : icon);
 
         public static PinPosition ToPosition(ButtonPin pin) => pin switch
         {
@@ -176,20 +181,28 @@ namespace MainButtonBarSystem
         /// field missing from the file meant false, 0, None or "follow the bar". Reads those values and keeps only the
         /// fields that differ from what the button inherits now.
         /// </summary>
-        internal void UpgradeFromSnapshot(in ButtonSettings inherited)
+        /// <param name="keepAll">
+        /// The button's def is missing (its mod is off): what it inherits is unknown, so every value is kept as set,
+        /// and the button looks as before when the mod comes back.
+        /// </param>
+        internal void UpgradeFromSnapshot(in ButtonSettings inherited, bool keepAll)
         {
-            hidden = Changed(hidden == DefaultableBool.True, inherited.hidden);
-            inDrawer = Changed(inDrawer == DefaultableBool.True, inherited.inDrawer);
-            forceShow = Changed(forceShow == DefaultableBool.True, inherited.forceShow);
+            bool h = hidden == DefaultableBool.True, d = inDrawer == DefaultableBool.True, f = forceShow == DefaultableBool.True;
             int w = Math.Max(0, width);
-            width = w == inherited.width ? BarConfig.Unset : w;
             var p = ToPosition(pin);
-            pin = p == inherited.pin ? ButtonPin.Default : FromPosition(p);
             var m = ToIconMode(iconMode);
-            iconMode = m == inherited.iconMode ? ButtonIconMode.Default : FromIconMode(m);
-            if (NullIfEmpty(label) == inherited.label) label = null;
-            if (NullIfEmpty(icon) == inherited.icon) icon = null;
+            string ic = NullIfEmpty(icon);
+            hidden = keepAll ? Explicit(h) : Changed(h, inherited.hidden);
+            inDrawer = keepAll ? Explicit(d) : Changed(d, inherited.inDrawer);
+            forceShow = keepAll ? Explicit(f) : Changed(f, inherited.forceShow);
+            width = !keepAll && w == inherited.width ? BarConfig.Unset : w;
+            pin = !keepAll && p == inherited.pin ? ButtonPin.Default : FromPosition(p);
+            iconMode = !keepAll && m == inherited.iconMode ? ButtonIconMode.Default : FromIconMode(m);
+            if (NullIfEmpty(label) == inherited.label && !keepAll) label = null;
+            icon = !keepAll && ic == inherited.icon ? null : ic ?? OwnIcon;
         }
+
+        private static DefaultableBool Explicit(bool value) => value ? DefaultableBool.True : DefaultableBool.False;
 
         private static DefaultableBool Changed(bool value, bool inherited) => BarConfig.Store(value, inherited);
 
@@ -403,7 +416,12 @@ namespace MainButtonBarSystem
         public void SetLabel(string defName, string value) => Edit(defName, (o, i) => o.label = string.IsNullOrEmpty(value) || value == i.label ? null : value);
         public void SetWidth(string defName, int value) => Edit(defName, (o, i) => o.width = value == i.width ? Unset : Math.Max(0, value));
         public void SetPin(string defName, PinPosition value) => Edit(defName, (o, i) => o.pin = value == i.pin ? ButtonPin.Default : ButtonOverride.FromPosition(value));
-        public void SetIcon(string defName, string value) => Edit(defName, (o, i) => o.icon = string.IsNullOrEmpty(value) || value == i.icon ? null : value);
+        /// <summary>null or empty: the button's own icon.</summary>
+        public void SetIcon(string defName, string value) => Edit(defName, (o, i) =>
+        {
+            string v = string.IsNullOrEmpty(value) ? null : value;
+            o.icon = v == i.icon ? null : v ?? ButtonOverride.OwnIcon;
+        });
 
         /// <summary><see cref="IconMode.Default"/> means "follow the bar" here.</summary>
         public void SetIconMode(string defName, IconMode value) =>
@@ -444,9 +462,11 @@ namespace MainButtonBarSystem
             if (formatVersion >= 3) return;
             overrides ??= new List<ButtonOverride>();
             foreach (var o in overrides)
-                if (o?.defName != null) o.UpgradeFromSnapshot(ButtonDefaults.Inherited(o.defName));
+                if (o?.defName != null)
+                    o.UpgradeFromSnapshot(ButtonDefaults.Inherited(o.defName), keepAll: DefDatabase<RimWorld.MainButtonDef>.GetNamedSilentFail(o.defName) == null);
             formatVersion = CurrentFormatVersion;
-            Prune();
+            index = null;
+            // Not pruned here: an override left empty still tells an import that the file knew this button.
         }
 
         /// <summary>This config if it is current, else an upgraded copy (the original stays as loaded, for example in a def).</summary>

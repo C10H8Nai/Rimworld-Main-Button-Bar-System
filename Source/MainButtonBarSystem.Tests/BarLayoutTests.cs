@@ -153,6 +153,17 @@ namespace MainButtonBarSystem.Tests
         }
 
         [Fact]
+        public void Vanilla_AllOwnWidthsKeepPinnedRightAtTheEdge()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a", width: 100), new LayoutItem("menu", width: 80, pin: PinPosition.Right) };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 400 }));
+
+            Assert.Equal(0, r.Center[0].X + r.ViewportX);
+            Assert.Equal(320, r.Right[0].X);
+            Assert.Equal(80, r.Right[0].Width);
+        }
+
+        [Fact]
         public void CollapseFill_KeepsOwnWidthsWithMoreAndGaps()
         {
             var items = new List<LayoutItem>

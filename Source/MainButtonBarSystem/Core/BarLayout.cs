@@ -218,20 +218,30 @@ namespace MainButtonBarSystem.Core
                 widths[n] = item != null && item.Minimized ? share / 2 : share;
             }
 
+            // Space left over when every button has its own width and they fit: kept before More and the
+            // right-pinned buttons, so those stay at the right edge.
+            int slack = 0;
             if (shrink) ScaleTo(widths, available);
-            else if (lastFlexible >= 0)
+            else
             {
                 long sum = 0;
                 foreach (int w in widths) sum += w;
-                widths[lastFlexible] = Math.Max(0, widths[lastFlexible] + (int)(available - sum));
+                if (lastFlexible >= 0) widths[lastFlexible] = Math.Max(0, widths[lastFlexible] + (int)(available - sum));
+                else slack = (int)Math.Max(0, available - sum);
             }
 
             int x = 0;
             int centerStart = -1, centerEnd = 0;
+            bool slackPlaced = false;
             for (int n = 0; n < sequence.Count; n++)
             {
                 var (item, region) = sequence[n];
                 int width = widths[n];
+                if (!slackPlaced && region >= 2)
+                {
+                    x += slack;
+                    slackPlaced = true;
+                }
 
                 switch (region)
                 {

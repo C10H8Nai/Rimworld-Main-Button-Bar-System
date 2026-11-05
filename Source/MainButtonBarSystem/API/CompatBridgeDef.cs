@@ -99,6 +99,15 @@ namespace MainButtonBarSystem
             if (CompatBridges.FixSessionPriority(def, Priority) == CompatPriority.Ours) TakeOver();
         }
 
+        /// <summary>
+        /// Called once at startup, before any settings are read, when this mod has priority this session. Set button
+        /// defaults here (<see cref="ButtonDefaults.SetRuntimeDefault"/>), so settings saved in older formats are read
+        /// against the same defaults the game will use.
+        /// </summary>
+        public virtual void RegisterRuntimeDefaults()
+        {
+        }
+
         /// <summary>Removes the other mod's patches on the bar. Override to also undo changes it already made.</summary>
         protected virtual void TakeOver()
         {
@@ -167,8 +176,12 @@ namespace MainButtonBarSystem
             RestoreBaselineDefFields();
             // It already rewrote this game's button list; follow the restored order instead (not by changing the list).
             BarModel.IgnoreLiveOrderOf((Find.UIRoot as UIRoot_Play)?.mainButtonsRoot);
+            RegisterRuntimeDefaults();
+        }
 
-            // Spec 4.14: its own drawer button is listed like any other, starting hidden (this mod's drawer replaces it).
+        /// <summary>Spec 4.14: its own drawer button is listed like any other, starting hidden (this mod's drawer replaces it).</summary>
+        public override void RegisterRuntimeDefaults()
+        {
             foreach (var button in DefDatabase<MainButtonDef>.AllDefs)
             {
                 var id = button.modContentPack?.PackageId;

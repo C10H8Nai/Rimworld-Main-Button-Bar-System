@@ -107,7 +107,9 @@ follow the player's tuning defaults; see below.
 Each field of an override is set on its own: a field left out keeps what the button inherits (its mod's button
 defaults, section 1, else the game's own), so it still follows if those change. Switches take `True` / `False`
 (`Default` = left out); `width` is pixels, `0` to follow the bar explicitly (`-1` = left out); `pin` is `None` /
-`Left` / `Right`; `iconMode` is `FollowBar` / `Text` / `Icon` / `Both`.
+`Left` / `Right`; `iconMode` is `FollowBar` / `Text` / `Icon` / `Both`; `icon` is a texture path, a `file:` icon, or
+`@own` for the button's own icon even when its mod declared another. Values are case-sensitive: write `True`, not
+`true`.
 
 Format 1 and 2 stored a whole button once it was edited, and a field left out meant false, 0, `None` or "follow
 the bar". Such arrangements (files, saves and defs) still load: fields equal to what the button inherits are read as
@@ -578,7 +580,10 @@ Most add-ons should work with or without Main Button Bar System. Common ways:
 `MainButtonBarAPI.ApiVersion` (a property; currently `1.1`) covers everything in this document: the five
 slots' def fields and workers, `CompatNoticeDef`, `MainButtonBarDefaults`, `MainButtonArrangementDef`, `BarDrawContext`,
 `BarButton`, `BarDecoration`, `BarButtonImage`, `DecorationLayout`, `ImageFit`, `ButtonPainter.Draw` and `MainButtonBarAPI`. Additions raise the minor number; removals or changed
-meanings raise the major number, and removed members stay for one release marked `[Obsolete]`. Arrangements carry
+meanings raise the major number, and removed members stay for one release marked `[Obsolete]`. Version 1.1 has not
+been released yet, and until it is, its members may still change; on 2026-11-05 `BarButton.Settings` became a
+`ButtonSettings` value, the fields of `ButtonOverride` gained a "not changed" value, `ButtonDefaults.For` became
+`ButtonDefaults.Inherited`, and `ButtonPainter.EffectiveIcon` takes a `ButtonSettings`. Arrangements carry
 their own `formatVersion`. Anything not listed here is internal and may change.
 
 ## Harmony patches and ordering

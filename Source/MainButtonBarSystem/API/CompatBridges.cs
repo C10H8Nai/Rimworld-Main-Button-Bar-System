@@ -45,6 +45,27 @@ namespace MainButtonBarSystem
         }
 
         /// <summary>
+        /// At startup, before any settings are read: fixes this session's priority of every detected bridge (changes
+        /// apply after a restart anyway) and lets bridges with this mod first set their runtime button defaults.
+        /// </summary>
+        internal static void PrepareAtStartup()
+        {
+            foreach (var def in All)
+            {
+                try
+                {
+                    var worker = def.Worker;
+                    if (!worker.Detected) continue;
+                    if (FixSessionPriority(def, worker.Priority) == CompatPriority.Ours) worker.RegisterRuntimeDefaults();
+                }
+                catch (System.Exception e)
+                {
+                    Log.Error($"{MainButtonBarSystemMod.LogPrefix}Compatibility with {def.ModNameOrLabel} failed to prepare: {e}");
+                }
+            }
+        }
+
+        /// <summary>
         /// Applies the chosen priorities once per session. Called from a game component's OnGUI, outside the
         /// methods that may get unpatched, after every mod has finished patching.
         /// </summary>

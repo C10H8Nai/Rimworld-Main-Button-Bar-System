@@ -22,6 +22,9 @@ namespace MainButtonBarSystem
                 return;
             }
 
+            // Before any settings are read: older formats are upgraded against the defaults bridges set.
+            CompatBridges.PrepareAtStartup();
+
             // Read the template now, outside any game load, so later reads never nest inside another Scribe pass.
             _ = BarConfigManager.Template;
 

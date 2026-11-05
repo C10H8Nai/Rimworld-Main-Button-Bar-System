@@ -26,7 +26,7 @@ namespace MainButtonBarSystem
         /// <summary>The texture for a stored icon value, or null when unset or not found.</summary>
         public static Texture2D Resolve(string icon)
         {
-            if (string.IsNullOrEmpty(icon)) return null;
+            if (string.IsNullOrEmpty(icon) || icon == ButtonOverride.OwnIcon) return null;
             if (cache.TryGetValue(icon, out var tex)) return tex;
             if (missing.Contains(icon)) return null;
 
@@ -36,7 +36,7 @@ namespace MainButtonBarSystem
             return tex;
         }
 
-        public static bool IsMissing(string icon) => !string.IsNullOrEmpty(icon) && Resolve(icon) == null;
+        public static bool IsMissing(string icon) => !string.IsNullOrEmpty(icon) && icon != ButtonOverride.OwnIcon && Resolve(icon) == null;
 
         private static Texture2D LoadFile(string fileName)
         {
@@ -108,7 +108,7 @@ namespace MainButtonBarSystem
         /// <summary>Short text for a stored icon value.</summary>
         public static string Describe(string icon)
         {
-            if (string.IsNullOrEmpty(icon)) return "MBBS_IconOriginal".Translate();
+            if (string.IsNullOrEmpty(icon) || icon == ButtonOverride.OwnIcon) return "MBBS_IconOriginal".Translate();
             string name = IsFile(icon) ? FileName(icon) : icon;
             return IsMissing(icon) ? "MBBS_IconMissing".Translate(name) : (TaggedString)name;
         }

@@ -1005,7 +1005,7 @@ namespace MainButtonBarSystem
             if (Widgets.ButtonText(new Rect(row.xMax - right, row.y, chooseWidth, row.height), choose))
                 Find.WindowStack.Add(new Dialog_IconPicker(o.icon, icon => working.SetIcon(name, icon)));
             if (DefaultButton(row, o.icon != dflt.icon))
-                working.SetIcon(name, null);
+                working.SetIcon(name, dflt.icon);
             if (CustomIcons.IsMissing(o.icon))
                 Note(listing, "MBBS_IconMissingNote".Translate());
         }
