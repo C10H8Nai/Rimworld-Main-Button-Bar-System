@@ -97,6 +97,12 @@
 - `MainButtonArrangementDef`：排序積木，訂閱後出現在匯入選單。
 - `MainButtonIconSetDef`：圖示包。
 
+**自訂主題（2026-11-05 起，第 12 輪）**
+- 外觀分頁上方切換「預設主題／自訂主題」，兩種模式都有和按鈕分頁一樣的底部按鈕。
+- 資料：`BarConfig.appearanceMode`、`customTheme`（`Config/CustomTheme.cs`：`CustomThemeData` 有「所有按鈕」一層和每顆按鈕一層的 `ButtonLook`）。每一項：這顆 → 所有按鈕 → 預設主題選的那款 → 遊戲。
+- 繪製：`BarAppearanceWorker_Custom` 疊在選的主題上；worker 新增 `ChangesButtons`、`LabelAlignFor`、`LabelFontFor`、`IconLookFor`，由 `ButtonPainter` 套到每顆按鈕。圖示擺放在 `Core/IconPlacement.cs`（有測試）。
+- 介面：`UI/Dialog_MainButtonBar.Appearance.cs`（設定視窗改成 partial）。
+
 **主題系統（API 1.1）**
 - 按鈕外觀是 64×64 九宮格 atlas，四角是貼圖寬的 1/4，最多 18px，所以超過 72×72 沒意義；中段會拉伸。
 - 1.1 新增：
