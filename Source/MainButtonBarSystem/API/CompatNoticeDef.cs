@@ -79,6 +79,8 @@ namespace MainButtonBarSystem
 
         [Unsaved] private bool? detected;
         [Unsaved] private bool unreadableLogged;
+        [Unsaved] private bool typeResolved;
+        [Unsaved] private Type resolvedType;
 
         public string ModNameOrLabel => modName ?? LabelCap;
 
@@ -129,7 +131,12 @@ namespace MainButtonBarSystem
                 }
                 else
                 {
-                    var type = GenTypes.GetTypeInAnyAssembly(settingType);
+                    if (!typeResolved)
+                    {
+                        typeResolved = true;
+                        resolvedType = GenTypes.GetTypeInAnyAssembly(settingType);
+                    }
+                    var type = resolvedType;
                     if (type == null)
                     {
                         problem = "type not found";
