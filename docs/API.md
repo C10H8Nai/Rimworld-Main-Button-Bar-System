@@ -12,6 +12,7 @@ What you can make, from the bar's top to its bottom:
 |---|---|---|---|
 | A mod with main buttons (race, faction, UI mod) | Say how your buttons should start; ship a theme or icons too, optionally | No | 1, "Shipping content inside another mod" |
 | A mod that draws the whole bar itself | A compatibility bridge, so players choose who draws | Yes | 5 |
+| A mod that overlaps with the bar but should be left alone | A compatibility notice, shown in the settings window | No | 5b |
 | A new way to lay out the bar | A display mode | Yes | 3 |
 | A look | A theme | No | 4 |
 | Icons | An icon pack | No | 2b |
@@ -475,6 +476,39 @@ The default worker removes the other mod's Harmony patches on `MainButtonsRoot.D
 `ButtonDefaults.SetRuntimeDefault` sets a button default while the game runs. Priority changes apply after a
 restart.
 
+## 5b. Compatibility notices (XML only)
+
+For another mod that overlaps with this one but should be left alone: nothing is switched off and none of its
+patches are removed. The settings window only shows a notice at the top, picked from the other mod's on/off switch
+and from who drew the bar on the last draw. The built-in one, for [LFS] UI Rethemed - Main Bar, is in
+`Defs/MainButtonBarSystem/CompatNotices.xml`.
+
+```xml
+<MainButtonBarSystem.CompatNoticeDef>
+  <defName>MyMod_OtherBar</defName>
+  <modName>Other Bar Mod</modName>
+  <packageIds><li>someone.otherbar</li></packageIds>
+  <!-- A bool, read by reflection: a static member of settingType, then instance members, dot-separated.
+       Leave settingType out to start from the other mod's ModSettings object instead. -->
+  <settingType>OtherBar.OtherBarMod</settingType>
+  <settingMember>Settings.drawBar</settingMember>
+  <notices>
+    <!-- The first notice whose conditions hold is shown. textKey is a translation key; {0} is modName. -->
+    <li><setting>On</setting><bar>NotThisMod</bar><textKey>MyMod_OtherBarDraws</textKey></li>
+    <li><setting>On</setting><bar>ThisMod</bar><textKey>MyMod_BothBarsOn</textKey></li>
+  </notices>
+</MainButtonBarSystem.CompatNoticeDef>
+```
+
+| Field | Values |
+|---|---|
+| `setting` | `Any` (default), `On`, `Off`, `Unknown` (the switch could not be read: the other mod changed, or the path is wrong) |
+| `bar` | `Any` (default; also matches at the main menu, where no bar is drawn), `ThisMod`, `NotThisMod` (the game or another mod drew it) |
+
+A switch that cannot be read never shows an error: it counts as `Unknown`, and development mode logs one line.
+Development mode also logs, on the first bar draw, each notice def's state (active, switch value, who drew).
+Put the text in your own `Languages/<Language>/Keyed` files.
+
 ## Shipping content inside another mod
 
 Themes, icon packs, arrangements and button defaults are defs and textures, and the game reads defs and textures
@@ -531,7 +565,7 @@ Most add-ons should work with or without Main Button Bar System. Common ways:
 ## API stability
 
 `MainButtonBarAPI.ApiVersion` (a property; currently `1.1`) covers everything in this document: the five
-slots' def fields and workers, `MainButtonBarDefaults`, `MainButtonArrangementDef`, `BarDrawContext`,
+slots' def fields and workers, `CompatNoticeDef`, `MainButtonBarDefaults`, `MainButtonArrangementDef`, `BarDrawContext`,
 `BarButton`, `BarDecoration`, `BarButtonImage`, `DecorationLayout`, `ImageFit`, `ButtonPainter.Draw` and `MainButtonBarAPI`. Additions raise the minor number; removals or changed
 meanings raise the major number, and removed members stay for one release marked `[Obsolete]`. Arrangements carry
 their own `formatVersion`. Anything not listed here is internal and may change.

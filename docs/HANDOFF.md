@@ -90,6 +90,7 @@
 5. 查詢 API `MainButtonBarAPI`：哪些按鈕在列上、哪些在抽屜、列的位置。
 
 另外還有：
+- `CompatNoticeDef`（2026-11-05）：只提示、不切換優先也不拿掉補丁的相容定義，全部寫在 XML（packageId、用反射讀的開關、「開關狀態 × 誰畫列 → 提示文字」）。內建 [LFS] UI Rethemed - Main Bar，在 `Defs/MainButtonBarSystem/CompatNotices.xml`。
 - `MainButtonArrangementDef`：排序積木，訂閱後出現在匯入選單。
 - `MainButtonIconSetDef`：圖示包。
 
