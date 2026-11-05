@@ -130,9 +130,9 @@
 - 內建主題（`Defs/MainButtonBarSystem/BarAppearances.xml`）：
   - 原版。
   - 帝國、信條、基因實驗室、虛空、星航：配色依各 DLC 預覽圖實測，見 `docs/research/dlc-visuals-2026-11-04.md`；沒有用到任何 DLC 美術。
-  - 萘伊 `MBBS_Nai`：底部列左下一張 45% 透明的暫代立繪，正式圖由作者提供。
+  - 萘伊 `MBBS_Nai`：像素主題，原版風格的中空框，每顆主按鈕一張萘伊像素圖（有圖示的按鈕是萘伊雙手拿著對應道具，沒圖示的是從黑板後面探頭）；77 顆按鈕的對照寫在 Def 的 `buttonImages`，其他按鈕用只有黑板的 `buttonImage`。圖由作者在 repo 外產生，來源 PNG 在 `tools/themes/Nai/Buttons/`。
 - 工具：
-  - `tools/make_theme.py`：從 `tools/themes/*.json` 產生貼圖或整個主題模組，palette 可設 `hollow`（中空框）。
+  - `tools/make_theme.py`：從 `tools/themes/*.json` 產生貼圖或整個主題模組，palette 可設 `hollow`（中空框）或 `frame: vanilla`（原版風格的中空框）。
   - `tools/gen_theme_textures.py`：重產內建主題的貼圖。
   - 範本：`docs/examples/ExampleTheme`。
 
@@ -175,7 +175,6 @@
   - 說明文字在 `docs/workshop/description.txt`（BBCode，英文＋簡中＋繁中），發佈清單在 `docs/workshop/release-checklist.md`。
   - `tools/make_release.py` 會產生乾淨的上傳資料夾。
   - `About/Preview.png` 已換成實機截圖。
-- 萘伊主題的正式立繪和按鈕圖由作者提供。
 - 作者保留決定的事項：見兩份 spec 的〈保留給作者決定的〉。
 
 ## 8. 可以接著做的候選（作者沒指定時先問他，或挑風險低的）

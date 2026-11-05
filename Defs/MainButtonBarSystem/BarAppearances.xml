@@ -112,15 +112,18 @@
     <drawerSettingsIcon>MainButtonBarSystem/Themes/Starfarer/Gear</drawerSettingsIcon>
   </MainButtonBarSystem.BarAppearanceDef>
 
-  <!-- Nai: the author's character, anime style, in the colours of her character sheet: a translucent portrait behind
-       the left end of the bar, growing upwards out of it. The portrait is interim art cut from an existing illustration
-       (tools/themes/Nai/Portrait_interim.png, drawn into the texture by tools/make_theme.py from tools/themes/Nai.json;
-       keep this def in step with that file). Also the built-in example of a decoration and labelActiveColor
-       (docs/API.md section 4); the full set of illustration fields is shown by docs/examples/ExampleTheme. -->
+  <!-- Nai: the author's character as pixel art, in the colours of her character sheet. Vanilla-style hollow frames
+       (palette frame "vanilla" in tools/themes/Nai.json) and a picture inside every main button, chosen by what the button
+       does: Nai holding up a matching item for buttons that have an icon (chest_*, anchored left so the icon and label sit to
+       her right), Nai peeking from behind a blackboard for buttons without one (board_*, centred so the label sits on the
+       board). Buttons not listed get the plain blackboard (buttonImage). Textures are drawn into Textures/ by
+       tools/gen_theme_textures.py from tools/themes/Nai.json and the pictures in tools/themes/Nai/Buttons/; keep this def in
+       step with that file. Also the built-in example of buttonImage / buttonImages and labelActiveColor (docs/API.md
+       section 4); the full set of illustration fields is shown by docs/examples/ExampleTheme. -->
   <MainButtonBarSystem.BarAppearanceDef>
     <defName>MBBS_Nai</defName>
     <label>nai</label>
-    <description>Anime-style theme in Nai's colours: deep navy buttons with grey-white borders, graphite lines and a violet glow, and a translucent character illustration behind the left end of the bar.</description>
+    <description>Pixel-art theme with Nai: vanilla-style frames and a picture of Nai inside every main button. On buttons with an icon she holds up an item that matches the button (a blueprint, a flask, a medkit...); on buttons without one she peeks out from behind a blackboard that the label sits on. Pictures are set for the base game's and expansions' buttons and for many mods' buttons; any other button gets the blackboard.</description>
     <author>NAI</author>
     <displayOrder>60</displayOrder>
     <button>MainButtonBarSystem/Themes/Nai/Button</button>
@@ -136,16 +139,90 @@
     <arrowRight>MainButtonBarSystem/Themes/Nai/ArrowRight</arrowRight>
     <drawerBackground>MainButtonBarSystem/Themes/Nai/Drawer</drawerBackground>
     <drawerSettingsIcon>MainButtonBarSystem/Themes/Nai/Gear</drawerSettingsIcon>
-    <decorations>
-      <!-- The character, half transparent, behind the buttons, growing upwards out of the bar from its left end.
-           Players can change the opacity, size and position in the Appearance tab. -->
-      <li>
-        <texture>MainButtonBarSystem/Themes/Nai/Portrait</texture>
-        <anchor>Left</anchor>
-        <verticalAnchor>Bottom</verticalAnchor>
-        <opacity>0.45</opacity>
-        <layer>BelowButtons</layer>
-      </li>
-    </decorations>
+    <!-- The plain blackboard for every button not listed below. -->
+    <buttonImage>
+      <texture>MainButtonBarSystem/Themes/Nai/Btn_board_plain</texture>
+    </buttonImage>
+    <!-- One picture per button (button = the MainButtonDef's defName). Buttons of mods that are not loaded are
+         skipped. Fit Cover and vertical anchor Center are the defaults. -->
+    <buttonImages>
+      <li><button>Architect</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_build</texture><anchor>Left</anchor></li>
+      <li><button>Work</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_work</texture><anchor>Left</anchor></li>
+      <li><button>Schedule</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_time</texture><anchor>Left</anchor></li>
+      <li><button>Assign</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_manage</texture><anchor>Left</anchor></li>
+      <li><button>Animals</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_animals</texture><anchor>Left</anchor></li>
+      <li><button>Mechs</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_mech</texture><anchor>Left</anchor></li>
+      <li><button>Wildlife</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_animals</texture><anchor>Left</anchor></li>
+      <li><button>Research</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_research</texture><anchor>Left</anchor></li>
+      <li><button>Quests</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_quests</texture><anchor>Left</anchor></li>
+      <li><button>World</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_world</texture><anchor>Left</anchor></li>
+      <li><button>History</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_journal</texture><anchor>Left</anchor></li>
+      <li><button>Factions</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_diplomacy</texture><anchor>Left</anchor></li>
+      <li><button>Ideos</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_faith</texture><anchor>Left</anchor></li>
+      <li><button>Menu</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_system</texture><anchor>Left</anchor></li>
+      <li><button>NLFaceSelectTab</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_style</texture><anchor>Left</anchor></li>
+      <li><button>ModHelp</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_wiki</texture><anchor>Left</anchor></li>
+      <li><button>AAAA_EmergencySpeaker</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_alert</texture><anchor>Left</anchor></li>
+      <li><button>ATC_MainButton</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_system</texture></li>
+      <li><button>AM_LevelSchedule</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_plain</texture></li>
+      <li><button>Ancot_DronesTab</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_mech</texture></li>
+      <li><button>AD_AnimalDictionary</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_wiki</texture></li>
+      <li><button>MI_UniquePawn_Manager</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_people</texture><anchor>Left</anchor></li>
+      <li><button>CL_ModuleCenter</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_plain</texture></li>
+      <li><button>TD_Ctrl-F</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_search</texture><anchor>Left</anchor></li>
+      <li><button>TD_CustomAlerts</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_alert</texture><anchor>Left</anchor></li>
+      <li><button>CQF_QuestBook</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_quests</texture><anchor>Left</anchor></li>
+      <li><button>WiseClock_DaysMatter</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_time</texture><anchor>Left</anchor></li>
+      <li><button>PaintShop</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_build</texture><anchor>Left</anchor></li>
+      <li><button>MintBillMenu</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_work</texture><anchor>Left</anchor></li>
+      <li><button>MintGearMenu</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_gear</texture><anchor>Left</anchor></li>
+      <li><button>Rimatomics</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_power</texture><anchor>Left</anchor></li>
+      <li><button>Milk_MainButton</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_animals</texture><anchor>Left</anchor></li>
+      <li><button>FP_VeteransMainTab</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_people</texture><anchor>Left</anchor></li>
+      <li><button>FW_FashionTab</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_style</texture></li>
+      <li><button>Patients</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_medical</texture><anchor>Left</anchor></li>
+      <li><button>Guests</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_diplomacy</texture><anchor>Left</anchor></li>
+      <li><button>Inventory</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_gear</texture><anchor>Left</anchor></li>
+      <li><button>HardworkingWork</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_work</texture></li>
+      <li><button>Kiiro_Merchant</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_trade</texture></li>
+      <li><button>SM_MechWork</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_mech</texture><anchor>Left</anchor></li>
+      <li><button>MedicalTab</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_medical</texture><anchor>Left</anchor></li>
+      <li><button>Milian_Config</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_mech</texture></li>
+      <li><button>AIRobots</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_mech</texture><anchor>Left</anchor></li>
+      <li><button>Miracle_MainTab</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_plain</texture></li>
+      <li><button>Nivarian_UplinkResearch</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_research</texture></li>
+      <li><button>ARKPP_PowerPP</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_power</texture><anchor>Left</anchor></li>
+      <li><button>PrisonerRecruit</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_people</texture></li>
+      <li><button>ZHP_ShopManagement</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_trade</texture></li>
+      <li><button>RavenRace_SpecialPawnRoster</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_people</texture><anchor>Left</anchor></li>
+      <li><button>RC_ResearchCommissionButton</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_research</texture></li>
+      <li><button>RimIris</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_records</texture><anchor>Left</anchor></li>
+      <li><button>RPMainButton</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_wiki</texture><anchor>Left</anchor></li>
+      <li><button>RR_Relations</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_people</texture></li>
+      <li><button>Sim_BusinessManager</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_trade</texture></li>
+      <li><button>RimTalkDebug</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_talk</texture><anchor>Left</anchor></li>
+      <li><button>RimTalk_Announcements</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_talk</texture></li>
+      <li><button>RimTalk_Memory</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_talk</texture></li>
+      <li><button>RTDC_HistoryTab</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_talk</texture><anchor>Left</anchor></li>
+      <li><button>PersonaDirector</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_talk</texture><anchor>Left</anchor></li>
+      <li><button>ASA_Combat</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_combat</texture></li>
+      <li><button>RGC_UI</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_system</texture></li>
+      <li><button>SW_Warrants</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_combat</texture><anchor>Left</anchor></li>
+      <li><button>SR_FactionProgress</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_diplomacy</texture><anchor>Left</anchor></li>
+      <li><button>StuffList</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_gear</texture><anchor>Left</anchor></li>
+      <li><button>DMS_CrisisShop</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_trade</texture></li>
+      <li><button>DMSAM_AirSupportControl</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_bscope</texture></li>
+      <li><button>UAT_MainButton</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_style</texture></li>
+      <li><button>Achievements</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_trophy</texture><anchor>Left</anchor></li>
+      <li><button>VisualExceptionsTab</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_system</texture><anchor>Left</anchor></li>
+      <li><button>Bodlosh_WeaponStats</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_combat</texture><anchor>Left</anchor></li>
+      <li><button>WVC_MechsWork</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_mech</texture><anchor>Left</anchor></li>
+      <li><button>XmlExtensions_MainButton_ModSettings</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_system</texture><anchor>Left</anchor></li>
+      <li><button>DigitalStorage_CraftAutomation</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_work</texture><anchor>Left</anchor></li>
+      <li><button>ZP_Dictionary</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_wiki</texture><anchor>Left</anchor></li>
+      <li><button>GuRenGuiLai_Archive</button><texture>MainButtonBarSystem/Themes/Nai/Btn_board_records</texture></li>
+      <li><button>RI_InsuranceTab</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_trade</texture><anchor>Left</anchor></li>
+      <li><button>RimStocks_MainButton</button><texture>MainButtonBarSystem/Themes/Nai/Btn_chest_trade</texture><anchor>Left</anchor></li>
+    </buttonImages>
   </MainButtonBarSystem.BarAppearanceDef>
 </Defs>

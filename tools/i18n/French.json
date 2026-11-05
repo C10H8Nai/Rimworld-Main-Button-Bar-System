@@ -297,7 +297,7 @@
       "MBBS_Starfarer.label": "voyageur stellaire",
       "MBBS_Starfarer.description": "Violet de l'espace, plaques de coque violettes, rivets cyan et ligne cyan des propulseurs, aux couleurs de l'extension Odyssey.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Thème de style anime aux couleurs de Nai : boutons bleu marine à bordures gris-blanc, lignes graphite et halo violet, avec une illustration de personnage à l'extrémité gauche de la barre."
+      "MBBS_Nai.description": "Thème pixel art avec Nai : cadres dans le style du jeu d'origine et une image de Nai dans chaque bouton principal. Sur les boutons avec une icône, elle brandit un objet qui correspond au bouton (un plan, une fiole, une trousse de soins...) ; sur les boutons sans icône, elle jette un œil derrière un tableau noir sur lequel est posée l'étiquette. Des images sont prévues pour les boutons du jeu de base, des extensions et de nombreux mods ; tout autre bouton reçoit le tableau noir."
     }
   }
 }
