@@ -164,6 +164,8 @@ namespace MainButtonBarSystem
             base.TakeOver();
             RemovePatchesFromOtherMod(AccessTools.Method(typeof(Game), nameof(Game.FinalizeInit)));
             RestoreBaselineDefFields();
+            // It already rewrote this game's button list; follow the restored order instead (not by changing the list).
+            BarModel.IgnoreLiveOrderOf((Find.UIRoot as UIRoot_Play)?.mainButtonsRoot);
 
             // Spec 4.14: its own drawer button is listed like any other, starting hidden (this mod's drawer replaces it).
             foreach (var button in DefDatabase<MainButtonDef>.AllDefs)

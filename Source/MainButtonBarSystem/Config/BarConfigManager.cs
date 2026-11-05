@@ -36,6 +36,12 @@ namespace MainButtonBarSystem
                     var component = Component;
                     if (component?.config != null) return component.config;
                 }
+                else if (componentList != null)
+                {
+                    // Out of a game: let the old game's components go before the next one loads.
+                    componentList = null;
+                    component = null;
+                }
                 return Template ?? Untouched;
             }
         }

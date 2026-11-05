@@ -139,6 +139,18 @@ namespace MainButtonBarSystem.Tests
         }
 
         [Fact]
+        public void Collapse_WithoutFill_ShrinksWithGapsAndHalfButtons()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b", minimized: true), new LayoutItem("c") };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 210, DefaultWidth = 100, MinWidth = 50, Gap = 5 }, fill: false));
+
+            // Naturals 100 + 50 + 100 plus two 5px gaps do not fit 210: the 200px left for buttons is shared in proportion.
+            Assert.Equal(new[] { 80, 40, 80 }, r.Center.Select(c => c.Width));
+            Assert.Equal(210, r.ContentWidth);
+            Assert.False(r.NeedsScroll);
+        }
+
+        [Fact]
         public void Collapse_WithoutFill_ShrinksAroundMoreAndPinnedButtons()
         {
             var items = new List<LayoutItem>

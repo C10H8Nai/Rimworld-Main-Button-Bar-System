@@ -52,11 +52,26 @@ namespace MainButtonBarSystem
             }
         }
 
+        private static readonly System.WeakReference<MainButtonsRoot> ignoredRoot = new System.WeakReference<MainButtonsRoot>(null);
+
+        /// <summary>
+        /// The order of this root's list is not the game's own: a mod rewrote it before a compatibility bridge took
+        /// the bar over (TooManyButtons with this mod first). The baseline order is used for it instead; the next
+        /// game builds a fresh list from the restored defs.
+        /// </summary>
+        internal static void IgnoreLiveOrderOf(MainButtonsRoot root)
+        {
+            ignoredRoot.SetTarget(root);
+            currentNames = null;
+            currentSource.Clear();
+        }
+
         private static List<MainButtonDef> LiveOrder()
         {
             if (AllButtonsInOrder == null || Current.ProgramState != ProgramState.Playing) return null;
             var root = (Find.UIRoot as UIRoot_Play)?.mainButtonsRoot;
-            var list = root == null ? null : AllButtonsInOrder(root);
+            if (root == null || ignoredRoot.TryGetTarget(out var ignored) && ReferenceEquals(root, ignored)) return null;
+            var list = AllButtonsInOrder(root);
             return list == null || list.Count == 0 ? null : list;
         }
 

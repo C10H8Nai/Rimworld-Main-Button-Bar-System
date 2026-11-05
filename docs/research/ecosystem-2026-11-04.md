@@ -21,7 +21,7 @@
 | 模組 | 怎麼接進遊戲 | 和本模組並存 |
 |---|---|---|
 | Dubs Mint Menus（https://github.com/Dubwise56/Dubs-Mint-Menus） | repo 公開、支援 1.7，但**只有 DLL 沒有原始碼**。定義 3 顆隱藏按鈕、2 顆半格按鈕；DLL 裡有 `MainButtonsOnGUI`、`HandleLowPriorityShortcuts` 的補丁（內容未驗證） | 前幾輪實測同時啟用沒有問題 |
-| Multiplayer | 觀戰者時 `DoButtons` 的 prefix 回傳 false，只畫選單和世界；postfix **每次都**照 `def.order` 重排 `allButtonsInOrder`（連單人遊戲也是） | 本模組不讀 `allButtonsInOrder` 的順序，所以不受重排影響 |
+| Multiplayer | 觀戰者時 `DoButtons` 的 prefix 回傳 false，只畫選單和世界；postfix **每次都**照 `def.order` 重排 `allButtonsInOrder`（連單人遊戲也是） | 玩家沒設順序時，本模組跟著 `allButtonsInOrder`（2026-11-05 起）；它照 `def.order` 重排的結果和遊戲原本的順序一樣，所以順序不變 |
 | Tab-sorting（https://github.com/emipa606/TabSorting） | 改 `MainButtonDef.order`，用反射重寫 `allButtonsInOrder` | 它的 `IgnoreSettingDef`（讓別的模組宣告「別動我」）是好的參考設計；之後可以做「從它匯入排序」 |
 | DragReorder（https://github.com/ifchen0/DragReorder） | 建構子 postfix 重排清單；`MainButtonsOnGUI` prefix 用**原版按鈕位置**判斷拖曳 | 本模組畫列時，它的拖曳會落在錯的位置。**本輪已加相容橋接** |
 | UI Not Included（https://github.com/GonDragon/UINotIncluded） | transpiler 把 `MainButtonsOnGUI` 裡呼叫 `DoButtons` 的地方換成自己的列 | 它啟用時本模組的補丁**根本不會執行**。**本輪已加相容橋接**（本模組優先時移除它這個 transpiler） |

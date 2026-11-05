@@ -47,7 +47,7 @@ namespace MainButtonBarSystem
             ScrollCaptureRect = Rect.zero;
             if (failed)
             {
-                ReportGameDrawn(root);
+                SafeReportGameDrawn(root);
                 return false;
             }
 
@@ -66,7 +66,7 @@ namespace MainButtonBarSystem
             catch (Exception e) when (!(e is ExitGUIException))
             {
                 Fail("Reading the main button bar settings failed; handing the bar back to the game for this session", e);
-                ReportGameDrawn(root);
+                SafeReportGameDrawn(root);
                 return false;
             }
 
@@ -78,8 +78,34 @@ namespace MainButtonBarSystem
             catch (Exception e) when (!(e is ExitGUIException))
             {
                 Fail("Drawing the main button bar failed; handing it back to the game for this session", e);
-                ReportGameDrawn(root);
+                SafeReportGameDrawn(root);
                 return false;
+            }
+        }
+
+        /// <summary>The drawer found that the appearance cannot draw buttons: the game draws the bar for the session.</summary>
+        internal static void HandBack(Exception e)
+        {
+            Fail("Drawing the main button bar failed; handing it back to the game for this session", e);
+            drawer.Clear();
+        }
+
+        private static bool reportBroken;
+
+        /// <summary>After a failure the query API is updated if it can be; if that fails too, it is left alone.</summary>
+        private static void SafeReportGameDrawn(MainButtonsRoot root)
+        {
+            if (reportBroken) return;
+            try
+            {
+                ReportGameDrawn(root);
+            }
+            catch (Exception e) when (!(e is ExitGUIException))
+            {
+                reportBroken = true;
+                ScrollCaptureRect = Rect.zero;
+                drawer.Clear();
+                if (Prefs.DevMode) Log.Message(MainButtonBarSystemMod.LogPrefix + "The query API is not updated after the failure above: " + e.Message);
             }
         }
 

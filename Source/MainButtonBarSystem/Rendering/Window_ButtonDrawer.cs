@@ -145,7 +145,13 @@ namespace MainButtonBarSystem
                 }
                 catch (Exception e) when (!(e is ExitGUIException))
                 {
-                    ButtonGuard.Report(button, e);
+                    var appearanceFailure = ButtonGuard.Recover(button, cell, e, appearance);
+                    if (appearanceFailure != null)
+                    {
+                        BarRenderer.HandBack(appearanceFailure);
+                        Close(false);
+                        return;
+                    }
                 }
                 // Buttons fire on mouse up; closing on mouse down would swallow the click.
                 if (before == EventType.MouseUp && Event.current.type == EventType.Used && Mouse.IsOver(cell))

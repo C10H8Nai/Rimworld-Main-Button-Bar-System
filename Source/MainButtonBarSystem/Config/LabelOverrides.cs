@@ -11,7 +11,8 @@ namespace MainButtonBarSystem
     /// </summary>
     public static class LabelOverrides
     {
-        // Null when a game update renamed the field: the label still changes, only that cache is not cleared.
+        // Null when a game update renamed the field: def.label still changes, but where the game reads that cached
+        // text the old name may show until the cache is rebuilt (for example after a language change).
         private static readonly AccessTools.FieldRef<Def, TaggedString> CachedLabelCap =
             SafeAccess.FieldRef<Def, TaggedString>("cachedLabelCap");
         private static readonly AccessTools.FieldRef<MainButtonDef, string> CachedShortenedLabelCap =

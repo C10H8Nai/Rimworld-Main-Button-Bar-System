@@ -70,7 +70,9 @@ namespace MainButtonBarSystem
             }
             catch (Exception e) when (!(e is ExitGUIException))
             {
-                ButtonGuard.Report(button, e);
+                // Rethrown when the button draws fine on its own: then the bar goes back to the game (BarRenderer).
+                var appearanceFailure = ButtonGuard.Recover(button, rect, e, Appearance);
+                if (appearanceFailure != null) throw appearanceFailure;
             }
         }
 
@@ -91,23 +93,46 @@ namespace MainButtonBarSystem
     }
 
     /// <summary>
-    /// One button that throws while it is drawn (usually in its own worker) is logged once and skipped for that event;
-    /// the rest of the bar and the drawer keep working.
+    /// Tells apart the two ways drawing a button can fail. The button is drawn again plainly, through its own
+    /// MainButtonWorker.DoButton as the game would: if that throws too, the button's own worker is at fault, so it is
+    /// logged once and skipped while the rest of the bar keeps working. If the plain draw works, the failure was in
+    /// the appearance (a theme worker, or this mod's drawing around DoButton), which would hit every button on every
+    /// event: the caller gets an exception to hand the bar back to the game for the session.
     /// </summary>
     internal static class ButtonGuard
     {
-        private static readonly HashSet<string> reported = new HashSet<string>();
+        /// <summary>Buttons whose own worker threw; not drawn again plainly, so a broken one costs one exception per event.</summary>
+        private static readonly HashSet<string> ownFailures = new HashSet<string>();
 
-        public static void Report(BarButton button, Exception e)
+        public static Exception Recover(BarButton button, Rect rect, Exception e, BarAppearanceWorker appearance)
+        {
+            ResetGui();
+            var def = button?.Def;
+            string key = def?.defName ?? "?";
+            if (ownFailures.Contains(key)) return null;
+
+            try
+            {
+                def?.Worker?.DoButton(rect);
+            }
+            catch (Exception plain) when (!(plain is ExitGUIException))
+            {
+                ResetGui();
+                ownFailures.Add(key);
+                string mod = def?.modContentPack?.Name ?? "?";
+                Log.Error(MainButtonBarSystemMod.LogPrefix + "Main button " + key + " (from " + mod + ") threw while being drawn; the rest of the bar keeps working. " + plain);
+                return null;
+            }
+
+            string theme = appearance?.def?.LabelCap.ToString() ?? "?";
+            return new InvalidOperationException("Drawing main button " + key + " with the appearance '" + theme + "' failed, while the game draws it fine", e);
+        }
+
+        private static void ResetGui()
         {
             GUI.color = Color.white;
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.UpperLeft;
-            var def = button?.Def;
-            string key = def?.defName ?? "?";
-            if (!reported.Add(key)) return;
-            string mod = def?.modContentPack?.Name ?? "?";
-            Log.Error(MainButtonBarSystemMod.LogPrefix + "Main button " + key + " (from " + mod + ") threw while being drawn; the rest of the bar keeps working. " + e);
         }
     }
 }

@@ -29,7 +29,8 @@ namespace MainButtonBarSystem
         private static Tab tab = Tab.Buttons;
 
         // Text of each number box while it has focus, keyed by the setting it edits.
-        private static readonly Dictionary<string, string> numberBuffers = new Dictionary<string, string>();
+        /// <summary>What each number box shows while it has focus, and the value that text was made for.</summary>
+        private static readonly Dictionary<string, (string text, float value)> numberBuffers = new Dictionary<string, (string text, float value)>();
 
         private readonly bool editingTemplate;
         private BarConfig working;
@@ -98,6 +99,7 @@ namespace MainButtonBarSystem
         public override void PreOpen()
         {
             base.PreOpen();
+            numberBuffers.Clear();
             Window_ButtonDrawer.CloseIfOpen();
             working = BarConfigManager.Saved.Clone();
             BarConfigManager.Preview = working;
@@ -892,7 +894,8 @@ namespace MainButtonBarSystem
                 listing.GapLine();
                 int resolvedWidth = o.width;
                 string widthLabel = resolvedWidth > 0 ? "MBBS_ButtonWidth".Translate(resolvedWidth).ToString() : "MBBS_ButtonWidthFollow".Translate().ToString();
-                int width = IntSetting(listing, widthLabel, o.width == dflt.width ? BarConfig.Unset : o.width, o.width, R.buttonWidth, R.widthStep);
+                // Every button's panel has the same layout, so the box is told apart by the button's name.
+                int width = IntSetting(listing, widthLabel, o.width == dflt.width ? BarConfig.Unset : o.width, o.width, R.buttonWidth, R.widthStep, "buttonWidth." + name);
                 int newWidth = width == BarConfig.Unset ? dflt.width : width;
                 if (newWidth != o.width) working.GetOrCreate(name).width = newWidth;
 
@@ -1142,27 +1145,43 @@ namespace MainButtonBarSystem
         }
 
         /// <summary>
-        /// Type a value directly. While the box is focused it keeps what is typed (an empty box, or a number still out
-        /// of range while typing); the value changes whenever the text is a number in range. Unfocused, it shows the
-        /// current value. The game's Widgets.TextFieldNumeric names its own control, so focus could not be told
-        /// apart from outside it; this uses the plain text field and parses here.
+        /// Type a value directly. Only typing changes the value: a keystroke that leaves a number in range applies it
+        /// at once, while an empty box or a number still out of range is kept as text until it is one. When the value
+        /// changes from elsewhere (the slider, "Default", another button selected) the box shows the new value. A
+        /// click outside the box or Enter ends the editing. The game's Widgets.TextFieldNumeric names its own
+        /// control, so its focus cannot be checked from outside; this uses the plain text field and parses here.
         /// </summary>
         private static float NumberField(Rect rect, float value, float min, float max, float step, string id)
         {
             string name = "MainButtonBarSystem.Number." + id;
             bool focused = GUI.GetNameOfFocusedControl() == name;
-            if (!focused || !numberBuffers.TryGetValue(id, out var buffer))
-                buffer = step >= 1f ? Mathf.RoundToInt(value).ToString(CultureInfo.InvariantCulture) : value.ToString("0.##", CultureInfo.InvariantCulture);
+            var ev = Event.current;
+            if (focused && (ev.rawType == EventType.MouseDown && !Mouse.IsOver(rect) ||
+                            ev.type == EventType.KeyDown && (ev.keyCode == KeyCode.Return || ev.keyCode == KeyCode.KeypadEnter)))
+            {
+                UI.UnfocusCurrentControl();
+                focused = false;
+            }
+
+            if (!focused || !numberBuffers.TryGetValue(id, out var state) || !Mathf.Approximately(state.value, value))
+                state = (Format(value, step), value);
 
             GUI.SetNextControlName(name);
-            string typed = Widgets.TextField(rect, buffer);
-            if (typed != buffer && IsPartialNumber(typed, min, step < 1f)) buffer = typed;
-            numberBuffers[id] = buffer;
-
-            if (!focused || !float.TryParse(buffer, NumberStyles.Float, CultureInfo.InvariantCulture, out float parsed) || parsed < min || parsed > max)
-                return value;
-            return Mathf.Approximately(parsed, value) ? value : Snap(parsed, min, max, step);
+            string typed = GUI.TextField(rect, state.text, Text.CurTextFieldStyle);
+            float result = value;
+            if (typed != state.text && IsPartialNumber(typed, min, step < 1f))
+            {
+                state.text = typed;
+                if (float.TryParse(typed, NumberStyles.Float, CultureInfo.InvariantCulture, out float parsed) && parsed >= min && parsed <= max)
+                    result = Snap(parsed, min, max, step);
+                state.value = result;
+            }
+            numberBuffers[id] = state;
+            return result;
         }
+
+        private static string Format(float value, float step) =>
+            step >= 1f ? Mathf.RoundToInt(value).ToString(CultureInfo.InvariantCulture) : value.ToString("0.##", CultureInfo.InvariantCulture);
 
         /// <summary>Text that is, or can still become, a number: digits, a leading minus when negatives are allowed, one point for fractions.</summary>
         private static bool IsPartialNumber(string text, float min, bool allowFraction)
