@@ -167,6 +167,43 @@
   <MBBS_WidthClearAll>讓 {0} 顆有自己寬度的按鈕都改成跟整條列</MBBS_WidthClearAll>
   <MBBS_ResetButton>重設這一顆</MBBS_ResetButton>
   <MBBS_ResetButtonTip>這顆按鈕的每一項設定都回到繼承的值：它所屬模組的預設，沒有的話就是遊戲原本的樣子。快捷鍵不受影響。</MBBS_ResetButtonTip>
+  <MBBS_Mode_Preset>預設主題</MBBS_Mode_Preset>
+  <MBBS_Mode_Custom>自訂主題</MBBS_Mode_Custom>
+  <MBBS_ModeTip>預設主題：挑一款預先設計好的主題。自訂主題：在預設主題選的那款上面，改所有按鈕或單顆按鈕的樣子。切回預設主題時，自訂的修改會保留。</MBBS_ModeTip>
+  <MBBS_Look_All>所有按鈕</MBBS_Look_All>
+  <MBBS_Look_AllTip>這裡的修改套用到每一顆沒有自己改同一項的按鈕。沒改的項目跟主題（{0}）。</MBBS_Look_AllTip>
+  <MBBS_Look_ButtonTip>這裡的修改只套用到這一顆。沒改的項目跟「所有按鈕」，再跟主題（{0}）。</MBBS_Look_ButtonTip>
+  <MBBS_Look_ChangedSuffix>（已修改）</MBBS_Look_ChangedSuffix>
+  <MBBS_Look_Reset>重設這個樣式</MBBS_Look_Reset>
+  <MBBS_Look_Sample>按鈕</MBBS_Look_Sample>
+  <MBBS_Look_State_Normal>一般</MBBS_Look_State_Normal>
+  <MBBS_Look_State_Mouseover>滑鼠移上</MBBS_Look_State_Mouseover>
+  <MBBS_Look_State_Active>開啟中</MBBS_Look_State_Active>
+  <MBBS_Look_State_Disabled>停用</MBBS_Look_State_Disabled>
+  <MBBS_Look_Text>文字</MBBS_Look_Text>
+  <MBBS_Look_Font>字級</MBBS_Look_Font>
+  <MBBS_Look_Font_Tiny>小</MBBS_Look_Font_Tiny>
+  <MBBS_Look_Font_Small>中</MBBS_Look_Font_Small>
+  <MBBS_Look_Font_Medium>大</MBBS_Look_Font_Medium>
+  <MBBS_Look_FollowAll>跟「所有按鈕」</MBBS_Look_FollowAll>
+  <MBBS_Look_FollowTheme>跟主題</MBBS_Look_FollowTheme>
+  <MBBS_Look_Color_0>文字顏色</MBBS_Look_Color_0>
+  <MBBS_Look_Color_1>滑鼠移上時的文字顏色</MBBS_Look_Color_1>
+  <MBBS_Look_Color_2>開啟中的文字顏色</MBBS_Look_Color_2>
+  <MBBS_Look_Icon>圖示</MBBS_Look_Icon>
+  <MBBS_Look_IconNote>改了圖示大小或位置的按鈕，圖示改由本模組畫，所以 Vanilla Textures Expanded 這類移動圖示的模組對它沒有作用。</MBBS_Look_IconNote>
+  <MBBS_Look_IconSize>圖示大小：{0}px</MBBS_Look_IconSize>
+  <MBBS_Look_IconAnchor>圖示位置（只顯示圖示：放在按鈕的哪裡；圖示＋文字：在文字的左邊或右邊）</MBBS_Look_IconAnchor>
+  <MBBS_Look_IconOffsetX>圖示位移（水平）：{0}px</MBBS_Look_IconOffsetX>
+  <MBBS_Look_IconOffsetY>圖示位移（垂直）：{0}px</MBBS_Look_IconOffsetY>
+  <MBBS_Look_Background>按鈕背景</MBBS_Look_Background>
+  <MBBS_Look_AtlasFrom>{0}：{1}</MBBS_Look_AtlasFrom>
+  <MBBS_Look_AtlasMissing>{0}（未安裝）</MBBS_Look_AtlasMissing>
+  <MBBS_Look_Field_button>一般</MBBS_Look_Field_button>
+  <MBBS_Look_Field_buttonMouseover>滑鼠移上</MBBS_Look_Field_buttonMouseover>
+  <MBBS_Look_Field_buttonActive>開啟中</MBBS_Look_Field_buttonActive>
+  <MBBS_Look_Field_buttonDisabled>停用</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_NoAtlas>已安裝的主題都沒有自己的按鈕背景。</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>跟整條列（{0}）</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>做成排序模組（可直接上傳）</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>開啟排序資料夾</MBBS_OpenExportsFolder>

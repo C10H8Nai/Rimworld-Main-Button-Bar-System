@@ -42,6 +42,8 @@
       <decorationOpacity>0~100</decorationOpacity>
       <decorationScale>25~300</decorationScale>
       <decorationOffset>-400~400</decorationOffset>
+      <lookIconSize>8~64</lookIconSize>          <!-- custom theme -->
+      <lookIconOffset>-40~40</lookIconOffset>
       <backgroundOpacity>0~100</backgroundOpacity>
       <widthStep>5</widthStep>
       <percentStep>5</percentStep>
@@ -112,6 +114,7 @@
       <themePreviewHeight>36</themePreviewHeight>
       <themePreviewFraction>0.55</themePreviewFraction>
       <themePreviewButtons>4</themePreviewButtons>
+      <lookAnchorCell>22</lookAnchorCell>         <!-- custom theme: one cell of the icon position picker -->
       <themeSettingsGap>12</themeSettingsGap>     <!-- space between the theme cards and the illustration settings below them -->
       <numberFieldWidth>64</numberFieldWidth>
       <sliderRailHeight>4</sliderRailHeight>

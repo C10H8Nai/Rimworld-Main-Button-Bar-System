@@ -110,6 +110,10 @@ namespace MainButtonBarSystem
 
             /// <summary>Shared by the X and Y offset sliders; may be negative.</summary>
             public IntRange decorationOffset;
+
+            /// <summary>Custom theme: icon size and offset (pixels).</summary>
+            public IntRange lookIconSize;
+            public IntRange lookIconOffset;
             public IntRange backgroundOpacity;
 
             /// <summary>Width sliders snap to multiples of this.</summary>
@@ -235,6 +239,9 @@ namespace MainButtonBarSystem
 
             /// <summary>Space between the theme cards and the illustration settings under them.</summary>
             public float themeSettingsGap;
+
+            /// <summary>Custom theme: one cell of the 3×3 icon anchor picker.</summary>
+            public float lookAnchorCell;
 
             /// <summary>Number box to the right of each slider; this mod draws its own sliders so other slider mods do not overlap them.</summary>
             public float numberFieldWidth;

@@ -15,7 +15,7 @@ namespace MainButtonBarSystem
     /// Cancel or closing throws it away (spec 4.7). Every adjustable value has a "Default" button, and every
     /// layout number comes from <see cref="MainButtonBarTuningDef"/>.
     /// </summary>
-    public class Dialog_MainButtonBar : Window
+    public partial class Dialog_MainButtonBar : Window
     {
         private const string BarKey = "<bar>";
 
@@ -143,7 +143,7 @@ namespace MainButtonBarSystem
             var body = content.ContractedBy(L.detailPadding);
             if (tab == Tab.Appearance)
             {
-                DrawAppearanceTab(body);
+                DrawAppearance(body);
             }
             else
             {
