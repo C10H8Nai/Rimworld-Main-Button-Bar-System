@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Dette tema er afkrydset i modlisten. Fjern fluebenet og genstart spillet først.",
     "MBBS_ThemeProject_DeleteConfirm": "Slet temaet »{0}«?\n\nDets mappe\n{1}\nflyttes til\n{2}\nFor at få det tilbage skal du flytte mappen til Mods-mappen igen.",
     "MBBS_ThemeProject_Deleted": "{0} blev flyttet til {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Kunne ikke flytte {0}: {1}\nIntet blev ændret."
+    "MBBS_ThemeProject_DeleteFailed": "Kunne ikke flytte {0}: {1}\nIntet blev ændret.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} blev flyttet til {1}, men en del af den gamle mappe kunne ikke fjernes: {2}\nSlet den selv (spillet kan vise den som en ekstra kopi af temaet)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

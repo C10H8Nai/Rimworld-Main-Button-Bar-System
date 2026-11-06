@@ -366,4 +366,6 @@
   <MBBS_ThemeProject_Deleted>{0} перемещена в {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Не удалось переместить {0}: {1}
 Ничего не изменено.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} перемещена в {1}, но часть старой папки удалить не удалось: {2}
+Удалите её самостоятельно (игра может показывать её как вторую копию темы).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

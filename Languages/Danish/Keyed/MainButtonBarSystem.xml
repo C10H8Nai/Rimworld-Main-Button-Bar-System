@@ -366,4 +366,6 @@ For at få det tilbage skal du flytte mappen til Mods-mappen igen.</MBBS_ThemePr
   <MBBS_ThemeProject_Deleted>{0} blev flyttet til {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Kunne ikke flytte {0}: {1}
 Intet blev ændret.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} blev flyttet til {1}, men en del af den gamle mappe kunne ikke fjernes: {2}
+Slet den selv (spillet kan vise den som en ekstra kopi af temaet).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

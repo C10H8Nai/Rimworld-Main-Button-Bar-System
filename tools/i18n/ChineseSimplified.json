@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "此主题在模组列表中已勾选。请先取消勾选，并重启游戏。",
     "MBBS_ThemeProject_DeleteConfirm": "删除主题「{0}」？\n\n它的文件夹\n{1}\n将被移到\n{2}\n要找回，请把它重新移回 Mods 文件夹。",
     "MBBS_ThemeProject_Deleted": "{0} 已移到 {1}。",
-    "MBBS_ThemeProject_DeleteFailed": "无法移动 {0}：{1}\n没有做任何更改。"
+    "MBBS_ThemeProject_DeleteFailed": "无法移动 {0}：{1}\n没有做任何更改。",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} 已移到 {1}，但旧文件夹的一部分无法删除：{2}\n请自行删除（游戏可能会把它列为该主题的第二份副本）。"
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

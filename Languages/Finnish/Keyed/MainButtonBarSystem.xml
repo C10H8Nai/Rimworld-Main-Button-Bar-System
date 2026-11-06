@@ -366,4 +366,6 @@ Saat sen takaisin siirtämällä sen uudelleen Mods-kansioon.</MBBS_ThemeProject
   <MBBS_ThemeProject_Deleted>{0} siirrettiin kohteeseen {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Kohdetta {0} ei voitu siirtää: {1}
 Mitään ei muutettu.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} siirrettiin kohteeseen {1}, mutta osaa vanhasta kansiosta ei voitu poistaa: {2}
+Poista se itse (peli voi näyttää sen teeman toisena kopiona).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

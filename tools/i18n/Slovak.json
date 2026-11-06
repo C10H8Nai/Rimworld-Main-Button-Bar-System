@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Tento motív je zaškrtnutý v zozname modov. Najprv ho odškrtnite a reštartujte hru.",
     "MBBS_ThemeProject_DeleteConfirm": "Odstrániť motív „{0}“?\n\nJeho priečinok\n{1}\nsa presunie do\n{2}\nAk ho chcete získať späť, presuňte ho znova do priečinka Mods.",
     "MBBS_ThemeProject_Deleted": "{0} bolo presunuté do {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Nepodarilo sa presunúť {0}: {1}\nNič sa nezmenilo."
+    "MBBS_ThemeProject_DeleteFailed": "Nepodarilo sa presunúť {0}: {1}\nNič sa nezmenilo.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} bolo presunuté do {1}, ale časť starého priečinka sa nepodarilo odstrániť: {2}\nOdstráňte ju sami (hra ju môže zobraziť ako druhú kópiu motívu)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

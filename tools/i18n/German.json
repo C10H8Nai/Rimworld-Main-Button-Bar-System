@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Dieses Design ist in der Mod-Liste angehakt. Entferne zuerst den Haken und starte das Spiel neu.",
     "MBBS_ThemeProject_DeleteConfirm": "Das Design „{0}“ löschen?\n\nSein Ordner\n{1}\nwird verschoben nach\n{2}\nUm es zurückzuholen, verschiebe den Ordner wieder in den Mods-Ordner.",
     "MBBS_ThemeProject_Deleted": "{0} wurde nach {1} verschoben.",
-    "MBBS_ThemeProject_DeleteFailed": "{0} konnte nicht verschoben werden: {1}\nEs wurde nichts geändert."
+    "MBBS_ThemeProject_DeleteFailed": "{0} konnte nicht verschoben werden: {1}\nEs wurde nichts geändert.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} wurde nach {1} verschoben, aber ein Teil des alten Ordners konnte nicht entfernt werden: {2}\nLösche ihn selbst (das Spiel zeigt ihn möglicherweise als zweite Kopie des Designs an)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

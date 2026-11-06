@@ -366,4 +366,6 @@ To get it back, move it into the Mods folder again.</MBBS_ThemeProject_DeleteCon
   <MBBS_ThemeProject_Deleted>{0} was moved to {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Could not move {0}: {1}
 Nothing was changed.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} was moved to {1}, but part of the old folder could not be removed: {2}
+Delete it yourself (the game may list it as a second copy of the theme).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

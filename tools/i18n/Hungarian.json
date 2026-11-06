@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Ez a téma be van jelölve a modlistában. Előbb vedd ki a pipát, és indítsd újra a játékot.",
     "MBBS_ThemeProject_DeleteConfirm": "Törlöd a(z) „{0}” témát?\n\nA mappája\n{1}\nide kerül át:\n{2}\nVisszaszerzéséhez helyezd vissza a mappát a Mods mappába.",
     "MBBS_ThemeProject_Deleted": "A(z) {0} át lett helyezve ide: {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Nem sikerült áthelyezni: {0}: {1}\nNem változott semmi."
+    "MBBS_ThemeProject_DeleteFailed": "Nem sikerült áthelyezni: {0}: {1}\nNem változott semmi.",
+    "MBBS_ThemeProject_DeletedLeftover": "A(z) {0} át lett helyezve ide: {1}, de a régi mappa egy részét nem sikerült eltávolítani: {2}\nTöröld magad (a játék a téma második másolataként listázhatja)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

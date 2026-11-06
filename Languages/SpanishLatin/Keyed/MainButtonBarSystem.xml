@@ -366,4 +366,6 @@ Para recuperarlo, vuelve a mover la carpeta a la carpeta Mods.</MBBS_ThemeProjec
   <MBBS_ThemeProject_Deleted>{0} se movió a {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>No se pudo mover {0}: {1}
 No se cambió nada.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} se movió a {1}, pero no se pudo eliminar parte de la carpeta anterior: {2}
+Elimínala tú mismo (el juego puede mostrarla como una segunda copia del tema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

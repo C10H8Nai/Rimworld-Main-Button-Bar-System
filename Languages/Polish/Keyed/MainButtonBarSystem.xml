@@ -366,4 +366,6 @@ Aby go odzyskać, przenieś go z powrotem do folderu Mods.</MBBS_ThemeProject_De
   <MBBS_ThemeProject_Deleted>Przeniesiono {0} do {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Nie udało się przenieść {0}: {1}
 Nic nie zostało zmienione.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>Przeniesiono {0} do {1}, ale nie udało się usunąć części starego folderu: {2}
+Usuń ją samodzielnie (gra może pokazać ją jako drugą kopię motywu).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

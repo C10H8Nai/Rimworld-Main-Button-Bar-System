@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "See teema on modifikatsioonide loendis märgitud. Eemalda märge esmalt ja taaskäivita mäng.",
     "MBBS_ThemeProject_DeleteConfirm": "Kas kustutada teema „{0}“?\n\nSelle kaust\n{1}\nteisaldatakse asukohta\n{2}\nTagasi saamiseks teisalda see uuesti Mods-kausta.",
     "MBBS_ThemeProject_Deleted": "{0} teisaldati asukohta {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Faili {0} ei õnnestunud teisaldada: {1}\nMidagi ei muudetud."
+    "MBBS_ThemeProject_DeleteFailed": "Faili {0} ei õnnestunud teisaldada: {1}\nMidagi ei muudetud.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} teisaldati asukohta {1}, kuid osa vanast kaustast ei õnnestunud eemaldada: {2}\nKustuta see ise (mäng võib seda näidata teema teise koopiana)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

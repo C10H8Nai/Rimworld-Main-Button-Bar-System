@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Det här temat är ikryssat i modlistan. Ta bort krysset först och starta om spelet.",
     "MBBS_ThemeProject_DeleteConfirm": "Ta bort temat ”{0}”?\n\nDess mapp\n{1}\nflyttas till\n{2}\nFör att få tillbaka det flyttar du mappen till Mods-mappen igen.",
     "MBBS_ThemeProject_Deleted": "{0} flyttades till {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Kunde inte flytta {0}: {1}\nInget ändrades."
+    "MBBS_ThemeProject_DeleteFailed": "Kunde inte flytta {0}: {1}\nInget ändrades.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} flyttades till {1}, men en del av den gamla mappen kunde inte tas bort: {2}\nTa bort den själv (spelet kan visa den som en extra kopia av temat)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

@@ -366,4 +366,6 @@ Verplaats de map weer naar de Mods-map om het thema terug te krijgen.</MBBS_Them
   <MBBS_ThemeProject_Deleted>{0} is verplaatst naar {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Kon {0} niet verplaatsen: {1}
 Er is niets gewijzigd.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} is verplaatst naar {1}, maar een deel van de oude map kon niet worden verwijderd: {2}
+Verwijder het zelf (het spel kan het tonen als een tweede kopie van het thema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

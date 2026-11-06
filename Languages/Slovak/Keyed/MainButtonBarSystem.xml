@@ -366,4 +366,6 @@ Ak ho chcete získať späť, presuňte ho znova do priečinka Mods.</MBBS_Theme
   <MBBS_ThemeProject_Deleted>{0} bolo presunuté do {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Nepodarilo sa presunúť {0}: {1}
 Nič sa nezmenilo.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} bolo presunuté do {1}, ale časť starého priečinka sa nepodarilo odstrániť: {2}
+Odstráňte ju sami (hra ju môže zobraziť ako druhú kópiu motívu).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

@@ -366,4 +366,6 @@
   <MBBS_ThemeProject_Deleted>{0} 已移到 {1}。</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>无法移动 {0}：{1}
 没有做任何更改。</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} 已移到 {1}，但旧文件夹的一部分无法删除：{2}
+请自行删除（游戏可能会把它列为该主题的第二份副本）。</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

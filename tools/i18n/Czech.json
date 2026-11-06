@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Tento motiv je zaškrtnutý v seznamu modů. Nejprve ho odškrtněte a restartujte hru.",
     "MBBS_ThemeProject_DeleteConfirm": "Smazat motiv „{0}“?\n\nJeho složka\n{1}\nse přesune do\n{2}\nChcete-li ji získat zpět, přesuňte ji znovu do složky Mods.",
     "MBBS_ThemeProject_Deleted": "{0} bylo přesunuto do {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Nepodařilo se přesunout {0}: {1}\nNic se nezměnilo."
+    "MBBS_ThemeProject_DeleteFailed": "Nepodařilo se přesunout {0}: {1}\nNic se nezměnilo.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} bylo přesunuto do {1}, ale část staré složky se nepodařilo odstranit: {2}\nSmažte ji sami (hra ji může zobrazit jako druhou kopii motivu)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

@@ -366,4 +366,6 @@ Chcete-li ji získat zpět, přesuňte ji znovu do složky Mods.</MBBS_ThemeProj
   <MBBS_ThemeProject_Deleted>{0} bylo přesunuto do {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Nepodařilo se přesunout {0}: {1}
 Nic se nezměnilo.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} bylo přesunuto do {1}, ale část staré složky se nepodařilo odstranit: {2}
+Smažte ji sami (hra ji může zobrazit jako druhou kopii motivu).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

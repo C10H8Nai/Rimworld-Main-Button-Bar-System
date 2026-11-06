@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "이 테마는 모드 목록에서 체크되어 있습니다. 먼저 체크를 해제하고 게임을 재시작하세요.",
     "MBBS_ThemeProject_DeleteConfirm": "테마 '{0}'을(를) 삭제할까요?\n\n폴더\n{1}\n이(가) 다음 위치로 옮겨집니다\n{2}\n되돌리려면 폴더를 다시 Mods 폴더로 옮기세요.",
     "MBBS_ThemeProject_Deleted": "{0}을(를) {1}(으)로 옮겼습니다.",
-    "MBBS_ThemeProject_DeleteFailed": "{0}을(를) 옮길 수 없습니다: {1}\n아무것도 변경되지 않았습니다."
+    "MBBS_ThemeProject_DeleteFailed": "{0}을(를) 옮길 수 없습니다: {1}\n아무것도 변경되지 않았습니다.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0}을(를) {1}(으)로 옮겼지만, 이전 폴더의 일부를 삭제할 수 없습니다: {2}\n직접 삭제해 주세요(게임이 테마의 두 번째 사본으로 표시할 수 있습니다)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

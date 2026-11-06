@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Chủ đề này đang được đánh dấu trong danh sách mod. Hãy bỏ đánh dấu trước rồi khởi động lại trò chơi.",
     "MBBS_ThemeProject_DeleteConfirm": "Xóa chủ đề \"{0}\"?\n\nThư mục của nó\n{1}\nsẽ được chuyển sang\n{2}\nĐể lấy lại, hãy chuyển thư mục về thư mục Mods.",
     "MBBS_ThemeProject_Deleted": "Đã chuyển {0} sang {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Không thể chuyển {0}: {1}\nKhông có gì bị thay đổi."
+    "MBBS_ThemeProject_DeleteFailed": "Không thể chuyển {0}: {1}\nKhông có gì bị thay đổi.",
+    "MBBS_ThemeProject_DeletedLeftover": "Đã chuyển {0} sang {1}, nhưng không thể xóa một phần của thư mục cũ: {2}\nHãy tự xóa nó (trò chơi có thể liệt kê nó như một bản sao thứ hai của chủ đề)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

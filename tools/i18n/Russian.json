@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Эта тема отмечена в списке модов. Сначала снимите отметку и перезапустите игру.",
     "MBBS_ThemeProject_DeleteConfirm": "Удалить тему «{0}»?\n\nЕё папка\n{1}\nбудет перемещена в\n{2}\nЧтобы вернуть её, переместите папку обратно в папку Mods.",
     "MBBS_ThemeProject_Deleted": "{0} перемещена в {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Не удалось переместить {0}: {1}\nНичего не изменено."
+    "MBBS_ThemeProject_DeleteFailed": "Не удалось переместить {0}: {1}\nНичего не изменено.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} перемещена в {1}, но часть старой папки удалить не удалось: {2}\nУдалите её самостоятельно (игра может показывать её как вторую копию темы)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

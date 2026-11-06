@@ -366,4 +366,6 @@ Um es zurückzuholen, verschiebe den Ordner wieder in den Mods-Ordner.</MBBS_The
   <MBBS_ThemeProject_Deleted>{0} wurde nach {1} verschoben.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>{0} konnte nicht verschoben werden: {1}
 Es wurde nichts geändert.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} wurde nach {1} verschoben, aber ein Teil des alten Ordners konnte nicht entfernt werden: {2}
+Lösche ihn selbst (das Spiel zeigt ihn möglicherweise als zweite Kopie des Designs an).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

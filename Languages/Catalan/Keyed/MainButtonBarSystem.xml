@@ -366,4 +366,6 @@ Per recuperar-lo, torna a moure la carpeta a la carpeta Mods.</MBBS_ThemeProject
   <MBBS_ThemeProject_Deleted>{0} s'ha mogut a {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>No s'ha pogut moure {0}: {1}
 No s'ha canviat res.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} s'ha mogut a {1}, però no s'ha pogut eliminar una part de la carpeta antiga: {2}
+Elimina-la tu mateix (el joc pot mostrar-la com una segona còpia del tema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

@@ -366,4 +366,6 @@ Pour le récupérer, replacez-le dans le dossier Mods.</MBBS_ThemeProject_Delete
   <MBBS_ThemeProject_Deleted>{0} a été déplacé dans {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Impossible de déplacer {0} : {1}
 Rien n'a été modifié.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} a été déplacé dans {1}, mais une partie de l'ancien dossier n'a pas pu être supprimée : {2}
+Supprimez-la vous-même (le jeu peut la lister comme une seconde copie du thème).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

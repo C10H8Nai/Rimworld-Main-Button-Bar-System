@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "This theme is ticked in the mod list. Untick it and restart the game first.",
     "MBBS_ThemeProject_DeleteConfirm": "Delete the theme \"{0}\"?\n\nIts folder\n{1}\nis moved to\n{2}\nTo get it back, move it into the Mods folder again.",
     "MBBS_ThemeProject_Deleted": "{0} was moved to {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Could not move {0}: {1}\nNothing was changed."
+    "MBBS_ThemeProject_DeleteFailed": "Could not move {0}: {1}\nNothing was changed.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} was moved to {1}, but part of the old folder could not be removed: {2}\nDelete it yourself (the game may list it as a second copy of the theme)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

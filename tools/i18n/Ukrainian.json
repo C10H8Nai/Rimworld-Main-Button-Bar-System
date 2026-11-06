@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Цю тему позначено в списку модів. Спершу зніміть позначку й перезапустіть гру.",
     "MBBS_ThemeProject_DeleteConfirm": "Видалити тему «{0}»?\n\nЇї тека\n{1}\nбуде переміщена до\n{2}\nЩоб повернути її, перемістіть теку назад до теки Mods.",
     "MBBS_ThemeProject_Deleted": "{0} переміщено до {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Не вдалося перемістити {0}: {1}\nНічого не змінено."
+    "MBBS_ThemeProject_DeleteFailed": "Не вдалося перемістити {0}: {1}\nНічого не змінено.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} переміщено до {1}, але частину старої теки видалити не вдалося: {2}\nВидаліть її самостійно (гра може показувати її як другу копію теми)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

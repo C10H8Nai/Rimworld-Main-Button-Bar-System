@@ -366,4 +366,6 @@ Ca să o recuperezi, mută dosarul înapoi în dosarul Mods.</MBBS_ThemeProject_
   <MBBS_ThemeProject_Deleted>{0} a fost mutat în {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Nu s-a putut muta {0}: {1}
 Nu s-a schimbat nimic.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} a fost mutat în {1}, dar o parte din vechiul dosar nu a putut fi ștearsă: {2}
+Șterge-o singur (jocul o poate afișa ca a doua copie a temei).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

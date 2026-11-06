@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Această temă este bifată în lista de moduri. Debifează-o întâi și repornește jocul.",
     "MBBS_ThemeProject_DeleteConfirm": "Ștergi tema „{0}”?\n\nDosarul ei\n{1}\neste mutat în\n{2}\nCa să o recuperezi, mută dosarul înapoi în dosarul Mods.",
     "MBBS_ThemeProject_Deleted": "{0} a fost mutat în {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Nu s-a putut muta {0}: {1}\nNu s-a schimbat nimic."
+    "MBBS_ThemeProject_DeleteFailed": "Nu s-a putut muta {0}: {1}\nNu s-a schimbat nimic.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} a fost mutat în {1}, dar o parte din vechiul dosar nu a putut fi ștearsă: {2}\nȘterge-o singur (jocul o poate afișa ca a doua copie a temei)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

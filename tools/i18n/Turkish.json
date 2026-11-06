@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Bu tema mod listesinde işaretli. Önce işaretini kaldır ve oyunu yeniden başlat.",
     "MBBS_ThemeProject_DeleteConfirm": "\"{0}\" teması silinsin mi?\n\nKlasörü\n{1}\nşu konuma taşınır:\n{2}\nGeri almak için klasörü yeniden Mods klasörüne taşı.",
     "MBBS_ThemeProject_Deleted": "{0}, {1} konumuna taşındı.",
-    "MBBS_ThemeProject_DeleteFailed": "{0} taşınamadı: {1}\nHiçbir şey değiştirilmedi."
+    "MBBS_ThemeProject_DeleteFailed": "{0} taşınamadı: {1}\nHiçbir şey değiştirilmedi.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0}, {1} konumuna taşındı, ancak eski klasörün bir kısmı silinemedi: {2}\nKendiniz silin (oyun bunu temanın ikinci bir kopyası olarak listeleyebilir)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

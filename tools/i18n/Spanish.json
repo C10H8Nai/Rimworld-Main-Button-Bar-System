@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Este tema está marcado en la lista de mods. Desmárcalo primero y reinicia el juego.",
     "MBBS_ThemeProject_DeleteConfirm": "¿Eliminar el tema «{0}»?\n\nSu carpeta\n{1}\nse mueve a\n{2}\nPara recuperarlo, vuelve a mover la carpeta a la carpeta Mods.",
     "MBBS_ThemeProject_Deleted": "{0} se movió a {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "No se pudo mover {0}: {1}\nNo se cambió nada."
+    "MBBS_ThemeProject_DeleteFailed": "No se pudo mover {0}: {1}\nNo se cambió nada.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} se movió a {1}, pero no se pudo eliminar parte de la carpeta antigua: {2}\nElimínala tú mismo (el juego puede mostrarla como una segunda copia del tema)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

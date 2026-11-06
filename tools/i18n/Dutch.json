@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Dit thema is aangevinkt in de modlijst. Vink het eerst uit en start het spel opnieuw.",
     "MBBS_ThemeProject_DeleteConfirm": "Het thema “{0}” verwijderen?\n\nDe map\n{1}\nwordt verplaatst naar\n{2}\nVerplaats de map weer naar de Mods-map om het thema terug te krijgen.",
     "MBBS_ThemeProject_Deleted": "{0} is verplaatst naar {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Kon {0} niet verplaatsen: {1}\nEr is niets gewijzigd."
+    "MBBS_ThemeProject_DeleteFailed": "Kon {0} niet verplaatsen: {1}\nEr is niets gewijzigd.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} is verplaatst naar {1}, maar een deel van de oude map kon niet worden verwijderd: {2}\nVerwijder het zelf (het spel kan het tonen als een tweede kopie van het thema)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

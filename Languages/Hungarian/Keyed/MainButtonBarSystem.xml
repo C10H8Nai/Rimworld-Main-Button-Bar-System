@@ -366,4 +366,6 @@ Visszaszerzéséhez helyezd vissza a mappát a Mods mappába.</MBBS_ThemeProject
   <MBBS_ThemeProject_Deleted>A(z) {0} át lett helyezve ide: {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Nem sikerült áthelyezni: {0}: {1}
 Nem változott semmi.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>A(z) {0} át lett helyezve ide: {1}, de a régi mappa egy részét nem sikerült eltávolítani: {2}
+Töröld magad (a játék a téma második másolataként listázhatja).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

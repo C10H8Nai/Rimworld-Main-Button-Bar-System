@@ -366,4 +366,6 @@
   <MBBS_ThemeProject_Deleted>{0} を {1} に移動しました.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>{0} を移動できませんでした:{1}
 何も変更されていません.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} を {1} に移動しましたが, 古いフォルダーの一部を削除できませんでした:{2}
+手動で削除してください(ゲームがテーマの2つ目のコピーとして表示する場合があります).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

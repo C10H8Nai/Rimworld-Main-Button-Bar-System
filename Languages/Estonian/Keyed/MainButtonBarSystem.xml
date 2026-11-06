@@ -366,4 +366,6 @@ Tagasi saamiseks teisalda see uuesti Mods-kausta.</MBBS_ThemeProject_DeleteConfi
   <MBBS_ThemeProject_Deleted>{0} teisaldati asukohta {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Faili {0} ei õnnestunud teisaldada: {1}
 Midagi ei muudetud.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} teisaldati asukohta {1}, kuid osa vanast kaustast ei õnnestunud eemaldada: {2}
+Kustuta see ise (mäng võib seda näidata teema teise koopiana).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

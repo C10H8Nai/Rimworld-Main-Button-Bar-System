@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Ten motyw jest zaznaczony na liście modów. Najpierw odznacz go i uruchom grę ponownie.",
     "MBBS_ThemeProject_DeleteConfirm": "Usunąć motyw „{0}”?\n\nJego folder\n{1}\nzostanie przeniesiony do\n{2}\nAby go odzyskać, przenieś go z powrotem do folderu Mods.",
     "MBBS_ThemeProject_Deleted": "Przeniesiono {0} do {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Nie udało się przenieść {0}: {1}\nNic nie zostało zmienione."
+    "MBBS_ThemeProject_DeleteFailed": "Nie udało się przenieść {0}: {1}\nNic nie zostało zmienione.",
+    "MBBS_ThemeProject_DeletedLeftover": "Przeniesiono {0} do {1}, ale nie udało się usunąć części starego folderu: {2}\nUsuń ją samodzielnie (gra może pokazać ją jako drugą kopię motywu)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

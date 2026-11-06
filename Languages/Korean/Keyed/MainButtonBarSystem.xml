@@ -366,4 +366,6 @@
   <MBBS_ThemeProject_Deleted>{0}을(를) {1}(으)로 옮겼습니다.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>{0}을(를) 옮길 수 없습니다: {1}
 아무것도 변경되지 않았습니다.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0}을(를) {1}(으)로 옮겼지만, 이전 폴더의 일부를 삭제할 수 없습니다: {2}
+직접 삭제해 주세요(게임이 테마의 두 번째 사본으로 표시할 수 있습니다).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

@@ -348,7 +348,8 @@
     "MBBS_ThemeProject_DeleteActive": "Ce thème est coché dans la liste des mods. Décochez-le d'abord, puis redémarrez le jeu.",
     "MBBS_ThemeProject_DeleteConfirm": "Supprimer le thème « {0} » ?\n\nSon dossier\n{1}\nest déplacé dans\n{2}\nPour le récupérer, replacez-le dans le dossier Mods.",
     "MBBS_ThemeProject_Deleted": "{0} a été déplacé dans {1}.",
-    "MBBS_ThemeProject_DeleteFailed": "Impossible de déplacer {0} : {1}\nRien n'a été modifié."
+    "MBBS_ThemeProject_DeleteFailed": "Impossible de déplacer {0} : {1}\nRien n'a été modifié.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} a été déplacé dans {1}, mais une partie de l'ancien dossier n'a pas pu être supprimée : {2}\nSupprimez-la vous-même (le jeu peut la lister comme une seconde copie du thème)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {

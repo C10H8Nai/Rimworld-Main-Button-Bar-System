@@ -366,4 +366,6 @@ Para a recuperar, mova-a de novo para a pasta Mods.</MBBS_ThemeProject_DeleteCon
   <MBBS_ThemeProject_Deleted>{0} foi movido para {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Não foi possível mover {0}: {1}
 Nada foi alterado.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} foi movido para {1}, mas não foi possível remover parte da pasta antiga: {2}
+Apague-a você mesmo (o jogo pode listá-la como uma segunda cópia do tema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

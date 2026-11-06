@@ -366,4 +366,6 @@ Geri almak için klasörü yeniden Mods klasörüne taşı.</MBBS_ThemeProject_D
   <MBBS_ThemeProject_Deleted>{0}, {1} konumuna taşındı.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>{0} taşınamadı: {1}
 Hiçbir şey değiştirilmedi.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0}, {1} konumuna taşındı, ancak eski klasörün bir kısmı silinemedi: {2}
+Kendiniz silin (oyun bunu temanın ikinci bir kopyası olarak listeleyebilir).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

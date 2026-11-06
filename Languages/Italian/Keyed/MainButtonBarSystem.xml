@@ -366,4 +366,6 @@ Per recuperarlo, sposta di nuovo la cartella nella cartella Mods.</MBBS_ThemePro
   <MBBS_ThemeProject_Deleted>{0} è stato spostato in {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Impossibile spostare {0}: {1}
 Non è stato modificato nulla.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} è stato spostato in {1}, ma una parte della vecchia cartella non è stata rimossa: {2}
+Eliminala tu stesso (il gioco potrebbe elencarla come seconda copia del tema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

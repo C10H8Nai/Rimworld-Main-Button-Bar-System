@@ -366,4 +366,6 @@ sẽ được chuyển sang
   <MBBS_ThemeProject_Deleted>Đã chuyển {0} sang {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Không thể chuyển {0}: {1}
 Không có gì bị thay đổi.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>Đã chuyển {0} sang {1}, nhưng không thể xóa một phần của thư mục cũ: {2}
+Hãy tự xóa nó (trò chơi có thể liệt kê nó như một bản sao thứ hai của chủ đề).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

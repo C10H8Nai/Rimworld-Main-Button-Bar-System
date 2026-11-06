@@ -366,4 +366,6 @@
   <MBBS_ThemeProject_Deleted>{0} переміщено до {1}.</MBBS_ThemeProject_Deleted>
   <MBBS_ThemeProject_DeleteFailed>Не вдалося перемістити {0}: {1}
 Нічого не змінено.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} переміщено до {1}, але частину старої теки видалити не вдалося: {2}
+Видаліть її самостійно (гра може показувати її як другу копію теми).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>
