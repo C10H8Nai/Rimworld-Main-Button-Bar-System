@@ -1,9 +1,9 @@
 ## 1. 準備
 
-- [ ] 1.1 repo 停在 `claude/openspec-setup`：commit openspec 設定（`openspec/`、`.claude/`）、本 change、`docs/superpowers/specs/2026-11-07-theme-projects-design.md`，push，對 main 開 PR
-- [ ] 1.2 從 `claude/openspec-setup` 開 `claude/theme-projects`（疊在上面的 PR，base 設 `claude/openspec-setup`）
-- [ ] 1.3 讀 `docs/HANDOFF.md` §4、§5、設計文件、`docs/API.md` §4；用 ilspycmd 確認 1.7 的 `Verse.DirectXmlToObject`、`Verse.DirectXmlLoader`、`DefDatabase<T>` 的加入／移除、shortHash、`LoadedModManager.RunningMods` 的用法，結論記在 PR 說明的「技術筆記」
-- [ ] 1.4 用 `superpowers:writing-plans` 把 2～8 展開成 `docs/superpowers/plans/2026-11-07-theme-projects.md`（要改哪些檔、每步怎麼驗證），再照它開工
+- [x] 1.1 repo 停在 `claude/openspec-setup`：commit openspec 設定（`openspec/`、`.claude/`）、本 change、`docs/superpowers/specs/2026-11-07-theme-projects-design.md`，push，對 main 開 PR
+- [x] 1.2 從 `claude/openspec-setup` 開 `claude/theme-projects`（疊在上面的 PR，base 設 `claude/openspec-setup`）
+- [x] 1.3 讀 `docs/HANDOFF.md` §4、§5、設計文件、`docs/API.md` §4；用 ilspycmd 確認 1.7 的 `Verse.DirectXmlToObject`、`Verse.DirectXmlLoader`、`DefDatabase<T>` 的加入／移除、shortHash、`LoadedModManager.RunningMods` 的用法，結論記在 PR 說明的「技術筆記」
+- [x] 1.4 用 `superpowers:writing-plans` 把 2～8 展開成 `docs/superpowers/plans/2026-11-07-theme-projects.md`（要改哪些檔、每步怎麼驗證），再照它開工
 
 ## 2. 空白素材
 
