@@ -328,6 +328,12 @@ namespace MainButtonBarSystem
             }
         }
 
+        /// <summary>Themes that could only be hidden are still in the database: the same as <see cref="TakeOutBeforeReload"/>.</summary>
+        internal static void TakeOutHiddenBeforeReload()
+        {
+            foreach (var def in hidden.ToList()) TakeOutBeforeReload(def);
+        }
+
         internal static void Warn(string projectName, string message) =>
             Log.WarningOnce($"{MainButtonBarSystemMod.LogPrefix}Theme project {projectName}: {message}", (projectName + "|" + message).GetHashCode());
     }

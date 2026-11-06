@@ -90,6 +90,12 @@ namespace MainButtonBarSystem
         /// </summary>
         public static void Reset()
         {
+            string problem = beforeClearProblem;
+            if (problem != null)
+            {
+                beforeClearProblem = null;
+                Log.Warning(MainButtonBarSystemMod.LogPrefix + "Could not take theme projects out of the def database before play data was reloaded: " + problem);
+            }
             foreach (var project in projects)
             {
                 foreach (var def in project.Themes)
@@ -107,10 +113,22 @@ namespace MainButtonBarSystem
         /// <summary>The game is about to clear and reload play data: see <see cref="ThemeProjectLoader.TakeOutBeforeReload"/>.</summary>
         public static void BeforePlayDataClear()
         {
-            foreach (var project in projects)
-                foreach (var def in project.Themes)
-                    if (def.IsFromInactiveProject) ThemeProjectLoader.TakeOutBeforeReload(def);
+            // On the loading thread, inside the game's ClearAllPlayData: never throw (that would stop the reload) and
+            // never log here; Reset reports a problem on the main thread.
+            try
+            {
+                foreach (var project in projects.ToList())
+                    foreach (var def in project.Themes.ToList())
+                        if (def.IsFromInactiveProject) ThemeProjectLoader.TakeOutBeforeReload(def);
+                ThemeProjectLoader.TakeOutHiddenBeforeReload();
+            }
+            catch (Exception e)
+            {
+                beforeClearProblem = e.Message;
+            }
         }
+
+        private static volatile string beforeClearProblem;
 
         private static void Scan()
         {
