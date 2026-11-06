@@ -141,7 +141,7 @@
   <MBBS_SavedTheme_Base>Starter fra {0}</MBBS_SavedTheme_Base>
   <MBBS_SavedTheme_BaseMissingShort>Starter fra {0} (ikke installeret)</MBBS_SavedTheme_BaseMissingShort>
   <MBBS_SavedTheme_BaseMissing>»{0}« starter fra temaet {1}, som ikke er installeret; det starter i stedet fra vanilla.</MBBS_SavedTheme_BaseMissing>
-  <MBBS_SavedTheme_ReplaceConfirm>Erstat dit nuværende eget udseende med »{0}«?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_ReplaceConfirm>Vil du erstatte det udseende, du selv har lavet, med »{0}«?</MBBS_SavedTheme_ReplaceConfirm>
   <MBBS_SavedTheme_Applied>»{0}« er nu dit eget udseende. Tryk Gem for at beholde det.</MBBS_SavedTheme_Applied>
   <MBBS_SavedTheme_Tip>Kopierer dette eget tema ind i dine indstillinger: det gemte spil virker stadig, selv om filen senere slettes.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Pilene vises kun, når der ikke er plads til alle knapperne. Så længe der er plads, behøver linjen ikke at rulle.</MBBS_ScrollArrowsNote>
@@ -282,7 +282,7 @@ Genstart spillet, aktivér den i modlisten for at prøve den, og upload den til 
   <MBBS_ExportTitle_Theme>Gem som eget tema</MBBS_ExportTitle_Theme>
   <MBBS_ExportConfirm_Theme>Gem</MBBS_ExportConfirm_Theme>
   <MBBS_Export_Theme>Gem som eget tema...</MBBS_Export_Theme>
-  <MBBS_Export_ThemeDone>Eget tema blev gemt i:
+  <MBBS_Export_ThemeDone>Dit eget tema blev gemt i:
 {0}
 
 Det vises under Færdige temaer. Del hele mappen for at give det til andre.</MBBS_Export_ThemeDone>
