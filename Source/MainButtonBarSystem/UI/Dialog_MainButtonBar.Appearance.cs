@@ -360,25 +360,30 @@ namespace MainButtonBarSystem
             var layer = data.Layer(key);
             string stored = layer?.AtlasOf(state);
             bool set = !stored.NullOrEmpty();
-            var row = listing.GetRect(L.textRowHeight);
-
-            var shown = set ? CustomThemes.AtlasTexture(stored) : data.AtlasFor(key, state, working.AppearanceDef, out _) ?? Widgets.ButtonSubtleAtlas;
-            var thumb = new Rect(row.x, row.y, row.height * 2f, row.height);
-            if (shown != null) Widgets.DrawAtlas(thumb, shown);
 
             string choose = "MBBS_IconChoose".Translate();
             float chooseWidth = UIUtil.FitButton(L.smallButtonWidth, choose);
             float right = ResetWidth + L.footerGap + chooseWidth;
+            float thumbWidth = L.textRowHeight * 2f;
+            float labelWidth = listing.ColumnWidth - thumbWidth - L.footerGap - right - L.footerGap;
             string text = ("MBBS_Look_State_" + state).Translate() + ": " + (set ? AtlasName(stored) : FollowBelowLabel(key));
+            // A label wider than its space (some translations) wraps onto more lines; the thumbnail and the buttons
+            // stay on the first line.
+            var row = listing.GetRect(Mathf.Max(L.textRowHeight, Text.CalcHeight(text, labelWidth)));
+            var line = new Rect(row.x, row.y, row.width, L.textRowHeight);
+
+            var shown = set ? CustomThemes.AtlasTexture(stored) : data.AtlasFor(key, state, working.AppearanceDef, out _) ?? Widgets.ButtonSubtleAtlas;
+            var thumb = new Rect(line.x, line.y, thumbWidth, line.height);
+            if (shown != null) Widgets.DrawAtlas(thumb, shown);
+
             Text.Anchor = TextAnchor.MiddleLeft;
-            var labelRect = new Rect(thumb.xMax + L.footerGap, row.y, row.xMax - right - L.footerGap - thumb.xMax - L.footerGap, row.height);
-            Widgets.Label(labelRect, text.Truncate(labelRect.width));
-            TooltipHandler.TipRegion(labelRect, text);
+            var labelRect = new Rect(thumb.xMax + L.footerGap, row.y, labelWidth, row.height);
+            Widgets.Label(labelRect, text);
             Text.Anchor = TextAnchor.UpperLeft;
 
-            if (Widgets.ButtonText(new Rect(row.xMax - right, row.y, chooseWidth, row.height), choose))
+            if (Widgets.ButtonText(new Rect(line.xMax - right, line.y, chooseWidth, line.height), choose))
                 Find.WindowStack.Add(new FloatMenu(AtlasOptions(key, state)));
-            if (DefaultButton(row, set))
+            if (DefaultButton(line, set))
                 layer?.SetAtlas(state, null);
         }
 
