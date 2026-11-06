@@ -47,17 +47,17 @@
 ## 8. Tuning、翻譯、文件
 
 - [x] 8.1 `Tuning.xml` 新增數值（自動偵測間隔、主題專案的 `displayOrder` 等），每項有預設值
-- [ ] 8.2 新字串加進 `tools/i18n/English.json`，其他 28 種語言交給子代理翻，跑 `gen_translations.py`
+- [x] 8.2 新字串加進 `tools/i18n/English.json`，其他 28 種語言交給子代理翻，跑 `gen_translations.py` `2026-11-07`
 - [x] 8.3 `docs/API.md` 新增「在遊戲裡新增主題」一節（流程、檔案清單、手動加 `buttonImages`／`decorations`、複製專案要改 packageId 和 defName、上傳工作坊的注意事項、做好後要併進自己的模組（例如種族模組）時把 Defs 和 Textures 搬進 `IfModActive` 資料夾，連到同檔講其他模組附主題的那節，約第 615 行的 `IfModActive` 範例），`docs/API.zh-TW.md` 節錄
 - [x] 8.4 `docs/testing/theme-projects.md`：照 `specs/theme-projects/spec.md` 的每個 Scenario 寫實機步驟
 
 ## 9. 檢查與 PR
 
-- [ ] 9.1 `verify.ps1 -Mod MainButtonBarSystem` 全過（0 警告、單元測試、翻譯檢查）
-- [ ] 9.2 用 `superpowers:requesting-code-review`（Sonnet）review，修完再跑一次 `verify.ps1`
-- [ ] 9.3 push `claude/theme-projects`，開 PR（base `claude/openspec-setup`），說明寫改了什麼、技術筆記、verify 結果、實機測了什麼沒測什麼
+- [x] 9.1 `verify.ps1 -Mod MainButtonBarSystem` 全過（0 警告、單元測試、翻譯檢查） `2026-11-07`
+- [x] 9.2 用 `superpowers:requesting-code-review`（Sonnet）review，修完再跑一次 `verify.ps1` `2026-11-07`
+- [x] 9.3 push `claude/theme-projects`，開 PR（base `claude/openspec-setup`），說明寫改了什麼、技術筆記、verify 結果、實機測了什麼沒測什麼 `2026-11-07`
 
 ## 10. 實機
 
-- [ ] 10.1 關遊戲、部署 `claude/theme-projects`，照 `標準測試流程.md` 換小排序（帶優化模組），照 `docs/testing/theme-projects.md` 全部測一遍；測試建立的主題專案資料夾測完搬到 `_資料與測試\MainButtonBarSystem\theme-projects\`
-- [ ] 10.2 結果推 `test/theme-projects-results`，PR 說明補實機結果；發現的問題修在 `claude/theme-projects` 並重測
+- [x] 10.1 關遊戲、部署 `claude/theme-projects`，照 `標準測試流程.md` 換小排序（帶優化模組），照 `docs/testing/theme-projects.md` 全部測一遍；測試建立的主題專案資料夾測完搬到 `_資料與測試\MainButtonBarSystem\theme-projects\` `2026-11-07`
+- [x] 10.2 結果推 `test/theme-projects-results`，PR 說明補實機結果；發現的問題修在 `claude/theme-projects` 並重測 `2026-11-07`
