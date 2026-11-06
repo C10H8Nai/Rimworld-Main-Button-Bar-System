@@ -336,4 +336,34 @@ Pojawia się w Gotowych motywach. Udostępnij cały folder, aby przekazać go in
   <MBBS_ReloadThemes>Wczytaj ponownie tekstury motywów</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Tryb dewelopera: ponownie wczytuje pliki PNG każdego motywu z jego folderu moda, więc zmieniony obraz pojawia się bez restartu gry. Potem motywy są sprawdzane ponownie; zobacz dziennik.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Tekstury motywów wczytane ponownie: odczytano ponownie {0} plik(ów).</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Nowy motyw…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Tworzy pusty mod z motywem w folderze Mods gry i go wybiera. Edytuj jego obrazy PNG w dowolnym edytorze grafiki: dopóki ta karta jest otwarta, pasek pokazuje Twoje zmiany w ciągu sekundy. Nie trzeba restartować.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Nowy motyw</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Utwórz</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>W {1} powstanie folder moda z motywem, z pustymi obrazami i plikiem _Guide.png, który pokazuje, który obraz rysuje którą część paska. Włącz go później na liście modów, by używać go jak każdego moda z motywem, albo prześlij go stamtąd do Warsztatu.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Projekt motywu (nieaktywny)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Nowy motyw utworzono w {0}. Otwórz jego folder i edytuj obrazy PNG; to okno pokaże zmiany.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Nie udało się utworzyć motywu w {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Brakuje plików pustego motywu ({0}). Zainstaluj ponownie Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Motyw dla Main Button Bar System, utworzony przyciskiem „Nowy motyw”. Wybierz go w ustawieniach Main Button Bar System, na karcie Wygląd.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Wczytaj ponownie</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Wczytuje ponownie Defs i obrazy PNG tego motywu. Dopóki ta karta jest otwarta, zmiany są też wykrywane samoczynnie.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Wczytuje ponownie obrazy PNG tego motywu. To aktywny mod, więc zmiany w Defs wymagają restartu.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: ponownie wczytano plików: {1}.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: ponownie wczytano obrazów: {1}. Zmiany w Defs wymagają restartu, bo motyw jest aktywnym modem.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: plik jest jeszcze zapisywany lub nie jest jeszcze poprawny; zachowano ostatnią dobrą wersję.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Usuń</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Przenosi folder tego motywu do {0}. Aby go odzyskać, przenieś go z powrotem do folderu Mods.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Ten motyw jest aktywnym modem. Najpierw wyłącz go na liście modów i uruchom grę ponownie.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Ten motyw jest zaznaczony na liście modów. Najpierw odznacz go i uruchom grę ponownie.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Usunąć motyw „{0}”?
+
+Jego folder
+{1}
+zostanie przeniesiony do
+{2}
+Aby go odzyskać, przenieś go z powrotem do folderu Mods.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>Przeniesiono {0} do {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Nie udało się przenieść {0}: {1}
+Nic nie zostało zmienione.</MBBS_ThemeProject_DeleteFailed>
 </LanguageData>

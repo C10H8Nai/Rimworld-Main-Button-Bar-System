@@ -336,4 +336,34 @@ Hazır temalar altında listelenir. Başkalarına vermek için klasörün tamam�
   <MBBS_ReloadThemes>Tema dokularını yeniden yükle</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Geliştirici modu: her temanın PNG dosyalarını mod klasöründen yeniden okur, böylece düzenlenen bir görsel oyunu yeniden başlatmadan görünür. Ardından temalar yeniden denetlenir; günlüğe bakın.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Tema dokuları yeniden yüklendi: {0} dosya yeniden okundu.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Yeni tema…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Oyunun Mods klasöründe boş bir tema modu oluşturur ve onu seçer. PNG resimlerini herhangi bir resim düzenleyiciyle düzenle: bu sekme açıkken çubuk değişikliklerini bir saniye içinde gösterir. Yeniden başlatmak gerekmez.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Yeni tema</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Oluştur</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>{1} içinde, boş resimler ve hangi resmin çubuğun hangi bölümünü çizdiğini gösteren _Guide.png ile bir tema modu klasörü oluşturulur. Daha sonra mod listesinde etkinleştirip her tema modu gibi kullanabilir ya da oradan Workshop'a yükleyebilirsin.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Tema projesi (etkin değil)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Yeni tema {0} içinde oluşturuldu. Klasörünü aç ve PNG resimlerini düzenle; bu pencere değişiklikleri gösterir.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Tema {0} içinde oluşturulamadı: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Boş tema dosyaları eksik ({0}). Main Button Bar System'i yeniden yükle.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Main Button Bar System için "Yeni tema" ile yapılmış bir tema. Main Button Bar System ayarlarında Görünüm sekmesinden seç.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Yeniden yükle</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Bu temanın Defs dosyalarını ve PNG resimlerini yeniden okur. Bu sekme açıkken değişiklikler kendiliğinden de algılanır.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Bu temanın PNG resimlerini yeniden okur. Etkin bir mod olduğu için Defs değişiklikleri yeniden başlatma gerektirir.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} dosya yeniden okundu.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} resim yeniden okundu. Tema etkin bir mod olduğu için Defs değişiklikleri yeniden başlatma gerektirir.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: bir dosya hâlâ yazılıyor ya da henüz geçerli değil; son çalışan sürüm korunuyor.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Sil</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Bu temanın klasörünü {0} konumuna taşır. Geri almak için klasörü yeniden Mods klasörüne taşı.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Bu tema etkin bir mod. Önce mod listesinde kapat ve oyunu yeniden başlat.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Bu tema mod listesinde işaretli. Önce işaretini kaldır ve oyunu yeniden başlat.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>"{0}" teması silinsin mi?
+
+Klasörü
+{1}
+şu konuma taşınır:
+{2}
+Geri almak için klasörü yeniden Mods klasörüne taşı.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0}, {1} konumuna taşındı.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>{0} taşınamadı: {1}
+Hiçbir şey değiştirilmedi.</MBBS_ThemeProject_DeleteFailed>
 </LanguageData>

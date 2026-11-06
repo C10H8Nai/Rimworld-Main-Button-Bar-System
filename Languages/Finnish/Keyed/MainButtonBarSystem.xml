@@ -336,4 +336,34 @@ Se näkyy kohdassa Valmiit teemat. Jaa se antamalla muille koko kansio.</MBBS_Ex
   <MBBS_ReloadThemes>Lataa teemojen tekstuurit uudelleen</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Kehittäjätila: lukee jokaisen teeman PNG-tiedostot uudelleen sen modikansiosta, joten muokattu kuva näkyy ilman pelin uudelleenkäynnistystä. Sen jälkeen teemat tarkistetaan uudelleen; katso loki.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Teemojen tekstuurit ladattu uudelleen: {0} tiedosto(a) luettu uudelleen.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Uusi teema…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Luo tyhjän teemamodin pelin Mods-kansioon ja valitsee sen. Muokkaa sen PNG-kuvia millä tahansa kuvaeditorilla: kun tämä välilehti on auki, palkki näyttää muutoksesi sekunnin sisällä. Uudelleenkäynnistystä ei tarvita.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Uusi teema</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Luo</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>Kansioon {1} luodaan teemamodin kansio tyhjine kuvineen ja tiedostoineen _Guide.png, joka näyttää, mikä kuva piirtää minkäkin osan palkista. Ota se myöhemmin käyttöön modilistassa kuten mikä tahansa teemamodi tai julkaise se sieltä Workshopiin.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Teemaprojekti (ei käytössä)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Uusi teema luotu kansioon {0}. Avaa sen kansio ja muokkaa PNG-kuvia; tämä ikkuna näyttää muutokset.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Teemaa ei voitu luoda kansioon {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Tyhjän teeman tiedostot puuttuvat ({0}). Asenna Main Button Bar System uudelleen.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Main Button Bar System -teema, tehty toiminnolla "Uusi teema". Valitse se Main Button Bar System -modin asetusten Ulkoasu-välilehdeltä.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Lataa uudelleen</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Lukee tämän teeman Defs-tiedostot ja PNG-kuvat uudelleen. Kun tämä välilehti on auki, muutokset huomataan myös itsestään.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Lukee tämän teeman PNG-kuvat uudelleen. Se on käytössä oleva modi, joten Defs-muutokset vaativat uudelleenkäynnistyksen.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} tiedosto(a) luettu uudelleen.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} kuva(a) luettu uudelleen. Defs-muutokset vaativat uudelleenkäynnistyksen, koska teema on käytössä oleva modi.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: tiedostoa kirjoitetaan vielä tai se ei ole vielä kelvollinen; viimeisin toimiva versio säilytetään.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Poista</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Siirtää tämän teeman kansion kohteeseen {0}. Saat sen takaisin siirtämällä sen uudelleen Mods-kansioon.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Tämä teema on käytössä oleva modi. Poista se ensin käytöstä modilistassa ja käynnistä peli uudelleen.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Tämä teema on valittuna modilistassa. Poista valinta ensin ja käynnistä peli uudelleen.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Poistetaanko teema "{0}"?
+
+Sen kansio
+{1}
+siirretään kohteeseen
+{2}
+Saat sen takaisin siirtämällä sen uudelleen Mods-kansioon.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} siirrettiin kohteeseen {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Kohdetta {0} ei voitu siirtää: {1}
+Mitään ei muutettu.</MBBS_ThemeProject_DeleteFailed>
 </LanguageData>

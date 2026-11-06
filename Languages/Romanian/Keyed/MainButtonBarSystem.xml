@@ -336,4 +336,34 @@ Apare la Predefinite. Partajează dosarul întreg pentru a o da altora.</MBBS_Ex
   <MBBS_ReloadThemes>Reîncarcă texturile temelor</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Mod dezvoltator: recitește fișierele PNG ale fiecărei teme din folderul modului, astfel încât o imagine modificată apare fără repornirea jocului. Apoi temele sunt verificate din nou; vezi jurnalul.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Texturile temelor au fost reîncărcate: {0} fișier(e) recitit(e).</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Temă nouă…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Creează un mod de temă gol în dosarul Mods al jocului și îl selectează. Editează imaginile PNG ale acestuia cu orice editor de imagini: cât timp această filă este deschisă, bara arată modificările tale în mai puțin de o secundă. Nu e nevoie de repornire.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Temă nouă</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Creează</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>În {1} se creează un dosar de mod de temă, cu imagini goale și _Guide.png, care arată ce imagine desenează ce parte a barei. Activează-l mai târziu în lista de moduri ca să-l folosești ca orice mod de temă, sau încarcă-l de acolo în Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Proiect de temă (inactiv)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Tema nouă a fost creată în {0}. Deschide dosarul ei și editează imaginile PNG; această fereastră arată modificările.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Tema nu a putut fi creată în {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Lipsesc fișierele temei goale ({0}). Reinstalează Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>O temă pentru Main Button Bar System, făcută cu „Temă nouă”. Alege-o în setările Main Button Bar System, fila Aspect.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Reîncarcă</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Recitește Defs și imaginile PNG ale acestei teme. Cât timp această filă este deschisă, modificările sunt preluate și automat.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Recitește imaginile PNG ale acestei teme. Este un mod activ, deci modificările din Defs necesită repornire.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: fișiere recitite: {1}.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: imagini recitite: {1}. Modificările din Defs necesită repornire, pentru că tema este un mod activ.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: un fișier este încă în curs de scriere sau nu este încă valid; se păstrează ultima versiune bună.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Șterge</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Mută dosarul acestei teme în {0}. Ca să o recuperezi, mută dosarul înapoi în dosarul Mods.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Această temă este un mod activ. Dezactivează-o întâi în lista de moduri și repornește jocul.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Această temă este bifată în lista de moduri. Debifează-o întâi și repornește jocul.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Ștergi tema „{0}”?
+
+Dosarul ei
+{1}
+este mutat în
+{2}
+Ca să o recuperezi, mută dosarul înapoi în dosarul Mods.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} a fost mutat în {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Nu s-a putut muta {0}: {1}
+Nu s-a schimbat nimic.</MBBS_ThemeProject_DeleteFailed>
 </LanguageData>

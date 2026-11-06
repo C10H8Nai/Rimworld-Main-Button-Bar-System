@@ -336,4 +336,34 @@
   <MBBS_ReloadThemes>Επαναφόρτωση υφών θεμάτων</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Λειτουργία προγραμματιστή: ξαναδιαβάζει τα αρχεία PNG κάθε θέματος από τον φάκελο του mod, ώστε μια αλλαγμένη εικόνα να εμφανίζεται χωρίς επανεκκίνηση. Έπειτα τα θέματα ελέγχονται ξανά· δείτε το αρχείο καταγραφής.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Οι υφές των θεμάτων επαναφορτώθηκαν: ξαναδιαβάστηκαν {0} αρχείο(α).</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Νέο θέμα…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Δημιουργεί ένα κενό mod θέματος στον φάκελο Mods του παιχνιδιού και το επιλέγει. Επεξεργαστείτε τις εικόνες PNG του με οποιονδήποτε επεξεργαστή εικόνας: όσο αυτή η καρτέλα είναι ανοιχτή, η γραμμή δείχνει τις αλλαγές σας μέσα σε ένα δευτερόλεπτο. Δεν χρειάζεται επανεκκίνηση.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Νέο θέμα</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Δημιουργία</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>Δημιουργείται ένας φάκελος mod θέματος στο {1}, με κενές εικόνες και το _Guide.png, που δείχνει ποια εικόνα ζωγραφίζει ποιο τμήμα της γραμμής. Ενεργοποιήστε το αργότερα στη λίστα mod για να το χρησιμοποιήσετε όπως κάθε mod θέματος, ή ανεβάστε το από εκεί στο Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Έργο θέματος (ανενεργό)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Το νέο θέμα δημιουργήθηκε στο {0}. Ανοίξτε τον φάκελό του και επεξεργαστείτε τις εικόνες PNG· αυτό το παράθυρο δείχνει τις αλλαγές.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Δεν ήταν δυνατή η δημιουργία του θέματος στο {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Λείπουν τα αρχεία του κενού θέματος ({0}). Επανεγκαταστήστε το Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Ένα θέμα για το Main Button Bar System, φτιαγμένο με το «Νέο θέμα». Επιλέξτε το στις ρυθμίσεις του Main Button Bar System, καρτέλα Εμφάνιση.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Επαναφόρτωση</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Διαβάζει ξανά τα Defs και τις εικόνες PNG αυτού του θέματος. Όσο αυτή η καρτέλα είναι ανοιχτή, οι αλλαγές εντοπίζονται και αυτόματα.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Διαβάζει ξανά τις εικόνες PNG αυτού του θέματος. Είναι ενεργό mod, οπότε οι αλλαγές στα Defs απαιτούν επανεκκίνηση.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: ξαναδιαβάστηκαν {1} αρχείο(α).</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: ξαναδιαβάστηκαν {1} εικόνα(ες). Οι αλλαγές στα Defs απαιτούν επανεκκίνηση, επειδή το θέμα είναι ενεργό mod.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: ένα αρχείο γράφεται ακόμη ή δεν είναι ακόμη έγκυρο· διατηρείται η τελευταία σωστή έκδοση.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Διαγραφή</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Μετακινεί τον φάκελο αυτού του θέματος στο {0}. Για να το ανακτήσετε, μετακινήστε τον φάκελο ξανά στον φάκελο Mods.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Αυτό το θέμα είναι ενεργό mod. Απενεργοποιήστε το πρώτα στη λίστα mod και επανεκκινήστε το παιχνίδι.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Αυτό το θέμα είναι τσεκαρισμένο στη λίστα mod. Αφαιρέστε πρώτα το τσεκάρισμα και επανεκκινήστε το παιχνίδι.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Διαγραφή του θέματος «{0}»;
+
+Ο φάκελός του
+{1}
+μετακινείται στο
+{2}
+Για να το ανακτήσετε, μετακινήστε τον φάκελο ξανά στον φάκελο Mods.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>Το {0} μετακινήθηκε στο {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Δεν ήταν δυνατή η μετακίνηση του {0}: {1}
+Δεν άλλαξε τίποτα.</MBBS_ThemeProject_DeleteFailed>
 </LanguageData>
