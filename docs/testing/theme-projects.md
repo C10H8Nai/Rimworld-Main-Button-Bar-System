@@ -29,10 +29,13 @@
 1. 不用重開就能選：A.3 完成後，在遊戲裡存檔（`MBBS_tp_select`），重開遊戲，讀檔：外觀還是 test steel，卡片來源「主題專案（未啟用）」，log 沒有本模組紅字。
 2. 已啟用的不重複載入：在模組清單勾選 `Test Steel`、重開遊戲。清單裡 test steel 只有一張卡，來源是模組名稱「Test Steel」；log 沒有 `Adding duplicate` 或 `already has short hash`。選中它時「刪除」是灰的，提示要先停用並重開。測完在模組清單取消勾選、重開。
 3. 勾選了但還沒重開：在模組清單勾選 `Test Steel` 後不要重開，回到設定視窗。卡片來源仍是「主題專案（未啟用）」（遊戲還沒載入它），「刪除」是灰的、提示「已在模組清單勾選」。取消勾選。
+   - **1.7 做不到**：遊戲的模組清單一存檔就跳「The mod list has changed. The game will now restart automatically.」，只有 OK，所以沒有「勾選了但還沒重開」的狀態。這項只有單元測試（`ThemeProjectRules`）。
 4. defName 撞名：把 `Mods\Test Steel` 整個複製成 `Mods\Test Steel Copy`（不改任何檔），重開遊戲。清單只有一張 test steel；log 一行黃字 `Theme project Test Steel Copy: the theme NaiTestSteel_Theme is skipped: another theme already has that defName …`，沒有紅字。測完刪掉複本（直接刪資料夾即可，它是測試產物）。
 5. 貼圖讀不到：把 `Textures/NaiTestSteel/Bar.png` 改名成 `Bar_x.png`，按「重新載入」。列背景變回遊戲原本（沒有背景），log 一行黃字（找不到貼圖），沒有紅字。改回原名、重新載入，背景回來。
+   - 要用**未啟用**的專案測。已啟用的專案是遊戲載入的，檔案不見時照設計沿用遊戲記憶體裡的貼圖，不會有黃字（訊息的「讀了 N 個檔案」會少一個）。
 6. 主題專案不見了：選著 test steel 存檔（`MBBS_tp_gone`），關遊戲，把 `Mods\Test Steel` 暫時搬到別處，開遊戲讀檔：外觀退回原版，沒有紅字。搬回來。
-7. 切換語言（遊戲會重新載入所有 Def）：主選單選著 test steel 時，從「選項 → 語言」換成英文再換回來（換語言前先複製 `Player.log`）。test steel 仍在清單裡、仍選著、卡片和按鈕正常；log 有 `Play data reloaded`，沒有本模組紅字。
+7. 切換語言（遊戲會重新載入所有 Def）：主選單選著 test steel 時，從「選項 → 語言」換成英文再換回來（換語言前先複製 `Player.log`）。test steel 仍在清單裡、仍選著、卡片和按鈕正常；log 有 `Play data reloaded`，沒有本模組紅字（包括 `already has short hash`）。
+   - 排序裡**不能有 WOWGAG's GUI Performance Patch**：它把換語言改成重開遊戲（新程序的命令列有 `-WaitForExitingPid`），就測不到重新載入。主選單右邊的語言按鈕在 computer use 下點不到，用「選項 → 選擇語言」。
 
 ## D. 重新載入與自動偵測
 
