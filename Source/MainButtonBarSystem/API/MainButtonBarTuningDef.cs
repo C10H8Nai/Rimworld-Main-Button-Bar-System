@@ -292,6 +292,9 @@ namespace MainButtonBarSystem
             /// <summary>Colours offered in the colour picker's palette.</summary>
             public List<Color> lookColorPalette;
 
+            /// <summary>The colour picker window: the game's 600×450 is too short for its last row in CJK fonts.</summary>
+            public Vector2 lookColorPickerSize;
+
             /// <summary>The image picker of custom themes.</summary>
             public Vector2 imagePickerSize;
             public float imagePickerCell;

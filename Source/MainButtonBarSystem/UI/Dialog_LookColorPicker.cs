@@ -26,6 +26,9 @@ namespace MainButtonBarSystem
             forcePause = false;
         }
 
+        /// <summary>Taller than the game's 600×450, whose last row is cut off in Chinese and Japanese.</summary>
+        public override Vector2 InitialSize => MainButtonBarTuningDef.Current.settingsWindow.lookColorPickerSize;
+
         protected override bool ShowDarklight => false;
 
         protected override Color DefaultColor => fallback;

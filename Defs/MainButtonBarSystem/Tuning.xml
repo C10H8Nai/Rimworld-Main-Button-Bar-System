@@ -176,6 +176,7 @@
         <li>(0.55, 0.00, 0.28, 1)</li>
       </lookColorPalette>
       <imagePickerSize>(760,600)</imagePickerSize>
+      <lookColorPickerSize>(600,500)</lookColorPickerSize> <!-- the game's colour picker is 600x450, too short for CJK fonts -->
       <imagePickerCell>72</imagePickerCell>
       <themeSettingsGap>12</themeSettingsGap>     <!-- space between the theme cards and the illustration settings below them -->
       <numberFieldWidth>64</numberFieldWidth>

@@ -210,17 +210,26 @@ namespace MainButtonBarSystem
         /// <summary>Reset, copy and paste for the selected layer; on "all buttons" also the count and reset of the others (spec 4.6, 4.7).</summary>
         private static void DrawLookLayerButtons(Listing_Standard listing, CustomThemeData data, string key)
         {
-            var row = listing.GetRect(L.textRowHeight);
             var layer = data.Layer(key);
             string reset = "MBBS_Look_Reset".Translate(), copy = "MBBS_Look_Copy".Translate(), paste = "MBBS_Look_Paste".Translate();
+            // Side by side while they fit; a button that would run past the panel (longer translations) starts a new row.
+            var row = listing.GetRect(L.textRowHeight);
             float x = row.x;
-            var r = new Rect(x, row.y, UIUtil.FitButton(L.moveButtonWidth, reset), row.height);
-            if (DimmableButton(r, reset, layer != null && !layer.IsEmpty)) data.Reset(key);
-            x = r.xMax + L.footerGap;
-            r = new Rect(x, row.y, UIUtil.FitButton(L.smallButtonWidth, copy), row.height);
-            if (Widgets.ButtonText(r, copy)) lookClipboard = (layer ?? new ButtonLook()).Clone();
-            x = r.xMax + L.footerGap;
-            r = new Rect(x, row.y, UIUtil.FitButton(L.smallButtonWidth, paste), row.height);
+            Rect Place(float width)
+            {
+                if (x > row.x && x + width > row.xMax)
+                {
+                    row = listing.GetRect(L.textRowHeight);
+                    x = row.x;
+                }
+                var placed = new Rect(x, row.y, Mathf.Min(width, row.width), row.height);
+                x = placed.xMax + L.footerGap;
+                return placed;
+            }
+
+            if (DimmableButton(Place(UIUtil.FitButton(L.moveButtonWidth, reset)), reset, layer != null && !layer.IsEmpty)) data.Reset(key);
+            if (Widgets.ButtonText(Place(UIUtil.FitButton(L.smallButtonWidth, copy)), copy)) lookClipboard = (layer ?? new ButtonLook()).Clone();
+            var r = Place(UIUtil.FitButton(L.smallButtonWidth, paste));
             if (DimmableButton(r, paste, lookClipboard != null)) data.SetLayer(key, lookClipboard);
             TooltipHandler.TipRegion(r, "MBBS_Look_PasteTip".Translate());
 
