@@ -122,14 +122,14 @@ namespace MainButtonBarSystem
             label = "";
         }
 
-        public static void Postfix(Rect rect, Color? labelColor, string __state)
+        public static void Postfix(Rect rect, Color? labelColor, float textLeftMargin, string __state)
         {
             if (__state == null || broken) return;
             try
             {
                 if (ButtonPainter.ActiveIconOnly) ButtonPainter.DrawIconOnly(rect);
                 else if (ButtonPainter.ActiveIcon != null) ButtonPainter.DrawIconAndLabel(rect, __state, labelColor);
-                else ButtonPainter.DrawAlignedLabel(rect, __state, labelColor);
+                else ButtonPainter.DrawAlignedLabel(rect, __state, labelColor, textLeftMargin);
             }
             catch (Exception e) when (!(e is ExitGUIException))
             {
