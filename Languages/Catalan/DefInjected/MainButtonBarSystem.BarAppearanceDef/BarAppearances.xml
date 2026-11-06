@@ -13,5 +13,5 @@
   <MBBS_Starfarer.label>navegant estel·lar</MBBS_Starfarer.label>
   <MBBS_Starfarer.description>Porpra espacial amb planxes de buc porpra, reblons cian i una línia cian als propulsors, amb els colors de l’expansió Odissea.</MBBS_Starfarer.description>
   <MBBS_Nai.label>nai</MBBS_Nai.label>
-  <MBBS_Nai.description>Tema de pixel art amb la Nai: marcs d’estil original i una imatge de la Nai dins de cada botó principal. En els botons amb icona, ella sosté un objecte que lliga amb el botó (un plànol, un matràs, una farmaciola...); en els botons sense icona, treu el cap darrere d’una pissarra on hi ha l’etiqueta. Hi ha imatges per als botons del joc base i de les expansions i per als de molts mods; qualsevol altre botó rep la pissarra.</MBBS_Nai.description>
+  <MBBS_Nai.description>Tema de pixel art amb la Nai: marcs d’estil original i una imatge de la Nai dins de cada botó principal. En els botons amb icona, ella sosté un objecte que lliga amb el botó (un plànol, un matràs, una farmaciola...); en els botons sense icona, treu el cap darrere d’una pissarra on hi ha l’etiqueta. Hi ha imatges per als botons del joc base i de les expansions i per als de molts mods; qualsevol altre botó rep la pissarra. Queda millor en els modes de visualització «desplaçament» o «plegat», amb botons d’almenys 120 px d’amplada.</MBBS_Nai.description>
 </LanguageData>

@@ -352,7 +352,7 @@
       "MBBS_Starfarer.label": "călător stelar",
       "MBBS_Starfarer.description": "Mov cosmic, cu plăci mov ale carenei, nituri cyan și o linie cyan a propulsoarelor, în culorile expansiunii Odyssey.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Temă pixel art cu Nai: rame în stilul jocului original și o imagine cu Nai în fiecare buton principal. Pe butoanele cu pictogramă, ea ține sus un obiect potrivit butonului (un plan, o fiolă, o trusă medicală...); pe butoanele fără pictogramă, ea se uită pe după o tablă pe care stă eticheta. Există imagini pentru butoanele jocului de bază, ale expansiunilor și ale multor moduri; orice alt buton primește tabla."
+      "MBBS_Nai.description": "Temă pixel art cu Nai: rame în stilul jocului original și o imagine cu Nai în fiecare buton principal. Pe butoanele cu pictogramă, ea ține sus un obiect potrivit butonului (un plan, o fiolă, o trusă medicală...); pe butoanele fără pictogramă, ea se uită pe după o tablă pe care stă eticheta. Există imagini pentru butoanele jocului de bază, ale expansiunilor și ale multor moduri; orice alt buton primește tabla. Arată cel mai bine în modurile de afișare derulare sau restrângere, cu butoane late de cel puțin 120 px."
     }
   }
 }

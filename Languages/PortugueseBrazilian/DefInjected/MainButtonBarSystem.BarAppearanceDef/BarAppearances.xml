@@ -13,5 +13,5 @@
   <MBBS_Starfarer.label>viajante estelar</MBBS_Starfarer.label>
   <MBBS_Starfarer.description>Roxo espacial com placas do casco roxas, rebites ciano e uma linha ciano dos propulsores, nas cores da expansão Odyssey.</MBBS_Starfarer.description>
   <MBBS_Nai.label>nai</MBBS_Nai.label>
-  <MBBS_Nai.description>Tema pixel art com a Nai: molduras no estilo do jogo original e uma imagem da Nai dentro de cada botão principal. Nos botões com ícone, ela segura um item que combina com o botão (um projeto, um frasco, um kit médico...); nos botões sem ícone, ela espia por trás de um quadro-negro onde fica o rótulo. Há imagens para os botões do jogo base, das expansões e de muitos mods; qualquer outro botão recebe o quadro-negro.</MBBS_Nai.description>
+  <MBBS_Nai.description>Tema pixel art com a Nai: molduras no estilo do jogo original e uma imagem da Nai dentro de cada botão principal. Nos botões com ícone, ela segura um item que combina com o botão (um projeto, um frasco, um kit médico...); nos botões sem ícone, ela espia por trás de um quadro-negro onde fica o rótulo. Há imagens para os botões do jogo base, das expansões e de muitos mods; qualquer outro botão recebe o quadro-negro. Fica melhor nos modos de exibição rolar ou recolher, com botões de pelo menos 120 px de largura.</MBBS_Nai.description>
 </LanguageData>

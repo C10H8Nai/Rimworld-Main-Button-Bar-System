@@ -352,7 +352,7 @@
       "MBBS_Starfarer.label": "tähtederändur",
       "MBBS_Starfarer.description": "Kosmoselilla lillade kerepaneelide, tsüaansiniste neetide ja tsüaansinise mootorijoonega, Odyssey laienduse värvides.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Pikselgraafika teema Naiga: algse mängu stiilis raamid ja Nai pilt igas peanupus. Ikooniga nuppudel hoiab ta üleval nupule sobivat eset (joonist, kolbi, esmaabikotti...); ikoonita nuppudel piilub ta tahvli tagant, millel silt asub. Pildid on olemas põhimängu ja laienduste nuppudele ning paljude modifikatsioonide nuppudele; iga teine nupp saab tahvli."
+      "MBBS_Nai.description": "Pikselgraafika teema Naiga: algse mängu stiilis raamid ja Nai pilt igas peanupus. Ikooniga nuppudel hoiab ta üleval nupule sobivat eset (joonist, kolbi, esmaabikotti...); ikoonita nuppudel piilub ta tahvli tagant, millel silt asub. Pildid on olemas põhimängu ja laienduste nuppudele ning paljude modifikatsioonide nuppudele; iga teine nupp saab tahvli. Näeb parim välja kuvarežiimides kerimine või ahendamine, kui nuppude laius on vähemalt 120 px."
     }
   }
 }
