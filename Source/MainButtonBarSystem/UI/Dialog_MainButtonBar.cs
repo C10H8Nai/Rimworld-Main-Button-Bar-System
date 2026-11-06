@@ -109,6 +109,8 @@ namespace MainButtonBarSystem
             base.PreOpen();
             numberBuffers.Clear();
             CustomThemeFiles.Refresh();
+            // Theme projects copied into the Mods folder while the game runs, or not readable at startup.
+            ThemeProjects.Rescan();
             Window_ButtonDrawer.CloseIfOpen();
             working = BarConfigManager.Saved.Clone();
             BarConfigManager.Preview = working;

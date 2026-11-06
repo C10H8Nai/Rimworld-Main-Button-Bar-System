@@ -84,6 +84,11 @@ namespace MainButtonBarSystem
         {
             string mods = GenFilePaths.ModsFolderPath;
             if (!Directory.Exists(mods)) return;
+            // A project whose files could not be read at startup (XML being edited) has no themes and so no card to
+            // reload it from: try it again on every scan.
+            foreach (var project in projects.ToList())
+                if (!project.LoadedByGame && project.Themes.Count == 0 && project.Snapshot == null && Directory.Exists(project.Folder)) Reload(project);
+
             foreach (var dir in Directory.GetDirectories(mods))
             {
                 if (projects.Any(p => SamePath(p.Folder, dir))) continue;
