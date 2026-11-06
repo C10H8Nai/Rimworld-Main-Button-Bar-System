@@ -25,6 +25,9 @@ namespace MainButtonBarSystem
 
         internal static bool IsHidden(BarAppearanceDef def) => def != null && hidden.Contains(def);
 
+        /// <summary>After a play-data reload the hidden defs are gone with the old database.</summary>
+        internal static void ForgetHidden() => hidden.Clear();
+
         /// <summary>
         /// Every BarAppearanceDef in the folder's Defs (sub-folders too), with <see cref="BarAppearanceDef.projectFolder"/>
         /// set. Null when a file cannot be read right now (being written, or not valid XML yet): try again later.
@@ -44,12 +47,14 @@ namespace MainButtonBarSystem
                 return null;
             }
             Array.Sort(files, StringComparer.OrdinalIgnoreCase);
+            var settings = new XmlReaderSettings { DtdProcessing = DtdProcessing.Prohibit, XmlResolver = null };
             foreach (var file in files)
             {
-                var doc = new XmlDocument();
+                var doc = new XmlDocument { XmlResolver = null };
                 try
                 {
-                    doc.Load(file);
+                    using (var reader = XmlReader.Create(file, settings))
+                        doc.Load(reader);
                 }
                 catch (XmlException e)
                 {
@@ -80,7 +85,8 @@ namespace MainButtonBarSystem
                 return null;
             }
             var node = (XmlElement)element.CloneNode(true);
-            StripUnknownFields(node, typeof(BarAppearanceDef), projectName, file);
+            if (!KeepNode(node, typeof(BarAppearanceDef), out var defType, projectName, file, DefNode)) return null;
+            Sanitize(node, defType, projectName, file);
             BarAppearanceDef def;
             try
             {
@@ -96,26 +102,42 @@ namespace MainButtonBarSystem
                 Warn(projectName, file + ": a theme without a defName is skipped.");
                 return null;
             }
+            // The game's own check indexes an empty description and throws; an empty one simply means none.
+            def.description = def.description?.Trim();
+            if (def.description.NullOrEmpty()) def.description = null;
+            // A worker that cannot be made would throw on every frame the bar is drawn.
+            var worker = def.workerClass;
+            if (worker == null || !typeof(BarAppearanceWorker).IsAssignableFrom(worker) || worker.IsAbstract || worker.GetConstructor(Type.EmptyTypes) == null)
+            {
+                Warn(projectName, $"{file}: {def.defName}: workerClass {worker?.FullName ?? "(none)"} is not a usable {nameof(BarAppearanceWorker)}; the standard one is used.");
+                def.workerClass = typeof(BarAppearanceWorker);
+            }
             def.ResolveDefNameHash();
             def.projectFolder = folder;
             return def;
         }
 
         /// <summary>
-        /// Removes child nodes that are not fields of <paramref name="type"/> (by name or LoadAlias), recursively, so
-        /// the game's parser never logs "doesn't correspond to any field" as an error for a typo.
+        /// Takes out of a theme's XML, with a warning, everything the game's parser would log as an error (an author
+        /// saving a file being edited must not get red text): nodes that are not fields of <paramref name="type"/> (by
+        /// name or LoadAlias), a field written twice, a Class that does not exist, and values that do not parse (a
+        /// misspelt enum, a number or colour typed wrong, an unknown type name). Recursive, lists included.
         /// </summary>
-        private static void StripUnknownFields(XmlNode node, Type type, string projectName, string file)
+        private static void Sanitize(XmlNode node, Type type, string projectName, string file)
         {
             if (type == null || type == typeof(string) || type.IsPrimitive || type.IsEnum) return;
             if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>))
             {
                 var item = type.GetGenericArguments()[0];
-                foreach (XmlNode li in node.ChildNodes)
-                    if (li is XmlElement && HasElementChildren(li)) StripUnknownFields(li, ClassOf(li, item), projectName, file);
+                foreach (var li in node.ChildNodes.OfType<XmlElement>().ToList())
+                {
+                    if (!KeepNode(li, item, out var liType, projectName, file, node.Name)) node.RemoveChild(li);
+                    else if (HasElementChildren(li)) Sanitize(li, liType, projectName, file);
+                }
                 return;
             }
             if (type.IsGenericType) return;   // dictionaries and the like: left to the game
+            var seen = new HashSet<string>();
             foreach (var child in node.ChildNodes.OfType<XmlElement>().ToList())
             {
                 var field = FieldFor(type, child.Name);
@@ -125,20 +147,70 @@ namespace MainButtonBarSystem
                     node.RemoveChild(child);
                     continue;
                 }
-                if (HasElementChildren(child)) StripUnknownFields(child, ClassOf(child, field.FieldType), projectName, file);
+                if (!seen.Add(field.Name))
+                {
+                    Warn(projectName, $"{file}: <{child.Name}> is written twice in {type.Name}; the later one is skipped.");
+                    node.RemoveChild(child);
+                    continue;
+                }
+                if (!KeepNode(child, field.FieldType, out var childType, projectName, file, child.Name)) node.RemoveChild(child);
+                else if (HasElementChildren(child)) Sanitize(child, childType, projectName, file);
+            }
+        }
+
+        /// <summary>
+        /// Whether a node can be read as <paramref name="declared"/>: its Class (if any) exists and fits, and a plain
+        /// text value parses. <paramref name="type"/> is the type it is read as.
+        /// </summary>
+        private static bool KeepNode(XmlElement node, Type declared, out Type type, string projectName, string file, string what)
+        {
+            type = declared;
+            string classAttr = node.GetAttribute("Class");
+            if (!classAttr.NullOrEmpty())
+            {
+                var named = GenTypes.GetTypeInAnyAssembly(classAttr);
+                if (named == null || !declared.IsAssignableFrom(named))
+                {
+                    Warn(projectName, $"{file}: <{what}> has Class=\"{classAttr}\", which is not a {declared.Name}; it is skipped.");
+                    return false;
+                }
+                type = named;
+            }
+            if (HasElementChildren(node)) return true;
+            string text = node.InnerText?.Trim();
+            if (text.NullOrEmpty() || type == typeof(string)) return true;
+            if (!ValueParses(text, type))
+            {
+                Warn(projectName, $"{file}: <{what}> \"{text}\" is not a valid {type.Name}; it is skipped.");
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Whether the game reads <paramref name="text"/> as <paramref name="type"/> without an error. Type names are
+        /// looked up directly, because the game's type parser logs an error instead of throwing.
+        /// </summary>
+        private static bool ValueParses(string text, Type type)
+        {
+            type = Nullable.GetUnderlyingType(type) ?? type;
+            if (type == typeof(Type)) return text == "null" || text == "Null" || GenTypes.GetTypeInAnyAssembly(text) != null;
+            // Def references and types with their own XML loader: left to the game.
+            if (GenTypes.IsDef(type) || type.GetMethod("LoadDataFromXmlCustom", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic) != null) return true;
+            // A whole object or list written as plain text cannot be read.
+            if (!ParseHelper.HandlesType(type)) return false;
+            try
+            {
+                ParseHelper.FromString(text, type);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 
         private static bool HasElementChildren(XmlNode node) => node.ChildNodes.OfType<XmlElement>().Any();
-
-        /// <summary>The type a node is read as: its Class attribute when that names a subclass, else the declared type.</summary>
-        private static Type ClassOf(XmlNode node, Type declared)
-        {
-            var attr = (node as XmlElement)?.GetAttribute("Class");
-            if (attr.NullOrEmpty()) return declared;
-            var type = GenTypes.GetTypeInAnyAssembly(attr);
-            return type != null && declared.IsAssignableFrom(type) ? type : declared;
-        }
 
         private static FieldInfo FieldFor(Type type, string name)
         {

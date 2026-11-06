@@ -29,6 +29,9 @@ namespace MainButtonBarSystem
             ButtonDefaults.ResetCache();
             LabelOverrides.ResetCache();
             CustomIcons.ForgetGameTextures();
+            // The rebuilt def database no longer has the themes of theme projects this mod loaded: read them again.
+            ThemeProjects.Reset();
+            ThemeProjects.ScanAtStartup();
             CustomThemes.ResetCache();
             Window_ButtonDrawer.ResetCache();
             CompatBridges.ResetCache();

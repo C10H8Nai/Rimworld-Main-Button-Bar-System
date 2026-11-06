@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Security;
 using System.Text;
 using MainButtonBarSystem.Core;
@@ -87,12 +88,17 @@ namespace MainButtonBarSystem
             }
         }
 
-        private static string FillTemplate(string template, string id, string name, string author, string description) =>
-            template.Replace("{{ID}}", id)
+        private static string FillTemplate(string template, string id, string name, string author, string description)
+        {
+            // No description: no <description> line (the game reports an empty one as a config error).
+            if (description.NullOrEmpty())
+                template = string.Join("\n", template.Split('\n').Where(line => !line.Contains("{{DESCRIPTION}}")));
+            return template.Replace("{{ID}}", id)
                 .Replace("{{LABEL}}", Escape(name))
                 .Replace("{{DESCRIPTION}}", Escape(description ?? ""))
                 .Replace("{{AUTHOR}}", Escape(author ?? ""))
                 .Replace("{{DISPLAY_ORDER}}", MainButtonBarTuningDef.Current.behaviour.themeProjectDisplayOrder.ToString());
+        }
 
         private static string Escape(string text) => SecurityElement.Escape(text) ?? "";
 

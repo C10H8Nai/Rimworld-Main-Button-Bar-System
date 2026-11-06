@@ -77,9 +77,12 @@ namespace MainButtonBarSystem
                 ? ThemeProjectNames.UniquePackageId(ThemeProjectNames.PackageId(author, name, packageNameFallback), PackageIdTaken)
                 : SharingNames.PackageId(author, name, packageNameFallback);
 
-        private static bool PackageIdTaken(string id) =>
+        private bool PackageIdTaken(string id) =>
             ModLister.GetModWithIdentifier(id, true) != null || exportedPackageIds.Contains(id) ||
-            ThemeProjects.KnownPackageIds.Any(known => ThemeProjectRules.SamePackageId(known, id));
+            (target == ExportTarget.ThemeProject &&
+             (ThemeProjects.KnownPackageIds.Any(known => ThemeProjectRules.SamePackageId(known, id)) ||
+              // Different packageIds can make the same defName ("a.mbbstheme.b", "a.b"); the second theme would be skipped.
+              DefDatabase<BarAppearanceDef>.GetNamedSilentFail(ThemeProjectNames.DefNameOf(ThemeProjectNames.IdOf(id))) != null));
 
         public override void DoWindowContents(Rect inRect)
         {

@@ -469,7 +469,9 @@ namespace MainButtonBarSystem
             Text.Font = GameFont.Small;
             GUI.color = Color.white;
 
-            var image = theme.Tex(theme.preview);
+            // A theme project being edited is drawn from its textures, so a changed image shows on the card at once
+            // (its own preview picture is for when it is an active mod).
+            var image = theme.IsFromInactiveProject ? null : theme.Tex(theme.preview);
             if (image != null) Widgets.DrawTextureFitted(preview, image, 1f);
             else DrawThemePreview(theme, preview);
 

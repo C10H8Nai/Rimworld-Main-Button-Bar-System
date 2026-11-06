@@ -80,6 +80,7 @@
       <themeTileMaxCount>4096</themeTileMaxCount>           <!-- a tiled background needing more tiles is stretched instead -->
       <themeProjectPollSeconds>1</themeProjectPollSeconds>  <!-- "New theme": seconds between checks of the selected theme project's files (Appearance tab open) -->
       <themeProjectDisplayOrder>1000</themeProjectDisplayOrder> <!-- "New theme": displayOrder of a new project's theme, after the built-in ones -->
+      <themeProjectRetryLimit>5</themeProjectRetryLimit>    <!-- "New theme": checks in a row a file may stay unreadable (being written) before it is reported as broken -->
     </behaviour>
 
     <!-- Layout of the settings window. -->
