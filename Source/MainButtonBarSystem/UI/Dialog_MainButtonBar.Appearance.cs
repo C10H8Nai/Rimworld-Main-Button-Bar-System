@@ -368,16 +368,18 @@ namespace MainButtonBarSystem
             float labelWidth = listing.ColumnWidth - thumbWidth - L.footerGap - right - L.footerGap;
             string text = ("MBBS_Look_State_" + state).Translate() + ": " + (set ? AtlasName(stored) : FollowBelowLabel(key));
             // A label wider than its space (some translations) wraps onto more lines; the thumbnail and the buttons
-            // stay on the first line.
-            var row = listing.GetRect(Mathf.Max(L.textRowHeight, Text.CalcHeight(text, labelWidth)));
+            // stay on the first line. A window too narrow for any label keeps one line instead of a huge row.
+            float labelHeight = labelWidth > 0f ? Text.CalcHeight(text, labelWidth) : L.textRowHeight;
+            var row = listing.GetRect(Mathf.Max(L.textRowHeight, labelHeight));
             var line = new Rect(row.x, row.y, row.width, L.textRowHeight);
 
             var shown = set ? CustomThemes.AtlasTexture(stored) : data.AtlasFor(key, state, working.AppearanceDef, out _) ?? Widgets.ButtonSubtleAtlas;
             var thumb = new Rect(line.x, line.y, thumbWidth, line.height);
             if (shown != null) Widgets.DrawAtlas(thumb, shown);
 
-            Text.Anchor = TextAnchor.MiddleLeft;
-            var labelRect = new Rect(thumb.xMax + L.footerGap, row.y, labelWidth, row.height);
+            // One line: centred on the row like before. More lines: from the top, level with the buttons.
+            Text.Anchor = row.height > L.textRowHeight ? TextAnchor.UpperLeft : TextAnchor.MiddleLeft;
+            var labelRect = new Rect(thumb.xMax + L.footerGap, row.y, Mathf.Max(0f, labelWidth), row.height);
             Widgets.Label(labelRect, text);
             Text.Anchor = TextAnchor.UpperLeft;
 

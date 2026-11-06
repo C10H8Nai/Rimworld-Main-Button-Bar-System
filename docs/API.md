@@ -378,8 +378,8 @@ picture, then the button atlas, then the label and the icon. So the atlas frames
 atlases as a frame with a transparent middle (`make_theme.py`: `"hollow": true` in the palette, or `"frame":
 "vanilla"` for vanilla-looking hollow frames with the vanilla button colour moved into the bar background) or the
 picture is covered. The mouse-over and pressed looks stay on the frame; the picture is never tinted. With no `button` atlas of
-its own, the theme's pictures sit under the game's button background, which is opaque and hides them completely; in
-development mode the checks warn about such a theme.
+its own, the theme's pictures sit under the game's button background, which is opaque and hides them completely (in
+every state the theme has no atlas for); in development mode the checks warn about such a theme.
 The More button and the scroll arrows never get a picture.
 
 In practice:
