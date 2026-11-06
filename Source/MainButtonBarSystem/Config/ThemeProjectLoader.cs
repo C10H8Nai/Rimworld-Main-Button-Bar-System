@@ -1,0 +1,240 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Xml;
+using Verse;
+
+namespace MainButtonBarSystem
+{
+    /// <summary>
+    /// Reads the themes of a theme project that is not an active mod, with the game's own def parser
+    /// (<c>DirectXmlToObject</c>), and adds them to or removes them from <c>DefDatabase&lt;BarAppearanceDef&gt;</c>
+    /// while the game runs (design spec 2026-11-07 §5.2). Problems are warnings, never errors: an author saving a
+    /// half-typed XML must not fill the log with red text.
+    /// </summary>
+    internal static class ThemeProjectLoader
+    {
+        private const string DefNode = "MainButtonBarSystem.BarAppearanceDef";
+
+        /// <summary>Defs that could not be taken out of the database (its Remove is private): kept but no longer listed.</summary>
+        private static readonly HashSet<BarAppearanceDef> hidden = new HashSet<BarAppearanceDef>();
+
+        private static readonly MethodInfo RemoveMethod = typeof(DefDatabase<BarAppearanceDef>).GetMethod("Remove", BindingFlags.Static | BindingFlags.NonPublic);
+
+        internal static bool IsHidden(BarAppearanceDef def) => def != null && hidden.Contains(def);
+
+        /// <summary>
+        /// Every BarAppearanceDef in the folder's Defs (sub-folders too), with <see cref="BarAppearanceDef.projectFolder"/>
+        /// set. Null when a file cannot be read right now (being written, or not valid XML yet): try again later.
+        /// </summary>
+        internal static List<BarAppearanceDef> ParseFolder(string folder, string projectName)
+        {
+            var result = new List<BarAppearanceDef>();
+            string defsFolder = Path.Combine(folder, "Defs");
+            if (!Directory.Exists(defsFolder)) return result;
+            string[] files;
+            try
+            {
+                files = Directory.GetFiles(defsFolder, "*.xml", SearchOption.AllDirectories);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            Array.Sort(files, StringComparer.OrdinalIgnoreCase);
+            foreach (var file in files)
+            {
+                var doc = new XmlDocument();
+                try
+                {
+                    doc.Load(file);
+                }
+                catch (XmlException e)
+                {
+                    Warn(projectName, Path.GetFileName(file) + ": not valid XML yet (" + e.Message + "); the theme keeps its last good version.");
+                    return null;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+                if (doc.DocumentElement == null) continue;
+                foreach (XmlNode child in doc.DocumentElement.ChildNodes)
+                {
+                    if (child is not XmlElement element || element.Name != DefNode) continue;
+                    var def = ParseDef(element, folder, projectName, Path.GetFileName(file));
+                    if (def != null) result.Add(def);
+                }
+            }
+            return result;
+        }
+
+        private static BarAppearanceDef ParseDef(XmlElement element, string folder, string projectName, string file)
+        {
+            if (string.Equals(element.GetAttribute("Abstract"), "true", StringComparison.OrdinalIgnoreCase)) return null;
+            if (element.HasAttribute("ParentName"))
+            {
+                Warn(projectName, file + ": a theme with ParentName is skipped; inheritance works once the theme is an active mod.");
+                return null;
+            }
+            var node = (XmlElement)element.CloneNode(true);
+            StripUnknownFields(node, typeof(BarAppearanceDef), projectName, file);
+            BarAppearanceDef def;
+            try
+            {
+                def = DirectXmlToObject.ObjectFromXml<BarAppearanceDef>(node, true);
+            }
+            catch (Exception e)
+            {
+                Warn(projectName, file + ": could not read a theme: " + e.Message);
+                return null;
+            }
+            if (def == null || def.defName.NullOrEmpty() || def.defName == Def.DefaultDefName)
+            {
+                Warn(projectName, file + ": a theme without a defName is skipped.");
+                return null;
+            }
+            def.ResolveDefNameHash();
+            def.projectFolder = folder;
+            return def;
+        }
+
+        /// <summary>
+        /// Removes child nodes that are not fields of <paramref name="type"/> (by name or LoadAlias), recursively, so
+        /// the game's parser never logs "doesn't correspond to any field" as an error for a typo.
+        /// </summary>
+        private static void StripUnknownFields(XmlNode node, Type type, string projectName, string file)
+        {
+            if (type == null || type == typeof(string) || type.IsPrimitive || type.IsEnum) return;
+            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>))
+            {
+                var item = type.GetGenericArguments()[0];
+                foreach (XmlNode li in node.ChildNodes)
+                    if (li is XmlElement && HasElementChildren(li)) StripUnknownFields(li, ClassOf(li, item), projectName, file);
+                return;
+            }
+            if (type.IsGenericType) return;   // dictionaries and the like: left to the game
+            foreach (var child in node.ChildNodes.OfType<XmlElement>().ToList())
+            {
+                var field = FieldFor(type, child.Name);
+                if (field == null)
+                {
+                    Warn(projectName, $"{file}: <{child.Name}> is not a field of {type.Name}; it is skipped.");
+                    node.RemoveChild(child);
+                    continue;
+                }
+                if (HasElementChildren(child)) StripUnknownFields(child, ClassOf(child, field.FieldType), projectName, file);
+            }
+        }
+
+        private static bool HasElementChildren(XmlNode node) => node.ChildNodes.OfType<XmlElement>().Any();
+
+        /// <summary>The type a node is read as: its Class attribute when that names a subclass, else the declared type.</summary>
+        private static Type ClassOf(XmlNode node, Type declared)
+        {
+            var attr = (node as XmlElement)?.GetAttribute("Class");
+            if (attr.NullOrEmpty()) return declared;
+            var type = GenTypes.GetTypeInAnyAssembly(attr);
+            return type != null && declared.IsAssignableFrom(type) ? type : declared;
+        }
+
+        private static FieldInfo FieldFor(Type type, string name)
+        {
+            for (var t = type; t != null && t != typeof(object); t = t.BaseType)
+            {
+                foreach (var field in t.GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly))
+                {
+                    bool match = field.Name == name ||
+                                 field.GetCustomAttributes<LoadAliasAttribute>(true).Any(a => a.alias.EqualsIgnoreCase(name));
+                    if (!match) continue;
+                    var unsaved = field.GetCustomAttribute<UnsavedAttribute>(true);
+                    return unsaved != null && !unsaved.allowLoading ? null : field;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Adds a parsed theme to the def database. A defName that is already taken (by another mod's theme or another
+        /// project) is skipped with a warning; a def hidden earlier under the same name comes back instead. Returns the
+        /// def now in the database, or null.
+        /// </summary>
+        internal static BarAppearanceDef TryAdd(BarAppearanceDef def, string projectName)
+        {
+            var existing = DefDatabase<BarAppearanceDef>.GetNamedSilentFail(def.defName);
+            if (existing != null)
+            {
+                if (hidden.Remove(existing))
+                {
+                    existing.projectFolder = def.projectFolder;
+                    existing.CopyFrom(def);
+                    existing.ClearCaches();
+                    existing.ReleaseTextures();
+                    Check(existing, projectName);
+                    return existing;
+                }
+                Warn(projectName, $"the theme {def.defName} is skipped: another theme already has that defName (a copied project needs its own packageId and defName).");
+                return null;
+            }
+            def.shortHash = FreeShortHash(def.defName);
+            DefDatabase<BarAppearanceDef>.Add(def);
+            DefDatabase<BarAppearanceDef>.InitializeShortHashDictionary();
+            Check(def, projectName);
+            return def;
+        }
+
+        private static void Check(BarAppearanceDef def, string projectName)
+        {
+            try
+            {
+                def.ResolveReferences();
+            }
+            catch (Exception e)
+            {
+                Warn(projectName, def.defName + ": " + e.Message);
+            }
+            try
+            {
+                foreach (var error in def.ConfigErrors())
+                    Warn(projectName, def.defName + ": " + error);
+            }
+            catch (Exception e)
+            {
+                Warn(projectName, def.defName + ": " + e.Message);
+            }
+        }
+
+        /// <summary>A short hash no other theme has, the way the game gives them (it gives none to defs added later).</summary>
+        private static ushort FreeShortHash(string defName)
+        {
+            ushort hash = (ushort)(GenText.StableStringHash(defName) % 65535);
+            for (int tries = 0; tries < 65536 && (hash == 0 || DefDatabase<BarAppearanceDef>.GetByShortHash(hash) != null); tries++)
+                hash++;
+            return hash;
+        }
+
+        /// <summary>Takes a theme out of the def database (the game's own private Remove), else hides it from every list.</summary>
+        internal static void Remove(BarAppearanceDef def)
+        {
+            def.ReleaseTextures();
+            if (RemoveMethod != null)
+            {
+                try
+                {
+                    RemoveMethod.Invoke(null, new object[] { def });
+                    return;
+                }
+                catch (Exception e)
+                {
+                    Log.Warning(MainButtonBarSystemMod.LogPrefix + "Could not remove the theme " + def.defName + " from the def database (" + e.Message + "); it is hidden instead.");
+                }
+            }
+            hidden.Add(def);
+        }
+
+        internal static void Warn(string projectName, string message) =>
+            Log.WarningOnce($"{MainButtonBarSystemMod.LogPrefix}Theme project {projectName}: {message}", (projectName + "|" + message).GetHashCode());
+    }
+}

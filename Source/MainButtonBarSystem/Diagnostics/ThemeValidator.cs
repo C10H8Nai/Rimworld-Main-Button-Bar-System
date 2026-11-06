@@ -18,7 +18,7 @@ namespace MainButtonBarSystem
         public static int ValidateAll()
         {
             int findings = 0;
-            foreach (var def in DefDatabase<BarAppearanceDef>.AllDefs) findings += Validate(def);
+            foreach (var def in BarModel.Appearances) findings += Validate(def);
             return findings;
         }
 
@@ -126,7 +126,7 @@ namespace MainButtonBarSystem
 
         private static int Warn(BarAppearanceDef def, string field, string message)
         {
-            string mod = def.modContentPack?.Name ?? "?";
+            string mod = def.modContentPack?.Name ?? (def.IsFromInactiveProject ? "theme project " + System.IO.Path.GetFileName(def.projectFolder) : "?");
             Log.WarningOnce($"{MainButtonBarSystemMod.LogPrefix}Theme {def.defName} ({mod}), {field}: {message}", (def.defName + "|" + field + "|" + message).GetHashCode());
             return 1;
         }

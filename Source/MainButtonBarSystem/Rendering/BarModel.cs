@@ -159,6 +159,7 @@ namespace MainButtonBarSystem
 
         public static IEnumerable<BarDisplayModeDef> DisplayModes => DefDatabase<BarDisplayModeDef>.AllDefs.OrderBy(d => d.displayOrder);
 
-        public static IEnumerable<BarAppearanceDef> Appearances => DefDatabase<BarAppearanceDef>.AllDefs.OrderBy(d => d.displayOrder);
+        public static IEnumerable<BarAppearanceDef> Appearances =>
+            DefDatabase<BarAppearanceDef>.AllDefs.Where(d => !ThemeProjects.IsHidden(d)).OrderBy(d => d.displayOrder);
     }
 }

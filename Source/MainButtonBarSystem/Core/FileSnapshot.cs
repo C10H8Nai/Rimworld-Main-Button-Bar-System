@@ -18,6 +18,15 @@ namespace MainButtonBarSystem.Core
 
         public int Count => times.Count;
 
+        /// <summary>How many of the files end with <paramref name="extension"/> (".xml"), ignoring case.</summary>
+        public int CountWithExtension(string extension)
+        {
+            int n = 0;
+            foreach (var path in times.Keys)
+                if (path.EndsWith(extension, StringComparison.OrdinalIgnoreCase)) n++;
+            return n;
+        }
+
         public static FileSnapshot Of(IEnumerable<(string path, long ticks)> files)
         {
             var times = new Dictionary<string, long>(StringComparer.OrdinalIgnoreCase);

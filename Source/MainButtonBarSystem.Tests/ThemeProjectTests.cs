@@ -139,6 +139,14 @@ namespace MainButtonBarSystem.Tests
         }
 
         [Fact]
+        public void Snapshot_CountsByExtension()
+        {
+            var s = FileSnapshot.Of(new[] { ("Defs/A.xml", 1L), ("Defs/B.XML", 1L), ("Textures/A.png", 1L) });
+            Assert.Equal(2, s.CountWithExtension(".xml"));
+            Assert.Equal(1, s.CountWithExtension(".png"));
+        }
+
+        [Fact]
         public void Snapshot_ChangedWhenFileAddedOrRemoved()
         {
             var a = FileSnapshot.Of(new[] { ("A.png", 10L) });

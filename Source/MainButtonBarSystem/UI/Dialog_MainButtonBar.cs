@@ -450,7 +450,8 @@ namespace MainButtonBarSystem
 
             GUI.color = Color.gray;
             Text.Font = GameFont.Tiny;
-            string by = theme.author.NullOrEmpty() ? theme.modContentPack?.Name : "MBBS_ThemeBy".TranslateKeepCase(theme.author, theme.modContentPack?.Name ?? "?").ToString();
+            string source = theme.IsFromInactiveProject ? "MBBS_ThemeProject_Source".Translate().ToString() : theme.modContentPack?.Name;
+            string by = theme.author.NullOrEmpty() ? source : "MBBS_ThemeBy".TranslateKeepCase(theme.author, source ?? "?").ToString();
             if (!by.NullOrEmpty())
             {
                 Widgets.Label(new Rect(tx, ty, text.xMax - tx, Text.LineHeight), by);
