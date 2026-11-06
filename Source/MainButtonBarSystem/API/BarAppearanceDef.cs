@@ -203,7 +203,17 @@ namespace MainButtonBarSystem
                 return null;
             }
             var tex = new Texture2D(2, 2);
-            if (!tex.LoadImage(bytes))
+            bool loaded;
+            try
+            {
+                // Unity returns false for data that is not an image; the game's engine (Waylith) throws instead.
+                loaded = tex.LoadImage(bytes);
+            }
+            catch (Exception)
+            {
+                loaded = false;
+            }
+            if (!loaded)
             {
                 UnityEngine.Object.Destroy(tex);
                 retry = true;
