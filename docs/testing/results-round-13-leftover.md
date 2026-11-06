@@ -25,7 +25,7 @@
 | 11-07 修正二（日文「スタイルを貼り付け」超出） | ✅ | 換到第二行 |
 | PR #21 翻譯（日文、愛沙尼亞文、丹麥文、挪威文、瑞典文） | ✅ | 按鈕分頁、外觀分頁都沒有字超出或缺翻譯 |
 | release-1.0 的 theme.xml 不帶按鈕清單 | ✅ | 補測：`meta` 是 `<buttons />`，`modVersion` 1.0.0 |
-| release-1.0 的萘伊說明 | ⚠️ | 新句子在說明最後，卡片只顯示兩行，看不到 |
+| release-1.0 的萘伊說明 | ✅ | 新句子在說明最後，卡片只顯示兩行看不到（04:06）→ `621c03b` 說明放不下時滑鼠提示顯示全文；05:03 實機：滑鼠移到萘伊卡片的說明上，提示框是完整說明，最後一句「在「滚动」或「折叠」显示模式下、按钮宽度至少 120 px 时效果最佳。」看得到 |
 
 本模組 0 紅字。
 
@@ -35,32 +35,33 @@
 
 | 項目 | 結果 | 截圖 |
 |---|---|---|
-| A.3 | 日文介面：匯入選單裡帶作者的排序檔（今晚「存成檔案」做的）顯示 `boblin00215`；匯入報告也是小寫 | r13l_a3_ja_import_menu.webp、r13l_a3_ja_report.webp |
-| C.2 | 所有按鈕「自訂大小」20、「故人旧影」單顆「中」：抽屜裡故人旧影是中字，RuntimeGC 是 20 | r13l_c2_font.webp、r13l_c2_drawer.webp |
+| A.3 | 日文介面：匯入選單裡帶作者的排序檔（今晚「存成檔案」做的）顯示 `boblin00215`；匯入報告也是小寫 | r13l_a3_ja_import_menu.png、r13l_a3_ja_report.png |
+| C.2 | 所有按鈕「自訂大小」20、「故人旧影」單顆「中」：抽屜裡故人旧影是中字，RuntimeGC 是 20 | r13l_c2_font.png、r13l_c2_drawer.png |
 | D.2 | 「所有按鈕」和單顆按鈕的預覽四格都有圖示。補測：萘伊（原版風格框）的「鼠标悬停」那格是遊戲的著色；Test Steel 時「故人旧影」的預覽和抽屜裡實際的按鈕，文字都在同樣的相對位置（置中） | r13l2_d2_preview.png、r13l2_d2_preview_ts.png、r13l2_d2_drawer_ts.png |
 | E.3 | 起點 Test Steel，「工作」只改插圖不透明度：只有它的插圖變淡，用的還是主題的圖 | r13l_e3_opacity.png |
 | F.1 | 「匯出」→「存成自訂主題…」灰，提示「請先切換到自訂主題並改動任意一項」 | — |
-| F.6 | `baseTheme` 改成不存在的 defName：載入時改用原版起點、提示一次、沒有紅字；`formatVersion` 99：不在清單，log 一行黃字 `Skipped the custom theme … TP v99` | r13l_f6_badbase.webp |
+| F.6 | `baseTheme` 改成不存在的 defName：載入時改用原版起點、提示一次、沒有紅字；`formatVersion` 99：不在清單，log 一行黃字 `Skipped the custom theme … TP v99` | r13l_f6_badbase.png |
 | F.7 | 遊戲中套用自訂主題「TP custom」、存檔 `MBBS_tp_f7`；把整個 `MainButtonBarSystem\Themes\` 搬走後讀檔：底部列和存檔前逐像素比對一樣（只差畫面上的動態），本模組沒有紅黃字 | r13l_f7_compare_left.png |
 | H.1 | 六款內建主題逐一擷取底部列，和第十三輪之前的參考圖一樣；貼圖檔沒變，Def 只多萘伊的 `suggestedLayout`（不會自動套用） | r13l_h1_six_themes.png |
-| G.2（補測） | 把第十三輪做的排序模組「R13测试主题」（`boblin00215.r13`）放進排序重開；存檔資料夾的 `Images\` 是空的。匯入選單選它：報告沒有缺圖；套用後「所有按鈕」的插圖是排序模組 `Textures/Boblin00215R13/Images/R13Test2.png`（藍黃條紋），字 24、綠色，和做的時候一樣 | r13l2_g2_applied.webp |
-| G.3（補測） | 自訂主題「所有按鈕」插圖選 `Images\R13Test.png`、「存成檔案」→ `G3 export.xml`（裡面是 `file:R13Test.png`），把那張 PNG 移走後匯入：報告黃字「Custom theme images you do not have: 1 (R13Test.png)…」，log 一行黃字。**同一個程序裡**套用後預覽仍畫紅色舊圖（記憶體裡的快取），設定面板同時寫「(not found)」；重開遊戲（快取清掉）再匯入一次，用的是 Test Steel 自己的圖 | r13l2_g3_report.webp、r13l2_g3_after_restart.webp |
+| G.2（補測） | 把第十三輪做的排序模組「R13测试主题」（`boblin00215.r13`）放進排序重開；存檔資料夾的 `Images\` 是空的。匯入選單選它：報告沒有缺圖；套用後「所有按鈕」的插圖是排序模組 `Textures/Boblin00215R13/Images/R13Test2.png`（藍黃條紋），字 24、綠色，和做的時候一樣 | r13l2_g2_applied.png |
+| G.3（補測） | 自訂主題「所有按鈕」插圖選 `Images\R13Test.png`、「存成檔案」→ `G3 export.xml`（裡面是 `file:R13Test.png`），把那張 PNG 移走後匯入：報告黃字「Custom theme images you do not have: 1 (R13Test.png)…」，log 一行黃字。**同一個程序裡**套用後預覽仍畫紅色舊圖（記憶體裡的快取），設定面板同時寫「(not found)」；重開遊戲（快取清掉）再匯入一次，用的是 Test Steel 自己的圖 | r13l2_g3_report.png、r13l2_g3_after_restart.png |
+| 萘伊說明的滑鼠提示（release `621c03b`） | 見總結 | rel2_nai_tooltip.png |
 
 B.4（補測，走不到）：篩選存在靜態欄位，`BuildRows` 只有在「這個模組一顆按鈕都沒有」時才清掉（`Dialog_MainButtonBar.cs` 第 585 行）。按鈕來自目前載入的模組，同一個程序裡每個存檔的按鈕都一樣；換模組組合要重開遊戲，靜態欄位也跟著重設。所以「讀另一個沒有那個模組的存檔」在 1.7 做不出來。
 
 ### 11-07 的兩項修正
 
-- 修正一：自訂主題的「選色…」：log 0 筆 `Rect height was too small`，最下面「更早顏色」那列完整（r13l_picker.webp）。
-- 修正二：日文的分層按鈕：「スタイルを貼り付け」換到第二行，沒有超出（r13l_ja_layer_buttons.webp）。
+- 修正一：自訂主題的「選色…」：log 0 筆 `Rect height was too small`，最下面「更早顏色」那列完整（r13l_picker.png）。
+- 修正二：日文的分層按鈕：「スタイルを貼り付け」換到第二行，沒有超出（r13l_ja_layer_buttons.png）。
 
 ### PR #21 翻譯
 
 | 語言 | 按鈕分頁 | 外觀分頁 | 截圖 |
 |---|---|---|---|
-| 日文 | ✅ 沒有字超出 | ✅（主題專案的按鈕、對話框也有） | pr21_ja_buttons.webp |
-| 愛沙尼亞文 | ✅ | ✅ | pr21_et_buttons.webp、pr21_et_appearance.webp |
-| 丹麥文 | ✅ | ✅ | pr21_da_buttons.webp、pr21_da_appearance.webp |
-| 挪威文 | ✅ | ✅ | pr21_no_buttons.webp、pr21_no_appearance.webp |
-| 瑞典文 | ✅ | ✅ | pr21_sv_buttons.webp、pr21_sv_appearance.webp |
+| 日文 | ✅ 沒有字超出 | ✅（主題專案的按鈕、對話框也有） | pr21_ja_buttons.png |
+| 愛沙尼亞文 | ✅ | ✅ | pr21_et_buttons.png、pr21_et_appearance.png |
+| 丹麥文 | ✅ | ✅ | pr21_da_buttons.png、pr21_da_appearance.png |
+| 挪威文 | ✅ | ✅ | pr21_no_buttons.png、pr21_no_appearance.png |
+| 瑞典文 | ✅ | ✅ | pr21_sv_buttons.png、pr21_sv_appearance.png |
 
 丹麥文的「Cançél」是遊戲原版 `CancelButton` 在丹麥文缺翻譯時的開發模式標記，不是本模組。換語言時遊戲出的紅字（例如瑞典文 `Could not resolve symbol "1_labelShort"`）都是遊戲本身的翻譯。
