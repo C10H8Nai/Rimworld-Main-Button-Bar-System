@@ -7,6 +7,7 @@ Usage (from the repository root):
 The repository is also the mod folder, so it contains source code, tests, tools, design documents and test
 screenshots that players do not need. This copies:
     About/  1.7/  Defs/  Languages/  Textures/  LoadFolders.xml
+    ThemeKit/: blank theme files the Appearance tab's "New theme" copies (not loaded by the game)
     docs/API.md (as API.md) and docs/API.zh-TW.md (as API.zh-TW.md), for add-on authors
     ThemeTemplate/: docs/examples/ExampleTheme (a complete theme mod), tools/make_theme.py and its JSON, for theme
     authors (docs/workshop/theme-template-release.md explains the choice; --no-template leaves it out)
@@ -20,7 +21,7 @@ import shutil
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FOLDERS = ["About", "1.7", "Defs", "Languages", "Textures"]
+FOLDERS = ["About", "1.7", "Defs", "Languages", "Textures", "ThemeKit"]
 FILES = {
     "LoadFolders.xml": "LoadFolders.xml",
     os.path.join("docs", "API.md"): "API.md",
@@ -33,7 +34,7 @@ TEMPLATE_FILES = {
     os.path.join("tools", "themes", "ExampleTheme.json"): os.path.join("tools", "ExampleTheme.json"),
 }
 KEEP = os.path.join("About", "PublishedFileId.txt")
-LOADABLE = {"About", "Defs", "Textures", "Languages", "Assemblies", "Patches", "Sounds", "1.7", "ThemeTemplate"}
+LOADABLE = {"About", "Defs", "Textures", "Languages", "Assemblies", "Patches", "Sounds", "1.7", "ThemeTemplate", "ThemeKit"}
 
 
 def main():

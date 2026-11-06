@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Made with Main Button Bar System's "New theme". Texture paths are relative to Textures/, without ".png". -->
+  <!-- Pictures for named buttons (buttonImages) and decorations: see API.md, "Adding a theme in the game". -->
+  <MainButtonBarSystem.BarAppearanceDef>
+    <defName>{{ID}}_Theme</defName>
+    <label>{{LABEL}}</label>
+    <description>{{DESCRIPTION}}</description>
+    <author>{{AUTHOR}}</author>
+    <!-- Position in the Appearance tab's list (the built-in themes use 0 to 200). -->
+    <displayOrder>{{DISPLAY_ORDER}}</displayOrder>
+
+    <!-- Main buttons, nine-slice 64x64: normal, under the mouse, open or pressed, disabled. -->
+    <button>{{ID}}/Button</button>
+    <buttonMouseover>{{ID}}/ButtonMouseover</buttonMouseover>
+    <buttonActive>{{ID}}/ButtonActive</buttonActive>
+    <buttonDisabled>{{ID}}/ButtonDisabled</buttonDisabled>
+
+    <!-- Label colours (r, g, b, a from 0 to 1): normal, under the mouse, open or pressed. -->
+    <labelColor>(1, 1, 1, 1)</labelColor>
+    <labelMouseoverColor>(1, 1, 0.6, 1)</labelMouseoverColor>
+    <labelActiveColor>(1, 0.85, 0.5, 1)</labelActiveColor>
+
+    <!-- Behind the whole bar: Tile repeats the image; Atlas / Stretch / Fit / Cover are the other choices. -->
+    <barBackground>{{ID}}/Bar</barBackground>
+    <barBackgroundFit>Tile</barBackgroundFit>
+
+    <!-- The window that opens from the More button (nine-slice). -->
+    <drawerBackground>{{ID}}/Drawer</drawerBackground>
+    <drawerBackgroundFit>Atlas</drawerBackgroundFit>
+
+    <!-- The More button (nine-slice). -->
+    <moreButton>{{ID}}/More</moreButton>
+
+    <!-- Icons on the scroll arrows (scrolling display modes). -->
+    <arrowLeft>{{ID}}/ArrowLeft</arrowLeft>
+    <arrowRight>{{ID}}/ArrowRight</arrowRight>
+
+    <!-- Icon of the drawer's settings button. -->
+    <drawerSettingsIcon>{{ID}}/Gear</drawerSettingsIcon>
+
+    <!-- Picture on the theme's card in the Appearance tab. -->
+    <preview>{{ID}}/Preview</preview>
+
+    <!-- Picture inside every main button, under its frame (keep the frame's middle semi-transparent). -->
+    <buttonImage>
+      <texture>{{ID}}/ButtonPicture</texture>
+      <fit>Cover</fit>
+      <anchor>Center</anchor>
+      <verticalAnchor>Center</verticalAnchor>
+    </buttonImage>
+  </MainButtonBarSystem.BarAppearanceDef>
+</Defs>
