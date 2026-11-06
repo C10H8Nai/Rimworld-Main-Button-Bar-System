@@ -25,6 +25,9 @@ namespace MainButtonBarSystem
         /// <summary>Last-write times of its files when they were last read; null to read them on the next check.</summary>
         internal FileSnapshot Snapshot;
 
+        /// <summary>Reads in a row that kept a file's previous version (being written, or broken); see <see cref="ThemeProjects.Reload"/>.</summary>
+        internal int retries;
+
         public string FolderName => Path.GetFileName(Folder);
 
         /// <summary>For messages: its first theme's label, else the folder name.</summary>
@@ -80,14 +83,35 @@ namespace MainButtonBarSystem
         /// <summary>Looks for project folders not known yet (after "New theme").</summary>
         public static void Rescan() => ScanAtStartup();
 
+        /// <summary>
+        /// Play data was reloaded (a language change): every def is a new object and the database was rebuilt without
+        /// the themes this mod added. Forgets every project (taking any of its themes still in the database out) so the
+        /// next scan reads them all again.
+        /// </summary>
+        public static void Reset()
+        {
+            foreach (var project in projects)
+            {
+                foreach (var def in project.Themes)
+                {
+                    if (!def.IsFromInactiveProject) continue;
+                    if (DefDatabase<BarAppearanceDef>.GetNamedSilentFail(def.defName) == def) ThemeProjectLoader.Remove(def);
+                    else def.ReleaseTextures();
+                }
+            }
+            projects.Clear();
+            byDef.Clear();
+            ThemeProjectLoader.ForgetHidden();
+        }
+
         private static void Scan()
         {
             string mods = GenFilePaths.ModsFolderPath;
             if (!Directory.Exists(mods)) return;
-            // A project whose files could not be read at startup (XML being edited) has no themes and so no card to
-            // reload it from: try it again on every scan.
+            // A project whose files could not be read before (XML being edited, an empty Defs folder) has no themes and
+            // so no card to reload it from: try it again on every scan once its files changed.
             foreach (var project in projects.ToList())
-                if (!project.LoadedByGame && project.Themes.Count == 0 && project.Snapshot == null && Directory.Exists(project.Folder)) Reload(project);
+                if (!project.LoadedByGame && project.Themes.Count == 0 && Directory.Exists(project.Folder) && Changed(project)) Reload(project);
 
             foreach (var dir in Directory.GetDirectories(mods))
             {
@@ -128,6 +152,8 @@ namespace MainButtonBarSystem
                 foreach (var def in DefDatabase<BarAppearanceDef>.AllDefs)
                     if (def.modContentPack != null && ThemeProjectRules.SamePackageId(def.modContentPack.PackageId, marker.packageId))
                         Attach(project, def);
+                // The game just read these files: nothing to reload until they change.
+                project.Snapshot = TakeSnapshot(dir);
                 return project;
             }
 
@@ -227,6 +253,7 @@ namespace MainButtonBarSystem
             if (parsed == null)
             {
                 result.retry = true;
+                CountRetry(project, snapshot);
                 return result;
             }
             var keep = new List<BarAppearanceDef>();
@@ -256,9 +283,35 @@ namespace MainButtonBarSystem
             }
             foreach (var def in keep) Attach(project, def);
             result.files += snapshot?.CountWithExtension(".xml") ?? 0;
-            project.Snapshot = result.retry ? null : snapshot;
+            if (result.retry)
+            {
+                CountRetry(project, snapshot);
+            }
+            else
+            {
+                project.retries = 0;
+                project.Snapshot = snapshot;
+            }
             FinishReload(project);
             return result;
+        }
+
+        /// <summary>
+        /// A file kept its previous version. While it is being written the next check reads it again; a file that still
+        /// cannot be read after the tuning def's number of tries is broken, not busy: it is reported once and left
+        /// alone until the files change again (else the whole project would be read again every check).
+        /// </summary>
+        private static void CountRetry(ThemeProject project, FileSnapshot snapshot)
+        {
+            project.retries++;
+            if (project.retries < MainButtonBarTuningDef.Current.behaviour.themeProjectRetryLimit)
+            {
+                project.Snapshot = null;
+                return;
+            }
+            project.retries = 0;
+            project.Snapshot = snapshot;
+            ThemeProjectLoader.Warn(project.FolderName, "a file still cannot be read (a PNG that is not a valid image, or an XML with an error); the last good version is kept until the files change.");
         }
 
         private static void FinishReload(ThemeProject project)
@@ -271,9 +324,16 @@ namespace MainButtonBarSystem
         /// Moves a project that is not an active mod to <c>DeletedThemes</c> in this mod's data folder (design spec §5.4)
         /// and takes its themes out of the lists. Nothing changes when the folder cannot be moved. Returns where it went.
         /// </summary>
-        public static string Delete(ThemeProject project, out string error)
+        public static string Delete(ThemeProject project, out string error) => Delete(project, out error, out _);
+
+        /// <summary>
+        /// <see cref="Delete(ThemeProject, out string)"/>; <paramref name="leftover"/> is a part of the original folder
+        /// that could not be removed after a complete copy across drives (the project still counts as deleted).
+        /// </summary>
+        public static string Delete(ThemeProject project, out string error, out string leftover)
         {
             error = null;
+            leftover = null;
             var state = DeleteState(project);
             if (state != ThemeProjectRules.DeleteState.Allowed)
             {
@@ -286,7 +346,7 @@ namespace MainButtonBarSystem
             {
                 Directory.CreateDirectory(parent);
                 target = SharingNames.Unique(Path.Combine(parent, ThemeProjectRules.DeletedFolderName(project.FolderName, DateTime.Now)), Directory.Exists);
-                MoveFolder(project.Folder, target);
+                MoveFolder(project.Folder, target, out leftover);
             }
             catch (Exception e)
             {
@@ -307,10 +367,13 @@ namespace MainButtonBarSystem
         /// <summary>
         /// Moves a folder; across drives (the Mods folder and the save folder often are) it copies, then deletes the
         /// original. The original is first renamed in place, which fails while any file in it is open, so a locked
-        /// folder is never left half deleted: the copy is removed and the error passed on.
+        /// folder is never left half moved: on a failed copy the copy is removed, the name restored and the error passed
+        /// on. Once the copy is complete the move counts as done; whatever of the original then cannot be deleted
+        /// (a read-only file, an antivirus scan) is returned in <paramref name="leftover"/> for the player to remove.
         /// </summary>
-        private static void MoveFolder(string source, string target)
+        private static void MoveFolder(string source, string target, out string leftover)
         {
+            leftover = null;
             if (string.Equals(Path.GetPathRoot(Path.GetFullPath(source)), Path.GetPathRoot(Path.GetFullPath(target)), StringComparison.OrdinalIgnoreCase))
             {
                 Directory.Move(source, target);
@@ -322,13 +385,20 @@ namespace MainButtonBarSystem
             {
                 CopyFolder(parked, target);
             }
-            catch
+            catch (Exception copyError)
             {
                 TryDeleteFolder(target);
-                Directory.Move(parked, source);
+                try
+                {
+                    Directory.Move(parked, source);
+                }
+                catch (Exception)
+                {
+                    throw new IOException(copyError.Message + " (" + parked + ")", copyError);
+                }
                 throw;
             }
-            Directory.Delete(parked, true);
+            if (!TryDeleteFolder(parked)) leftover = parked;
         }
 
         private static void CopyFolder(string source, string target)
@@ -340,15 +410,20 @@ namespace MainButtonBarSystem
                 CopyFolder(dir, Path.Combine(target, Path.GetFileName(dir)));
         }
 
-        private static void TryDeleteFolder(string path)
+        /// <summary>Deletes a folder, read-only files included; false when something in it could not be deleted.</summary>
+        private static bool TryDeleteFolder(string path)
         {
             try
             {
-                if (Directory.Exists(path)) Directory.Delete(path, true);
+                if (!Directory.Exists(path)) return true;
+                foreach (var file in Directory.GetFiles(path, "*", SearchOption.AllDirectories))
+                    File.SetAttributes(file, FileAttributes.Normal);
+                Directory.Delete(path, true);
+                return true;
             }
             catch (Exception)
             {
-                // A partial copy in the data folder is harmless; the project itself is untouched.
+                return false;
             }
         }
 

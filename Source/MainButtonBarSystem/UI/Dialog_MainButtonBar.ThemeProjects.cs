@@ -142,7 +142,7 @@ namespace MainButtonBarSystem
         private void DeleteProject(ThemeProject project)
         {
             string name = project.Name, folder = project.Folder;
-            string movedTo = ThemeProjects.Delete(project, out string error);
+            string movedTo = ThemeProjects.Delete(project, out string error, out string leftover);
             checkedProject = null;
             if (movedTo == null)
             {
@@ -150,7 +150,10 @@ namespace MainButtonBarSystem
                 return;
             }
             KeepAppearanceValid();
-            Messages.Message("MBBS_ThemeProject_Deleted".TranslateKeepCase(name, movedTo), MessageTypeDefOf.NeutralEvent, false);
+            if (leftover != null)
+                Messages.Message("MBBS_ThemeProject_DeletedLeftover".TranslateKeepCase(name, movedTo, leftover), MessageTypeDefOf.CautionInput, false);
+            else
+                Messages.Message("MBBS_ThemeProject_Deleted".TranslateKeepCase(name, movedTo), MessageTypeDefOf.NeutralEvent, false);
         }
     }
 }

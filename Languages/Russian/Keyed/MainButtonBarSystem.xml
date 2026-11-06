@@ -336,4 +336,36 @@
   <MBBS_ReloadThemes>Перезагрузить текстуры тем</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Режим разработчика: заново читает PNG-файлы каждой темы из её папки мода, чтобы изменённое изображение появилось без перезапуска игры. После этого темы проверяются снова; см. журнал.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Текстуры тем перезагружены: заново прочитано файлов: {0}.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Новая тема…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Создаёт пустой мод с темой в папке Mods игры и выбирает его. Редактируйте его PNG-изображения в любом графическом редакторе: пока эта вкладка открыта, панель показывает ваши изменения в течение секунды. Перезапуск не нужен.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Новая тема</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Создать</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>В {1} создаётся папка мода с темой: пустые изображения и _Guide.png, который показывает, какое изображение рисует какую часть панели. Позже включите его в списке модов, чтобы пользоваться им как любым модом с темой, или загрузите его оттуда в Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Проект темы (не активен)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Новая тема создана в {0}. Откройте её папку и редактируйте PNG-изображения; это окно показывает изменения.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Не удалось создать тему в {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Отсутствуют файлы пустой темы ({0}). Переустановите Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Тема для Main Button Bar System, созданная кнопкой «Новая тема». Выберите её в настройках Main Button Bar System, на вкладке «Внешний вид».</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Перезагрузить</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Заново читает Defs и PNG-изображения этой темы. Пока эта вкладка открыта, изменения подхватываются и сами.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Заново читает PNG-изображения этой темы. Это включённый мод, поэтому изменения в Defs требуют перезапуска.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: заново прочитано файлов: {1}.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: заново прочитано изображений: {1}. Изменения в Defs требуют перезапуска, так как тема — включённый мод.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: файл ещё записывается или пока недействителен; сохраняется последняя рабочая версия.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Удалить</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Перемещает папку этой темы в {0}. Чтобы вернуть её, переместите папку обратно в папку Mods.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Эта тема — включённый мод. Сначала отключите её в списке модов и перезапустите игру.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Эта тема отмечена в списке модов. Сначала снимите отметку и перезапустите игру.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Удалить тему «{0}»?
+
+Её папка
+{1}
+будет перемещена в
+{2}
+Чтобы вернуть её, переместите папку обратно в папку Mods.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} перемещена в {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Не удалось переместить {0}: {1}
+Ничего не изменено.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} перемещена в {1}, но часть старой папки удалить не удалось: {2}
+Удалите её самостоятельно (игра может показывать её как вторую копию темы).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

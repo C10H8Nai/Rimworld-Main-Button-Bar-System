@@ -336,4 +336,36 @@ Het staat bij Kant-en-klaar. Deel de hele map om het aan anderen te geven.</MBBS
   <MBBS_ReloadThemes>Thematexturen opnieuw laden</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Ontwikkelaarsmodus: leest de PNG-bestanden van elk thema opnieuw uit zijn modmap, zodat een bewerkte afbeelding zonder herstart verschijnt. Daarna worden de thema's opnieuw gecontroleerd; zie het logboek.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Thematexturen opnieuw geladen: {0} bestand(en) opnieuw gelezen.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Nieuw thema…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Maakt een lege themamod in de Mods-map van het spel en selecteert die. Bewerk de PNG-afbeeldingen met een willekeurige afbeeldingseditor: zolang dit tabblad open is, toont de balk je wijzigingen binnen een seconde. Opnieuw opstarten is niet nodig.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Nieuw thema</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Maken</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>In {1} wordt een themamodmap gemaakt, met lege afbeeldingen en _Guide.png, dat laat zien welke afbeelding welk deel van de balk tekent. Schakel de mod later in de modlijst in om hem als elke themamod te gebruiken, of upload hem vandaar naar de Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Themaproject (niet actief)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Nieuw thema gemaakt in {0}. Open de map en bewerk de PNG-afbeeldingen; dit venster toont de wijzigingen.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Kon het thema niet maken in {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>De lege themabestanden ontbreken ({0}). Installeer Main Button Bar System opnieuw.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Een thema voor Main Button Bar System, gemaakt met “Nieuw thema”. Kies het in de instellingen van Main Button Bar System, tabblad Uiterlijk.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Opnieuw laden</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Leest de Defs en PNG-afbeeldingen van dit thema opnieuw. Zolang dit tabblad open is, worden wijzigingen ook vanzelf opgepikt.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Leest de PNG-afbeeldingen van dit thema opnieuw. Het is een actieve mod, dus wijzigingen in Defs vereisen een herstart.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} bestand(en) opnieuw gelezen.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} afbeelding(en) opnieuw gelezen. Wijzigingen in Defs vereisen een herstart, omdat het thema een actieve mod is.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: een bestand wordt nog geschreven of is nog niet geldig; de laatste goede versie blijft behouden.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Verwijderen</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Verplaatst de map van dit thema naar {0}. Verplaats de map weer naar de Mods-map om het thema terug te krijgen.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Dit thema is een actieve mod. Schakel het eerst uit in de modlijst en start het spel opnieuw.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Dit thema is aangevinkt in de modlijst. Vink het eerst uit en start het spel opnieuw.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Het thema “{0}” verwijderen?
+
+De map
+{1}
+wordt verplaatst naar
+{2}
+Verplaats de map weer naar de Mods-map om het thema terug te krijgen.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} is verplaatst naar {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Kon {0} niet verplaatsen: {1}
+Er is niets gewijzigd.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} is verplaatst naar {1}, maar een deel van de oude map kon niet worden verwijderd: {2}
+Verwijder het zelf (het spel kan het tonen als een tweede kopie van het thema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

@@ -336,4 +336,36 @@ See on loendis Valmisteemad. Jaga kogu kausta, et see teistele anda.</MBBS_Expor
   <MBBS_ReloadThemes>Laadi teemade tekstuurid uuesti</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Arendajarežiim: loeb iga teema PNG-failid uuesti selle modikaustast, nii et muudetud pilt ilmub ilma mängu taaskäivitamata. Seejärel kontrollitakse teemasid uuesti; vaata logi.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Teemade tekstuurid uuesti laaditud: {0} fail(i) uuesti loetud.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Uus teema…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Loob mängu Mods-kausta tühja teemamodifikatsiooni ja valib selle. Muuda selle PNG-pilte mis tahes pildiredaktoriga: kuni see vaheleht on avatud, näitab riba sinu muudatusi ühe sekundi jooksul. Taaskäivitamist pole vaja.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Uus teema</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Loo</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>Kausta {1} luuakse teemamodifikatsiooni kaust tühjade piltide ja failiga _Guide.png, mis näitab, milline pilt joonistab riba millist osa. Luba see hiljem modifikatsioonide loendis, et kasutada seda nagu mis tahes teemamodifikatsiooni, või laadi see sealt üles Workshopi.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Teemaprojekt (pole aktiivne)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Uus teema loodi kausta {0}. Ava selle kaust ja muuda PNG-pilte; see aken näitab muudatusi.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Teemat ei õnnestunud luua kausta {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Tühja teema failid puuduvad ({0}). Installi Main Button Bar System uuesti.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Main Button Bar Systemi teema, mis on tehtud nupuga „Uus teema“. Vali see Main Button Bar Systemi sätetes vahelehel Välimus.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Laadi uuesti</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Loeb selle teema Defs-faile ja PNG-pilte uuesti. Kuni see vaheleht on avatud, võetakse muudatused vastu ka ise.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Loeb selle teema PNG-pilte uuesti. See on aktiivne modifikatsioon, seega Defs-failide muudatused nõuavad taaskäivitamist.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} fail(i) uuesti loetud.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} pilti uuesti loetud. Defs-failide muudatused nõuavad taaskäivitamist, sest teema on aktiivne modifikatsioon.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: fail on alles kirjutamisel või veel kehtetu; viimane korralik versioon jääb alles.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Kustuta</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Teisaldab selle teema kausta asukohta {0}. Tagasi saamiseks teisalda see uuesti Mods-kausta.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>See teema on aktiivne modifikatsioon. Lülita see esmalt modifikatsioonide loendis välja ja taaskäivita mäng.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>See teema on modifikatsioonide loendis märgitud. Eemalda märge esmalt ja taaskäivita mäng.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Kas kustutada teema „{0}“?
+
+Selle kaust
+{1}
+teisaldatakse asukohta
+{2}
+Tagasi saamiseks teisalda see uuesti Mods-kausta.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} teisaldati asukohta {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Faili {0} ei õnnestunud teisaldada: {1}
+Midagi ei muudetud.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} teisaldati asukohta {1}, kuid osa vanast kaustast ei õnnestunud eemaldada: {2}
+Kustuta see ise (mäng võib seda näidata teema teise koopiana).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

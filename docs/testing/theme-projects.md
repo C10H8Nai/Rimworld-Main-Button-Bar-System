@@ -32,10 +32,12 @@
 4. defName 撞名：把 `Mods\Test Steel` 整個複製成 `Mods\Test Steel Copy`（不改任何檔），重開遊戲。清單只有一張 test steel；log 一行黃字 `Theme project Test Steel Copy: the theme NaiTestSteel_Theme is skipped: another theme already has that defName …`，沒有紅字。測完刪掉複本（直接刪資料夾即可，它是測試產物）。
 5. 貼圖讀不到：把 `Textures/NaiTestSteel/Bar.png` 改名成 `Bar_x.png`，按「重新載入」。列背景變回遊戲原本（沒有背景），log 一行黃字（找不到貼圖），沒有紅字。改回原名、重新載入，背景回來。
 6. 主題專案不見了：選著 test steel 存檔（`MBBS_tp_gone`），關遊戲，把 `Mods\Test Steel` 暫時搬到別處，開遊戲讀檔：外觀退回原版，沒有紅字。搬回來。
+7. 切換語言（遊戲會重新載入所有 Def）：主選單選著 test steel 時，從「選項 → 語言」換成英文再換回來（換語言前先複製 `Player.log`）。test steel 仍在清單裡、仍選著、卡片和按鈕正常；log 有 `Play data reloaded`，沒有本模組紅字。
 
 ## D. 重新載入與自動偵測
 
-1. 改圖後自動更新：設定視窗開在外觀分頁、選著 test steel，用小畫家打開 `Textures/NaiTestSteel/Button.png`，塗一塊紅色存檔：1～2 秒內卡片預覽和底部列的一般按鈕出現紅色，左上訊息「讀了 N 個檔案」，沒有紅字。
+1. 改圖後自動更新：設定視窗開在外觀分頁、選著 test steel，用小畫家打開 `Textures/NaiTestSteel/Button.png`，塗一塊紅色存檔：1～2 秒內卡片預覽和底部列的一般按鈕出現紅色，左上訊息「讀了 N 個檔案」，沒有紅字。（未啟用的主題專案，卡片一律用貼圖即時畫，不用 `preview` 圖，所以主選單也看得到改動。）
+   - 建立時說明留空：Def 沒有 `<description>` 行，log 沒有 `empty description`。
 2. 改 XML 後重新載入：在 `Defs/NaiTestSteel_Theme.xml` 把 `labelColor` 改成 `(1, 0.3, 0.3, 1)`，並在 `buttonImage` 後面加一段：
    ```xml
    <buttonImages>
@@ -51,6 +53,10 @@
 4. 檔案正在寫入（模擬寫到一半）：PowerShell 先 `$p='<…\Textures\NaiTestSteel\Button.png>'; $b=[IO.File]::ReadAllBytes($p)`，再 `[IO.File]::WriteAllBytes($p, $b[0..99])`（只剩前 100 bytes，不是完整 PNG），等 3 秒，最後 `[IO.File]::WriteAllBytes($p, $b)`。預期：中間那幾秒按鈕維持舊圖、沒有訊息、沒有紅字；寫回完整檔後下一輪讀到（訊息「讀了 N 個檔案」）。
 5. XML 打到一半：把 XML 存成不合法（例如刪掉一個 `>`）：log 一行黃字 `not valid XML yet`，主題維持上一版；修好存檔後恢復。
 6. 不認得的欄位：在 Def 加 `<notAField>1</notAField>` 存檔：log 一行黃字 `<notAField> is not a field of BarAppearanceDef; it is skipped.`，沒有紅字，其他欄位照常。
+   - 值寫錯：`<barBackgroundFit>Tiled</barBackgroundFit>`、`<labelColor>(1, 0.3</labelColor>`：各一行黃字 `… is not a valid …; it is skipped.`，那一項回到預設，沒有紅字。
+   - 同一欄寫兩次（再加一行 `<button>…</button>`）：一行黃字 `written twice`，用第一個。
+   - `<workerClass>NoSuchWorker</workerClass>`：一行黃字，列照常畫（沒有每幀的例外）。
+   - 改完把 XML 還原。
 7. 打開資料夾：按「打開資料夾」，檔案總管開到 `Mods\Test Steel`；滑鼠提示是完整路徑。
 8. 每幀不讀檔：設定視窗開著閒置 30 秒，Frame profiler 或目測沒有卡頓（只做目測即可）。
 

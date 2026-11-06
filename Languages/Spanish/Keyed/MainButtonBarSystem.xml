@@ -336,4 +336,36 @@ Aparece en Prediseñados. Comparte la carpeta completa para dárselo a otros.</M
   <MBBS_ReloadThemes>Recargar texturas de los temas</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Modo desarrollador: vuelve a leer los PNG de cada tema desde su carpeta de mod, para ver una imagen editada sin reiniciar el juego. Después se vuelven a comprobar los temas; consulta el registro.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Texturas de los temas recargadas: {0} archivo(s) leído(s) de nuevo.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Tema nuevo…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Crea un mod de tema en blanco en la carpeta Mods del juego y lo selecciona. Edita sus imágenes PNG con cualquier editor de imágenes: mientras esta pestaña esté abierta, la barra muestra tus cambios en menos de un segundo. No hace falta reiniciar.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Tema nuevo</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Crear</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>Se crea una carpeta de mod de tema en {1}, con imágenes en blanco y _Guide.png, que muestra qué imagen dibuja qué parte de la barra. Actívalo más tarde en la lista de mods para usarlo como cualquier mod de tema, o súbelo desde allí al Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Proyecto de tema (inactivo)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Tema nuevo creado en {0}. Abre su carpeta y edita las imágenes PNG; esta ventana muestra los cambios.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>No se pudo crear el tema en {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Faltan los archivos del tema en blanco ({0}). Reinstala Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Un tema para Main Button Bar System, hecho con «Tema nuevo». Elígelo en los ajustes de Main Button Bar System, pestaña Aspecto.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Recargar</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Vuelve a leer los Defs y las imágenes PNG de este tema. Mientras esta pestaña esté abierta, los cambios también se detectan solos.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Vuelve a leer las imágenes PNG de este tema. Es un mod activo, así que los cambios en los Defs requieren reiniciar.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} archivo(s) leído(s) de nuevo.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} imagen(es) leída(s) de nuevo. Los cambios en los Defs requieren reiniciar, porque el tema es un mod activo.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: un archivo aún se está escribiendo o todavía no es válido; se conserva la última versión buena.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Eliminar</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Mueve la carpeta de este tema a {0}. Para recuperarlo, vuelve a mover la carpeta a la carpeta Mods.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Este tema es un mod activo. Desactívalo primero en la lista de mods y reinicia el juego.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Este tema está marcado en la lista de mods. Desmárcalo primero y reinicia el juego.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>¿Eliminar el tema «{0}»?
+
+Su carpeta
+{1}
+se mueve a
+{2}
+Para recuperarlo, vuelve a mover la carpeta a la carpeta Mods.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} se movió a {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>No se pudo mover {0}: {1}
+No se cambió nada.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} se movió a {1}, pero no se pudo eliminar parte de la carpeta antigua: {2}
+Elimínala tú mismo (el juego puede mostrarla como una segunda copia del tema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>
