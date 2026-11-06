@@ -12,7 +12,7 @@
 |---|---|---|
 | A 新增 | ✅ | 全部通過（A.5、A.6 在補測） |
 | B 空白主題的圖 | ✅ | 四種狀態、裁切框、更多、抽屜都分得出；B.4 列背景有畫（補測） |
-| C 未啟用的由本模組載入 | ⚠️ | C.5 缺圖沒有黃字（見下）；C.7 測出換語言時一筆紅字，已修（`b3051f1`、`5ca7e61`）並重測通過；C.3 在 1.7 走不到（遊戲會強制重開） |
+| C 未啟用的由本模組載入 | ✅ | C.7 測出換語言時一筆紅字，已修（`b3051f1`、`5ca7e61`）並重測通過；C.5 用未啟用的專案重測通過；C.3 在 1.7 走不到（遊戲會強制重開） |
 | D 重新載入與自動偵測 | ✅ | D.4 第一次測出 Waylith `LoadImage` 會丟例外，已修（`6f32bb7`）並重測通過；D.8 補測 |
 | E 刪除 | ✅ | 跨磁碟刪除（Mods 在 D:、存檔資料夾在 C:）成功；檔案被鎖時什麼都不改 |
 | F 不打擾只整理按鈕的玩家 | ✅ | 冒煙測試時還沒有任何專案：只多「新增主題…」，log 沒有新訊息 |
@@ -58,7 +58,7 @@ B.4（補測）：按鈕幾乎把列蓋滿（只顯示圖示），列背景只�
 | C.2 | 在 RimCrow 啟用 `Test Steel` 重開：清單只有一張 Test Steel，來源「Nai (Test Steel)」（模組名稱）；log 沒有 `Adding duplicate`、`short hash`；「刪除」灰、提示「這是已啟用的模組，請先在模組清單停用並重開遊戲」；「重新載入」只讀 PNG（訊息「12 張圖片已重新讀取。Defs 的修改要重開遊戲」） | tp_C2_active_card.png |
 | C.3 | **1.7 走不到這個狀態**（補測）：在遊戲的模組清單啟用 Test Steel、按「Save and apply changes」，`ModsConfig.xml` 立刻寫入，但遊戲跳出「The mod list has changed. The game will now restart automatically.」，只有 OK、Esc 關不掉。按 OK 重開後就是 C.2 的狀態（一張卡、來源是模組名稱、刪除灰、log 沒有 `Adding duplicate`）。`ModsConfig` 勾選但還沒重開的判斷只有單元測試 | — |
 | C.4 | 複製成 `Test Steel Copy` 重開：清單一張；本模組一行黃字 `Theme project Test Steel Copy: the theme NaiTestSteel_Theme is skipped: another theme already has that defName …`，沒有 `Adding duplicate`。遊戲本身的模組清單會因為重複的 packageId 出紅字（遊戲行為，和本模組無關） | — |
-| C.5 | ⚠️ 測的是已啟用狀態（C.2 那次）：`Bar.png` 改名後按「重新載入」→「11 張」、改回 →「12 張」，沒有紅字；**但沒有「找不到貼圖」的黃字**。卡片用的是靜態預覽圖，底部列有沒有變回無背景沒看 | — |
+| C.5 | 第一次（03:46）測錯了對象：用的是**已啟用**的 Test Steel，檔案不見時照設計沿用遊戲記憶體裡的貼圖，所以沒有黃字（訊息只寫「讀了 11 個」）。05:04 用**未啟用**的 Test Steel 重測（`claude/release-1.0` @ `621c03b`）：改名後 1～2 秒內自動偵測，log 一行黃字 `Theme NaiTestSteel_Theme (theme project Test Steel), barBackground: texture 'NaiTestSteel/Bar' not found (the game's look is used for it)`，卡片「更多」底下的列背景（`Bar.png 256x36` 字樣）消失；改回原名後背景回來、訊息「重新读取了 13 个文件」；0 紅字。清單已補註明要用未啟用的專案（`bf904c4`） | tp3_c5_card_before_after.png、tp3_c5_card_restored.png |
 | C.6 | 存檔選著 Test Steel、資料夾搬走後讀檔：外觀退回原版，本模組沒有紅字（紅字都是遊戲瑞典文翻譯的） | tp_c6_gone.png |
 | C.7 | 一開始換語言都會重開程序（帶 `-WaitForExitingPid`），查到是測試排序裡的 **WOWGAG's GUI Performance Patch** 把 `LanguageDatabase.SelectLanguage` 換成重開（開發模式直接 `GenCommandLine.Restart()`）。原版是程序內 `ClearAllPlayData`＋`LoadAllPlayData`。改用拿掉它的排序（`ModsConfig_20261107_0441_mbbs_c7_nogpp.xml`，49 個）重測：程序內重新載入、log 有 `Play data reloaded`，但**一筆紅字 `NaiTestSteel_Theme already has short hash.`**。原因：1.7 的 `ClearAllPlayData` 在卸下模組後才找 Def 型別，本模組的 `BarAppearanceDef` 資料庫沒被清掉，內建主題重新載入時被同名取代，主題專案的主題卻留著舊 shortHash，遊戲的 `GiveAllShortHashes` 就報錯。修正：`ClearAllPlayData` 前先把主題專案的主題移出資料庫（`b3051f1`，review 後 `5ca7e61` 加上例外防護）。重測（`5ca7e61`）：程序內重新載入、0 紅字，Test Steel 仍在清單、仍選著、卡片正常 | tp3_c7_after_reload.webp |
 
@@ -91,7 +91,7 @@ B.4（補測）：按鈕幾乎把列蓋滿（只顯示圖示），列背景只�
 
 ## 發現的問題
 
-1. **重新載入時缺圖沒有黃字**（C.5，Minor）：清單預期一行「找不到貼圖」黃字，實際沒有。review 已記下「重新載入後缺圖不會再警告一次」沒修；這次確認啟動時有圖、之後才不見的情況也完全沒有提示。修不修待決定。
+1. ~~重新載入時缺圖沒有黃字~~（C.5）：是第一次測錯對象（已啟用的專案），用未啟用的專案重測有黃字，不是問題。review 記下的「同一張圖第二次不見不會再警告」（WarningOnce）仍是 Minor。
 2. 遊戲本身：同一個 packageId 的兩份資料夾（C.4 的複本）會讓遊戲的模組清單出紅字。文件已寫「複製專案要改 packageId 和 defName」。
 
 ## 補測（04:06～04:33，release-1.0）另外看到的
@@ -102,4 +102,3 @@ B.4（補測）：按鈕幾乎把列蓋滿（只顯示圖示），列背景只�
 ## 沒測／走不到
 
 - C.3：1.7 在模組清單存檔後會強制重開（見上）。
-- C.5 的底部列畫面（已啟用的專案卡片用靜態預覽圖）。
