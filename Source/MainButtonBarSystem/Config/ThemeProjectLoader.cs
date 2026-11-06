@@ -306,6 +306,34 @@ namespace MainButtonBarSystem
             hidden.Add(def);
         }
 
+        /// <summary>
+        /// The game is about to clear play data (a language change). 1.7's ClearAllPlayData clears the def database of
+        /// every Def type it still finds after unloading the mods, which no longer includes this mod's BarAppearanceDef, so
+        /// that database keeps every theme. The mod's own themes are replaced when the mods load again; a project's theme
+        /// would stay with its short hash and make the game's short-hash pass log "already has short hash". Runs on the
+        /// loading thread: no textures and no log here (the scan after the reload releases the textures).
+        /// </summary>
+        internal static void TakeOutBeforeReload(BarAppearanceDef def)
+        {
+            def.shortHash = 0;
+            if (RemoveMethod == null || DefDatabase<BarAppearanceDef>.GetNamedSilentFail(def.defName) != def) return;
+            try
+            {
+                RemoveMethod.Invoke(null, new object[] { def });
+            }
+            catch (Exception)
+            {
+                // Still in the database, but with no short hash: the game gives it a new one, and the scan after the
+                // reload takes it out.
+            }
+        }
+
+        /// <summary>Themes that could only be hidden are still in the database: the same as <see cref="TakeOutBeforeReload"/>.</summary>
+        internal static void TakeOutHiddenBeforeReload()
+        {
+            foreach (var def in hidden.ToList()) TakeOutBeforeReload(def);
+        }
+
         internal static void Warn(string projectName, string message) =>
             Log.WarningOnce($"{MainButtonBarSystemMod.LogPrefix}Theme project {projectName}: {message}", (projectName + "|" + message).GetHashCode());
     }
