@@ -326,10 +326,15 @@ namespace MainButtonBarSystem
             foreach (var theme in BarModel.Appearances.ToList())
             {
                 DrawThemeCard(listing.GetRect(L.themeCardHeight), theme);
-                if (theme == working.AppearanceDef) DrawSuggestedLayout(listing, theme);
+                if (theme == working.AppearanceDef)
+                {
+                    DrawProjectButtons(listing, theme);
+                    DrawSuggestedLayout(listing, theme);
+                }
                 listing.Gap(L.footerGap);
             }
             DrawSavedThemes(listing);
+            DrawNewThemeButton(listing);
             listing.Gap(L.themeSettingsGap);
             DrawIllustrationSettings(listing);
             themeListHeight = EndScrolledListing(listing);

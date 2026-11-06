@@ -44,6 +44,8 @@ namespace MainButtonBarSystem
                 yield return "behaviour: buttonRectHeight, barTopFromBottom, drawerMaxAutoColumns and splitMinButtonWidth must be positive";
             if (behaviour != null && (behaviour.themeAtlasMaxSize <= 0 || behaviour.themeDecorationMaxSize <= 0 || behaviour.themeTileMaxCount <= 0))
                 yield return "behaviour: themeAtlasMaxSize, themeDecorationMaxSize and themeTileMaxCount must be positive";
+            if (behaviour != null && behaviour.themeProjectPollSeconds <= 0f)
+                yield return "behaviour: themeProjectPollSeconds must be positive";
             if (ranges != null && (ranges.widthStep <= 0 || ranges.percentStep <= 0))
                 yield return "ranges: widthStep and percentStep must be positive";
             if (settingsWindow != null && (settingsWindow.rowHeight <= 0f || settingsWindow.maxSize.x <= 0f || settingsWindow.maxSize.y <= 0f ||
@@ -210,6 +212,12 @@ namespace MainButtonBarSystem
 
             /// <summary>A tiled background that would need more tiles than this is stretched instead.</summary>
             public int themeTileMaxCount;
+
+            /// <summary>Theme projects ("New theme"): seconds between checks of the selected project's files while the Appearance tab is open.</summary>
+            public float themeProjectPollSeconds;
+
+            /// <summary>Theme projects: displayOrder written into a new project's def, after the built-in themes.</summary>
+            public int themeProjectDisplayOrder;
         }
 
         public class SettingsWindowLayout
