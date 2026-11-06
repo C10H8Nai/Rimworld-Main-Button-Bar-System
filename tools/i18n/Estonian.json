@@ -243,7 +243,7 @@
     "MBBS_Look_ImageInset": "Ääris: {0}px",
     "MBBS_ImagePickerTitle": "Vali pilt",
     "MBBS_ImagePicker_Themes": "Teemade pildid",
-    "MBBS_ImagePicker_Empty": "Imporditud pilte veel pole. Pane PNG-failid kausta\n{0}\nja vajuta Värskenda. Need jäävad sinna ka modifikatsiooni uuendamisel.",
+    "MBBS_ImagePicker_Empty": "Imporditud pilte veel pole. Pane PNG-failid kausta\n{0}\nja vajuta „Värskenda“. Need jäävad sinna alles ka modifikatsiooni uuendamisel.",
     "MBBS_ImagePicker_TooBig": "Suurem kui {0}px: nupu taustana lõpevad nurkade kasv sellel suurusel. See töötab ikkagi.",
     "MBBS_Look_NoAtlas": "Ühelgi paigaldatud teemal pole omaenda nuputaustu.",
     "MBBS_IconMode_FollowBar": "Sama mis kogu ribal ({0})",

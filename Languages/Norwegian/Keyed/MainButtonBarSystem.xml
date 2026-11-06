@@ -141,7 +141,7 @@
   <MBBS_SavedTheme_Base>Starter fra {0}</MBBS_SavedTheme_Base>
   <MBBS_SavedTheme_BaseMissingShort>Starter fra {0} (ikke installert)</MBBS_SavedTheme_BaseMissingShort>
   <MBBS_SavedTheme_BaseMissing>«{0}» starter fra temaet {1}, som ikke er installert; det starter i stedet fra vanilla.</MBBS_SavedTheme_BaseMissing>
-  <MBBS_SavedTheme_ReplaceConfirm>Erstatte ditt nåværende eget utseende med «{0}»?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_ReplaceConfirm>Vil du erstatte utseendet du har laget selv, med «{0}»?</MBBS_SavedTheme_ReplaceConfirm>
   <MBBS_SavedTheme_Applied>«{0}» er nå ditt eget utseende. Trykk Lagre for å beholde det.</MBBS_SavedTheme_Applied>
   <MBBS_SavedTheme_Tip>Kopierer dette temaet inn i innstillingene dine: lagringen fungerer fortsatt selv om filen slettes senere.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Pilene vises bare når knappene ikke får plass. Så lenge de får plass, trenger ikke linjen å rulle.</MBBS_ScrollArrowsNote>
@@ -282,7 +282,7 @@ Start spillet på nytt, aktiver den i modlisten for å prøve den, og last den o
   <MBBS_ExportTitle_Theme>Lagre som eget tema</MBBS_ExportTitle_Theme>
   <MBBS_ExportConfirm_Theme>Lagre</MBBS_ExportConfirm_Theme>
   <MBBS_Export_Theme>Lagre som eget tema...</MBBS_Export_Theme>
-  <MBBS_Export_ThemeDone>Lagret temaet i:
+  <MBBS_Export_ThemeDone>Ditt eget tema ble lagret i:
 {0}
 
 Det vises under Ferdige temaer. Del hele mappen for å gi det til andre.</MBBS_Export_ThemeDone>

@@ -141,7 +141,7 @@
     "MBBS_SavedTheme_Base": "Utgår från {0}",
     "MBBS_SavedTheme_BaseMissingShort": "Utgår från {0} (inte installerat)",
     "MBBS_SavedTheme_BaseMissing": "”{0}” utgår från temat {1}, som inte är installerat; det utgår i stället från vanilla.",
-    "MBBS_SavedTheme_ReplaceConfirm": "Ersätta ditt nuvarande eget utseende med ”{0}”?",
+    "MBBS_SavedTheme_ReplaceConfirm": "Vill du ersätta utseendet du har gjort själv med ”{0}”?",
     "MBBS_SavedTheme_Applied": "”{0}” är nu ditt eget utseende. Tryck på Spara för att behålla det.",
     "MBBS_SavedTheme_Tip": "Kopierar det här temat till dina inställningar: sparfilen fungerar fortfarande även om filen raderas senare.",
     "MBBS_ScrollArrowsNote": "Pilarna visas bara när knapparna inte får plats. Så länge de får plats behöver fältet inte rulla.",
