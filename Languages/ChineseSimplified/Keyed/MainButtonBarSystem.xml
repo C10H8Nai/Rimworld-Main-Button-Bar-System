@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>检测到 {0}：目前由它控制底部栏，这里的改动要等改成本模组优先才会生效。</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>检测到 {0}：本模组优先，它对底部栏的效果已关闭。</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>详细请到进阶。</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} 正在绘制底部栏，这里的设置不会生效。要改用本模组，请在它的模组设置中关闭「Main bar」，或在模组列表中把本模组排在它前面。</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>{0} 的「Main bar」也开着，它会把右下角控件和窗口位置按它自己的栏来摆放，画面可能错位。建议在它的模组设置中关闭「Main bar」。</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>本模组还没有任何设置，所以底部栏交给 {0} 绘制。要改用本模组，在这里改任意一项设置即可；改了之后也要关闭 {0} 的「Main bar」，否则右下角的时间控件、日期和天气会消失。</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} 在模组列表中排在本模组前面，正在绘制底部栏，这里的设置不会生效。要改用本模组，请关闭 {0} 的「Main bar」，或在模组列表中把本模组排在它前面。</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} 的「Main bar」也开着。本模组绘制底部栏时，右下角的时间控件、日期和天气会消失，部分窗口的位置也会偏移。请关闭 {0} 的「Main bar」。</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>关闭「Main bar」</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>已修改 {0} 的设置，并保存到它的模组设置。</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>本次游戏中已修改 {0} 的设置，但无法保存到它的模组设置，请在它的模组设置中也关闭。</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>无法修改 {0} 的设置，请在它的模组设置中修改。</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>兼容：{0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>本模组优先</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>由本模组绘制底部栏。{0} 对底部栏的效果会关闭，它的设置只当参考值。</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@
   <MBBS_Look_Color_1>鼠标悬停时的文字颜色</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>打开时的文字颜色</MBBS_Look_Color_2>
   <MBBS_Look_Icon>图标</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>改了图标大小或位置的按钮，图标改由本模组绘制，因此 Vanilla Textures Expanded 这类移动图标的模组对它不起作用。</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>改了图标大小或位置的按钮，图标改由本模组按这里的设置绘制；是否显示文字仍取决于游戏和 Vanilla Textures Expanded 这类模组。预览总是按游戏本身的方式绘制。</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>图标大小：{0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>图标位置（只显示图标：放在按钮的哪里；图标＋文字：在文字的左边或右边）</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>图标位移（水平）：{0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@
   <MBBS_ImportReport_NoList>这份排序没有记录制作时的按钮列表（旧版导出）。它没提到的按钮会保留你的设置。</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>主题：{0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>主题 {0}（来自 {1}）未安装；装好之前会使用原版外观。</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>上面还有自定义主题（{0} 个按钮有自己的样式）。</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>显示方式 {0}（来自 {1}）未安装；装好之前会使用原版的栏。</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>你没有的导入图标：{0} 个（{1}）。把 PNG 放进 {2}；在那之前这些按钮显示原本的图标。</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>来自你没装的模组的图标：{0} 个（{1}）。这些按钮显示原本的图标。</MBBS_ImportReport_IconTexturesMissing>

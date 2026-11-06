@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>{0} gedetecteerd: die beheert nu de balk, dus wijzigingen hier werken pas als deze mod voorrang heeft.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>{0} gedetecteerd: deze mod heeft voorrang, dus het effect ervan op de balk is uitgeschakeld.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Details in Geavanceerd.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} tekent de onderste balk, dus de instellingen hier hebben geen effect. Wil je de balk van deze mod gebruiken, zet dan "Main bar" uit in de instellingen van die mod, of zet deze mod erboven in de modlijst.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>{0} heeft "Main bar" ook aan: die plaatst de bedieningselementen rechtsonder en de vensters alsof de eigen balk zichtbaar is, dus sommige dingen kunnen verkeerd staan. Het is aan te raden om "Main bar" uit te zetten in de instellingen van die mod.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Deze mod heeft nog geen instellingen, dus laat de onderste balk aan {0} over. Wil je de balk van deze mod gebruiken, wijzig dan hier een instelling en zet daarna ook "Main bar" uit in {0}, anders verdwijnen de tijdsbediening, de datum en het weer rechtsonder.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} staat in de modlijst boven deze mod en tekent de onderste balk, dus de instellingen hier hebben geen effect. Wil je de balk van deze mod gebruiken, zet dan "Main bar" uit in {0}, of zet deze mod erboven in de modlijst.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} heeft "Main bar" ook aan. Terwijl deze mod de balk tekent, verdwijnen de tijdsbediening, de datum en het weer rechtsonder en openen sommige vensters een beetje verschoven. Zet "Main bar" uit in {0}.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>Zet "Main bar" uit</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>De instelling in {0} is gewijzigd en de modinstellingen ervan zijn opgeslagen.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>De instelling in {0} is voor deze sessie gewijzigd, maar de modinstellingen ervan konden niet worden opgeslagen. Wijzig de instelling ook in de modinstellingen ervan.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>De instelling in {0} kon niet worden gewijzigd. Wijzig hem in de modinstellingen ervan.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Compatibiliteit: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Deze mod eerst</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Deze mod tekent de balk. Het effect van {0} op de balk is uitgeschakeld; de instellingen ervan dienen alleen als referentiewaarden.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ en klik op Vernieuwen. Ze blijven daar staan, ook als de mod wordt bijgewerkt.</
   <MBBS_Look_Color_1>Tekstkleur onder de muis</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Tekstkleur wanneer open</MBBS_Look_Color_2>
   <MBBS_Look_Icon>Icoon</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>Bij een knop waarvan de icoongrootte of -positie is gewijzigd, tekent deze mod het icoon, dus mods die iconen verplaatsen (zoals Vanilla Textures Expanded) hebben er geen invloed op.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>Bij een knop waarvan de icoongrootte of -positie is gewijzigd, tekent deze mod het icoon, op de plek die deze look bepaalt. Of het label wordt getoond, volgt nog steeds het spel en mods zoals Vanilla Textures Expanded; het voorbeeld toont altijd de eigen manier van het spel.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>Icoongrootte: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>Icoonpositie (alleen icoon: waar in de knop; icoon en tekst: links of rechts van de tekst)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>Icoonverschuiving, horizontaal: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Start het spel opnieuw en zet de mod aan in de modlijst om hem te proberen; van 
   <MBBS_ImportReport_NoList>Deze indeling vermeldt niet welke knoppen het spel had waarin ze is gemaakt (oudere versie). Knoppen die ze niet noemt, houden je eigen instellingen.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Thema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Thema {0} (van {1}) is niet geïnstalleerd; tot dan wordt het originele uiterlijk gebruikt.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Een eigen thema erbovenop ({0} knoppen met een eigen stijl).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>Weergavemodus {0} (van {1}) is niet geïnstalleerd; tot dan wordt de originele balk gebruikt.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Geïmporteerde iconen die je niet hebt: {0} ({1}). Zet de PNG-bestanden in {2}; tot dan houden die knoppen hun eigen icoon.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Iconen uit mods die je niet hebt: {0} ({1}). Die knoppen houden hun eigen icoon.</MBBS_ImportReport_IconTexturesMissing>

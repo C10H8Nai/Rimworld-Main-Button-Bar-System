@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>Zistený mod {0}: lištu teraz ovláda on, takže zmeny tu sa prejavia, len keď bude mať prednosť tento mod.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Zistený mod {0}: prednosť má tento mod, takže vplyv modu {0} na lištu je vypnutý.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Podrobnosti nájdete v režime „Pokročilé“.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>Dolnú lištu teraz vykresľuje mod {0}, takže nastavenia tu nemajú žiadny účinok. Ak chcete používať lištu tohto modu, vypnite voľbu „Main bar“ v nastaveniach toho modu alebo presuňte tento mod v zozname modov nad neho.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>Mod {0} má zapnutú aj voľbu „Main bar“: rozmiestňuje ovládacie prvky v pravom dolnom rohu a okná tak, ako keby sa zobrazovala jeho vlastná lišta, takže niektoré prvky môžu byť posunuté. Odporúčame vypnúť voľbu „Main bar“ v nastaveniach toho modu.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Tento mod zatiaľ nemá žiadne nastavenia, a preto dolnú lištu prenecháva modu {0}. Ak chcete používať lištu tohto modu, zmeňte tu ľubovoľné nastavenie a potom vypnite voľbu „Main bar“ aj v mode {0}, inak zmizne ovládanie času, dátum a počasie vpravo dole.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>Mod {0} je v zozname modov nad týmto modom a vykresľuje dolnú lištu, takže nastavenia tu nemajú žiadny účinok. Ak chcete používať lištu tohto modu, vypnite voľbu „Main bar“ v mode {0} alebo presuňte tento mod v zozname modov nad neho.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>Mod {0} má zapnutú aj voľbu „Main bar“. Kým lištu vykresľuje tento mod, vpravo dole zmizne ovládanie času, dátum a počasie a niektoré okná sa otvoria mierne mimo miesta. Vypnite voľbu „Main bar“ v mode {0}.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>Vypnúť „Main bar“</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>Nastavenie v mode {0} sa zmenilo a jeho nastavenia modu sa uložili.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>Nastavenie v mode {0} sa zmenilo pre túto reláciu, ale jeho nastavenia modu sa nepodarilo uložiť. Zmeňte ho aj v jeho nastaveniach modu.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>Nastavenie v mode {0} sa nepodarilo zmeniť. Zmeňte ho v jeho nastaveniach modu.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Kompatibilita: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Prednosť má tento mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Lištu vykresľuje tento mod. Vplyv modu {0} na lištu je vypnutý a jeho nastavenia slúžia len ako referenčné hodnoty.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ a stlačte „Obnoviť“. Pri aktualizáciách modu tam zostanú.</MBBS_IconPic
   <MBBS_Look_Color_1>Farba textu pod myšou</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Farba textu, keď je otvorené</MBBS_Look_Color_2>
   <MBBS_Look_Icon>Ikona</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>Tlačidlu, ktorému zmeníte veľkosť alebo polohu ikony, vykresľuje ikonu tento mod, takže mody, ktoré ikony posúvajú (napr. Vanilla Textures Expanded), naň nemajú vplyv.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>Tlačidlu so zmenenou veľkosťou alebo polohou ikony vykresľuje ikonu tento mod tam, kam ju umiestni tento vzhľad. Či sa zobrazí popis, sa stále riadi hrou a modmi ako Vanilla Textures Expanded; ukážka vždy zobrazuje spôsob samotnej hry.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>Veľkosť ikony: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>Poloha ikony (len ikona: kde v tlačidle; ikona a text: vľavo alebo vpravo od textu)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>Posun ikony vodorovne: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Reštartujte hru a zapnite mod v zozname modov, aby ste ho vyskúšali; odtiaľ 
   <MBBS_ImportReport_NoList>Toto usporiadanie neobsahuje zoznam tlačidiel hry, v ktorej vzniklo (staršia verzia). Tlačidlá, ktoré nespomína, si ponechajú vaše nastavenia.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Motív: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Motív {0} (z {1}) nie je nainštalovaný; dovtedy sa použije vzhľad ako v hre.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Navrch je vlastný motív ({0} tlačidiel s vlastným štýlom).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>Režim zobrazenia {0} (z {1}) nie je nainštalovaný; dovtedy sa použije lišta ako v hre.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Importované ikony, ktoré nemáte: {0} ({1}). Vložte súbory PNG do {2}; dovtedy si tieto tlačidlá ponechajú svoju ikonu.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Ikony z modov, ktoré nemáte: {0} ({1}). Tieto tlačidlá si ponechajú svoju ikonu.</MBBS_ImportReport_IconTexturesMissing>

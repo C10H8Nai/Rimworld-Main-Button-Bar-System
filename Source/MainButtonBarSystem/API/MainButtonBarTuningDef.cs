@@ -140,6 +140,22 @@ namespace MainButtonBarSystem
             /// </summary>
             public int splitMinButtonWidth;
 
+            /// <summary>
+            /// When the equal split shrinks every button (above), the More button keeps at least this width. 0: its own
+            /// width (the player's setting, or its label); negative: no minimum.
+            /// </summary>
+            public int splitMoreMinWidth;
+
+            /// <summary>The same for the menu button. 0: the width of its label; negative: no minimum.</summary>
+            public int splitMenuMinWidth;
+
+            /// <summary>
+            /// A button this mod draws that is narrower than this shows only its background: neither the icon nor the
+            /// label fits. Applies in every display mode and in the drawer, half-width buttons included (their own
+            /// width counts). 0: always draw them.
+            /// </summary>
+            public int contentMinButtonWidth;
+
             /// <summary>Upper limit of columns when the drawer picks them automatically.</summary>
             public int drawerMaxAutoColumns;
 
@@ -191,6 +207,9 @@ namespace MainButtonBarSystem
             public float panelGap;
             public float headerHeight;
             public float noticeLineHeight;
+
+            /// <summary>A button next to a compatibility notice is at most this share of the notice's width.</summary>
+            public float noticeButtonMaxFraction;
             public float tabButtonWidth;
             public float closeButtonSpace;
             public float columnHeaderHeight;

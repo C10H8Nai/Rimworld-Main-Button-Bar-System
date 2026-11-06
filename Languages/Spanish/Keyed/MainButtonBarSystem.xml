@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>Se ha detectado {0}: ahora mismo controla la barra, así que los cambios hechos aquí solo surten efecto cuando este mod tiene prioridad.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>Se ha detectado {0}: este mod tiene prioridad, así que el efecto de {0} sobre la barra está desactivado.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Más detalles en el modo Avanzado.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} está dibujando la barra inferior, así que la configuración de aquí no tiene efecto. Para usar la barra de este mod, desactiva «Main bar» en la configuración de ese mod, o coloca este mod por encima de él en la lista de mods.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>{0} también tiene activado «Main bar»: sitúa los controles de la esquina inferior derecha y las ventanas como si se mostrara su propia barra, así que algunos elementos pueden quedar descolocados. Se recomienda desactivar «Main bar» en la configuración de ese mod.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Este mod aún no tiene configuración, así que deja la barra inferior a {0}. Para usar la barra de este mod, cambia cualquier opción aquí; después desactiva también «Main bar» en {0}, o los controles de tiempo, la fecha y el clima de la esquina inferior derecha desaparecen.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} está por encima de este mod en la lista de mods y dibuja la barra inferior, así que la configuración de aquí no tiene efecto. Para usar la barra de este mod, desactiva «Main bar» en {0}, o coloca este mod por encima de él en la lista de mods.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} también tiene activado «Main bar». Mientras este mod dibuja la barra, los controles de tiempo, la fecha y el clima de la esquina inferior derecha desaparecen y algunas ventanas se abren ligeramente descolocadas. Desactiva «Main bar» en {0}.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>Desactivar «Main bar»</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>Se cambió la configuración de {0} y se guardó su configuración de mod.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>Se cambió la configuración de {0} para esta sesión, pero no se pudo guardar su configuración de mod. Cámbiala también en su configuración de mod.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>No se pudo cambiar la configuración de {0}. Cámbiala en su configuración de mod.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Compatibilidad: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Prioridad a este mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Este mod dibuja la barra. El efecto de {0} sobre la barra está desactivado; su configuración solo se usa como valores de referencia.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ y luego pulsa «Actualizar». Se conservan aunque se actualice el mod.</MBBS_Ico
   <MBBS_Look_Color_1>Color del texto con el ratón encima</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Color del texto cuando está abierto</MBBS_Look_Color_2>
   <MBBS_Look_Icon>Icono</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>Si a un botón se le cambia el tamaño o la posición del icono, este mod dibuja su icono, así que los mods que mueven iconos (como Vanilla Textures Expanded) no le afectan.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>Si a un botón se le cambia el tamaño o la posición del icono, este mod dibuja su icono donde lo coloca este aspecto. Que se muestre o no su etiqueta sigue dependiendo del juego y de mods como Vanilla Textures Expanded; la vista previa siempre muestra la forma del propio juego.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>Tamaño del icono: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>Posición del icono (solo icono: dónde dentro del botón; icono y texto: a la izquierda o a la derecha del texto)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>Desplazamiento del icono, horizontal: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Reinicia el juego y actívalo en la lista de mods para probarlo; desde ahí tamb
   <MBBS_ImportReport_NoList>Esta disposición no incluye la lista de botones del juego en que se creó (versión antigua). Los botones que no menciona conservan tu configuración.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>El tema {0} (de {1}) no está instalado; mientras tanto se usa el aspecto original.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Un tema personalizado encima ({0} botones con estilo propio).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>El modo de visualización {0} (de {1}) no está instalado; mientras tanto se usa la barra original.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Iconos importados que no tienes: {0} ({1}). Pon los archivos PNG en {2}; mientras tanto, esos botones mantienen su propio icono.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Iconos de mods que no tienes: {0} ({1}). Esos botones mantienen su propio icono.</MBBS_ImportReport_IconTexturesMissing>

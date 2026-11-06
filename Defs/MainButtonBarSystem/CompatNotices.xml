@@ -5,13 +5,16 @@
     switched off and no patches are removed (compare CompatBridges.xml). The first notice whose conditions hold
     is shown; textKey is a translation key and {0} is modName.
     setting: Any / On / Off / Unknown (the switch could not be read).  bar: Any / ThisMod / NotThisMod (who drew
-    the bar on the last draw; at the main menu only Any matches).
+    the bar on the last draw; at the main menu only Any matches); NotThisMod is either ThisModYielded (this mod has
+    no settings yet and left the bar to the game or a later mod) or ThisModSkipped (an earlier mod drew it).
+    turnOffKey (optional): a button that turns the switch off and saves the other mod's settings, shown while it is on.
   -->
 
   <!-- [LFS] UI Rethemed - Main Bar draws its own bar in a DoButtons prefix of the same priority as this mod's, so
-       whichever mod is earlier in the mod list draws. Its other changes (controls moved into the bar, free area,
-       camera edges, tab window and world inspect pane positions) follow its "Main bar" switch, not whether it
-       actually drew, so with both bars on the layout can be off. -->
+       whichever mod is earlier in the mod list draws. Its other changes (time controls, date and weather moved into
+       its bar, free area, camera edges, tab window and world inspect pane positions) follow its "Main bar" switch,
+       not whether it actually drew: with this mod drawing and that switch on, the bottom-right controls are drawn
+       nowhere (2026-11-05 test, round 10 G5). It reads the switch every frame, so turning it off works at once. -->
   <MainButtonBarSystem.CompatNoticeDef>
     <defName>UIRethemedMainBar</defName>
     <label>UI Rethemed - Main Bar</label>
@@ -24,13 +27,20 @@
     <notices>
       <li>
         <setting>On</setting>
+        <bar>ThisModYielded</bar>
+        <textKey>MBBS_Notice_UIRethemed_Untouched</textKey>
+      </li>
+      <li>
+        <setting>On</setting>
         <bar>NotThisMod</bar>
         <textKey>MBBS_Notice_UIRethemed_TheyDraw</textKey>
+        <turnOffKey>MBBS_Notice_UIRethemed_TurnOff</turnOffKey>
       </li>
       <li>
         <setting>On</setting>
         <bar>ThisMod</bar>
         <textKey>MBBS_Notice_UIRethemed_BothOn</textKey>
+        <turnOffKey>MBBS_Notice_UIRethemed_TurnOff</turnOffKey>
       </li>
     </notices>
   </MainButtonBarSystem.CompatNoticeDef>

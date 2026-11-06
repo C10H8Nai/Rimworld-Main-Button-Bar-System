@@ -391,7 +391,8 @@ In practice:
 - Use `inset` to keep the picture inside the frame's border.
 - A missing picture texture draws nothing (and is reported once, see below); the button still has its frame. In
   development mode the checks also point out `buttonImages` entries for buttons that are not loaded (a typo, or a
-  mod that is not active) and buttons listed twice.
+  mod that is not active; all of them in one warning per theme, so a theme can cover buttons of many mods) and
+  buttons listed twice.
 - The player's decoration settings (show, opacity, size, offset) and background opacity do not affect button
   pictures.
 - With `make_theme.py`'s `hollow` or `"frame": "vanilla"`, the scroll arrows are hollow too (they use the `button` atlas) and show the bar
@@ -510,7 +511,7 @@ and from who drew the bar on the last draw. The built-in one, for [LFS] UI Rethe
   <notices>
     <!-- The first notice whose conditions hold is shown. textKey is a translation key; {0} is modName. -->
     <li><setting>On</setting><bar>NotThisMod</bar><textKey>MyMod_OtherBarDraws</textKey></li>
-    <li><setting>On</setting><bar>ThisMod</bar><textKey>MyMod_BothBarsOn</textKey></li>
+    <li><setting>On</setting><bar>ThisMod</bar><textKey>MyMod_BothBarsOn</textKey><turnOffKey>MyMod_TurnOffItsBar</turnOffKey></li>
   </notices>
 </MainButtonBarSystem.CompatNoticeDef>
 ```
@@ -519,6 +520,7 @@ and from who drew the bar on the last draw. The built-in one, for [LFS] UI Rethe
 |---|---|
 | `setting` | `Any` (default), `On`, `Off`, `Unknown` (the switch could not be read: the other mod changed, or the path is wrong) |
 | `bar` | `Any` (default; also matches at the main menu, where no bar is drawn), `ThisMod`, `NotThisMod` (the game or another mod drew it: either of the next two), `ThisModYielded` (this mod's prefix ran and left the bar to the game or a later mod, because its settings are untouched), `ThisModSkipped` (an earlier prefix drew the bar, so this mod's did not run: that mod is above this one in the mod list) |
+| `turnOffKey` | Optional translation key of a button next to the text (`{0}` is modName), shown while the switch reads as on. It sets the switch to false and saves the other mod's settings (`Mod.WriteSettings`). Only use it when the other mod reads the switch live, so the change works without a restart. |
 
 A switch that cannot be read never shows an error: it counts as `Unknown`, and development mode logs one line.
 Development mode also logs, on the first bar draw, each notice def's state (active, switch value, who drew).

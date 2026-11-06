@@ -55,6 +55,9 @@
       <buttonRectHeight>36</buttonRectHeight>    <!-- vanilla draws 36, one pixel past the screen bottom -->
       <arrowPageFraction>0.6</arrowPageFraction>
       <splitMinButtonWidth>12</splitMinButtonWidth> <!-- equal split: least width left for buttons without their own -->
+      <splitMoreMinWidth>0</splitMoreMinWidth>   <!-- when that shrinks every button, More keeps this much; 0: its own width, -1: none -->
+      <splitMenuMinWidth>0</splitMenuMinWidth>   <!-- the same for the menu button; 0: its label's width, -1: none -->
+      <contentMinButtonWidth>20</contentMinButtonWidth> <!-- buttons this mod draws narrower than this (any mode, the drawer, half-width ones too) show only their background; 0: off -->
       <drawerMaxAutoColumns>4</drawerMaxAutoColumns>
       <drawerPadding>6</drawerPadding>
       <drawerSettingsRowHeight>30</drawerSettingsRowHeight>
@@ -80,6 +83,7 @@
       <panelGap>10</panelGap>
       <headerHeight>36</headerHeight>
       <noticeLineHeight>24</noticeLineHeight>
+      <noticeButtonMaxFraction>0.4</noticeButtonMaxFraction> <!-- a button next to a compatibility notice, share of its width -->
       <tabButtonWidth>110</tabButtonWidth>
       <closeButtonSpace>40</closeButtonSpace>
       <columnHeaderHeight>22</columnHeaderHeight>

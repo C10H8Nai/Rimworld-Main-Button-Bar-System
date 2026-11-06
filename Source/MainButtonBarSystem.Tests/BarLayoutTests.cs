@@ -144,6 +144,60 @@ namespace MainButtonBarSystem.Tests
         }
 
         [Fact]
+        public void CollapseFill_SqueezedSplitKeepsMoreAndMenuMinimums()
+        {
+            // Spec 2026-11-05 round 11 C.4: buttons with their own width squeeze the others; More and the menu stay usable.
+            var items = new List<LayoutItem>
+            {
+                new LayoutItem("a", width: 400), new LayoutItem("b", width: 400), new LayoutItem("c"), new LayoutItem("d"),
+                new LayoutItem("x", inDrawer: true), new LayoutItem("menu") { SplitMinWidth = 60 },
+            };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Collapse, BarWidth = 800, SplitMoreMinWidth = 50 }));
+
+            var placed = AllInBarCoordinates(r).ToList();
+            Assert.Equal(new[] { "a", "b", "c", "d", "menu", BarLayout.MoreKey }.OrderBy(k => k), placed.Select(p => p.Key).OrderBy(k => k));
+            Assert.Equal(800, placed.Sum(p => p.Width));
+            Assert.Equal(50, r.More.Value.Width);
+            Assert.Equal(60, r.Center.Single(c => c.Key == "menu").Width);
+            Assert.True(r.Center.Single(c => c.Key == "c").Width < 12);
+            Assert.True(r.Center.Single(c => c.Key == "a").Width < 400);
+        }
+
+        [Fact]
+        public void Vanilla_SplitMinimumsOnlyApplyWhenSqueezed()
+        {
+            // Without own widths the bar is split evenly like the game's, minimums or not.
+            var items = new List<LayoutItem> { new LayoutItem("a"), new LayoutItem("b"), new LayoutItem("menu") { SplitMinWidth = 200 } };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 300 }));
+
+            Assert.Equal(new[] { 100, 100, 100 }, r.Center.Select(c => c.Width));
+        }
+
+        [Fact]
+        public void Vanilla_SplitMinimumsWiderThanTheBarShareIt()
+        {
+            var items = new List<LayoutItem> { new LayoutItem("a", width: 500), new LayoutItem("m1") { SplitMinWidth = 300 }, new LayoutItem("m2") { SplitMinWidth = 100 } };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 200 }));
+
+            Assert.Equal(new[] { 0, 150, 50 }, r.Center.Select(c => c.Width));
+        }
+
+        [Fact]
+        public void Vanilla_SplitMinimumsWithOthersSqueezedToZeroStillSpanTheBar()
+        {
+            // The first scaling leaves a and b at 0 px; the menu keeps its 40 and the bar is still filled exactly.
+            var items = new List<LayoutItem>
+            {
+                new LayoutItem("big", width: 1000), new LayoutItem("a"), new LayoutItem("b"), new LayoutItem("menu") { SplitMinWidth = 40 },
+            };
+            var r = BarLayout.Compute(items, Opt(new LayoutOptions { Mode = DisplayMode.Vanilla, BarWidth = 50, SplitMinWidth = 1 }));
+
+            var widths = r.Center.Select(c => c.Width).ToArray();
+            Assert.Equal(50, widths.Sum());
+            Assert.Equal(40, widths[3]);
+        }
+
+        [Fact]
         public void Vanilla_OnlyOwnWidthsThatFitAreKept()
         {
             var items = new List<LayoutItem> { new LayoutItem("a", width: 100), new LayoutItem("b", width: 150) };

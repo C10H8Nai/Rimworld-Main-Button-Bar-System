@@ -69,7 +69,7 @@ namespace MainButtonBarSystem
                     TabWindowClass = def.tabWindowClass?.FullName,
                     DefaultHotKey = def.defaultHotKey,
                     HotKeyDefName = def.hotKey?.defName,
-                    SourceModName = def.modContentPack?.Name,
+                    SourceModName = ModDisplayName(def.modContentPack),
                     SourcePackageId = def.modContentPack?.PackageId,
                     IconSourceModName = string.IsNullOrEmpty(def.iconPath) ? null : iconSources.Resolve(def.iconPath),
                 };
@@ -80,6 +80,24 @@ namespace MainButtonBarSystem
             }
 
             Captured = true;
+        }
+
+        /// <summary>
+        /// A mod's name in the current language. For the official content (Core and the DLCs) the name comes from its
+        /// ExpansionDef; ModContentPack.Name is fixed when the mod list is built, and the game's own expansion lookup keeps
+        /// the defs from the first load, so both still show the previous language after a language change.
+        /// </summary>
+        public static string ModDisplayName(ModContentPack mod)
+        {
+            if (mod == null) return null;
+            var expansions = DefDatabase<ExpansionDef>.AllDefsListForReading;
+            for (int i = 0; i < expansions.Count; i++)
+            {
+                var expansion = expansions[i];
+                if (string.Equals(expansion.linkedMod, mod.PackageId, StringComparison.OrdinalIgnoreCase) && !expansion.label.NullOrEmpty())
+                    return expansion.label;
+            }
+            return mod.Name;
         }
 
         /// <summary>
@@ -102,7 +120,7 @@ namespace MainButtonBarSystem
                     {
                         var holder = mod.GetContentHolder<Texture2D>();
                         if (holder?.contentList != null && holder.contentList.ContainsKey(texturePath))
-                            return mod.Name;
+                            return ModDisplayName(mod);
                     }
                     catch (Exception)
                     {

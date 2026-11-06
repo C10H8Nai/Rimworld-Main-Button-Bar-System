@@ -9,7 +9,8 @@ namespace MainButtonBarSystem
     /// Development-mode checks of every theme (built-in and from theme mods): textures that do not load, atlases that
     /// are not square or larger than the useful size, oversized decorations and pictures, button pictures for buttons
     /// that are not loaded. Each finding is one warning naming the
-    /// theme and the field, reported once per session. Runs at startup and after "Reload theme textures".
+    /// theme and the field (all button pictures for buttons that are not loaded are one finding), reported once per
+    /// session. Runs at startup and after "Reload theme textures".
     /// </summary>
     public static class ThemeValidator
     {
@@ -60,23 +61,33 @@ namespace MainButtonBarSystem
 
         /// <summary>
         /// buttonImages entries naming a button no loaded mod has (a typo, or a mod that is not active) and buttons
-        /// listed twice. Hints only: a theme may well name buttons of mods the player does not use.
+        /// listed twice. Hints only: a theme may well name buttons of mods the player does not use, so the buttons that
+        /// are not loaded are listed in one warning per theme, however many there are (a theme covering a hundred
+        /// buttons of other mods would otherwise fill the log).
         /// </summary>
         private static int ValidateButtonImages(BarAppearanceDef def)
         {
             if (def.buttonImages == null) return 0;
             int findings = 0;
             var seen = new System.Collections.Generic.HashSet<string>();
+            var notLoaded = new System.Collections.Generic.List<string>();
             for (int i = 0; i < def.buttonImages.Count; i++)
             {
                 var button = def.buttonImages[i]?.button;
                 if (string.IsNullOrEmpty(button)) continue;   // a config error already
-                string field = $"{nameof(BarAppearanceDef.buttonImages)}[{i}].{nameof(BarButtonImage.button)}";
-                if (DefDatabase<RimWorld.MainButtonDef>.GetNamedSilentFail(button) == null)
-                    findings += Warn(def, field, $"no main button '{button}' is loaded (a typo, or a mod that is not active); this picture is unused");
                 if (!seen.Add(button))
+                {
+                    string field = $"{nameof(BarAppearanceDef.buttonImages)}[{i}].{nameof(BarButtonImage.button)}";
                     findings += Warn(def, field, $"'{button}' is listed again; this later entry is used");
+                }
+                else if (DefDatabase<RimWorld.MainButtonDef>.GetNamedSilentFail(button) == null)
+                {
+                    notLoaded.Add(button);
+                }
             }
+            if (notLoaded.Count > 0)
+                findings += Warn(def, nameof(BarAppearanceDef.buttonImages),
+                    $"{notLoaded.Count} picture(s) name main buttons that are not loaded (a typo, or a mod that is not active), so they are unused: {string.Join(", ", notLoaded)}");
             return findings;
         }
 

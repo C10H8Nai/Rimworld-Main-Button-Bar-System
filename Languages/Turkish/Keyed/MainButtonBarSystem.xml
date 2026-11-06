@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>{0} algılandı: bar şu an onun kontrolünde, bu yüzden buradaki değişiklikler yalnızca bu mod öncelikliyken geçerli olur.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>{0} algılandı: öncelik bu modda, bu yüzden onun bar üzerindeki etkisi kapatıldı.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Ayrıntılar Gelişmiş görünümde.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>Alttaki barı şu an {0} çiziyor, bu yüzden buradaki ayarların etkisi yok. Bu modun barını kullanmak için o modun ayarlarından "Main bar" seçeneğini kapat veya mod listesinde bu modu onun üstüne taşı.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>{0} modunda "Main bar" seçeneği de açık: sağ alttaki kontrolleri ve pencere konumlarını kendi barı gösteriliyormuş gibi yerleştiriyor, bu yüzden bazı öğeler kayabilir. O modun ayarlarından "Main bar" seçeneğini kapatman önerilir.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Bu modun henüz ayarı yok, bu yüzden alttaki barı {0} moduna bırakır. Bu modun barını kullanmak için buradan herhangi bir ayarı değiştir; ardından {0} modunda da "Main bar" seçeneğini kapat, yoksa sağ alttaki zaman kontrolleri, tarih ve hava durumu kaybolur.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} mod listesinde bu modun üstünde ve alttaki barı çiziyor, bu yüzden buradaki ayarların etkisi yok. Bu modun barını kullanmak için {0} modunda "Main bar" seçeneğini kapat veya mod listesinde bu modu onun üstüne taşı.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} modunda da "Main bar" seçeneği açık. Barı bu mod çizerken sağ alttaki zaman kontrolleri, tarih ve hava durumu kaybolur ve bazı pencereler biraz kaymış konumda açılır. {0} modunda "Main bar" seçeneğini kapat.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>"Main bar" seçeneğini kapat</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>{0} modundaki ayar değiştirildi ve mod ayarları kaydedildi.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>{0} modundaki ayar bu oturum için değiştirildi, ancak mod ayarları kaydedilemedi. Ayarı o modun mod ayarlarından da değiştir.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>{0} modundaki ayar değiştirilemedi. Ayarı o modun mod ayarlarından değiştir.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Uyumluluk: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Önce bu mod</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Barı bu mod çizer. {0} modunun bar üzerindeki etkisi kapatılır; ayarları yalnızca referans değeri olarak kullanılır.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ Ardından "Yenile" butonuna bas. Mod güncellendiğinde de orada kalırlar.</MBB
   <MBBS_Look_Color_1>Fare üstündeyken yazı rengi</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Açıkken yazı rengi</MBBS_Look_Color_2>
   <MBBS_Look_Icon>İkon</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>İkon boyutu ya da konumu değiştirilen bir butonun ikonunu bu mod çizer; bu yüzden ikonları taşıyan modlar (Vanilla Textures Expanded gibi) onu etkilemez.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>İkon boyutu ya da konumu değiştirilen bir butonun ikonunu bu mod, bu görünümün koyduğu yere çizer. Etiketinin gösterilip gösterilmeyeceği hâlâ oyuna ve Vanilla Textures Expanded gibi modlara bağlıdır; önizleme her zaman oyunun kendi yöntemini gösterir.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>İkon boyutu: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>İkon konumu (yalnızca ikon: butonun neresinde; ikon ve yazı: yazının solunda mı sağında mı)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>İkon kaydırma, yatay: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Oyunu yeniden başlat ve denemek için mod listesinden etkinleştir; oradan Stea
   <MBBS_ImportReport_NoList>Bu düzen, yapıldığı oyunun butonlarını listelemiyor (eski sürüm). Bahsetmediği butonlar senin ayarlarını korur.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>{0} teması ({1} modundan) yüklü değil; yüklenene kadar orijinal görünüm kullanılır.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Üstünde özel bir tema var ({0} butonun kendi stili var).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>{0} görüntüleme modu ({1} modundan) yüklü değil; yüklenene kadar orijinal bar kullanılır.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Sende olmayan içe aktarılmış ikonlar: {0} ({1}). PNG dosyalarını şuraya koy: {2}; o zamana kadar bu butonlar kendi ikonlarını kullanır.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Sende olmayan modlardan gelen ikonlar: {0} ({1}). Bu butonlar kendi ikonlarını kullanır.</MBBS_ImportReport_IconTexturesMissing>

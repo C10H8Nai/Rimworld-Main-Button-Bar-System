@@ -152,15 +152,21 @@ namespace MainButtonBarSystem
 
             // Preview: the four states side by side, drawn by this mod (other mods' DoButton effects show only on the bar).
             float h = MainButtonBarTuningDef.Current.behaviour.buttonRectHeight;
-            var previewRow = listing.GetRect(h + L.textRowHeight);
-            float cell = (previewRow.width - L.footerGap * 3f) / 4f;
+            float cell = (listing.ColumnWidth - L.footerGap * 3f) / 4f;
+            // The state names wrap onto more lines when a translation is wider than a cell.
+            Text.Font = GameFont.Tiny;
+            float labelHeight = L.textRowHeight;
+            foreach (var state in LookStates)
+                labelHeight = Mathf.Max(labelHeight, Text.CalcHeight(("MBBS_Look_State_" + state).Translate(), cell));
+            Text.Font = GameFont.Small;
+            var previewRow = listing.GetRect(h + labelHeight);
             for (int i = 0; i < LookStates.Length; i++)
             {
                 var r = new Rect(previewRow.x + (cell + L.footerGap) * i, previewRow.y, cell, h);
                 DrawLookPreview(r, key, LookStates[i]);
                 Text.Font = GameFont.Tiny;
                 Text.Anchor = TextAnchor.UpperCenter;
-                Widgets.Label(new Rect(r.x, r.yMax, r.width, L.textRowHeight), ("MBBS_Look_State_" + LookStates[i]).Translate());
+                Widgets.Label(new Rect(r.x, r.yMax, r.width, labelHeight), ("MBBS_Look_State_" + LookStates[i]).Translate());
                 Text.Anchor = TextAnchor.UpperLeft;
                 Text.Font = GameFont.Small;
             }
@@ -213,7 +219,7 @@ namespace MainButtonBarSystem
             var icon = def == null ? null : ButtonPainter.EffectiveIcon(def, working.Get(key));
             bool iconLook = data.IconFor(key, Mathf.RoundToInt(MainButtonBarTuningDef.Current.behaviour.iconSize), out int size, out var iconAnchor, out var offset);
             var mode = def == null ? IconMode.Text : working.IconModeFor(working.Get(key));
-            if (iconLook && mode == IconMode.Default && icon != null) mode = IconMode.Icon;
+            // The preview cannot know whether another mod would add the label next to the icon on the bar.
             if (mode == IconMode.Default) mode = icon != null ? IconMode.Icon : IconMode.Text;
 
             var oldFont = Text.Font;

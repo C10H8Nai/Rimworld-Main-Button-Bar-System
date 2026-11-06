@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>{0} hittades: den styr fältet just nu, så ändringar här får effekt bara när denna mod har företräde.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>{0} hittades: denna mod har företräde, så den andra moddens effekt på fältet är avstängd.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>Detaljer under Avancerat.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0} ritar fältet längst ned, så inställningarna här har ingen effekt. Om du vill använda fältet från denna mod stänger du av ”Main bar” i den andra moddens inställningar eller placerar denna mod ovanför den i modlistan.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>{0} har också alternativet ”Main bar” påslaget: den placerar kontrollerna längst ned till höger och fönstren som om dess eget fält visades, så saker kan hamna fel. Vi rekommenderar att du stänger av ”Main bar” i den andra moddens inställningar.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>Denna mod har inga inställningar än, så den låter {0} sköta fältet längst ned. Om du vill använda fältet från denna mod ändrar du någon inställning här och stänger sedan av ”Main bar” även i {0}, annars försvinner tidskontrollerna, datumet och vädret längst ned till höger.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0} ligger ovanför denna mod i modlistan och ritar fältet längst ned, så inställningarna här har ingen effekt. Om du vill använda fältet från denna mod stänger du av ”Main bar” i {0} eller placerar denna mod ovanför den i modlistan.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0} har också ”Main bar” påslaget. Medan denna mod ritar fältet försvinner tidskontrollerna, datumet och vädret längst ned till höger, och vissa fönster öppnas lite förskjutna. Stäng av ”Main bar” i {0}.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>Stäng av ”Main bar”</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>Inställningen i {0} har ändrats och dess modinställningar har sparats.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>Inställningen i {0} har ändrats för den här sessionen, men dess modinställningar kunde inte sparas. Ändra den även i dess modinställningar.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>Inställningen i {0} kunde inte ändras. Ändra den i dess modinställningar.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>Kompatibilitet: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>Denna mod först</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>Denna mod ritar fältet. Effekten från {0} på fältet är avstängd; dess inställningar används bara som referensvärden.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@ och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconP
   <MBBS_Look_Color_1>Textfärg under musen</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>Textfärg när den är öppen</MBBS_Look_Color_2>
   <MBBS_Look_Icon>Ikon</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>En knapp vars ikonstorlek eller ikonposition har ändrats får sin ikon ritad av denna mod, så moddar som flyttar ikoner (som Vanilla Textures Expanded) påverkar den inte.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>En knapp vars ikonstorlek eller ikonposition har ändrats får sin ikon ritad av denna mod, på den plats som detta utseende anger. Om dess text visas styrs fortfarande av spelet och moddar som Vanilla Textures Expanded; förhandsvisningen visar alltid spelets eget sätt.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>Ikonstorlek: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>Ikonposition (bara ikon: var i knappen; ikon och text: till vänster eller höger om texten)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>Ikonförskjutning, vågrätt: {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@ Starta om spelet och aktivera modden i modlistan för att prova den; därifrån 
   <MBBS_ImportReport_NoList>Denna layout listar inte knapparna i spelet den skapades i (äldre version). Knappar den inte nämner behåller dina inställningar.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Temat {0} (från {1}) är inte installerat; tills dess används originalutseendet.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>Ett eget tema ovanpå ({0} knappar med egen stil).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>Visningsläget {0} (från {1}) är inte installerat; tills dess används originalfältet.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Importerade ikoner som du saknar: {0} ({1}). Lägg PNG-filerna i {2}; tills dess behåller de knapparna sin egen ikon.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Ikoner från moddar som du inte har: {0} ({1}). De knapparna behåller sin egen ikon.</MBBS_ImportReport_IconTexturesMissing>

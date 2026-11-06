@@ -64,8 +64,13 @@
   <MBBS_Compat_TheirsNotice>{0}を検出: 現在はそちらがバーを制御しているため,ここでの変更はこのMODを優先にしたときだけ反映されます.</MBBS_Compat_TheirsNotice>
   <MBBS_Compat_OursNotice>{0}を検出: このMODが優先されているため,そちらによるバーへの効果はオフになっています.</MBBS_Compat_OursNotice>
   <MBBS_Compat_SeeAdvanced>詳しくは「詳細」を参照してください.</MBBS_Compat_SeeAdvanced>
-  <MBBS_Notice_UIRethemed_TheyDraw>{0}が画面下部のバーを描画しているため,ここでの設定は反映されません.このMODのバーを使うには,そちらのMOD設定で「Main bar」をオフにするか,MODリストでこのMODをそちらより上に置いてください.</MBBS_Notice_UIRethemed_TheyDraw>
-  <MBBS_Notice_UIRethemed_BothOn>{0}の「Main bar」もオンになっています: そちらは自身のバーが表示されている前提で右下のコントロールやウィンドウの位置を配置するため,表示がずれることがあります.そちらのMOD設定で「Main bar」をオフにすることを推奨します.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_Untouched>このMODにはまだ設定がないため,画面下部のバーは{0}に任せています.このMODのバーを使うには,ここで何か設定を変更し,さらに{0}の「Main bar」もオフにしてください.オフにしないと,右下の時間操作・日付・天気が消えます.</MBBS_Notice_UIRethemed_Untouched>
+  <MBBS_Notice_UIRethemed_TheyDraw>{0}がMODリストでこのMODより上にあり,画面下部のバーを描画しているため,ここでの設定は反映されません.このMODのバーを使うには,{0}の「Main bar」をオフにするか,MODリストでこのMODをそちらより上に置いてください.</MBBS_Notice_UIRethemed_TheyDraw>
+  <MBBS_Notice_UIRethemed_BothOn>{0}の「Main bar」もオンになっています.このMODがバーを描画している間は,右下の時間操作・日付・天気が消え,一部のウィンドウが少しずれた位置で開きます.{0}の「Main bar」をオフにしてください.</MBBS_Notice_UIRethemed_BothOn>
+  <MBBS_Notice_UIRethemed_TurnOff>「Main bar」をオフにする</MBBS_Notice_UIRethemed_TurnOff>
+  <MBBS_Notice_TurnedOff>{0}の設定を変更し,MOD設定を保存しました.</MBBS_Notice_TurnedOff>
+  <MBBS_Notice_TurnedOffNotSaved>{0}の設定をこのセッションでは変更しましたが,MOD設定を保存できませんでした.そちらのMOD設定でも変更してください.</MBBS_Notice_TurnedOffNotSaved>
+  <MBBS_Notice_TurnOffFailed>{0}の設定を変更できませんでした.そちらのMOD設定で変更してください.</MBBS_Notice_TurnOffFailed>
   <MBBS_Compat_Header>互換性: {0}</MBBS_Compat_Header>
   <MBBS_Compat_Ours>このMODを優先</MBBS_Compat_Ours>
   <MBBS_Compat_Ours_Desc>このMODがバーを描画します.{0}によるバーへの効果はオフになり,その設定は参考値としてのみ使われます.</MBBS_Compat_Ours_Desc>
@@ -191,7 +196,7 @@
   <MBBS_Look_Color_1>マウスオーバー時のテキストの色</MBBS_Look_Color_1>
   <MBBS_Look_Color_2>開いているときのテキストの色</MBBS_Look_Color_2>
   <MBBS_Look_Icon>アイコン</MBBS_Look_Icon>
-  <MBBS_Look_IconNote>アイコンの大きさか位置を変更したボタンは,アイコンをこのMODが描画するため,アイコンを動かすMOD(Vanilla Textures Expandedなど)の影響を受けません.</MBBS_Look_IconNote>
+  <MBBS_Look_IconNote>アイコンの大きさか位置を変更したボタンは,アイコンをこのMODがこの見た目の指定位置に描画します.ラベルを表示するかどうかは,従来どおりゲームやVanilla Textures ExpandedなどのMODに従います.プレビューは常にゲーム本来の方式で表示されます.</MBBS_Look_IconNote>
   <MBBS_Look_IconSize>アイコンの大きさ: {0}px</MBBS_Look_IconSize>
   <MBBS_Look_IconAnchor>アイコンの位置(アイコンのみ: ボタン内のどこに置くか / アイコンとテキスト: テキストの左か右か)</MBBS_Look_IconAnchor>
   <MBBS_Look_IconOffsetX>アイコンのずらし(横): {0}px</MBBS_Look_IconOffsetX>
@@ -247,6 +252,7 @@
   <MBBS_ImportReport_NoList>この配置には,作成時のゲームのボタン一覧が記録されていません(旧バージョン).記載のないボタンは現在の設定を保持します.</MBBS_ImportReport_NoList>
   <MBBS_ImportReport_Theme>テーマ: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>テーマ {0}({1})がインストールされていません.インストールされるまではバニラの外観を使用します.</MBBS_ImportReport_ThemeMissing>
+  <MBBS_ImportReport_CustomTheme>その上にカスタムテーマがあります({0}個のボタンが独自のスタイル).</MBBS_ImportReport_CustomTheme>
   <MBBS_ImportReport_ModeMissing>表示モード {0}({1})がインストールされていません.インストールされるまではバニラのバーを使用します.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>手元にないインポートアイコン: {0}個({1}).PNGファイルを {2} に置いてください.それまでは各ボタン本来のアイコンを表示します.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>導入していないMODのアイコン: {0}個({1}).これらのボタンは本来のアイコンを表示します.</MBBS_ImportReport_IconTexturesMissing>
