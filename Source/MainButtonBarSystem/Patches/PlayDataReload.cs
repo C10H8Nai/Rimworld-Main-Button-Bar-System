@@ -20,6 +20,19 @@ namespace MainButtonBarSystem
         }
     }
 
+    /// <summary>
+    /// Before the game clears play data: theme projects' themes leave the def database first, because the game's clear
+    /// does not reach this mod's def type (see <see cref="ThemeProjectLoader.TakeOutBeforeReload"/>).
+    /// </summary>
+    [HarmonyPatch(typeof(PlayDataLoader), nameof(PlayDataLoader.ClearAllPlayData))]
+    public static class PlayDataLoader_ClearAllPlayData_Patch
+    {
+        public static void Prefix()
+        {
+            if (ButtonBaseline.Captured) ThemeProjects.BeforePlayDataClear();
+        }
+    }
+
     public static class PlayDataReload
     {
         public static void Refresh()

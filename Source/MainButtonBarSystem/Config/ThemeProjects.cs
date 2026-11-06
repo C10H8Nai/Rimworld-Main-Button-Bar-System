@@ -104,6 +104,14 @@ namespace MainButtonBarSystem
             ThemeProjectLoader.ForgetHidden();
         }
 
+        /// <summary>The game is about to clear and reload play data: see <see cref="ThemeProjectLoader.TakeOutBeforeReload"/>.</summary>
+        public static void BeforePlayDataClear()
+        {
+            foreach (var project in projects)
+                foreach (var def in project.Themes)
+                    if (def.IsFromInactiveProject) ThemeProjectLoader.TakeOutBeforeReload(def);
+        }
+
         private static void Scan()
         {
             string mods = GenFilePaths.ModsFolderPath;
