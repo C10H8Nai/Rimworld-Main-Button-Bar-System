@@ -465,7 +465,14 @@ namespace MainButtonBarSystem
                 ty += Text.LineHeight;
             }
             if (!theme.description.NullOrEmpty())
-                Widgets.Label(new Rect(tx, ty, text.xMax - tx, text.yMax - ty), theme.description);
+            {
+                var description = new Rect(tx, ty, text.xMax - tx, text.yMax - ty);
+                Widgets.Label(description, theme.description);
+                // The card has room for a few lines: a longer description is cut off (the Nai theme's layout advice is
+                // at its end), so the whole text is a tooltip on it.
+                if (Text.CalcHeight(theme.description, description.width) > description.height)
+                    TooltipHandler.TipRegion(description, theme.description);
+            }
             Text.Font = GameFont.Small;
             GUI.color = Color.white;
 
