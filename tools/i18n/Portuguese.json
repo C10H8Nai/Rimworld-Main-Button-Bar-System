@@ -303,7 +303,7 @@
       "MBBS_Starfarer.label": "viajante estelar",
       "MBBS_Starfarer.description": "Roxo espacial com placas do casco roxas, rebites ciano e uma linha ciano dos propulsores, nas cores da expansão Odyssey.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Tema de estilo anime nas cores de Nai: botões azul-marinho com contornos cinza-claro, linhas grafite e um brilho violeta, com uma ilustração de personagem na extremidade esquerda da barra."
+      "MBBS_Nai.description": "Tema pixel art com Nai: molduras ao estilo do jogo original e uma imagem de Nai dentro de cada botão principal. Nos botões com ícone, ela segura um objeto que combina com o botão (um projeto, um frasco, um estojo de primeiros socorros...); nos botões sem ícone, espreita por trás de um quadro negro onde está a etiqueta. Há imagens para os botões do jogo base, das expansões e de muitos mods; qualquer outro botão recebe o quadro negro."
     }
   }
 }

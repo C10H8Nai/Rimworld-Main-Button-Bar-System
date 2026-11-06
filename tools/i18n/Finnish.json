@@ -303,7 +303,7 @@
       "MBBS_Starfarer.label": "tähtienkulkija",
       "MBBS_Starfarer.description": "Avaruusvioletti, violetit runkolevyt, syaaniset niitit ja syaaninen moottorien valoviiva, Odyssey-laajennuksen väreissä.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Anime-tyylinen teema Nain väreissä: tummansiniset painikkeet harmaanvalkoisin reunuksin, grafiittiviivat ja violetti hehku sekä hahmokuvitus palkin vasemmassa päässä."
+      "MBBS_Nai.description": "Pikselitaideteema, jossa on Nai: alkuperäisen pelin tyyliset kehykset ja kuva Naista jokaisessa pääpainikkeessa. Kuvakkeellisissa painikkeissa hän pitää esillä painikkeeseen sopivaa esinettä (rakennuspiirros, pullo, lääkelaukku...); kuvakkeettomissa painikkeissa hän kurkistaa tekstin sisältävän taulun takaa. Kuvat on tehty peruspelin ja lisäosien painikkeille sekä monien modien painikkeille; kaikki muut painikkeet saavat taulun."
     }
   }
 }

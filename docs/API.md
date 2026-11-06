@@ -375,8 +375,9 @@ it at the anchors; `Stretch` fills the button, distorting it. A later entry for 
 
 Drawing order, for every button on the bar and every cell of the "More" drawer, in every state (disabled too): the
 picture, then the button atlas, then the label and the icon. So the atlas frames the picture: draw your button
-atlases as a frame with a transparent middle (`make_theme.py`: `"hollow": true` in the palette) or the picture is
-covered. The mouse-over and pressed looks stay on the frame; the picture is never tinted. With no button atlas of
+atlases as a frame with a transparent middle (`make_theme.py`: `"hollow": true` in the palette, or `"frame":
+"vanilla"` for vanilla-looking hollow frames with the vanilla button colour moved into the bar background) or the
+picture is covered. The mouse-over and pressed looks stay on the frame; the picture is never tinted. With no button atlas of
 its own, the theme's pictures sit under the game's (mostly opaque) button background, which shows little of them.
 The More button and the scroll arrows never get a picture.
 
@@ -394,7 +395,7 @@ In practice:
   buttons listed twice.
 - The player's decoration settings (show, opacity, size, offset) and background opacity do not affect button
   pictures.
-- With `make_theme.py`'s `hollow`, the scroll arrows are hollow too (they use the `button` atlas) and show the bar
+- With `make_theme.py`'s `hollow` or `"frame": "vanilla"`, the scroll arrows are hollow too (they use the `button` atlas) and show the bar
   background; they never get a picture. The More button keeps its fill.
 
 The preview the Appearance tab draws shows the background image, the buttons and their pictures, but no decorations
@@ -435,8 +436,9 @@ document. Additions raise the minor number of `MainButtonBarAPI.ApiVersion` (1.1
 
 This mod ships six themes made exactly this way, in `Defs/MainButtonBarSystem/BarAppearances.xml` with textures in
 `Textures/MainButtonBarSystem/Themes/`: `MBBS_Imperial`, `MBBS_Creed`, `MBBS_GeneLab`, `MBBS_Void` and
-`MBBS_Starfarer` use atlases only; `MBBS_Nai` adds a semi-transparent portrait behind the buttons (a decoration)
-and `labelActiveColor`. `docs/examples/ExampleTheme` shows every other illustration field: a stretched bar
+`MBBS_Starfarer` use atlases only; `MBBS_Nai` puts a pixel picture inside every main button (a shared
+`buttonImage` plus 77 `buttonImages` entries, pictures in `tools/themes/Nai/Buttons/`) with vanilla-style hollow frames,
+and sets `labelActiveColor`. `docs/examples/ExampleTheme` shows every other illustration field: a stretched bar
 background, decorations that appear under the mouse or in the drawer, and button pictures with hollow frames. Their textures are drawn by `tools/gen_theme_textures.py` from `tools/themes/<theme>.json`
 through the same `make_theme.py` a theme mod uses.
 
