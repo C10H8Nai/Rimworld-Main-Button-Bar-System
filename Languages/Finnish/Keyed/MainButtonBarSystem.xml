@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Perus</MBBS_View_Simple>
   <MBBS_View_Advanced>Edistynyt</MBBS_View_Advanced>
   <MBBS_ViewTip>Edistynyt-näkymässä näkyy lisää asetuksia: leveydet, kiinteät paikat, tekstin tasaus, pikanäppäimet ja yhteensopivuus. Valinta on yhteinen kaikille tallennuksille.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Modi: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Kaikki</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Näyttää vain yhden modin lisäämät painikkeet. Vetäminen ja Siirrä ylös / Siirrä alas siirtävät painiketta näytettyjen joukossa; muut pysyvät paikoillaan.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Näytä</MBBS_Col_Visible>
   <MBBS_Col_Icon>Kuvake</MBBS_Col_Icon>
   <MBBS_Col_Name>Nimi</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Painikkeiden väli: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Täytä näytön leveys</MBBS_FillScreen>
   <MBBS_FillScreenTip>Kun painikkeet mahtuvat, ne venytetään koko leveydelle.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Puolen leveyden painikkeet käyttävät koko leveyttä</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Jotkin painikkeet pyytävät peliltä puolet muiden leveydestä. Ota tämä käyttöön, niin ne saavat saman leveyden.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} näyttää parhaalta, kun painikkeet ovat vähintään {1}px leveitä; palkkisi voi tehdä niistä kapeampia.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} ehdottaa toisenlaista palkin asettelua.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Käytä ehdotettua asettelua</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Muuttaa näitä palkin asetuksia (Painikkeet-välilehti, Edistynyt; jokaisella on oma Oletus-painike):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Lukitse pelin Valikko-painike oikeaan reunaan</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Lukittua Valikko-painiketta ei voi piilottaa, siirtää eikä laittaa laatikkoon; sen voi vain nimetä uudelleen.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Pelin Valikko-painikkeen lukitus on avattu Edistynyt-näkymässä.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Teema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Teemat muuttavat palkin ja sen painikkeiden ulkoasua. Myös teemamodit, joiden riippuvuutena on Main Button Bar System, näkyvät täällä. Valinta tallennetaan tähän tallennukseen (tai päävalikossa malliin).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>tekijä: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Omat teemasi</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Pohjana {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Pohjana {0} (ei asennettu)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>”{0}” perustuu teemaan {1}, jota ei ole asennettu; se perustuu sen sijaan peruspeliin.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Korvataanko nykyinen oma ulkoasusi teemalla ”{0}”?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>”{0}” on nyt oma ulkoasusi. Säilytä se painamalla Tallenna.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Kopioi tämän oman teeman asetuksiisi: tallennus toimii edelleen, vaikka tiedosto poistettaisiin myöhemmin.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Nuolet näkyvät vain, kun painikkeet eivät mahdu. Kun ne mahtuvat, palkkia ei tarvitse vierittää.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Oletusarvo on jo käytössä.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Pääpainikkeet (tämän modin säilyttämät)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ ja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.</MBBS_Ico
   <MBBS_Look_Font_Tiny>Pieni</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Keskikoko</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Suuri</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Oma koko</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Tekstin koko: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Sama kuin kohdassa ”Kaikki painikkeet”</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Sama kuin teemassa</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Tekstin väri</MBBS_Look_Color_0>
@@ -208,15 +226,38 @@ ja paina Päivitä. Ne säilyvät siellä myös modin päivityksissä.</MBBS_Ico
   <MBBS_Look_Field_buttonMouseover>hiiri päällä</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>auki</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>ei käytössä</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} omalla ulkoasulla)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Palauta kaikki {0} seuraamaan kohtaa Kaikki painikkeet</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Kopioi tyyli</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Liitä tyyli</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Korvaa tämän ulkoasun kopioidulla.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Valitse...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Taustakuva</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Kuva painikkeen sisällä kehyksen alla. Täyttö, sijainti, läpinäkyvyys ja sisennys koskevat kuvaa, jonka tämä painike lopulta saa.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Kuva</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>ei mitään</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Täyttö</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Peitä (täytä ja rajaa)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Sovita (koko kuva)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Venytä</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Sijainti (puoli, jonka Peitä säilyttää, ja paikka, johon Sovita sen asettaa)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Peittävyys: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Sisennys: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Valitse kuva</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Teemojen kuvat</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Tuotuja kuvia ei vielä ole. Laita PNG-tiedostot kansioon
+{0}
+ja paina Päivitä. Ne säilyvät siellä modin päivityksissä.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Suurempi kuin {0}px: painikkeen taustana kulmat lakkaavat kasvamasta tässä koossa. Toimii silti.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Millään asennetulla teemalla ei ole omia painiketaustoja.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Sama kuin koko palkilla ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Tee järjestelymodi (valmis julkaistavaksi)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Avaa järjestelykansio</MBBS_OpenExportsFolder>
   <MBBS_OpenFolder>Avaa kansio</MBBS_OpenFolder>
-  <MBBS_Export_ModFolderDone>Modikansio luotu:
+  <MBBS_Export_ModFolderDone>Modin kansio luotu:
 {0}
 
-Käynnistä peli uudelleen ja ota modi käyttöön modilistassa kokeillaksesi sitä; sieltä voit myös ladata sen Workshopiin. PNG-kuvakkeesi ovat mukana.</MBBS_Export_ModFolderDone>
+Käynnistä peli uudelleen, ota se käyttöön modilistassa kokeillaksesi ja julkaise se sieltä Workshopiin. PNG-kuvakkeesi ja omien teemojen kuvat ovat mukana.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Vienti epäonnistui: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>leikepöytä</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Käynnistä peli uudelleen ja ota modi käyttöön modilistassa kokeillaksesi si
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Tekstissä on nimi, tekijä ja tieto siitä, mistä modista kukin painike tulee, joten tuoja näkee, mitä puuttuu.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Tallennetaan kansioon {0}. Muilta saadut tiedostot, jotka laitat sinne, näkyvät Tuo-valikossa.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Def oman modisi Defs-kansioon. PNG-muodossa tuodut kuvakkeet eivät ole mukana: käytä niitä varten toimintoa ”Tee järjestelymodi”.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Luo modin kansioon {1}: About.xml (vaatii Main Button Bar System -modin), järjestelyn ja sen käyttämät PNG-kuvakkeet. Tilaajat löytävät sen Tuo-valikosta.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Def oman modisi Defs-kansioon. PNG:nä tuotuja kuvakkeita ja omien teemojen kuvia ei oteta mukaan: käytä siihen kohtaa ”Tee järjestelymodi”.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Luo modin kansioon {1}: About.xml (vaatii Main Button Bar System -modin), järjestelyn sekä sen käyttämät PNG-kuvakkeet ja omien teemojen kuvat. Tilaajat löytävät sen Tuo-valikosta.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Tallennetaan omaan kansioonsa kansiossa {2} yhdessä käytettyjen PNG-kuvien kanssa. Se näkyy kohdassa Valmiit teemat; jaa se antamalla muille koko kansio.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Kopioi</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Tallenna</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Kopioi</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Luo</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Tallenna omana teemana</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Tallenna</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Tallenna omana teemana...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Oma teema tallennettu kansioon:
+{0}
+
+Se näkyy kohdassa Valmiit teemat. Jaa se antamalla muille koko kansio.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Vaihda ensin Oma teema -tilaan ja muuta jotakin.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Avaa omien teemojen kansio</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Oma teema: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Oma teema: {0} (tekijä {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Anna sille nimi.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Package ID koostuu vähintään kahdesta pisteillä yhdistetystä osasta. Jokainen osa alkaa kirjaimella A–Z, ja siinä saa olla vain kirjaimia A–Z (ei ä, ö, å), numeroita ja _ (esimerkiksi Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>{0} on jo toisen modin käytössä.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Käynnistä peli uudelleen ja ota modi käyttöön modilistassa kokeillaksesi si
   <MBBS_ImportReport_Theme>Teema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Teemaa {0} (modista {1}) ei ole asennettu; siihen asti käytetään alkuperäistä ulkoasua.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Sen päällä on oma teema ({0} painiketta, joilla on oma tyyli).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Omien teemojen kuvat, joita sinulla ei ole: {0} ({1}). Laita PNG-tiedostot kansioon {2}; siihen asti nämä painikkeet käyttävät teeman omia kuvia.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Näyttötilaa {0} (modista {1}) ei ole asennettu; siihen asti käytetään alkuperäistä palkkia.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Tuodut kuvakkeet, jotka sinulta puuttuvat: {0} ({1}). Laita PNG-tiedostot kansioon {2}; siihen asti nämä painikkeet käyttävät omaa kuvakettaan.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Kuvakkeet modeista, joita sinulla ei ole: {0} ({1}). Nämä painikkeet käyttävät omaa kuvakettaan.</MBBS_ImportReport_IconTexturesMissing>

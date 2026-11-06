@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Senzill</MBBS_View_Simple>
   <MBBS_View_Advanced>Avançat</MBBS_View_Advanced>
   <MBBS_ViewTip>El mode Avançat mostra més opcions: amplades, posicions fixes, alineació del text, dreceres i compatibilitat. L’elecció es comparteix entre totes les partides.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Tots</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Mostra només els botons que afegeix un mod. Arrossegar i «Mou amunt» / «Mou avall» mouen un botó entre els mostrats; els altres es queden al seu lloc.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Mostra</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icona</MBBS_Col_Icon>
   <MBBS_Col_Name>Nom</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Espai entre botons: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Omple l’amplada de la pantalla</MBBS_FillScreen>
   <MBBS_FillScreenTip>Quan els botons hi caben, s’estiren per a ocupar tota l’amplada.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Els botons de mig ample usen l'ample complet</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Alguns botons demanen al joc la meitat de l'ample dels altres. Activa-ho perquè tinguin el mateix ample.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} es veu millor amb botons d'almenys {1}px d'ample; la teva barra pot fer-los més estrets.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} suggereix una disposició de barra diferent.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Aplica la disposició suggerida</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Canvia aquests ajustos de la barra (pestanya Botons, mode Avançat; cadascun conserva el seu botó Per defecte):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Bloca el botó Menú del joc a l’extrem dret</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Mentre està blocat, el botó Menú no es pot amagar, moure ni posar al calaix; només se li pot canviar el nom.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>El botó Menú del joc s’ha desblocat al mode Avançat.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Els temes canvien l’aspecte de la barra i dels seus botons. Els mods de temes que tenen Main Button Bar System com a dependència també apareixen aquí. L’elecció es desa amb aquesta partida (o amb la plantilla, si l’obriu des del menú principal).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>de {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Els teus temes personalitzats</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Parteix de {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Parteix de {0} (no instal·lat)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>«{0}» parteix del tema {1}, que no està instal·lat; en lloc d'això parteix del joc original.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Vols substituir el teu aspecte personalitzat actual per «{0}»?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>«{0}» ara és el teu aspecte personalitzat. Prem Desa per conservar-lo.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Copia aquest tema personalitzat als teus ajustos: la desada segueix funcionant encara que després se n'esborri el fitxer.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Les fletxes només apareixen quan els botons no hi caben. Mentre hi càpiguen, no cal desplaçar la barra.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Ja té el valor per defecte.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Botons principals (desats per aquest mod)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ i després premeu Actualitza. Hi continuaran encara que s’actualitzi el mod.</
   <MBBS_Look_Font_Tiny>Petita</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Mitjana</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Gran</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Mida personalitzada</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Mida del text: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Igual que «Tots els botons»</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Igual que el tema</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Color del text</MBBS_Look_Color_0>
@@ -208,15 +226,38 @@ i després premeu Actualitza. Hi continuaran encara que s’actualitzi el mod.</
   <MBBS_Look_Field_buttonMouseover>ratolí a sobre</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>obert</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>desactivat</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} amb aspecte propi)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Torna a fer que els {0} segueixin Tots els botons</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Copia l'estil</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Enganxa l'estil</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Substitueix aquest aspecte pel copiat.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Tria…</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Imatge de fons</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Una imatge dins del botó, sota el seu marc. El farciment, la posició, l'opacitat i el marge s'apliquen a la imatge que acabi tenint aquest botó.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Imatge</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>cap</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Farciment</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Cobreix (omple i retalla)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Ajusta (imatge sencera)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Estira</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Posició (el costat que conserva Cobreix, on la posa Ajusta)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Opacitat: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Marge: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Tria una imatge</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Imatges dels temes</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Encara no hi ha imatges importades. Posa fitxers PNG a
+{0}
+i prem Actualitza. Hi romanen quan s'actualitza el mod.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Més gran que {0}px: com a fons de botó, les cantonades deixen de créixer a aquesta mida. Tot i així funciona.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Cap tema instal·lat no té fons de botó propis.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Igual que tota la barra ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Crea un mod de disposició (a punt per a pujar)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Obre la carpeta de disposicions</MBBS_OpenExportsFolder>
   <MBBS_OpenFolder>Obre la carpeta</MBBS_OpenFolder>
-  <MBBS_Export_ModFolderDone>S’ha creat la carpeta del mod:
+  <MBBS_Export_ModFolderDone>S'ha creat la carpeta del mod:
 {0}
 
-Reinicieu el joc i activeu-lo a la llista de mods per a provar-lo; des d’allà també el podeu pujar al Workshop. Les vostres icones PNG hi són incloses.</MBBS_Export_ModFolderDone>
+Reinicia el joc, activa'l a la llista de mods per provar-lo i puja'l des d'allà al Workshop. Les teves icones PNG i imatges de tema personalitzat hi van incloses.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>No s’ha pogut exportar: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>porta-retalls</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Reinicieu el joc i activeu-lo a la llista de mods per a provar-lo; des d’allà
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>El text inclou el nom, l’autor i el mod d’on ve cada botó, perquè qui l’importi vegi què li falta.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Es desa a {0}. Els fitxers d’altres persones que hi poseu apareixen a «Importa».</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Una Def per a la carpeta Defs del vostre propi mod. Les icones importades com a PNG no s’hi inclouen: per a això, feu servir «Crea un mod de disposició».</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Crea un mod a {1}: About.xml (requereix Main Button Bar System), la disposició i les icones PNG que utilitza. Qui s’hi subscrigui la trobarà a «Importa».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Una definició per a la carpeta Defs del teu propi mod. Les icones i imatges de tema personalitzat que has importat com a PNG no s'hi inclouen: per a això fes servir «Crea un mod de disposició».</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Crea un mod a {1}: About.xml (requereix Main Button Bar System), la disposició i les icones PNG i imatges de tema personalitzat que utilitza. Qui s'hi subscrigui el trobarà a «Importa».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Es desa en una carpeta pròpia dins de {2}, amb les imatges PNG que fa servir. Apareix a Predefinits; per compartir-lo, dona als altres la carpeta sencera.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Copia</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Desa</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Copia</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Crea</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Desa com a tema personalitzat</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Desa</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Desa com a tema personalitzat…</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Tema personalitzat desat a:
+{0}
+
+Apareix a Predefinits. Comparteix la carpeta sencera per donar-lo als altres.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Passa primer a Tema personalitzat i canvia alguna cosa.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Obre la carpeta dels temes personalitzats</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Tema personalitzat: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Tema personalitzat: {0} (de {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Poseu-li un nom.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Un Package ID són dues o més parts unides per punts; cadascuna comença amb una lletra de la A a la Z i només fa servir lletres de la A a la Z (sense accents ni ç), xifres i _ (per exemple, Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>Un altre mod ja fa servir {0}.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Reinicieu el joc i activeu-lo a la llista de mods per a provar-lo; des d’allà
   <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>El tema {0} (de {1}) no està instal·lat; mentrestant s’utilitza l’aspecte original.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Un tema personalitzat a sobre ({0} botons amb estil propi).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Imatges de tema personalitzat que no tens: {0} ({1}). Posa els fitxers PNG a {2}; fins llavors aquests botons fan servir les imatges del propi tema.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>El mode de visualització {0} (de {1}) no està instal·lat; mentrestant s’utilitza la barra original.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Icones importades que no teniu: {0} ({1}). Poseu els fitxers PNG a {2}; mentrestant, aquests botons mantenen la seva pròpia icona.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Icones de mods que no teniu: {0} ({1}). Aquests botons mantenen la seva pròpia icona.</MBBS_ImportReport_IconTexturesMissing>

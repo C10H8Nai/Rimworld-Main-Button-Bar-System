@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Egyszerű</MBBS_View_Simple>
   <MBBS_View_Advanced>Haladó</MBBS_View_Advanced>
   <MBBS_ViewTip>A Haladó nézet több beállítást mutat: szélességek, rögzített helyek, feliratok igazítása, gyorsbillentyűk és kompatibilitás. A választás minden mentésre közös.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Mind</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Csak az egy mod által hozzáadott gombokat listázza. A húzás és a Feljebb / Lejjebb a listázott gombok között mozgat egy gombot; a többi a helyén marad.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Látható</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
   <MBBS_Col_Name>Név</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Gombok közötti távolság: {0}px</MBBS_Gap>
   <MBBS_FillScreen>A teljes képernyőszélesség kitöltése</MBBS_FillScreen>
   <MBBS_FillScreenTip>Ha a gombok elférnek, széthúzza őket a teljes szélességre.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>A félszélességű gombok is teljes szélességet használnak</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Egyes gombok a játéktól a többi fél szélességét kérik. Kapcsold be, hogy ugyanolyan szélesek legyenek.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>A(z) {0} legjobban legalább {1}px széles gombokkal mutat; a te sávod keskenyebbre is veheti őket.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>A(z) {0} más sávelrendezést javasol.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Javasolt elrendezés alkalmazása</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Ezeket a sávbeállításokat módosítja (Gombok fül, Haladó; mindegyiknek megvan a saját Alapérték gombja):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>A játék menügombjának zárolása a jobb szélen</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Amíg zárolva van, a menügomb nem rejthető el, nem mozgatható és nem tehető a fiókba; csak átnevezni lehet.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>A játék menügombjának zárolása fel lett oldva a Haladó nézetben.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Téma</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>A témák a gombsor és a gombjai kinézetét változtatják meg. Azok a témamodok is itt jelennek meg, amelyek függőségként jelölik meg a Main Button Bar System modot. A választás ezzel a mentéssel együtt tárolódik (a főmenüben pedig a sablonnal).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>készítette: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Saját témáid</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Kiindulás: {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Kiindulás: {0} (nincs telepítve)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>A(z) „{0}” a(z) {1} témából indul ki, ami nincs telepítve; ehelyett az alapjátékból indul ki.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Lecseréled a jelenlegi saját kinézetedet erre: „{0}”?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>A(z) „{0}” lett a saját kinézeted. A megtartáshoz nyomd meg a Mentés gombot.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Bemásolja ezt a saját témát a beállításaidba: a mentés akkor is működik, ha a fájlt később törlik.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>A nyilak csak akkor jelennek meg, ha a gombok nem férnek el. Amíg elférnek, a gombsort nem kell görgetni.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Már az alapérték van beállítva.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Főgombok (ez a mod tárolja)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ majd nyomd meg a „Frissítés” gombot. A mod frissítésekor is ott maradnak
   <MBBS_Look_Font_Tiny>Kicsi</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Közepes</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Nagy</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Egyéni méret</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Szövegméret: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Ugyanaz, mint a „Minden gomb”</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Ugyanaz, mint a témáé</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Szövegszín</MBBS_Look_Color_0>
@@ -208,15 +226,38 @@ majd nyomd meg a „Frissítés” gombot. A mod frissítésekor is ott maradnak
   <MBBS_Look_Field_buttonMouseover>egér felette</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>nyitva</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>letiltva</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} saját kinézettel)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Mind a(z) {0} visszaállítása a Minden gomb követésére</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Stílus másolása</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Stílus beillesztése</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Lecseréli ezt a kinézetet a másolttal.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Választás...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Háttérkép</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>A gomb belsejében, a kerete alatt megjelenő kép. A kitöltés, a pozíció, az átlátszatlanság és a behúzás arra a képre vonatkozik, amelyet ez a gomb végül használ.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Kép</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>nincs</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Kitöltés</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Fedés (kitölt és levág)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Illesztés (teljes kép)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Nyújtás</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Pozíció (a Fedés által megtartott oldal, illetve ahová az Illesztés teszi)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Átlátszatlanság: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Behúzás: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Kép kiválasztása</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Témák képei</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Még nincs importált kép. Tedd a PNG-fájlokat ide:
+{0}
+majd nyomd meg a Frissítés gombot. A mod frissítésekor is ott maradnak.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>{0}px-nél nagyobb: gombháttérként a sarkok ennél a méretnél nem nőnek tovább. Így is működik.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Egyik telepített témának sincs saját gombháttere.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Ugyanaz, mint a teljes gombsoré ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Elrendezés-mod készítése (feltöltésre kész)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Elrendezések mappájának megnyitása</MBBS_OpenExportsFolder>
   <MBBS_OpenFolder>Mappa megnyitása</MBBS_OpenFolder>
-  <MBBS_Export_ModFolderDone>A mod mappája elkészült:
+  <MBBS_Export_ModFolderDone>A modmappa létrejött:
 {0}
 
-Indítsd újra a játékot, és kapcsold be a modlistában a kipróbáláshoz; onnan fel is töltheted a Workshopra. A PNG-ikonjaid is benne vannak.</MBBS_Export_ModFolderDone>
+Indítsd újra a játékot, a kipróbáláshoz engedélyezd a modlistában, és onnan töltsd fel a Workshopra. A PNG-ikonjaid és a saját témák képei benne vannak.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Nem sikerült az exportálás: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>vágólap</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Indítsd újra a játékot, és kapcsold be a modlistában a kipróbáláshoz; o
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>A szöveg tartalmazza a nevet, a készítőt, és hogy melyik gomb melyik modból származik, így aki importálja, látja, mi hiányzik neki.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Mentés helye: {0}. A másoktól kapott fájlok, amelyeket ide teszel, megjelennek az „Importálás” menüben.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Egy Def a saját modod Defs mappájába. A PNG-ként importált ikonok nincsenek benne: ehhez használd az „Elrendezés-mod készítése” lehetőséget.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Modot hoz létre ebben a mappában: {1}. Tartalma: About.xml (a Main Button Bar System modot igényli), az elrendezés és az általa használt PNG-ikonok. A feliratkozók az „Importálás” menüben találják meg.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Egy def a saját modod Defs mappájához. A PNG-ként importált ikonok és saját témák képei nincsenek benne: ehhez használd az „Elrendezés-mod készítése” funkciót.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Modot hoz létre ebben a mappában: {1}. Tartalma: About.xml (a Main Button Bar System modot igényli), az elrendezés, valamint az általa használt PNG-ikonok és saját témák képei. A feliratkozók az „Importálás” menüben találják meg.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Saját mappába kerül ebben: {2}, a használt PNG-képekkel együtt. A Kész témák között jelenik meg; megosztáshoz add oda másoknak a teljes mappát.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Másolás</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Mentés</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Másolás</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Létrehozás</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Mentés saját témaként</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Mentés</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Mentés saját témaként...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>A saját téma mentve ide:
+{0}
+
+A Kész témák között jelenik meg. Oszd meg a teljes mappát, hogy másoknak is odaadhasd.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Először válts Egyéni témára, és módosíts valamit.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Saját témák mappájának megnyitása</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Saját téma: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Saját téma: {0} (készítette: {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Adj neki nevet.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>A Package ID legalább két, pontokkal összekapcsolt részből áll. Minden rész A–Z betűvel kezdődik, és csak A–Z betűket (ékezet nélkül), számjegyeket és _ jelet tartalmazhat (például Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>Ezt már egy másik mod használja: {0}.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Indítsd újra a játékot, és kapcsold be a modlistában a kipróbáláshoz; o
   <MBBS_ImportReport_Theme>Téma: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Ez a téma nincs telepítve: {0} (forrás: {1}); amíg nincs, az eredeti megjelenés látszik.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Egyéni téma fölötte ({0} gomb saját stílussal).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Saját témák képei, amelyek nincsenek meg nálad: {0} ({1}). Tedd a PNG-fájlokat ide: {2}; addig ezek a gombok a téma saját képeit használják.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Ez a megjelenítési mód nincs telepítve: {0} (forrás: {1}); amíg nincs, az eredeti gombsor látszik.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Importált ikonok, amelyek nincsenek meg neked: {0} ({1}). Tedd a PNG-fájlokat ide: {2}; addig ezek a gombok a saját ikonjukat mutatják.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Ikonok olyan modokból, amelyek nincsenek meg neked: {0} ({1}). Ezek a gombok a saját ikonjukat mutatják.</MBBS_ImportReport_IconTexturesMissing>

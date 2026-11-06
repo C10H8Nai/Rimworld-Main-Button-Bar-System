@@ -139,6 +139,15 @@
     <arrowRight>MainButtonBarSystem/Themes/Nai/ArrowRight</arrowRight>
     <drawerBackground>MainButtonBarSystem/Themes/Nai/Drawer</drawerBackground>
     <drawerSettingsIcon>MainButtonBarSystem/Themes/Nai/Gear</drawerSettingsIcon>
+    <!-- The pictures need about 120px: the Appearance tab offers this layout (applied only when the player presses its button). -->
+    <suggestedLayout>
+      <displayModes>
+        <li>Scroll</li>
+        <li>CollapseScroll</li>
+      </displayModes>
+      <buttonWidth>120</buttonWidth>
+      <halfButtonsFullWidth>true</halfButtonsFullWidth>
+    </suggestedLayout>
     <!-- The plain blackboard for every button not listed below. -->
     <buttonImage>
       <texture>MainButtonBarSystem/Themes/Nai/Btn_board_plain</texture>

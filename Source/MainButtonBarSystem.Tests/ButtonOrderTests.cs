@@ -74,5 +74,52 @@ namespace MainButtonBarSystem.Tests
             Assert.False(ButtonOrder.Step(list, 0, -1));
             Assert.False(ButtonOrder.Step(list, 2, 1));
         }
+
+        // A filtered view: the list has a, x, b, y, c and the view shows a, b, c.
+        private static List<string> Filtered() => new List<string> { "a", "x", "b", "y", "c" };
+        private static readonly string[] Shown = { "a", "b", "c" };
+
+        [Theory]
+        [InlineData(0, 2, new[] { "x", "b", "y", "a", "c" })]
+        [InlineData(2, 0, new[] { "c", "a", "x", "b", "y" })]
+        [InlineData(0, 3, new[] { "x", "b", "y", "c", "a" })]
+        [InlineData(1, 0, new[] { "b", "a", "x", "y", "c" })]
+        [InlineData(0, 1, new[] { "a", "x", "b", "y", "c" })]
+        [InlineData(1, 1, new[] { "a", "x", "b", "y", "c" })]
+        [InlineData(5, 0, new[] { "a", "x", "b", "y", "c" })]
+        public void ReorderShown_MovesAmongShownItems_OthersKeepTheirPlaces(int from, int to, string[] expected)
+        {
+            var list = Filtered();
+            ButtonOrder.ReorderShown(list, Shown, from, to);
+            Assert.Equal(expected, list);
+        }
+
+        [Fact]
+        public void StepShown_MovesPastTheShownNeighbour()
+        {
+            var up = Filtered();
+            Assert.True(ButtonOrder.StepShown(up, Shown, 1, -1));
+            Assert.Equal(new[] { "b", "a", "x", "y", "c" }, up);
+
+            var down = Filtered();
+            Assert.True(ButtonOrder.StepShown(down, Shown, 1, 1));
+            Assert.Equal(new[] { "a", "x", "y", "c", "b" }, down);
+
+            Assert.False(ButtonOrder.StepShown(Filtered(), Shown, 0, -1));
+            Assert.False(ButtonOrder.StepShown(Filtered(), Shown, 2, 1));
+        }
+
+        [Fact]
+        public void StepShown_WithEverythingShown_IsStep()
+        {
+            var all = new[] { "a", "b", "c" };
+            var up = new List<string>(all);
+            Assert.True(ButtonOrder.StepShown(up, all, 1, -1));
+            Assert.Equal(new[] { "b", "a", "c" }, up);
+
+            var down = new List<string>(all);
+            Assert.True(ButtonOrder.StepShown(down, all, 1, 1));
+            Assert.Equal(new[] { "a", "c", "b" }, down);
+        }
     }
 }

@@ -76,7 +76,7 @@ namespace MainButtonBarSystem
             {
                 Text.Anchor = TextAnchor.MiddleCenter;
                 GUI.color = Color.gray;
-                Widgets.Label(inner, "MBBS_IconPicker_Empty".Translate(ModPaths.IconsFolder));
+                Widgets.Label(inner, "MBBS_IconPicker_Empty".TranslateKeepCase(ModPaths.IconsFolder));
                 GUI.color = Color.white;
                 Text.Anchor = TextAnchor.UpperLeft;
             }

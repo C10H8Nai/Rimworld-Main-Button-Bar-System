@@ -62,6 +62,27 @@ namespace MainButtonBarSystem
         /// <summary>Image in the Appearance tab. Empty: a preview drawn from the textures above.</summary>
         public string preview;
 
+        /// <summary>
+        /// Bar layout the theme looks best with. Never applied by itself: while the bar differs from it, the Appearance
+        /// tab shows a hint and a button that applies it. Null: no suggestion.
+        /// </summary>
+        public SuggestedLayout suggestedLayout;
+
+        public class SuggestedLayout
+        {
+            /// <summary>
+            /// Display modes (BarDisplayModeDef defNames) that suit the theme; a bar in another mode switches to the first.
+            /// Modes that are not loaded are skipped. Empty: any mode.
+            /// </summary>
+            public List<string> displayModes;
+
+            /// <summary>Default and minimum button width are raised to at least this many pixels; 0: no width.</summary>
+            public int buttonWidth;
+
+            /// <summary>Half-width buttons (MainButtonDef.minimized) get the full width too.</summary>
+            public bool halfButtonsFullWidth;
+        }
+
         /// <summary>How <see cref="barBackground"/> fills the bar: Atlas (nine-slice, the default), Tile, Stretch, Fit or Cover.</summary>
         public BackgroundFit barBackgroundFit = BackgroundFit.Atlas;
 
@@ -268,6 +289,7 @@ namespace MainButtonBarSystem
                 yield return "workerClass must derive from " + nameof(BarAppearanceWorker);
             if (barBackgroundTileScale <= 0f) yield return nameof(barBackgroundTileScale) + " must be positive";
             if (drawerBackgroundTileScale <= 0f) yield return nameof(drawerBackgroundTileScale) + " must be positive";
+            if (suggestedLayout != null && suggestedLayout.buttonWidth < 0) yield return "suggestedLayout.buttonWidth must not be negative";
             if (buttonImage != null)
             {
                 foreach (var e in buttonImage.ConfigErrors(-1)) yield return e;
@@ -322,6 +344,12 @@ namespace MainButtonBarSystem
 
         /// <summary>Label font for one button; null keeps the game's.</summary>
         public virtual GameFont? LabelFontFor(MainButtonDef button) => null;
+
+        /// <summary>
+        /// Label size in pixels for one button, applied to the font from <see cref="LabelFontFor"/> (or the game's);
+        /// 0 keeps that font's own size.
+        /// </summary>
+        public virtual int LabelFontSizeFor(MainButtonDef button) => 0;
 
         /// <summary>
         /// Icon size and placement for one button. True when changed: this mod then draws that button's icon itself
@@ -465,8 +493,13 @@ namespace MainButtonBarSystem
         public virtual void DrawButtonImage(Rect rect, BarButtonImage image)
         {
             if (image == null) return;
-            var tex = def.Tex(image.texture);
-            if (tex == null) return;
+            DrawButtonImageTexture(rect, image, def.Tex(image.texture));
+        }
+
+        /// <summary><see cref="DrawButtonImage"/> with the texture already found (a custom look's imported PNG has no texture path).</summary>
+        protected static void DrawButtonImageTexture(Rect rect, BarButtonImage image, Texture2D tex)
+        {
+            if (image == null || tex == null) return;
             // Whole pixels, like the atlas drawn over it (DrawAtlas rounds its rect), so no sliver shows past the frame.
             var rounded = rect.Rounded();
             var area = image.inset > 0f ? rounded.ContractedBy(image.inset) : rounded;
@@ -628,6 +661,9 @@ namespace MainButtonBarSystem
         /// <summary>Label font of the button being drawn; null for the tuning def's.</summary>
         internal static GameFont? ActiveFont { get; private set; }
 
+        /// <summary>Label size in pixels of the button being drawn; 0 keeps the font's own size.</summary>
+        internal static int ActiveFontSize { get; private set; }
+
         /// <summary>Icon size of a custom look for the button being drawn; negative for the tuning def's.</summary>
         internal static float ActiveIconSize { get; private set; } = -1f;
 
@@ -661,6 +697,7 @@ namespace MainButtonBarSystem
 
             // A custom look can align, size and place per button (design spec 2026-11-05 §4.8, 4.9).
             GameFont? font = null;
+            int fontSize = 0;
             bool iconLook = false;
             float iconSize = 0f;
             var anchor = Core.IconAnchor.Default;
@@ -670,6 +707,7 @@ namespace MainButtonBarSystem
                 var ownAlign = theme.LabelAlignFor(def);
                 if (ownAlign != LabelAlign.Default) align = ownAlign;
                 font = theme.LabelFontFor(def);
+                fontSize = theme.LabelFontSizeFor(def);
                 iconLook = theme.IconLookFor(def, out iconSize, out anchor, out offset);
             }
             // Squeezed by other buttons' widths (equal split): an icon or label would spill over the neighbours.
@@ -690,6 +728,7 @@ namespace MainButtonBarSystem
 
             ActiveAlign = align;
             ActiveFont = font;
+            ActiveFontSize = fontSize;
             ActiveIconSize = iconLook ? iconSize : -1f;
             ActiveIconAnchor = anchor;
             ActiveIconOffset = iconLook ? offset : Vector2.zero;
@@ -749,6 +788,7 @@ namespace MainButtonBarSystem
                 ActiveIconFollowsGame = false;
                 ActiveBlank = false;
                 ActiveFont = null;
+                ActiveFontSize = 0;
                 ActiveIconSize = -1f;
                 ActiveIconAnchor = Core.IconAnchor.Default;
                 ActiveIconOffset = Vector2.zero;
@@ -879,17 +919,48 @@ namespace MainButtonBarSystem
             DrawLabel(area, label, labelColor ?? Color.white, anchor, Mouse.IsOver(rect));
         }
 
-        internal static void DrawLabel(Rect rect, string label, Color color, TextAnchor anchor, bool shifted)
+        /// <summary>Width of <paramref name="label"/> in <paramref name="font"/> at <paramref name="size"/> pixels (0: the font's own size).</summary>
+        internal static float LabelWidth(string label, GameFont font, int size)
+        {
+            var oldFont = Text.Font;
+            Text.Font = font;
+            var style = Text.CurFontStyle;
+            int oldSize = style.fontSize;
+            if (size > 0) style.fontSize = size;
+            try
+            {
+                return Text.CalcSize(label).x;
+            }
+            finally
+            {
+                style.fontSize = oldSize;
+                Text.Font = oldFont;
+            }
+        }
+
+        internal static void DrawLabel(Rect rect, string label, Color color, TextAnchor anchor, bool shifted) =>
+            DrawLabel(rect, label, color, anchor, shifted, ActiveFont ?? B.labelFont, ActiveFontSize);
+
+        /// <summary>A label in <paramref name="font"/> at <paramref name="fontSize"/> pixels (0: the font's own size); the Appearance tab's preview.</summary>
+        internal static void DrawLabel(Rect rect, string label, Color color, TextAnchor anchor, bool shifted, GameFont font, int fontSize)
         {
             var oldAnchor = Text.Anchor;
             var oldColor = GUI.color;
             var oldFont = Text.Font;
             bool oldWrap = Text.WordWrap;
+            GUIStyle sized = null;
+            int oldSize = 0;
             try
             {
                 Text.Anchor = anchor;
                 Text.WordWrap = false;
-                Text.Font = ActiveFont ?? B.labelFont;
+                Text.Font = font;
+                if (fontSize > 0)
+                {
+                    sized = Text.CurFontStyle;
+                    oldSize = sized.fontSize;
+                    sized.fontSize = fontSize;
+                }
                 GUI.color = color;
                 float pad = B.labelSidePadding;
                 var r = new Rect(rect.x + pad, rect.y, Mathf.Max(0f, rect.width - pad * 2f), rect.height);
@@ -898,6 +969,7 @@ namespace MainButtonBarSystem
             }
             finally
             {
+                if (sized != null) sized.fontSize = oldSize;
                 Text.Anchor = oldAnchor;
                 GUI.color = oldColor;
                 Text.Font = oldFont;

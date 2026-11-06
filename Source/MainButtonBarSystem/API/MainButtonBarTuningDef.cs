@@ -61,6 +61,9 @@ namespace MainButtonBarSystem
 
             public int gap;
             public bool fillScreen;
+
+            /// <summary>Half-width buttons (MainButtonDef.minimized) get the same width as the others.</summary>
+            public bool minimizedFullWidth;
             public bool menuLocked;
 
             /// <summary>0 fits the "More (N)" label.</summary>
@@ -76,6 +79,9 @@ namespace MainButtonBarSystem
 
             /// <summary>0 uses the bar's default button width.</summary>
             public int drawerCellWidth;
+
+            /// <summary>Custom theme: size of the "custom size" font until the player changes it; 0 the game's normal font size.</summary>
+            public int lookFontSize;
 
             /// <summary>Theme illustration settings, applied on top of the theme's own values: show decorations at all.</summary>
             public bool decorationsShown;
@@ -111,7 +117,14 @@ namespace MainButtonBarSystem
             /// <summary>Shared by the X and Y offset sliders; may be negative.</summary>
             public IntRange decorationOffset;
 
-            /// <summary>Custom theme: icon size and offset (pixels).</summary>
+            /// <summary>Custom theme: label size of the "custom size" font (pixels).</summary>
+            public IntRange lookFontSize;
+
+            /// <summary>Custom theme: background picture opacity (percent) and inset (pixels).</summary>
+            public IntRange lookImageOpacity;
+            public IntRange lookImageInset;
+
+            /// <summary>Custom theme: icon size and offset (pixels). The size never goes past the button's height.</summary>
             public IntRange lookIconSize;
             public IntRange lookIconOffset;
             public IntRange backgroundOpacity;
@@ -265,6 +278,27 @@ namespace MainButtonBarSystem
             /// <summary>Custom theme: one cell of the 3×3 icon anchor picker.</summary>
             public float lookAnchorCell;
 
+            /// <summary>Space around each cell of the anchor picker, and the size of its dot as a share of a cell, kept this far from the edge.</summary>
+            public float lookAnchorCellGap;
+            public float lookAnchorDotFraction;
+            public float lookAnchorDotMargin;
+
+            /// <summary>Custom theme: the colour swatch (width, and its space above and below), the colour code box, the image thumbnails.</summary>
+            public float lookSwatchWidth;
+            public float lookSwatchInset;
+            public float lookHexFieldWidth;
+            public float lookThumbWidth;
+
+            /// <summary>Colours offered in the colour picker's palette.</summary>
+            public List<Color> lookColorPalette;
+
+            /// <summary>The colour picker window: the game's 600×450 is too short for its last row in CJK fonts.</summary>
+            public Vector2 lookColorPickerSize;
+
+            /// <summary>The image picker of custom themes.</summary>
+            public Vector2 imagePickerSize;
+            public float imagePickerCell;
+
             /// <summary>Number box to the right of each slider; this mod draws its own sliders so other slider mods do not overlap them.</summary>
             public float numberFieldWidth;
             public float sliderRailHeight;
@@ -277,6 +311,9 @@ namespace MainButtonBarSystem
             public float viewSwitchWidth;
             public Color viewSwitchSelectedColor;
             public Color viewSwitchColor;
+
+            /// <summary>The source mod drop-down next to the switch; never wider than the button list.</summary>
+            public float sourceFilterWidth;
 
             public Vector2 iconPickerSize;
             public float iconPickerCell;

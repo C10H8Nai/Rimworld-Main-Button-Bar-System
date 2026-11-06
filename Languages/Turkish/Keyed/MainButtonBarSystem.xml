@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Basit</MBBS_View_Simple>
   <MBBS_View_Advanced>Gelişmiş</MBBS_View_Advanced>
   <MBBS_ViewTip>Gelişmiş görünüm daha fazla seçenek gösterir: genişlikler, sabit konumlar, yazı hizalama, kısayollar ve uyumluluk. Bu seçim tüm kayıtlarda ortaktır.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Tümü</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Yalnızca bir modun eklediği butonları listeler. Sürükleme ve Yukarı / Aşağı, bir butonu listelenenler arasında taşır; diğerleri yerinde kalır.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Göster</MBBS_Col_Visible>
   <MBBS_Col_Icon>İkon</MBBS_Col_Icon>
   <MBBS_Col_Name>İsim</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Butonlar arası boşluk: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Ekran genişliğini doldur</MBBS_FillScreen>
   <MBBS_FillScreenTip>Butonlar sığdığında, tüm genişliği kullanacak şekilde uzatılır.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Yarım genişlikteki butonlar tam genişliği kullansın</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Bazı butonlar oyundan diğerlerinin yarı genişliğini ister. Hepsine aynı genişliği vermek için bunu aç.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0}, en az {1}px genişliğindeki butonlarla en iyi görünür; çubuğun bunları daha dar yapabilir.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} farklı bir çubuk düzeni öneriyor.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Önerilen düzeni uygula</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Şu çubuk ayarlarını değiştirir (Butonlar sekmesi, Gelişmiş; her birinin kendi Varsayılan butonu vardır):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Oyun menüsü butonunu sağ uca kilitle</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Kilitliyken menü butonu gizlenemez, taşınamaz veya çekmeceye konamaz; yalnızca yeniden adlandırılabilir.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Oyun menüsü butonunun kilidi Gelişmiş görünümde açıldı.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Temalar, barın ve butonlarının görünümünü değiştirir. Main Button Bar System'i bağımlılık olarak listeleyen tema modları da burada görünür. Seçim bu kayıtla birlikte saklanır (ana menüdeyken şablonla birlikte).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>{0} tarafından ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Özel temaların</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Başlangıç: {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Başlangıç: {0} (yüklü değil)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>"{0}", yüklü olmayan {1} temasından başlıyor; bunun yerine orijinal oyundan başlıyor.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Mevcut özel görünümün "{0}" ile değiştirilsin mi?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>"{0}" artık özel görünümün. Saklamak için Kaydet'e bas.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Bu özel temayı ayarlarına kopyalar: dosya sonradan silinse bile kayıt çalışmaya devam eder.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Oklar yalnızca butonlar sığmadığında görünür. Butonlar sığdığı sürece barın kaydırılması gerekmez.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Zaten varsayılan değerde.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Ana butonlar (bu mod saklar)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ Ardından "Yenile" butonuna bas. Mod güncellendiğinde de orada kalırlar.</MBB
   <MBBS_Look_Font_Tiny>Küçük</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Orta</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Büyük</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Özel boyut</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Yazı boyutu: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>"Tüm butonlar" ile aynı</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Temayla aynı</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Yazı rengi</MBBS_Look_Color_0>
@@ -208,6 +226,29 @@ Ardından "Yenile" butonuna bas. Mod güncellendiğinde de orada kalırlar.</MBB
   <MBBS_Look_Field_buttonMouseover>fare üstünde</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>açık</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>devre dışı</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} butonun kendi görünümü var)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Tüm {0} butonu yine Tüm butonlar'ı izleyecek şekilde sıfırla</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Stili kopyala</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Stili yapıştır</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Bu görünümü kopyalanan görünümle değiştirir.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Seç...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Arka plan resmi</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Butonun içinde, çerçevenin altında duran bir resim. Doldurma, konum, opaklık ve iç boşluk, bu butonun sonunda kullandığı resme uygulanır.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Resim</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>yok</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Doldurma</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Kapla (doldur ve kırp)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Sığdır (resmin tamamı)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Uzat</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Konum (Kapla'nın koruduğu taraf, Sığdır'ın yerleştirdiği yer)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Opaklık: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>İç boşluk: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Bir resim seç</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Tema resimleri</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Henüz içe aktarılmış resim yok. PNG dosyalarını şuraya koy:
+{0}
+sonra Yenile'ye bas. Mod güncellemelerinde orada kalırlar.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>{0}px'ten büyük: buton arka planı olarak köşeler bu boyutta büyümeyi bırakır. Yine de çalışır.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Yüklü temaların hiçbirinin kendi buton arka planı yok.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Tüm barla aynı ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Düzen modu oluştur (yüklemeye hazır)</MBBS_Export_ModFolder>
@@ -216,7 +257,7 @@ Ardından "Yenile" butonuna bas. Mod güncellendiğinde de orada kalırlar.</MBB
   <MBBS_Export_ModFolderDone>Mod klasörü oluşturuldu:
 {0}
 
-Oyunu yeniden başlat ve denemek için mod listesinden etkinleştir; oradan Steam Atölyesi'ne de yükleyebilirsin. PNG ikonların da dahil.</MBBS_Export_ModFolderDone>
+Oyunu yeniden başlat, denemek için mod listesinde etkinleştir ve oradan Workshop'a yükle. PNG ikonların ve özel tema resimlerin dahildir.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Dışa aktarılamadı: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>pano</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Oyunu yeniden başlat ve denemek için mod listesinden etkinleştir; oradan Stea
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Metin; ismi, yapımcıyı ve her butonun hangi moddan geldiğini içerir, böylece içe aktaran kişi neyin eksik olduğunu görür.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Şuraya kaydedilir: {0}. Başkalarından gelen ve buraya koyduğun dosyalar "İçe aktar" menüsünde görünür.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Kendi modunun Defs klasörü için bir Def. PNG olarak içe aktarılan ikonlar dahil değildir: bunun için "Düzen modu oluştur" seçeneğini kullan.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>{1} içinde bir mod oluşturur: About.xml (Main Button Bar System gerektirir), düzen ve kullandığı PNG ikonlar. Abone olanlar onu "İçe aktar" menüsünde bulur.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Kendi modunun Defs klasörü için bir def. PNG olarak içe aktardığın ikonlar ve özel tema resimleri dahil değildir: bunun için "Düzen modu oluştur"u kullan.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>{1} içinde bir mod oluşturur: About.xml (Main Button Bar System gerektirir), düzen ve kullandığı PNG ikonlar ile özel tema resimleri. Abone olanlar onu "İçe aktar" menüsünde bulur.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>{2} içinde kendi klasörüne, kullandığı PNG resimleriyle birlikte kaydedilir. Hazır temalar altında listelenir; paylaşmak için başkalarına klasörün tamamını ver.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Kopyala</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Kaydet</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Kopyala</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Oluştur</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Özel tema olarak kaydet</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Kaydet</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Özel tema olarak kaydet...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Özel tema şuraya kaydedildi:
+{0}
+
+Hazır temalar altında listelenir. Başkalarına vermek için klasörün tamamını paylaş.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Önce Özel tema'ya geç ve bir şeyi değiştir.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Özel temalar klasörünü aç</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Özel tema: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Özel tema: {0} ({1} tarafından)</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Bir isim ver.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Package ID, noktalarla birleştirilmiş iki veya daha fazla parçadan oluşur. Her parça A-Z arası bir harfle başlar ve yalnızca A-Z harfleri (Türkçe karakterler olmadan), rakamlar ve _ içerir (örneğin Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>{0} zaten başka bir mod tarafından kullanılıyor.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Oyunu yeniden başlat ve denemek için mod listesinden etkinleştir; oradan Stea
   <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>{0} teması ({1} modundan) yüklü değil; yüklenene kadar orijinal görünüm kullanılır.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Üstünde özel bir tema var ({0} butonun kendi stili var).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Sende olmayan özel tema resimleri: {0} ({1}). PNG dosyalarını {2} içine koy; o zamana kadar bu butonlar temanın kendi resimlerini kullanır.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>{0} görüntüleme modu ({1} modundan) yüklü değil; yüklenene kadar orijinal bar kullanılır.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Sende olmayan içe aktarılmış ikonlar: {0} ({1}). PNG dosyalarını şuraya koy: {2}; o zamana kadar bu butonlar kendi ikonlarını kullanır.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Sende olmayan modlardan gelen ikonlar: {0} ({1}). Bu butonlar kendi ikonlarını kullanır.</MBBS_ImportReport_IconTexturesMissing>

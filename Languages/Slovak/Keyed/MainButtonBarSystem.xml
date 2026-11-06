@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Základné</MBBS_View_Simple>
   <MBBS_View_Advanced>Pokročilé</MBBS_View_Advanced>
   <MBBS_ViewTip>Režim „Pokročilé“ zobrazí ďalšie možnosti: šírky, pevné pozície, zarovnanie popisov, klávesové skratky a kompatibilitu. Voľba platí pre všetky uložené hry.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Všetko</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Zobrazí len tlačidlá, ktoré pridáva jeden mod. Presúvanie a „Nahor“ / „Nadol“ presúvajú tlačidlo medzi zobrazenými; ostatné zostanú na mieste.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Zobraziť</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikona</MBBS_Col_Icon>
   <MBBS_Col_Name>Názov</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Medzera medzi tlačidlami: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Vyplniť šírku obrazovky</MBBS_FillScreen>
   <MBBS_FillScreenTip>Keď sa tlačidlá zmestia, roztiahnu sa na celú šírku.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Polovičné tlačidlá majú plnú šírku</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Niektoré tlačidlá žiadajú od hry polovičnú šírku oproti ostatným. Zapnutím dostanú rovnakú šírku.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} vyzerá najlepšie s tlačidlami širokými aspoň {1}px; váš panel ich môže zúžiť.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} odporúča iné rozloženie panela.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Použiť odporúčané rozloženie</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Zmení tieto nastavenia panela (karta Tlačidlá, Pokročilé; každé má vlastné tlačidlo Predvolené):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Zamknúť tlačidlo „Menu“ úplne vpravo</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Zamknuté tlačidlo „Menu“ sa nedá skryť, presunúť ani zbaliť do panelu „Viac“; dá sa len premenovať.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Tlačidlo „Menu“ bolo odomknuté v režime „Pokročilé“.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Motív</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Motívy menia vzhľad lišty a jej tlačidiel. Objavia sa tu aj mody s motívmi, ktoré majú Main Button Bar System ako závislosť. Voľba sa ukladá s touto uloženou hrou (alebo so šablónou, ak je okno otvorené z hlavného menu).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>autor: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Vaše vlastné motívy</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Vychádza z {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Vychádza z {0} (nenainštalované)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>„{0}“ vychádza z motívu {1}, ktorý nie je nainštalovaný; namiesto toho vychádza z pôvodnej hry.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Nahradiť váš súčasný vlastný vzhľad motívom „{0}“?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>„{0}“ je teraz váš vlastný vzhľad. Zachováte ho tlačidlom Uložiť.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Skopíruje tento vlastný motív do vášho nastavenia: uložená hra bude fungovať, aj keby sa súbor neskôr zmazal.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Šípky sa zobrazia, len keď sa tlačidlá nezmestia. Kým sa zmestia, lišta sa posúvať nemusí.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Už je to predvolená hodnota.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Tlačidlá dolnej lišty (uchováva tento mod)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ a stlačte „Obnoviť“. Pri aktualizáciách modu tam zostanú.</MBBS_IconPic
   <MBBS_Look_Font_Tiny>Malé</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Stredné</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Veľké</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Vlastná veľkosť</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Veľkosť textu: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Rovnako ako „Všetky tlačidlá“</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Rovnako ako motív</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Farba textu</MBBS_Look_Color_0>
@@ -208,15 +226,38 @@ a stlačte „Obnoviť“. Pri aktualizáciách modu tam zostanú.</MBBS_IconPic
   <MBBS_Look_Field_buttonMouseover>pod myšou</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>otvorené</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>neaktívne</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} s vlastným vzhľadom)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Vrátiť všetkých {0} na Všetky tlačidlá</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Kopírovať štýl</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Vložiť štýl</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Nahradí tento vzhľad skopírovaným.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Vybrať...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Obrázok na pozadí</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Obrázok vo vnútri tlačidla pod jeho rámikom. Vyplnenie, poloha, priehľadnosť a odsadenie platia pre obrázok, ktorý tlačidlo nakoniec použije.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Obrázok</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>žiadny</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Vyplnenie</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Vyplniť (s orezaním)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Vmestiť (celý obrázok)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Roztiahnuť</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Poloha (strana, ktorú ponechá Vyplniť, a miesto, kam obrázok umiestni Vmestiť)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Nepriehľadnosť: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Odsadenie: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Vybrať obrázok</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Obrázky motívov</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Zatiaľ žiadne importované obrázky. Vložte súbory PNG do
+{0}
+a stlačte Obnoviť. Aktualizácie modu ich nezmažú.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Väčší ako {0}px: ako pozadie tlačidla sa rohy od tejto veľkosti prestanú zväčšovať. Stále funguje.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Žiadny nainštalovaný motív nemá vlastné pozadia tlačidiel.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Rovnako ako celá lišta ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Vytvoriť mod s usporiadaním (pripravený na nahratie)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Otvoriť priečinok s usporiadaniami</MBBS_OpenExportsFolder>
   <MBBS_OpenFolder>Otvoriť priečinok</MBBS_OpenFolder>
-  <MBBS_Export_ModFolderDone>Priečinok modu bol vytvorený:
+  <MBBS_Export_ModFolderDone>Priečinok modu vytvorený:
 {0}
 
-Reštartujte hru a zapnite mod v zozname modov, aby ste ho vyskúšali; odtiaľ ho môžete aj nahrať do Workshopu. Vaše ikony PNG sú priložené.</MBBS_Export_ModFolderDone>
+Reštartujte hru, povoľte mod v zozname modov a vyskúšajte ho; odtiaľ ho nahráte aj na Workshop. Vaše ikony PNG a obrázky vlastného motívu sú zahrnuté.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Export sa nepodaril: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>schránka</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Reštartujte hru a zapnite mod v zozname modov, aby ste ho vyskúšali; odtiaľ 
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Text obsahuje názov, autora a informáciu, z ktorého modu pochádza každé tlačidlo, takže ten, kto ho importuje, uvidí, čo mu chýba.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Ukladá sa do {0}. Súbory od ostatných, ktoré tam vložíte, sa zobrazia v ponuke „Import“.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Def pre priečinok Defs vášho vlastného modu. Ikony importované ako PNG nie sú zahrnuté – na to použite „Vytvoriť mod s usporiadaním“.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Vytvorí mod v {1}: About.xml (vyžaduje Main Button Bar System), usporiadanie a ikony PNG, ktoré používa. Odberatelia ho nájdu v ponuke „Import“.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Def pre priečinok Defs vášho vlastného modu. Ikony a obrázky vlastného motívu importované ako PNG nie sú zahrnuté: na to použite „Vytvoriť mod s usporiadaním“.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Vytvorí mod v {1}: About.xml (vyžaduje Main Button Bar System), usporiadanie a ikony PNG i obrázky vlastného motívu, ktoré používa. Odberatelia ho nájdu v ponuke „Import“.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Uloží sa do vlastného priečinka v {2} spolu s použitými obrázkami PNG. Nájdete ho medzi Hotovými motívmi; na zdieľanie odovzdajte ostatným celý priečinok.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Kopírovať</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Uložiť</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Kopírovať</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Vytvoriť</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Uložiť ako vlastný motív</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Uložiť</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Uložiť ako vlastný motív...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Vlastný motív uložený do:
+{0}
+
+Nájdete ho medzi Hotovými motívmi. Na zdieľanie odovzdajte ostatným celý priečinok.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Najprv prepnite na Vlastný motív a niečo zmeňte.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Otvoriť priečinok vlastných motívov</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Vlastný motív: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Vlastný motív: {0} (od {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Zadajte názov.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Package ID tvoria aspoň dve časti spojené bodkami. Každá začína písmenom A–Z a obsahuje len písmená A–Z (bez diakritiky), číslice a _ (napríklad Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>{0} už používa iný mod.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Reštartujte hru a zapnite mod v zozname modov, aby ste ho vyskúšali; odtiaľ 
   <MBBS_ImportReport_Theme>Motív: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Motív {0} (z {1}) nie je nainštalovaný; dovtedy sa použije vzhľad ako v hre.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Navrch je vlastný motív ({0} tlačidiel s vlastným štýlom).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Obrázky vlastného motívu, ktoré nemáte: {0} ({1}). Vložte súbory PNG do {2}; dovtedy tieto tlačidlá použijú obrázky samotného motívu.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Režim zobrazenia {0} (z {1}) nie je nainštalovaný; dovtedy sa použije lišta ako v hre.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Importované ikony, ktoré nemáte: {0} ({1}). Vložte súbory PNG do {2}; dovtedy si tieto tlačidlá ponechajú svoju ikonu.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Ikony z modov, ktoré nemáte: {0} ({1}). Tieto tlačidlá si ponechajú svoju ikonu.</MBBS_ImportReport_IconTexturesMissing>

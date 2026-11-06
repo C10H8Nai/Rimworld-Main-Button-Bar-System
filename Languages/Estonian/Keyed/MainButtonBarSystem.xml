@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Lihtne</MBBS_View_Simple>
   <MBBS_View_Advanced>Täpsem</MBBS_View_Advanced>
   <MBBS_ViewTip>„Täpsem“ näitab rohkem valikuid: laiused, fikseeritud asukohad, teksti joondus, kiirklahvid ja ühilduvus. Valik on ühine kõigile salvestustele.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Modifikatsioon: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Kõik</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Näitab ainult ühe modifikatsiooni lisatud nuppe. Lohistamine ja Nihuta üles / Nihuta alla liigutavad nuppu näidatute seas; teised jäävad oma kohale.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Näita</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikoon</MBBS_Col_Icon>
   <MBBS_Col_Name>Nimi</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Nuppude vahe: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Täida ekraani laius</MBBS_FillScreen>
   <MBBS_FillScreenTip>Kui nupud mahuvad, venitatakse need üle kogu laiuse.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Poolelaiused nupud kasutavad täislaiust</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Mõned nupud küsivad mängult pool teiste laiusest. Lülita sisse, et anda neile sama laius.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} näeb parim välja vähemalt {1}px laiuste nuppudega; sinu riba võib need kitsamaks teha.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} soovitab teistsugust riba paigutust.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Rakenda soovitatud paigutus</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Muudab neid riba seadeid (vahekaart Nupud, Täpsem; igaühel on oma nupp Vaikimisi):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Lukusta mängu menüünupp paremasse serva</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Lukustatud menüünuppu ei saa peita, liigutada ega sahtlisse panna; seda saab ainult ümber nimetada.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Mängu menüünupp on vaates Täpsem lukust vabastatud.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Teema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Teemad muudavad riba ja selle nuppude välimust. Siin on ka teemamodifikatsioonid, mille sõltuvuseks on Main Button Bar System. Valik salvestatakse koos selle salvestusega (või peamenüüs koos malliga).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>autor: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Sinu oma teemad</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Alus: {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Alus: {0} (pole installitud)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>„{0}“ põhineb teemal {1}, mis pole installitud; selle asemel põhineb see põhimängul.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Kas asendada sinu praegune oma välimus teemaga „{0}“?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>„{0}“ on nüüd sinu oma välimus. Vajuta Salvesta, et see alles jätta.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Kopeerib selle oma teema sinu seadetesse: salvestus töötab edasi, isegi kui fail hiljem kustutatakse.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Nooled ilmuvad ainult siis, kui nupud ei mahu. Kuni need mahuvad, pole riba vaja kerida.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>See on juba vaikeväärtus.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Põhinupud (selle modifikatsiooni hoitud)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ ja vajuta „Värskenda“. Need jäävad sinna alles ka modifikatsiooni uuendam
   <MBBS_Look_Font_Tiny>Väike</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Keskmine</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Suur</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Oma suurus</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Teksti suurus: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Sama mis „Kõik nupud“</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Sama mis teemal</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Teksti värv</MBBS_Look_Color_0>
@@ -208,15 +226,38 @@ ja vajuta „Värskenda“. Need jäävad sinna alles ka modifikatsiooni uuendam
   <MBBS_Look_Field_buttonMouseover>hiir peal</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>avatud</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>keelatud</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} oma välimusega)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Pane kõik {0} tagasi järgima nuppu Kõik nupud</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Kopeeri stiil</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Kleebi stiil</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Asendab selle välimuse kopeeritud välimusega.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Vali...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Taustapilt</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Pilt nupu sees, selle raami all. Täitmine, asukoht, läbipaistmatus ja ääris kehtivad pildile, mille see nupp lõpuks saab.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Pilt</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>puudub</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Täitmine</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Kata (täida ja lõika)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Mahuta (kogu pilt)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Venita</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Asukoht (külg, mille Kata alles jätab, ja koht, kuhu Mahuta selle paneb)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Läbipaistmatus: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Ääris: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Vali pilt</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Teemade pildid</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Imporditud pilte veel pole. Pane PNG-failid kausta
+{0}
+ja vajuta Värskenda. Need jäävad sinna ka modifikatsiooni uuendamisel.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Suurem kui {0}px: nupu taustana lõpevad nurkade kasv sellel suurusel. See töötab ikkagi.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Ühelgi paigaldatud teemal pole omaenda nuputaustu.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Sama mis kogu ribal ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Loo paigutusmodifikatsioon (üleslaadimiseks valmis)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Ava paigutuste kaust</MBBS_OpenExportsFolder>
   <MBBS_OpenFolder>Ava kaust</MBBS_OpenFolder>
-  <MBBS_Export_ModFolderDone>Modifikatsiooni kaust loodud:
+  <MBBS_Export_ModFolderDone>Modifikatsiooni kaust loodi:
 {0}
 
-Taaskäivita mäng ja lülita modifikatsioon proovimiseks modifikatsioonide nimekirjas sisse; sealt saad selle ka Workshopi üles laadida. Sinu PNG-ikoonid on kaasas.</MBBS_Export_ModFolderDone>
+Taaskäivita mäng, luba see modifikatsioonide loendis, et seda proovida, ja laadi see sealt üles Workshopi. Sinu PNG-ikoonid ja oma teema pildid on kaasas.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Eksportimine ebaõnnestus: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>lõikelaud</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Taaskäivita mäng ja lülita modifikatsioon proovimiseks modifikatsioonide nime
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Tekstis on nimi, autor ja iga nupu päritolumodifikatsioon, nii et importija näeb, mis tal puudub.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Salvestatakse kausta {0}. Teistelt saadud failid, mille sinna paned, ilmuvad menüüsse „Impordi“.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Def sinu enda modifikatsiooni Defs-kausta jaoks. PNG-na imporditud ikoonid pole kaasas: selleks kasuta valikut „Loo paigutusmodifikatsioon“.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Loob kausta {1} modifikatsiooni: About.xml (sõltuvus: Main Button Bar System), paigutuse ja selle kasutatud PNG-ikoonid. Tellijad leiavad selle menüüst „Impordi“.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Def sinu enda modifikatsiooni Defs-kausta jaoks. PNG-na imporditud ikoonid ja oma teema pildid ei ole kaasas: selleks kasuta valikut „Loo paigutusmodifikatsioon“.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Loob kausta {1} modifikatsiooni: About.xml (sõltuvus: Main Button Bar System), paigutuse ning selle kasutatud PNG-ikoonid ja oma teema pildid. Tellijad leiavad selle menüüst „Impordi“.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Salvestatakse kaustas {2} oma kausta koos kasutatud PNG-piltidega. See on loendis Valmisteemad; jagamiseks anna teistele kogu kaust.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Kopeeri</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Salvesta</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Kopeeri</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Loo</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Salvesta oma teemana</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Salvesta</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Salvesta oma teemana...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Oma teema salvestati kausta:
+{0}
+
+See on loendis Valmisteemad. Jaga kogu kausta, et see teistele anda.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Lülitu esmalt teemale Oma teema ja muuda midagi.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Ava oma teemade kaust</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Oma teema: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Oma teema: {0} (autor {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Anna sellele nimi.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Package ID koosneb vähemalt kahest punktidega ühendatud osast. Iga osa algab tähega A–Z ja sisaldab ainult tähti A–Z (mitte õ, ä, ö, ü), numbreid ja _ (näiteks Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>{0} on juba teise modifikatsiooni kasutuses.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Taaskäivita mäng ja lülita modifikatsioon proovimiseks modifikatsioonide nime
   <MBBS_ImportReport_Theme>Teema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Teema {0} (modifikatsioonist {1}) pole paigaldatud; seni kasutatakse originaalset välimust.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Peal on kohandatud teema ({0} nuppu oma stiiliga).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Oma teema pildid, mida sul pole: {0} ({1}). Pane PNG-failid kausta {2}; seni kasutavad need nupud teema enda pilte.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Kuvarežiim {0} (modifikatsioonist {1}) pole paigaldatud; seni kasutatakse originaalset riba.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Imporditud ikoonid, mis sul puuduvad: {0} ({1}). Pane PNG-failid kausta {2}; seni kasutavad need nupud oma ikooni.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Ikoonid modifikatsioonidest, mida sul pole: {0} ({1}). Need nupud kasutavad oma ikooni.</MBBS_ImportReport_IconTexturesMissing>

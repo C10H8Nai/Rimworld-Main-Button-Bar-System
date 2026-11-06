@@ -15,6 +15,9 @@ namespace MainButtonBarSystem
         File,
         ModXml,
         ModFolder,
+
+        /// <summary>The Appearance tab's custom look, saved as a custom theme (no button list, no packageId).</summary>
+        Theme,
     }
 
     /// <summary>
@@ -93,7 +96,7 @@ namespace MainButtonBarSystem
             }
 
             GUI.color = Color.gray;
-            string hint = ("MBBS_ExportHint_" + target).Translate(ModPaths.ExportsFolder, GenFilePaths.ModsFolderPath);
+            string hint = ("MBBS_ExportHint_" + target).TranslateKeepCase(ModPaths.ExportsFolder, GenFilePaths.ModsFolderPath, ModPaths.ThemesFolder);
             float hintHeight = Text.CalcHeight(hint, inRect.width);
             Widgets.Label(new Rect(inRect.x, y, inRect.width, hintHeight), hint);
             GUI.color = Color.white;
@@ -129,12 +132,12 @@ namespace MainButtonBarSystem
 
         private string Validate()
         {
-            if ((target == ExportTarget.ModFolder || target == ExportTarget.ModXml) && name.NullOrEmpty())
+            if ((target == ExportTarget.ModFolder || target == ExportTarget.ModXml || target == ExportTarget.Theme) && name.NullOrEmpty())
                 return "MBBS_Export_NeedName".Translate();
             if (!NeedsPackageId) return null;
             if (!SharingNames.IsValidPackageId(packageId?.Trim())) return "MBBS_Export_BadPackageId".Translate();
             string id = packageId.Trim();
-            if (ModLister.GetModWithIdentifier(id, true) != null || exportedPackageIds.Contains(id)) return "MBBS_Export_PackageIdTaken".Translate(id);
+            if (ModLister.GetModWithIdentifier(id, true) != null || exportedPackageIds.Contains(id)) return "MBBS_Export_PackageIdTaken".TranslateKeepCase(id);
             return null;
         }
 
@@ -200,11 +203,11 @@ namespace MainButtonBarSystem
         {
             var meta = shared.meta;
             var config = shared.config;
-            if (!meta?.author.NullOrEmpty() == true) report.Add(("MBBS_ImportReport_By".Translate(meta.author), false));
+            if (!meta?.author.NullOrEmpty() == true) report.Add(("MBBS_ImportReport_By".TranslateKeepCase(meta.author), false));
             if (!meta?.description.NullOrEmpty() == true) report.Add((meta.description, false));
             if (!meta?.gameVersion.NullOrEmpty() == true)
                 report.Add(("MBBS_ImportReport_MadeWith".Translate(meta.gameVersion, meta.modVersion ?? "?"), false));
-            report.Add(("MBBS_ImportReport_Source".Translate(shared.source ?? "?"), false));
+            report.Add(("MBBS_ImportReport_Source".TranslateKeepCase(shared.source ?? "?"), false));
 
             var match = shared.Match();
             report.Add(("MBBS_ImportReport_Matched".Translate(match.Matched.Count), false));
@@ -228,20 +231,26 @@ namespace MainButtonBarSystem
             {
                 var theme = DefDatabase<BarAppearanceDef>.GetNamedSilentFail(config.appearance);
                 if (theme != null) report.Add(("MBBS_ImportReport_Theme".Translate(theme.LabelCap), false));
-                else report.Add(("MBBS_ImportReport_ThemeMissing".Translate(config.appearance, meta?.appearanceMod ?? "?"), true));
+                else report.Add(("MBBS_ImportReport_ThemeMissing".TranslateKeepCase(config.appearance, meta?.appearanceMod ?? "?"), true));
                 if (config.UsesCustomTheme && !config.customTheme.IsEmpty)
+                {
                     report.Add(("MBBS_ImportReport_CustomTheme".Translate(config.customTheme.buttons.Count(b => b != null && !b.IsEmpty)), false));
+                    // Spec 4.18: images the look uses that are not here; those buttons fall back to the theme's own.
+                    var missingImages = config.customTheme.ImageRefs().Distinct().Where(CustomThemes.IsMissing).Select(CustomThemes.ShortName).ToList();
+                    if (missingImages.Count > 0)
+                        report.Add(("MBBS_ImportReport_ThemeImagesMissing".TranslateKeepCase(missingImages.Count, Names(missingImages), ModPaths.ImagesFolder), true));
+                }
             }
             if ((config.displayMode ?? BarConfig.VanillaMode) != BarConfig.VanillaMode && DefDatabase<BarDisplayModeDef>.GetNamedSilentFail(config.displayMode) == null)
-                report.Add(("MBBS_ImportReport_ModeMissing".Translate(config.displayMode, meta?.displayModeMod ?? "?"), true));
+                report.Add(("MBBS_ImportReport_ModeMissing".TranslateKeepCase(config.displayMode, meta?.displayModeMod ?? "?"), true));
 
             var icons = config.overrides.Where(o => o != null && !o.icon.NullOrEmpty() && match.KnownToThem(o.defName)).ToList();
             var missingFiles = icons.Where(o => CustomIcons.IsFile(o.icon) && CustomIcons.IsMissing(o.icon)).Select(o => CustomIcons.FileName(o.icon)).Distinct().ToList();
             var missingTextures = icons.Where(o => !CustomIcons.IsFile(o.icon) && CustomIcons.IsMissing(o.icon)).Select(o => o.icon).Distinct().ToList();
             if (missingFiles.Count > 0)
-                report.Add(("MBBS_ImportReport_IconFilesMissing".Translate(missingFiles.Count, Names(missingFiles), ModPaths.IconsFolder), true));
+                report.Add(("MBBS_ImportReport_IconFilesMissing".TranslateKeepCase(missingFiles.Count, Names(missingFiles), ModPaths.IconsFolder), true));
             if (missingTextures.Count > 0)
-                report.Add(("MBBS_ImportReport_IconTexturesMissing".Translate(missingTextures.Count, Names(missingTextures)), true));
+                report.Add(("MBBS_ImportReport_IconTexturesMissing".TranslateKeepCase(missingTextures.Count, Names(missingTextures)), true));
         }
 
         private static string Label(string defName) => DefDatabase<MainButtonDef>.GetNamedSilentFail(defName)?.LabelCap.ToString() ?? defName;
@@ -256,7 +265,7 @@ namespace MainButtonBarSystem
         public override void DoWindowContents(Rect inRect)
         {
             Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(inRect.x, inRect.y, inRect.width - L.closeButtonSpace, L.headerHeight), "MBBS_ImportTitle".Translate(shared.Title).Truncate(inRect.width - L.closeButtonSpace));
+            Widgets.Label(new Rect(inRect.x, inRect.y, inRect.width - L.closeButtonSpace, L.headerHeight), "MBBS_ImportTitle".TranslateKeepCase(shared.Title).Truncate(inRect.width - L.closeButtonSpace));
             Text.Font = GameFont.Small;
 
             float row = L.rowHeight;

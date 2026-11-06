@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Einfach</MBBS_View_Simple>
   <MBBS_View_Advanced>Erweitert</MBBS_View_Advanced>
   <MBBS_ViewTip>„Erweitert“ zeigt weitere Optionen: Breiten, feste Positionen, Ausrichtung der Beschriftung, Tastenkürzel und Kompatibilität. Die Auswahl gilt für alle Spielstände.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Alle</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Zeigt nur die Schaltflächen, die eine Mod hinzufügt. Ziehen sowie Nach oben / Nach unten verschieben eine Schaltfläche unter den angezeigten; die übrigen behalten ihren Platz.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Anzeigen</MBBS_Col_Visible>
   <MBBS_Col_Icon>Symbol</MBBS_Col_Icon>
   <MBBS_Col_Name>Name</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Abstand zwischen Schaltflächen: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Volle Bildschirmbreite nutzen</MBBS_FillScreen>
   <MBBS_FillScreenTip>Wenn die Schaltflächen Platz haben, werden sie auf die ganze Breite gestreckt.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Halbbreite Schaltflächen nutzen die volle Breite</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Manche Schaltflächen verlangen vom Spiel die halbe Breite der anderen. Aktiviere dies, damit sie gleich breit sind.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} sieht mit Schaltflächen von mindestens {1}px Breite am besten aus; deine Leiste kann sie schmaler machen.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} schlägt ein anderes Leistenlayout vor.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Vorgeschlagenes Layout anwenden</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Ändert diese Leisteneinstellungen (Reiter Schaltflächen, Erweitert; jede behält ihre Schaltfläche Standard):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Menü-Schaltfläche des Spiels ganz rechts sperren</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Solange sie gesperrt ist, kann die Menü-Schaltfläche nicht ausgeblendet, verschoben oder in die Schublade gelegt werden; sie lässt sich nur umbenennen.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Die Menü-Schaltfläche des Spiels wurde unter „Erweitert“ entsperrt.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Design</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Designs ändern das Aussehen der Leiste und ihrer Schaltflächen. Design-Mods, die Main Button Bar System als Abhängigkeit angeben, erscheinen ebenfalls hier. Die Auswahl wird mit diesem Spielstand gespeichert (im Hauptmenü mit der Vorlage).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>von {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Deine eigenen Designs</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Basiert auf {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Basiert auf {0} (nicht installiert)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>„{0}“ basiert auf dem Design {1}, das nicht installiert ist; stattdessen basiert es auf dem Originalspiel.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Dein aktuelles eigenes Aussehen durch „{0}“ ersetzen?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>„{0}“ ist jetzt dein eigenes Aussehen. Klicke auf Speichern, um es zu behalten.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Kopiert dieses eigene Design in deine Einstellungen: Der Spielstand funktioniert weiter, auch wenn die Datei später gelöscht wird.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Pfeile erscheinen nur, wenn die Schaltflächen nicht hineinpassen. Solange sie passen, muss die Leiste nicht scrollen.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Bereits der Standardwert.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Haupttabs (von dieser Mod verwaltet)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ und klicke dann auf „Aktualisieren“. Sie bleiben dort auch bei Mod-Updates e
   <MBBS_Look_Font_Tiny>Klein</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Mittel</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Groß</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Eigene Größe</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Textgröße: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Wie „Alle Schaltflächen“</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Wie das Design</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Textfarbe</MBBS_Look_Color_0>
@@ -208,6 +226,29 @@ und klicke dann auf „Aktualisieren“. Sie bleiben dort auch bei Mod-Updates e
   <MBBS_Look_Field_buttonMouseover>Maus darüber</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>geöffnet</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>deaktiviert</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} mit eigenem Aussehen)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Alle {0} wieder auf Alle Schaltflächen zurücksetzen</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Stil kopieren</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Stil einfügen</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Ersetzt dieses Aussehen durch das kopierte.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Auswählen...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Hintergrundbild</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Ein Bild innerhalb der Schaltfläche, unter ihrem Rahmen. Füllung, Position, Deckkraft und Einzug gelten für das Bild, das diese Schaltfläche am Ende verwendet.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Bild</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>keins</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Füllung</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Abdecken (füllen und zuschneiden)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Einpassen (ganzes Bild)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Strecken</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Position (die Seite, die Abdecken behält, bzw. wo Einpassen es platziert)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Deckkraft: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Einzug: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Bild auswählen</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Design-Bilder</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Noch keine importierten Bilder. Lege PNG-Dateien in
+{0}
+und klicke dann auf Aktualisieren. Sie bleiben dort auch bei Mod-Updates erhalten.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Größer als {0}px: Als Schaltflächenhintergrund wachsen die Ecken ab dieser Größe nicht weiter. Es funktioniert trotzdem.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Kein installiertes Design hat eigene Schaltflächenhintergründe.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Wie die gesamte Leiste ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Anordnungs-Mod erstellen (bereit zum Hochladen)</MBBS_Export_ModFolder>
@@ -216,7 +257,7 @@ und klicke dann auf „Aktualisieren“. Sie bleiben dort auch bei Mod-Updates e
   <MBBS_Export_ModFolderDone>Mod-Ordner erstellt:
 {0}
 
-Starte das Spiel neu und aktiviere die Mod in der Mod-Liste, um sie auszuprobieren; von dort kannst du sie auch in den Workshop hochladen. Deine PNG-Symbole sind enthalten.</MBBS_Export_ModFolderDone>
+Starte das Spiel neu, aktiviere sie in der Mod-Liste zum Ausprobieren und lade sie von dort in den Workshop hoch. Deine PNG-Symbole und Bilder eigener Designs sind enthalten.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Export fehlgeschlagen: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>Zwischenablage</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Starte das Spiel neu und aktiviere die Mod in der Mod-Liste, um sie auszuprobier
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Der Text enthält Name, Autor und die Herkunfts-Mod jeder Schaltfläche, damit beim Importieren sichtbar ist, was fehlt.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Gespeichert in {0}. Dateien von anderen, die du dort ablegst, erscheinen unter „Importieren“.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Eine Def für den Defs-Ordner deiner eigenen Mod. Als PNG importierte Symbole sind nicht enthalten: Nutze dafür „Anordnungs-Mod erstellen“.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Erstellt eine Mod in {1}: About.xml (benötigt Main Button Bar System), die Anordnung und die verwendeten PNG-Symbole. Abonnenten finden sie unter „Importieren“.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Eine Def für den Defs-Ordner deiner eigenen Mod. Als PNG importierte Symbole und Bilder eigener Designs sind nicht enthalten: Nutze dafür „Anordnungs-Mod erstellen“.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Erstellt eine Mod in {1}: About.xml (benötigt Main Button Bar System), die Anordnung und die verwendeten PNG-Symbole und Bilder eigener Designs. Abonnenten finden sie unter „Importieren“.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Wird in einem eigenen Ordner in {2} gespeichert, mit den verwendeten PNG-Bildern. Es erscheint unter Fertige Designs; zum Teilen gib anderen den ganzen Ordner.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Kopieren</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Speichern</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Kopieren</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Erstellen</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Als eigenes Design speichern</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Speichern</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Als eigenes Design speichern...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Eigenes Design gespeichert in:
+{0}
+
+Es erscheint unter Fertige Designs. Gib anderen den ganzen Ordner, um es zu teilen.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Wechsle zuerst zu Eigenes Design und ändere etwas.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Ordner mit eigenen Designs öffnen</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Eigenes Design: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Eigenes Design: {0} (von {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Gib ihr einen Namen.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Eine Package ID besteht aus mindestens zwei durch Punkte verbundenen Teilen. Jeder Teil beginnt mit einem Buchstaben von A bis Z und enthält nur Buchstaben von A bis Z (ohne Umlaute), Ziffern und _ (zum Beispiel Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>{0} wird bereits von einer anderen Mod verwendet.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Starte das Spiel neu und aktiviere die Mod in der Mod-Liste, um sie auszuprobier
   <MBBS_ImportReport_Theme>Design: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Design {0} (aus {1}) ist nicht installiert; bis dahin wird das Original-Aussehen verwendet.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Darüber liegt ein eigenes Design ({0} Schaltflächen mit eigenem Stil).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Bilder eigener Designs, die du nicht hast: {0} ({1}). Lege die PNG-Dateien in {2}; bis dahin nutzen diese Schaltflächen die Bilder des Designs selbst.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Anzeigemodus {0} (aus {1}) ist nicht installiert; bis dahin wird die Original-Leiste verwendet.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Importierte Symbole, die dir fehlen: {0} ({1}). Lege die PNG-Dateien in {2} ab; bis dahin behalten diese Schaltflächen ihr eigenes Symbol.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Symbole aus Mods, die du nicht hast: {0} ({1}). Diese Schaltflächen behalten ihr eigenes Symbol.</MBBS_ImportReport_IconTexturesMissing>

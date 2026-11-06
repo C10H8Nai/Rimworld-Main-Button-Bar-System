@@ -13,12 +13,14 @@
       <minWidth>80</minWidth>
       <gap>0</gap>
       <fillScreen>true</fillScreen>
+      <minimizedFullWidth>false</minimizedFullWidth> <!-- true: buttons the game draws at half width get the full width -->
       <menuLocked>true</menuLocked>
       <moreButtonWidth>0</moreButtonWidth>       <!-- 0: fit the "More (N)" label -->
       <arrowWidth>24</arrowWidth>
       <wheelScrollPixels>25</wheelScrollPixels>  <!-- per unit of wheel movement -->
       <drawerColumns>0</drawerColumns>           <!-- 0: automatic -->
       <drawerCellWidth>0</drawerCellWidth>       <!-- 0: the bar's default button width -->
+      <lookFontSize>0</lookFontSize>             <!-- custom theme, "custom size" font: 0: the game's normal font size -->
       <!-- Theme illustrations (Appearance tab): applied on top of the theme's own values. -->
       <decorationsShown>true</decorationsShown>
       <decorationOpacity>100</decorationOpacity> <!-- percent -->
@@ -42,7 +44,10 @@
       <decorationOpacity>0~100</decorationOpacity>
       <decorationScale>25~300</decorationScale>
       <decorationOffset>-400~400</decorationOffset>
-      <lookIconSize>8~64</lookIconSize>          <!-- custom theme -->
+      <lookFontSize>8~40</lookFontSize>          <!-- custom theme, pixels -->
+      <lookIconSize>8~64</lookIconSize>          <!-- custom theme; never past the button's height (behaviour.buttonRectHeight) -->
+      <lookImageOpacity>0~100</lookImageOpacity> <!-- custom theme background picture, percent -->
+      <lookImageInset>0~18</lookImageInset>      <!-- pixels -->
       <lookIconOffset>-40~40</lookIconOffset>
       <backgroundOpacity>0~100</backgroundOpacity>
       <widthStep>5</widthStep>
@@ -120,6 +125,59 @@
       <themePreviewFraction>0.55</themePreviewFraction>
       <themePreviewButtons>4</themePreviewButtons>
       <lookAnchorCell>22</lookAnchorCell>         <!-- custom theme: one cell of the icon position picker -->
+      <lookAnchorCellGap>1</lookAnchorCellGap>
+      <lookAnchorDotFraction>0.33</lookAnchorDotFraction> <!-- the dot in each cell, share of the cell -->
+      <lookAnchorDotMargin>2</lookAnchorDotMargin>
+      <lookSwatchWidth>60</lookSwatchWidth>       <!-- custom theme: colour swatch -->
+      <lookSwatchInset>2</lookSwatchInset>
+      <lookHexFieldWidth>84</lookHexFieldWidth>   <!-- colour code box, "#RRGGBB" -->
+      <lookThumbWidth>60</lookThumbWidth>         <!-- background and picture thumbnails -->
+      <lookColorPalette>                          <!-- the colour picker's palette -->
+        <li>(1.00, 1.00, 1.00, 1)</li>
+        <li>(0.75, 0.75, 0.75, 1)</li>
+        <li>(0.50, 0.50, 0.50, 1)</li>
+        <li>(0.25, 0.25, 0.25, 1)</li>
+        <li>(0.00, 0.00, 0.00, 1)</li>
+        <li>(1.00, 0.00, 0.00, 1)</li>
+        <li>(1.00, 0.55, 0.55, 1)</li>
+        <li>(0.55, 0.00, 0.00, 1)</li>
+        <li>(1.00, 0.50, 0.00, 1)</li>
+        <li>(1.00, 0.78, 0.55, 1)</li>
+        <li>(0.55, 0.28, 0.00, 1)</li>
+        <li>(1.00, 1.00, 0.00, 1)</li>
+        <li>(1.00, 1.00, 0.55, 1)</li>
+        <li>(0.55, 0.55, 0.00, 1)</li>
+        <li>(0.50, 1.00, 0.00, 1)</li>
+        <li>(0.78, 1.00, 0.55, 1)</li>
+        <li>(0.28, 0.55, 0.00, 1)</li>
+        <li>(0.00, 1.00, 0.00, 1)</li>
+        <li>(0.55, 1.00, 0.55, 1)</li>
+        <li>(0.00, 0.55, 0.00, 1)</li>
+        <li>(0.00, 1.00, 0.50, 1)</li>
+        <li>(0.55, 1.00, 0.78, 1)</li>
+        <li>(0.00, 0.55, 0.28, 1)</li>
+        <li>(0.00, 1.00, 1.00, 1)</li>
+        <li>(0.55, 1.00, 1.00, 1)</li>
+        <li>(0.00, 0.55, 0.55, 1)</li>
+        <li>(0.00, 0.50, 1.00, 1)</li>
+        <li>(0.55, 0.78, 1.00, 1)</li>
+        <li>(0.00, 0.28, 0.55, 1)</li>
+        <li>(0.00, 0.00, 1.00, 1)</li>
+        <li>(0.55, 0.55, 1.00, 1)</li>
+        <li>(0.00, 0.00, 0.55, 1)</li>
+        <li>(0.50, 0.00, 1.00, 1)</li>
+        <li>(0.78, 0.55, 1.00, 1)</li>
+        <li>(0.28, 0.00, 0.55, 1)</li>
+        <li>(1.00, 0.00, 1.00, 1)</li>
+        <li>(1.00, 0.55, 1.00, 1)</li>
+        <li>(0.55, 0.00, 0.55, 1)</li>
+        <li>(1.00, 0.00, 0.50, 1)</li>
+        <li>(1.00, 0.55, 0.78, 1)</li>
+        <li>(0.55, 0.00, 0.28, 1)</li>
+      </lookColorPalette>
+      <imagePickerSize>(760,600)</imagePickerSize>
+      <lookColorPickerSize>(600,500)</lookColorPickerSize> <!-- the game's colour picker is 600x450, too short for CJK fonts -->
+      <imagePickerCell>72</imagePickerCell>
       <themeSettingsGap>12</themeSettingsGap>     <!-- space between the theme cards and the illustration settings below them -->
       <numberFieldWidth>64</numberFieldWidth>
       <sliderRailHeight>4</sliderRailHeight>
@@ -130,6 +188,7 @@
       <viewSwitchWidth>220</viewSwitchWidth>
       <viewSwitchSelectedColor>(0.30, 0.45, 0.65, 1)</viewSwitchSelectedColor>
       <viewSwitchColor>(0.18, 0.18, 0.18, 1)</viewSwitchColor>
+      <sourceFilterWidth>260</sourceFilterWidth> <!-- the source mod drop-down above the button list -->
       <iconPickerSize>(680,560)</iconPickerSize>
       <iconPickerCell>52</iconPickerCell>
       <exportDialogSize>(580,520)</exportDialogSize>

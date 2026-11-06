@@ -307,10 +307,10 @@ namespace MainButtonBarSystem
             if (OtherModSettings.Bool(o, "forceShow") == true) yield return "MBBS_Ref_ForceShow".Translate(mod);
             if (Custom(o, "customWidth", "width") is object w) yield return "MBBS_Ref_Width".Translate(mod, w.ToString());
             var name = OtherModSettings.String(o, "customName");
-            if (!name.NullOrEmpty()) yield return "MBBS_Ref_Name".Translate(mod, name);
+            if (!name.NullOrEmpty()) yield return "MBBS_Ref_Name".TranslateKeepCase(mod, name);
             if (Custom(o, "customHideIcon", "hideIcon") is bool hide && hide) yield return "MBBS_Ref_NoIcon".Translate(mod);
             var icon = OtherModSettings.String(o, "customIcon");
-            if (!icon.NullOrEmpty()) yield return "MBBS_Ref_Icon".Translate(mod, icon);
+            if (!icon.NullOrEmpty()) yield return "MBBS_Ref_Icon".TranslateKeepCase(mod, icon);
         }
 
         public override IEnumerable<string> BarReferenceValues()

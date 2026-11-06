@@ -84,6 +84,39 @@ namespace MainButtonBarSystem.Core
             list.Insert(to, item);
         }
 
+        /// <summary>
+        /// Applies a drag made in a filtered view of <paramref name="list"/>: <paramref name="shown"/> holds the items
+        /// the view shows, in list order, and <paramref name="from"/> / <paramref name="to"/> count shown items only
+        /// (ReorderableWidget convention). The item lands just before the shown item it was dropped before, or just
+        /// after the last shown item; items the view does not show keep their places.
+        /// </summary>
+        public static void ReorderShown<T>(IList<T> list, IReadOnlyList<T> shown, int from, int to)
+        {
+            if (from < 0 || from >= shown.Count) return;
+            to = Math.Max(0, Math.Min(to, shown.Count));
+            if (to == from || to == from + 1) return;
+
+            int listFrom = list.IndexOf(shown[from]);
+            int anchor = list.IndexOf(shown[to < shown.Count ? to : shown.Count - 1]);
+            if (listFrom < 0 || anchor < 0) return;
+            Reorder(list, listFrom, to < shown.Count ? anchor : anchor + 1);
+        }
+
+        /// <summary>
+        /// Moves a shown item past its shown neighbour, up (-1) or down (+1), in a filtered view as in
+        /// <see cref="ReorderShown{T}"/>. With every item shown this is <see cref="Step{T}"/>. Returns false at the ends.
+        /// </summary>
+        public static bool StepShown<T>(IList<T> list, IReadOnlyList<T> shown, int index, int delta)
+        {
+            int target = index + delta;
+            if (index < 0 || index >= shown.Count || target < 0 || target >= shown.Count) return false;
+            int listFrom = list.IndexOf(shown[index]);
+            int neighbour = list.IndexOf(shown[target]);
+            if (listFrom < 0 || neighbour < 0) return false;
+            Reorder(list, listFrom, delta < 0 ? neighbour : neighbour + 1);
+            return true;
+        }
+
         /// <summary>Moves one item up (-1) or down (+1), skipping nothing. Returns false at the ends.</summary>
         public static bool Step<T>(IList<T> list, int index, int delta)
         {

@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Απλές</MBBS_View_Simple>
   <MBBS_View_Advanced>Σύνθετες</MBBS_View_Advanced>
   <MBBS_ViewTip>Στις Σύνθετες εμφανίζονται περισσότερες επιλογές: πλάτη, σταθερές θέσεις, στοίχιση ετικετών, πλήκτρα συντόμευσης και συμβατότητα. Η επιλογή είναι κοινή για όλες τις αποθηκεύσεις.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Όλα</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Εμφανίζει μόνο τα κουμπιά που προσθέτει ένα mod. Η μεταφορά και τα Πάνω / Κάτω μετακινούν ένα κουμπί ανάμεσα στα εμφανιζόμενα· τα υπόλοιπα μένουν στη θέση τους.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Ορατό</MBBS_Col_Visible>
   <MBBS_Col_Icon>Εικονίδιο</MBBS_Col_Icon>
   <MBBS_Col_Name>Όνομα</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Απόσταση μεταξύ κουμπιών: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Κάλυψη όλου του πλάτους της οθόνης</MBBS_FillScreen>
   <MBBS_FillScreenTip>Όταν τα κουμπιά χωρούν, τεντώνονται ώστε να καλύπτουν όλο το πλάτος.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Τα κουμπιά μισού πλάτους χρησιμοποιούν το πλήρες πλάτος</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Ορισμένα κουμπιά ζητούν από το παιχνίδι μισό πλάτος σε σχέση με τα άλλα. Ενεργοποιήστε το για να έχουν το ίδιο πλάτος.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>Το {0} φαίνεται καλύτερο με κουμπιά πλάτους τουλάχιστον {1}px· η μπάρα σας μπορεί να τα στενέψει.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>Το {0} προτείνει διαφορετική διάταξη μπάρας.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Εφαρμογή προτεινόμενης διάταξης</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Αλλάζει αυτές τις ρυθμίσεις της μπάρας (καρτέλα Κουμπιά, Σύνθετες· καθεμία διατηρεί το κουμπί Προεπιλογή):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Κλείδωμα του κουμπιού μενού του παιχνιδιού στο δεξί άκρο</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Όσο είναι κλειδωμένο, το κουμπί μενού δεν μπορεί να κρυφτεί, να μετακινηθεί ή να μπει στο συρτάρι· μπορεί μόνο να μετονομαστεί.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Το κουμπί μενού του παιχνιδιού έχει ξεκλειδωθεί στις Σύνθετες.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Θέμα</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Τα θέματα αλλάζουν την εμφάνιση της γραμμής και των κουμπιών της. Εδώ εμφανίζονται επίσης mods θεμάτων που δηλώνουν το Main Button Bar System ως εξάρτηση. Η επιλογή αποθηκεύεται μαζί με αυτή την αποθήκευση (ή με το πρότυπο, στο κύριο μενού).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>από {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Τα δικά σας θέματα</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Ξεκινά από: {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Ξεκινά από: {0} (δεν είναι εγκατεστημένο)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>Το «{0}» ξεκινά από το θέμα {1}, που δεν είναι εγκατεστημένο· ξεκινά αντί γι' αυτό από το βασικό παιχνίδι.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Να αντικατασταθεί η τρέχουσα δική σας εμφάνιση με το «{0}»;</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>Το «{0}» είναι τώρα η δική σας εμφάνιση. Πατήστε Αποθήκευση για να την κρατήσετε.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Αντιγράφει αυτό το δικό σας θέμα στις ρυθμίσεις σας: η αποθήκευση συνεχίζει να λειτουργεί ακόμη κι αν το αρχείο διαγραφεί αργότερα.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Τα βέλη εμφανίζονται μόνο όταν τα κουμπιά δεν χωρούν. Όσο χωρούν, η γραμμή δεν χρειάζεται κύλιση.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Ήδη στην προεπιλεγμένη τιμή.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Βασικά κουμπιά (τα διατηρεί αυτό το mod)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@
   <MBBS_Look_Font_Tiny>Μικρό</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Μεσαίο</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Μεγάλο</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Δικό σας μέγεθος</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Μέγεθος κειμένου: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Ίδιο με «Όλα τα κουμπιά»</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Ίδιο με το θέμα</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Χρώμα κειμένου</MBBS_Look_Color_0>
@@ -208,15 +226,38 @@
   <MBBS_Look_Field_buttonMouseover>ποντίκι από πάνω</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>ανοιχτό</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>ανενεργό</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} με δική τους εμφάνιση)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Επαναφορά και των {0} στην ακολουθία των Όλων των κουμπιών</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Αντιγραφή στυλ</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Επικόλληση στυλ</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Αντικαθιστά αυτή την εμφάνιση με την αντιγραμμένη.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Επιλογή...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Εικόνα φόντου</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Μια εικόνα μέσα στο κουμπί, κάτω από το πλαίσιό του. Το γέμισμα, η θέση, η αδιαφάνεια και το εσωτερικό περιθώριο ισχύουν για όποια εικόνα καταλήξει να έχει αυτό το κουμπί.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Εικόνα</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>καμία</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Γέμισμα</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Κάλυψη (γέμισμα και περικοπή)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Προσαρμογή (ολόκληρη η εικόνα)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Τέντωμα</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Θέση (η πλευρά που κρατά η Κάλυψη, το σημείο που την τοποθετεί η Προσαρμογή)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Αδιαφάνεια: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Εσωτερικό περιθώριο: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Επιλογή εικόνας</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Εικόνες θεμάτων</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Δεν υπάρχουν ακόμη εισαγμένες εικόνες. Βάλτε αρχεία PNG στο
+{0}
+και πατήστε Ανανέωση. Παραμένουν εκεί μετά τις ενημερώσεις του mod.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Μεγαλύτερη από {0}px: ως φόντο κουμπιού, οι γωνίες σταματούν να μεγαλώνουν σε αυτό το μέγεθος. Λειτουργεί παρ' όλα αυτά.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Κανένα εγκατεστημένο θέμα δεν έχει δικά του φόντα κουμπιών.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Ίδιο με όλη τη γραμμή ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Δημιουργία mod διάταξης (έτοιμο για ανέβασμα)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Άνοιγμα φακέλου διατάξεων</MBBS_OpenExportsFolder>
   <MBBS_OpenFolder>Άνοιγμα φακέλου</MBBS_OpenFolder>
-  <MBBS_Export_ModFolderDone>Ο φάκελος του mod δημιουργήθηκε:
+  <MBBS_Export_ModFolderDone>Δημιουργήθηκε ο φάκελος του mod:
 {0}
 
-Επανεκκινήστε το παιχνίδι και ενεργοποιήστε το στη λίστα mod για να το δοκιμάσετε· από εκεί μπορείτε επίσης να το ανεβάσετε στο Workshop. Τα εικονίδια PNG σας περιλαμβάνονται.</MBBS_Export_ModFolderDone>
+Επανεκκινήστε το παιχνίδι, ενεργοποιήστε το στη λίστα mod για να το δοκιμάσετε και ανεβάστε το από εκεί στο Workshop. Τα εικονίδια PNG και οι εικόνες δικών σας θεμάτων περιλαμβάνονται.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Δεν ήταν δυνατή η εξαγωγή: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>πρόχειρο</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Το κείμενο περιλαμβάνει το όνομα, τον δημιουργό και από ποιο mod προέρχεται κάθε κουμπί, ώστε όποιος το εισαγάγει να βλέπει τι του λείπει.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Αποθηκεύεται στο {0}. Αρχεία άλλων που βάζετε εκεί εμφανίζονται στην «Εισαγωγή».</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Ένα Def για τον φάκελο Defs του δικού σας mod. Τα εικονίδια που εισαγάγατε ως PNG δεν περιλαμβάνονται· γι' αυτό χρησιμοποιήστε τη «Δημιουργία mod διάταξης».</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Δημιουργεί ένα mod στο {1}: About.xml (απαιτεί το Main Button Bar System), τη διάταξη και τα εικονίδια PNG που χρησιμοποιεί. Οι συνδρομητές τη βρίσκουν στην «Εισαγωγή».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Ένα def για τον φάκελο Defs του δικού σας mod. Τα εικονίδια και οι εικόνες δικών σας θεμάτων που εισάγατε ως PNG δεν περιλαμβάνονται· για αυτά χρησιμοποιήστε «Δημιουργία mod διάταξης».</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Δημιουργεί ένα mod στο {1}: About.xml (απαιτεί το Main Button Bar System), τη διάταξη και τα εικονίδια PNG και τις εικόνες δικών σας θεμάτων που χρησιμοποιεί. Οι συνδρομητές τη βρίσκουν στην «Εισαγωγή».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Αποθηκεύεται σε δικό του φάκελο στο {2}, μαζί με τις εικόνες PNG που χρησιμοποιεί. Εμφανίζεται στα Έτοιμα θέματα· για να το μοιραστείτε, δώστε στους άλλους ολόκληρο τον φάκελο.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Αντιγραφή</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Αποθήκευση</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Αντιγραφή</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Δημιουργία</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Αποθήκευση ως δικό σας θέμα</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Αποθήκευση</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Αποθήκευση ως δικό σας θέμα...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Το δικό σας θέμα αποθηκεύτηκε στο:
+{0}
+
+Εμφανίζεται στα Έτοιμα θέματα. Μοιραστείτε ολόκληρο τον φάκελο για να το δώσετε σε άλλους.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Αλλάξτε πρώτα σε Δικό σας θέμα και τροποποιήστε κάτι.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Άνοιγμα φακέλου δικών σας θεμάτων</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Δικό σας θέμα: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Δικό σας θέμα: {0} (από {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Δώστε της ένα όνομα.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Ένα Package ID αποτελείται από δύο ή περισσότερα μέρη ενωμένα με τελείες. Κάθε μέρος ξεκινά με λατινικό γράμμα και περιέχει μόνο λατινικά γράμματα, ψηφία και _ (για παράδειγμα Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>Το {0} χρησιμοποιείται ήδη από άλλο mod.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@
   <MBBS_ImportReport_Theme>Θέμα: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Το θέμα {0} (από {1}) δεν είναι εγκατεστημένο· μέχρι τότε χρησιμοποιείται η αρχική εμφάνιση.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Ένα προσαρμοσμένο θέμα από πάνω ({0} κουμπιά με δικό τους στυλ).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Εικόνες δικών σας θεμάτων που δεν έχετε: {0} ({1}). Βάλτε τα αρχεία PNG στο {2}· μέχρι τότε αυτά τα κουμπιά χρησιμοποιούν τις εικόνες του ίδιου του θέματος.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Η λειτουργία εμφάνισης {0} (από {1}) δεν είναι εγκατεστημένη· μέχρι τότε χρησιμοποιείται η αρχική γραμμή.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Εισαγμένα εικονίδια που δεν έχετε: {0} ({1}). Βάλτε τα αρχεία PNG στο {2}· μέχρι τότε αυτά τα κουμπιά κρατούν το δικό τους εικονίδιο.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Εικονίδια από mods που δεν έχετε: {0} ({1}). Αυτά τα κουμπιά κρατούν το δικό τους εικονίδιο.</MBBS_ImportReport_IconTexturesMissing>

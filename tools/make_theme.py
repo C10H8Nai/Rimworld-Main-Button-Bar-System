@@ -30,6 +30,9 @@
 ##   buttonImage     選填，每顆主按鈕的背景圖（畫在按鈕 atlas 底下）：file、placeholder 或 source、fit（Cover / Fit /
 ##                   Stretch；Atlas、Tile 視同 Stretch）、anchor、verticalAnchor（Top / Center / Bottom）、opacity、inset
 ##   buttonImages    選填清單，指定按鈕的背景圖，欄位同上再加 button（MainButtonDef 的 defName，例 "Architect"）
+##   suggestedLayout 選填，主題建議的版面（外觀分頁提示，玩家按下才套用）：displayModes（顯示方式 defName 清單，
+##                   目前的不在清單裡就換成第一個）、buttonWidth（預設和最小按鈕寬度至少這麼寬，0 不管）、
+##                   halfButtonsFullWidth（半格按鈕也用完整寬度，布林）
 ##   mod             只有完整模組需要：packageId、name、texturesRoot（Textures/ 底下的資料夾）、supportedVersions
 ##   translations    {"ChineseTraditional": {"label": "…", "description": "…"}, …}
 ##   gearSource      選填，齒輪圖示的來源 PNG；省略時找本模組的 Textures/MainButtonBarSystem/UI/Gear.png
@@ -81,6 +84,7 @@
 ## V1.3：2026-11-04  按鈕背景圖：JSON 的 buttonImage／buttonImages（寫進 Defs、產貼圖、驗證、預覽條先畫圖再畫框）；
 ##                   palette 的 hollow（按鈕 atlas 不填底色）
 ## V1.4：2026-11-05  palette 的 frame＝vanilla：原版風格的中空按鈕框（顏色量自原版按鈕列）
+## V1.5：2026-11-06  suggestedLayout：主題建議的版面寫進 Defs，並驗證欄位
 import argparse
 import json
 import os
@@ -711,6 +715,17 @@ def _theme_mod_write_defs(theme, out_dir, texture_prefix):
         f"    <drawerSettingsIcon>{texture_prefix}/Gear</drawerSettingsIcon>",
         f"    <preview>{texture_prefix}/Preview</preview>",
     ]
+    suggested = theme.get("suggestedLayout")
+    if suggested:
+        lines += ["", "    <!-- Layout the theme looks best with: offered in the Appearance tab, applied only when the player presses its button. -->",
+                  "    <suggestedLayout>"]
+        if suggested.get("displayModes"):
+            lines.append("      <displayModes>" + "".join(f"<li>{escape(mode)}</li>" for mode in suggested["displayModes"]) + "</displayModes>")
+        if suggested.get("buttonWidth"):
+            lines.append(f"      <buttonWidth>{int(suggested['buttonWidth'])}</buttonWidth>")
+        if suggested.get("halfButtonsFullWidth"):
+            lines.append("      <halfButtonsFullWidth>true</halfButtonsFullWidth>")
+        lines.append("    </suggestedLayout>")
     if theme["decorations"]:
         lines += ["", "    <!-- Decorations: any image at an anchor of the bar or the drawer, below or above the buttons. -->", "    <decorations>"]
         for decoration in theme["decorations"]:
@@ -876,6 +891,19 @@ def _theme_json_validate_fields(theme, path):
                 problems.append(f"{where}: showWhen value '{state}' must be one of {', '.join(_THEME_STATES)}")
         if not decoration.get("placeholder") and not decoration.get("source"):
             problems.append(f"{where}: needs placeholder or source")
+    suggested = theme.get("suggestedLayout")
+    if suggested is not None:
+        if not isinstance(suggested, dict):
+            problems.append("suggestedLayout must be an object")
+        else:
+            modes = suggested.get("displayModes", [])
+            if not isinstance(modes, list) or not all(isinstance(mode, str) and mode for mode in modes):
+                problems.append("suggestedLayout.displayModes must be a list of display mode defNames")
+            width = suggested.get("buttonWidth", 0)
+            if not isinstance(width, int) or isinstance(width, bool) or width < 0:
+                problems.append("suggestedLayout.buttonWidth must be a whole number, 0 or more")
+            if not isinstance(suggested.get("halfButtonsFullWidth", False), bool):
+                problems.append("suggestedLayout.halfButtonsFullWidth must be true or false")
     button_images = []
     if theme.get("buttonImage") is not None:
         if not isinstance(theme["buttonImage"], dict):

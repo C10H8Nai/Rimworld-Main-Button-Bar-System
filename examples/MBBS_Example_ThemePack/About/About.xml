@@ -11,6 +11,7 @@
     <li>
       <packageId>NAI.MainButtonBarSystem</packageId>
       <displayName>Main Button Bar System</displayName>
+      <downloadUrl>https://github.com/C10H8Nai/Rimworld-Main-Button-Bar-System</downloadUrl>
     </li>
   </modDependencies>
   <loadAfter>

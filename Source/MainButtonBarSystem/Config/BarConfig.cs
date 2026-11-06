@@ -293,6 +293,9 @@ namespace MainButtonBarSystem
         public int minWidth = Unset;
         public int gap = Unset;
         public DefaultableBool fillScreen;
+
+        /// <summary>Half-width buttons (MainButtonDef.minimized) get the same width as the others.</summary>
+        public DefaultableBool minimizedFullWidth;
         public LabelAlign labelAlign = LabelAlign.Default;
 
         /// <summary>
@@ -336,6 +339,7 @@ namespace MainButtonBarSystem
         public int MinWidth => minWidth >= 0 ? minWidth : D.minWidth;
         public int Gap => gap >= 0 ? gap : D.gap;
         public bool FillScreen => Resolve(fillScreen, D.fillScreen);
+        public bool MinimizedFullWidth => Resolve(minimizedFullWidth, D.minimizedFullWidth);
         public bool MenuLocked => Resolve(menuLocked, D.menuLocked);
         public int MoreButtonWidth => moreButtonWidth >= 0 ? moreButtonWidth : D.moreButtonWidth;
         public int ArrowWidth => arrowWidth >= 0 ? arrowWidth : D.arrowWidth;
@@ -382,7 +386,7 @@ namespace MainButtonBarSystem
         /// </summary>
         public bool IsUntouched =>
             (displayMode ?? VanillaMode) == VanillaMode && (appearance ?? VanillaAppearance) == VanillaAppearance && !UsesCustomTheme && order == null &&
-            labelAlign == LabelAlign.Default && iconMode == IconMode.Default && AllRedundant() && !ButtonDefaults.AnyChangesVanillaBar;
+            labelAlign == LabelAlign.Default && iconMode == IconMode.Default && !MinimizedFullWidth && AllRedundant() && !ButtonDefaults.AnyChangesVanillaBar;
 
         // A plain loop: this runs on every GUI event of the bar.
         private bool AllRedundant()
@@ -512,6 +516,7 @@ namespace MainButtonBarSystem
             minWidth = fresh.minWidth;
             gap = fresh.gap;
             fillScreen = fresh.fillScreen;
+            minimizedFullWidth = fresh.minimizedFullWidth;
             labelAlign = fresh.labelAlign;
             iconMode = fresh.iconMode;
             menuLocked = fresh.menuLocked;
@@ -553,6 +558,7 @@ namespace MainButtonBarSystem
             Scribe_Values.Look(ref minWidth, "minWidth", Unset);
             Scribe_Values.Look(ref gap, "gap", Unset);
             Scribe_Values.Look(ref fillScreen, "fillScreen", DefaultableBool.Default);
+            Scribe_Values.Look(ref minimizedFullWidth, "minimizedFullWidth", DefaultableBool.Default);
             Scribe_Values.Look(ref labelAlign, "labelAlign", LabelAlign.Default);
             Scribe_Values.Look(ref iconMode, "iconMode", IconMode.Default);
             Scribe_Values.Look(ref menuLocked, "menuLocked", DefaultableBool.Default);
