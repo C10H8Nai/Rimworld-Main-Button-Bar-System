@@ -88,9 +88,9 @@ ExampleTheme 的設定：預設圖 `ButtonPicture`（240×72「BUTTON PICTURE (P
 - [ ] H8 舊主題外觀不變：原版、帝國、信條、基因實驗室、虛空、星航、萘伊各選一次，和這次改版前相同（它們沒有按鈕圖）。
 - [ ] H9 預覽：外觀分頁的 Example 卡片用它自己的 `Preview` 圖（make_theme.py 產的預覽條，Architect 那格是 ARCHITECT 圖、其他格是預設圖）。把 Defs 的 `<preview>` 刪掉重開，改用畫出來的預覽：樣本按鈕（原版排序前四顆）裡 Architect 是自己的棕色圖、其他是預設圖，停用的那格也有圖。改回。
 - [ ] H10 「只顯示圖示」：把建築設成只顯示圖示，圖示畫在圖上、沒有文字；「圖示＋文字」時圖示和文字都在圖上。
-- [ ] H11 只有按鈕圖的主題：把 ExampleTheme 的 Defs 裡 `<button>`、`<buttonMouseover>`、`<buttonActive>`、`<buttonDisabled>` 四行和三個文字顏色（`labelColor` 等）刪掉重開：按鈕圖仍然畫出來，壓在遊戲原本的按鈕底下（看起來很暗，這是預期：遊戲的按鈕底幾乎不透明）。改回。
+- [ ] H11 只有按鈕圖的主題：把 ExampleTheme 的 Defs 裡 `<button>`、`<buttonMouseover>`、`<buttonActive>`、`<buttonDisabled>` 四行和三個文字顏色（`labelColor` 等）刪掉重開：按鈕圖畫在遊戲原本的按鈕底下，遊戲的按鈕底不透明，所以**完全看不到**（2026-11-06 實機：像素和沒圖的按鈕相同）。開發模式下主選單 log 有一筆黃字 `Theme ExampleTheme_Steel (…), button: the theme has button pictures but no button atlas, …`，沒有紅字。改回。
 - [ ] H12 Fit 與 Stretch：把研究的 `fit` 改成 `Fit`：整張 RESEARCH 圖都看得到，靠左（`anchor` Left），右邊留空；改成 `Stretch`：拉伸填滿、文字變形。改回。
-- [ ] H13 開發者模式的提示：在 `buttonImages` 加一個 `button` 寫成 `Achitect` 的項目重開：一筆黃字 `… buttonImages[2].button: no main button 'Achitect' is loaded …`，沒有紅字。改回。
+- [ ] H13 開發者模式的提示：在 `buttonImages` 加一個 `button` 寫成 `Achitect` 的項目重開：一筆黃字 `Theme ExampleTheme_Steel (…), buttonImages: 1 picture(s) name main buttons that are not loaded (a typo, or a mod that is not active), so they are unused: Achitect`（沒載入的按鈕每款主題合併成一條），沒有紅字。改回。
 - [ ] H14 設定錯誤（選做）：在 Defs 加一個沒寫 `<button>` 的 `buttonImages` 項目重開，log 有 `buttonImages[2]: button is empty` 的設定錯誤；`opacity` 寫 2 有 `opacity must be between 0 and 1`。改回。
 
 ## 要帶回的資料

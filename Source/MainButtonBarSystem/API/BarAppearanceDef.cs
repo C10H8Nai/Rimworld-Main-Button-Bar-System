@@ -860,23 +860,23 @@ namespace MainButtonBarSystem
         internal static ButtonVisualState StateFor(Rect rect) =>
             ActiveBaseState != ButtonVisualState.Normal ? ActiveBaseState : Mouse.IsOver(rect) ? ButtonVisualState.Mouseover : ButtonVisualState.Normal;
 
-        /// <summary>Draws a button label at the active alignment, with the game's 2px "pressed" shift under the mouse.</summary>
-        internal static void DrawAlignedLabel(Rect rect, string label, Color? labelColor)
+        /// <summary>
+        /// Draws a button label at the active alignment, with the game's 2px "pressed" shift under the mouse.
+        /// <paramref name="textLeftMargin"/> is the margin the caller gave the game's subtle button: room it keeps left
+        /// of the label (Vanilla Textures Expanded's icon) stays free at every alignment.
+        /// </summary>
+        internal static void DrawAlignedLabel(Rect rect, string label, Color? labelColor, float textLeftMargin)
         {
-            if (ActiveAlign == LabelAlign.Default)
-            {
-                // Where the game's subtle button puts it: left, after a margin of part of the button's width.
-                float margin = rect.width * B.gameLabelLeftMarginFraction - B.labelSidePadding;
-                DrawLabel(new Rect(rect.x + margin, rect.y, rect.width - margin, rect.height), label, labelColor ?? Color.white, TextAnchor.MiddleLeft, Mouse.IsOver(rect));
-                return;
-            }
+            bool followGame = ActiveAlign == LabelAlign.Default;
+            float inset = Core.LabelPlacement.LeftInset(followGame, textLeftMargin, rect.width, B.gameLabelLeftMarginFraction, B.labelSidePadding);
+            var area = new Rect(rect.x + inset, rect.y, rect.width - inset, rect.height);
             var anchor = ActiveAlign switch
             {
-                LabelAlign.Left => TextAnchor.MiddleLeft,
+                LabelAlign.Default or LabelAlign.Left => TextAnchor.MiddleLeft,
                 LabelAlign.Right => TextAnchor.MiddleRight,
                 _ => TextAnchor.MiddleCenter,
             };
-            DrawLabel(rect, label, labelColor ?? Color.white, anchor, Mouse.IsOver(rect));
+            DrawLabel(area, label, labelColor ?? Color.white, anchor, Mouse.IsOver(rect));
         }
 
         internal static void DrawLabel(Rect rect, string label, Color color, TextAnchor anchor, bool shifted)

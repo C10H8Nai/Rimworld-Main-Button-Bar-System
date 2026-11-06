@@ -90,13 +90,24 @@ namespace MainButtonBarSystem
         /// <summary>Set after this patch's code threw: every subtle button is left to the game for the rest of the session.</summary>
         private static bool broken;
 
-        public static void Prefix(Rect rect, ref string label, ref Color? labelColor, out string __state)
+        /// <summary>
+        /// What the prefix hands the postfix: the label to redraw (null: nothing to do) and the caller's
+        /// <c>textLeftMargin</c> as passed. The game overwrites a negative margin inside the method, so the postfix's own
+        /// copy of the argument is no longer the caller's value.
+        /// </summary>
+        public struct LabelState
         {
-            __state = null;
+            public string label;
+            public float textLeftMargin;
+        }
+
+        public static void Prefix(Rect rect, ref string label, ref Color? labelColor, float textLeftMargin, out LabelState __state)
+        {
+            __state = new LabelState { label = null, textLeftMargin = textLeftMargin };
             if (broken) return;
             try
             {
-                PrefixBody(rect, ref label, ref labelColor, ref __state);
+                PrefixBody(rect, ref label, ref labelColor, ref __state.label);
             }
             catch (Exception e) when (!(e is ExitGUIException))
             {
@@ -122,14 +133,14 @@ namespace MainButtonBarSystem
             label = "";
         }
 
-        public static void Postfix(Rect rect, Color? labelColor, string __state)
+        public static void Postfix(Rect rect, Color? labelColor, LabelState __state)
         {
-            if (__state == null || broken) return;
+            if (__state.label == null || broken) return;
             try
             {
                 if (ButtonPainter.ActiveIconOnly) ButtonPainter.DrawIconOnly(rect);
-                else if (ButtonPainter.ActiveIcon != null) ButtonPainter.DrawIconAndLabel(rect, __state, labelColor);
-                else ButtonPainter.DrawAlignedLabel(rect, __state, labelColor);
+                else if (ButtonPainter.ActiveIcon != null) ButtonPainter.DrawIconAndLabel(rect, __state.label, labelColor);
+                else ButtonPainter.DrawAlignedLabel(rect, __state.label, labelColor, __state.textLeftMargin);
             }
             catch (Exception e) when (!(e is ExitGUIException))
             {

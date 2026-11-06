@@ -360,25 +360,32 @@ namespace MainButtonBarSystem
             var layer = data.Layer(key);
             string stored = layer?.AtlasOf(state);
             bool set = !stored.NullOrEmpty();
-            var row = listing.GetRect(L.textRowHeight);
-
-            var shown = set ? CustomThemes.AtlasTexture(stored) : data.AtlasFor(key, state, working.AppearanceDef, out _) ?? Widgets.ButtonSubtleAtlas;
-            var thumb = new Rect(row.x, row.y, row.height * 2f, row.height);
-            if (shown != null) Widgets.DrawAtlas(thumb, shown);
 
             string choose = "MBBS_IconChoose".Translate();
             float chooseWidth = UIUtil.FitButton(L.smallButtonWidth, choose);
             float right = ResetWidth + L.footerGap + chooseWidth;
+            float thumbWidth = L.textRowHeight * 2f;
+            float labelWidth = listing.ColumnWidth - thumbWidth - L.footerGap - right - L.footerGap;
             string text = ("MBBS_Look_State_" + state).Translate() + ": " + (set ? AtlasName(stored) : FollowBelowLabel(key));
-            Text.Anchor = TextAnchor.MiddleLeft;
-            var labelRect = new Rect(thumb.xMax + L.footerGap, row.y, row.xMax - right - L.footerGap - thumb.xMax - L.footerGap, row.height);
-            Widgets.Label(labelRect, text.Truncate(labelRect.width));
-            TooltipHandler.TipRegion(labelRect, text);
+            // A label wider than its space (some translations) wraps onto more lines; the thumbnail and the buttons
+            // stay on the first line. A window too narrow for any label keeps one line instead of a huge row.
+            float labelHeight = labelWidth > 0f ? Text.CalcHeight(text, labelWidth) : L.textRowHeight;
+            var row = listing.GetRect(Mathf.Max(L.textRowHeight, labelHeight));
+            var line = new Rect(row.x, row.y, row.width, L.textRowHeight);
+
+            var shown = set ? CustomThemes.AtlasTexture(stored) : data.AtlasFor(key, state, working.AppearanceDef, out _) ?? Widgets.ButtonSubtleAtlas;
+            var thumb = new Rect(line.x, line.y, thumbWidth, line.height);
+            if (shown != null) Widgets.DrawAtlas(thumb, shown);
+
+            // One line: centred on the row like before. More lines: from the top, level with the buttons.
+            Text.Anchor = row.height > L.textRowHeight ? TextAnchor.UpperLeft : TextAnchor.MiddleLeft;
+            var labelRect = new Rect(thumb.xMax + L.footerGap, row.y, Mathf.Max(0f, labelWidth), row.height);
+            Widgets.Label(labelRect, text);
             Text.Anchor = TextAnchor.UpperLeft;
 
-            if (Widgets.ButtonText(new Rect(row.xMax - right, row.y, chooseWidth, row.height), choose))
+            if (Widgets.ButtonText(new Rect(line.xMax - right, line.y, chooseWidth, line.height), choose))
                 Find.WindowStack.Add(new FloatMenu(AtlasOptions(key, state)));
-            if (DefaultButton(row, set))
+            if (DefaultButton(line, set))
                 layer?.SetAtlas(state, null);
         }
 

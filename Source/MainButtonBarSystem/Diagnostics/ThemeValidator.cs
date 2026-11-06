@@ -8,7 +8,7 @@ namespace MainButtonBarSystem
     /// <summary>
     /// Development-mode checks of every theme (built-in and from theme mods): textures that do not load, atlases that
     /// are not square or larger than the useful size, oversized decorations and pictures, button pictures for buttons
-    /// that are not loaded. Each finding is one warning naming the
+    /// that are not loaded, button pictures with no button atlas to frame them. Each finding is one warning naming the
     /// theme and the field (all button pictures for buttons that are not loaded are one finding), reported once per
     /// session. Runs at startup and after "Reload theme textures".
     /// </summary>
@@ -56,7 +56,20 @@ namespace MainButtonBarSystem
                 }
             }
             findings += ValidateButtonImages(def);
+            findings += ValidateButtonImagesHaveFrame(def);
             return findings;
+        }
+
+        /// <summary>
+        /// Button pictures are drawn under the button atlas. With no <see cref="BarAppearanceDef.button"/> atlas the game's
+        /// own button background is drawn over them, and it is opaque, so the pictures do not show at all. Only the def's
+        /// fields are known here: a theme with its own worker may supply the atlas in code, so it is not checked.
+        /// </summary>
+        private static int ValidateButtonImagesHaveFrame(BarAppearanceDef def)
+        {
+            if (!def.HasButtonImages || !string.IsNullOrEmpty(def.button) || def.workerClass != typeof(BarAppearanceWorker)) return 0;
+            return Warn(def, nameof(BarAppearanceDef.button),
+                "the theme has button pictures but no button atlas, so the game's opaque button background covers them and they do not show; add a button atlas with a transparent middle (make_theme.py: \"hollow\": true or \"frame\": \"vanilla\" in the palette)");
         }
 
         /// <summary>
