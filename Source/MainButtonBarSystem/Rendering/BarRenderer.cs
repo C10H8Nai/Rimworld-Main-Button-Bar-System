@@ -184,7 +184,7 @@ namespace MainButtonBarSystem
                 b.Settings = o;
                 b.Pin = BarModel.PinOf(config, name);
                 b.InDrawer = drawerMode && b.Pin == Core.PinPosition.None && o.inDrawer;
-                b.Minimized = def.minimized;
+                b.Minimized = def.minimized && !config.MinimizedFullWidth;
                 b.Width = o.width > 0 ? o.width : (int?)null;
                 buttons.Add(b);
             }

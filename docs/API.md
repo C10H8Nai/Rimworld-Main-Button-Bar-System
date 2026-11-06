@@ -51,8 +51,8 @@ Ship a ready-made arrangement. Players see it under **Import** in the settings w
 
 The easiest way: arrange the bar in game, then **Export → Create an arrangement mod**. It asks for a name,
 author, description and packageId and writes a complete mod into the game's `Mods` folder: `About.xml` (depending
-on this mod), the arrangement def, and the PNG icons the arrangement uses (copied into its `Textures` folder, so
-subscribers get them). Restart, enable it, and upload it from the mod list.
+on this mod), the arrangement def, and the PNG icons and custom theme images the arrangement uses (copied into its
+`Textures` folder, so subscribers get them; custom theme images then use `tex:` references, section 4b). Restart, enable it, and upload it from the mod list.
 
 To put an arrangement into a mod you already have, use **Export → Copy as mod XML** and save it as a `.xml` file in
 your `Defs` folder (see "Shipping content inside another mod" if that mod must also work without this one).
@@ -96,10 +96,11 @@ On import, buttons the player does not have are skipped, and buttons the arrange
 before the game menu button.
 
 `config` fields: `formatVersion` (currently 3), `displayMode` (a `BarDisplayModeDef` defName), `appearance` (a
-`BarAppearanceDef` defName), `order`, `defaultWidth`, `minWidth`, `gap`, `fillScreen`, `labelAlign`
-(`Default` / `Left` / `Center` / `Right`), `menuLocked`, `moreButtonWidth`, `arrowWidth`, `wheelScrollPixels`,
-`drawerColumns`, `drawerCellWidth`, and `overrides` (each with `defName`, `hidden`, `inDrawer`, `label`, `width`,
-`pin`, `forceShow`, `iconMode`, `icon`).
+`BarAppearanceDef` defName), `order`, `defaultWidth`, `minWidth`, `gap`, `fillScreen`, `minimizedFullWidth`
+(half-width buttons get the full width), `labelAlign` (`Default` / `Left` / `Center` / `Right`), `menuLocked`,
+`moreButtonWidth`, `arrowWidth`, `wheelScrollPixels`, `drawerColumns`, `drawerCellWidth`, `appearanceMode`
+(`Preset` / `Custom`) and `customTheme` (section 4b), and `overrides` (each with `defName`, `hidden`, `inDrawer`,
+`label`, `width`, `pin`, `forceShow`, `iconMode`, `icon`).
 
 Leave out any field you do not want to set. Number fields left out (or `-1`) and switches left out (or `Default`)
 follow the player's tuning defaults; see below.
@@ -276,6 +277,7 @@ MyTheme/
 | `barBackgroundFit`, `drawerBackgroundFit` (1.1) | `Atlas`: the background is a nine-slice atlas. See *Illustrations* below |
 | `decorations` (1.1) | No extra images. See *Illustrations* below |
 | `buttonImage`, `buttonImages` (1.1) | No pictures inside the buttons. See *Pictures inside buttons* below |
+| `suggestedLayout` (1.1) | No suggestion. See *Suggested layout* below |
 
 **Atlases** are drawn with the game's `Widgets.DrawAtlas`, the nine-slice method of the vanilla buttons, so one
 texture fits any button size:
@@ -402,6 +404,27 @@ In practice:
 The preview the Appearance tab draws shows the background image, the buttons and their pictures, but no decorations
 (they would grow out of the card), so a theme with decorations should ship a `preview` image.
 
+### Suggested layout (API 1.1)
+
+A theme that needs wide buttons (a picture per button, like `MBBS_Nai`) can say so. The theme never changes the
+bar by itself: while the player's bar differs from the suggestion, the Appearance tab shows a hint under the theme's
+card and a **Apply suggested layout** button; only that button changes the bar settings, and each changed setting
+keeps its own Default button on the Buttons tab.
+
+```xml
+<suggestedLayout>
+  <displayModes>          <!-- modes that suit the theme; a bar in another mode switches to the first -->
+    <li>Scroll</li>
+    <li>CollapseScroll</li>
+  </displayModes>
+  <buttonWidth>120</buttonWidth>                 <!-- default and minimum button width raised to at least this -->
+  <halfButtonsFullWidth>true</halfButtonsFullWidth> <!-- half-width buttons get the full width -->
+</suggestedLayout>
+```
+
+Every part is optional. Display modes that are not loaded are skipped; nothing is ever lowered or switched off.
+`make_theme.py` writes it from a `suggestedLayout` object in the JSON (same three fields).
+
 ### Checks and reloading (development mode)
 
 With development mode on, the mod checks every theme at startup and logs one warning per finding, naming the theme
@@ -449,6 +472,13 @@ Set `workerClass` to a class deriving from `BarAppearanceWorker` and override wh
 `DrawBarBackground`, `DrawBarBackgroundImage(Rect, float opacity)`, `DrawBarOverlay`, `DrawButton`, `DrawDrawerButton`,
 `DrawDrawerBackground`, `DrawDrawerBackgroundImage`, `DrawDrawerOverlay`, `DrawDecorations`, `DrawerSettingsIcon`,
 `ButtonAtlas`, `ButtonImage`, `DrawButtonImage`, `LabelColor`, `DrawMoreButton`, `MoreButtonWidth`, `DrawScrollArrow`.
+Per button (1.1): `ChangesButtons` (false: buttons are drawn exactly as the game does), `LabelAlignFor`,
+`LabelFontFor` and `LabelFontSizeFor` (pixels on that font, 0 for its own size), and `IconLookFor` (size, 3×3 anchor
+and offset; returning true makes this mod draw that button's icon itself).
+
+When a player builds a custom theme on top of yours (section 4b), your worker keeps drawing everything the custom
+look does not change: the bar and drawer backgrounds, decorations, More, the arrows, and every part of a button that
+no layer of the custom look sets (its `ButtonAtlas`, `LabelColor`, `ButtonImage` and so on are asked as usual).
 The theme is applied inside buttons (atlases, label colours, pictures) only when the def sets at least one button
 field (a button atlas, a label colour, `buttonImage` or `buttonImages`), so a worker that chooses pictures in code
 still needs one of them in its XML. Override the two-parameter
@@ -459,6 +489,58 @@ plus the decorations below the buttons, and a display mode is expected to call i
 decorations above the buttons work with any display mode, and a mode that never calls `DrawBarBackground` shows
 only the upper layer. Keep drawing buttons through `ButtonPainter.Draw` (or the game's `DoButton`) so other mods'
 changes to buttons keep working.
+
+## 4b. Custom themes (player-made)
+
+Players can build a look on top of any theme in the Appearance tab (**Custom theme**): an "all buttons" layer and a
+layer per button, each field following the layer below until it is changed: this button → all buttons → the chosen
+theme → the game. Per-state values (label colours, backgrounds) try every layer for the state first, then the next
+state down (open → mouse-over → normal, disabled → normal). It is stored in the arrangement config:
+
+```xml
+<appearance>MBBS_Nai</appearance>          <!-- the theme it starts from -->
+<appearanceMode>Custom</appearanceMode>    <!-- Preset ignores customTheme but keeps it -->
+<customTheme>
+  <all>                                    <!-- "all buttons" -->
+    <labelColor>RGBA(1.000, 0.900, 0.700, 1.000)</labelColor>
+    <atlas>file:MyFrame.png</atlas>
+  </all>
+  <buttons>
+    <li>
+      <defName>Architect</defName>
+      <image>MBBS_Nai|image:MainButtonBarSystem/Themes/Nai/Btn_chest_build</image>
+      <imageFit>Cover</imageFit>
+    </li>
+  </buttons>
+</customTheme>
+```
+
+`ButtonLook` fields, each left out (or the value shown) for "not changed": `align` (`Default`), `font` (`Default` /
+`Tiny` / `Small` / `Medium` / `Custom`), `fontSize` (pixels for `Custom`, `-1`), `labelColor`,
+`labelMouseoverColor`, `labelActiveColor` (alpha `-1`), `iconSize` (`-1`), `iconAnchor` (`Default`), `iconOffsetX`,
+`iconOffsetY` (`-2147483648`), `atlas`, `atlasMouseover`, `atlasActive`, `atlasDisabled` (image references), `image`
+(image reference), `imageFit` (`Default` / `Cover` / `Fit` / `Stretch`), `imageAnchor` (`Default` / `Left` /
+`Center` / `Right`), `imageVerticalAnchor` (`Default` / `Top` / `Center` / `Bottom`), `imageOpacity` (percent, `-1`),
+`imageInset` (pixels, `-1`).
+
+**Image references**:
+
+| Form | Points at |
+|---|---|
+| `file:Name.png` | A PNG the player imported into `…/RimWorld by Ludeon Studios/MainButtonBarSystem/Images/` |
+| `ThemeDefName\|button` (`buttonMouseover`, `buttonActive`, `buttonDisabled`) | An installed theme's button background |
+| `ThemeDefName\|image:Path/Under/Textures` | Any texture an installed theme uses (its button pictures) |
+| `tex:Path/Under/Textures` | A texture some mod ships (arrangement mods bring their images this way) |
+
+A reference that cannot be found counts as not set (a missing `file:` PNG is warned about once), so the layer below
+shows instead.
+
+**Saved custom themes**: **Export → Save as a custom theme** writes `…/MainButtonBarSystem/Themes/<name>/theme.xml`
+(root `MainButtonBarSystemTheme`: `formatVersion` (currently 1), `meta` as in arrangements, `baseTheme`,
+`customTheme`) with the `file:` PNGs it uses beside it. Saved themes are listed under **Preset themes** and under
+**Import** on the Appearance tab; picking one copies it into the settings (the save no longer needs the file) and
+copies its PNGs into `Images/`, renaming a copy when a different file has the same name. A theme from a newer
+format, or one whose XML names classes, is refused with a message. To share one, share its folder.
 
 ## 5. Compatibility bridges
 
@@ -662,5 +744,6 @@ Change values with an ordinary XML patch, for example:
 
 Each save stores its arrangement in a `GameComponent`; the default template is
 `Config/MainButtonBarSystem_Template.xml`. Exported files go to
-`…/RimWorld by Ludeon Studios/MainButtonBarSystem/Exports/`. The format carries `formatVersion`; this mod refuses
+`…/RimWorld by Ludeon Studios/MainButtonBarSystem/Exports/`, imported icons to `Icons/`, custom theme images to
+`Images/` and saved custom themes to `Themes/` beside it. The format carries `formatVersion`; this mod refuses
 arrangements with a newer version than it understands.

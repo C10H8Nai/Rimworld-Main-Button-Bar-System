@@ -20,8 +20,16 @@ namespace MainButtonBarSystem
         private Vector2 lookDetailScroll;
         private float lookDetailHeight;
 
+        /// <summary>"Copy style": a copy of one layer, pasted onto another (spec 4.7); kept while the game runs.</summary>
+        private static ButtonLook lookClipboard;
+
+        /// <summary>What each colour code box shows while it has focus, keyed by the setting it edits.</summary>
+        private static readonly Dictionary<string, string> hexBuffers = new Dictionary<string, string>();
+
         private static readonly ButtonVisualState[] LookStates =
             { ButtonVisualState.Normal, ButtonVisualState.Mouseover, ButtonVisualState.Active, ButtonVisualState.Disabled };
+
+        private static MainButtonBarTuningDef.Behaviour Bh => T.behaviour;
 
         private float FooterHeight
         {
@@ -115,9 +123,12 @@ namespace MainButtonBarSystem
                 x += row.height;
             }
 
-            var layer = working.customTheme.Layer(name);
+            var data = working.customTheme;
+            var layer = data.Layer(name);
             string label = name == null ? "MBBS_Look_All".Translate().ToString() : DisplayLabel(name, working.Get(name));
             if (layer != null && !layer.IsEmpty) label += "  " + "MBBS_Look_ChangedSuffix".Translate();
+            // Spec 4.6: how many buttons do not simply follow "all buttons".
+            if (name == null && data.OwnButtonCount > 0) label += "  " + "MBBS_Look_OwnCount".Translate(data.OwnButtonCount);
             Text.Anchor = TextAnchor.MiddleLeft;
             var labelRect = new Rect(x, row.y, row.xMax - x, row.height);
             Widgets.Label(labelRect, label.Truncate(labelRect.width));
@@ -128,6 +139,9 @@ namespace MainButtonBarSystem
         // ---------------------------------------------------------------- detail
 
         private BarAppearanceWorker BaseWorker => working.AppearanceDef?.Worker ?? new BarAppearanceWorker();
+
+        /// <summary>The custom look's worker for the working settings (it draws the preview the way the bar would).</summary>
+        private BarAppearanceWorker_Custom LookWorker => CustomThemes.WorkerFor(working.customTheme, working.AppearanceDef) as BarAppearanceWorker_Custom;
 
         private void DrawLookDetail(Rect outer)
         {
@@ -140,18 +154,14 @@ namespace MainButtonBarSystem
             Text.Font = GameFont.Small;
             GUI.color = Color.gray;
             Text.Font = GameFont.Tiny;
-            listing.Label((key == null ? "MBBS_Look_AllTip" : "MBBS_Look_ButtonTip").Translate(working.AppearanceDef?.LabelCap ?? "?"));
+            listing.Label((key == null ? "MBBS_Look_AllTip" : "MBBS_Look_ButtonTip").TranslateKeepCase(working.AppearanceDef?.LabelCap.ToString() ?? "?"));
             Text.Font = GameFont.Small;
             GUI.color = Color.white;
 
-            var resetRow = listing.GetRect(L.textRowHeight);
-            string reset = "MBBS_Look_Reset".Translate();
-            var layer = data.Layer(key);
-            if (DimmableButton(new Rect(resetRow.x, resetRow.y, UIUtil.FitButton(L.moveButtonWidth, reset), resetRow.height), reset, layer != null && !layer.IsEmpty))
-                data.Reset(key);
+            DrawLookLayerButtons(listing, data, key);
 
             // Preview: the four states side by side, drawn by this mod (other mods' DoButton effects show only on the bar).
-            float h = MainButtonBarTuningDef.Current.behaviour.buttonRectHeight;
+            float h = Bh.buttonRectHeight;
             float cell = (listing.ColumnWidth - L.footerGap * 3f) / 4f;
             // The state names wrap onto more lines when a translation is wider than a cell.
             Text.Font = GameFont.Tiny;
@@ -186,69 +196,120 @@ namespace MainButtonBarSystem
             listing.Label("MBBS_Look_Background".Translate());
             foreach (var state in LookStates) DrawLookAtlas(listing, data, key, state);
 
+            listing.GapLine();
+            listing.Label("MBBS_Look_Image".Translate());
+            Note(listing, "MBBS_Look_ImageNote".Translate());
+            DrawLookImage(listing, data, key);
+
             data.Prune();
+            // Fields are written directly while editing: cached results (button pictures) are rebuilt while this is open.
+            data.Touch();
             lookDetailHeight = EndScrolledListing(listing);
         }
 
+        /// <summary>Reset, copy and paste for the selected layer; on "all buttons" also the count and reset of the others (spec 4.6, 4.7).</summary>
+        private static void DrawLookLayerButtons(Listing_Standard listing, CustomThemeData data, string key)
+        {
+            var row = listing.GetRect(L.textRowHeight);
+            var layer = data.Layer(key);
+            string reset = "MBBS_Look_Reset".Translate(), copy = "MBBS_Look_Copy".Translate(), paste = "MBBS_Look_Paste".Translate();
+            float x = row.x;
+            var r = new Rect(x, row.y, UIUtil.FitButton(L.moveButtonWidth, reset), row.height);
+            if (DimmableButton(r, reset, layer != null && !layer.IsEmpty)) data.Reset(key);
+            x = r.xMax + L.footerGap;
+            r = new Rect(x, row.y, UIUtil.FitButton(L.smallButtonWidth, copy), row.height);
+            if (Widgets.ButtonText(r, copy)) lookClipboard = (layer ?? new ButtonLook()).Clone();
+            x = r.xMax + L.footerGap;
+            r = new Rect(x, row.y, UIUtil.FitButton(L.smallButtonWidth, paste), row.height);
+            if (DimmableButton(r, paste, lookClipboard != null)) data.SetLayer(key, lookClipboard);
+            TooltipHandler.TipRegion(r, "MBBS_Look_PasteTip".Translate());
+
+            if (key != null || data.OwnButtonCount == 0) return;
+            var row2 = listing.GetRect(L.textRowHeight);
+            string all = "MBBS_Look_ResetAllButtons".Translate(data.OwnButtonCount);
+            if (Widgets.ButtonText(new Rect(row2.x, row2.y, UIUtil.FitButton(L.moveButtonWidth, all), row2.height), all)) data.ResetAllButtons();
+        }
+
+        /// <summary>The button "all buttons" previews with: the first on the bar that has an icon, so icon settings show.</summary>
+        private MainButtonDef SampleButton()
+        {
+            foreach (var name in BarModel.EffectiveOrder(working))
+            {
+                var def = DefDatabase<MainButtonDef>.GetNamedSilentFail(name);
+                if (def != null && ButtonPainter.EffectiveIcon(def, working.Get(name)) != null) return def;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// One state of a button the way the bar draws it: the picture, the frame (tinted under the mouse like the game
+        /// unless the background is made for that state), then the icon and label where the bar puts them.
+        /// </summary>
         private void DrawLookPreview(Rect rect, string key, ButtonVisualState state)
         {
             var data = working.customTheme;
+            var theme = working.AppearanceDef;
+            var worker = LookWorker;
             var baseWorker = BaseWorker;
-            var tex = data.AtlasFor(key, state, working.AppearanceDef, out bool replacesTint) ?? Widgets.ButtonSubtleAtlas;
-            Widgets.DrawAtlas(rect, tex);
-            if (!replacesTint && (state == ButtonVisualState.Mouseover || state == ButtonVisualState.Active)) Widgets.DrawHighlight(rect);
+            var def = key == null ? null : DefDatabase<MainButtonDef>.GetNamedSilentFail(key);
+
+            var image = worker == null ? null : key == null ? worker.AllButtonsImage() : worker.ButtonImage(def);
+            if (image != null) worker.DrawButtonImage(rect, image);
+
+            bool replacesTint;
+            var tex = data.HasAtlas(key) ? data.AtlasFor(key, state, theme, out replacesTint) : baseWorker.ButtonAtlas(state, out replacesTint);
+            var oldColor = GUI.color;
+            if (state == ButtonVisualState.Mouseover && !replacesTint) GUI.color = GenUI.MouseoverColor;
+            Widgets.DrawAtlas(rect, tex ?? Widgets.ButtonSubtleAtlas);
+            GUI.color = oldColor;
             if (state == ButtonVisualState.Disabled) return;   // the game draws no label on a disabled button
 
-            var color = data.LabelColorFor(key, state, working.AppearanceDef) ?? Color.white;
-            var font = data.FontFor(key) switch
-            {
-                LookFont.Tiny => GameFont.Tiny,
-                LookFont.Medium => GameFont.Medium,
-                _ => GameFont.Small,
-            };
+            var color = (data.HasColor(key) ? data.LabelColorFor(key, state, theme) : baseWorker.LabelColor(state)) ?? Color.white;
+            var lookFont = data.FontFor(key, out int storedFontSize);
+            var font = CustomThemes.GameFontOf(lookFont) ?? baseWorker.LabelFontFor(def) ?? Bh.labelFont;
+            int fontSize = lookFont == LookFont.Custom ? CustomThemes.FontSize(storedFontSize) : lookFont == LookFont.Default ? baseWorker.LabelFontSizeFor(def) : 0;
             var align = data.AlignFor(key);
+            if (align == LabelAlign.Default) align = baseWorker.LabelAlignFor(def);
             if (align == LabelAlign.Default) align = working.labelAlign;
-            var anchor = align switch
-            {
-                LabelAlign.Left => TextAnchor.MiddleLeft,
-                LabelAlign.Right => TextAnchor.MiddleRight,
-                _ => TextAnchor.MiddleCenter,
-            };
+
             string label = key == null ? "MBBS_Look_Sample".Translate().ToString() : DisplayLabel(key, working.Get(key));
-            var def = key == null ? null : DefDatabase<MainButtonDef>.GetNamedSilentFail(key);
-            var icon = def == null ? null : ButtonPainter.EffectiveIcon(def, working.Get(key));
-            bool iconLook = data.IconFor(key, Mathf.RoundToInt(MainButtonBarTuningDef.Current.behaviour.iconSize), out int size, out var iconAnchor, out var offset);
-            var mode = def == null ? IconMode.Text : working.IconModeFor(working.Get(key));
+            var iconDef = def ?? SampleButton();
+            var icon = iconDef == null ? null : ButtonPainter.EffectiveIcon(iconDef, working.Get(iconDef.defName));
+            data.IconFor(key, Mathf.RoundToInt(Bh.iconSize), out int size, out var iconAnchor, out var offset);
+            var mode = key == null ? working.iconMode : working.IconModeFor(working.Get(key));
             // The preview cannot know whether another mod would add the label next to the icon on the bar.
             if (mode == IconMode.Default) mode = icon != null ? IconMode.Icon : IconMode.Text;
 
-            var oldFont = Text.Font;
-            var oldColor = GUI.color;
+            bool shifted = state == ButtonVisualState.Mouseover;
             var textRect = rect;
             if (icon != null && (mode == IconMode.Icon || mode == IconMode.Both))
             {
-                var b = MainButtonBarTuningDef.Current.behaviour;
                 DecorationBox box;
-                if (mode == IconMode.Icon) box = IconPlacement.Alone(rect.x, rect.y, rect.width, rect.height, size, iconAnchor, b.labelSidePadding, offset.x, offset.y);
+                if (mode == IconMode.Icon) box = IconPlacement.Alone(rect.x, rect.y, rect.width, rect.height, size, iconAnchor, Bh.labelSidePadding, offset.x, offset.y);
                 else
                 {
-                    box = IconPlacement.Beside(rect.x, rect.y, rect.width, rect.height, size, iconAnchor, b.labelSidePadding, b.iconTextGap, offset.x, offset.y, out float tl, out float tr);
+                    box = IconPlacement.Beside(rect.x, rect.y, rect.width, rect.height, size, iconAnchor, Bh.labelSidePadding, Bh.iconTextGap, offset.x, offset.y, out float tl, out float tr);
                     textRect = new Rect(tl, rect.y, Mathf.Max(0f, tr - tl), rect.height);
                 }
+                var iconRect = new Rect(box.X, box.Y, box.Width, box.Height);
+                if (shifted) iconRect.position += Bh.hoverLabelOffset;
                 GUI.color = Color.white;
-                GUI.DrawTexture(new Rect(box.X, box.Y, box.Width, box.Height), icon);
-                if (mode == IconMode.Icon) label = null;
+                GUI.DrawTexture(iconRect, icon);
+                GUI.color = oldColor;
+                if (mode == IconMode.Icon) return;
             }
-            if (label != null)
+
+            // The label where the bar puts it: with no alignment chosen, where the game would (left, a share of the width in).
+            bool followGame = align == LabelAlign.Default;
+            float inset = LabelPlacement.LeftInset(followGame, -1f, textRect.width, Bh.gameLabelLeftMarginFraction, Bh.labelSidePadding);
+            var area = new Rect(textRect.x + inset, textRect.y, Mathf.Max(0f, textRect.width - inset), textRect.height);
+            var anchor = align switch
             {
-                Text.Font = font;
-                Text.Anchor = anchor;
-                GUI.color = color;
-                Widgets.Label(textRect.ContractedBy(MainButtonBarTuningDef.Current.behaviour.labelSidePadding, 0f), label.Truncate(textRect.width));
-                Text.Anchor = TextAnchor.UpperLeft;
-            }
-            Text.Font = oldFont;
-            GUI.color = oldColor;
+                LabelAlign.Right => TextAnchor.MiddleRight,
+                LabelAlign.Center => TextAnchor.MiddleCenter,
+                _ => TextAnchor.MiddleLeft,
+            };
+            ButtonPainter.DrawLabel(area, label, color, anchor, shifted, font, fontSize);
         }
 
         private void DrawLookAlign(Listing_Standard listing, CustomThemeData data, string key)
@@ -270,18 +331,42 @@ namespace MainButtonBarSystem
             var layer = data.Layer(key);
             var stored = layer?.font ?? LookFont.Default;
             if (SectionHeader(listing, "MBBS_Look_Font".Translate(), stored != LookFont.Default))
-                data.GetOrCreate(key).font = LookFont.Default;
-            foreach (var font in new[] { LookFont.Default, LookFont.Tiny, LookFont.Small, LookFont.Medium })
+                SetLookFont(data.GetOrCreate(key), LookFont.Default);
+            foreach (var font in LookFonts)
             {
                 string label = font == LookFont.Default ? FollowBelowLabel(key) : ("MBBS_Look_Font_" + font).Translate().ToString();
                 if (listing.RadioButton(label, stored == font, L.radioIndent) && stored != font)
-                    data.GetOrCreate(key).font = font;
+                    SetLookFont(data.GetOrCreate(key), font);
             }
+
+            // "Custom size" on this layer: its size, with its own Default button (the tuning def's size).
+            if (stored != LookFont.Custom) return;
+            int storedSize = layer.fontSize;
+            int size = CustomThemes.FontSize(storedSize);
+            int newSize = IntSetting(listing, "MBBS_Look_FontSize".Translate(size), storedSize, size, R.lookFontSize, 1, "lookFontSize." + (key ?? "<all>"));
+            if (newSize != storedSize) layer.fontSize = newSize;
+        }
+
+        private static readonly LookFont[] LookFonts = { LookFont.Default, LookFont.Tiny, LookFont.Small, LookFont.Medium, LookFont.Custom };
+
+        /// <summary>A size only means something with "custom size", so it goes with any other choice.</summary>
+        private static void SetLookFont(ButtonLook look, LookFont font)
+        {
+            look.font = font;
+            if (font != LookFont.Custom) look.fontSize = BarConfig.Unset;
         }
 
         /// <summary>"Follow all buttons" for a button; "follow the theme" for the all-buttons layer.</summary>
         private static string FollowBelowLabel(string key) =>
             (key == null ? "MBBS_Look_FollowTheme" : "MBBS_Look_FollowAll").Translate();
+
+        /// <summary>The label colour the layer below gives a state: all buttons (for a button), else the theme, else white.</summary>
+        private Color BelowColor(string key, ButtonVisualState state)
+        {
+            var data = working.customTheme;
+            if (key != null) return data.LabelColorFor(null, state, working.AppearanceDef) ?? Color.white;
+            return BaseWorker.LabelColor(state) ?? Color.white;
+        }
 
         private void DrawLookColor(Listing_Standard listing, CustomThemeData data, string key, int which)
         {
@@ -295,56 +380,70 @@ namespace MainButtonBarSystem
                 if (layer != null) layer.SetColor(which, ButtonLook.UnsetColor);
                 return;
             }
-            var swatchRow = listing.GetRect(L.textRowHeight);
-            var swatch = new Rect(swatchRow.x, swatchRow.y + 2f, swatchRow.height * 2f, swatchRow.height - 4f);
+
+            // Swatch, colour code box, the game's colour picker, and "follows …" while not set.
+            string id = "lookColor." + which + "." + (key ?? "<all>");
+            var row = listing.GetRect(L.textRowHeight);
+            var swatch = new Rect(row.x, row.y + L.lookSwatchInset, L.lookSwatchWidth, row.height - L.lookSwatchInset * 2f);
             Widgets.DrawBoxSolid(swatch, resolved);
             Widgets.DrawBox(swatch);
+
+            int r255 = Mathf.RoundToInt(resolved.r * 255f), g255 = Mathf.RoundToInt(resolved.g * 255f), b255 = Mathf.RoundToInt(resolved.b * 255f);
+            var hexRect = new Rect(swatch.xMax + L.footerGap, row.y, L.lookHexFieldWidth, row.height);
+            string hexId = id + ".hex";
+            bool focused = GUI.GetNameOfFocusedControl() == hexId;
+            string current = ColorHex.Format(r255, g255, b255);
+            string shown = focused && hexBuffers.TryGetValue(hexId, out var buffer) ? buffer : current;
+            GUI.SetNextControlName(hexId);
+            string edited = Widgets.TextField(hexRect, shown);
+            if (focused || edited != shown) hexBuffers[hexId] = edited;
+            if (edited != shown && ColorHex.TryParse(edited, out int hr, out int hg, out int hb) && (hr != r255 || hg != g255 || hb != b255))
+                data.GetOrCreate(key).SetColor(which, new Color(hr / 255f, hg / 255f, hb / 255f, 1f));
+
+            string pick = "MBBS_Look_PickColor".Translate();
+            var pickRect = new Rect(hexRect.xMax + L.footerGap, row.y, UIUtil.FitButton(L.smallButtonWidth, pick), row.height);
+            if (Widgets.ButtonText(pickRect, pick))
+            {
+                var data2 = data;
+                Find.WindowStack.Add(new Dialog_LookColorPicker(resolved, BelowColor(key, state), c => data2.GetOrCreate(key).SetColor(which, c)));
+            }
             if (!set)
             {
                 GUI.color = Color.gray;
                 Text.Anchor = TextAnchor.MiddleLeft;
-                Widgets.Label(new Rect(swatch.xMax + L.footerGap, swatchRow.y, swatchRow.width - swatch.width - L.footerGap, swatchRow.height),
-                    FollowBelowLabel(key));
+                Widgets.Label(new Rect(pickRect.xMax + L.footerGap, row.y, Mathf.Max(0f, row.xMax - pickRect.xMax - L.footerGap), row.height), FollowBelowLabel(key));
                 Text.Anchor = TextAnchor.UpperLeft;
                 GUI.color = Color.white;
             }
 
-            string id = "lookColor." + which + "." + (key ?? "<all>");
-            float r = NumberSlider(listing, Mathf.Round(resolved.r * 255f), 0f, 255f, 1f, id + ".r");
-            float g = NumberSlider(listing, Mathf.Round(resolved.g * 255f), 0f, 255f, 1f, id + ".g");
-            float b = NumberSlider(listing, Mathf.Round(resolved.b * 255f), 0f, 255f, 1f, id + ".b");
-            if (!Mathf.Approximately(r, Mathf.Round(resolved.r * 255f)) || !Mathf.Approximately(g, Mathf.Round(resolved.g * 255f)) ||
-                !Mathf.Approximately(b, Mathf.Round(resolved.b * 255f)))
-                data.GetOrCreate(key).SetColor(which, new Color(r / 255f, g / 255f, b / 255f, 1f));
+            float rs = NumberSlider(listing, r255, 0f, 255f, 1f, id + ".r");
+            float gs = NumberSlider(listing, g255, 0f, 255f, 1f, id + ".g");
+            float bs = NumberSlider(listing, b255, 0f, 255f, 1f, id + ".b");
+            if (!Mathf.Approximately(rs, r255) || !Mathf.Approximately(gs, g255) || !Mathf.Approximately(bs, b255))
+                data.GetOrCreate(key).SetColor(which, new Color(rs / 255f, gs / 255f, bs / 255f, 1f));
         }
 
         private void DrawLookIcon(Listing_Standard listing, CustomThemeData data, string key)
         {
             var layer = data.Layer(key);
-            int defaultSize = Mathf.RoundToInt(MainButtonBarTuningDef.Current.behaviour.iconSize);
+            int defaultSize = Mathf.RoundToInt(Bh.iconSize);
             data.IconFor(key, defaultSize, out int size, out var anchor, out var offset);
             string suffix = "." + (key ?? "<all>");
 
+            // A button is only buttonRectHeight tall: a bigger icon would just be cut off.
+            var sizeRange = new IntRange(R.lookIconSize.min, Mathf.Max(R.lookIconSize.min, Mathf.Min(R.lookIconSize.max, Mathf.RoundToInt(Bh.buttonRectHeight))));
             int storedSize = layer?.iconSize ?? BarConfig.Unset;
-            int newSize = IntSetting(listing, "MBBS_Look_IconSize".Translate(size), storedSize, size, R.lookIconSize, 1, "lookIconSize" + suffix);
+            int newSize = IntSetting(listing, "MBBS_Look_IconSize".Translate(size), storedSize, size, sizeRange, 1, "lookIconSize" + suffix);
             if (newSize != storedSize) data.GetOrCreate(key).iconSize = newSize;
 
             var storedAnchor = layer?.iconAnchor ?? IconAnchor.Default;
             if (SectionHeader(listing, "MBBS_Look_IconAnchor".Translate(), storedAnchor != IconAnchor.Default))
                 data.GetOrCreate(key).iconAnchor = IconAnchor.Default;
-            float cellSize = L.lookAnchorCell;
-            var grid = listing.GetRect(cellSize * 3f);
+            var grid = listing.GetRect(L.lookAnchorCell * 3f);
             for (int i = 0; i < 9; i++)
             {
                 var a = (IconAnchor)(i + 1);
-                var cell = new Rect(grid.x + L.radioIndent + (i % 3) * cellSize, grid.y + (i / 3) * cellSize, cellSize, cellSize).ContractedBy(1f);
-                bool chosen = anchor == a;
-                Widgets.DrawBoxSolid(cell, chosen ? L.viewSwitchSelectedColor : L.viewSwitchColor);
-                Widgets.DrawBox(cell);
-                var dot = IconPlacement.Alone(cell.x, cell.y, cell.width, cell.height, cellSize / 3f, a, 2f, 0f, 0f);
-                Widgets.DrawBoxSolid(new Rect(dot.X, dot.Y, dot.Width, dot.Height), Color.white);
-                if (!chosen) Widgets.DrawHighlightIfMouseover(cell);
-                if (Widgets.ButtonInvisible(cell)) data.GetOrCreate(key).iconAnchor = a;
+                if (AnchorCell(grid, i, anchor == a)) data.GetOrCreate(key).iconAnchor = a;
             }
 
             int storedX = layer?.iconOffsetX ?? BarConfig.UnsetOffset;
@@ -355,66 +454,125 @@ namespace MainButtonBarSystem
             if (newY != storedY) data.GetOrCreate(key).iconOffsetY = newY;
         }
 
-        private void DrawLookAtlas(Listing_Standard listing, CustomThemeData data, string key, ButtonVisualState state)
+        /// <summary>One cell (0 top-left … 8 bottom-right) of a 3×3 position picker; true when clicked.</summary>
+        private static bool AnchorCell(Rect grid, int i, bool chosen)
         {
-            var layer = data.Layer(key);
-            string stored = layer?.AtlasOf(state);
-            bool set = !stored.NullOrEmpty();
+            float cellSize = L.lookAnchorCell;
+            var cell = new Rect(grid.x + L.radioIndent + (i % 3) * cellSize, grid.y + (i / 3) * cellSize, cellSize, cellSize).ContractedBy(L.lookAnchorCellGap);
+            Widgets.DrawBoxSolid(cell, chosen ? L.viewSwitchSelectedColor : L.viewSwitchColor);
+            Widgets.DrawBox(cell);
+            var dot = IconPlacement.Alone(cell.x, cell.y, cell.width, cell.height, cellSize * L.lookAnchorDotFraction, (IconAnchor)(i + 1), L.lookAnchorDotMargin, 0f, 0f);
+            Widgets.DrawBoxSolid(new Rect(dot.X, dot.Y, dot.Width, dot.Height), Color.white);
+            if (!chosen) Widgets.DrawHighlightIfMouseover(cell);
+            return Widgets.ButtonInvisible(cell);
+        }
 
-            string choose = "MBBS_IconChoose".Translate();
-            float chooseWidth = UIUtil.FitButton(L.smallButtonWidth, choose);
+        /// <summary>A row with a thumbnail, a text that may wrap, "Choose…" and Default; true when Default was pressed.</summary>
+        private static bool ImageRow(Listing_Standard listing, string text, Texture2D shown, bool atlas, bool set, System.Action choose)
+        {
+            string chooseLabel = "MBBS_IconChoose".Translate();
+            float chooseWidth = UIUtil.FitButton(L.smallButtonWidth, chooseLabel);
             float right = ResetWidth + L.footerGap + chooseWidth;
-            float thumbWidth = L.textRowHeight * 2f;
-            float labelWidth = listing.ColumnWidth - thumbWidth - L.footerGap - right - L.footerGap;
-            string text = ("MBBS_Look_State_" + state).Translate() + ": " + (set ? AtlasName(stored) : FollowBelowLabel(key));
+            float labelWidth = listing.ColumnWidth - L.lookThumbWidth - L.footerGap - right - L.footerGap;
             // A label wider than its space (some translations) wraps onto more lines; the thumbnail and the buttons
             // stay on the first line. A window too narrow for any label keeps one line instead of a huge row.
             float labelHeight = labelWidth > 0f ? Text.CalcHeight(text, labelWidth) : L.textRowHeight;
             var row = listing.GetRect(Mathf.Max(L.textRowHeight, labelHeight));
             var line = new Rect(row.x, row.y, row.width, L.textRowHeight);
 
-            var shown = set ? CustomThemes.AtlasTexture(stored) : data.AtlasFor(key, state, working.AppearanceDef, out _) ?? Widgets.ButtonSubtleAtlas;
-            var thumb = new Rect(line.x, line.y, thumbWidth, line.height);
-            if (shown != null) Widgets.DrawAtlas(thumb, shown);
+            var thumb = new Rect(line.x, line.y, L.lookThumbWidth, line.height);
+            if (shown != null)
+            {
+                if (atlas) Widgets.DrawAtlas(thumb, shown);
+                else Widgets.DrawTextureFitted(thumb, shown, 1f);
+            }
 
             // One line: centred on the row like before. More lines: from the top, level with the buttons.
             Text.Anchor = row.height > L.textRowHeight ? TextAnchor.UpperLeft : TextAnchor.MiddleLeft;
-            var labelRect = new Rect(thumb.xMax + L.footerGap, row.y, Mathf.Max(0f, labelWidth), row.height);
-            Widgets.Label(labelRect, text);
+            Widgets.Label(new Rect(thumb.xMax + L.footerGap, row.y, Mathf.Max(0f, labelWidth), row.height), text);
             Text.Anchor = TextAnchor.UpperLeft;
 
-            if (Widgets.ButtonText(new Rect(line.xMax - right, line.y, chooseWidth, line.height), choose))
-                Find.WindowStack.Add(new FloatMenu(AtlasOptions(key, state)));
-            if (DefaultButton(line, set))
+            if (Widgets.ButtonText(new Rect(line.xMax - right, line.y, chooseWidth, line.height), chooseLabel)) choose();
+            return DefaultButton(line, set);
+        }
+
+        private void DrawLookAtlas(Listing_Standard listing, CustomThemeData data, string key, ButtonVisualState state)
+        {
+            var layer = data.Layer(key);
+            string stored = layer?.AtlasOf(state);
+            bool set = !stored.NullOrEmpty();
+            string text = ("MBBS_Look_State_" + state).Translate() + ": " + (set ? CustomThemes.Describe(stored) : FollowBelowLabel(key));
+            var shown = set ? CustomThemes.Texture(stored) : data.AtlasFor(key, state, working.AppearanceDef, out _) ?? Widgets.ButtonSubtleAtlas;
+            var custom = working.customTheme;
+            if (ImageRow(listing, text, shown, true, set,
+                    () => Find.WindowStack.Add(new Dialog_LookImagePicker(stored, true, r => custom.GetOrCreate(key).SetAtlas(state, r)))))
                 layer?.SetAtlas(state, null);
         }
 
-        private static string AtlasName(string reference)
+        private void DrawLookImage(Listing_Standard listing, CustomThemeData data, string key)
         {
-            int bar = reference.IndexOf('|');
-            var theme = bar > 0 ? DefDatabase<BarAppearanceDef>.GetNamedSilentFail(reference.Substring(0, bar)) : null;
-            if (theme == null) return "MBBS_Look_AtlasMissing".Translate(reference);
-            return "MBBS_Look_AtlasFrom".Translate(theme.LabelCap, ("MBBS_Look_Field_" + reference.Substring(bar + 1)).Translate());
+            var layer = data.Layer(key);
+            var worker = LookWorker;
+            var def = key == null ? null : DefDatabase<MainButtonDef>.GetNamedSilentFail(key);
+            var resolved = worker == null ? null : key == null ? worker.AllButtonsImage() : worker.ButtonImage(def);
+            var values = resolved ?? new BarButtonImage();
+            string suffix = "." + (key ?? "<all>");
+
+            // The picture.
+            string stored = layer?.image;
+            bool set = !stored.NullOrEmpty();
+            string text = "MBBS_Look_ImagePicture".Translate() + ": " +
+                          (set ? CustomThemes.Describe(stored) : resolved == null ? "MBBS_Look_ImageNone".Translate().ToString() : FollowBelowLabel(key));
+            Texture2D shown = set ? CustomThemes.Texture(stored) : resolved is ResolvedButtonImage r ? r.Texture : working.AppearanceDef?.Tex(resolved?.texture);
+            var custom = working.customTheme;
+            if (ImageRow(listing, text, shown, false, set,
+                    () => Find.WindowStack.Add(new Dialog_LookImagePicker(stored, false, reference => custom.GetOrCreate(key).image = reference))))
+                if (layer != null) layer.image = null;
+
+            // Fill.
+            var storedFit = layer?.imageFit ?? LookImageFit.Default;
+            if (SectionHeader(listing, "MBBS_Look_ImageFit".Translate(), storedFit != LookImageFit.Default))
+                data.GetOrCreate(key).imageFit = LookImageFit.Default;
+            foreach (var fit in LookFits)
+            {
+                string label = fit == LookImageFit.Default ? FollowBelowLabel(key) : ("MBBS_Look_ImageFit_" + fit).Translate().ToString();
+                if (listing.RadioButton(label, storedFit == fit, L.radioIndent) && storedFit != fit)
+                    data.GetOrCreate(key).imageFit = fit;
+            }
+
+            // Anchor: which side Cover keeps, where Fit puts the picture.
+            var storedH = layer?.imageAnchor ?? LookImageAnchor.Default;
+            var storedV = layer?.imageVerticalAnchor ?? LookImageVerticalAnchor.Default;
+            if (SectionHeader(listing, "MBBS_Look_ImageAnchor".Translate(), storedH != LookImageAnchor.Default || storedV != LookImageVerticalAnchor.Default))
+            {
+                var l = data.GetOrCreate(key);
+                l.imageAnchor = LookImageAnchor.Default;
+                l.imageVerticalAnchor = LookImageVerticalAnchor.Default;
+            }
+            var grid = listing.GetRect(L.lookAnchorCell * 3f);
+            for (int i = 0; i < 9; i++)
+            {
+                var h = (LookImageAnchor)(i % 3 + 1);
+                var v = (LookImageVerticalAnchor)(i / 3 + 1);
+                bool chosen = CustomThemeData.AnchorOf(h, DecorationAnchor.Center) == values.anchor &&
+                              CustomThemeData.VerticalOf(v, DecorationVerticalAnchor.Center) == values.verticalAnchor;
+                if (!AnchorCell(grid, i, chosen)) continue;
+                var l = data.GetOrCreate(key);
+                l.imageAnchor = h;
+                l.imageVerticalAnchor = v;
+            }
+
+            int opacity = Mathf.RoundToInt(values.opacity * 100f);
+            int storedOpacity = layer?.imageOpacity ?? BarConfig.Unset;
+            int newOpacity = IntSetting(listing, "MBBS_Look_ImageOpacity".Translate(opacity), storedOpacity, opacity, R.lookImageOpacity, R.percentStep, "lookImageOpacity" + suffix);
+            if (newOpacity != storedOpacity) data.GetOrCreate(key).imageOpacity = newOpacity;
+
+            int inset = Mathf.RoundToInt(values.inset);
+            int storedInset = layer?.imageInset ?? BarConfig.Unset;
+            int newInset = IntSetting(listing, "MBBS_Look_ImageInset".Translate(inset), storedInset, inset, R.lookImageInset, 1, "lookImageInset" + suffix);
+            if (newInset != storedInset) data.GetOrCreate(key).imageInset = newInset;
         }
 
-        /// <summary>Every background an installed theme has, for one state of one layer.</summary>
-        private List<FloatMenuOption> AtlasOptions(string key, ButtonVisualState state)
-        {
-            var options = new List<FloatMenuOption>();
-            foreach (var theme in BarModel.Appearances)
-            {
-                foreach (var field in CustomThemes.AtlasFields)
-                {
-                    string path = CustomThemes.FieldValue(theme, field);
-                    if (path.NullOrEmpty()) continue;
-                    string reference = CustomThemes.AtlasRef(theme, field);
-                    var tex = CustomThemes.AtlasTexture(reference);
-                    if (tex == null) continue;
-                    options.Add(new FloatMenuOption(AtlasName(reference), () => (working.customTheme ??= new CustomThemeData()).GetOrCreate(key).SetAtlas(state, reference), tex, Color.white));
-                }
-            }
-            if (options.Count == 0) options.Add(new FloatMenuOption("MBBS_Look_NoAtlas".Translate(), null));
-            return options;
-        }
+        private static readonly LookImageFit[] LookFits = { LookImageFit.Default, LookImageFit.Cover, LookImageFit.Fit, LookImageFit.Stretch };
     }
 }

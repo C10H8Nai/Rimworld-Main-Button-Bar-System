@@ -73,6 +73,7 @@ namespace MainButtonBarSystem
 
         private string menuLabel;
         private GameFont menuLabelFont;
+        private int menuLabelSize;
         private float menuLabelWidth;
 
         /// <summary>Least width of the menu button when the equal split shrinks every button (tuning def).</summary>
@@ -82,15 +83,15 @@ namespace MainButtonBarSystem
             if (b.splitMenuMinWidth != 0 || menu == null) return Mathf.Max(0, b.splitMenuMinWidth);
             string label = menu.LabelCap;
             // The font the label is drawn in: a custom look may set its own (ButtonPainter.Draw).
-            var labelFont = (theme != null && theme.ChangesButtons ? theme.LabelFontFor(menu) : null) ?? b.labelFont;
-            if (!ReferenceEquals(label, menuLabel) || labelFont != menuLabelFont)
+            bool themed = theme != null && theme.ChangesButtons;
+            var labelFont = (themed ? theme.LabelFontFor(menu) : null) ?? b.labelFont;
+            int labelSize = themed ? theme.LabelFontSizeFor(menu) : 0;
+            if (!ReferenceEquals(label, menuLabel) || labelFont != menuLabelFont || labelSize != menuLabelSize)
             {
-                var font = Text.Font;
-                Text.Font = labelFont;
-                menuLabelWidth = Text.CalcSize(label).x;
-                Text.Font = font;
+                menuLabelWidth = ButtonPainter.LabelWidth(label, labelFont, labelSize);
                 menuLabel = label;
                 menuLabelFont = labelFont;
+                menuLabelSize = labelSize;
             }
             return Mathf.CeilToInt(menuLabelWidth + b.moreButtonLabelPadding);
         }

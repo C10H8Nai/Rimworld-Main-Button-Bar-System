@@ -12,6 +12,9 @@
   <MBBS_View_Simple>기본</MBBS_View_Simple>
   <MBBS_View_Advanced>고급</MBBS_View_Advanced>
   <MBBS_ViewTip>'고급'을 선택하면 너비, 위치 고정, 글자 정렬, 단축키, 호환성 옵션이 추가로 표시됩니다. 이 선택은 모든 저장 파일에서 공유됩니다.</MBBS_ViewTip>
+  <MBBS_SourceFilter>모드: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>전체</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>한 모드가 추가한 버튼만 표시합니다. 드래그와 '위로 이동' / '아래로 이동'은 표시된 버튼들 사이에서만 버튼을 옮기며, 나머지 버튼은 자리를 유지합니다.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>표시</MBBS_Col_Visible>
   <MBBS_Col_Icon>아이콘</MBBS_Col_Icon>
   <MBBS_Col_Name>이름</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>버튼 간격: {0}px</MBBS_Gap>
   <MBBS_FillScreen>화면 너비 채우기</MBBS_FillScreen>
   <MBBS_FillScreenTip>버튼이 모두 들어갈 때는 버튼을 늘려 화면 너비 전체를 채웁니다.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>절반 너비 버튼도 전체 너비 사용</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>일부 버튼은 게임에 다른 버튼의 절반 너비를 요청합니다. 켜면 모두 같은 너비가 됩니다.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0}은(는) 버튼 너비가 {1}px 이상일 때 가장 보기 좋습니다. 현재 바에서는 더 좁아질 수 있습니다.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0}은(는) 다른 바 배치를 권장합니다.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>권장 배치 적용</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>다음 바 설정을 변경합니다 (버튼 탭의 고급 모드, 각 항목에 기본값 버튼이 있음):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>게임 메뉴 버튼을 오른쪽 끝에 잠금</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>잠겨 있는 동안 메뉴 버튼은 숨기거나 옮기거나 서랍에 넣을 수 없으며, 이름만 바꿀 수 있습니다.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>게임 메뉴 버튼의 잠금이 '고급'에서 해제되었습니다.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>테마</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>테마는 바와 버튼의 모양을 바꿉니다. Main Button Bar System을 선행 모드로 지정한 테마 모드도 여기에 표시됩니다. 선택한 테마는 현재 저장 파일에 함께 저장됩니다 (주 메뉴에서는 템플릿에 저장).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>제작: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>저장한 커스텀 테마</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>시작점: {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>시작점: {0} (설치되지 않음)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>'{0}'의 시작 테마 {1}이(가) 설치되어 있지 않아, 대신 바닐라에서 시작합니다.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>현재 커스텀 외형을 '{0}'(으)로 바꿀까요?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>'{0}'을(를) 커스텀 외형으로 적용했습니다. 유지하려면 저장을 누르세요.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>이 커스텀 테마를 설정에 복사합니다. 나중에 파일을 지워도 세이브는 계속 작동합니다.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>화살표는 버튼이 다 들어가지 않을 때만 나타납니다. 모두 들어가는 동안에는 바를 스크롤할 필요가 없습니다.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>이미 기본값입니다.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>주요 버튼 (이 모드가 관리)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@
   <MBBS_Look_Font_Tiny>작음</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>보통</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>큼</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>직접 지정한 크기</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>글자 크기: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>'모든 버튼'을 따름</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>테마를 따름</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>텍스트 색</MBBS_Look_Color_0>
@@ -208,6 +226,29 @@
   <MBBS_Look_Field_buttonMouseover>마우스 오버</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>열림</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>비활성</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>(고유 외형 {0}개)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>{0}개 모두 '모든 버튼'을 따르도록 되돌리기</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>스타일 복사</MBBS_Look_Copy>
+  <MBBS_Look_Paste>스타일 붙여넣기</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>이 외형을 복사한 외형으로 바꿉니다.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>선택...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>배경 그림</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>버튼 안쪽, 테두리 아래에 그려지는 그림입니다. 채우기, 위치, 불투명도, 안쪽 여백은 이 버튼이 최종적으로 쓰는 그림에 적용됩니다.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>그림</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>없음</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>채우기</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>덮기 (채우고 자르기)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>맞추기 (그림 전체)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>늘이기</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>위치 (덮기가 남기는 쪽, 맞추기가 놓는 곳)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>불투명도: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>안쪽 여백: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>이미지 선택</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>테마 이미지</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>가져온 이미지가 아직 없습니다. PNG 파일을 다음 위치에 넣고
+{0}
+새로고침을 누르세요. 모드를 업데이트해도 그대로 남습니다.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>{0}px보다 큽니다. 버튼 배경으로 쓰면 모서리는 이 크기까지만 커집니다. 사용은 가능합니다.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>설치된 테마 중 자체 버튼 배경이 있는 테마가 없습니다.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>바 전체 설정을 따름 ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>배치 모드 만들기 (바로 업로드 가능)</MBBS_Export_ModFolder>
@@ -216,7 +257,7 @@
   <MBBS_Export_ModFolderDone>모드 폴더를 만들었습니다:
 {0}
 
-게임을 다시 시작한 뒤 모드 목록에서 활성화하면 사용해 볼 수 있고, 그곳에서 창작마당에 업로드할 수도 있습니다. 사용한 PNG 아이콘도 함께 들어 있습니다.</MBBS_Export_ModFolderDone>
+게임을 다시 시작한 뒤 모드 목록에서 활성화하면 사용해 볼 수 있고, 그곳에서 창작마당에 업로드할 수도 있습니다. 사용한 PNG 아이콘과 커스텀 테마 이미지도 함께 들어 있습니다.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>내보낼 수 없습니다: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>클립보드</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>텍스트에 이름, 제작자, 각 버튼이 어느 모드의 것인지가 함께 들어가므로 가져오는 사람이 무엇이 빠졌는지 알 수 있습니다.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>{0}에 저장됩니다. 다른 사람에게 받은 파일을 이곳에 넣으면 '가져오기'에 표시됩니다.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>직접 만드는 모드의 Defs 폴더에 넣을 Def입니다. PNG로 가져온 아이콘은 포함되지 않으니, 함께 넣으려면 '배치 모드 만들기'를 사용하세요.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>{1}에 모드를 만듭니다: About.xml (Main Button Bar System 필요), 이 배치, 사용하는 PNG 아이콘. 구독한 사람은 '가져오기'에서 찾을 수 있습니다.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>직접 만든 모드의 Defs 폴더에 넣을 Def입니다. PNG로 가져온 아이콘과 커스텀 테마 이미지는 포함되지 않습니다. 함께 담으려면 '배치 모드 만들기'를 쓰세요.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>{1}에 모드를 만듭니다: About.xml (Main Button Bar System 필요), 이 배치, 사용하는 PNG 아이콘과 커스텀 테마 이미지. 구독한 사람은 '가져오기'에서 찾을 수 있습니다.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>{2} 안에 전용 폴더로, 사용하는 PNG 이미지와 함께 저장됩니다. 프리셋 테마에 표시되며, 공유하려면 폴더 전체를 전달하세요.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>복사</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>저장</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>복사</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>만들기</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>커스텀 테마로 저장</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>저장</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>커스텀 테마로 저장...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>커스텀 테마를 다음 위치에 저장했습니다:
+{0}
+
+프리셋 테마에 표시됩니다. 폴더 전체를 공유하면 다른 사람도 사용할 수 있습니다.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>먼저 커스텀 테마로 전환해서 무언가를 바꿔 보세요.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>커스텀 테마 폴더 열기</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>커스텀 테마: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>커스텀 테마: {0} ({1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>이름을 입력하세요.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Package ID는 점으로 이은 두 부분 이상으로 이루어지며, 각 부분은 영문자로 시작하고 영문자, 숫자, _만 쓸 수 있습니다 (예: Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>{0}은(는) 이미 다른 모드가 사용하고 있습니다.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@
   <MBBS_ImportReport_Theme>테마: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>테마 {0} ({1})이(가) 설치되어 있지 않습니다. 설치될 때까지 바닐라 외형을 사용합니다.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>그 위에 사용자 지정 테마가 있습니다(버튼 {0}개가 자체 스타일 사용).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>가지고 있지 않은 커스텀 테마 이미지: {0}개 ({1}). PNG 파일을 {2}에 넣으세요. 그전까지는 해당 버튼이 테마 자체 이미지를 사용합니다.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>표시 방식 {0} ({1})이(가) 설치되어 있지 않습니다. 설치될 때까지 바닐라 바를 사용합니다.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>나에게 없는 가져온 아이콘: {0}개 ({1}). PNG 파일을 {2}에 넣으세요. 그 전까지 해당 버튼은 원래 아이콘을 씁니다.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>설치하지 않은 모드의 아이콘: {0}개 ({1}). 해당 버튼은 원래 아이콘을 씁니다.</MBBS_ImportReport_IconTexturesMissing>

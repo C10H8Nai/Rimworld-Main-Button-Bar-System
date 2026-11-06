@@ -84,7 +84,8 @@ namespace MainButtonBarSystem.Core
             "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", "LPT9",
         };
 
-        private static bool IsReserved(string name)
+        /// <summary>A Windows device name (CON, NUL, COM1…), with or without an extension: not usable as a file name.</summary>
+        public static bool IsReserved(string name)
         {
             int dot = name.IndexOf('.');
             return Reserved.Contains(dot >= 0 ? name.Substring(0, dot) : name);

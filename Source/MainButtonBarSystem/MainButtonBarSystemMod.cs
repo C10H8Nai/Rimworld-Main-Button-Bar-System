@@ -54,8 +54,12 @@ namespace MainButtonBarSystem
             if (listing.ButtonText("MBBS_OpenSettings".Translate()))
                 Find.WindowStack.Add(new Dialog_MainButtonBar());
 
-            listing.GapLine();
-            listing.CheckboxLabeled("MBBS_AlwaysDrawBar".Translate(), ref Settings.alwaysDrawBar, "MBBS_AlwaysDrawBarTip".Translate());
+            // A testing aid: shown in development mode, or while it is on so it can always be turned off again.
+            if (Prefs.DevMode || Settings.alwaysDrawBar)
+            {
+                listing.GapLine();
+                listing.CheckboxLabeled("MBBS_AlwaysDrawBar".Translate(), ref Settings.alwaysDrawBar, "MBBS_AlwaysDrawBarTip".Translate());
+            }
 
             listing.End();
         }

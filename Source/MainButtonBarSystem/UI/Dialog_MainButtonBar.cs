@@ -38,8 +38,15 @@ namespace MainButtonBarSystem
         private Vector2 listScroll;
         private bool showOriginallyHidden;
 
+        /// <summary>The source mod whose buttons the list shows, or null for every button; kept while the game runs.</summary>
+        private static string sourceFilter;
+
         private readonly List<string> mainRows = new List<string>();
         private readonly List<string> hiddenRows = new List<string>();
+
+        // The rows the list shows: mainRows and hiddenRows narrowed to the source filter, in the same order.
+        private readonly List<string> shownRows = new List<string>();
+        private readonly List<string> shownHiddenRows = new List<string>();
 
         private float barDetailHeight;
         private Vector2 barDetailScroll;
@@ -101,6 +108,7 @@ namespace MainButtonBarSystem
         {
             base.PreOpen();
             numberBuffers.Clear();
+            CustomThemeFiles.Refresh();
             Window_ButtonDrawer.CloseIfOpen();
             working = BarConfigManager.Saved.Clone();
             BarConfigManager.Preview = working;
@@ -151,6 +159,8 @@ namespace MainButtonBarSystem
                 DrawViewSwitch(switchRow);
                 float top = switchRow.yMax + L.footerGap;
                 var left = new Rect(body.x, top, Mathf.Floor(body.width * L.listFraction), body.yMax - top);
+                float filterX = switchRow.x + Mathf.Min(L.viewSwitchWidth, switchRow.width) + L.panelGap;
+                DrawSourceFilter(new Rect(filterX, switchRow.y, Mathf.Min(L.sourceFilterWidth, left.xMax - filterX), switchRow.height));
                 var right = new Rect(left.xMax + L.panelGap, top, body.width - left.width - L.panelGap, body.yMax - top);
                 DrawList(left);
                 DrawRight(right);
@@ -250,8 +260,8 @@ namespace MainButtonBarSystem
             {
                 var worker = bridge.Worker;
                 string text = worker.SessionPriority == CompatPriority.Theirs
-                    ? "MBBS_Compat_TheirsNotice".Translate(bridge.ModNameOrLabel)
-                    : "MBBS_Compat_OursNotice".Translate(bridge.ModNameOrLabel);
+                    ? "MBBS_Compat_TheirsNotice".TranslateKeepCase(bridge.ModNameOrLabel)
+                    : "MBBS_Compat_OursNotice".TranslateKeepCase(bridge.ModNameOrLabel);
                 if (!Advanced) text += " " + "MBBS_Compat_SeeAdvanced".Translate();
                 var line = new Rect(at.x, y, at.width, L.noticeLineHeight);
                 GUI.color = ColorLibrary.Gold;
@@ -316,11 +326,107 @@ namespace MainButtonBarSystem
             foreach (var theme in BarModel.Appearances.ToList())
             {
                 DrawThemeCard(listing.GetRect(L.themeCardHeight), theme);
+                if (theme == working.AppearanceDef) DrawSuggestedLayout(listing, theme);
                 listing.Gap(L.footerGap);
             }
+            DrawSavedThemes(listing);
             listing.Gap(L.themeSettingsGap);
             DrawIllustrationSettings(listing);
             themeListHeight = EndScrolledListing(listing);
+        }
+
+        /// <summary>The bar settings the layout uses now, as a theme's suggestion compares them.</summary>
+        private LayoutValues CurrentLayout() => new LayoutValues
+        {
+            Mode = working.displayMode ?? BarConfig.VanillaMode,
+            DefaultWidth = working.DefaultWidth,
+            MinWidth = working.MinWidth,
+            MinimizedFullWidth = working.MinimizedFullWidth,
+        };
+
+        /// <summary>
+        /// A theme's suggested layout, while the bar differs from it: a hint and a button that applies it. The theme
+        /// never changes the bar by itself; every changed setting keeps its own Default button on the Buttons tab.
+        /// </summary>
+        private void DrawSuggestedLayout(Listing_Standard listing, BarAppearanceDef theme)
+        {
+            var s = theme.suggestedLayout;
+            if (s == null) return;
+            var modes = s.displayModes?.Where(m => DefDatabase<BarDisplayModeDef>.GetNamedSilentFail(m) != null).ToList();
+            var now = CurrentLayout();
+            var after = LayoutSuggestion.Apply(now, modes, s.buttonWidth, s.halfButtonsFullWidth);
+            if (now.SameAs(after)) return;
+
+            var changes = new List<string>();
+            if (after.Mode != now.Mode) changes.Add("MBBS_DisplayMode".Translate() + ": " + ModeLabel(after.Mode));
+            if (after.DefaultWidth != now.DefaultWidth) changes.Add("MBBS_DefaultWidth".Translate(after.DefaultWidth));
+            if (after.MinWidth != now.MinWidth) changes.Add("MBBS_MinWidth".Translate(after.MinWidth));
+            if (after.MinimizedFullWidth != now.MinimizedFullWidth) changes.Add("MBBS_MinimizedFullWidth".Translate());
+
+            listing.Gap(L.footerGap);
+            GUI.color = L.reportWarningColor;
+            listing.Label(s.buttonWidth > 0 ? "MBBS_Suggest_Hint".Translate(theme.LabelCap, s.buttonWidth) : "MBBS_Suggest_HintNoWidth".Translate(theme.LabelCap));
+            GUI.color = Color.white;
+            var row = listing.GetRect(L.textRowHeight);
+            string apply = "MBBS_Suggest_Apply".Translate();
+            var button = new Rect(row.x, row.y, UIUtil.FitButton(L.moveButtonWidth, apply), row.height);
+            TooltipHandler.TipRegion(button, "MBBS_Suggest_Tip".Translate() + "\n" + string.Join("\n", changes.Select(c => "  • " + c)));
+            if (!Widgets.ButtonText(button, apply)) return;
+            working.displayMode = after.Mode;
+            if (after.DefaultWidth != now.DefaultWidth) working.defaultWidth = after.DefaultWidth;
+            if (after.MinWidth != now.MinWidth) working.minWidth = after.MinWidth;
+            if (after.MinimizedFullWidth != now.MinimizedFullWidth) working.minimizedFullWidth = BarConfig.Store(after.MinimizedFullWidth, D.minimizedFullWidth);
+        }
+
+        /// <summary>The player's saved custom themes, after the installed ones (spec 3.2): picking one copies it in.</summary>
+        private void DrawSavedThemes(Listing_Standard listing)
+        {
+            var saved = CustomThemeFiles.All;
+            if (saved.Count == 0) return;
+            listing.Label("MBBS_SavedThemes".Translate());
+            foreach (var theme in saved)
+            {
+                DrawSavedThemeCard(listing.GetRect(L.themeCardHeight), theme);
+                listing.Gap(L.footerGap);
+            }
+        }
+
+        private void DrawSavedThemeCard(Rect card, SavedCustomTheme saved)
+        {
+            Widgets.DrawMenuSection(card);
+            Widgets.DrawHighlightIfMouseover(card);
+            var inner = card.ContractedBy(L.detailPadding);
+            float previewWidth = Mathf.Floor(inner.width * L.themePreviewFraction);
+            var preview = new Rect(inner.xMax - previewWidth, inner.y + (inner.height - L.themePreviewHeight) / 2f, previewWidth, L.themePreviewHeight);
+            var text = new Rect(inner.x, inner.y, inner.width - previewWidth - L.panelGap, inner.height);
+
+            float tx = text.x + L.checkboxSize + L.footerGap;
+            Text.Font = GameFont.Medium;
+            Widgets.Label(new Rect(tx, text.y, text.xMax - tx, Text.LineHeight), saved.Name);
+            Text.Font = GameFont.Small;
+            float ty = text.y + Text.LineHeightOf(GameFont.Medium);
+
+            var baseDef = DefDatabase<BarAppearanceDef>.GetNamedSilentFail(saved.baseTheme);
+            GUI.color = Color.gray;
+            Text.Font = GameFont.Tiny;
+            string by = saved.meta?.author.NullOrEmpty() == false ? "MBBS_ImportReport_By".TranslateKeepCase(saved.meta.author) + "  " : "";
+            string from = baseDef != null ? "MBBS_SavedTheme_Base".TranslateKeepCase(baseDef.LabelCap.ToString()) : "MBBS_SavedTheme_BaseMissingShort".TranslateKeepCase(saved.baseTheme);
+            Widgets.Label(new Rect(tx, ty, text.xMax - tx, Text.LineHeight), by + from);
+            ty += Text.LineHeight;
+            if (!saved.meta?.description.NullOrEmpty() == true)
+                Widgets.Label(new Rect(tx, ty, text.xMax - tx, text.yMax - ty), saved.meta.description);
+            Text.Font = GameFont.Small;
+            GUI.color = Color.white;
+
+            // The starting theme's picture: the saved look's own PNGs are only copied in when it is picked.
+            if (baseDef != null)
+            {
+                var image = baseDef.Tex(baseDef.preview);
+                if (image != null) Widgets.DrawTextureFitted(preview, image, 1f);
+                else DrawThemePreview(baseDef, preview);
+            }
+            TooltipHandler.TipRegion(card, "MBBS_SavedTheme_Tip".Translate());
+            if (Widgets.ButtonInvisible(card)) ApplySavedTheme(saved);
         }
 
         private void DrawThemeCard(Rect card, BarAppearanceDef theme)
@@ -344,7 +450,7 @@ namespace MainButtonBarSystem
 
             GUI.color = Color.gray;
             Text.Font = GameFont.Tiny;
-            string by = theme.author.NullOrEmpty() ? theme.modContentPack?.Name : "MBBS_ThemeBy".Translate(theme.author, theme.modContentPack?.Name ?? "?").ToString();
+            string by = theme.author.NullOrEmpty() ? theme.modContentPack?.Name : "MBBS_ThemeBy".TranslateKeepCase(theme.author, theme.modContentPack?.Name ?? "?").ToString();
             if (!by.NullOrEmpty())
             {
                 Widgets.Label(new Rect(tx, ty, text.xMax - tx, Text.LineHeight), by);
@@ -473,6 +579,54 @@ namespace MainButtonBarSystem
                 else mainRows.Add(name);
             }
             if (selected != BarKey && !mainRows.Contains(selected) && !hiddenRows.Contains(selected)) selected = BarKey;
+
+            FillShownRows();
+            // A filter for a mod whose buttons are all gone (another save, a mod removed) shows every button again.
+            if (sourceFilter != null && shownRows.Count == 0 && shownHiddenRows.Count == 0)
+            {
+                sourceFilter = null;
+                FillShownRows();
+            }
+        }
+
+        private void FillShownRows()
+        {
+            shownRows.Clear();
+            shownHiddenRows.Clear();
+            foreach (var name in mainRows) if (Shown(name)) shownRows.Add(name);
+            foreach (var name in hiddenRows) if (Shown(name)) shownHiddenRows.Add(name);
+        }
+
+        private static bool Shown(string name) => sourceFilter == null || SourceOf(name) == sourceFilter;
+
+        /// <summary>The mod a button comes from, as the list's source column shows it.</summary>
+        private static string SourceOf(string name) => ButtonBaseline.Get(name)?.SourceModName ?? "?";
+
+        /// <summary>A drop-down above the list that narrows it to the buttons of one mod.</summary>
+        private void DrawSourceFilter(Rect rect)
+        {
+            if (rect.width <= 0f) return;
+            string current = sourceFilter ?? "MBBS_SourceFilter_All".Translate().ToString();
+            string label = "MBBS_SourceFilter".TranslateKeepCase(current);
+            TooltipHandler.TipRegion(rect, "MBBS_SourceFilterTip".Translate());
+            if (!UIUtil.ButtonText(rect, label.Truncate(rect.width - L.buttonTextPadding * 2f))) return;
+
+            var counts = new Dictionary<string, int>();
+            foreach (var name in mainRows.Concat(hiddenRows))
+            {
+                string mod = SourceOf(name);
+                counts[mod] = counts.TryGetValue(mod, out int n) ? n + 1 : 1;
+            }
+            var options = new List<FloatMenuOption>
+            {
+                new FloatMenuOption("MBBS_SourceFilter_All".Translate() + " (" + (mainRows.Count + hiddenRows.Count) + ")", () => sourceFilter = null),
+            };
+            foreach (var pair in counts.OrderBy(p => p.Key, StringComparer.CurrentCultureIgnoreCase))
+            {
+                string mod = pair.Key;
+                options.Add(new FloatMenuOption(mod + " (" + pair.Value + ")", () => sourceFilter = mod));
+            }
+            Find.WindowStack.Add(new FloatMenu(options));
         }
 
         private struct Columns
@@ -537,8 +691,8 @@ namespace MainButtonBarSystem
 
             float rowH = L.rowHeight;
             var outRect = new Rect(inner.x, inner.y + L.columnHeaderHeight, inner.width, inner.height - L.columnHeaderHeight);
-            float height = rowH * (1 + mainRows.Count);
-            if (hiddenRows.Count > 0) height += rowH + (showOriginallyHidden ? rowH * hiddenRows.Count : 0f);
+            float height = rowH * (1 + shownRows.Count);
+            if (shownHiddenRows.Count > 0) height += rowH + (showOriginallyHidden ? rowH * shownHiddenRows.Count : 0f);
             var viewRect = new Rect(0f, 0f, outRect.width - GenUI.ScrollBarWidth, height);
 
             Widgets.BeginScrollView(outRect, ref listScroll, viewRect);
@@ -546,24 +700,24 @@ namespace MainButtonBarSystem
             DrawBarRow(new Rect(0f, y, viewRect.width, rowH));
             y += rowH;
 
-            var groupRect = new Rect(0f, y, viewRect.width, rowH * mainRows.Count);
+            var groupRect = new Rect(0f, y, viewRect.width, rowH * shownRows.Count);
             int group = ReorderableWidget.NewGroup(OnReorder, ReorderableDirection.Vertical, groupRect);
-            for (int i = 0; i < mainRows.Count; i++)
+            for (int i = 0; i < shownRows.Count; i++)
             {
                 var row = new Rect(0f, y, viewRect.width, rowH);
                 ReorderableWidget.Reorderable(group, ColumnsFor(row).Handle);
-                DrawButtonRow(row, mainRows[i], i);
+                DrawButtonRow(row, shownRows[i], i);
                 y += rowH;
             }
 
-            if (hiddenRows.Count > 0)
+            if (shownHiddenRows.Count > 0)
             {
                 var toggle = new Rect(0f, y, viewRect.width, rowH);
                 Widgets.DrawHighlightIfMouseover(toggle);
                 Text.Anchor = TextAnchor.MiddleLeft;
                 GUI.color = Color.gray;
                 Widgets.Label(new Rect(toggle.x + L.handleColumn, toggle.y, toggle.width - L.handleColumn, toggle.height),
-                    (showOriginallyHidden ? "▼ " : "▶ ") + "MBBS_OriginallyHidden".Translate(hiddenRows.Count));
+                    (showOriginallyHidden ? "▼ " : "▶ ") + "MBBS_OriginallyHidden".Translate(shownHiddenRows.Count));
                 GUI.color = Color.white;
                 TooltipHandler.TipRegion(toggle, "MBBS_OriginallyHiddenTip".Translate());
                 if (Widgets.ButtonInvisible(toggle)) showOriginallyHidden = !showOriginallyHidden;
@@ -571,7 +725,7 @@ namespace MainButtonBarSystem
 
                 if (showOriginallyHidden)
                 {
-                    foreach (var name in hiddenRows)
+                    foreach (var name in shownHiddenRows)
                     {
                         DrawButtonRow(new Rect(0f, y, viewRect.width, rowH), name, -1);
                         y += rowH;
@@ -582,7 +736,7 @@ namespace MainButtonBarSystem
             Text.Anchor = TextAnchor.UpperLeft;
 
             // Move buttons. Top to bottom in the list is left to right on screen.
-            int index = mainRows.IndexOf(selected);
+            int index = shownRows.IndexOf(selected);
             bool movable = index >= 0 && !BarModel.IsLocked(working, selected);
             var up = new Rect(buttonsRow.x, buttonsRow.y, MoveButtonWidth, buttonsRow.height);
             var down = new Rect(up.xMax + L.footerGap, buttonsRow.y, MoveButtonWidth, buttonsRow.height);
@@ -660,7 +814,7 @@ namespace MainButtonBarSystem
             // Source mod
             GUI.color = Color.gray;
             Text.Font = GameFont.Tiny;
-            Widgets.Label(c.Source, (ButtonBaseline.Get(name)?.SourceModName ?? "?").Truncate(c.Source.width - L.textInset));
+            Widgets.Label(c.Source, SourceOf(name).Truncate(c.Source.width - L.textInset));
             Text.Font = GameFont.Small;
 
             // Hotkey (advanced)
@@ -691,12 +845,13 @@ namespace MainButtonBarSystem
             if (Widgets.ButtonInvisible(selectArea, false)) selected = name;
         }
 
+        // Drags and Move up / down count the rows the list shows; with a source filter the other buttons keep their places.
         private void OnReorder(int from, int to)
         {
-            if (from < 0 || from >= mainRows.Count || BarModel.IsLocked(working, mainRows[from])) return;
-            string moved = mainRows[from];
+            if (from < 0 || from >= shownRows.Count || BarModel.IsLocked(working, shownRows[from])) return;
+            string moved = shownRows[from];
             var list = new List<string>(mainRows);
-            ButtonOrder.Reorder(list, from, to);
+            ButtonOrder.ReorderShown(list, shownRows, from, to);
             CommitOrder(list);
             selected = moved;
         }
@@ -704,7 +859,7 @@ namespace MainButtonBarSystem
         private void Step(int index, int delta)
         {
             var list = new List<string>(mainRows);
-            if (ButtonOrder.Step(list, index, delta)) CommitOrder(list);
+            if (ButtonOrder.StepShown(list, shownRows, index, delta)) CommitOrder(list);
         }
 
         /// <summary>Stores a new order. Buttons of mods that are not loaded right now keep their place at the end.</summary>
@@ -811,6 +966,8 @@ namespace MainButtonBarSystem
                 }
                 working.gap = IntSetting(listing, "MBBS_Gap".Translate(working.Gap), working.gap, working.Gap, R.gap, 1);
                 working.fillScreen = BoolSetting(listing, "MBBS_FillScreen".Translate(), working.fillScreen, D.fillScreen, "MBBS_FillScreenTip".Translate());
+                working.minimizedFullWidth = BoolSetting(listing, "MBBS_MinimizedFullWidth".Translate(), working.minimizedFullWidth, D.minimizedFullWidth,
+                    "MBBS_MinimizedFullWidthTip".Translate());
 
                 listing.GapLine();
                 if (SectionHeader(listing, "MBBS_LabelAlign".Translate(), working.labelAlign != LabelAlign.Default, "MBBS_LabelAlignTip".Translate()))
@@ -861,7 +1018,7 @@ namespace MainButtonBarSystem
                 var worker = bridge.Worker;
                 listing.GapLine();
                 bool notDefault = worker.Priority != bridge.defaultPriority;
-                if (SectionHeader(listing, "MBBS_Compat_Header".Translate(bridge.ModNameOrLabel), notDefault))
+                if (SectionHeader(listing, "MBBS_Compat_Header".TranslateKeepCase(bridge.ModNameOrLabel), notDefault))
                     SetPriority(bridge, bridge.defaultPriority);
                 foreach (CompatPriority p in Enum.GetValues(typeof(CompatPriority)))
                 {
@@ -876,10 +1033,10 @@ namespace MainButtonBarSystem
                     GUI.color = Color.white;
                 }
                 foreach (var line in worker.BarReferenceValues()) Note(listing, line);
-                if (worker.CanImport && listing.ButtonText("MBBS_Compat_Import".Translate(bridge.ModNameOrLabel)))
+                if (worker.CanImport && listing.ButtonText("MBBS_Compat_Import".TranslateKeepCase(bridge.ModNameOrLabel)))
                 {
                     worker.ImportInto(working);
-                    Messages.Message("MBBS_Compat_Imported".Translate(bridge.ModNameOrLabel), MessageTypeDefOf.NeutralEvent, false);
+                    Messages.Message("MBBS_Compat_Imported".TranslateKeepCase(bridge.ModNameOrLabel), MessageTypeDefOf.NeutralEvent, false);
                 }
             }
         }
@@ -913,9 +1070,9 @@ namespace MainButtonBarSystem
 
             GUI.color = Color.gray;
             Text.Font = GameFont.Tiny;
-            listing.Label("MBBS_Info_ButtonSource".Translate(baseline?.SourceModName ?? "?"));
-            listing.Label("MBBS_Info_IconSource".Translate(IconSourceText(baseline)));
-            listing.Label("MBBS_Info_DefName".Translate(name));
+            listing.Label("MBBS_Info_ButtonSource".TranslateKeepCase(baseline?.SourceModName ?? "?"));
+            listing.Label("MBBS_Info_IconSource".TranslateKeepCase(IconSourceText(baseline)));
+            listing.Label("MBBS_Info_DefName".TranslateKeepCase(name));
             if (BarModel.OriginallyHidden(name)) listing.Label("MBBS_Info_OriginallyHidden".Translate());
             else if (BarConfigManager.InGame && def != null && !BarModel.SafeVisible(def)) listing.Label("MBBS_NotShowingNowTip".Translate());
             Text.Font = GameFont.Small;
@@ -1020,7 +1177,7 @@ namespace MainButtonBarSystem
             }
             Text.Anchor = TextAnchor.MiddleLeft;
             var labelRect = new Rect(x, row.y, row.xMax - right - L.footerGap - x, row.height);
-            string text = "MBBS_Icon".Translate(CustomIcons.Describe(o.icon));
+            string text = "MBBS_Icon".TranslateKeepCase(CustomIcons.Describe(o.icon));
             Widgets.Label(labelRect, text.Truncate(labelRect.width));
             TooltipHandler.TipRegion(labelRect, text);
             Text.Anchor = TextAnchor.UpperLeft;
@@ -1349,7 +1506,7 @@ namespace MainButtonBarSystem
 
         private List<FloatMenuOption> ExportOptions()
         {
-            return new List<FloatMenuOption>
+            var options = new List<FloatMenuOption>
             {
                 new FloatMenuOption("MBBS_Export_Clipboard".Translate(), () => AskInfo(ExportTarget.Clipboard, (meta, _) =>
                 {
@@ -1359,7 +1516,7 @@ namespace MainButtonBarSystem
                 new FloatMenuOption("MBBS_Export_File".Translate(), () => AskInfo(ExportTarget.File, (meta, _) =>
                 {
                     var path = ArrangementIO.SaveToFile(working, meta);
-                    Messages.Message("MBBS_Export_Saved".Translate(path), MessageTypeDefOf.NeutralEvent, false);
+                    Messages.Message("MBBS_Export_Saved".TranslateKeepCase(path), MessageTypeDefOf.NeutralEvent, false);
                 })),
                 new FloatMenuOption("MBBS_Export_ModXml".Translate(), () => AskInfo(ExportTarget.ModXml, (meta, _) =>
                 {
@@ -1371,7 +1528,7 @@ namespace MainButtonBarSystem
                     try
                     {
                         var folder = ArrangementIO.ExportModFolder(working, meta, packageId);
-                        Find.WindowStack.Add(new Dialog_MessageBox("MBBS_Export_ModFolderDone".Translate(folder), "MBBS_OpenFolder".Translate(),
+                        Find.WindowStack.Add(new Dialog_MessageBox("MBBS_Export_ModFolderDone".TranslateKeepCase(folder), "MBBS_OpenFolder".Translate(),
                             () => FolderUtil.Open(folder), "OK".Translate()));
                     }
                     catch (System.Exception e)
@@ -1381,6 +1538,67 @@ namespace MainButtonBarSystem
                 })),
                 new FloatMenuOption("MBBS_OpenExportsFolder".Translate(), () => FolderUtil.Open(ModPaths.ExportsFolder)),
             };
+            if (tab == Tab.Appearance) options.InsertRange(0, ThemeExportOptions());
+            return options;
+        }
+
+        /// <summary>Appearance tab: save the custom look as a custom theme (spec 3.5); greyed out without one.</summary>
+        private List<FloatMenuOption> ThemeExportOptions()
+        {
+            bool has = working.UsesCustomTheme && !working.customTheme.IsEmpty;
+            var save = new FloatMenuOption("MBBS_Export_Theme".Translate(), has ? () => AskInfo(ExportTarget.Theme, (meta, _) =>
+            {
+                try
+                {
+                    var folder = CustomThemeFiles.Save(working, meta);
+                    Find.WindowStack.Add(new Dialog_MessageBox("MBBS_Export_ThemeDone".TranslateKeepCase(folder), "MBBS_OpenFolder".Translate(),
+                        () => FolderUtil.Open(folder), "OK".Translate()));
+                }
+                catch (System.Exception e)
+                {
+                    Messages.Message("MBBS_Export_Failed".Translate(e.Message), MessageTypeDefOf.RejectInput, false);
+                }
+            }) : (System.Action)null);
+            if (!has) save.tooltip = new TipSignal("MBBS_Export_ThemeNone".Translate());
+            return new List<FloatMenuOption> { save, new FloatMenuOption("MBBS_OpenThemesFolder".Translate(), CustomThemeFiles.OpenFolder) };
+        }
+
+        /// <summary>Appearance tab: each saved custom theme, then the folder (spec 3.5).</summary>
+        private List<FloatMenuOption> ThemeImportOptions()
+        {
+            var options = new List<FloatMenuOption>();
+            foreach (var saved in CustomThemeFiles.All)
+            {
+                var theme = saved;
+                string author = theme.meta?.author;
+                string label = author.NullOrEmpty() ? "MBBS_Import_Theme".TranslateKeepCase(theme.Name) : "MBBS_Import_ThemeBy".TranslateKeepCase(theme.Name, author);
+                options.Add(new FloatMenuOption(label, () => ApplySavedTheme(theme)));
+            }
+            options.Add(new FloatMenuOption("MBBS_OpenThemesFolder".Translate(), CustomThemeFiles.OpenFolder));
+            return options;
+        }
+
+        /// <summary>
+        /// Copies a saved custom theme into the settings (spec 4.17), after a confirmation when that replaces a custom
+        /// look. A starting theme that is not installed becomes vanilla, with a message.
+        /// </summary>
+        private void ApplySavedTheme(SavedCustomTheme saved)
+        {
+            void Apply()
+            {
+                var baseDef = DefDatabase<BarAppearanceDef>.GetNamedSilentFail(saved.baseTheme);
+                if (baseDef == null)
+                    Messages.Message("MBBS_SavedTheme_BaseMissing".TranslateKeepCase(saved.Name, saved.baseTheme), MessageTypeDefOf.CautionInput, false);
+                working.appearance = baseDef?.defName ?? BarConfig.VanillaAppearance;
+                working.appearanceMode = AppearanceMode.Custom;
+                working.customTheme = CustomThemeFiles.Install(saved);
+                lookSelected = null;
+                Messages.Message("MBBS_SavedTheme_Applied".TranslateKeepCase(saved.Name), MessageTypeDefOf.NeutralEvent, false);
+            }
+
+            if (working.customTheme != null && !working.customTheme.IsEmpty)
+                Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("MBBS_SavedTheme_ReplaceConfirm".TranslateKeepCase(saved.Name), Apply, destructive: true));
+            else Apply();
         }
 
         /// <summary>Asks for name, author and description, then exports with them and this game's button list.</summary>
@@ -1402,21 +1620,22 @@ namespace MainButtonBarSystem
                 var path = file.FullName;
                 var (name, author) = ArrangementIO.PeekTitle(path);
                 string label = name.NullOrEmpty()
-                    ? "MBBS_Import_File".Translate(file.Name).ToString()
+                    ? "MBBS_Import_File".TranslateKeepCase(file.Name).ToString()
                     : author.NullOrEmpty()
                         ? "MBBS_Import_FileNamed".Translate(name, file.Name).ToString()
-                        : "MBBS_Import_FileNamedBy".Translate(name, author, file.Name).ToString();
+                        : "MBBS_Import_FileNamedBy".TranslateKeepCase(name, author, file.Name).ToString();
                 options.Add(new FloatMenuOption(label, () => ImportResult(ArrangementIO.FromFile(path, out var error), error)));
             }
             foreach (var def in DefDatabase<MainButtonArrangementDef>.AllDefs.OrderBy(d => d.label))
             {
                 var arrangement = def;
                 string label = arrangement.author.NullOrEmpty()
-                    ? "MBBS_Import_Def".Translate(arrangement.LabelCap)
-                    : "MBBS_Import_DefBy".Translate(arrangement.LabelCap, arrangement.author);
+                    ? "MBBS_Import_Def".TranslateKeepCase(arrangement.LabelCap)
+                    : "MBBS_Import_DefBy".TranslateKeepCase(arrangement.LabelCap, arrangement.author);
                 options.Add(new FloatMenuOption(label, () => ImportResult(ArrangementIO.FromDef(arrangement), null)));
             }
             options.Add(new FloatMenuOption("MBBS_OpenExportsFolder".Translate(), () => FolderUtil.Open(ModPaths.ExportsFolder)));
+            if (tab == Tab.Appearance) options.InsertRange(0, ThemeImportOptions());
             return options;
         }
 

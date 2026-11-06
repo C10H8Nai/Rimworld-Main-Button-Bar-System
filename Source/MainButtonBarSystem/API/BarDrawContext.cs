@@ -97,8 +97,11 @@ namespace MainButtonBarSystem
         /// <summary>Buttons whose own worker threw; not drawn again plainly, so a broken one costs one exception per event.</summary>
         private static readonly HashSet<string> ownFailures = new HashSet<string>();
 
-        /// <summary>Buttons whose own worker threw on input; logged once.</summary>
-        private static readonly HashSet<string> inputFailures = new HashSet<string>();
+        /// <summary>
+        /// Buttons whose own worker threw and was logged: one error per button, whether it threw while being drawn or
+        /// while handling input (a worker that throws in DoButton throws in both).
+        /// </summary>
+        private static readonly HashSet<string> logged = new HashSet<string>();
 
         /// <summary>Appearance and button pairs that only draw the game's way.</summary>
         private static readonly HashSet<(BarAppearanceWorker, MainButtonDef)> plain = new HashSet<(BarAppearanceWorker, MainButtonDef)>();
@@ -126,7 +129,7 @@ namespace MainButtonBarSystem
                 string key = def?.defName ?? "?";
                 if (type != EventType.Layout && type != EventType.Repaint)
                 {
-                    if (inputFailures.Add(key)) LogOwn(def, key, e, "while handling input");
+                    if (logged.Add(key)) LogOwn(def, key, e, "while handling input");
                     return;
                 }
                 if (ownFailures.Contains(key)) return;
@@ -139,7 +142,7 @@ namespace MainButtonBarSystem
                 {
                     ResetGui();
                     ownFailures.Add(key);
-                    LogOwn(def, key, own, "while being drawn");
+                    if (logged.Add(key)) LogOwn(def, key, own, "while being drawn");
                     return;
                 }
 
@@ -168,7 +171,8 @@ namespace MainButtonBarSystem
             {
                 ResetGui();
                 string key = button.Def?.defName ?? "?";
-                if (ownFailures.Add(key)) LogOwn(button.Def, key, e, "while being drawn");
+                ownFailures.Add(key);
+                if (logged.Add(key)) LogOwn(button.Def, key, e, "while being drawn");
             }
         }
 

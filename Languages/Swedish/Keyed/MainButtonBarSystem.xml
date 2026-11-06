@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Enkel</MBBS_View_Simple>
   <MBBS_View_Advanced>Avancerat</MBBS_View_Advanced>
   <MBBS_ViewTip>Avancerat visar fler inställningar: bredder, fasta positioner, textjustering, snabbtangenter och kompatibilitet. Valet är gemensamt för alla sparfiler.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Alla</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Visar bara knapparna som en mod lägger till. Dra och Flytta upp / Flytta ned flyttar en knapp bland de visade; de andra behåller sina platser.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Visa</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikon</MBBS_Col_Icon>
   <MBBS_Col_Name>Namn</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Avstånd mellan knappar: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Fyll skärmens bredd</MBBS_FillScreen>
   <MBBS_FillScreenTip>När knapparna får plats sträcks de ut över hela bredden.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Halvbreda knappar använder full bredd</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Vissa knappar ber spelet om halva bredden jämfört med de andra. Slå på för att ge dem samma bredd.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} ser bäst ut med knappar som är minst {1}px breda; din list kan göra dem smalare.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} föreslår en annan layout för listen.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Använd den föreslagna layouten</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Ändrar de här inställningarna för listen (fliken Knappar, Avancerat; var och en behåller sin Standard-knapp):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Lås spelets menyknapp vid högerkanten</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Medan menyknappen är låst kan den inte döljas, flyttas eller läggas i lådan; den kan bara byta namn.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Spelets menyknapp har låsts upp under Avancerat.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Teman ändrar hur fältet och dess knappar ser ut. Temamoddar som har Main Button Bar System som beroende visas också här. Valet sparas med denna sparfil (eller med mallen i huvudmenyn).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>av {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Dina egna teman</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Utgår från {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Utgår från {0} (inte installerat)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>”{0}” utgår från temat {1}, som inte är installerat; det utgår i stället från vanilla.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Ersätta ditt nuvarande eget utseende med ”{0}”?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>”{0}” är nu ditt eget utseende. Tryck på Spara för att behålla det.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Kopierar det här temat till dina inställningar: sparfilen fungerar fortfarande även om filen raderas senare.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Pilarna visas bara när knapparna inte får plats. Så länge de får plats behöver fältet inte rulla.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Redan standardvärdet.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Huvudknappar (sparade av denna mod)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconP
   <MBBS_Look_Font_Tiny>Liten</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Mellan</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Stor</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Egen storlek</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Textstorlek: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Samma som ”Alla knappar”</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Samma som temat</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Textfärg</MBBS_Look_Color_0>
@@ -208,15 +226,38 @@ och tryck på Uppdatera. De ligger kvar där när modden uppdateras.</MBBS_IconP
   <MBBS_Look_Field_buttonMouseover>mus över</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>öppen</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>inaktiverad</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} med eget utseende)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Låt alla {0} följa Alla knappar igen</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Kopiera stil</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Klistra in stil</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Ersätter det här utseendet med det kopierade.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Välj...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Bakgrundsbild</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>En bild inuti knappen, under ramen. Fyllning, placering, opacitet och indrag gäller den bild som knappen till slut använder.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Bild</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>ingen</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Fyllning</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Täck (fyll och beskär)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Anpassa (hela bilden)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Sträck</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Placering (den sida som Täck behåller, var Anpassa placerar den)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Opacitet: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Indrag: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Välj en bild</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Temabilder</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Inga importerade bilder ännu. Lägg PNG-filer i
+{0}
+och tryck på Uppdatera. De ligger kvar vid moduppdateringar.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Större än {0}px: som knappbakgrund slutar hörnen växa vid den storleken. Det fungerar ändå.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Inget installerat tema har egna knappbakgrunder.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Samma som hela fältet ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Skapa en layoutmod (redo att laddas upp)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Öppna mappen med layouter</MBBS_OpenExportsFolder>
   <MBBS_OpenFolder>Öppna mapp</MBBS_OpenFolder>
-  <MBBS_Export_ModFolderDone>Moddmappen har skapats:
+  <MBBS_Export_ModFolderDone>Skapade modmappen:
 {0}
 
-Starta om spelet och aktivera modden i modlistan för att prova den; därifrån kan du också ladda upp den till Workshop. Dina PNG-ikoner följer med.</MBBS_Export_ModFolderDone>
+Starta om spelet, aktivera den i modlistan för att prova den och ladda upp den till Workshop därifrån. Dina PNG-ikoner och bilder till egna teman ingår.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Kunde inte exportera: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>urklipp</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Starta om spelet och aktivera modden i modlistan för att prova den; därifrån 
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Texten innehåller namn, författare och vilken mod varje knapp kommer från, så att den som importerar ser vad som saknas.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Sparas i {0}. Filer från andra som du lägger där visas under ”Importera”.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>En def för Defs-mappen i din egen mod. Ikoner som du har importerat som PNG ingår inte: använd ”Skapa en layoutmod” för det.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Skapar en mod i {1}: About.xml (kräver Main Button Bar System), layouten och de PNG-ikoner den använder. Prenumeranter hittar den under ”Importera”.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>En def för din egen mods Defs-mapp. Ikoner och bilder till egna teman som du importerat som PNG ingår inte: använd ”Skapa en layoutmod” för det.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Skapar en mod i {1}: About.xml (kräver Main Button Bar System), layouten och de PNG-ikoner och bilder till egna teman den använder. Prenumeranter hittar den under ”Importera”.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Sparas i en egen mapp i {2}, tillsammans med de PNG-bilder det använder. Det visas under Färdiga teman; för att dela det ger du andra hela mappen.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Kopiera</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Spara</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Kopiera</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Skapa</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Spara som eget tema</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Spara</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Spara som eget tema...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Sparade det egna temat i:
+{0}
+
+Det visas under Färdiga teman. Dela hela mappen för att ge det till andra.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Byt först till Eget tema och ändra något.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Öppna mappen med egna teman</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Eget tema: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Eget tema: {0} (av {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Ge den ett namn.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Ett Package ID består av två eller fler delar sammanfogade med punkter. Varje del börjar med en bokstav A–Z och innehåller bara bokstäverna A–Z (inte å, ä, ö), siffror och _ (till exempel Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>En annan mod använder redan {0}.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Starta om spelet och aktivera modden i modlistan för att prova den; därifrån 
   <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Temat {0} (från {1}) är inte installerat; tills dess används originalutseendet.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Ett eget tema ovanpå ({0} knappar med egen stil).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Bilder till egna teman som du inte har: {0} ({1}). Lägg PNG-filerna i {2}; tills dess använder de knapparna temats egna bilder.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Visningsläget {0} (från {1}) är inte installerat; tills dess används originalfältet.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Importerade ikoner som du saknar: {0} ({1}). Lägg PNG-filerna i {2}; tills dess behåller de knapparna sin egen ikon.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Ikoner från moddar som du inte har: {0} ({1}). De knapparna behåller sin egen ikon.</MBBS_ImportReport_IconTexturesMissing>

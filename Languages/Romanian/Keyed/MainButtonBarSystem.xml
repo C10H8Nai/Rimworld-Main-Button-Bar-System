@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Simplu</MBBS_View_Simple>
   <MBBS_View_Advanced>Avansat</MBBS_View_Advanced>
   <MBBS_ViewTip>Modul Avansat afișează mai multe opțiuni: lățimi, poziții fixe, alinierea textului, taste rapide și compatibilitate. Alegerea este comună pentru toate salvările.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Toate</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Afișează doar butoanele adăugate de un mod. Tragerea și Mută în sus / Mută în jos mută un buton printre cele afișate; celelalte rămân pe loc.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Vizibil</MBBS_Col_Visible>
   <MBBS_Col_Icon>Pictogramă</MBBS_Col_Icon>
   <MBBS_Col_Name>Nume</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Spațiu între butoane: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Umple lățimea ecranului</MBBS_FillScreen>
   <MBBS_FillScreenTip>Când butoanele încap, sunt întinse pentru a ocupa toată lățimea.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Butoanele de jumătate de lățime folosesc lățimea întreagă</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Unele butoane cer jocului jumătate din lățimea celorlalte. Activează pentru a le da aceeași lățime.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} arată cel mai bine cu butoane late de cel puțin {1}px; bara ta le poate face mai înguste.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} sugerează o altă aranjare a barei.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Aplică aranjarea sugerată</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Modifică aceste setări ale barei (fila Butoane, modul Avansat; fiecare își păstrează butonul Implicit):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Blochează butonul Meniu al jocului la capătul din dreapta</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Cât timp este blocat, butonul Meniu nu poate fi ascuns, mutat sau pus în sertar; poate fi doar redenumit.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Butonul Meniu al jocului a fost deblocat în modul Avansat.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Temă</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Temele schimbă aspectul barei și al butoanelor ei. Modurile de teme care au Main Button Bar System ca dependență apar și ele aici. Alegerea este păstrată în această salvare (sau în șablon, când deschizi setările din meniul principal).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>de {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Temele tale personalizate</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Pornește de la {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Pornește de la {0} (neinstalat)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>„{0}” pornește de la tema {1}, care nu este instalată; pornește în schimb de la jocul de bază.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Înlocuiești aspectul tău personalizat actual cu „{0}”?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>„{0}” este acum aspectul tău personalizat. Apasă Salvează pentru a-l păstra.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Copiază această temă personalizată în setările tale: salvarea continuă să funcționeze chiar dacă fișierul este șters ulterior.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Săgețile apar doar când butoanele nu încap. Cât timp încap, bara nu are nevoie de derulare.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Are deja valoarea implicită.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Butoane principale (păstrate de acest mod)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ apoi apasă Reîncarcă. Rămân acolo și după actualizările modului.</MBBS_I
   <MBBS_Look_Font_Tiny>Mic</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Mediu</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Mare</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Mărime personalizată</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Mărimea textului: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>La fel ca „Toate butoanele”</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>La fel ca tema</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Culoarea textului</MBBS_Look_Color_0>
@@ -208,6 +226,29 @@ apoi apasă Reîncarcă. Rămân acolo și după actualizările modului.</MBBS_I
   <MBBS_Look_Field_buttonMouseover>mouse deasupra</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>deschis</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>dezactivat</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} cu aspect propriu)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Setează toate cele {0} să urmeze din nou Toate butoanele</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Copiază stilul</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Lipește stilul</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Înlocuiește acest aspect cu cel copiat.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Alege...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Imagine de fundal</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>O imagine în interiorul butonului, sub cadrul lui. Umplerea, poziția, opacitatea și marginea interioară se aplică imaginii pe care o ajunge să folosească acest buton.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Imagine</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>niciuna</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Umplere</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Acoperă (umple și taie)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Potrivește (imaginea întreagă)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Întinde</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Poziție (partea păstrată de Acoperă, locul în care o pune Potrivește)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Opacitate: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Margine interioară: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Alege o imagine</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Imaginile temelor</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Nu există încă imagini importate. Pune fișiere PNG în
+{0}
+apoi apasă Reîncarcă. Rămân acolo la actualizările modului.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Mai mare de {0}px: ca fundal de buton, colțurile nu mai cresc la această mărime. Funcționează totuși.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Nicio temă instalată nu are fundaluri proprii pentru butoane.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>La fel ca întreaga bară ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Creează un mod de aranjament (gata de încărcat)</MBBS_Export_ModFolder>
@@ -216,7 +257,7 @@ apoi apasă Reîncarcă. Rămân acolo și după actualizările modului.</MBBS_I
   <MBBS_Export_ModFolderDone>Dosarul modului a fost creat:
 {0}
 
-Repornește jocul și activează-l în lista de moduri ca să-l încerci; de acolo îl poți încărca și pe Workshop. Pictogramele tale PNG sunt incluse.</MBBS_Export_ModFolderDone>
+Reporniți jocul, activează-l în lista de moduri ca să-l încerci și încarcă-l de acolo în Workshop. Pictogramele tale PNG și imaginile temelor personalizate sunt incluse.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Nu s-a putut exporta: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>clipboard</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Repornește jocul și activează-l în lista de moduri ca să-l încerci; de aco
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Textul include numele, autorul și modul din care provine fiecare buton, ca cine îl importă să vadă ce îi lipsește.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Se salvează în {0}. Fișierele primite de la alții pe care le pui acolo apar la Importă.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Un Def pentru dosarul Defs al propriului tău mod. Pictogramele importate ca PNG nu sunt incluse: pentru asta, folosește „Creează un mod de aranjament”.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Creează un mod în {1}: About.xml (necesită Main Button Bar System), aranjamentul și pictogramele PNG pe care le folosește. Abonații îl găsesc la Importă.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Un def pentru dosarul Defs al modului tău. Pictogramele și imaginile temelor personalizate importate ca PNG nu sunt incluse: folosește „Creează un mod de aranjament” pentru asta.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Creează un mod în {1}: About.xml (necesită Main Button Bar System), aranjamentul și pictogramele PNG și imaginile temelor personalizate pe care le folosește. Abonații îl găsesc la Importă.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Salvată într-un dosar propriu în {2}, împreună cu imaginile PNG folosite. Apare la Predefinite; pentru a o partaja, dă-le altora dosarul întreg.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Copiază</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Salvează</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Copiază</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Creează</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Salvează ca temă personalizată</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Salvează</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Salvează ca temă personalizată...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Tema personalizată a fost salvată în:
+{0}
+
+Apare la Predefinite. Partajează dosarul întreg pentru a o da altora.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Treci mai întâi la Personalizată și schimbă ceva.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Deschide dosarul temelor personalizate</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Temă personalizată: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Temă personalizată: {0} (de {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Dă-i un nume.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Un Package ID are două sau mai multe părți unite prin puncte; fiecare începe cu o literă A–Z și conține doar litere A–Z (fără diacritice), cifre și _ (de exemplu Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>Alt mod folosește deja {0}.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Repornește jocul și activează-l în lista de moduri ca să-l încerci; de aco
   <MBBS_ImportReport_Theme>Temă: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Tema {0} (din {1}) nu este instalată; până atunci se folosește aspectul original.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Peste ea e o temă personalizată ({0} butoane cu stil propriu).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Imagini de teme personalizate pe care nu le ai: {0} ({1}). Pune fișierele PNG în {2}; până atunci aceste butoane folosesc imaginile temei înseși.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Modul de afișare {0} (din {1}) nu este instalat; până atunci se folosește bara originală.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Pictograme importate pe care nu le ai: {0} ({1}). Pune fișierele PNG în {2}; până atunci, acele butoane își păstrează propria pictogramă.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Pictograme din moduri pe care nu le ai: {0} ({1}). Acele butoane își păstrează propria pictogramă.</MBBS_ImportReport_IconTexturesMissing>

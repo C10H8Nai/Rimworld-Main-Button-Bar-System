@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Simple</MBBS_View_Simple>
   <MBBS_View_Advanced>Advanced</MBBS_View_Advanced>
   <MBBS_ViewTip>Advanced shows more options: widths, fixed positions, label alignment, hotkeys and compatibility. The choice is kept for every save.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>All</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>List only the buttons one mod adds. Dragging and Move up / Move down move a button among the listed ones; the others keep their places.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Show</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icon</MBBS_Col_Icon>
   <MBBS_Col_Name>Name</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Space between buttons: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Fill the screen width</MBBS_FillScreen>
   <MBBS_FillScreenTip>When the buttons fit, stretch them to use the whole width.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Half-width buttons use the full width</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Some buttons ask the game for half the width of the others. Turn this on to give them the same width.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} looks best with buttons at least {1}px wide; your bar can make them narrower.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} suggests a different bar layout.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Apply suggested layout</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Changes these bar settings (Buttons tab, Advanced; each keeps its Default button):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Lock the game menu button at the right end</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>While locked, the menu button cannot be hidden, moved or put in the drawer; it can only be renamed.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>The game menu button has been unlocked in Advanced.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Theme</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Themes change how the bar and its buttons look. Theme mods that list Main Button Bar System as a dependency appear here too. The choice is saved with this save (or with the template at the main menu).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>by {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Your custom themes</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Starts from {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Starts from {0} (not installed)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>{0} starts from the theme {1}, which is not installed; it starts from vanilla instead.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Replace your current custom look with "{0}"?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>{0} is now your custom look. Press Save to keep it.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Copies this custom theme into your settings: the save keeps working even if the file is deleted later.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Arrows appear only when the buttons do not fit. While they fit, the bar does not need to scroll.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Already the default value.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Main buttons (kept by this mod)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ then press Refresh. They stay there through mod updates.</MBBS_IconPicker_Empty>
   <MBBS_Look_Font_Tiny>Small</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Medium</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Large</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Custom size</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Text size: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Same as All buttons</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Same as the theme</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Text colour</MBBS_Look_Color_0>
@@ -208,6 +226,29 @@ then press Refresh. They stay there through mod updates.</MBBS_IconPicker_Empty>
   <MBBS_Look_Field_buttonMouseover>mouse over</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>open</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>disabled</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} with their own look)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Set all {0} back to following All buttons</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Copy style</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Paste style</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Replaces this look with the copied one.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Pick...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Background picture</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>A picture inside the button, under its frame. Fill, position, opacity and inset apply to whichever picture this button ends up with.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Picture</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>none</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Fill</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Cover (fill and crop)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Fit (whole picture)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Stretch</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Position (the side Cover keeps, where Fit puts it)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Opacity: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Inset: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Choose an image</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Theme images</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>No imported images yet. Put PNG files in
+{0}
+then press Refresh. They stay there through mod updates.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Larger than {0}px: as a button background its corners stop growing at that size. It still works.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>No installed theme has its own button backgrounds.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Same as the whole bar ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Create an arrangement mod (ready to upload)</MBBS_Export_ModFolder>
@@ -216,7 +257,7 @@ then press Refresh. They stay there through mod updates.</MBBS_IconPicker_Empty>
   <MBBS_Export_ModFolderDone>Created the mod folder:
 {0}
 
-Restart the game, enable it in the mod list to try it, and upload it to the Workshop from there. Your PNG icons are included.</MBBS_Export_ModFolderDone>
+Restart the game, enable it in the mod list to try it, and upload it to the Workshop from there. Your PNG icons and custom theme images are included.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Could not export: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>clipboard</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Restart the game, enable it in the mod list to try it, and upload it to the Work
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>The text includes the name, author and which mod each button comes from, so whoever imports it sees what is missing.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Saved in {0}. Files placed there by others show up under Import.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>A def for your own mod's Defs folder. Icons you imported as PNG are not included: use "Create an arrangement mod" for that.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Creates a mod in {1}: About.xml (requires Main Button Bar System), the arrangement, and the PNG icons it uses. Subscribers find it under Import.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>A def for your own mod's Defs folder. Icons and custom theme images you imported as PNG are not included: use "Create an arrangement mod" for that.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Creates a mod in {1}: About.xml (requires Main Button Bar System), the arrangement, and the PNG icons and custom theme images it uses. Subscribers find it under Import.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Saved in a folder of its own in {2}, with the PNG images it uses. It is listed under Preset themes; to share it, give others the whole folder.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Copy</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Save</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Copy</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Create</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Save as a custom theme</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Save</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Save as a custom theme...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Saved the custom theme to:
+{0}
+
+It is listed under Preset themes. Share the whole folder to give it to others.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Switch to Custom theme and change something first.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Open the custom themes folder</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Custom theme: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Custom theme: {0} (by {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Give it a name.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>A package ID is two or more parts joined by dots, each starting with an English letter, using only English letters, digits and _ (for example Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>Another mod already uses {0}.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Restart the game, enable it in the mod list to try it, and upload it to the Work
   <MBBS_ImportReport_Theme>Theme: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Theme {0} (from {1}) is not installed; the vanilla look is used until it is.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>A custom theme on top of it ({0} buttons with their own style).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Custom theme images you do not have: {0} ({1}). Put the PNG files in {2}; until then those buttons use the theme's own images.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Display mode {0} (from {1}) is not installed; the vanilla bar is used until it is.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Imported icons you do not have: {0} ({1}). Put the PNG files in {2}; until then those buttons keep their own icon.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Icons from mods you do not have: {0} ({1}). Those buttons keep their own icon.</MBBS_ImportReport_IconTexturesMissing>

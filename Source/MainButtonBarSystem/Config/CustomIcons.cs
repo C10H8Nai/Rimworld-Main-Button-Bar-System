@@ -73,8 +73,12 @@ namespace MainButtonBarSystem
         /// <summary>Forget loaded files so new or changed PNGs in the folder are picked up.</summary>
         public static void Refresh()
         {
+            // Loaded PNGs are this mod's own textures and nothing else holds them: destroy them instead of leaking.
             foreach (var key in cache.Keys.Where(IsFile).ToList())
+            {
+                if (cache[key] != null) UnityEngine.Object.Destroy(cache[key]);
                 cache.Remove(key);
+            }
             missing.Clear();
         }
 

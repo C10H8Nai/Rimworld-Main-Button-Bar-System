@@ -9,6 +9,7 @@
   "labelColor": [0.96, 0.95, 0.94, 1],
   "labelMouseoverColor": [0.8, 0.72, 0.92, 1],
   "labelActiveColor": [0.93, 0.9, 1, 1],
+  "suggestedLayout": {"displayModes": ["Scroll", "CollapseScroll"], "buttonWidth": 120, "halfButtonsFullWidth": true},
   "palette": {
     "base": [45, 53, 79],
     "edge": [218, 212, 216],

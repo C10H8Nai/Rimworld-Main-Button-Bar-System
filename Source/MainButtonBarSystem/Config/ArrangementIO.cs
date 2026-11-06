@@ -93,6 +93,7 @@ namespace MainButtonBarSystem
             var copy = Prepared(config);
             string id = SharingNames.Identifier(packageId, "Arrangement");
             var bundled = BundleIcons(copy, Path.Combine(root, "Textures", id, "Icons"), id + "/Icons/");
+            BundleThemeImages(copy, Path.Combine(root, "Textures", id, "Images"), id + "/Images/");
 
             Directory.CreateDirectory(Path.Combine(root, "About"));
             Directory.CreateDirectory(Path.Combine(root, "Defs"));
@@ -127,6 +128,28 @@ namespace MainButtonBarSystem
             return paths.Values.ToList();
         }
 
+        /// <summary>
+        /// Copies the imported PNGs the custom look uses (design spec 2026-11-05 §4.18) into the mod's Textures folder and
+        /// points the look at the copies ("tex:" references), so subscribers see the same backgrounds and pictures.
+        /// </summary>
+        private static void BundleThemeImages(BarConfig config, string folder, string texturePrefix)
+        {
+            if (config.customTheme == null) return;
+            var paths = new Dictionary<string, string>();
+            foreach (var reference in config.customTheme.ImageRefs().Where(ImageRef.IsFile).Distinct().ToList())
+            {
+                string file = ImageRef.Parse(reference).Value;
+                string source = Path.Combine(ModPaths.ImagesFolder, file ?? "");
+                if (file == null || !File.Exists(source)) continue;
+                Directory.CreateDirectory(folder);
+                string name = SharingNames.Identifier(Path.GetFileNameWithoutExtension(file), "Image");
+                string target = SharingNames.Unique(Path.Combine(folder, name), File.Exists, ".png");
+                File.Copy(source, target);
+                paths[reference] = ImageRef.ForGameTexture(texturePrefix + Path.GetFileNameWithoutExtension(target));
+            }
+            if (paths.Count > 0) config.customTheme.MapImageRefs(r => paths.TryGetValue(r, out var to) ? to : r);
+        }
+
         private static string AboutXml(ArrangementMeta meta, string packageId)
         {
             var doc = new XmlDocument();
@@ -145,12 +168,30 @@ namespace MainButtonBarSystem
             deps.AppendChild(dep);
             Append(doc, dep, "packageId", SelfPackageId);
             Append(doc, dep, "displayName", "Main Button Bar System");
+            AppendDependencyLinks(doc, dep);
             var after = doc.CreateElement("loadAfter");
             root.AppendChild(after);
             Append(doc, after, "li", SelfPackageId);
-            string usage = "MBBS_ModFolder_Usage".Translate(meta.name);
+            string usage = "MBBS_ModFolder_Usage".TranslateKeepCase(meta.name);
             Append(doc, root, "description", meta.description.NullOrEmpty() ? usage : meta.description + "\n\n" + usage);
             return Pretty(doc);
+        }
+
+        /// <summary>
+        /// Where players can get this mod, taken from its own About.xml (url) and, when it came from the Workshop, its
+        /// Workshop page: without either the game warns about the dependency on every start.
+        /// </summary>
+        private static void AppendDependencyLinks(XmlDocument doc, XmlElement dep)
+        {
+            var self = ModLister.GetActiveModWithIdentifier(SelfPackageId, ignorePostfix: true);
+            if (self == null) return;
+            if (self.OnSteamWorkshop)
+            {
+                var id = self.GetPublishedFileId();
+                if (id != Steamworks.PublishedFileId_t.Invalid)
+                    Append(doc, dep, "steamWorkshopUrl", "steam://url/CommunityFilePage/" + id.m_PublishedFileId);
+            }
+            if (!self.Url.NullOrEmpty()) Append(doc, dep, "downloadUrl", self.Url);
         }
 
         private static string IconSetXml(string defName, string label, List<string> icons)

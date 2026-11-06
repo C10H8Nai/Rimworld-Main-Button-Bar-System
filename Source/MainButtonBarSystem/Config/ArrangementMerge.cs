@@ -55,6 +55,7 @@ namespace MainButtonBarSystem
                 result.minWidth = imported.minWidth;
                 result.gap = imported.gap;
                 result.fillScreen = imported.fillScreen;
+                result.minimizedFullWidth = imported.minimizedFullWidth;
                 result.labelAlign = imported.labelAlign;
                 result.moreButtonWidth = imported.moreButtonWidth;
                 result.arrowWidth = imported.arrowWidth;
@@ -118,7 +119,8 @@ namespace MainButtonBarSystem
             if ((c.displayMode ?? BarConfig.VanillaMode) != BarConfig.VanillaMode || c.order != null || c.menuLocked != DefaultableBool.Default ||
                 o.Any(x => x.hidden != DefaultableBool.Default || x.inDrawer != DefaultableBool.Default || x.pin != ButtonPin.Default || x.forceShow != DefaultableBool.Default))
                 parts |= ArrangementParts.Layout;
-            if (c.defaultWidth >= 0 || c.minWidth >= 0 || c.gap >= 0 || c.fillScreen != DefaultableBool.Default || c.labelAlign != LabelAlign.Default ||
+            if (c.defaultWidth >= 0 || c.minWidth >= 0 || c.gap >= 0 || c.fillScreen != DefaultableBool.Default || c.minimizedFullWidth != DefaultableBool.Default ||
+                c.labelAlign != LabelAlign.Default ||
                 c.moreButtonWidth >= 0 || c.arrowWidth >= 0 || c.wheelScrollPixels >= 0f || c.drawerColumns >= 0 || c.drawerCellWidth >= 0 || o.Any(x => x.width >= 0))
                 parts |= ArrangementParts.Sizes;
             if (o.Any(x => !x.label.NullOrEmpty())) parts |= ArrangementParts.Names;

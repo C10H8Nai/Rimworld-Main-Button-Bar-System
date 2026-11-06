@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Основні</MBBS_View_Simple>
   <MBBS_View_Advanced>Розширені</MBBS_View_Advanced>
   <MBBS_ViewTip>У режимі «Розширені» доступно більше налаштувань: ширина, закріплення, вирівнювання написів, клавіші та сумісність. Вибір спільний для всіх збережень.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Мод: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Усі</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Показує лише кнопки, додані одним модом. Перетягування та «Вгору» / «Вниз» переміщують кнопку серед показаних; решта залишаються на місцях.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Показ</MBBS_Col_Visible>
   <MBBS_Col_Icon>Іконка</MBBS_Col_Icon>
   <MBBS_Col_Name>Назва</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Відстань між кнопками: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Розтягувати на всю ширину екрана</MBBS_FillScreen>
   <MBBS_FillScreenTip>Якщо кнопки вміщуються, розтягувати їх на всю ширину.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Кнопки половинної ширини використовують повну ширину</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Деякі кнопки просять у гри половину ширини решти. Увімкніть, щоб вони мали однакову ширину.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} найкраще виглядає з кнопками завширшки щонайменше {1}px; ваша панель може зробити їх вужчими.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} радить інше розташування панелі.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Застосувати рекомендоване розташування</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Змінює ці налаштування панелі (вкладка «Кнопки», режим «Розширені»; кожне має кнопку «Стандартно»):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Заблокувати кнопку «Меню» біля правого краю</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Поки кнопку «Меню» заблоковано, її не можна приховати, перемістити чи згорнути в меню «Більше» — лише перейменувати.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Кнопку «Меню» розблоковано в режимі «Розширені».</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Тема</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Теми змінюють вигляд панелі та її кнопок. Тут також з'являються моди тем, у яких Main Button Bar System указано в залежностях. Вибір зберігається в цьому збереженні (або в шаблоні, якщо вікно відкрито з головного меню).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>автор: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Ваші власні теми</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>За основу взято: {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>За основу взято: {0} (не встановлено)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>«{0}» базується на темі {1}, яку не встановлено; натомість за основу береться ванільна.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Замінити ваш поточний власний вигляд на «{0}»?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>«{0}» тепер ваш власний вигляд. Натисніть «Зберегти», щоб залишити його.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Копіює цю тему до ваших налаштувань: збереження працюватиме, навіть якщо файл потім видалять.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Стрілки з'являються, лише коли кнопки не вміщуються. Поки вони вміщуються, прокручувати панель не потрібно.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>Уже стандартне значення.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Кнопки нижньої панелі (зберігає цей мод)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@
   <MBBS_Look_Font_Tiny>Дрібний</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Середній</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Великий</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Власний розмір</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Розмір тексту: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Як у «Усі кнопки»</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Як у темі</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Колір тексту</MBBS_Look_Color_0>
@@ -208,6 +226,29 @@
   <MBBS_Look_Field_buttonMouseover>наведення</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>відкрито</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>вимкнено</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>(зі своїм виглядом: {0})</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Повернути всі {0} до режиму «Усі кнопки»</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Копіювати стиль</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Вставити стиль</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Замінює цей вигляд скопійованим.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Вибрати...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Фонове зображення</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Зображення всередині кнопки, під її рамкою. Заповнення, положення, непрозорість і відступ стосуються того зображення, яке ця кнопка зрештою використовує.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Зображення</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>немає</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Заповнення</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Покрити (заповнити й обрізати)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Вписати (все зображення)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Розтягнути</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Положення (яку сторону зберігає «Покрити», куди розміщує «Вписати»)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Непрозорість: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Відступ: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Вибір зображення</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Зображення тем</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Імпортованих зображень ще немає. Покладіть PNG-файли в
+{0}
+і натисніть «Оновити». Вони залишаться там і після оновлень мода.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Більше за {0}px: як тло кнопки кути перестають збільшуватися на цьому розмірі. Усе одно працює.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Жодна встановлена тема не має власного тла для кнопок.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Як у всієї панелі ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Створити мод із розташуванням (готовий до завантаження)</MBBS_Export_ModFolder>
@@ -216,7 +257,7 @@
   <MBBS_Export_ModFolderDone>Теку мода створено:
 {0}
 
-Перезапустіть гру й увімкніть мод у списку модів, щоб випробувати його; звідти ж його можна завантажити до Майстерні Steam. Ваші PNG-іконки додано.</MBBS_Export_ModFolderDone>
+Перезапустіть гру, увімкніть мод у списку модів, щоб випробувати його, і завантажте його звідти до Workshop. Ваші PNG-іконки та зображення власних тем включено.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Не вдалося експортувати: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>буфер обміну</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Текст містить назву, автора й те, з якого мода кожна кнопка, — тож той, хто імпортує, побачить, чого бракує.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Зберігається в {0}. Файли від інших гравців, покладені туди, з'являться в меню «Імпорт».</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Def для теки Defs вашого власного мода. Іконки, імпортовані як PNG, не додаються — для цього використайте «Створити мод із розташуванням».</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Створює мод у {1}: About.xml (потребує Main Button Bar System), розташування та PNG-іконки, які воно використовує. Підписники знайдуть його в меню «Імпорт».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Def для теки Defs вашого власного мода. Іконки та зображення власних тем, імпортовані як PNG, не включено: для цього скористайтеся «Створити мод із розташуванням».</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Створює мод у {1}: About.xml (потребує Main Button Bar System), розташування та PNG-іконки й зображення власних тем, які воно використовує. Підписники знайдуть його в меню «Імпорт».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Зберігається в окремій теці в {2} разом із використаними PNG-зображеннями. З'явиться в «Готових темах»; щоб поділитися, передайте іншим усю теку.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Копіювати</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Зберегти</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Копіювати</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Створити</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Зберегти як власну тему</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Зберегти</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Зберегти як власну тему...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Власну тему збережено в:
+{0}
+
+Вона з'явиться в «Готових темах». Поділіться всією текою, щоб передати її іншим.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Спершу перемкніться на «Власна тема» і щось змініть.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Відкрити теку власних тем</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Власна тема: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Власна тема: {0} (автор: {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Укажіть назву.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Package ID складається з двох або більше частин, з'єднаних крапками. Кожна частина починається з латинської літери й містить лише латинські літери, цифри та _ (наприклад, Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>{0} уже використовує інший мод.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@
   <MBBS_ImportReport_Theme>Тема: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Тему {0} (з {1}) не встановлено; доки її немає, використовується вигляд як у грі.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Зверху накладено власну тему ({0} кнопок із власним стилем).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Зображення власних тем, яких у вас немає: {0} ({1}). Покладіть PNG-файли в {2}; доти ці кнопки використовують зображення самої теми.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Режим відображення {0} (з {1}) не встановлено; доки його немає, панель працює як у грі.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Імпортовані іконки, яких у вас немає: {0} ({1}). Покладіть PNG-файли в {2}; доти ці кнопки мають власні іконки.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Іконки з модів, яких у вас немає: {0} ({1}). Ці кнопки мають власні іконки.</MBBS_ImportReport_IconTexturesMissing>

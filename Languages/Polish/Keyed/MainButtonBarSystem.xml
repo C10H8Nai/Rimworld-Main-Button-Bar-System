@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Podstawowe</MBBS_View_Simple>
   <MBBS_View_Advanced>Zaawansowane</MBBS_View_Advanced>
   <MBBS_ViewTip>Widok „Zaawansowane” pokazuje więcej opcji: szerokości, stałe pozycje, wyrównanie napisów, skróty klawiszowe i kompatybilność. Ten wybór obowiązuje we wszystkich zapisach.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Wszystkie</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Pokazuje tylko przyciski dodane przez jeden mod. Przeciąganie oraz W górę / W dół przesuwają przycisk wśród pokazanych; pozostałe zostają na miejscu.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Pokaż</MBBS_Col_Visible>
   <MBBS_Col_Icon>Ikona</MBBS_Col_Icon>
   <MBBS_Col_Name>Nazwa</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Odstęp między przyciskami: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Wypełnij szerokość ekranu</MBBS_FillScreen>
   <MBBS_FillScreenTip>Gdy przyciski się mieszczą, rozciągnij je na całą szerokość.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>Przyciski o połowie szerokości używają pełnej szerokości</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Niektóre przyciski proszą grę o połowę szerokości pozostałych. Włącz, aby miały taką samą szerokość.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} wygląda najlepiej przy przyciskach szerokich na co najmniej {1}px; Twój pasek może je zwęzić.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} sugeruje inny układ paska.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Zastosuj sugerowany układ</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Zmienia te ustawienia paska (karta Przyciski, tryb Zaawansowane; każde ma własny przycisk Domyślne):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Zablokuj przycisk „Menu” na prawym końcu</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Zablokowanego przycisku „Menu” nie można ukryć, przesunąć ani zwinąć do panelu „Więcej” – można tylko zmienić jego nazwę.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Przycisk „Menu” został odblokowany w widoku „Zaawansowane”.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Motyw</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>Motywy zmieniają wygląd paska i jego przycisków. Pojawiają się tu też mody z motywami, które mają Main Button Bar System jako zależność. Wybór jest przechowywany w tym zapisie (lub w szablonie, gdy okno otwarto z menu głównego).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>autor: {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>Twoje własne motywy</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Bazuje na: {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Bazuje na: {0} (niezainstalowany)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>„{0}” bazuje na motywie {1}, który nie jest zainstalowany; zamiast tego bazuje na oryginalnej grze.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Zastąpić obecny własny wygląd motywem „{0}”?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>„{0}” jest teraz Twoim własnym wyglądem. Naciśnij Zapisz, aby go zachować.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Kopiuje ten własny motyw do Twoich ustawień: zapis gry nadal działa, nawet jeśli plik zostanie później usunięty.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Strzałki pojawiają się tylko wtedy, gdy przyciski się nie mieszczą. Gdy się mieszczą, pasek nie musi się przewijać.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>To już wartość domyślna.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Przyciski dolnego paska (przechowuje ten mod)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ a następnie naciśnij „Odśwież”. Pozostaną tam także po aktualizacjach 
   <MBBS_Look_Font_Tiny>Mała</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Średnia</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Duża</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Własny rozmiar</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Rozmiar tekstu: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Jak w „Wszystkie przyciski”</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Jak w motywie</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Kolor tekstu</MBBS_Look_Color_0>
@@ -208,15 +226,38 @@ a następnie naciśnij „Odśwież”. Pozostaną tam także po aktualizacjach 
   <MBBS_Look_Field_buttonMouseover>pod myszą</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>otwarty</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>wyłączony</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} z własnym wyglądem)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Przywróć wszystkie {0} do podążania za ustawieniem Wszystkie przyciski</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Kopiuj styl</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Wklej styl</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Zastępuje ten wygląd skopiowanym.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Wybierz...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Obraz tła</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Obraz wewnątrz przycisku, pod jego ramką. Wypełnienie, położenie, przezroczystość i margines dotyczą obrazu, którego ten przycisk ostatecznie użyje.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Obraz</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>brak</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Wypełnienie</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Pokryj (wypełnij i przytnij)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Dopasuj (cały obraz)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Rozciągnij</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Położenie (strona zachowywana przez Pokryj, miejsce umieszczenia przez Dopasuj)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Krycie: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Margines: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Wybierz obraz</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Obrazy motywów</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Nie ma jeszcze zaimportowanych obrazów. Umieść pliki PNG w
+{0}
+a potem naciśnij Odśwież. Zostają tam po aktualizacjach moda.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Większy niż {0}px: jako tło przycisku jego rogi przestają rosnąć przy tym rozmiarze. Nadal działa.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Żaden zainstalowany motyw nie ma własnych teł przycisków.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Jak dla całego paska ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Utwórz mod z układem (gotowy do publikacji)</MBBS_Export_ModFolder>
   <MBBS_OpenExportsFolder>Otwórz folder z układami</MBBS_OpenExportsFolder>
   <MBBS_OpenFolder>Otwórz folder</MBBS_OpenFolder>
-  <MBBS_Export_ModFolderDone>Utworzono folder modu:
+  <MBBS_Export_ModFolderDone>Utworzono folder moda:
 {0}
 
-Uruchom grę ponownie i włącz mod na liście modów, aby go wypróbować; stamtąd możesz też przesłać go do Warsztatu Steam. Twoje ikony PNG są dołączone.</MBBS_Export_ModFolderDone>
+Uruchom grę ponownie, włącz go na liście modów, aby wypróbować, i stamtąd prześlij go do Warsztatu. Twoje ikony PNG i obrazy własnych motywów są dołączone.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Nie udało się wyeksportować: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>schowek</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Uruchom grę ponownie i włącz mod na liście modów, aby go wypróbować; stam
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Tekst zawiera nazwę, autora i informację, z którego modu pochodzi każdy przycisk, więc osoba importująca widzi, czego jej brakuje.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Zapisywane w {0}. Pliki od innych osób umieszczone w tym folderze pojawiają się w menu „Import”.</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Def do folderu Defs twojego własnego modu. Ikony zaimportowane jako PNG nie są dołączane – do tego użyj opcji „Utwórz mod z układem”.</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Tworzy mod w {1}: About.xml (wymaga Main Button Bar System), układ i używane przez niego ikony PNG. Subskrybenci znajdą go w menu „Import”.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Def do folderu Defs Twojego własnego moda. Ikony i obrazy własnych motywów zaimportowane jako PNG nie są dołączone: użyj do tego „Utwórz mod z układem”.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Tworzy mod w {1}: About.xml (wymaga Main Button Bar System), układ oraz używane przez niego ikony PNG i obrazy własnych motywów. Subskrybenci znajdą go w menu „Import”.</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Zapisany we własnym folderze w {2}, razem z używanymi obrazami PNG. Pojawia się w Gotowych motywach; aby go udostępnić, przekaż innym cały folder.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Kopiuj</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Zapisz</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Kopiuj</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Utwórz</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Zapisz jako własny motyw</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Zapisz</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Zapisz jako własny motyw...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Własny motyw zapisano w:
+{0}
+
+Pojawia się w Gotowych motywach. Udostępnij cały folder, aby przekazać go innym.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Najpierw przełącz na Własny motyw i coś zmień.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Otwórz folder własnych motywów</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Własny motyw: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Własny motyw: {0} (autor: {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Nadaj mu nazwę.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Package ID to co najmniej dwie części połączone kropkami. Każda zaczyna się literą A–Z i zawiera tylko litery A–Z (bez polskich znaków), cyfry i _ (na przykład Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>Inny mod już używa {0}.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Uruchom grę ponownie i włącz mod na liście modów, aby go wypróbować; stam
   <MBBS_ImportReport_Theme>Motyw: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Motyw {0} (z {1}) nie jest zainstalowany; do tego czasu używany jest wygląd jak w grze.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Własny motyw na wierzchu ({0} przycisków z własnym stylem).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Obrazy własnego motywu, których nie masz: {0} ({1}). Umieść pliki PNG w {2}; do tego czasu te przyciski używają obrazów samego motywu.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>Tryb wyświetlania {0} (z {1}) nie jest zainstalowany; do tego czasu pasek działa jak w grze.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Zaimportowane ikony, których nie masz: {0} ({1}). Umieść pliki PNG w {2}; do tego czasu te przyciski mają swoje własne ikony.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Ikony z modów, których nie masz: {0} ({1}). Te przyciski mają swoje własne ikony.</MBBS_ImportReport_IconTexturesMissing>

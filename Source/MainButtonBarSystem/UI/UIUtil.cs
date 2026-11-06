@@ -30,6 +30,24 @@ namespace MainButtonBarSystem
             return fits ? GameFont.Small : GameFont.Tiny;
         }
 
+        /// <summary>
+        /// Translates <paramref name="key"/> with the arguments inserted exactly as given. The game's formatter capitalises
+        /// the first letter after ':', '!', '?' or a line break (GenText.CapitalizeSentences), which turns names written
+        /// after a colon, such as the author "boblin00215" in Japanese "作者: {0}", a file name or a package id, into
+        /// "Boblin00215". Each argument goes through the formatter as a placeholder that has no letters, then replaces it.
+        /// </summary>
+        public static string TranslateKeepCase(this string key, params object[] args)
+        {
+            var placeholders = new NamedArgument[args.Length];
+            for (int i = 0; i < args.Length; i++) placeholders[i] = Placeholder(i);
+            string text = key.Translate(placeholders).Resolve();
+            for (int i = 0; i < args.Length; i++) text = text.Replace(Placeholder(i), args[i]?.ToString() ?? "");
+            return text;
+        }
+
+        // Private-use characters around a digit: not a letter, so the formatter capitalises nothing inside an argument.
+        private static string Placeholder(int index) => "" + index + "";
+
         /// <summary>The game's text button, with the font from <see cref="ButtonFont"/>.</summary>
         public static bool ButtonText(Rect rect, string label, bool active = true)
         {

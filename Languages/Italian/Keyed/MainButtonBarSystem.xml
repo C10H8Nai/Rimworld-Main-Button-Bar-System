@@ -12,6 +12,9 @@
   <MBBS_View_Simple>Semplice</MBBS_View_Simple>
   <MBBS_View_Advanced>Avanzate</MBBS_View_Advanced>
   <MBBS_ViewTip>In Avanzate compaiono più opzioni: larghezze, posizioni fisse, allineamento delle etichette, tasti rapidi e compatibilità. La scelta è condivisa da tutti i salvataggi.</MBBS_ViewTip>
+  <MBBS_SourceFilter>Mod: {0}</MBBS_SourceFilter>
+  <MBBS_SourceFilter_All>Tutti</MBBS_SourceFilter_All>
+  <MBBS_SourceFilterTip>Elenca solo i pulsanti aggiunti da una mod. Il trascinamento e Sposta su / Sposta giù spostano un pulsante tra quelli elencati; gli altri restano al loro posto.</MBBS_SourceFilterTip>
   <MBBS_Col_Visible>Mostra</MBBS_Col_Visible>
   <MBBS_Col_Icon>Icona</MBBS_Col_Icon>
   <MBBS_Col_Name>Nome</MBBS_Col_Name>
@@ -34,6 +37,12 @@
   <MBBS_Gap>Spazio tra i pulsanti: {0}px</MBBS_Gap>
   <MBBS_FillScreen>Riempi la larghezza dello schermo</MBBS_FillScreen>
   <MBBS_FillScreenTip>Se i pulsanti ci stanno, li allarga fino a occupare tutta la larghezza.</MBBS_FillScreenTip>
+  <MBBS_MinimizedFullWidth>I pulsanti a mezza larghezza usano la larghezza intera</MBBS_MinimizedFullWidth>
+  <MBBS_MinimizedFullWidthTip>Alcuni pulsanti chiedono al gioco metà della larghezza degli altri. Attivalo per dare loro la stessa larghezza.</MBBS_MinimizedFullWidthTip>
+  <MBBS_Suggest_Hint>{0} dà il meglio con pulsanti larghi almeno {1}px; la tua barra potrebbe restringerli.</MBBS_Suggest_Hint>
+  <MBBS_Suggest_HintNoWidth>{0} suggerisce una disposizione della barra diversa.</MBBS_Suggest_HintNoWidth>
+  <MBBS_Suggest_Apply>Applica la disposizione suggerita</MBBS_Suggest_Apply>
+  <MBBS_Suggest_Tip>Modifica queste impostazioni della barra (scheda Pulsanti, Avanzate; ognuna mantiene il proprio pulsante Predefinito):</MBBS_Suggest_Tip>
   <MBBS_MenuLocked>Blocca il pulsante del menù di gioco all'estremità destra</MBBS_MenuLocked>
   <MBBS_MenuLockedTip>Finché è bloccato, il pulsante del menù non può essere nascosto, spostato o messo nel cassetto; può solo essere rinominato.</MBBS_MenuLockedTip>
   <MBBS_MenuUnlockedNote>Il pulsante del menù di gioco è stato sbloccato in Avanzate.</MBBS_MenuUnlockedNote>
@@ -128,6 +137,13 @@
   <MBBS_ThemeHeader>Tema</MBBS_ThemeHeader>
   <MBBS_ThemeHeaderTip>I temi cambiano l'aspetto della barra e dei suoi pulsanti. Qui compaiono anche le mod di temi che indicano Main Button Bar System come dipendenza. La scelta viene memorizzata in questo salvataggio (o nel modello, se fatta dal menù principale).</MBBS_ThemeHeaderTip>
   <MBBS_ThemeBy>di {0} ({1})</MBBS_ThemeBy>
+  <MBBS_SavedThemes>I tuoi temi personalizzati</MBBS_SavedThemes>
+  <MBBS_SavedTheme_Base>Parte da {0}</MBBS_SavedTheme_Base>
+  <MBBS_SavedTheme_BaseMissingShort>Parte da {0} (non installato)</MBBS_SavedTheme_BaseMissingShort>
+  <MBBS_SavedTheme_BaseMissing>«{0}» parte dal tema {1}, che non è installato; parte invece dal gioco base.</MBBS_SavedTheme_BaseMissing>
+  <MBBS_SavedTheme_ReplaceConfirm>Sostituire il tuo aspetto personalizzato attuale con «{0}»?</MBBS_SavedTheme_ReplaceConfirm>
+  <MBBS_SavedTheme_Applied>«{0}» è ora il tuo aspetto personalizzato. Premi Salva per mantenerlo.</MBBS_SavedTheme_Applied>
+  <MBBS_SavedTheme_Tip>Copia questo tema personalizzato nelle tue impostazioni: il salvataggio continua a funzionare anche se il file viene eliminato in seguito.</MBBS_SavedTheme_Tip>
   <MBBS_ScrollArrowsNote>Le frecce compaiono solo quando i pulsanti non ci stanno. Finché ci stanno, la barra non ha bisogno di scorrere.</MBBS_ScrollArrowsNote>
   <MBBS_AlreadyDefaultTip>È già il valore predefinito.</MBBS_AlreadyDefaultTip>
   <MBBS_HotKeyCustomCategory>Schede principali (gestite da questa mod)</MBBS_HotKeyCustomCategory>
@@ -190,6 +206,8 @@ poi premi «Aggiorna». Restano lì anche quando la mod viene aggiornata.</MBBS_
   <MBBS_Look_Font_Tiny>Piccola</MBBS_Look_Font_Tiny>
   <MBBS_Look_Font_Small>Media</MBBS_Look_Font_Small>
   <MBBS_Look_Font_Medium>Grande</MBBS_Look_Font_Medium>
+  <MBBS_Look_Font_Custom>Dimensione personalizzata</MBBS_Look_Font_Custom>
+  <MBBS_Look_FontSize>Dimensione del testo: {0}px</MBBS_Look_FontSize>
   <MBBS_Look_FollowAll>Come «Tutti i pulsanti»</MBBS_Look_FollowAll>
   <MBBS_Look_FollowTheme>Come il tema</MBBS_Look_FollowTheme>
   <MBBS_Look_Color_0>Colore del testo</MBBS_Look_Color_0>
@@ -208,6 +226,29 @@ poi premi «Aggiorna». Restano lì anche quando la mod viene aggiornata.</MBBS_
   <MBBS_Look_Field_buttonMouseover>mouse sopra</MBBS_Look_Field_buttonMouseover>
   <MBBS_Look_Field_buttonActive>aperto</MBBS_Look_Field_buttonActive>
   <MBBS_Look_Field_buttonDisabled>disattivato</MBBS_Look_Field_buttonDisabled>
+  <MBBS_Look_OwnCount>({0} con un aspetto proprio)</MBBS_Look_OwnCount>
+  <MBBS_Look_ResetAllButtons>Rimetti tutti i {0} a seguire Tutti i pulsanti</MBBS_Look_ResetAllButtons>
+  <MBBS_Look_Copy>Copia stile</MBBS_Look_Copy>
+  <MBBS_Look_Paste>Incolla stile</MBBS_Look_Paste>
+  <MBBS_Look_PasteTip>Sostituisce questo aspetto con quello copiato.</MBBS_Look_PasteTip>
+  <MBBS_Look_PickColor>Scegli...</MBBS_Look_PickColor>
+  <MBBS_Look_Image>Immagine di sfondo</MBBS_Look_Image>
+  <MBBS_Look_ImageNote>Un'immagine all'interno del pulsante, sotto la sua cornice. Riempimento, posizione, opacità e margine si applicano all'immagine che questo pulsante finisce per usare.</MBBS_Look_ImageNote>
+  <MBBS_Look_ImagePicture>Immagine</MBBS_Look_ImagePicture>
+  <MBBS_Look_ImageNone>nessuna</MBBS_Look_ImageNone>
+  <MBBS_Look_ImageFit>Riempimento</MBBS_Look_ImageFit>
+  <MBBS_Look_ImageFit_Cover>Copri (riempi e ritaglia)</MBBS_Look_ImageFit_Cover>
+  <MBBS_Look_ImageFit_Fit>Adatta (immagine intera)</MBBS_Look_ImageFit_Fit>
+  <MBBS_Look_ImageFit_Stretch>Allunga</MBBS_Look_ImageFit_Stretch>
+  <MBBS_Look_ImageAnchor>Posizione (il lato che Copri mantiene, dove la mette Adatta)</MBBS_Look_ImageAnchor>
+  <MBBS_Look_ImageOpacity>Opacità: {0}%</MBBS_Look_ImageOpacity>
+  <MBBS_Look_ImageInset>Margine: {0}px</MBBS_Look_ImageInset>
+  <MBBS_ImagePickerTitle>Scegli un'immagine</MBBS_ImagePickerTitle>
+  <MBBS_ImagePicker_Themes>Immagini dei temi</MBBS_ImagePicker_Themes>
+  <MBBS_ImagePicker_Empty>Nessuna immagine importata per ora. Metti i file PNG in
+{0}
+poi premi Aggiorna. Restano lì anche dopo gli aggiornamenti della mod.</MBBS_ImagePicker_Empty>
+  <MBBS_ImagePicker_TooBig>Più grande di {0}px: come sfondo del pulsante, gli angoli smettono di crescere a questa dimensione. Funziona comunque.</MBBS_ImagePicker_TooBig>
   <MBBS_Look_NoAtlas>Nessun tema installato ha sfondi propri per i pulsanti.</MBBS_Look_NoAtlas>
   <MBBS_IconMode_FollowBar>Come la barra intera ({0})</MBBS_IconMode_FollowBar>
   <MBBS_Export_ModFolder>Crea una mod di disposizione (pronta da caricare)</MBBS_Export_ModFolder>
@@ -216,7 +257,7 @@ poi premi «Aggiorna». Restano lì anche quando la mod viene aggiornata.</MBBS_
   <MBBS_Export_ModFolderDone>Cartella della mod creata:
 {0}
 
-Riavvia il gioco e attivala nella lista delle mod per provarla; da lì puoi anche caricarla sul Workshop. Le tue icone PNG sono incluse.</MBBS_Export_ModFolderDone>
+Riavvia il gioco, attivala nell'elenco delle mod per provarla e caricala da lì sul Workshop. Le tue icone PNG e le immagini dei temi personalizzati sono incluse.</MBBS_Export_ModFolderDone>
   <MBBS_Export_Failed>Impossibile esportare: {0}</MBBS_Export_Failed>
   <MBBS_Import_ClipboardSource>appunti</MBBS_Import_ClipboardSource>
   <MBBS_Import_FileNamed>{0} ({1})</MBBS_Import_FileNamed>
@@ -231,12 +272,24 @@ Riavvia il gioco e attivala nella lista delle mod per provarla; da lì puoi anch
   <MBBS_Export_PackageId>Package ID</MBBS_Export_PackageId>
   <MBBS_ExportHint_Clipboard>Il testo riporta il nome, l'autore e la mod da cui viene ogni pulsante, così chi lo importa vede cosa gli manca.</MBBS_ExportHint_Clipboard>
   <MBBS_ExportHint_File>Salvato in {0}. I file di altri giocatori messi in questa cartella compaiono in «Importa».</MBBS_ExportHint_File>
-  <MBBS_ExportHint_ModXml>Una Def per la cartella Defs della tua mod. Le icone importate come PNG non sono incluse: per quelle usa «Crea una mod di disposizione».</MBBS_ExportHint_ModXml>
-  <MBBS_ExportHint_ModFolder>Crea una mod in {1}: About.xml (richiede Main Button Bar System), la disposizione e le icone PNG che usa. Chi si iscrive la trova in «Importa».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_ModXml>Una def per la cartella Defs della tua mod. Le icone e le immagini dei temi personalizzati importate come PNG non sono incluse: usa «Crea una mod di disposizione» per questo.</MBBS_ExportHint_ModXml>
+  <MBBS_ExportHint_ModFolder>Crea una mod in {1}: About.xml (richiede Main Button Bar System), la disposizione e le icone PNG e le immagini dei temi personalizzati che usa. Chi si iscrive la trova in «Importa».</MBBS_ExportHint_ModFolder>
+  <MBBS_ExportHint_Theme>Salvato in una cartella propria in {2}, con le immagini PNG che usa. Compare in Temi pronti; per condividerlo, dai agli altri l'intera cartella.</MBBS_ExportHint_Theme>
   <MBBS_ExportConfirm_Clipboard>Copia</MBBS_ExportConfirm_Clipboard>
   <MBBS_ExportConfirm_File>Salva</MBBS_ExportConfirm_File>
   <MBBS_ExportConfirm_ModXml>Copia</MBBS_ExportConfirm_ModXml>
   <MBBS_ExportConfirm_ModFolder>Crea</MBBS_ExportConfirm_ModFolder>
+  <MBBS_ExportTitle_Theme>Salva come tema personalizzato</MBBS_ExportTitle_Theme>
+  <MBBS_ExportConfirm_Theme>Salva</MBBS_ExportConfirm_Theme>
+  <MBBS_Export_Theme>Salva come tema personalizzato...</MBBS_Export_Theme>
+  <MBBS_Export_ThemeDone>Tema personalizzato salvato in:
+{0}
+
+Compare in Temi pronti. Condividi l'intera cartella per darlo agli altri.</MBBS_Export_ThemeDone>
+  <MBBS_Export_ThemeNone>Passa prima a Personalizzato e modifica qualcosa.</MBBS_Export_ThemeNone>
+  <MBBS_OpenThemesFolder>Apri la cartella dei temi personalizzati</MBBS_OpenThemesFolder>
+  <MBBS_Import_Theme>Tema personalizzato: {0}</MBBS_Import_Theme>
+  <MBBS_Import_ThemeBy>Tema personalizzato: {0} (di {1})</MBBS_Import_ThemeBy>
   <MBBS_Export_NeedName>Dagli un nome.</MBBS_Export_NeedName>
   <MBBS_Export_BadPackageId>Un Package ID è formato da due o più parti unite da punti; ognuna inizia con una lettera dalla A alla Z e usa solo lettere dalla A alla Z (senza accenti), cifre e _ (per esempio Author.MyArrangement).</MBBS_Export_BadPackageId>
   <MBBS_Export_PackageIdTaken>{0} è già usato da un'altra mod.</MBBS_Export_PackageIdTaken>
@@ -253,6 +306,7 @@ Riavvia il gioco e attivala nella lista delle mod per provarla; da lì puoi anch
   <MBBS_ImportReport_Theme>Tema: {0}</MBBS_ImportReport_Theme>
   <MBBS_ImportReport_ThemeMissing>Il tema {0} (da {1}) non è installato; finché non lo sarà, si usa l'aspetto originale.</MBBS_ImportReport_ThemeMissing>
   <MBBS_ImportReport_CustomTheme>Un tema personalizzato sopra di esso ({0} pulsanti con stile proprio).</MBBS_ImportReport_CustomTheme>
+  <MBBS_ImportReport_ThemeImagesMissing>Immagini di temi personalizzati che non hai: {0} ({1}). Metti i file PNG in {2}; fino ad allora questi pulsanti usano le immagini del tema stesso.</MBBS_ImportReport_ThemeImagesMissing>
   <MBBS_ImportReport_ModeMissing>La modalità di visualizzazione {0} (da {1}) non è installata; finché non lo sarà, si usa la barra originale.</MBBS_ImportReport_ModeMissing>
   <MBBS_ImportReport_IconFilesMissing>Icone importate che non hai: {0} ({1}). Metti i file PNG in {2}; nel frattempo quei pulsanti mantengono la loro icona.</MBBS_ImportReport_IconFilesMissing>
   <MBBS_ImportReport_IconTexturesMissing>Icone da mod che non hai: {0} ({1}). Quei pulsanti mantengono la loro icona.</MBBS_ImportReport_IconTexturesMissing>
