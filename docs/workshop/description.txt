@@ -1,96 +1,68 @@
 [h1]Main Button Bar System[/h1]
 
-Take control of the bottom bar. With a big mod list it can hold dozens of buttons squeezed to unreadable widths; this mod lets you reorder, hide, rename and group them, scroll the bar, or tuck rarely used buttons into a "More" drawer, without breaking what other mods do to their buttons.
-
-[b]Nothing changes until you change something.[/b] A fresh install looks exactly like the game; the game keeps drawing the bar until you customise it.
+Tidy up the bottom button bar. With many mods it fills up with dozens of squeezed buttons: reorder, hide, rename and resize them, put rarely used ones in a "More" drawer, or let the bar scroll. Until you change something, it looks exactly like the game.
 
 [h2]Features[/h2]
 [list]
-[*]Reorder by dragging, hide, rename, and set a width per button.
-[*]Four display modes: Vanilla, Collapse (a "More" drawer), Scroll (mouse wheel or arrows, the map does not zoom), Collapse + scroll.
-[*]Pin buttons to the left or right end; the game menu stays locked at the right unless you unlock it.
-[*]Text only, icon only, or icon and text per button; pick another button's icon or import your own PNG (kept outside the mod folder, so updates never delete it).
-[*]Label alignment, gap, minimum and default widths, drawer columns and cell width, every value with a Default button. Half-width buttons can take the full width too.
-[*]Filter the button list by the mod the buttons come from.
-[*]Hotkeys for every button, including ones the game gives none; hidden and drawer buttons keep their keys; conflicts are explained.
-[*]Settings are per save, with a default template for new games.
-[*]Share arrangements: export with a name as a file or as text for Discord. Before importing you see what fits your game (buttons from mods you lack, a missing theme or icons) and pick which parts to take. One button turns your arrangement into a Workshop-ready mod, PNG icons included.
-[*]Themes: the vanilla look by default, plus six built-in themes (five in colours inspired by the expansions: Imperial, Creed, Gene Lab, Void, Starfarer; no expansion needed; and Nai, a pixel-art one with a picture of Nai inside every main button), with previews in the Appearance tab. Nai looks best in the Scroll or Collapse + scroll modes with buttons 120 px or wider; a theme can suggest such a layout, applied only when you press its button.
-[*]Custom themes: mix parts of different themes button by button (backgrounds, pictures, label colours, alignment, font size, icon size and position, your own PNGs), then save them as files and load them again.
-[*]New theme: one click makes a blank theme mod in your Mods folder. Edit its PNG images with any image editor and the bar updates while the settings window is open; no tools, no restart. Enable it like any mod or upload it to the Workshop. Step-by-step guide: ThemeGuide.md in the mod folder (also in Chinese and Japanese).
-[*]Theme mods need only XML and images: whole-image backgrounds, decorations such as a portrait at a corner of the bar, a picture inside each button, label colours per state. A theme template and a generator script ship in the mod's ThemeTemplate folder.
-[*]Simple and Advanced views; 29 languages.
+[*]Drag to reorder; hide, rename, set widths; pin buttons to either end.
+[*]Display modes: Vanilla, Collapse ("More" drawer), Scroll, Collapse + scroll.
+[*]Text, icon, or both per button; use another button's icon or your own PNG.
+[*]Hotkeys for every button. Settings per save, with a default template.
+[*]Share arrangements as a file, as text, or as a Workshop-ready mod.
+[*]Six built-in themes, custom themes mixed button by button, and "New theme…" to make your own with any image editor (guide included).
+[*]29 languages.
 [/list]
 
 [h2]Compatibility[/h2]
 [list]
 [*]Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]. RimWorld 1.7.
-[*]Buttons are still drawn by the game, so icon packs (Bradson's Main Button Icons, Vanilla Textures Expanded), replaced windows (Modern History Menu) and added buttons keep working.
-[*]Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected. You choose who draws the bar; default: the other mod keeps it. Their settings are shown for reference; importing them is experimental.
-[*]UI Rethemed - Main Bar also draws the main button bar. With both installed, the mod higher in the mod list draws it; to use this mod's bar, turn off "Main bar" in its settings. The settings window tells you which case you are in.
-[*]Works with Better Sliders: this mod draws its own sliders with a number box, so nothing overlaps.
-[*]Removing this mod from a save logs one "could not find class" message on the next load; this is harmless.
+[*]Icon packs and mods that add buttons keep working.
+[*]Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected and you choose which one draws it. With UI Rethemed - Main Bar, turn off its "Main bar" to use this one.
+[*]Removing it from a save logs one harmless "could not find class" message.
 [/list]
 
-[h2]For modders[/h2]
-Five extension points, the built-in features use them too: display modes, themes, compatibility bridges, per-button defaults in XML, and a query API (which buttons are on the bar, where the bar is). Themes, arrangements and icon packs need only XML and images, and any mod can carry them without requiring this one (a race mod can ship its own bar theme). See API.md in the mod folder.
+Settings: Options > Mod Settings > Main Button Bar System, or the gear in the "More" drawer. Modders: see API.md in the mod folder.
 
-Settings: Options > Mod settings > Main Button Bar System, or the gear in the "More" drawer.
-
-[h2]How it was made[/h2]
-Made by vibe coding: NAI designed it and tested it in the game; the code, translations and documentation were written by AI (Claude by Anthropic), and the pictures of Nai were made with a local AI image model.
-
-[h2]License[/h2]
-Code and translations: MIT. Pictures of Nai: CC BY-NC-ND 4.0 (share them unchanged, with credit, non-commercially; please ask before using them in another mod). Material for making themes (ThemeKit, ThemeTemplate, the theme guides): CC0, use it freely in your own theme mods. Details: LICENSES.md in the mod folder.
+Made with vibe coding: designed and tested by NAI, code written by AI (Claude by Anthropic), pictures of Nai made with a local AI image model. License: code MIT, Nai's pictures CC BY-NC-ND 4.0, theme-making material CC0 (see LICENSES.md).
 
 [hr][/hr]
 
-[h1]主按钮栏系统 / 主按鈕列系統[/h1]
-
 [b]简体中文[/b]
-自定义游戏底部的主按钮栏：拖动排序、隐藏、改名、调宽度，把少用的按钮收进「更多」抽屉，或让整条栏左右滚动。没改任何设置之前，外观和原版完全一样。
+Mod 装到两千个，底部按钮挤成「Fshn Mmry Cmbt」这种天书？你的心情栏已经多了两条：
 [list]
-[*]四种显示方式：原版、折叠、滚动、折叠＋滚动；滚轮滚动时地图不会缩放。
-[*]按钮可固定在左端或右端；菜单默认锁定在最右边。
-[*]每个按钮可选只显示文字、只显示图标、图标＋文字，可换图标或导入自己的 PNG（存放在模组文件夹外，更新不会被删）。
-[*]快捷键：原版没有快捷键的按钮也能设置；隐藏或收进抽屉的按钮快捷键照样有效。
-[*]设置跟着存档走，并有新游戏用的默认模板。
-[*]分享排法：取名后导出成文件或文本（可贴到 Discord）。导入前会先列出哪些按钮来自你没装的模组、缺少的主题或图标，并可勾选只导入哪几部分。一键做成可上传创意工坊的排序模组，PNG 图标一并打包。
-[*]外观标签页与主题：默认为原版外观，另有 6 款内置主题（5 款参考各扩展配色：帝国、信条、基因实验室、虚空、星航，不需要扩展；以及每个主按钮里都有一张萘伊像素图的像素风主题萘伊；萘伊适合滚动或折叠＋滚动模式、按钮宽 120 px 以上，主题可以建议这类版面，按下按钮才会套用）。
-[*]按钮列表可以按来源模组筛选；半格按钮也能用完整宽度。
-[*]自定义主题：逐个按钮混搭不同主题的部件（背景、插图、文字颜色、对齐、字号、图标大小与位置、自己的 PNG），可存成文件、之后再载入。
-[*]新建主题：一键在 Mods 文件夹做出空白主题模组，用任何绘图软件改 PNG，设置窗口开着时按钮栏会马上更新，不需要工具、不用重开游戏；做好后像一般模组一样启用，或上传创意工坊。逐步教学见模组文件夹的 ThemeGuide.zh-CN.md。
-[*]只用 XML＋图片就能做主题模组：整张背景图、栏角的立绘等装饰图、每个按钮里的图、各状态的文字颜色。主题模板和生成脚本在模组的 ThemeTemplate 文件夹。
-[*]兼容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可选择由谁绘制（默认由对方绘制）；导入对方设置为实验性功能。
-[*]UI Rethemed - Main Bar 也会绘制主按钮栏，两个都装时由排在前面的模组绘制；要用本模组的按钮栏，请在它的设置里关掉「Main bar」。设置窗口会提示目前的情况。
-[*]兼容 Better Sliders：本模组的滑块自行绘制并附数字框，不会被盖住。
+[*]按钮挤成缩写 -10
+[*]找不到研究按钮 -5
 [/list]
-需要 Harmony。从存档中移除本模组时，下次读档会出现一次「找不到类」的记录，不影响游戏。
-
-制作方式：vibe coding。NAI 负责设计和实机测试，代码、翻译和文档由 AI（Anthropic 的 Claude）编写，萘伊的图用本地 AI 生图模型制作。
-
-授权：代码和翻译为 MIT；萘伊的图为 CC BY-NC-ND 4.0（署名、非商业、不改图；想放进其他模组请先询问）；做主题用的素材（ThemeKit、ThemeTemplate、主题教程）为 CC0，可以自由用在自己的主题模组。详见模组文件夹的 LICENSES.md。
+装上本模组：拖动排序、隐藏、改名、调宽度，少用的收进「更多」抽屉，或干脆让整条栏滚动。心情 +15。
+没动设置之前，外观和原版一模一样，不会像兰迪那样突然给你“惊喜”。
+[list]
+[*]四种显示方式：原版、折叠、滚动、折叠＋滚动。按钮可以钉在两端，比精神崩溃的殖民者听话多了。
+[*]每个按钮可选文字、图标或两者，换成别的按钮的图标或自己的 PNG 都行。
+[*]每个按钮都能设快捷键，收进抽屉也照样能按。
+[*]设置跟着存档走：每个殖民地一套，这个殖民地没了也不会连累下一个。
+[*]排法可以导出成文件、文本，或一键打包成创意工坊模组，分享给其他边缘人。
+[*]6 款内置主题（帝国、信条、基因实验室、虚空、星航，以及每个按钮里都有一张萘伊像素图的萘伊主题），可以逐个按钮混搭，也能用「新建主题」自己画一套，不用写代码，比殖民者雕一座雕像还快。
+[/list]
+需要 Harmony。会接管整条按钮栏的模组（TooManyButtons 等）会被检测到，由你决定谁来画，不用让它们打一架；和 UI Rethemed - Main Bar 一起用时，请关掉它的「Main bar」。
+制作方式：vibe coding。设计和实机测试是 NAI，代码由 AI（Anthropic 的 Claude）编写，萘伊的图用本地 AI 生图模型制作。制作过程中没有殖民者受到伤害（器官都还在）。
+授权：代码 MIT，萘伊的图 CC BY-NC-ND 4.0，做主题的素材 CC0（见 LICENSES.md）。
 
 [b]繁體中文[/b]
-自訂遊戲底部的主按鈕列：拖曳排序、隱藏、改名、調寬度，把少用的按鈕收進「更多」抽屜，或讓整條列左右捲動。沒改任何設定之前，外觀和原版完全一樣。
+模組裝到兩千個，底部按鈕擠成「Fshn Mmry Cmbt」這種天書？你的心情欄已經多了兩條：
 [list]
-[*]四種顯示方式：原版、摺疊、捲動、摺疊＋捲動；滾輪捲動時地圖不會縮放。
-[*]按鈕可固定在左端或右端；選單預設鎖定在最右邊。
-[*]每顆按鈕可選只顯示文字、只顯示圖示、圖示＋文字，可換圖示或匯入自己的 PNG（放在模組資料夾外，更新不會被刪）。
-[*]快捷鍵：原版沒有快捷鍵的按鈕也能設定；隱藏或收進抽屜的按鈕快捷鍵照樣有效。
-[*]設定跟著存檔走，並有新遊戲用的預設範本。
-[*]分享排法：取名後匯出成檔案或文字（可貼到 Discord）。匯入前會先列出哪些按鈕來自你沒裝的模組、缺少的主題或圖示，並可勾選只匯入哪幾部分。一鍵做成可上傳工作坊的排序模組，PNG 圖示一起打包。
-[*]外觀分頁與主題：預設為原版外觀，另有 6 款內建主題（5 款參考各擴充配色：帝國、信條、基因實驗室、虛空、星航，不需要擴充；以及每顆主按鈕裡都有一張萘伊像素圖的像素風主題萘伊；萘伊適合捲動或摺疊＋捲動模式、按鈕寬 120 px 以上，主題可以建議這類版面，按下按鈕才會套用）。
-[*]按鈕清單可以依來源模組篩選；半格按鈕也能用完整寬度。
-[*]自訂主題：逐顆按鈕混搭不同主題的零件（背景、插圖、文字顏色、對齊、字級、圖示大小與位置、自己的 PNG），可存成檔案、之後再載入。
-[*]新增主題：一鍵在 Mods 資料夾做出空白主題模組，用任何繪圖軟體改 PNG，設定視窗開著時按鈕列會馬上更新，不需要工具、不用重開遊戲；做好後像一般模組一樣啟用，或上傳工作坊。逐步教學見模組資料夾的 ThemeGuide.zh-TW.md。
-[*]只用 XML＋圖片就能做主題模組：整張背景圖、列角的立繪等裝飾圖、每顆按鈕裡的圖、各狀態的文字顏色。主題範本和產生腳本在模組的 ThemeTemplate 資料夾。
-[*]相容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可選擇由誰繪製（預設由對方繪製）；匯入對方設定為實驗性功能。
-[*]UI Rethemed - Main Bar 也會畫主按鈕列，兩個都裝時由排前面的模組畫；要用本模組的列，請在它的設定關掉「Main bar」。設定視窗會提示目前的情況。
-[*]相容 Better Sliders：本模組的滑桿自行繪製並附數字框，不會被蓋住。
+[*]按鈕擠成縮寫 -10
+[*]找不到研究按鈕 -5
 [/list]
-需要 Harmony。從存檔中移除本模組時，下次讀檔會出現一次「找不到類別」的紀錄，不影響遊戲。
-
-製作方式：vibe coding。NAI 負責設計和實機測試，程式碼、翻譯和文件由 AI（Anthropic 的 Claude）撰寫，萘伊的圖用本地 AI 生圖模型製作。
-
-授權：程式碼和翻譯為 MIT；萘伊的圖為 CC BY-NC-ND 4.0（標註作者、非商業、不改圖；想放進其他模組請先詢問）；做主題用的素材（ThemeKit、ThemeTemplate、主題教學）為 CC0，可以自由用在自己的主題模組。詳見模組資料夾的 LICENSES.md。
+裝上本模組：拖曳排序、隱藏、改名、調寬度，少用的收進「更多」抽屜，或乾脆讓整條列捲動。心情 +15。
+沒動設定之前，外觀和原版一模一樣，不會像蘭迪那樣突然給你「驚喜」。
+[list]
+[*]四種顯示方式：原版、摺疊、捲動、摺疊＋捲動。按鈕可以釘在兩端，比精神崩潰的殖民者聽話多了。
+[*]每顆按鈕可選文字、圖示或兩者，換成別顆按鈕的圖示或自己的 PNG 都行。
+[*]每顆按鈕都能設快捷鍵，收進抽屜也照樣能按。
+[*]設定跟著存檔走：每個殖民地一套，這個殖民地沒了也不會連累下一個。
+[*]排法可以匯出成檔案、文字，或一鍵打包成工作坊模組，分享給其他邊緣人。
+[*]6 款內建主題（帝國、信條、基因實驗室、虛空、星航，以及每顆按鈕裡都有一張萘伊像素圖的萘伊主題），可以逐顆混搭，也能用「新增主題」自己畫一套，不用寫程式，比殖民者雕一座雕像還快。
+[/list]
+需要 Harmony。會接管整條按鈕列的模組（TooManyButtons 等）會被偵測到，由你決定誰來畫，不用讓它們打一架；和 UI Rethemed - Main Bar 一起用時，請關掉它的「Main bar」。
+製作方式：vibe coding。設計和實機測試是 NAI，程式碼由 AI（Anthropic 的 Claude）撰寫，萘伊的圖用本地 AI 生圖模型製作。製作過程中沒有殖民者受到傷害（器官都還在）。
+授權：程式碼 MIT，萘伊的圖 CC BY-NC-ND 4.0，做主題的素材 CC0（見 LICENSES.md）。
