@@ -10,7 +10,7 @@
 
 **Tech Stack:** C# net10.0（Krafs 1.7 參考組件、Harmony 不需要新補丁）、xunit、Python 3.12＋Pillow 13（`RimClaude\tools\.venv_vector`）。
 
-**Spec:** `docs/superpowers/specs/2026-11-07-theme-projects-design.md`、`openspec/changes/theme-projects/specs/theme-projects/spec.md`；1.7 API 的結論在 PR 說明「技術筆記」（本機副本 `_資料與測試\MainButtonBarSystem\theme-projects\技術筆記.md`）。
+**Spec:** `docs/superpowers/specs/2026-11-07-theme-projects-design.md`、`openspec/specs/theme-projects/spec.md`；1.7 API 的結論在 PR 說明「技術筆記」（本機副本 `_資料與測試\MainButtonBarSystem\theme-projects\技術筆記.md`）。
 
 ## Global Constraints
 
