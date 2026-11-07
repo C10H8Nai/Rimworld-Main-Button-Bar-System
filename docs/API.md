@@ -452,7 +452,9 @@ again. The textures read by the previous reload are released at the next one.
 
 ### Adding a theme in the game
 
-The quickest start needs no tools at all: the Appearance tab's theme list ends with **New theme…**.
+The quickest start needs no tools at all: the Appearance tab's theme list ends with **New theme…**. For artists
+there is a step-by-step guide with a nine-slice picture: `ThemeGuide.md` next to this file (also
+`ThemeGuide.zh-TW.md`, `ThemeGuide.zh-CN.md`, `ThemeGuide.ja.md`).
 
 1. Fill in a name (required), an author and a description. The packageId is made from them
    (`<author>.mbbstheme.<name>`, with a number added if a mod already uses it) and can be edited.
