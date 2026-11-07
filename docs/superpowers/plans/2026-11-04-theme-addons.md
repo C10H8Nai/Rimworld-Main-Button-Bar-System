@@ -225,7 +225,7 @@
 
 ## 執行紀錄（2026-11-04）
 
-- Task 1～9、11 完成 `2026-11-04`；Task 10 編譯：這台機器原本沒有 .NET SDK，作者同意後用微軟官方 `dotnet-install.ps1` 把 SDK 10.0.403 裝到 `C:\Users\IL\.dotnet`（不改 PATH，`C:\Users\IL\.dotnet\dotnet.exe build …`），Release 0 警告 0 錯誤，xunit 46 個測試通過，`verify_dll.py` 0 問題 `2026-11-04`。
+- Task 1～9、11 完成 `2026-11-04`；Task 10 編譯：這台機器原本沒有 .NET SDK，作者同意後用微軟官方 `dotnet-install.ps1` 把 SDK 10.0.403 裝到 `%USERPROFILE%\.dotnet`（不改 PATH，`%USERPROFILE%\.dotnet\dotnet.exe build …`），Release 0 警告 0 錯誤，xunit 46 個測試通過，`verify_dll.py` 0 問題 `2026-11-04`。
 - 和計畫不同的地方：`settingsWindow.themeSettingsHeight` 改成 `themeSettingsGap`（外觀分頁改成一欄捲動的 listing，不用固定高度）；`behaviour` 多一個 `themeTileMaxCount`（Tile 的格數上限，超過就改成 Stretch）；`DrawBarBackgroundImage` 多一個帶 opacity 的多載，外觀分頁的預覽固定用 1（review 指出玩家調背景不透明度會讓每張主題卡一起變淡）。
 - Review（Sonnet，整支分支）的 Important 4 項都修了：缺貼圖只記一次（`TexQuiet`＋`missingReported`）、上下層裝飾都用 `ctx.BarRect`、重載時釋放上一次讀進來的貼圖（照 spec §4.9）、預覽不吃背景透明度；Minor 的 Python 命名與 JSON 驗證也修了。
 - 各任務的 code review 合併成兩次：Python＋C#＋文件一次整支分支 review（Sonnet 子代理），修正後再補一次自查。
