@@ -56,3 +56,7 @@ dotnet test Source/MainButtonBarSystem.Tests
 ```
 
 Harmony 3 已將不帶參數的 `PatchAll()` 標為過時，要明確傳入組件：`PatchAll(typeof(X).Assembly)`。
+
+## 授權
+
+程式碼和翻譯為 MIT（[LICENSE](LICENSE)）；萘伊的圖為 CC BY-NC-ND 4.0；做主題用的素材（ThemeKit、ExampleTheme、make_theme.py、make_theme_kit.py、主題教學、`examples/`）為 CC0；工作坊預覽圖是遊戲截圖，不在這些授權裡。哪些檔案屬於哪一種，見 [LICENSES.md](LICENSES.md)。

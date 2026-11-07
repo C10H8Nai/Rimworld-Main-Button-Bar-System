@@ -33,7 +33,7 @@ namespace MainButtonBarSystem
         /// <summary>
         /// Translates <paramref name="key"/> with the arguments inserted exactly as given. The game's formatter capitalises
         /// the first letter after ':', '!', '?' or a line break (GenText.CapitalizeSentences), which turns names written
-        /// after a colon, such as the author "boblin00215" in Japanese "作者: {0}", a file name or a package id, into
+        /// after a colon, such as an author name in Japanese "作者: {0}", a file name or a package id, into
         /// "Boblin00215". Each argument goes through the formatter as a placeholder that has no letters, then replaces it.
         /// </summary>
         public static string TranslateKeepCase(this string key, params object[] args)
