@@ -1,0 +1,22 @@
+schema: spec-driven
+
+# 給 AI 產生 proposal／specs／design／tasks 時看的專案背景
+context: |
+  Main Button Bar System：RimWorld 1.7（Waylith 引擎，.NET 10 CoreCLR＋Vulkan）的底部主按鈕列模組。
+  C#（net10.0）＋Harmony；原始碼在 Source/MainButtonBarSystem，純邏輯放 Core/ 並有單元測試。
+  硬性原則見 docs/HANDOFF.md §4、架構見 §5：
+    - 不寫死參數，數值放 Defs 的 Tuning.xml；每個選項都有「預設值」按鈕。
+    - 不能有紅字；每幀不能配置記憶體。
+    - 介面文字 29 種語言都要有：先改 tools/i18n/English.json，再跑 tools/gen_translations.py。
+    - 設定分兩類：參數（按鈕分頁：長寬、順序、顯示方式、顯示內容）和外觀（外觀分頁：預設主題／自訂主題）。
+  設計規格在 docs/superpowers/specs/，測試清單在 docs/testing/。
+  檢查用 RimClaude\模組開發\環境\verify.ps1 -Mod MainButtonBarSystem。
+
+rules:
+  proposal:
+    - 用繁體中文寫，技術名詞、識別字保留原文
+    - 寫明不做什麼（Non-goals）
+  specs:
+    - 用繁體中文寫，需求用 SHALL／MUST
+  tasks:
+    - 每項要能各自驗證；UI 改動要列出要實機確認的地方
