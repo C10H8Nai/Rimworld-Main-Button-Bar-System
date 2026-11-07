@@ -8,7 +8,7 @@ The repository is also the mod folder, so it contains source code, tests, tools,
 screenshots that players do not need. This copies:
     About/  1.7/  Defs/  Languages/  Textures/  LoadFolders.xml  LICENSE  LICENSES.md (which files use which license)
     ThemeKit/: blank theme files the Appearance tab's "New theme" copies (not loaded by the game)
-    docs/API.md (as API.md) and docs/API.zh-TW.md (as API.zh-TW.md), for add-on authors
+    docs/API.md, docs/API.zh-TW.md and docs/API.zh-CN.md (same names), for add-on authors
     docs/ThemeGuide*.md and docs/ThemeGuide_NineSlice.png (same names): the step-by-step theme guide in English,
     Traditional and Simplified Chinese and Japanese
     ThemeTemplate/: docs/examples/ExampleTheme (a complete theme mod), tools/make_theme.py and its JSON, for theme
@@ -38,6 +38,7 @@ FILES = {
     "LoadFolders.xml": "LoadFolders.xml",
     os.path.join("docs", "API.md"): "API.md",
     os.path.join("docs", "API.zh-TW.md"): "API.zh-TW.md",
+    os.path.join("docs", "API.zh-CN.md"): "API.zh-CN.md",
     "LICENSE": "LICENSE",
     "LICENSES.md": "LICENSES.md",
 }

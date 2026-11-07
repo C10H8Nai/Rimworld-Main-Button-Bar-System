@@ -57,6 +57,10 @@ dotnet test Source/MainButtonBarSystem.Tests
 
 Harmony 3 已將不帶參數的 `PatchAll()` 標為過時，要明確傳入組件：`PatchAll(typeof(X).Assembly)`。
 
+## 製作方式
+
+本模組是 vibe coding 的產物：功能設計、實機測試和各種取捨由 NAI 決定；程式碼、翻譯和文件由 AI（Anthropic 的 Claude）撰寫；萘伊的圖是用本地 AI 生圖模型依 NAI 的角色設定產生，再用腳本轉成像素圖。
+
 ## 授權
 
 程式碼和翻譯為 MIT（[LICENSE](LICENSE)）；萘伊的圖為 CC BY-NC-ND 4.0；做主題用的素材（ThemeKit、ExampleTheme、make_theme.py、make_theme_kit.py、主題教學、`examples/`）為 CC0；工作坊預覽圖是遊戲截圖，不在這些授權裡。哪些檔案屬於哪一種，見 [LICENSES.md](LICENSES.md)。

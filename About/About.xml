@@ -25,5 +25,7 @@ Nothing changes until you change something: a fresh install looks exactly like t
 
 Works with mods that add icons, windows or buttons. Mods that take over the whole bar (TooManyButtons, Custom Bottom Bar, UI Not Included, DragReorder) are detected; you choose who draws it (importing their settings is experimental). Works with Better Sliders.
 
-Settings: Options > Mod settings > Main Button Bar System, or the gear in the "More" drawer. For modders: API.md in the mod folder.</description>
+Settings: Options > Mod settings > Main Button Bar System, or the gear in the "More" drawer. For modders: API.md in the mod folder.
+
+Made by vibe coding: NAI designed it and tested it in the game; the code, translations and documentation were written by AI (Claude by Anthropic), and the pictures of Nai were made with a local AI image model.</description>
 </ModMetaData>

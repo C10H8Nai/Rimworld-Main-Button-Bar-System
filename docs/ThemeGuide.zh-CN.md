@@ -73,7 +73,7 @@
 
 ## 再进一步
 
-- **每个按钮放不同的图**（`buttonImages`）、**栏角的立绘这类装饰图**（`decorations`）、**整张背景图**：在 Defs 里手动添加，写法见模组文件夹里的 `API.md` 第 4 节（英文）或 `API.zh-TW.md`（节选）。图同样放在 `Textures\<Id>\`。
+- **每个按钮放不同的图**（`buttonImages`）、**栏角的立绘这类装饰图**（`decorations`）、**整张背景图**：在 Defs 里手动添加，写法见模组文件夹里的 `API.md` 第 4 节（英文）或 `API.zh-CN.md`（节选）。图同样放在 `Textures\<Id>\`。
 - **完整示例**：模组文件夹里的 `ThemeTemplate\ExampleTheme`，用到了所有字段，可以对照着看。
 - **配色生成器 `make_theme.py`**（可选）：写一份 JSON 配色，自动画出整套按钮框，生成整个主题模组。需要先安装 Python 3 和 Pillow：
   1. 到 [python.org](https://www.python.org/downloads/) 下载安装 Python 3。Windows 安装时勾选“Add python.exe to PATH”。
