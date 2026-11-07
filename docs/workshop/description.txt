@@ -9,7 +9,7 @@ Tidy up the bottom button bar. With many mods it fills up with dozens of squeeze
 [*]Text, icon, or both per button; use another button's icon or your own PNG.
 [*]Hotkeys for every button. Settings per save, with a default template.
 [*]Share arrangements as a file, as text, or as a Workshop-ready mod.
-[*]Six built-in themes, custom themes mixed button by button, and "New theme…" to make your own with any image editor (guide included).
+[*]Six built-in themes, custom themes mixed button by button, and "New theme…" to make your own with any image editor (a different picture per button takes a few lines of XML; guide included).
 [*]29 languages.
 [/list]
 
@@ -28,41 +28,41 @@ Made with vibe coding: designed and tested by NAI, code written by AI (Claude by
 [hr][/hr]
 
 [b]简体中文[/b]
-Mod 装到两千个，底部按钮挤成「Fshn Mmry Cmbt」这种天书？你的心情栏已经多了两条：
+Mod 装到两千个，底部按钮挤成一排看不懂的缩写？你的心情栏已经多了两条：
 [list]
 [*]按钮挤成缩写 -10
 [*]找不到研究按钮 -5
 [/list]
 装上本模组：拖动排序、隐藏、改名、调宽度，少用的收进「更多」抽屉，或干脆让整条栏滚动。心情 +15。
-没动设置之前，外观和原版一模一样，不会像兰迪那样突然给你“惊喜”。
+没动设置之前，外观和原版一模一样。
 [list]
-[*]四种显示方式：原版、折叠、滚动、折叠＋滚动。按钮可以钉在两端，比精神崩溃的殖民者听话多了。
+[*]四种显示方式：原版、折叠、滚动、折叠＋滚动。按钮可以钉在两端。
 [*]每个按钮可选文字、图标或两者，换成别的按钮的图标或自己的 PNG 都行。
 [*]每个按钮都能设快捷键，收进抽屉也照样能按。
 [*]设置跟着存档走：每个殖民地一套，这个殖民地没了也不会连累下一个。
 [*]排法可以导出成文件、文本，或一键打包成创意工坊模组，分享给其他边缘人。
-[*]6 款内置主题（帝国、信条、基因实验室、虚空、星航，以及每个按钮里都有一张萘伊像素图的萘伊主题），可以逐个按钮混搭，也能用「新建主题」自己画一套，不用写代码，比殖民者雕一座雕像还快。
+[*]6 款内置主题（帝国、信条、基因实验室、虚空、星航，以及每个按钮里都有一张萘伊像素图的萘伊主题），可以逐个按钮混搭，也能用「新建主题」自己画一套，比殖民者雕一座雕像还快：按钮框、背景和共用插图改 PNG 就好；每个按钮放不同的图要在 XML 加几行设置，写法见 API.md。
 [/list]
 需要 Harmony。会接管整条按钮栏的模组（TooManyButtons 等）会被检测到，由你决定谁来画，不用让它们打一架；和 UI Rethemed - Main Bar 一起用时，请关掉它的「Main bar」。
-制作方式：vibe coding。设计和实机测试是 NAI，代码由 AI（Anthropic 的 Claude）编写，萘伊的图用本地 AI 生图模型制作。制作过程中没有殖民者受到伤害（器官都还在）。
+制作方式：vibe coding。设计和实机测试是 NAI，代码由 AI（Anthropic 的 Claude）编写，萘伊的图用本地 AI 生图模型制作。制作过程中没有殖民者受到伤害。
 授权：代码 MIT，萘伊的图 CC BY-NC-ND 4.0，做主题的素材 CC0（见 LICENSES.md）。
 
 [b]繁體中文[/b]
-模組裝到兩千個，底部按鈕擠成「Fshn Mmry Cmbt」這種天書？你的心情欄已經多了兩條：
+模組裝到兩千個，底部按鈕擠成一排看不懂的縮寫？你的心情欄已經多了兩條：
 [list]
 [*]按鈕擠成縮寫 -10
 [*]找不到研究按鈕 -5
 [/list]
 裝上本模組：拖曳排序、隱藏、改名、調寬度，少用的收進「更多」抽屜，或乾脆讓整條列捲動。心情 +15。
-沒動設定之前，外觀和原版一模一樣，不會像蘭迪那樣突然給你「驚喜」。
+沒動設定之前，外觀和原版一模一樣。
 [list]
-[*]四種顯示方式：原版、摺疊、捲動、摺疊＋捲動。按鈕可以釘在兩端，比精神崩潰的殖民者聽話多了。
+[*]四種顯示方式：原版、摺疊、捲動、摺疊＋捲動。按鈕可以釘在兩端。
 [*]每顆按鈕可選文字、圖示或兩者，換成別顆按鈕的圖示或自己的 PNG 都行。
 [*]每顆按鈕都能設快捷鍵，收進抽屜也照樣能按。
 [*]設定跟著存檔走：每個殖民地一套，這個殖民地沒了也不會連累下一個。
 [*]排法可以匯出成檔案、文字，或一鍵打包成工作坊模組，分享給其他邊緣人。
-[*]6 款內建主題（帝國、信條、基因實驗室、虛空、星航，以及每顆按鈕裡都有一張萘伊像素圖的萘伊主題），可以逐顆混搭，也能用「新增主題」自己畫一套，不用寫程式，比殖民者雕一座雕像還快。
+[*]6 款內建主題（帝國、信條、基因實驗室、虛空、星航，以及每顆按鈕裡都有一張萘伊像素圖的萘伊主題），可以逐顆混搭，也能用「新增主題」自己畫一套，比殖民者雕一座雕像還快：按鈕框、背景和共用插圖改 PNG 就好；每顆按鈕放不同的圖要在 XML 加幾行設定，寫法見 API.md。
 [/list]
 需要 Harmony。會接管整條按鈕列的模組（TooManyButtons 等）會被偵測到，由你決定誰來畫，不用讓它們打一架；和 UI Rethemed - Main Bar 一起用時，請關掉它的「Main bar」。
-製作方式：vibe coding。設計和實機測試是 NAI，程式碼由 AI（Anthropic 的 Claude）撰寫，萘伊的圖用本地 AI 生圖模型製作。製作過程中沒有殖民者受到傷害（器官都還在）。
+製作方式：vibe coding。設計和實機測試是 NAI，程式碼由 AI（Anthropic 的 Claude）撰寫，萘伊的圖用本地 AI 生圖模型製作。製作過程中沒有殖民者受到傷害。
 授權：程式碼 MIT，萘伊的圖 CC BY-NC-ND 4.0，做主題的素材 CC0（見 LICENSES.md）。
