@@ -1,6 +1,6 @@
 # 外觀分頁「新增／刪除主題」設計（主題專案）
 
-日期：2026-11-07。作者（NAI）和 Claude 在對話裡討論定案，作者 2026-11-07 同意照這份實作。執行流程在 `openspec/changes/theme-projects/`。
+日期：2026-11-07。作者（NAI）和 Claude 在對話裡討論定案，作者 2026-11-07 同意照這份實作。執行流程在 `openspec/changes/archive/2026-11-07-theme-projects/`。
 
 ## 1. 為什麼要做
 

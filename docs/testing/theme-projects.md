@@ -1,6 +1,6 @@
 # 主題專案（新增／刪除主題）實機測試清單
 
-分支：`claude/theme-projects`。規格：`openspec/changes/theme-projects/specs/theme-projects/spec.md`（每個 Scenario 對到下面一節）；設計：`docs/superpowers/specs/2026-11-07-theme-projects-design.md`。
+分支：`claude/theme-projects`。規格：`openspec/specs/theme-projects/spec.md`（每個 Scenario 對到下面一節）；設計：`docs/superpowers/specs/2026-11-07-theme-projects-design.md`。
 
 排序：一般功能的小排序（帶優化模組），開發模式開著。測試建立的主題專案，測完從 `Mods\` 搬到 `_資料與測試\MainButtonBarSystem\theme-projects\`（不進 repo）。每節結束看 log 有沒有本模組的紅字、黃字（`log_scan.py`），黃字要能對到下面寫明會出現的那幾種。
 
