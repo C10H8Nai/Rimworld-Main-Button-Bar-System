@@ -73,7 +73,11 @@ namespace MainButtonBarSystem
                 if (File.Exists(source)) File.Copy(source, Path.Combine(folder, file), true);
             }
 
-            var saved = new SavedCustomTheme { meta = meta, baseTheme = config.appearance ?? BarConfig.VanillaAppearance, customTheme = data };
+            // A theme has no use for the exporting game's button list (that is for arrangements): name, author and
+            // description only.
+            var stored = meta?.Clone();
+            stored?.buttons.Clear();
+            var saved = new SavedCustomTheme { meta = stored, baseTheme = config.appearance ?? BarConfig.VanillaAppearance, customTheme = data };
             Scribe.saver.InitSaving(Path.Combine(folder, FileName), RootNode);
             try
             {

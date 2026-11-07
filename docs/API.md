@@ -450,6 +450,60 @@ again. The textures read by the previous reload are released at the next one.
 - On the Workshop, add **Main Button Bar System** to the item's *Required items*: `modDependencies` in About.xml
   only tells the game, not Steam. Keep `loadAfter` as in the example.
 
+### Adding a theme in the game
+
+The quickest start needs no tools at all: the Appearance tab's theme list ends with **New theme…**. For artists
+there is a step-by-step guide with a nine-slice picture: `ThemeGuide.md` next to this file (also
+`ThemeGuide.zh-TW.md`, `ThemeGuide.zh-CN.md`, `ThemeGuide.ja.md`).
+
+1. Fill in a name (required), an author and a description. The packageId is made from them
+   (`<author>.mbbstheme.<name>`, with a number added if a mod already uses it) and can be edited.
+2. The mod writes a complete theme mod into the game's `Mods` folder and picks it, with no restart: the bar now shows
+   the blank theme (tinted nine-slice frames, a grid on the bar, a crosshair picture in every button).
+3. Select the theme's card: **Open folder**, edit the PNG images with any image editor and save. While the Appearance
+   tab is open the mod checks the files every second (`behaviour.themeProjectPollSeconds`) and reads them again
+   when they change; **Reload** does it at once. A file still being written keeps the last good version.
+4. When it looks right, enable it in the mod list like any other mod (or upload it to the Workshop from there). Once
+   it is an active mod, the game loads it, and Reload only reads the PNGs again: changes to Defs need a restart.
+5. **Delete** moves the folder to `MainButtonBarSystem/DeletedThemes/<folder>_<date>` in the game's save data folder
+   (move it back into `Mods` to restore it). Only themes made with New theme can be deleted, and only while they are
+   not ticked in the mod list.
+
+The folder (a *theme project*):
+
+```
+<Name>/
+  About/About.xml            depends on and loads after this mod (with Workshop / download links)
+  About/Preview.png          640x360 placeholder for the Workshop
+  Defs/<Id>_Theme.xml        one BarAppearanceDef; every field has a comment
+  Textures/<Id>/             Button, ButtonMouseover, ButtonActive, ButtonDisabled, More, Drawer (64x64 nine-slice),
+                             Bar (256x36, Tile), ButtonPicture (240x72), ArrowLeft, ArrowRight (32x32), Gear (64x64),
+                             Preview (600x36, the card's picture)
+  _Guide_<Language>.png      one-page guide for first-time theme makers, in English, ChineseTraditional,
+                             ChineseSimplified and Japanese (not loaded by the game)
+  MBBS_ThemeProject.xml      marks the folder as a theme project (not loaded by the game)
+```
+
+`<Id>` comes from the packageId without its `mbbstheme` part (`Nai.mbbstheme.Steel` → `NaiSteel`). On a bar button
+(36 pixels tall) the top and bottom edges of a 64×64 atlas take 16 pixels each, so the blank frames are see-through
+everywhere but a thin outer line; keep that in mind if the button picture should show.
+
+While the project is not an active mod, this mod reads it with the game's own def parser, so every theme field in
+this section works, including ones you add by hand: `buttonImages` (a picture per button, see *Pictures inside
+buttons*) and `decorations` (see *Illustrations*); add their PNGs under `Textures/<Id>/`. You may also add more
+`BarAppearanceDef`s to the Defs folder: each becomes its own theme. Limits until the project is an active mod: only
+`.png` textures, no `ParentName` inheritance, no translations (`Languages/`), and a field the parser does not know is
+skipped with a warning instead of an error.
+
+- **Copying a project**: give the copy its own packageId (About.xml and `MBBS_ThemeProject.xml`) and defName, or its
+  theme is skipped with a warning (two themes cannot share a defName).
+- **Uploading**: add Main Button Bar System to the item's *Required items* on the Workshop (see *Making a theme mod*).
+  `_Guide_*.png` and `MBBS_ThemeProject.xml` can stay; the game ignores them. Delete `MBBS_ThemeProject.xml` if this mod
+  should stop offering Reload and Delete for the folder.
+- **Moving it into another mod** (a race mod that ships its own bar theme): copy `Defs/` and `Textures/` into the
+  folder that mod reads only when this mod is active (`IfModActive`, see *Shipping content inside another mod*), then
+  delete the project.
+
 ### Compatibility promise
 
 Theme fields are only added, never removed or given another meaning: a theme written for API 1.0 loads and looks

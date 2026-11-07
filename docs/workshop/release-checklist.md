@@ -10,7 +10,7 @@
 python3 tools/make_release.py "D:/RimWorldUpload/MainButtonBarSystem"
 ```
 
-這會只複製遊戲會讀的東西：`About/`、`1.7/`、`Defs/`、`Languages/`、`Textures/`、`LoadFolders.xml`，以及給附屬模組作者看的 `API.md`。
+這會只複製遊戲會讀的東西：`About/`、`1.7/`、`Defs/`、`Languages/`、`Textures/`、`LoadFolders.xml`，以及給附屬模組作者看的 `API.md`、`API.zh-TW.md`、`ThemeTemplate/`（範本和產生腳本），和外觀分頁「新增主題…」複製用的 `ThemeKit/`（遊戲不會載入這兩個資料夾）。
 
 - 目標資料夾已經有 `About/PublishedFileId.txt` 的話會保留，之後上傳都會更新同一個工作坊項目。
 - 目標資料夾不能在 repo 裡面。

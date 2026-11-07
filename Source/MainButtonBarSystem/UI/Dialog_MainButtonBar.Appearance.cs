@@ -42,6 +42,7 @@ namespace MainButtonBarSystem
 
         private void DrawAppearance(Rect body)
         {
+            CheckSelectedProject();
             var switchRow = new Rect(body.x, body.y, body.width, L.textRowHeight);
             DrawAppearanceSwitch(switchRow);
             float top = switchRow.yMax + L.footerGap;

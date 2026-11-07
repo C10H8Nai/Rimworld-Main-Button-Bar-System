@@ -336,4 +336,36 @@ It is listed under Preset themes. Share the whole folder to give it to others.</
   <MBBS_ReloadThemes>Reload theme textures</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Development mode: reads every theme's PNG files again from its mod folder, so an edited image shows without restarting the game. The themes are checked again afterwards; see the log.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Theme textures reloaded: {0} file(s) read again.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>New theme…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Make a blank theme mod in the game's Mods folder and pick it. Edit its PNG images with any image editor: while this tab is open, the bar shows your changes within a second. No restart needed.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>New theme</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Create</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>A theme mod folder is made in {1}, with blank images and _Guide_*.png, which shows which image paints which part of the bar. Enable it in the mod list later to use it like any theme mod, or upload it to the Workshop from there.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Theme project (not active)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>New theme made in {0}. Open its folder and edit the PNG images; this window shows the changes.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Could not make the theme in {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>The blank theme files are missing ({0}). Reinstall Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>A theme for Main Button Bar System, made with its "New theme". Pick it in Main Button Bar System's settings, Appearance tab.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Reload</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Read this theme's Defs and PNG images again. While this tab is open, changes are also picked up by themselves.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Read this theme's PNG images again. It is an active mod, so changes to its Defs need a restart.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: read {1} file(s) again.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: read {1} image(s) again. Changes to Defs need a restart, because the theme is an active mod.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: a file is still being written or not valid yet; the last good version is kept.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Delete</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Moves this theme's folder to {0}. To get it back, move it into the Mods folder again.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>This theme is an active mod. Turn it off in the mod list and restart the game first.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>This theme is ticked in the mod list. Untick it and restart the game first.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Delete the theme "{0}"?
+
+Its folder
+{1}
+is moved to
+{2}
+To get it back, move it into the Mods folder again.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} was moved to {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Could not move {0}: {1}
+Nothing was changed.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} was moved to {1}, but part of the old folder could not be removed: {2}
+Delete it yourself (the game may list it as a second copy of the theme).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

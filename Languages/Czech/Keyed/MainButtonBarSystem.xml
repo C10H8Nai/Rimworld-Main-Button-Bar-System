@@ -336,4 +336,36 @@ Najdete ho mezi Hotovými motivy. Pro sdílení předejte ostatním celou složk
   <MBBS_ReloadThemes>Znovu načíst textury motivů</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Vývojářský režim: znovu načte soubory PNG každého motivu z jeho složky modu, takže upravený obrázek se zobrazí bez restartu hry. Poté se motivy znovu zkontrolují; viz záznam.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Textury motivů znovu načteny: znovu přečteno souborů: {0}.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Nový motiv…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Vytvoří prázdný motiv jako mod ve složce Mods hry a vybere ho. Obrázky PNG upravujte v libovolném editoru: dokud je tato karta otevřená, lišta zobrazí změny do vteřiny. Restart není potřeba.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Nový motiv</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Vytvořit</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>V {1} se vytvoří složka modu s motivem, s prázdnými obrázky a souborem _Guide_*.png, který ukazuje, který obrázek kreslí kterou část lišty. Později ho povolte v seznamu modů a používejte jako každý jiný motiv, nebo ho odtud nahrajte na Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Projekt motivu (neaktivní)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Nový motiv vytvořen v {0}. Otevřete jeho složku a upravte obrázky PNG; toto okno zobrazí změny.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Motiv se nepodařilo vytvořit v {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Chybí soubory prázdného motivu ({0}). Přeinstalujte Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Motiv pro Main Button Bar System vytvořený tlačítkem „Nový motiv“. Vyberte ho v nastavení Main Button Bar System na kartě Vzhled.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Znovu načíst</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Znovu přečte Defs a obrázky PNG tohoto motivu. Dokud je tato karta otevřená, změny se zachytí i samy.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Znovu přečte obrázky PNG tohoto motivu. Je to aktivní mod, takže změny v Defs vyžadují restart.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: znovu přečteno souborů: {1}.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: znovu přečteno obrázků: {1}. Změny v Defs vyžadují restart, protože motiv je aktivní mod.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: soubor se ještě zapisuje nebo zatím není platný; ponechává se poslední funkční verze.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Smazat</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Přesune složku tohoto motivu do {0}. Chcete-li ji získat zpět, přesuňte ji znovu do složky Mods.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Tento motiv je aktivní mod. Nejprve ho vypněte v seznamu modů a restartujte hru.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Tento motiv je zaškrtnutý v seznamu modů. Nejprve ho odškrtněte a restartujte hru.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Smazat motiv „{0}“?
+
+Jeho složka
+{1}
+se přesune do
+{2}
+Chcete-li ji získat zpět, přesuňte ji znovu do složky Mods.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} bylo přesunuto do {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Nepodařilo se přesunout {0}: {1}
+Nic se nezměnilo.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} bylo přesunuto do {1}, ale část staré složky se nepodařilo odstranit: {2}
+Smažte ji sami (hra ji může zobrazit jako druhou kopii motivu).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

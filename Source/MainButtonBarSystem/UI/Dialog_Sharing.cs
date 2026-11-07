@@ -18,6 +18,9 @@ namespace MainButtonBarSystem
 
         /// <summary>The Appearance tab's custom look, saved as a custom theme (no button list, no packageId).</summary>
         Theme,
+
+        /// <summary>"New theme": a blank theme mod in the Mods folder (design spec 2026-11-07); needs a packageId.</summary>
+        ThemeProject,
     }
 
     /// <summary>
@@ -34,6 +37,7 @@ namespace MainButtonBarSystem
 
         /// <summary>For names without ASCII letters: keeps automatic packageIds apart.</summary>
         private readonly string packageNameFallback = "Arrangement" + DateTime.Now.ToString("MMddHHmm");
+
 
         private readonly ExportTarget target;
         private readonly Action<string, string, string, string> onConfirm;
@@ -52,8 +56,10 @@ namespace MainButtonBarSystem
         {
             this.target = target;
             this.onConfirm = onConfirm;
-            name = lastName;
-            description = lastDescription;
+            // A new theme starts empty; arrangements start from the last export's name and description.
+            name = target == ExportTarget.ThemeProject ? "" : lastName;
+            description = target == ExportTarget.ThemeProject ? "" : lastDescription;
+            if (target == ExportTarget.ThemeProject) packageNameFallback = "Theme" + DateTime.Now.ToString("MMddHHmm");
             author = MainButtonBarSystemMod.Settings.exportAuthor;
             if (author.NullOrEmpty()) author = PlayerName();
             doCloseX = true;
@@ -63,7 +69,20 @@ namespace MainButtonBarSystem
             forcePause = false;
         }
 
-        private bool NeedsPackageId => target == ExportTarget.ModFolder;
+        private bool NeedsPackageId => target == ExportTarget.ModFolder || target == ExportTarget.ThemeProject;
+
+        /// <summary>The automatic packageId; a theme project's one skips ids already used (by a mod or an earlier new theme).</summary>
+        private string DefaultPackageId() =>
+            target == ExportTarget.ThemeProject
+                ? ThemeProjectNames.UniquePackageId(ThemeProjectNames.PackageId(author, name, packageNameFallback), PackageIdTaken)
+                : SharingNames.PackageId(author, name, packageNameFallback);
+
+        private bool PackageIdTaken(string id) =>
+            ModLister.GetModWithIdentifier(id, true) != null || exportedPackageIds.Contains(id) ||
+            (target == ExportTarget.ThemeProject &&
+             (ThemeProjects.KnownPackageIds.Any(known => ThemeProjectRules.SamePackageId(known, id)) ||
+              // Different packageIds can make the same defName ("a.mbbstheme.b", "a.b"); the second theme would be skipped.
+              DefDatabase<BarAppearanceDef>.GetNamedSilentFail(ThemeProjectNames.DefNameOf(ThemeProjectNames.IdOf(id))) != null));
 
         public override void DoWindowContents(Rect inRect)
         {
@@ -86,7 +105,7 @@ namespace MainButtonBarSystem
 
             if (NeedsPackageId)
             {
-                if (!packageIdEdited) packageId = SharingNames.PackageId(author, name, packageNameFallback);
+                if (!packageIdEdited) packageId = DefaultPackageId();
                 string edited = Field(inRect.x, ref y, labelWidth, fieldX, fieldWidth, row, "MBBS_Export_PackageId", packageId);
                 if (edited != packageId)
                 {
@@ -132,12 +151,12 @@ namespace MainButtonBarSystem
 
         private string Validate()
         {
-            if ((target == ExportTarget.ModFolder || target == ExportTarget.ModXml || target == ExportTarget.Theme) && name.NullOrEmpty())
+            if ((target == ExportTarget.ModFolder || target == ExportTarget.ModXml || target == ExportTarget.Theme || target == ExportTarget.ThemeProject) && name.NullOrEmpty())
                 return "MBBS_Export_NeedName".Translate();
             if (!NeedsPackageId) return null;
             if (!SharingNames.IsValidPackageId(packageId?.Trim())) return "MBBS_Export_BadPackageId".Translate();
             string id = packageId.Trim();
-            if (ModLister.GetModWithIdentifier(id, true) != null || exportedPackageIds.Contains(id)) return "MBBS_Export_PackageIdTaken".TranslateKeepCase(id);
+            if (PackageIdTaken(id)) return "MBBS_Export_PackageIdTaken".TranslateKeepCase(id);
             return null;
         }
 

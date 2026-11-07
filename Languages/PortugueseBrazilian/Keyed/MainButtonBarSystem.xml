@@ -336,4 +336,36 @@ Aparece em Temas prontos. Compartilhe a pasta inteira para entregá-lo a outras 
   <MBBS_ReloadThemes>Recarregar texturas dos temas</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Modo de desenvolvimento: relê os PNG de cada tema a partir da pasta do mod, para ver uma imagem editada sem reiniciar o jogo. Depois os temas são verificados de novo; veja o log.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Texturas dos temas recarregadas: {0} arquivo(s) relido(s).</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Novo tema…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Cria um mod de tema em branco na pasta Mods do jogo e o seleciona. Edite as imagens PNG dele com qualquer editor de imagens: enquanto esta aba estiver aberta, a barra mostra suas alterações em menos de um segundo. Não é preciso reiniciar.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Novo tema</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Criar</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>Uma pasta de mod de tema é criada em {1}, com imagens em branco e _Guide_*.png, que mostra qual imagem desenha qual parte da barra. Ative-o depois na lista de mods para usá-lo como qualquer mod de tema, ou envie-o de lá para a Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Projeto de tema (inativo)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Novo tema criado em {0}. Abra a pasta dele e edite as imagens PNG; esta janela mostra as alterações.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Não foi possível criar o tema em {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Os arquivos do tema em branco estão faltando ({0}). Reinstale o Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Um tema para o Main Button Bar System, feito com “Novo tema”. Escolha-o nas configurações do Main Button Bar System, aba Aparência.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Recarregar</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Lê de novo os Defs e as imagens PNG deste tema. Enquanto esta aba estiver aberta, as alterações também são detectadas automaticamente.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Lê de novo as imagens PNG deste tema. É um mod ativo, então alterações nos Defs exigem reiniciar.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} arquivo(s) relido(s).</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} imagem(ns) relida(s). Alterações nos Defs exigem reiniciar, porque o tema é um mod ativo.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: um arquivo ainda está sendo gravado ou ainda não é válido; a última versão boa é mantida.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Excluir</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Move a pasta deste tema para {0}. Para recuperá-la, mova-a de volta para a pasta Mods.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Este tema é um mod ativo. Desative-o primeiro na lista de mods e reinicie o jogo.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Este tema está marcado na lista de mods. Desmarque-o primeiro e reinicie o jogo.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Excluir o tema “{0}”?
+
+A pasta dele
+{1}
+é movida para
+{2}
+Para recuperá-la, mova-a de volta para a pasta Mods.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} foi movido para {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Não foi possível mover {0}: {1}
+Nada foi alterado.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} foi movido para {1}, mas não foi possível remover parte da pasta antiga: {2}
+Apague-a você mesmo (o jogo pode listá-la como uma segunda cópia do tema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

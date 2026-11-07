@@ -336,4 +336,36 @@
   <MBBS_ReloadThemes>테마 텍스처 다시 불러오기</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>개발자 모드: 각 테마의 PNG를 모드 폴더에서 다시 읽어 수정한 이미지를 게임 재시작 없이 표시합니다. 이후 테마를 다시 검사합니다(로그 참조).</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>테마 텍스처를 다시 불러왔습니다: 파일 {0}개를 다시 읽었습니다.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>새 테마…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>게임의 Mods 폴더에 빈 테마 모드를 만들고 선택합니다. PNG 이미지는 아무 이미지 편집기로 편집하세요. 이 탭이 열려 있는 동안 막대에 변경 사항이 1초 안에 반영됩니다. 재시작은 필요 없습니다.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>새 테마</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>만들기</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>{1}에 테마 모드 폴더가 만들어지며, 빈 이미지와 _Guide_*.png가 들어 있습니다. _Guide_*.png는 어떤 이미지가 막대의 어느 부분을 그리는지 보여 줍니다. 나중에 모드 목록에서 활성화하면 다른 테마 모드처럼 쓸 수 있고, 거기서 창작마당에 업로드할 수도 있습니다.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>테마 프로젝트 (비활성)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>{0}에 새 테마를 만들었습니다. 폴더를 열어 PNG 이미지를 편집하세요. 이 창에 변경 사항이 반영됩니다.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>{0}에 테마를 만들 수 없습니다: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>빈 테마 파일이 없습니다 ({0}). Main Button Bar System을 다시 설치하세요.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Main Button Bar System의 '새 테마'로 만든 테마입니다. Main Button Bar System 설정의 '외형' 탭에서 선택하세요.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>다시 불러오기</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>이 테마의 Defs와 PNG 이미지를 다시 읽습니다. 이 탭이 열려 있는 동안에는 변경 사항이 저절로 반영되기도 합니다.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>이 테마의 PNG 이미지를 다시 읽습니다. 활성화된 모드이므로 Defs 변경은 재시작해야 적용됩니다.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: 파일 {1}개를 다시 읽었습니다.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: 이미지 {1}개를 다시 읽었습니다. 테마가 활성화된 모드이므로 Defs 변경은 재시작해야 적용됩니다.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: 파일이 아직 쓰이는 중이거나 아직 유효하지 않습니다. 마지막 정상 버전을 유지합니다.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>삭제</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>이 테마의 폴더를 {0}(으)로 옮깁니다. 되돌리려면 폴더를 다시 Mods 폴더로 옮기세요.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>이 테마는 활성화된 모드입니다. 먼저 모드 목록에서 끄고 게임을 재시작하세요.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>이 테마는 모드 목록에서 체크되어 있습니다. 먼저 체크를 해제하고 게임을 재시작하세요.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>테마 '{0}'을(를) 삭제할까요?
+
+폴더
+{1}
+이(가) 다음 위치로 옮겨집니다
+{2}
+되돌리려면 폴더를 다시 Mods 폴더로 옮기세요.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0}을(를) {1}(으)로 옮겼습니다.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>{0}을(를) 옮길 수 없습니다: {1}
+아무것도 변경되지 않았습니다.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0}을(를) {1}(으)로 옮겼지만, 이전 폴더의 일부를 삭제할 수 없습니다: {2}
+직접 삭제해 주세요(게임이 테마의 두 번째 사본으로 표시할 수 있습니다).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

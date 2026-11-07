@@ -336,4 +336,36 @@ Det visas under Färdiga teman. Dela hela mappen för att ge det till andra.</MB
   <MBBS_ReloadThemes>Läs in tematexturer på nytt</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Utvecklarläge: läser varje temas PNG-filer på nytt från dess modmapp, så att en redigerad bild visas utan omstart. Därefter kontrolleras temana igen; se loggen.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Tematexturer inlästa på nytt: {0} fil(er) lästa igen.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Nytt tema…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Skapar en tom temamodd i spelets Mods-mapp och väljer den. Redigera dess PNG-bilder i valfritt bildredigeringsprogram: så länge den här fliken är öppen visar fältet dina ändringar inom en sekund. Ingen omstart behövs.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Nytt tema</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Skapa</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>En temamoddmapp skapas i {1}, med tomma bilder och _Guide_*.png, som visar vilken bild som ritar vilken del av fältet. Aktivera den senare i modlistan för att använda den som vilken temamodd som helst, eller ladda upp den till Workshop därifrån.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Temaprojekt (inte aktivt)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Nytt tema skapat i {0}. Öppna dess mapp och redigera PNG-bilderna; det här fönstret visar ändringarna.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Kunde inte skapa temat i {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>De tomma temafilerna saknas ({0}). Installera om Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Ett tema för Main Button Bar System, skapat med ”Nytt tema”. Välj det i inställningarna för Main Button Bar System, under fliken Utseende.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Läs in på nytt</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Läser det här temats Defs och PNG-bilder på nytt. Så länge den här fliken är öppen fångas ändringar också upp av sig själva.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Läser det här temats PNG-bilder på nytt. Det är en aktiv modd, så ändringar i Defs kräver omstart.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} fil(er) lästa igen.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} bild(er) lästa igen. Ändringar i Defs kräver omstart, eftersom temat är en aktiv modd.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: en fil skrivs fortfarande eller är inte giltig än; den senaste fungerande versionen behålls.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Ta bort</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Flyttar det här temats mapp till {0}. För att få tillbaka det flyttar du mappen till Mods-mappen igen.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Det här temat är en aktiv modd. Stäng av det i modlistan först och starta om spelet.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Det här temat är ikryssat i modlistan. Ta bort krysset först och starta om spelet.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Ta bort temat ”{0}”?
+
+Dess mapp
+{1}
+flyttas till
+{2}
+För att få tillbaka det flyttar du mappen till Mods-mappen igen.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} flyttades till {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Kunde inte flytta {0}: {1}
+Inget ändrades.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} flyttades till {1}, men en del av den gamla mappen kunde inte tas bort: {2}
+Ta bort den själv (spelet kan visa den som en extra kopia av temat).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

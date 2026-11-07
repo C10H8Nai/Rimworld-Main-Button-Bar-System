@@ -10,11 +10,15 @@ Take control of the bottom bar. With a big mod list it can hold dozens of button
 [*]Four display modes: Vanilla, Collapse (a "More" drawer), Scroll (mouse wheel or arrows, the map does not zoom), Collapse + scroll.
 [*]Pin buttons to the left or right end; the game menu stays locked at the right unless you unlock it.
 [*]Text only, icon only, or icon and text per button; pick another button's icon or import your own PNG (kept outside the mod folder, so updates never delete it).
-[*]Label alignment, gap, minimum and default widths, drawer columns and cell width, every value with a Default button.
+[*]Label alignment, gap, minimum and default widths, drawer columns and cell width, every value with a Default button. Half-width buttons can take the full width too.
+[*]Filter the button list by the mod the buttons come from.
 [*]Hotkeys for every button, including ones the game gives none; hidden and drawer buttons keep their keys; conflicts are explained.
 [*]Settings are per save, with a default template for new games.
 [*]Share arrangements: export with a name as a file or as text for Discord. Before importing you see what fits your game (buttons from mods you lack, a missing theme or icons) and pick which parts to take. One button turns your arrangement into a Workshop-ready mod, PNG icons included.
-[*]Themes: the vanilla look by default, plus six built-in themes (five in colours inspired by the expansions: Imperial, Creed, Gene Lab, Void, Starfarer; no expansion needed; and Nai, a pixel-art one with a picture of Nai inside every main button), with previews in the Appearance tab. Theme mods need only XML and images: whole-image backgrounds, decorations such as a portrait at a corner of the bar, a picture inside each button, label colours per state. A theme template and a generator script ship in the mod's ThemeTemplate folder.
+[*]Themes: the vanilla look by default, plus six built-in themes (five in colours inspired by the expansions: Imperial, Creed, Gene Lab, Void, Starfarer; no expansion needed; and Nai, a pixel-art one with a picture of Nai inside every main button), with previews in the Appearance tab. Nai looks best in the Scroll or Collapse + scroll modes with buttons 120 px or wider; a theme can suggest such a layout, applied only when you press its button.
+[*]Custom themes: mix parts of different themes button by button (backgrounds, pictures, label colours, alignment, font size, icon size and position, your own PNGs), then save them as files and load them again.
+[*]New theme: one click makes a blank theme mod in your Mods folder. Edit its PNG images with any image editor and the bar updates while the settings window is open; no tools, no restart. Enable it like any mod or upload it to the Workshop. Step-by-step guide: ThemeGuide.md in the mod folder (also in Chinese and Japanese).
+[*]Theme mods need only XML and images: whole-image backgrounds, decorations such as a portrait at a corner of the bar, a picture inside each button, label colours per state. A theme template and a generator script ship in the mod's ThemeTemplate folder.
 [*]Simple and Advanced views; 29 languages.
 [/list]
 
@@ -46,7 +50,11 @@ Settings: Options > Mod settings > Main Button Bar System, or the gear in the "M
 [*]快捷键：原版没有快捷键的按钮也能设置；隐藏或收进抽屉的按钮快捷键照样有效。
 [*]设置跟着存档走，并有新游戏用的默认模板。
 [*]分享排法：取名后导出成文件或文本（可贴到 Discord）。导入前会先列出哪些按钮来自你没装的模组、缺少的主题或图标，并可勾选只导入哪几部分。一键做成可上传创意工坊的排序模组，PNG 图标一并打包。
-[*]外观标签页与主题：默认为原版外观，另有 6 款内置主题（5 款参考各扩展配色：帝国、信条、基因实验室、虚空、星航，不需要扩展；以及每个主按钮里都有一张萘伊像素图的像素风主题萘伊）。只用 XML＋图片就能做主题模组：整张背景图、栏角的立绘等装饰图、每个按钮里的图、各状态的文字颜色。主题模板和生成脚本在模组的 ThemeTemplate 文件夹。
+[*]外观标签页与主题：默认为原版外观，另有 6 款内置主题（5 款参考各扩展配色：帝国、信条、基因实验室、虚空、星航，不需要扩展；以及每个主按钮里都有一张萘伊像素图的像素风主题萘伊；萘伊适合滚动或折叠＋滚动模式、按钮宽 120 px 以上，主题可以建议这类版面，按下按钮才会套用）。
+[*]按钮列表可以按来源模组筛选；半格按钮也能用完整宽度。
+[*]自定义主题：逐个按钮混搭不同主题的部件（背景、插图、文字颜色、对齐、字号、图标大小与位置、自己的 PNG），可存成文件、之后再载入。
+[*]新建主题：一键在 Mods 文件夹做出空白主题模组，用任何绘图软件改 PNG，设置窗口开着时按钮栏会马上更新，不需要工具、不用重开游戏；做好后像一般模组一样启用，或上传创意工坊。逐步教学见模组文件夹的 ThemeGuide.zh-CN.md。
+[*]只用 XML＋图片就能做主题模组：整张背景图、栏角的立绘等装饰图、每个按钮里的图、各状态的文字颜色。主题模板和生成脚本在模组的 ThemeTemplate 文件夹。
 [*]兼容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可选择由谁绘制（默认由对方绘制）；导入对方设置为实验性功能。
 [*]UI Rethemed - Main Bar 也会绘制主按钮栏，两个都装时由排在前面的模组绘制；要用本模组的按钮栏，请在它的设置里关掉「Main bar」。设置窗口会提示目前的情况。
 [*]兼容 Better Sliders：本模组的滑块自行绘制并附数字框，不会被盖住。
@@ -62,7 +70,11 @@ Settings: Options > Mod settings > Main Button Bar System, or the gear in the "M
 [*]快捷鍵：原版沒有快捷鍵的按鈕也能設定；隱藏或收進抽屜的按鈕快捷鍵照樣有效。
 [*]設定跟著存檔走，並有新遊戲用的預設範本。
 [*]分享排法：取名後匯出成檔案或文字（可貼到 Discord）。匯入前會先列出哪些按鈕來自你沒裝的模組、缺少的主題或圖示，並可勾選只匯入哪幾部分。一鍵做成可上傳工作坊的排序模組，PNG 圖示一起打包。
-[*]外觀分頁與主題：預設為原版外觀，另有 6 款內建主題（5 款參考各擴充配色：帝國、信條、基因實驗室、虛空、星航，不需要擴充；以及每顆主按鈕裡都有一張萘伊像素圖的像素風主題萘伊）。只用 XML＋圖片就能做主題模組：整張背景圖、列角的立繪等裝飾圖、每顆按鈕裡的圖、各狀態的文字顏色。主題範本和產生腳本在模組的 ThemeTemplate 資料夾。
+[*]外觀分頁與主題：預設為原版外觀，另有 6 款內建主題（5 款參考各擴充配色：帝國、信條、基因實驗室、虛空、星航，不需要擴充；以及每顆主按鈕裡都有一張萘伊像素圖的像素風主題萘伊；萘伊適合捲動或摺疊＋捲動模式、按鈕寬 120 px 以上，主題可以建議這類版面，按下按鈕才會套用）。
+[*]按鈕清單可以依來源模組篩選；半格按鈕也能用完整寬度。
+[*]自訂主題：逐顆按鈕混搭不同主題的零件（背景、插圖、文字顏色、對齊、字級、圖示大小與位置、自己的 PNG），可存成檔案、之後再載入。
+[*]新增主題：一鍵在 Mods 資料夾做出空白主題模組，用任何繪圖軟體改 PNG，設定視窗開著時按鈕列會馬上更新，不需要工具、不用重開遊戲；做好後像一般模組一樣啟用，或上傳工作坊。逐步教學見模組資料夾的 ThemeGuide.zh-TW.md。
+[*]只用 XML＋圖片就能做主題模組：整張背景圖、列角的立繪等裝飾圖、每顆按鈕裡的圖、各狀態的文字顏色。主題範本和產生腳本在模組的 ThemeTemplate 資料夾。
 [*]相容 TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder：可選擇由誰繪製（預設由對方繪製）；匯入對方設定為實驗性功能。
 [*]UI Rethemed - Main Bar 也會畫主按鈕列，兩個都裝時由排前面的模組畫；要用本模組的列，請在它的設定關掉「Main bar」。設定視窗會提示目前的情況。
 [*]相容 Better Sliders：本模組的滑桿自行繪製並附數字框，不會被蓋住。

@@ -14,7 +14,7 @@
 ## A. 載入
 
 - [ ] A1 進主選單沒有本模組或 ExampleTheme 的紅字；log 有 `[Main Button Bar System] Loaded.`。
-- [ ] A2 開發者模式的診斷報告（`Diagnostics (dev mode)`）多了一行 `Themes: 8 theme(s), 0 warning(s)`（原版 1 ＋內建 6 ＋ ExampleTheme 1）。
+- [ ] A2 開發者模式的診斷報告（`Diagnostics (dev mode)`）多了一行 `Themes: 8 theme(s), N warning(s)`（原版 1 ＋內建 6 ＋ ExampleTheme 1）。小排序的 N 是 1：萘伊的 `buttonImages` 有一部分按鈕沒載入（`Theme MBBS_Nai (…), buttonImages: … picture(s) name main buttons that are not loaded …`，每款主題合併成一條）；ExampleTheme 要是 0 警告。
 - [ ] A3 設定視窗 → 外觀分頁：卡片依序是 原版、帝國、信條、基因實驗室、虛空、星航、萘伊、Example Steel（`displayOrder` 100 排最後）。Example 那張的作者行是「Your name（Example Theme for Main Button Bar System）」，預覽是它自己的 `Preview` 圖（一段按鈕列）。
 - [ ] A4 語言切到繁中：Example 卡片標籤「範例鋼鐵」、說明是中文；萘伊卡片「萘伊」。切回原本的語言後再開一次設定視窗，卡片正常（play data reload 後 def 是新物件）。
 
@@ -89,7 +89,7 @@ ExampleTheme 的設定：預設圖 `ButtonPicture`（240×72「BUTTON PICTURE (P
 - [ ] H9 預覽：外觀分頁的 Example 卡片用它自己的 `Preview` 圖（make_theme.py 產的預覽條，Architect 那格是 ARCHITECT 圖、其他格是預設圖）。把 Defs 的 `<preview>` 刪掉重開，改用畫出來的預覽：樣本按鈕（原版排序前四顆）裡 Architect 是自己的棕色圖、其他是預設圖，停用的那格也有圖。改回。
 - [ ] H10 「只顯示圖示」：把建築設成只顯示圖示，圖示畫在圖上、沒有文字；「圖示＋文字」時圖示和文字都在圖上。
 - [ ] H11 只有按鈕圖的主題：把 ExampleTheme 的 Defs 裡 `<button>`、`<buttonMouseover>`、`<buttonActive>`、`<buttonDisabled>` 四行和三個文字顏色（`labelColor` 等）刪掉重開：按鈕圖畫在遊戲原本的按鈕底下，遊戲的按鈕底不透明，所以**完全看不到**（2026-11-06 實機：像素和沒圖的按鈕相同）。開發模式下主選單 log 有一筆黃字 `Theme ExampleTheme_Steel (…), button: the theme has button pictures but no button atlas, …`，沒有紅字。改回。
-- [ ] H12 Fit 與 Stretch：把研究的 `fit` 改成 `Fit`：整張 RESEARCH 圖都看得到，靠左（`anchor` Left），右邊留空；改成 `Stretch`：拉伸填滿、文字變形。改回。
+- [ ] H12 Fit 與 Stretch：把研究的 `fit` 改成 `Fit`：整張 RESEARCH 圖都看得到，靠左（`anchor` Left），右邊留空；改成 `Stretch`：拉伸填滿、文字變形（預設寬度下按鈕比例接近圖片的 4:1，看不出差別：先把研究鈕單顆寬度拉到 300 左右再比）。改回。
 - [ ] H13 開發者模式的提示：在 `buttonImages` 加一個 `button` 寫成 `Achitect` 的項目重開：一筆黃字 `Theme ExampleTheme_Steel (…), buttonImages: 1 picture(s) name main buttons that are not loaded (a typo, or a mod that is not active), so they are unused: Achitect`（沒載入的按鈕每款主題合併成一條），沒有紅字。改回。
 - [ ] H14 設定錯誤（選做）：在 Defs 加一個沒寫 `<button>` 的 `buttonImages` 項目重開，log 有 `buttonImages[2]: button is empty` 的設定錯誤；`opacity` 寫 2 有 `opacity must be between 0 and 1`。改回。
 

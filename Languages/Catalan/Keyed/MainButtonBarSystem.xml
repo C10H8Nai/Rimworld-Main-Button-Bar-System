@@ -336,4 +336,36 @@ Apareix a Predefinits. Comparteix la carpeta sencera per donar-lo als altres.</M
   <MBBS_ReloadThemes>Torna a carregar les textures dels temes</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Mode desenvolupador: torna a llegir els PNG de cada tema des de la seva carpeta de mod, per veure una imatge editada sense reiniciar el joc. Després els temes es tornen a comprovar; mira el registre.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Textures dels temes recarregades: {0} fitxer(s) tornat(s) a llegir.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Tema nou…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Crea un mod de tema en blanc a la carpeta Mods del joc i el selecciona. Edita'n les imatges PNG amb qualsevol editor d'imatges: mentre aquesta pestanya és oberta, la barra mostra els canvis en menys d'un segon. No cal reiniciar.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Tema nou</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Crea</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>Es crea una carpeta de mod de tema a {1}, amb imatges en blanc i _Guide_*.png, que mostra quina imatge pinta cada part de la barra. Activa'l més endavant a la llista de mods per usar-lo com qualsevol mod de tema, o puja'l des d'allà al Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Projecte de tema (inactiu)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>S'ha creat el tema nou a {0}. Obre'n la carpeta i edita les imatges PNG; aquesta finestra mostra els canvis.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>No s'ha pogut crear el tema a {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Falten els fitxers del tema en blanc ({0}). Torna a instal·lar Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Un tema per a Main Button Bar System, creat amb «Tema nou». Selecciona'l a la configuració de Main Button Bar System, pestanya Aparença.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Torna a carregar</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Torna a llegir els Defs i les imatges PNG d'aquest tema. Mentre aquesta pestanya és oberta, els canvis també es detecten sols.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Torna a llegir les imatges PNG d'aquest tema. És un mod actiu, així que els canvis als Defs requereixen reiniciar.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} fitxer(s) tornat(s) a llegir.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} imatge(s) tornada(es) a llegir. Els canvis als Defs requereixen reiniciar, perquè el tema és un mod actiu.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: un fitxer encara s'està escrivint o encara no és vàlid; es conserva l'última versió bona.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Suprimeix</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Mou la carpeta d'aquest tema a {0}. Per recuperar-lo, torna a moure la carpeta a la carpeta Mods.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Aquest tema és un mod actiu. Desactiva'l primer a la llista de mods i reinicia el joc.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Aquest tema està marcat a la llista de mods. Desmarca'l primer i reinicia el joc.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Vols suprimir el tema «{0}»?
+
+La seva carpeta
+{1}
+s'ha de moure a
+{2}
+Per recuperar-lo, torna a moure la carpeta a la carpeta Mods.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} s'ha mogut a {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>No s'ha pogut moure {0}: {1}
+No s'ha canviat res.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} s'ha mogut a {1}, però no s'ha pogut eliminar una part de la carpeta antiga: {2}
+Elimina-la tu mateix (el joc pot mostrar-la com una segona còpia del tema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

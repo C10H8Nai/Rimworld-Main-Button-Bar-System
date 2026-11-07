@@ -336,4 +336,36 @@ Compare in Temi pronti. Condividi l'intera cartella per darlo agli altri.</MBBS_
   <MBBS_ReloadThemes>Ricarica le texture dei temi</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Modalità sviluppatore: rilegge i PNG di ogni tema dalla sua cartella mod, così un'immagine modificata appare senza riavviare il gioco. Dopo i temi vengono ricontrollati; vedi il log.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Texture dei temi ricaricate: {0} file riletti.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Nuovo tema…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Crea una mod di tema vuota nella cartella Mods del gioco e la seleziona. Modifica le sue immagini PNG con qualsiasi editor di immagini: finché questa scheda è aperta, la barra mostra le tue modifiche entro un secondo. Non serve riavviare.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Nuovo tema</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Crea</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>In {1} viene creata la cartella di una mod di tema, con immagini vuote e _Guide_*.png, che mostra quale immagine disegna quale parte della barra. Attivala più tardi nell'elenco delle mod per usarla come qualsiasi mod di tema, oppure caricala da lì sul Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Progetto di tema (non attivo)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Nuovo tema creato in {0}. Apri la sua cartella e modifica le immagini PNG; questa finestra mostra le modifiche.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Impossibile creare il tema in {0}: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Mancano i file del tema vuoto ({0}). Reinstalla Main Button Bar System.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Un tema per Main Button Bar System, creato con «Nuovo tema». Sceglilo nelle impostazioni di Main Button Bar System, scheda Aspetto.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Ricarica</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Rilegge i Defs e le immagini PNG di questo tema. Finché questa scheda è aperta, le modifiche vengono rilevate anche da sole.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Rilegge le immagini PNG di questo tema. È una mod attiva, quindi le modifiche ai Defs richiedono un riavvio.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} file riletti.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} immagini rilette. Le modifiche ai Defs richiedono un riavvio, perché il tema è una mod attiva.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: un file è ancora in scrittura o non è ancora valido; viene mantenuta l'ultima versione corretta.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Elimina</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Sposta la cartella di questo tema in {0}. Per recuperarlo, sposta di nuovo la cartella nella cartella Mods.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Questo tema è una mod attiva. Disattivalo prima nell'elenco delle mod e riavvia il gioco.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Questo tema è selezionato nell'elenco delle mod. Deselezionalo prima e riavvia il gioco.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Eliminare il tema «{0}»?
+
+La sua cartella
+{1}
+viene spostata in
+{2}
+Per recuperarlo, sposta di nuovo la cartella nella cartella Mods.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} è stato spostato in {1}.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>Impossibile spostare {0}: {1}
+Non è stato modificato nulla.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} è stato spostato in {1}, ma una parte della vecchia cartella non è stata rimossa: {2}
+Eliminala tu stesso (il gioco potrebbe elencarla come seconda copia del tema).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

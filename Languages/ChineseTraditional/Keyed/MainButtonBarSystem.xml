@@ -336,4 +336,36 @@
   <MBBS_ReloadThemes>重新載入主題貼圖</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>開發者模式：從各主題的模組資料夾重新讀取 PNG，改過的圖不用重開遊戲就會顯示。讀完會再檢查一次主題，結果在 log。</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>主題貼圖已重新載入：重新讀取了 {0} 個檔案。</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>新增主題…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>在遊戲的 Mods 資料夾建立一個空白主題模組並選取它。用任何圖片編輯器編輯它的 PNG 圖片：本分頁開著時，列會在一秒內顯示你的修改。不用重開遊戲。</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>新增主題</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>建立</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>將在 {1} 建立一個主題模組資料夾，內含空白圖片和 _Guide_*.png（標示哪張圖片畫列的哪個部分）。之後在模組清單啟用，就能像其他主題模組一樣使用，也可以從那裡上傳到工作坊。</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>主題專案（未啟用）</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>已在 {0} 建立新主題。開啟它的資料夾並編輯 PNG 圖片；本視窗會顯示修改。</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>無法在 {0} 建立主題：{1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>缺少空白主題檔案（{0}）。請重新安裝 Main Button Bar System。</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>用 Main Button Bar System 的「新增主題」製作的主題。請在 Main Button Bar System 設定的「外觀」分頁選擇它。</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>重新載入</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>重新讀取此主題的 Defs 和 PNG 圖片。本分頁開著時，修改也會自動讀取。</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>重新讀取此主題的 PNG 圖片。它是已啟用的模組，所以 Defs 的修改需要重開遊戲。</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}：重新讀取了 {1} 個檔案。</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}：重新讀取了 {1} 張圖片。此主題是已啟用的模組，Defs 的修改需要重開遊戲。</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}：有檔案仍在寫入或暫時無效；保留上一個正常版本。</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>刪除</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>把此主題的資料夾移到 {0}。要找回，請把它重新移回 Mods 資料夾。</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>此主題是已啟用的模組。請先在模組清單關閉它，並重開遊戲。</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>此主題在模組清單中已勾選。請先取消勾選，並重開遊戲。</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>刪除主題「{0}」？
+
+它的資料夾
+{1}
+將被移到
+{2}
+要找回，請把它重新移回 Mods 資料夾。</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} 已移到 {1}。</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>無法移動 {0}：{1}
+沒有變更任何內容。</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} 已移到 {1}，但舊資料夾的一部分無法刪除：{2}
+請自行刪除（遊戲可能會把它列為該主題的第二份副本）。</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

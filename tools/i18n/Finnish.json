@@ -325,7 +325,31 @@
     "MBBS_DecorationOffsetY": "Koristeiden siirto Y: {0} px",
     "MBBS_ReloadThemes": "Lataa teemojen tekstuurit uudelleen",
     "MBBS_ReloadThemesTip": "Kehittäjätila: lukee jokaisen teeman PNG-tiedostot uudelleen sen modikansiosta, joten muokattu kuva näkyy ilman pelin uudelleenkäynnistystä. Sen jälkeen teemat tarkistetaan uudelleen; katso loki.",
-    "MBBS_ThemesReloaded": "Teemojen tekstuurit ladattu uudelleen: {0} tiedosto(a) luettu uudelleen."
+    "MBBS_ThemesReloaded": "Teemojen tekstuurit ladattu uudelleen: {0} tiedosto(a) luettu uudelleen.",
+    "MBBS_ThemeProject_New": "Uusi teema…",
+    "MBBS_ThemeProject_NewTip": "Luo tyhjän teemamodin pelin Mods-kansioon ja valitsee sen. Muokkaa sen PNG-kuvia millä tahansa kuvaeditorilla: kun tämä välilehti on auki, palkki näyttää muutoksesi sekunnin sisällä. Uudelleenkäynnistystä ei tarvita.",
+    "MBBS_ExportTitle_ThemeProject": "Uusi teema",
+    "MBBS_ExportConfirm_ThemeProject": "Luo",
+    "MBBS_ExportHint_ThemeProject": "Kansioon {1} luodaan teemamodin kansio tyhjine kuvineen ja tiedostoineen _Guide_*.png, joka näyttää, mikä kuva piirtää minkäkin osan palkista. Ota se myöhemmin käyttöön modilistassa kuten mikä tahansa teemamodi tai julkaise se sieltä Workshopiin.",
+    "MBBS_ThemeProject_Source": "Teemaprojekti (ei käytössä)",
+    "MBBS_ThemeProject_Created": "Uusi teema luotu kansioon {0}. Avaa sen kansio ja muokkaa PNG-kuvia; tämä ikkuna näyttää muutokset.",
+    "MBBS_ThemeProject_CreateFailed": "Teemaa ei voitu luoda kansioon {0}: {1}",
+    "MBBS_ThemeProject_NoKit": "Tyhjän teeman tiedostot puuttuvat ({0}). Asenna Main Button Bar System uudelleen.",
+    "MBBS_ThemeProject_Usage": "Main Button Bar System -teema, tehty toiminnolla \"Uusi teema\". Valitse se Main Button Bar System -modin asetusten Ulkoasu-välilehdeltä.",
+    "MBBS_ThemeProject_Reload": "Lataa uudelleen",
+    "MBBS_ThemeProject_ReloadTip": "Lukee tämän teeman Defs-tiedostot ja PNG-kuvat uudelleen. Kun tämä välilehti on auki, muutokset huomataan myös itsestään.",
+    "MBBS_ThemeProject_ReloadActiveTip": "Lukee tämän teeman PNG-kuvat uudelleen. Se on käytössä oleva modi, joten Defs-muutokset vaativat uudelleenkäynnistyksen.",
+    "MBBS_ThemeProject_Reloaded": "{0}: {1} tiedosto(a) luettu uudelleen.",
+    "MBBS_ThemeProject_ReloadedActive": "{0}: {1} kuva(a) luettu uudelleen. Defs-muutokset vaativat uudelleenkäynnistyksen, koska teema on käytössä oleva modi.",
+    "MBBS_ThemeProject_ReloadRetry": "{0}: tiedostoa kirjoitetaan vielä tai se ei ole vielä kelvollinen; viimeisin toimiva versio säilytetään.",
+    "MBBS_ThemeProject_Delete": "Poista",
+    "MBBS_ThemeProject_DeleteTip": "Siirtää tämän teeman kansion kohteeseen {0}. Saat sen takaisin siirtämällä sen uudelleen Mods-kansioon.",
+    "MBBS_ThemeProject_DeleteRunning": "Tämä teema on käytössä oleva modi. Poista se ensin käytöstä modilistassa ja käynnistä peli uudelleen.",
+    "MBBS_ThemeProject_DeleteActive": "Tämä teema on valittuna modilistassa. Poista valinta ensin ja käynnistä peli uudelleen.",
+    "MBBS_ThemeProject_DeleteConfirm": "Poistetaanko teema \"{0}\"?\n\nSen kansio\n{1}\nsiirretään kohteeseen\n{2}\nSaat sen takaisin siirtämällä sen uudelleen Mods-kansioon.",
+    "MBBS_ThemeProject_Deleted": "{0} siirrettiin kohteeseen {1}.",
+    "MBBS_ThemeProject_DeleteFailed": "Kohdetta {0} ei voitu siirtää: {1}\nMitään ei muutettu.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} siirrettiin kohteeseen {1}, mutta osaa vanhasta kansiosta ei voitu poistaa: {2}\nPoista se itse (peli voi näyttää sen teeman toisena kopiona)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -352,7 +376,7 @@
       "MBBS_Starfarer.label": "tähtienkulkija",
       "MBBS_Starfarer.description": "Avaruusvioletti, violetit runkolevyt, syaaniset niitit ja syaaninen moottorien valoviiva, Odyssey-laajennuksen väreissä.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Pikselitaideteema, jossa on Nai: alkuperäisen pelin tyyliset kehykset ja kuva Naista jokaisessa pääpainikkeessa. Kuvakkeellisissa painikkeissa hän pitää esillä painikkeeseen sopivaa esinettä (rakennuspiirros, pullo, lääkelaukku...); kuvakkeettomissa painikkeissa hän kurkistaa tekstin sisältävän taulun takaa. Kuvat on tehty peruspelin ja lisäosien painikkeille sekä monien modien painikkeille; kaikki muut painikkeet saavat taulun."
+      "MBBS_Nai.description": "Pikselitaideteema, jossa on Nai: alkuperäisen pelin tyyliset kehykset ja kuva Naista jokaisessa pääpainikkeessa. Kuvakkeellisissa painikkeissa hän pitää esillä painikkeeseen sopivaa esinettä (rakennuspiirros, pullo, lääkelaukku...); kuvakkeettomissa painikkeissa hän kurkistaa tekstin sisältävän taulun takaa. Kuvat on tehty peruspelin ja lisäosien painikkeille sekä monien modien painikkeille; kaikki muut painikkeet saavat taulun. Näyttää parhaalta vieritys- tai kutistus + vieritys -näyttötilassa, kun painikkeet ovat vähintään 120 px leveitä."
     }
   }
 }

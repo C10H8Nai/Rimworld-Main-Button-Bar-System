@@ -325,7 +325,31 @@
     "MBBS_DecorationOffsetY": "Decoration offset Y: {0}px",
     "MBBS_ReloadThemes": "Reload theme textures",
     "MBBS_ReloadThemesTip": "Development mode: reads every theme's PNG files again from its mod folder, so an edited image shows without restarting the game. The themes are checked again afterwards; see the log.",
-    "MBBS_ThemesReloaded": "Theme textures reloaded: {0} file(s) read again."
+    "MBBS_ThemesReloaded": "Theme textures reloaded: {0} file(s) read again.",
+    "MBBS_ThemeProject_New": "New theme…",
+    "MBBS_ThemeProject_NewTip": "Make a blank theme mod in the game's Mods folder and pick it. Edit its PNG images with any image editor: while this tab is open, the bar shows your changes within a second. No restart needed.",
+    "MBBS_ExportTitle_ThemeProject": "New theme",
+    "MBBS_ExportConfirm_ThemeProject": "Create",
+    "MBBS_ExportHint_ThemeProject": "A theme mod folder is made in {1}, with blank images and _Guide_*.png, which shows which image paints which part of the bar. Enable it in the mod list later to use it like any theme mod, or upload it to the Workshop from there.",
+    "MBBS_ThemeProject_Source": "Theme project (not active)",
+    "MBBS_ThemeProject_Created": "New theme made in {0}. Open its folder and edit the PNG images; this window shows the changes.",
+    "MBBS_ThemeProject_CreateFailed": "Could not make the theme in {0}: {1}",
+    "MBBS_ThemeProject_NoKit": "The blank theme files are missing ({0}). Reinstall Main Button Bar System.",
+    "MBBS_ThemeProject_Usage": "A theme for Main Button Bar System, made with its \"New theme\". Pick it in Main Button Bar System's settings, Appearance tab.",
+    "MBBS_ThemeProject_Reload": "Reload",
+    "MBBS_ThemeProject_ReloadTip": "Read this theme's Defs and PNG images again. While this tab is open, changes are also picked up by themselves.",
+    "MBBS_ThemeProject_ReloadActiveTip": "Read this theme's PNG images again. It is an active mod, so changes to its Defs need a restart.",
+    "MBBS_ThemeProject_Reloaded": "{0}: read {1} file(s) again.",
+    "MBBS_ThemeProject_ReloadedActive": "{0}: read {1} image(s) again. Changes to Defs need a restart, because the theme is an active mod.",
+    "MBBS_ThemeProject_ReloadRetry": "{0}: a file is still being written or not valid yet; the last good version is kept.",
+    "MBBS_ThemeProject_Delete": "Delete",
+    "MBBS_ThemeProject_DeleteTip": "Moves this theme's folder to {0}. To get it back, move it into the Mods folder again.",
+    "MBBS_ThemeProject_DeleteRunning": "This theme is an active mod. Turn it off in the mod list and restart the game first.",
+    "MBBS_ThemeProject_DeleteActive": "This theme is ticked in the mod list. Untick it and restart the game first.",
+    "MBBS_ThemeProject_DeleteConfirm": "Delete the theme \"{0}\"?\n\nIts folder\n{1}\nis moved to\n{2}\nTo get it back, move it into the Mods folder again.",
+    "MBBS_ThemeProject_Deleted": "{0} was moved to {1}.",
+    "MBBS_ThemeProject_DeleteFailed": "Could not move {0}: {1}\nNothing was changed.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} was moved to {1}, but part of the old folder could not be removed: {2}\nDelete it yourself (the game may list it as a second copy of the theme)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -352,7 +376,7 @@
       "MBBS_Starfarer.label": "starfarer",
       "MBBS_Starfarer.description": "Space purple with purple hull plates, cyan rivets and a cyan thruster line, from the Odyssey expansion's colours.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Pixel-art theme with Nai: vanilla-style frames and a picture of Nai inside every main button. On buttons with an icon she holds up an item that matches the button (a blueprint, a flask, a medkit...); on buttons without one she peeks out from behind a blackboard that the label sits on. Pictures are set for the base game's and expansions' buttons and for many mods' buttons; any other button gets the blackboard."
+      "MBBS_Nai.description": "Pixel-art theme with Nai: vanilla-style frames and a picture of Nai inside every main button. On buttons with an icon she holds up an item that matches the button (a blueprint, a flask, a medkit...); on buttons without one she peeks out from behind a blackboard that the label sits on. Pictures are set for the base game's and expansions' buttons and for many mods' buttons; any other button gets the blackboard. Looks best in the Scroll or Collapse + scroll display modes with buttons at least 120 px wide."
     }
   }
 }

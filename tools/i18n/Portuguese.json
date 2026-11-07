@@ -325,7 +325,31 @@
     "MBBS_DecorationOffsetY": "Deslocamento das decorações Y: {0} px",
     "MBBS_ReloadThemes": "Recarregar texturas dos temas",
     "MBBS_ReloadThemesTip": "Modo de desenvolvimento: volta a ler os PNG de cada tema a partir da sua pasta de mod, para ver uma imagem editada sem reiniciar o jogo. Depois os temas são verificados de novo; veja o registo.",
-    "MBBS_ThemesReloaded": "Texturas dos temas recarregadas: {0} ficheiro(s) lido(s) de novo."
+    "MBBS_ThemesReloaded": "Texturas dos temas recarregadas: {0} ficheiro(s) lido(s) de novo.",
+    "MBBS_ThemeProject_New": "Novo tema…",
+    "MBBS_ThemeProject_NewTip": "Cria um mod de tema em branco na pasta Mods do jogo e seleciona-o. Edite as imagens PNG dele com qualquer editor de imagens: enquanto este separador estiver aberto, a barra mostra as suas alterações em menos de um segundo. Não é preciso reiniciar.",
+    "MBBS_ExportTitle_ThemeProject": "Novo tema",
+    "MBBS_ExportConfirm_ThemeProject": "Criar",
+    "MBBS_ExportHint_ThemeProject": "É criada uma pasta de mod de tema em {1}, com imagens em branco e _Guide_*.png, que mostra qual imagem desenha qual parte da barra. Ative-o mais tarde na lista de mods para o usar como qualquer mod de tema, ou publique-o a partir daí na Workshop.",
+    "MBBS_ThemeProject_Source": "Projeto de tema (inativo)",
+    "MBBS_ThemeProject_Created": "Novo tema criado em {0}. Abra a pasta dele e edite as imagens PNG; esta janela mostra as alterações.",
+    "MBBS_ThemeProject_CreateFailed": "Não foi possível criar o tema em {0}: {1}",
+    "MBBS_ThemeProject_NoKit": "Faltam os ficheiros do tema em branco ({0}). Reinstale o Main Button Bar System.",
+    "MBBS_ThemeProject_Usage": "Um tema para o Main Button Bar System, feito com “Novo tema”. Escolha-o nas definições do Main Button Bar System, separador Aspeto.",
+    "MBBS_ThemeProject_Reload": "Recarregar",
+    "MBBS_ThemeProject_ReloadTip": "Lê de novo os Defs e as imagens PNG deste tema. Enquanto este separador estiver aberto, as alterações também são detetadas automaticamente.",
+    "MBBS_ThemeProject_ReloadActiveTip": "Lê de novo as imagens PNG deste tema. É um mod ativo, por isso as alterações aos Defs exigem reiniciar.",
+    "MBBS_ThemeProject_Reloaded": "{0}: {1} ficheiro(s) lido(s) de novo.",
+    "MBBS_ThemeProject_ReloadedActive": "{0}: {1} imagem(ns) lida(s) de novo. As alterações aos Defs exigem reiniciar, porque o tema é um mod ativo.",
+    "MBBS_ThemeProject_ReloadRetry": "{0}: um ficheiro ainda está a ser escrito ou ainda não é válido; mantém-se a última versão boa.",
+    "MBBS_ThemeProject_Delete": "Eliminar",
+    "MBBS_ThemeProject_DeleteTip": "Move a pasta deste tema para {0}. Para a recuperar, mova-a de novo para a pasta Mods.",
+    "MBBS_ThemeProject_DeleteRunning": "Este tema é um mod ativo. Desative-o primeiro na lista de mods e reinicie o jogo.",
+    "MBBS_ThemeProject_DeleteActive": "Este tema está marcado na lista de mods. Desmarque-o primeiro e reinicie o jogo.",
+    "MBBS_ThemeProject_DeleteConfirm": "Eliminar o tema “{0}”?\n\nA pasta dele\n{1}\né movida para\n{2}\nPara a recuperar, mova-a de novo para a pasta Mods.",
+    "MBBS_ThemeProject_Deleted": "{0} foi movido para {1}.",
+    "MBBS_ThemeProject_DeleteFailed": "Não foi possível mover {0}: {1}\nNada foi alterado.",
+    "MBBS_ThemeProject_DeletedLeftover": "{0} foi movido para {1}, mas não foi possível remover parte da pasta antiga: {2}\nApague-a você mesmo (o jogo pode listá-la como uma segunda cópia do tema)."
   },
   "DefInjected": {
     "MainButtonBarSystem.BarDisplayModeDef": {
@@ -352,7 +376,7 @@
       "MBBS_Starfarer.label": "viajante estelar",
       "MBBS_Starfarer.description": "Roxo espacial com placas do casco roxas, rebites ciano e uma linha ciano dos propulsores, nas cores da expansão Odyssey.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Tema pixel art com Nai: molduras ao estilo do jogo original e uma imagem de Nai dentro de cada botão principal. Nos botões com ícone, ela segura um objeto que combina com o botão (um projeto, um frasco, um estojo de primeiros socorros...); nos botões sem ícone, espreita por trás de um quadro negro onde está a etiqueta. Há imagens para os botões do jogo base, das expansões e de muitos mods; qualquer outro botão recebe o quadro negro."
+      "MBBS_Nai.description": "Tema pixel art com Nai: molduras ao estilo do jogo original e uma imagem de Nai dentro de cada botão principal. Nos botões com ícone, ela segura um objeto que combina com o botão (um projeto, um frasco, um estojo de primeiros socorros...); nos botões sem ícone, espreita por trás de um quadro negro onde está a etiqueta. Há imagens para os botões do jogo base, das expansões e de muitos mods; qualquer outro botão recebe o quadro negro. Fica melhor nos modos de visualização deslocar ou recolher + deslocar, com botões de pelo menos 120 px de largura."
     }
   }
 }

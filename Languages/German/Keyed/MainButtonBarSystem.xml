@@ -336,4 +336,36 @@ Es erscheint unter Fertige Designs. Gib anderen den ganzen Ordner, um es zu teil
   <MBBS_ReloadThemes>Thementexturen neu laden</MBBS_ReloadThemes>
   <MBBS_ReloadThemesTip>Entwicklermodus: liest die PNG-Dateien jedes Themas erneut aus seinem Mod-Ordner, damit ein geändertes Bild ohne Neustart erscheint. Danach werden die Themen erneut geprüft; siehe Protokoll.</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>Thementexturen neu geladen: {0} Datei(en) erneut gelesen.</MBBS_ThemesReloaded>
+  <MBBS_ThemeProject_New>Neues Design…</MBBS_ThemeProject_New>
+  <MBBS_ThemeProject_NewTip>Erstellt eine leere Design-Mod im Mods-Ordner des Spiels und wählt sie aus. Bearbeite ihre PNG-Bilder mit einem beliebigen Bildeditor: Solange dieser Tab geöffnet ist, zeigt die Leiste deine Änderungen innerhalb einer Sekunde. Kein Neustart nötig.</MBBS_ThemeProject_NewTip>
+  <MBBS_ExportTitle_ThemeProject>Neues Design</MBBS_ExportTitle_ThemeProject>
+  <MBBS_ExportConfirm_ThemeProject>Erstellen</MBBS_ExportConfirm_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>In {1} wird ein Design-Mod-Ordner mit leeren Bildern und _Guide_*.png erstellt; die Datei zeigt, welches Bild welchen Teil der Leiste zeichnet. Aktiviere die Mod später in der Mod-Liste, um sie wie jede Design-Mod zu nutzen, oder lade sie von dort in den Workshop hoch.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ThemeProject_Source>Design-Projekt (nicht aktiv)</MBBS_ThemeProject_Source>
+  <MBBS_ThemeProject_Created>Neues Design in {0} erstellt. Öffne den Ordner und bearbeite die PNG-Bilder; dieses Fenster zeigt die Änderungen.</MBBS_ThemeProject_Created>
+  <MBBS_ThemeProject_CreateFailed>Das Design konnte in {0} nicht erstellt werden: {1}</MBBS_ThemeProject_CreateFailed>
+  <MBBS_ThemeProject_NoKit>Die leeren Design-Dateien fehlen ({0}). Installiere Main Button Bar System neu.</MBBS_ThemeProject_NoKit>
+  <MBBS_ThemeProject_Usage>Ein Design für Main Button Bar System, erstellt mit „Neues Design“. Wähle es in den Einstellungen von Main Button Bar System im Tab Aussehen aus.</MBBS_ThemeProject_Usage>
+  <MBBS_ThemeProject_Reload>Neu laden</MBBS_ThemeProject_Reload>
+  <MBBS_ThemeProject_ReloadTip>Liest die Defs und PNG-Bilder dieses Designs erneut. Solange dieser Tab geöffnet ist, werden Änderungen auch von selbst übernommen.</MBBS_ThemeProject_ReloadTip>
+  <MBBS_ThemeProject_ReloadActiveTip>Liest die PNG-Bilder dieses Designs erneut. Es ist eine aktive Mod, daher erfordern Änderungen an den Defs einen Neustart.</MBBS_ThemeProject_ReloadActiveTip>
+  <MBBS_ThemeProject_Reloaded>{0}: {1} Datei(en) erneut gelesen.</MBBS_ThemeProject_Reloaded>
+  <MBBS_ThemeProject_ReloadedActive>{0}: {1} Bild(er) erneut gelesen. Änderungen an den Defs erfordern einen Neustart, da das Design eine aktive Mod ist.</MBBS_ThemeProject_ReloadedActive>
+  <MBBS_ThemeProject_ReloadRetry>{0}: Eine Datei wird noch geschrieben oder ist noch nicht gültig; die letzte funktionierende Version bleibt erhalten.</MBBS_ThemeProject_ReloadRetry>
+  <MBBS_ThemeProject_Delete>Löschen</MBBS_ThemeProject_Delete>
+  <MBBS_ThemeProject_DeleteTip>Verschiebt den Ordner dieses Designs nach {0}. Um es zurückzuholen, verschiebe den Ordner wieder in den Mods-Ordner.</MBBS_ThemeProject_DeleteTip>
+  <MBBS_ThemeProject_DeleteRunning>Dieses Design ist eine aktive Mod. Deaktiviere es zuerst in der Mod-Liste und starte das Spiel neu.</MBBS_ThemeProject_DeleteRunning>
+  <MBBS_ThemeProject_DeleteActive>Dieses Design ist in der Mod-Liste angehakt. Entferne zuerst den Haken und starte das Spiel neu.</MBBS_ThemeProject_DeleteActive>
+  <MBBS_ThemeProject_DeleteConfirm>Das Design „{0}“ löschen?
+
+Sein Ordner
+{1}
+wird verschoben nach
+{2}
+Um es zurückzuholen, verschiebe den Ordner wieder in den Mods-Ordner.</MBBS_ThemeProject_DeleteConfirm>
+  <MBBS_ThemeProject_Deleted>{0} wurde nach {1} verschoben.</MBBS_ThemeProject_Deleted>
+  <MBBS_ThemeProject_DeleteFailed>{0} konnte nicht verschoben werden: {1}
+Es wurde nichts geändert.</MBBS_ThemeProject_DeleteFailed>
+  <MBBS_ThemeProject_DeletedLeftover>{0} wurde nach {1} verschoben, aber ein Teil des alten Ordners konnte nicht entfernt werden: {2}
+Lösche ihn selbst (das Spiel zeigt ihn möglicherweise als zweite Kopie des Designs an).</MBBS_ThemeProject_DeletedLeftover>
 </LanguageData>

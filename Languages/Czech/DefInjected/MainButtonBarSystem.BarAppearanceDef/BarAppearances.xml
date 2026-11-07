@@ -13,5 +13,5 @@
   <MBBS_Starfarer.label>hvězdoplavec</MBBS_Starfarer.label>
   <MBBS_Starfarer.description>Vesmírná fialová s fialovými pláty trupu, azurovými nýty a azurovou linkou trysek. V barvách rozšíření Odyssey.</MBBS_Starfarer.description>
   <MBBS_Nai.label>nai</MBBS_Nai.label>
-  <MBBS_Nai.description>Pixel-artový motiv s Nai: rámečky ve stylu původní hry a obrázek Nai uvnitř každého hlavního tlačítka. U tlačítek s ikonou drží předmět, který tlačítku odpovídá (plánek, baňku, lékárničku...); u tlačítek bez ikony vykukuje zpoza tabule, na které je popisek. Obrázky jsou připravené pro tlačítka základní hry a rozšíření i pro tlačítka mnoha modů; každé další tlačítko dostane tabuli.</MBBS_Nai.description>
+  <MBBS_Nai.description>Pixel-artový motiv s Nai: rámečky ve stylu původní hry a obrázek Nai uvnitř každého hlavního tlačítka. U tlačítek s ikonou drží předmět, který tlačítku odpovídá (plánek, baňku, lékárničku...); u tlačítek bez ikony vykukuje zpoza tabule, na které je popisek. Obrázky jsou připravené pro tlačítka základní hry a rozšíření i pro tlačítka mnoha modů; každé další tlačítko dostane tabuli. Nejlépe vypadá v režimech zobrazení posouvání nebo sbalení + posouvání s tlačítky širokými alespoň 120 px.</MBBS_Nai.description>
 </LanguageData>

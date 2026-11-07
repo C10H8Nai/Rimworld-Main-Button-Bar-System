@@ -25,6 +25,10 @@ namespace MainButtonBarSystem
             // Before any settings are read: older formats are upgraded against the defaults bridges set.
             CompatBridges.PrepareAtStartup();
 
+            // Theme projects that are not active mods ("New theme"): their themes join the def database before any save
+            // or the template picks one by defName.
+            ThemeProjects.ScanAtStartup();
+
             // Read the template now, outside any game load, so later reads never nest inside another Scribe pass.
             _ = BarConfigManager.Template;
 

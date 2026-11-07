@@ -123,7 +123,7 @@
   <MainButtonBarSystem.BarAppearanceDef>
     <defName>MBBS_Nai</defName>
     <label>nai</label>
-    <description>Pixel-art theme with Nai: vanilla-style frames and a picture of Nai inside every main button. On buttons with an icon she holds up an item that matches the button (a blueprint, a flask, a medkit...); on buttons without one she peeks out from behind a blackboard that the label sits on. Pictures are set for the base game's and expansions' buttons and for many mods' buttons; any other button gets the blackboard.</description>
+    <description>Pixel-art theme with Nai: vanilla-style frames and a picture of Nai inside every main button. On buttons with an icon she holds up an item that matches the button (a blueprint, a flask, a medkit...); on buttons without one she peeks out from behind a blackboard that the label sits on. Pictures are set for the base game's and expansions' buttons and for many mods' buttons; any other button gets the blackboard. Looks best in the Scroll or Collapse + scroll display modes with buttons at least 120 px wide.</description>
     <author>NAI</author>
     <displayOrder>60</displayOrder>
     <button>MainButtonBarSystem/Themes/Nai/Button</button>

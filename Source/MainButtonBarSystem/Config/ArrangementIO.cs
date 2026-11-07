@@ -97,7 +97,8 @@ namespace MainButtonBarSystem
 
             Directory.CreateDirectory(Path.Combine(root, "About"));
             Directory.CreateDirectory(Path.Combine(root, "Defs"));
-            File.WriteAllText(Path.Combine(root, "About", "About.xml"), AboutXml(meta, packageId), new UTF8Encoding(false));
+            File.WriteAllText(Path.Combine(root, "About", "About.xml"),
+                AboutXml(meta.name, meta.author, packageId, meta.description, "MBBS_ModFolder_Usage".TranslateKeepCase(meta.name)), new UTF8Encoding(false));
             File.WriteAllText(Path.Combine(root, "Defs", "MainButtonArrangement.xml"), ToModXml(copy, meta, id), new UTF8Encoding(false));
             if (bundled.Count > 0)
                 File.WriteAllText(Path.Combine(root, "Defs", "MainButtonIcons.xml"), IconSetXml(id, meta.name, bundled), new UTF8Encoding(false));
@@ -150,14 +151,18 @@ namespace MainButtonBarSystem
             if (paths.Count > 0) config.customTheme.MapImageRefs(r => paths.TryGetValue(r, out var to) ? to : r);
         }
 
-        private static string AboutXml(ArrangementMeta meta, string packageId)
+        /// <summary>
+        /// About.xml of a mod this mod writes (an arrangement mod, a theme project): it depends on and loads after this
+        /// mod, with links to get it (no dependency warning on start), and ends its description with <paramref name="usage"/>.
+        /// </summary>
+        internal static string AboutXml(string name, string author, string packageId, string description, string usage)
         {
             var doc = new XmlDocument();
             doc.AppendChild(doc.CreateXmlDeclaration("1.0", "utf-8", null));
             var root = doc.CreateElement("ModMetaData");
             doc.AppendChild(root);
-            Append(doc, root, "name", meta.name);
-            Append(doc, root, "author", meta.author ?? "");
+            Append(doc, root, "name", name);
+            Append(doc, root, "author", author ?? "");
             Append(doc, root, "packageId", packageId);
             var versions = doc.CreateElement("supportedVersions");
             root.AppendChild(versions);
@@ -172,8 +177,7 @@ namespace MainButtonBarSystem
             var after = doc.CreateElement("loadAfter");
             root.AppendChild(after);
             Append(doc, after, "li", SelfPackageId);
-            string usage = "MBBS_ModFolder_Usage".TranslateKeepCase(meta.name);
-            Append(doc, root, "description", meta.description.NullOrEmpty() ? usage : meta.description + "\n\n" + usage);
+            Append(doc, root, "description", description.NullOrEmpty() ? usage : description + "\n\n" + usage);
             return Pretty(doc);
         }
 

@@ -56,5 +56,10 @@
 
 ## 作者要決定的
 
-- [ ] 維持方案 A（預設）／改方案 B／兩者都做。
-- [ ] 工作坊說明的「For modders」那段要不要提 `ThemeTemplate/`（`docs/workshop/description.txt` 已加一句，可以刪）。
+- [x] 維持方案 A（預設）／改方案 B／兩者都做。→ **維持方案 A**（作者 2026-11-07）。
+- [x] 工作坊說明的「For modders」那段要不要提 `ThemeTemplate/`（`docs/workshop/description.txt` 已加一句，可以刪）。→ 保留那一句，並在「新增主題」那條加上教學檔名。
+
+## 2026-11-07 補充
+
+- 「新增主題」（主題專案）做出來之後，給畫圖的人的入口是它；`ThemeTemplate/` 的 ExampleTheme 當完整範例、`make_theme.py` 當選用的進階工具（教學裡寫了 Python＋Pillow 的安裝步驟）。
+- 逐步教學 `docs/ThemeGuide.md`（英文）、`.zh-TW.md`、`.zh-CN.md`、`.ja.md` 和示意圖 `ThemeGuide_NineSlice.png`，`make_release.py` 複製到發佈資料夾根目錄，和 `API.md` 放一起。

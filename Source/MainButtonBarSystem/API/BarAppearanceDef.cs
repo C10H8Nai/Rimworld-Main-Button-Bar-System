@@ -121,8 +121,18 @@ namespace MainButtonBarSystem
         /// <summary>Paths already reported as missing (by <see cref="Tex"/> or the dev-mode validator), so each is reported once.</summary>
         [Unsaved] private readonly HashSet<string> missingReported = new HashSet<string>();
 
-        /// <summary>Textures <see cref="ReloadTextures"/> read from disk; released at the next reload.</summary>
+        /// <summary>Textures <see cref="ReloadTextures"/> (or a theme project) read from disk; released at the next reload.</summary>
         [Unsaved] private readonly List<Texture2D> ownTextures = new List<Texture2D>();
+
+        /// <summary>
+        /// The theme project folder this def was read from by this mod, not by the game (design spec 2026-11-07 §5.2):
+        /// its textures are then read from <c>&lt;folder&gt;/Textures/&lt;path&gt;.png</c> instead of the game's
+        /// ContentFinder. Null for every def the game loaded.
+        /// </summary>
+        [Unsaved] internal string projectFolder;
+
+        /// <summary>True when this mod loaded the def from a theme project that is not an active mod.</summary>
+        public bool IsFromInactiveProject => projectFolder != null;
 
         public BarAppearanceWorker Worker
         {
@@ -143,7 +153,7 @@ namespace MainButtonBarSystem
             if (string.IsNullOrEmpty(path)) return null;
             if (!textures.TryGetValue(path, out var tex))
             {
-                tex = ContentFinder<Texture2D>.Get(path, false);
+                tex = LoadOnce(path);
                 if (tex == null && missingReported.Add(path))
                     Log.WarningOnce($"{MainButtonBarSystemMod.LogPrefix}Theme {defName}: texture '{path}' not found; using the game's look for it.", (defName + path).GetHashCode());
                 textures[path] = tex;
@@ -157,11 +167,147 @@ namespace MainButtonBarSystem
             if (string.IsNullOrEmpty(path)) return null;
             if (!textures.TryGetValue(path, out var tex))
             {
-                tex = ContentFinder<Texture2D>.Get(path, false);
+                tex = LoadOnce(path);
                 textures[path] = tex;
             }
             if (tex == null) missingReported.Add(path);
             return tex;
+        }
+
+        /// <summary>First load of a path: the game's texture, or for a theme project the PNG in its folder (kept to be released later).</summary>
+        private Texture2D LoadOnce(string path)
+        {
+            if (projectFolder == null) return ContentFinder<Texture2D>.Get(path, false);
+            var tex = LoadFromProject(path, out _);
+            if (tex != null) ownTextures.Add(tex);
+            return tex;
+        }
+
+        /// <summary>
+        /// A PNG of this def's theme project. Null when the file does not exist (<paramref name="retry"/> false) or cannot be
+        /// read right now, for example while an image editor is still writing it (<paramref name="retry"/> true).
+        /// </summary>
+        private Texture2D LoadFromProject(string path, out bool retry)
+        {
+            retry = false;
+            string file = Path.Combine(projectFolder, "Textures", path.Replace('/', Path.DirectorySeparatorChar) + ".png");
+            if (!File.Exists(file)) return null;
+            byte[] bytes;
+            try
+            {
+                bytes = File.ReadAllBytes(file);
+            }
+            catch (Exception)
+            {
+                retry = true;
+                return null;
+            }
+            var tex = new Texture2D(2, 2);
+            bool loaded;
+            try
+            {
+                // Unity returns false for data that is not an image; the game's engine (Waylith) throws instead.
+                loaded = tex.LoadImage(bytes);
+            }
+            catch (Exception)
+            {
+                loaded = false;
+            }
+            if (!loaded)
+            {
+                UnityEngine.Object.Destroy(tex);
+                retry = true;
+                return null;
+            }
+            tex.filterMode = FilterMode.Bilinear;
+            tex.wrapMode = TextureWrapMode.Clamp;
+            tex.name = "MBBS_Project_" + path;
+            return tex;
+        }
+
+        /// <summary>
+        /// Theme project: reads every PNG again. A file that cannot be read right now keeps its previous texture and sets
+        /// <paramref name="retry"/>, so the caller tries again later; a file that is gone falls back to the game's look.
+        /// Returns how many files were read.
+        /// </summary>
+        internal int ReloadProjectTextures(out bool retry)
+        {
+            retry = false;
+            var fresh = new Dictionary<string, Texture2D>();
+            var kept = new HashSet<Texture2D>();
+            int count = 0;
+            foreach (var (_, path) in TexturePaths())
+            {
+                if (string.IsNullOrEmpty(path) || fresh.ContainsKey(path)) continue;
+                var tex = LoadFromProject(path, out bool again);
+                if (again)
+                {
+                    retry = true;
+                    if (textures.TryGetValue(path, out var old) && old != null)
+                    {
+                        tex = old;
+                        kept.Add(old);
+                    }
+                }
+                else if (tex != null)
+                {
+                    count++;
+                }
+                fresh[path] = tex;
+            }
+            foreach (var old in ownTextures)
+                if (old != null && !kept.Contains(old)) UnityEngine.Object.Destroy(old);
+            ownTextures.Clear();
+            textures.Clear();
+            missingReported.Clear();
+            foreach (var pair in fresh)
+            {
+                textures[pair.Key] = pair.Value;
+                if (pair.Value != null && !ownTextures.Contains(pair.Value)) ownTextures.Add(pair.Value);
+            }
+            return count;
+        }
+
+        /// <summary>Destroys the textures this def read from disk (a removed theme project).</summary>
+        internal void ReleaseTextures()
+        {
+            foreach (var old in ownTextures)
+                if (old != null) UnityEngine.Object.Destroy(old);
+            ownTextures.Clear();
+            textures.Clear();
+            missingReported.Clear();
+        }
+
+        /// <summary>Forgets what was built from the def's fields (after <see cref="CopyFrom"/>): button picture index, worker, label.</summary>
+        internal void ClearCaches()
+        {
+            buttonImageIndex = null;
+            workerInt = null;
+            ClearCachedData();
+        }
+
+        private static readonly HashSet<string> NotCopied = new HashSet<string>
+        {
+            nameof(defName), nameof(shortHash), nameof(index), nameof(modContentPack), nameof(fileName), nameof(defNameHash), nameof(generated),
+        };
+
+        /// <summary>
+        /// Takes every field read from XML from <paramref name="fresh"/> (a theme project's def parsed again), keeping this
+        /// object, its identity in the def database and everything not saved, so whatever already holds this def sees
+        /// the new values. Call <see cref="ClearCaches"/> after.
+        /// </summary>
+        internal void CopyFrom(BarAppearanceDef fresh)
+        {
+            for (var type = typeof(BarAppearanceDef); type != null && type != typeof(object); type = type.BaseType)
+            {
+                foreach (var field in type.GetFields(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public |
+                                                     System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.DeclaredOnly))
+                {
+                    if (field.IsInitOnly || field.IsLiteral || field.Name.IndexOf('<') >= 0 || NotCopied.Contains(field.Name)) continue;
+                    if (field.IsDefined(typeof(UnsavedAttribute), true)) continue;
+                    field.SetValue(this, field.GetValue(fresh));
+                }
+            }
         }
 
         public bool HasLabelColor => labelColor.a > 0f;
@@ -237,6 +383,7 @@ namespace MainButtonBarSystem
         /// </summary>
         public int ReloadTextures()
         {
+            if (projectFolder != null) return ReloadProjectTextures(out _);
             foreach (var old in ownTextures)
                 if (old != null) UnityEngine.Object.Destroy(old);
             ownTextures.Clear();

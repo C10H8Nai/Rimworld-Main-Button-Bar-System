@@ -7,7 +7,10 @@ Usage (from the repository root):
 The repository is also the mod folder, so it contains source code, tests, tools, design documents and test
 screenshots that players do not need. This copies:
     About/  1.7/  Defs/  Languages/  Textures/  LoadFolders.xml
+    ThemeKit/: blank theme files the Appearance tab's "New theme" copies (not loaded by the game)
     docs/API.md (as API.md) and docs/API.zh-TW.md (as API.zh-TW.md), for add-on authors
+    docs/ThemeGuide*.md and docs/ThemeGuide_NineSlice.png (same names): the step-by-step theme guide in English,
+    Traditional and Simplified Chinese and Japanese
     ThemeTemplate/: docs/examples/ExampleTheme (a complete theme mod), tools/make_theme.py and its JSON, for theme
     authors (docs/workshop/theme-template-release.md explains the choice; --no-template leaves it out)
 An existing About/PublishedFileId.txt in the target is kept, so uploads keep updating the same Workshop item.
@@ -20,12 +23,15 @@ import shutil
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FOLDERS = ["About", "1.7", "Defs", "Languages", "Textures"]
+FOLDERS = ["About", "1.7", "Defs", "Languages", "Textures", "ThemeKit"]
 FILES = {
     "LoadFolders.xml": "LoadFolders.xml",
     os.path.join("docs", "API.md"): "API.md",
     os.path.join("docs", "API.zh-TW.md"): "API.zh-TW.md",
 }
+for _guide in ("ThemeGuide.md", "ThemeGuide.zh-TW.md", "ThemeGuide.zh-CN.md", "ThemeGuide.ja.md",
+               "ThemeGuide_NineSlice.png"):
+    FILES[os.path.join("docs", _guide)] = _guide
 TEMPLATE_DIR = "ThemeTemplate"
 TEMPLATE_FOLDERS = {os.path.join("docs", "examples", "ExampleTheme"): "ExampleTheme"}
 TEMPLATE_FILES = {
@@ -33,7 +39,7 @@ TEMPLATE_FILES = {
     os.path.join("tools", "themes", "ExampleTheme.json"): os.path.join("tools", "ExampleTheme.json"),
 }
 KEEP = os.path.join("About", "PublishedFileId.txt")
-LOADABLE = {"About", "Defs", "Textures", "Languages", "Assemblies", "Patches", "Sounds", "1.7", "ThemeTemplate"}
+LOADABLE = {"About", "Defs", "Textures", "Languages", "Assemblies", "Patches", "Sounds", "1.7", "ThemeTemplate", "ThemeKit"}
 
 
 def main():
