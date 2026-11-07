@@ -376,7 +376,7 @@
       "MBBS_Starfarer.label": "viajero estelar",
       "MBBS_Starfarer.description": "Morado espacial con placas de casco moradas, remaches cian y una línea cian de propulsores, con los colores de la expansión Odyssey.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Tema pixel art con Nai: marcos al estilo del juego original y una imagen de Nai dentro de cada botón principal. En los botones con ícono, sostiene un objeto que combina con el botón (un plano, un matraz, un botiquín...); en los botones sin ícono, se asoma por detrás de un pizarrón sobre el que está la etiqueta. Hay imágenes para los botones del juego base, de las expansiones y de muchos mods; cualquier otro botón recibe el pizarrón. Se ve mejor en los modos de visualización desplazable o compacto, con botones de al menos 120 px de ancho."
+      "MBBS_Nai.description": "Tema pixel art con Nai: marcos al estilo del juego original y una imagen de Nai dentro de cada botón principal. En los botones con ícono, sostiene un objeto que combina con el botón (un plano, un matraz, un botiquín...); en los botones sin ícono, se asoma por detrás de un pizarrón sobre el que está la etiqueta. Hay imágenes para los botones del juego base, de las expansiones y de muchos mods; cualquier otro botón recibe el pizarrón. Se ve mejor en los modos de visualización desplazable o compacto + desplazable, con botones de al menos 120 px de ancho."
     }
   }
 }

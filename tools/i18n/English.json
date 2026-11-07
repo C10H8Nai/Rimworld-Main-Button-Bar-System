@@ -376,7 +376,7 @@
       "MBBS_Starfarer.label": "starfarer",
       "MBBS_Starfarer.description": "Space purple with purple hull plates, cyan rivets and a cyan thruster line, from the Odyssey expansion's colours.",
       "MBBS_Nai.label": "nai",
-      "MBBS_Nai.description": "Pixel-art theme with Nai: vanilla-style frames and a picture of Nai inside every main button. On buttons with an icon she holds up an item that matches the button (a blueprint, a flask, a medkit...); on buttons without one she peeks out from behind a blackboard that the label sits on. Pictures are set for the base game's and expansions' buttons and for many mods' buttons; any other button gets the blackboard. Looks best in the Scroll or Collapse display modes with buttons at least 120 px wide."
+      "MBBS_Nai.description": "Pixel-art theme with Nai: vanilla-style frames and a picture of Nai inside every main button. On buttons with an icon she holds up an item that matches the button (a blueprint, a flask, a medkit...); on buttons without one she peeks out from behind a blackboard that the label sits on. Pictures are set for the base game's and expansions' buttons and for many mods' buttons; any other button gets the blackboard. Looks best in the Scroll or Collapse + scroll display modes with buttons at least 120 px wide."
     }
   }
 }
