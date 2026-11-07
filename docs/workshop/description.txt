@@ -37,6 +37,9 @@ Five extension points, the built-in features use them too: display modes, themes
 
 Settings: Options > Mod settings > Main Button Bar System, or the gear in the "More" drawer.
 
+[h2]How it was made[/h2]
+Made by vibe coding: NAI designed it and tested it in the game; the code, translations and documentation were written by AI (Claude by Anthropic), and the pictures of Nai were made with a local AI image model.
+
 [h2]License[/h2]
 Code and translations: MIT. Pictures of Nai: CC BY-NC-ND 4.0 (share them unchanged, with credit, non-commercially; please ask before using them in another mod). Material for making themes (ThemeKit, ThemeTemplate, the theme guides): CC0, use it freely in your own theme mods. Details: LICENSES.md in the mod folder.
 
@@ -64,6 +67,8 @@ Code and translations: MIT. Pictures of Nai: CC BY-NC-ND 4.0 (share them unchang
 [/list]
 需要 Harmony。从存档中移除本模组时，下次读档会出现一次「找不到类」的记录，不影响游戏。
 
+制作方式：vibe coding。NAI 负责设计和实机测试，代码、翻译和文档由 AI（Anthropic 的 Claude）编写，萘伊的图用本地 AI 生图模型制作。
+
 授权：代码和翻译为 MIT；萘伊的图为 CC BY-NC-ND 4.0（署名、非商业、不改图；想放进其他模组请先询问）；做主题用的素材（ThemeKit、ThemeTemplate、主题教程）为 CC0，可以自由用在自己的主题模组。详见模组文件夹的 LICENSES.md。
 
 [b]繁體中文[/b]
@@ -85,5 +90,7 @@ Code and translations: MIT. Pictures of Nai: CC BY-NC-ND 4.0 (share them unchang
 [*]相容 Better Sliders：本模組的滑桿自行繪製並附數字框，不會被蓋住。
 [/list]
 需要 Harmony。從存檔中移除本模組時，下次讀檔會出現一次「找不到類別」的紀錄，不影響遊戲。
+
+製作方式：vibe coding。NAI 負責設計和實機測試，程式碼、翻譯和文件由 AI（Anthropic 的 Claude）撰寫，萘伊的圖用本地 AI 生圖模型製作。
 
 授權：程式碼和翻譯為 MIT；萘伊的圖為 CC BY-NC-ND 4.0（標註作者、非商業、不改圖；想放進其他模組請先詢問）；做主題用的素材（ThemeKit、ThemeTemplate、主題教學）為 CC0，可以自由用在自己的主題模組。詳見模組資料夾的 LICENSES.md。
