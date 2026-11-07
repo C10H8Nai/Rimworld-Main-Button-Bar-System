@@ -334,7 +334,7 @@
   <MBBS_DecorationOffsetX>装饰图位移 X：{0}px</MBBS_DecorationOffsetX>
   <MBBS_DecorationOffsetY>装饰图位移 Y：{0}px</MBBS_DecorationOffsetY>
   <MBBS_ReloadThemes>重新加载主题贴图</MBBS_ReloadThemes>
-  <MBBS_ReloadThemesTip>开发者模式：从各主题的模组文件夹重新读取 PNG，改过的图不用重开游戏就会显示。读完会再检查一次主题，结果在日志里。</MBBS_ReloadThemesTip>
+  <MBBS_ReloadThemesTip>开发人员模式：从各主题的模组文件夹重新读取 PNG，改过的图不用重开游戏就会显示。读完会再检查一次主题，结果在日志里。</MBBS_ReloadThemesTip>
   <MBBS_ThemesReloaded>主题贴图已重新加载：重新读取了 {0} 个文件。</MBBS_ThemesReloaded>
   <MBBS_ThemeProject_New>新建主题…</MBBS_ThemeProject_New>
   <MBBS_ThemeProject_NewTip>在游戏的 Mods 文件夹里创建一个空白主题模组并选中它。用任意图片编辑器编辑它的 PNG 图片：本标签页打开期间，栏会在一秒内显示你的修改。无需重启。</MBBS_ThemeProject_NewTip>

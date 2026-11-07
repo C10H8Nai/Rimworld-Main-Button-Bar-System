@@ -99,7 +99,7 @@
   - `PlayDataLoader.LoadAllPlayData`：切換語言後重抓 baseline、清掉快取。
 - 捲動時被遮住的部分不能點（滑鼠在可視範圍外視為 Unreachable）。
 
-**五個積木接口（slots，全部是 Def）**，附屬模組的寫法在 `docs/API.md`（繁中節錄 `docs/API.zh-TW.md`）：
+**五個積木接口（slots，全部是 Def）**，附屬模組的寫法在 `docs/API.md`（繁中節錄 `docs/API.zh-TW.md`、簡中節錄 `docs/API.zh-CN.md`）：
 1. 顯示方式 `BarDisplayModeDef`（worker，需要 DLL）。
 2. 外觀主題 `BarAppearanceDef`（只要 XML＋圖片，worker 選用）。
 3. 相容橋接 `CompatBridgeDef`：TooManyButtons、Custom Bottom Bar、UI Not Included、DragReorder。玩家選誰畫列；選「本模組優先」時移除對方在列上的補丁，**這次啟動內固定，重開才生效**。

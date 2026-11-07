@@ -6,7 +6,7 @@
 
 - `docs/examples/ExampleTheme/`：能直接複製改名的完整主題模組（About、Defs、全部貼圖、三種語言的 DefInjected、Preview.png），約 20 個檔案、60 KB。
 - `tools/make_theme.py`＋`tools/themes/ExampleTheme.json`：從 JSON 配色產生整個主題模組的工具（需要 Python 3 和 Pillow）。
-- `docs/API.md`（已經隨發佈檔附上）和 `docs/API.zh-TW.md`。
+- `docs/API.md`（已經隨發佈檔附上）和 `docs/API.zh-TW.md`、`docs/API.zh-CN.md`。
 
 ## 方案 A：放進本模組的發佈資料夾（目前預設）
 
