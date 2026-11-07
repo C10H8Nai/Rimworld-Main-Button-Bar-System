@@ -11,7 +11,8 @@ namespace MainButtonBarSystem
     /// <summary>
     /// "New theme" (design spec 2026-11-07 §5.1): writes a complete blank theme mod into the game's Mods folder from
     /// this mod's <c>ThemeKit</c> folder: About (depending on this mod, with links), the def, the blank textures, the
-    /// guide picture and the marker file that makes it a theme project.
+    /// one-page guides (one per language, <see cref="ThemeProjectNames.GuideFiles"/>) and the marker file that makes
+    /// it a theme project.
     /// </summary>
     internal static class ThemeProjectWriter
     {
@@ -57,7 +58,8 @@ namespace MainButtonBarSystem
                 string template = File.ReadAllText(Path.Combine(kit, "Defs", "Theme.xml.template"), Encoding.UTF8);
                 File.WriteAllText(Path.Combine(defs, defName + ".xml"), FillTemplate(template, id, name, author, description), new UTF8Encoding(false));
 
-                CopyIfExists(Path.Combine(kit, "_Guide.png"), Path.Combine(root, "_Guide.png"));
+                foreach (var guide in ThemeProjectNames.GuideFiles)
+                    CopyIfExists(Path.Combine(kit, guide), Path.Combine(root, guide));
 
                 // Last: the marker is what makes the folder a theme project.
                 var marker = new ThemeProjectMarker

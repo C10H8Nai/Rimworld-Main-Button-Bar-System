@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Vytvorí prázdny motív ako mod v priečinku Mods hry a vyberie ho. Obrázky PNG upravujte v ľubovoľnom editore: kým je táto karta otvorená, lišta zobrazí zmeny do sekundy. Reštart nie je potrebný.",
     "MBBS_ExportTitle_ThemeProject": "Nový motív",
     "MBBS_ExportConfirm_ThemeProject": "Vytvoriť",
-    "MBBS_ExportHint_ThemeProject": "V {1} sa vytvorí priečinok modu s motívom, s prázdnymi obrázkami a súborom _Guide.png, ktorý ukazuje, ktorý obrázok kreslí ktorú časť lišty. Neskôr ho povoľte v zozname modov a používajte ako každý iný motív, alebo ho odtiaľ nahrajte na Workshop.",
+    "MBBS_ExportHint_ThemeProject": "V {1} sa vytvorí priečinok modu s motívom, s prázdnymi obrázkami a súborom _Guide_*.png, ktorý ukazuje, ktorý obrázok kreslí ktorú časť lišty. Neskôr ho povoľte v zozname modov a používajte ako každý iný motív, alebo ho odtiaľ nahrajte na Workshop.",
     "MBBS_ThemeProject_Source": "Projekt motívu (neaktívny)",
     "MBBS_ThemeProject_Created": "Nový motív vytvorený v {0}. Otvorte jeho priečinok a upravte obrázky PNG; toto okno zobrazí zmeny.",
     "MBBS_ThemeProject_CreateFailed": "Motív sa nepodarilo vytvoriť v {0}: {1}",

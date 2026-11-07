@@ -340,7 +340,7 @@ Hazır temalar altında listelenir. Başkalarına vermek için klasörün tamam�
   <MBBS_ThemeProject_NewTip>Oyunun Mods klasöründe boş bir tema modu oluşturur ve onu seçer. PNG resimlerini herhangi bir resim düzenleyiciyle düzenle: bu sekme açıkken çubuk değişikliklerini bir saniye içinde gösterir. Yeniden başlatmak gerekmez.</MBBS_ThemeProject_NewTip>
   <MBBS_ExportTitle_ThemeProject>Yeni tema</MBBS_ExportTitle_ThemeProject>
   <MBBS_ExportConfirm_ThemeProject>Oluştur</MBBS_ExportConfirm_ThemeProject>
-  <MBBS_ExportHint_ThemeProject>{1} içinde, boş resimler ve hangi resmin çubuğun hangi bölümünü çizdiğini gösteren _Guide.png ile bir tema modu klasörü oluşturulur. Daha sonra mod listesinde etkinleştirip her tema modu gibi kullanabilir ya da oradan Workshop'a yükleyebilirsin.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>{1} içinde, boş resimler ve hangi resmin çubuğun hangi bölümünü çizdiğini gösteren _Guide_*.png ile bir tema modu klasörü oluşturulur. Daha sonra mod listesinde etkinleştirip her tema modu gibi kullanabilir ya da oradan Workshop'a yükleyebilirsin.</MBBS_ExportHint_ThemeProject>
   <MBBS_ThemeProject_Source>Tema projesi (etkin değil)</MBBS_ThemeProject_Source>
   <MBBS_ThemeProject_Created>Yeni tema {0} içinde oluşturuldu. Klasörünü aç ve PNG resimlerini düzenle; bu pencere değişiklikleri gösterir.</MBBS_ThemeProject_Created>
   <MBBS_ThemeProject_CreateFailed>Tema {0} içinde oluşturulamadı: {1}</MBBS_ThemeProject_CreateFailed>

@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Üres téma-modot hoz létre a játék Mods mappájában, és kiválasztja. Szerkeszd a PNG-képeit bármilyen képszerkesztővel: amíg ez a lap nyitva van, a gombsor egy másodpercen belül megmutatja a változtatásaidat. Nem kell újraindítani.",
     "MBBS_ExportTitle_ThemeProject": "Új téma",
     "MBBS_ExportConfirm_ThemeProject": "Létrehozás",
-    "MBBS_ExportHint_ThemeProject": "A(z) {1} mappában létrejön egy téma-mod mappa üres képekkel és a _Guide.png fájllal, amely megmutatja, melyik kép a gombsor melyik részét rajzolja. Később engedélyezd a modlistában, hogy úgy használd, mint bármely téma-modot, vagy onnan töltsd fel a Workshopra.",
+    "MBBS_ExportHint_ThemeProject": "A(z) {1} mappában létrejön egy téma-mod mappa üres képekkel és a _Guide_*.png fájllal, amely megmutatja, melyik kép a gombsor melyik részét rajzolja. Később engedélyezd a modlistában, hogy úgy használd, mint bármely téma-modot, vagy onnan töltsd fel a Workshopra.",
     "MBBS_ThemeProject_Source": "Témaprojekt (nem aktív)",
     "MBBS_ThemeProject_Created": "Az új téma létrejött itt: {0}. Nyisd meg a mappáját, és szerkeszd a PNG-képeket; ez az ablak megmutatja a változtatásokat.",
     "MBBS_ThemeProject_CreateFailed": "Nem sikerült létrehozni a témát itt: {0}: {1}",

@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Cria um mod de tema em branco na pasta Mods do jogo e seleciona-o. Edite as imagens PNG dele com qualquer editor de imagens: enquanto este separador estiver aberto, a barra mostra as suas alterações em menos de um segundo. Não é preciso reiniciar.",
     "MBBS_ExportTitle_ThemeProject": "Novo tema",
     "MBBS_ExportConfirm_ThemeProject": "Criar",
-    "MBBS_ExportHint_ThemeProject": "É criada uma pasta de mod de tema em {1}, com imagens em branco e _Guide.png, que mostra qual imagem desenha qual parte da barra. Ative-o mais tarde na lista de mods para o usar como qualquer mod de tema, ou publique-o a partir daí na Workshop.",
+    "MBBS_ExportHint_ThemeProject": "É criada uma pasta de mod de tema em {1}, com imagens em branco e _Guide_*.png, que mostra qual imagem desenha qual parte da barra. Ative-o mais tarde na lista de mods para o usar como qualquer mod de tema, ou publique-o a partir daí na Workshop.",
     "MBBS_ThemeProject_Source": "Projeto de tema (inativo)",
     "MBBS_ThemeProject_Created": "Novo tema criado em {0}. Abra a pasta dele e edite as imagens PNG; esta janela mostra as alterações.",
     "MBBS_ThemeProject_CreateFailed": "Não foi possível criar o tema em {0}: {1}",

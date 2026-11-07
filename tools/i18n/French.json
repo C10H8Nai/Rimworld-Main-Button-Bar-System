@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Crée un mod de thème vierge dans le dossier Mods du jeu et le sélectionne. Modifiez ses images PNG avec n'importe quel éditeur d'images : tant que cet onglet est ouvert, la barre affiche vos changements en moins d'une seconde. Aucun redémarrage nécessaire.",
     "MBBS_ExportTitle_ThemeProject": "Nouveau thème",
     "MBBS_ExportConfirm_ThemeProject": "Créer",
-    "MBBS_ExportHint_ThemeProject": "Un dossier de mod de thème est créé dans {1}, avec des images vierges et _Guide.png, qui montre quelle image dessine quelle partie de la barre. Activez-le plus tard dans la liste des mods pour l'utiliser comme n'importe quel mod de thème, ou publiez-le depuis cette liste sur le Workshop.",
+    "MBBS_ExportHint_ThemeProject": "Un dossier de mod de thème est créé dans {1}, avec des images vierges et _Guide_*.png, qui montre quelle image dessine quelle partie de la barre. Activez-le plus tard dans la liste des mods pour l'utiliser comme n'importe quel mod de thème, ou publiez-le depuis cette liste sur le Workshop.",
     "MBBS_ThemeProject_Source": "Projet de thème (inactif)",
     "MBBS_ThemeProject_Created": "Nouveau thème créé dans {0}. Ouvrez son dossier et modifiez les images PNG ; cette fenêtre affiche les changements.",
     "MBBS_ThemeProject_CreateFailed": "Impossible de créer le thème dans {0} : {1}",

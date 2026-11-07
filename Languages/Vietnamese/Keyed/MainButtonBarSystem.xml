@@ -340,7 +340,7 @@ Nó nằm trong mục Chủ đề có sẵn. Hãy chia sẻ cả thư mục đ�
   <MBBS_ThemeProject_NewTip>Tạo một mod chủ đề trống trong thư mục Mods của trò chơi và chọn nó. Hãy chỉnh sửa ảnh PNG của nó bằng bất kỳ trình chỉnh sửa ảnh nào: khi tab này đang mở, thanh sẽ hiện thay đổi của bạn trong vòng một giây. Không cần khởi động lại.</MBBS_ThemeProject_NewTip>
   <MBBS_ExportTitle_ThemeProject>Chủ đề mới</MBBS_ExportTitle_ThemeProject>
   <MBBS_ExportConfirm_ThemeProject>Tạo</MBBS_ExportConfirm_ThemeProject>
-  <MBBS_ExportHint_ThemeProject>Một thư mục mod chủ đề được tạo trong {1}, kèm ảnh trống và _Guide.png, cho biết ảnh nào vẽ phần nào của thanh. Sau này hãy bật nó trong danh sách mod để dùng như mọi mod chủ đề, hoặc tải nó lên Workshop từ đó.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>Một thư mục mod chủ đề được tạo trong {1}, kèm ảnh trống và _Guide_*.png, cho biết ảnh nào vẽ phần nào của thanh. Sau này hãy bật nó trong danh sách mod để dùng như mọi mod chủ đề, hoặc tải nó lên Workshop từ đó.</MBBS_ExportHint_ThemeProject>
   <MBBS_ThemeProject_Source>Dự án chủ đề (chưa bật)</MBBS_ThemeProject_Source>
   <MBBS_ThemeProject_Created>Đã tạo chủ đề mới trong {0}. Hãy mở thư mục của nó và chỉnh sửa ảnh PNG; cửa sổ này sẽ hiện các thay đổi.</MBBS_ThemeProject_Created>
   <MBBS_ThemeProject_CreateFailed>Không thể tạo chủ đề trong {0}: {1}</MBBS_ThemeProject_CreateFailed>

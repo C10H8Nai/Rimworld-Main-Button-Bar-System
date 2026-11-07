@@ -340,7 +340,7 @@ Det visas under Färdiga teman. Dela hela mappen för att ge det till andra.</MB
   <MBBS_ThemeProject_NewTip>Skapar en tom temamodd i spelets Mods-mapp och väljer den. Redigera dess PNG-bilder i valfritt bildredigeringsprogram: så länge den här fliken är öppen visar fältet dina ändringar inom en sekund. Ingen omstart behövs.</MBBS_ThemeProject_NewTip>
   <MBBS_ExportTitle_ThemeProject>Nytt tema</MBBS_ExportTitle_ThemeProject>
   <MBBS_ExportConfirm_ThemeProject>Skapa</MBBS_ExportConfirm_ThemeProject>
-  <MBBS_ExportHint_ThemeProject>En temamoddmapp skapas i {1}, med tomma bilder och _Guide.png, som visar vilken bild som ritar vilken del av fältet. Aktivera den senare i modlistan för att använda den som vilken temamodd som helst, eller ladda upp den till Workshop därifrån.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>En temamoddmapp skapas i {1}, med tomma bilder och _Guide_*.png, som visar vilken bild som ritar vilken del av fältet. Aktivera den senare i modlistan för att använda den som vilken temamodd som helst, eller ladda upp den till Workshop därifrån.</MBBS_ExportHint_ThemeProject>
   <MBBS_ThemeProject_Source>Temaprojekt (inte aktivt)</MBBS_ThemeProject_Source>
   <MBBS_ThemeProject_Created>Nytt tema skapat i {0}. Öppna dess mapp och redigera PNG-bilderna; det här fönstret visar ändringarna.</MBBS_ThemeProject_Created>
   <MBBS_ThemeProject_CreateFailed>Kunde inte skapa temat i {0}: {1}</MBBS_ThemeProject_CreateFailed>

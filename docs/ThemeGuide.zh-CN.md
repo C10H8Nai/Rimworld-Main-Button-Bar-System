@@ -63,13 +63,13 @@
 
 ## 第三步：完成、分享
 
-1. 满意之后，到游戏的 Mod 列表里启用它（和普通模组一样），然后重启游戏。之后“重新加载”只会重读 PNG，改了 Defs 要重启游戏才会生效。
+1. 满意之后，到游戏的 模组列表里启用它（和普通模组一样），然后重启游戏。之后“重新加载”只会重读 PNG，改了 Defs 要重启游戏才会生效。
 2. 修改 `About\About.xml` 里的名称和说明，换掉 `About\Preview.png`。
-3. 上传：在游戏的 Mod 列表里选中它，用游戏内置的上传按钮传到 Steam 创意工坊。上传完到创意工坊页面，在“必要项目”（Required items）里加上 Main Button Bar System。About.xml 里写的前置只有游戏看得到，Steam 不知道。
+3. 上传：在游戏的 模组列表里选中它，用游戏内置的上传按钮传到 Steam 创意工坊。上传完到创意工坊页面，在“必要项目”（Required items）里加上 Main Button Bar System。About.xml 里写的前置只有游戏看得到，Steam 不知道。
 
 `_Guide_*.png` 和 `MBBS_ThemeProject.xml` 可以留着，游戏不会读。
 
-不想要这个主题了：点卡片上的“删除”，文件夹会被移到存档文件夹的 `MainButtonBarSystem\DeletedThemes\`，想找回就把它移回 `Mods`。只能删除通过“新建主题”做出来的主题，而且要在 Mod 列表里没有勾选、这次启动游戏也没有被当成模组加载（取消勾选后要先重启一次游戏）。
+不想要这个主题了：点卡片上的“删除”，文件夹会被移到存档文件夹的 `MainButtonBarSystem\DeletedThemes\`，想找回就把它移回 `Mods`。只能删除通过“新建主题”做出来的主题，而且要在 模组列表里没有勾选、这次启动游戏也没有被当成模组加载（取消勾选后要先重启一次游戏）。
 
 ## 再进一步
 

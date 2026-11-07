@@ -340,7 +340,7 @@ Aparece en Prediseñados. Comparte la carpeta completa para dárselo a otros.</M
   <MBBS_ThemeProject_NewTip>Crea un mod de tema en blanco en la carpeta Mods del juego y lo selecciona. Edita sus imágenes PNG con cualquier editor de imágenes: mientras esta pestaña esté abierta, la barra muestra tus cambios en menos de un segundo. No hace falta reiniciar.</MBBS_ThemeProject_NewTip>
   <MBBS_ExportTitle_ThemeProject>Tema nuevo</MBBS_ExportTitle_ThemeProject>
   <MBBS_ExportConfirm_ThemeProject>Crear</MBBS_ExportConfirm_ThemeProject>
-  <MBBS_ExportHint_ThemeProject>Se crea una carpeta de mod de tema en {1}, con imágenes en blanco y _Guide.png, que muestra qué imagen dibuja qué parte de la barra. Actívalo más tarde en la lista de mods para usarlo como cualquier mod de tema, o súbelo desde ahí al Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>Se crea una carpeta de mod de tema en {1}, con imágenes en blanco y _Guide_*.png, que muestra qué imagen dibuja qué parte de la barra. Actívalo más tarde en la lista de mods para usarlo como cualquier mod de tema, o súbelo desde ahí al Workshop.</MBBS_ExportHint_ThemeProject>
   <MBBS_ThemeProject_Source>Proyecto de tema (inactivo)</MBBS_ThemeProject_Source>
   <MBBS_ThemeProject_Created>Tema nuevo creado en {0}. Abre su carpeta y edita las imágenes PNG; esta ventana muestra los cambios.</MBBS_ThemeProject_Created>
   <MBBS_ThemeProject_CreateFailed>No se pudo crear el tema en {0}: {1}</MBBS_ThemeProject_CreateFailed>

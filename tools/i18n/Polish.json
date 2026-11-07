@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Tworzy pusty mod z motywem w folderze Mods gry i go wybiera. Edytuj jego obrazy PNG w dowolnym edytorze grafiki: dopóki ta karta jest otwarta, pasek pokazuje Twoje zmiany w ciągu sekundy. Nie trzeba restartować.",
     "MBBS_ExportTitle_ThemeProject": "Nowy motyw",
     "MBBS_ExportConfirm_ThemeProject": "Utwórz",
-    "MBBS_ExportHint_ThemeProject": "W {1} powstanie folder moda z motywem, z pustymi obrazami i plikiem _Guide.png, który pokazuje, który obraz rysuje którą część paska. Włącz go później na liście modów, by używać go jak każdego moda z motywem, albo prześlij go stamtąd do Warsztatu.",
+    "MBBS_ExportHint_ThemeProject": "W {1} powstanie folder moda z motywem, z pustymi obrazami i plikiem _Guide_*.png, który pokazuje, który obraz rysuje którą część paska. Włącz go później na liście modów, by używać go jak każdego moda z motywem, albo prześlij go stamtąd do Warsztatu.",
     "MBBS_ThemeProject_Source": "Projekt motywu (nieaktywny)",
     "MBBS_ThemeProject_Created": "Nowy motyw utworzono w {0}. Otwórz jego folder i edytuj obrazy PNG; to okno pokaże zmiany.",
     "MBBS_ThemeProject_CreateFailed": "Nie udało się utworzyć motywu w {0}: {1}",

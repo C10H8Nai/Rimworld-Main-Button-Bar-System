@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Make a blank theme mod in the game's Mods folder and pick it. Edit its PNG images with any image editor: while this tab is open, the bar shows your changes within a second. No restart needed.",
     "MBBS_ExportTitle_ThemeProject": "New theme",
     "MBBS_ExportConfirm_ThemeProject": "Create",
-    "MBBS_ExportHint_ThemeProject": "A theme mod folder is made in {1}, with blank images and _Guide.png, which shows which image paints which part of the bar. Enable it in the mod list later to use it like any theme mod, or upload it to the Workshop from there.",
+    "MBBS_ExportHint_ThemeProject": "A theme mod folder is made in {1}, with blank images and _Guide_*.png, which shows which image paints which part of the bar. Enable it in the mod list later to use it like any theme mod, or upload it to the Workshop from there.",
     "MBBS_ThemeProject_Source": "Theme project (not active)",
     "MBBS_ThemeProject_Created": "New theme made in {0}. Open its folder and edit the PNG images; this window shows the changes.",
     "MBBS_ThemeProject_CreateFailed": "Could not make the theme in {0}: {1}",

@@ -340,7 +340,7 @@
   <MBBS_ThemeProject_NewTip>在游戏的 Mods 文件夹里创建一个空白主题模组并选中它。用任意图片编辑器编辑它的 PNG 图片：本标签页打开期间，栏会在一秒内显示你的修改。无需重启。</MBBS_ThemeProject_NewTip>
   <MBBS_ExportTitle_ThemeProject>新建主题</MBBS_ExportTitle_ThemeProject>
   <MBBS_ExportConfirm_ThemeProject>创建</MBBS_ExportConfirm_ThemeProject>
-  <MBBS_ExportHint_ThemeProject>将在 {1} 创建一个主题模组文件夹，内含空白图片和 _Guide.png（它标明哪张图片绘制栏的哪个部分）。之后在模组列表中启用它，就能像其他主题模组一样使用，也可以从那里上传到创意工坊。</MBBS_ExportHint_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>将在 {1} 创建一个主题模组文件夹，内含空白图片和 _Guide_*.png（它标明哪张图片绘制栏的哪个部分）。之后在模组列表中启用它，就能像其他主题模组一样使用，也可以从那里上传到创意工坊。</MBBS_ExportHint_ThemeProject>
   <MBBS_ThemeProject_Source>主题项目（未启用）</MBBS_ThemeProject_Source>
   <MBBS_ThemeProject_Created>已在 {0} 创建新主题。打开它的文件夹并编辑 PNG 图片；本窗口会显示修改。</MBBS_ThemeProject_Created>
   <MBBS_ThemeProject_CreateFailed>无法在 {0} 创建主题：{1}</MBBS_ThemeProject_CreateFailed>

@@ -48,7 +48,7 @@
 1. 外觀分頁 → 主題清單最後（內建主題卡片、自訂主題存檔之後）→「新增主題…」。
 2. 對話框填名稱（必填）、作者、說明（選填）；packageId 自動產生、可以改，和「做成排序模組」的對話框一樣。
 3. 本模組在遊戲的 `Mods\` 建好資料夾，清單多一張卡片並自動選上它；底部列馬上變成空白主題的樣子（上色九宮格、格線、準心）。
-4. 卡片上按「打開資料夾」，照 `_Guide.png` 的說明改 PNG，存檔。
+4. 卡片上按「打開資料夾」，照 `_Guide_<語言>.png` 的說明改 PNG，存檔。
 5. 設定視窗開著的話幾秒內自動更新；也可以按卡片上的「重新載入」。
 6. 做完：在模組清單啟用它（之後就是一般主題模組），或用遊戲內建的上傳工作坊。不要了就按「刪除」。
 
@@ -67,7 +67,7 @@
   | `About/Preview.png` | 工作坊預覽圖的佔位圖，640×360 |
   | `Defs/<Id>_Theme.xml` | 一個 `BarAppearanceDef`：defName `<Id>_Theme`、label＝名稱、description、author、`displayOrder`（Tuning 值，排在內建主題後面）；`button`／`buttonMouseover`／`buttonActive`／`buttonDisabled`；`labelColor`／`labelMouseoverColor`／`labelActiveColor`；`barBackground`（Tile）、`drawerBackground`（Atlas）、`moreButton`、`arrowLeft`／`arrowRight`、`drawerSettingsIcon`、`preview`；`buttonImage`（Cover、置中）。每個欄位上面一行英文註解說明它管哪裡，最後註解指向 `API.md` 的對應節（`buttonImages`、`decorations` 怎麼加） |
   | `Textures/<Id>/*.png` | 下表的空白圖 |
-  | `_Guide.png` | 說明圖（放根目錄，遊戲不會載入）：底部列示意圖，每塊標出對應的檔名、尺寸、九宮格切法、插圖的安全範圍 |
+  | `_Guide_<語言>.png` | 說明圖（放根目錄，遊戲不會載入）：底部列示意圖，每塊標出對應的檔名、尺寸、九宮格切法、插圖的安全範圍。2026-11-07 作者要求改成給第一次做主題的人看的一圖流說明書，英文、繁中、簡中、日文各一張（`_Guide_English.png` 等，檔名清單在 `ThemeProjectNames.GuideFiles`） |
   | `MBBS_ThemeProject.xml` | 標記檔（根目錄，遊戲不會載入）：格式版本、packageId、defName、建立時間、本模組版本。**有這個檔的資料夾才算主題專案** |
 
 - 空白圖（尺寸照現有規格：九宮格超過 72×72 只會被縮小；插圖是按鈕的 2 倍）：
@@ -83,7 +83,7 @@
   | `Preview.png`（Textures 裡，主題卡片的預覽） | 600×36 | 用上面的圖拼出的底部列示意 |
 
   四種狀態的色調、各區塊的深淺是 Claude 的建議，實作時可以微調，但「四種狀態一眼分得出來」「九宮格的切線看得見」「插圖的裁切範圍看得見」這三點要保留。
-- 空白圖從哪來：本模組隨附一套做好的 PNG（含 `_Guide.png`、About 的 Preview），新增時複製過去。放在 repo 根目錄的 `ThemeKit/`（遊戲不會載入），`tools/make_release.py` 的 `FOLDERS` 和 `RimClaude\模組開發\環境\deploy.ps1` 的 `$folders` 都要加上它。這套圖用 repo 的 Python 腳本（`tools/make_theme_kit.py`，Pillow）產生、產生結果也 commit，和 `gen_theme_textures.py` 的做法一樣。
+- 空白圖從哪來：本模組隨附一套做好的 PNG（含 `_Guide_<語言>.png`、About 的 Preview），新增時複製過去。放在 repo 根目錄的 `ThemeKit/`（遊戲不會載入），`tools/make_release.py` 的 `FOLDERS` 和 `RimClaude\模組開發\環境\deploy.ps1` 的 `$folders` 都要加上它。這套圖用 repo 的 Python 腳本（`tools/make_theme_kit.py`，Pillow）產生、產生結果也 commit，和 `gen_theme_textures.py` 的做法一樣。
 - 新增完：清單多一張卡片、`working.appearance` 設成新的 defName（自動選上），訊息列顯示資料夾路徑。
 
 ### 5.2 不用重開就能用（執行中載入）

@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "在遊戲的 Mods 資料夾建立一個空白主題模組並選取它。用任何圖片編輯器編輯它的 PNG 圖片：本分頁開著時，列會在一秒內顯示你的修改。不用重開遊戲。",
     "MBBS_ExportTitle_ThemeProject": "新增主題",
     "MBBS_ExportConfirm_ThemeProject": "建立",
-    "MBBS_ExportHint_ThemeProject": "將在 {1} 建立一個主題模組資料夾，內含空白圖片和 _Guide.png（標示哪張圖片畫列的哪個部分）。之後在模組清單啟用，就能像其他主題模組一樣使用，也可以從那裡上傳到工作坊。",
+    "MBBS_ExportHint_ThemeProject": "將在 {1} 建立一個主題模組資料夾，內含空白圖片和 _Guide_*.png（標示哪張圖片畫列的哪個部分）。之後在模組清單啟用，就能像其他主題模組一樣使用，也可以從那裡上傳到工作坊。",
     "MBBS_ThemeProject_Source": "主題專案（未啟用）",
     "MBBS_ThemeProject_Created": "已在 {0} 建立新主題。開啟它的資料夾並編輯 PNG 圖片；本視窗會顯示修改。",
     "MBBS_ThemeProject_CreateFailed": "無法在 {0} 建立主題：{1}",

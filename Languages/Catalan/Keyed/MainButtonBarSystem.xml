@@ -340,7 +340,7 @@ Apareix a Predefinits. Comparteix la carpeta sencera per donar-lo als altres.</M
   <MBBS_ThemeProject_NewTip>Crea un mod de tema en blanc a la carpeta Mods del joc i el selecciona. Edita'n les imatges PNG amb qualsevol editor d'imatges: mentre aquesta pestanya és oberta, la barra mostra els canvis en menys d'un segon. No cal reiniciar.</MBBS_ThemeProject_NewTip>
   <MBBS_ExportTitle_ThemeProject>Tema nou</MBBS_ExportTitle_ThemeProject>
   <MBBS_ExportConfirm_ThemeProject>Crea</MBBS_ExportConfirm_ThemeProject>
-  <MBBS_ExportHint_ThemeProject>Es crea una carpeta de mod de tema a {1}, amb imatges en blanc i _Guide.png, que mostra quina imatge pinta cada part de la barra. Activa'l més endavant a la llista de mods per usar-lo com qualsevol mod de tema, o puja'l des d'allà al Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>Es crea una carpeta de mod de tema a {1}, amb imatges en blanc i _Guide_*.png, que mostra quina imatge pinta cada part de la barra. Activa'l més endavant a la llista de mods per usar-lo com qualsevol mod de tema, o puja'l des d'allà al Workshop.</MBBS_ExportHint_ThemeProject>
   <MBBS_ThemeProject_Source>Projecte de tema (inactiu)</MBBS_ThemeProject_Source>
   <MBBS_ThemeProject_Created>S'ha creat el tema nou a {0}. Obre'n la carpeta i edita les imatges PNG; aquesta finestra mostra els canvis.</MBBS_ThemeProject_Created>
   <MBBS_ThemeProject_CreateFailed>No s'ha pogut crear el tema a {0}: {1}</MBBS_ThemeProject_CreateFailed>

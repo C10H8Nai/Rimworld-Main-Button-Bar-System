@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Loob mängu Mods-kausta tühja teemamodifikatsiooni ja valib selle. Muuda selle PNG-pilte mis tahes pildiredaktoriga: kuni see vaheleht on avatud, näitab riba sinu muudatusi ühe sekundi jooksul. Taaskäivitamist pole vaja.",
     "MBBS_ExportTitle_ThemeProject": "Uus teema",
     "MBBS_ExportConfirm_ThemeProject": "Loo",
-    "MBBS_ExportHint_ThemeProject": "Kausta {1} luuakse teemamodifikatsiooni kaust tühjade piltide ja failiga _Guide.png, mis näitab, milline pilt joonistab riba millist osa. Luba see hiljem modifikatsioonide loendis, et kasutada seda nagu mis tahes teemamodifikatsiooni, või laadi see sealt üles Workshopi.",
+    "MBBS_ExportHint_ThemeProject": "Kausta {1} luuakse teemamodifikatsiooni kaust tühjade piltide ja failiga _Guide_*.png, mis näitab, milline pilt joonistab riba millist osa. Luba see hiljem modifikatsioonide loendis, et kasutada seda nagu mis tahes teemamodifikatsiooni, või laadi see sealt üles Workshopi.",
     "MBBS_ThemeProject_Source": "Teemaprojekt (pole aktiivne)",
     "MBBS_ThemeProject_Created": "Uus teema loodi kausta {0}. Ava selle kaust ja muuda PNG-pilte; see aken näitab muudatusi.",
     "MBBS_ThemeProject_CreateFailed": "Teemat ei õnnestunud luua kausta {0}: {1}",

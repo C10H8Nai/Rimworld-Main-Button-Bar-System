@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Creează un mod de temă gol în dosarul Mods al jocului și îl selectează. Editează imaginile PNG ale acestuia cu orice editor de imagini: cât timp această filă este deschisă, bara arată modificările tale în mai puțin de o secundă. Nu e nevoie de repornire.",
     "MBBS_ExportTitle_ThemeProject": "Temă nouă",
     "MBBS_ExportConfirm_ThemeProject": "Creează",
-    "MBBS_ExportHint_ThemeProject": "În {1} se creează un dosar de mod de temă, cu imagini goale și _Guide.png, care arată ce imagine desenează ce parte a barei. Activează-l mai târziu în lista de moduri ca să-l folosești ca orice mod de temă, sau încarcă-l de acolo în Workshop.",
+    "MBBS_ExportHint_ThemeProject": "În {1} se creează un dosar de mod de temă, cu imagini goale și _Guide_*.png, care arată ce imagine desenează ce parte a barei. Activează-l mai târziu în lista de moduri ca să-l folosești ca orice mod de temă, sau încarcă-l de acolo în Workshop.",
     "MBBS_ThemeProject_Source": "Proiect de temă (inactiv)",
     "MBBS_ThemeProject_Created": "Tema nouă a fost creată în {0}. Deschide dosarul ei și editează imaginile PNG; această fereastră arată modificările.",
     "MBBS_ThemeProject_CreateFailed": "Tema nu a putut fi creată în {0}: {1}",

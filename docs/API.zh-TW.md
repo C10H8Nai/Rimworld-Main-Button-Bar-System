@@ -204,12 +204,12 @@ Atlas 會拉伸中段，所以一張畫不能當 atlas 用。四個選填的新�
 4. 做好後在模組清單啟用它，就和一般主題模組一樣（也可以從那裡上傳工作坊）。啟用後由遊戲載入，重新載入只會重讀 PNG，改 Defs 要重開遊戲。
 5. **刪除**是把資料夾搬到遊戲存檔資料夾的 `MainButtonBarSystem/DeletedThemes/<資料夾>_<日期>`（搬回 `Mods` 就復原）。只有用「新增主題」做的主題能刪，而且要在模組清單沒勾選時。
 
-`Textures/<Id>/` 的空白圖：按鈕四種狀態、More、Drawer（64×64 九宮格）、Bar（256×36，Tile）、ButtonPicture（240×72）、左右箭頭（32×32）、Gear（64×64）、Preview（600×36）；根目錄的 `_Guide.png` 標出每個檔案畫在列的哪裡。36px 高的按鈕上，64×64 atlas 的上下邊各佔 16px，所以空白框除了外圈細線都是半透明的。
+`Textures/<Id>/` 的空白圖：按鈕四種狀態、More、Drawer（64×64 九宮格）、Bar（256×36，Tile）、ButtonPicture（240×72）、左右箭頭（32×32）、Gear（64×64）、Preview（600×36）；根目錄的 `_Guide_<語言>.png`（英、繁中、簡中、日各一張）是給第一次做主題的人的一圖流說明書，也標出每個檔案畫在列的哪裡。36px 高的按鈕上，64×64 atlas 的上下邊各佔 16px，所以空白框除了外圈細線都是半透明的。
 
 還沒啟用時本模組用遊戲自己的 Def 解析讀它，所以本節的所有欄位都能用，包括自己手動加的 `buttonImages`、`decorations`（圖放在 `Textures/<Id>/`），也可以在 Defs 裡多加幾款 `BarAppearanceDef`。啟用前的限制：只讀 `.png`、不支援 `ParentName`、沒有翻譯（`Languages/`）、不認得的欄位以警告略過。
 
 - **複製專案**：複本要改自己的 packageId（About.xml 和 `MBBS_ThemeProject.xml`）和 defName，不然那款主題會因 defName 撞名被略過（一行警告）。
-- **上傳工作坊**：照「做一個主題模組」把本模組加進 *Required items*。`_Guide.png`、`MBBS_ThemeProject.xml` 可以留著，遊戲不讀；不想讓本模組再提供重新載入和刪除，就刪掉 `MBBS_ThemeProject.xml`。
+- **上傳工作坊**：照「做一個主題模組」把本模組加進 *Required items*。`_Guide_*.png`、`MBBS_ThemeProject.xml` 可以留著，遊戲不讀；不想讓本模組再提供重新載入和刪除，就刪掉 `MBBS_ThemeProject.xml`。
 - **併進其他模組**（例如種族模組自帶主題）：把 `Defs/`、`Textures/` 複製到那個模組只在本模組啟用時才讀的資料夾（`IfModActive`，見英文版〈Shipping content inside another mod〉），再刪掉這個專案。
 
 ### 相容承諾

@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Luo tyhjän teemamodin pelin Mods-kansioon ja valitsee sen. Muokkaa sen PNG-kuvia millä tahansa kuvaeditorilla: kun tämä välilehti on auki, palkki näyttää muutoksesi sekunnin sisällä. Uudelleenkäynnistystä ei tarvita.",
     "MBBS_ExportTitle_ThemeProject": "Uusi teema",
     "MBBS_ExportConfirm_ThemeProject": "Luo",
-    "MBBS_ExportHint_ThemeProject": "Kansioon {1} luodaan teemamodin kansio tyhjine kuvineen ja tiedostoineen _Guide.png, joka näyttää, mikä kuva piirtää minkäkin osan palkista. Ota se myöhemmin käyttöön modilistassa kuten mikä tahansa teemamodi tai julkaise se sieltä Workshopiin.",
+    "MBBS_ExportHint_ThemeProject": "Kansioon {1} luodaan teemamodin kansio tyhjine kuvineen ja tiedostoineen _Guide_*.png, joka näyttää, mikä kuva piirtää minkäkin osan palkista. Ota se myöhemmin käyttöön modilistassa kuten mikä tahansa teemamodi tai julkaise se sieltä Workshopiin.",
     "MBBS_ThemeProject_Source": "Teemaprojekti (ei käytössä)",
     "MBBS_ThemeProject_Created": "Uusi teema luotu kansioon {0}. Avaa sen kansio ja muokkaa PNG-kuvia; tämä ikkuna näyttää muutokset.",
     "MBBS_ThemeProject_CreateFailed": "Teemaa ei voitu luoda kansioon {0}: {1}",

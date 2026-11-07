@@ -9,7 +9,7 @@
 1. 主選單 → 模組設定 → 本模組 → 外觀分頁（預設主題）。清單最後（內建主題卡片、自訂主題存檔之後）有「新增主題…」，滑鼠提示說明用途。
 2. 按下：對話框有名稱、作者、說明、packageId。名稱空白 → 「建立」是灰的、紅字提示「要名稱」；把 packageId 改成 `abc`（不合法）或已安裝模組的 packageId（例如 `NAI.MainButtonBarSystem`）→ 「建立」灰、提示原因。
 3. 名稱 `Test Steel`、作者 `Nai`：packageId 自動是 `Nai.mbbstheme.TestSteel`。按建立。
-   - 預期：`Mods\Test Steel\` 有 `About/About.xml`、`About/Preview.png`、`Defs/NaiTestSteel_Theme.xml`、`Textures/NaiTestSteel/` 12 張 PNG、`_Guide.png`、`MBBS_ThemeProject.xml`；About 的 `modDependencies` 帶 `downloadUrl`（和／或 `steamWorkshopUrl`）。
+   - 預期：`Mods\Test Steel\` 有 `About/About.xml`、`About/Preview.png`、`Defs/NaiTestSteel_Theme.xml`、`Textures/NaiTestSteel/` 12 張 PNG、`_Guide_English.png`／`_Guide_ChineseTraditional.png`／`_Guide_ChineseSimplified.png`／`_Guide_Japanese.png`、`MBBS_ThemeProject.xml`；About 的 `modDependencies` 帶 `downloadUrl`（和／或 `steamWorkshopUrl`）。
    - 清單多一張「test steel」卡片並被選上，來源寫「主題專案（未啟用）」；底部列（開 `alwaysDrawBar` 或進遊戲看）變成空白主題；左上訊息顯示資料夾路徑。
    - 不用重開遊戲。
 4. 再按一次「新增主題…」，同樣名稱和作者：packageId 自動變成 `Nai.mbbstheme.TestSteel2`，資料夾 `Test Steel (2)`。（建完可以直接刪，見 E。）
@@ -22,7 +22,7 @@
 2. 每顆按鈕的框裡看得到插圖的準心或裁切框（黃／青／粉紅）。
 3. 「更多」按鈕紫色（+）；打開抽屜，背景是深紫九宮格（W）、齒輪是空白主題的齒輪；捲動模式的左右箭頭是空心三角。
 4. 列背景是格線＋黃色接縫記號，鋪滿整條列。
-5. 打開 `_Guide.png`：每個檔名都有標出對應的地方和尺寸。
+5. 打開四張 `_Guide_<語言>.png`：每張都是完整的一圖流說明書（流程、每個檔名對應的地方和尺寸、九宮格、插圖、文字顏色、上傳），字沒有被切掉。
 
 ## C. 未啟用的主題專案由本模組載入
 
@@ -68,7 +68,7 @@
 1. 刪除未啟用的主題專案：選著 test steel（或 A.4 的第二份），按「刪除」→ 確認視窗寫名稱、資料夾、會搬到 `…\MainButtonBarSystem\DeletedThemes\`。確認：資料夾搬到 `DeletedThemes\Test Steel_<日期時間>`，`Mods\` 裡沒有了；卡片消失；外觀回到原版；左上訊息寫搬到哪裡。
 2. 不能刪的主題：選內建主題（帝國、萘伊…）和其他主題模組的卡片：沒有「重新載入／打開資料夾／刪除」這列按鈕。
 3. 已啟用的不能刪：見 C.2、C.3。
-4. 搬移失敗：用 PowerShell 獨占開著專案裡的一個檔（`$f=[IO.File]::Open('<…\_Guide.png>','Open','Read','None')`，測完 `$f.Close()`），按刪除並確認。預期：訊息說明原因，資料夾和清單都維持原狀，沒有紅字（`Mods\` 裡也不能多出 `.mbbs-deleting` 資料夾）。關掉檔案後再刪一次，成功。
+4. 搬移失敗：用 PowerShell 獨占開著專案裡的一個檔（`$f=[IO.File]::Open('<…\_Guide_English.png>','Open','Read','None')`，測完 `$f.Close()`），按刪除並確認。預期：訊息說明原因，資料夾和清單都維持原狀，沒有紅字（`Mods\` 裡也不能多出 `.mbbs-deleting` 資料夾）。關掉檔案後再刪一次，成功。
 
 ## F. 不打擾只整理按鈕的玩家
 

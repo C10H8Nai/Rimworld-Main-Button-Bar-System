@@ -12,6 +12,15 @@ namespace MainButtonBarSystem.Core
         /// <summary>The middle part of every default packageId, so theme projects are easy to tell apart in a mod list.</summary>
         public const string MarkerPart = "mbbstheme";
 
+        /// <summary>
+        /// The one-page guides "New theme" copies from ThemeKit to the top of the new folder, one per language (the game
+        /// does not load them). Made by tools/make_theme_kit.py.
+        /// </summary>
+        public static readonly IReadOnlyList<string> GuideFiles = new[]
+        {
+            "_Guide_English.png", "_Guide_ChineseTraditional.png", "_Guide_ChineseSimplified.png", "_Guide_Japanese.png",
+        };
+
         /// <summary>"&lt;author&gt;.mbbstheme.&lt;name&gt;", from the ASCII parts of what the player typed.</summary>
         public static string PackageId(string author, string name, string nameFallback) =>
             SharingNames.Identifier(author, "Player") + "." + MarkerPart + "." + SharingNames.Identifier(name, nameFallback);

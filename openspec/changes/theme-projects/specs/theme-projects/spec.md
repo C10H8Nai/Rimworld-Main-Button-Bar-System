@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: 新增主題專案
-外觀分頁的主題清單最後（內建主題卡片、自訂主題存檔之後）SHALL 有「新增主題…」按鈕。按下後的對話框 SHALL 讓玩家填名稱（必填）、作者、說明，並顯示可修改的 packageId（預設由作者和名稱產生、和已安裝模組撞名時加後綴）。建立 SHALL 在遊戲的 `Mods\` 產生一個完整的主題模組資料夾：`About/About.xml`（前置項帶 `downloadUrl` 或 `steamWorkshopUrl`）、`About/Preview.png`、`Defs/<Id>_Theme.xml`（一個 `BarAppearanceDef`，含按鈕四種狀態、三種文字顏色、列背景、抽屜、「更多」、左右捲動鍵、齒輪、預覽、共用插圖）、`Textures/<Id>/` 的空白 PNG、根目錄的 `_Guide.png` 和標記檔 `MBBS_ThemeProject.xml`。空白主題 MUST NOT 附裝飾圖或逐顆按鈕插圖。
+外觀分頁的主題清單最後（內建主題卡片、自訂主題存檔之後）SHALL 有「新增主題…」按鈕。按下後的對話框 SHALL 讓玩家填名稱（必填）、作者、說明，並顯示可修改的 packageId（預設由作者和名稱產生、和已安裝模組撞名時加後綴）。建立 SHALL 在遊戲的 `Mods\` 產生一個完整的主題模組資料夾：`About/About.xml`（前置項帶 `downloadUrl` 或 `steamWorkshopUrl`）、`About/Preview.png`、`Defs/<Id>_Theme.xml`（一個 `BarAppearanceDef`，含按鈕四種狀態、三種文字顏色、列背景、抽屜、「更多」、左右捲動鍵、齒輪、預覽、共用插圖）、`Textures/<Id>/` 的空白 PNG、根目錄的說明書 `_Guide_<語言>.png`（英文、繁中、簡中、日文各一張，給第一次做主題的人看得懂的一圖流）和標記檔 `MBBS_ThemeProject.xml`。空白主題 MUST NOT 附裝飾圖或逐顆按鈕插圖。
 
 #### Scenario: 建立成功
 - **WHEN** 玩家填好名稱並按「建立」，且 `Mods\` 可以寫入
@@ -20,7 +20,7 @@
 - **THEN** 它照一般主題模組載入，log 沒有 `needs to have <downloadUrl>` 或本模組的主題檢查警告
 
 ### Requirement: 空白主題的圖
-空白 PNG SHALL 讓作者在實際的底部列上分辨各零件：四種按鈕狀態（一般、滑鼠移上、開啟中、停用）各用一個色調；所有九宮格圖（按鈕四張、「更多」、抽屜，64×64）SHALL 看得出 1/4 處的切線和角／邊／中間；按鈕圖的中間 MUST 是半透明，讓插圖看得到；共用插圖（240×72）SHALL 標出準心和按鈕寬 120／80／40 時 Cover 裁切後的可見範圍；列背景（256×36，Tile）SHALL 有格線和接縫記號。`_Guide.png` SHALL 標出每個檔名對應底部列的哪一塊和它的尺寸。
+空白 PNG SHALL 讓作者在實際的底部列上分辨各零件：四種按鈕狀態（一般、滑鼠移上、開啟中、停用）各用一個色調；所有九宮格圖（按鈕四張、「更多」、抽屜，64×64）SHALL 看得出 1/4 處的切線和角／邊／中間；按鈕圖的中間 MUST 是半透明，讓插圖看得到；共用插圖（240×72）SHALL 標出準心和按鈕寬 120／80／40 時 Cover 裁切後的可見範圍；列背景（256×36，Tile）SHALL 有格線和接縫記號。每張 `_Guide_<語言>.png` SHALL 是完整的一圖流說明書（流程、檔案、九宮格、插圖、文字顏色、上傳），SHALL 標出每個檔名對應底部列的哪一塊和它的尺寸。
 
 #### Scenario: 分辨狀態
 - **WHEN** 選著空白主題，滑鼠移到某顆按鈕上、再打開某個分頁

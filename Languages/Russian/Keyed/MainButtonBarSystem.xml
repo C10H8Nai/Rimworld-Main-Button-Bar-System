@@ -340,7 +340,7 @@
   <MBBS_ThemeProject_NewTip>Создаёт пустой мод с темой в папке Mods игры и выбирает его. Редактируйте его PNG-изображения в любом графическом редакторе: пока эта вкладка открыта, панель показывает ваши изменения в течение секунды. Перезапуск не нужен.</MBBS_ThemeProject_NewTip>
   <MBBS_ExportTitle_ThemeProject>Новая тема</MBBS_ExportTitle_ThemeProject>
   <MBBS_ExportConfirm_ThemeProject>Создать</MBBS_ExportConfirm_ThemeProject>
-  <MBBS_ExportHint_ThemeProject>В {1} создаётся папка мода с темой: пустые изображения и _Guide.png, который показывает, какое изображение рисует какую часть панели. Позже включите его в списке модов, чтобы пользоваться им как любым модом с темой, или загрузите его оттуда в Workshop.</MBBS_ExportHint_ThemeProject>
+  <MBBS_ExportHint_ThemeProject>В {1} создаётся папка мода с темой: пустые изображения и _Guide_*.png, который показывает, какое изображение рисует какую часть панели. Позже включите его в списке модов, чтобы пользоваться им как любым модом с темой, или загрузите его оттуда в Workshop.</MBBS_ExportHint_ThemeProject>
   <MBBS_ThemeProject_Source>Проект темы (не активен)</MBBS_ThemeProject_Source>
   <MBBS_ThemeProject_Created>Новая тема создана в {0}. Откройте её папку и редактируйте PNG-изображения; это окно показывает изменения.</MBBS_ThemeProject_Created>
   <MBBS_ThemeProject_CreateFailed>Не удалось создать тему в {0}: {1}</MBBS_ThemeProject_CreateFailed>

@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Maakt een lege themamod in de Mods-map van het spel en selecteert die. Bewerk de PNG-afbeeldingen met een willekeurige afbeeldingseditor: zolang dit tabblad open is, toont de balk je wijzigingen binnen een seconde. Opnieuw opstarten is niet nodig.",
     "MBBS_ExportTitle_ThemeProject": "Nieuw thema",
     "MBBS_ExportConfirm_ThemeProject": "Maken",
-    "MBBS_ExportHint_ThemeProject": "In {1} wordt een themamodmap gemaakt, met lege afbeeldingen en _Guide.png, dat laat zien welke afbeelding welk deel van de balk tekent. Schakel de mod later in de modlijst in om hem als elke themamod te gebruiken, of upload hem vandaar naar de Workshop.",
+    "MBBS_ExportHint_ThemeProject": "In {1} wordt een themamodmap gemaakt, met lege afbeeldingen en _Guide_*.png, dat laat zien welke afbeelding welk deel van de balk tekent. Schakel de mod later in de modlijst in om hem als elke themamod te gebruiken, of upload hem vandaar naar de Workshop.",
     "MBBS_ThemeProject_Source": "Themaproject (niet actief)",
     "MBBS_ThemeProject_Created": "Nieuw thema gemaakt in {0}. Open de map en bewerk de PNG-afbeeldingen; dit venster toont de wijzigingen.",
     "MBBS_ThemeProject_CreateFailed": "Kon het thema niet maken in {0}: {1}",

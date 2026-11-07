@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using MainButtonBarSystem.Core;
 using Xunit;
 
@@ -154,6 +156,37 @@ namespace MainButtonBarSystem.Tests
             Assert.False(a.SameAs(b));
             Assert.False(b.SameAs(a));
             Assert.False(a.SameAs(null));
+        }
+
+        // ------------------------------------------------ guide pictures
+
+        [Fact]
+        public void GuideFiles_OnePerLanguage_AllPngsInTheKit()
+        {
+            Assert.Equal(new[] { "_Guide_English.png", "_Guide_ChineseTraditional.png", "_Guide_ChineseSimplified.png", "_Guide_Japanese.png" },
+                ThemeProjectNames.GuideFiles);
+            string kit = Path.Combine(RepoRoot(), "ThemeKit");
+            byte[] png = { 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A };
+            foreach (var file in ThemeProjectNames.GuideFiles)
+            {
+                string path = Path.Combine(kit, file);
+                Assert.True(File.Exists(path), file + " is missing from ThemeKit");
+                var head = new byte[png.Length];
+                using (var stream = File.OpenRead(path)) Assert.Equal(png.Length, stream.Read(head, 0, head.Length));
+                Assert.Equal(png, head);
+            }
+            Assert.False(File.Exists(Path.Combine(kit, "_Guide.png")), "the English-only _Guide.png is replaced by the four guides");
+            var inKit = Directory.GetFiles(kit, "_Guide*.png").Select(Path.GetFileName).OrderBy(n => n, StringComparer.Ordinal);
+            Assert.Equal(ThemeProjectNames.GuideFiles.OrderBy(n => n, StringComparer.Ordinal), inKit);
+        }
+
+        private static string RepoRoot()
+        {
+            var dir = new DirectoryInfo(AppContext.BaseDirectory);
+            while (dir != null && !Directory.Exists(Path.Combine(dir.FullName, "ThemeKit")))
+                dir = dir.Parent;
+            Assert.NotNull(dir);
+            return dir.FullName;
         }
     }
 }

@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "Lager en tom temamod i spillets Mods-mappe og velger den. Rediger PNG-bildene med et valgfritt bilderedigeringsprogram: mens denne fanen er åpen, viser linjen endringene dine i løpet av ett sekund. Ingen omstart nødvendig.",
     "MBBS_ExportTitle_ThemeProject": "Nytt tema",
     "MBBS_ExportConfirm_ThemeProject": "Opprett",
-    "MBBS_ExportHint_ThemeProject": "Det opprettes en temamodmappe i {1} med tomme bilder og _Guide.png, som viser hvilket bilde som tegner hvilken del av linjen. Aktiver den senere i modlisten for å bruke den som en hvilken som helst temamod, eller last den opp til Workshop derfra.",
+    "MBBS_ExportHint_ThemeProject": "Det opprettes en temamodmappe i {1} med tomme bilder og _Guide_*.png, som viser hvilket bilde som tegner hvilken del av linjen. Aktiver den senere i modlisten for å bruke den som en hvilken som helst temamod, eller last den opp til Workshop derfra.",
     "MBBS_ThemeProject_Source": "Temaprosjekt (ikke aktivt)",
     "MBBS_ThemeProject_Created": "Nytt tema opprettet i {0}. Åpne mappen og rediger PNG-bildene; dette vinduet viser endringene.",
     "MBBS_ThemeProject_CreateFailed": "Kunne ikke opprette temaet i {0}: {1}",

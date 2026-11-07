@@ -330,7 +330,7 @@
     "MBBS_ThemeProject_NewTip": "ゲームのModsフォルダに空のテーマMODを作成して選択します.PNG画像は好きな画像エディタで編集してください.このタブを開いている間,変更は1秒以内にバーへ反映されます.再起動は不要です.",
     "MBBS_ExportTitle_ThemeProject": "新規テーマ",
     "MBBS_ExportConfirm_ThemeProject": "作成",
-    "MBBS_ExportHint_ThemeProject": "{1} にテーマMODのフォルダを作成します.空の画像と _Guide.png が入っていて,_Guide.png はどの画像がバーのどの部分を描画するかを示します.後でMODリストで有効にすれば通常のテーマMODと同じように使え,そこからワークショップにアップロードすることもできます.",
+    "MBBS_ExportHint_ThemeProject": "{1} にテーマMODのフォルダを作成します.空の画像と _Guide_*.png が入っていて,_Guide_*.png はどの画像がバーのどの部分を描画するかを示します.後でMODリストで有効にすれば通常のテーマMODと同じように使え,そこからワークショップにアップロードすることもできます.",
     "MBBS_ThemeProject_Source": "テーマプロジェクト(無効)",
     "MBBS_ThemeProject_Created": "{0} に新しいテーマを作成しました.フォルダを開いてPNG画像を編集してください.このウィンドウに変更が反映されます.",
     "MBBS_ThemeProject_CreateFailed": "{0} にテーマを作成できませんでした:{1}",

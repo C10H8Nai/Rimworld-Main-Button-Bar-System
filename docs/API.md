@@ -479,7 +479,8 @@ The folder (a *theme project*):
   Textures/<Id>/             Button, ButtonMouseover, ButtonActive, ButtonDisabled, More, Drawer (64x64 nine-slice),
                              Bar (256x36, Tile), ButtonPicture (240x72), ArrowLeft, ArrowRight (32x32), Gear (64x64),
                              Preview (600x36, the card's picture)
-  _Guide.png                 which file paints which part of the bar (not loaded by the game)
+  _Guide_<Language>.png      one-page guide for first-time theme makers, in English, ChineseTraditional,
+                             ChineseSimplified and Japanese (not loaded by the game)
   MBBS_ThemeProject.xml      marks the folder as a theme project (not loaded by the game)
 ```
 
@@ -497,7 +498,7 @@ skipped with a warning instead of an error.
 - **Copying a project**: give the copy its own packageId (About.xml and `MBBS_ThemeProject.xml`) and defName, or its
   theme is skipped with a warning (two themes cannot share a defName).
 - **Uploading**: add Main Button Bar System to the item's *Required items* on the Workshop (see *Making a theme mod*).
-  `_Guide.png` and `MBBS_ThemeProject.xml` can stay; the game ignores them. Delete `MBBS_ThemeProject.xml` if this mod
+  `_Guide_*.png` and `MBBS_ThemeProject.xml` can stay; the game ignores them. Delete `MBBS_ThemeProject.xml` if this mod
   should stop offering Reload and Delete for the folder.
 - **Moving it into another mod** (a race mod that ships its own bar theme): copy `Defs/` and `Textures/` into the
   folder that mod reads only when this mod is active (`IfModActive`, see *Shipping content inside another mod*), then
