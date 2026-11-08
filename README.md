@@ -4,6 +4,8 @@ RimWorld 1.7 模組。自訂遊戲畫面底部的主按鈕列：排序、隱藏�
 
 作者：NAI　packageId：`NAI.MainButtonBarSystem`
 
+Steam 工作坊：<https://steamcommunity.com/sharedfiles/filedetails/?id=3835898013>
+
 設計規格：[docs/superpowers/specs/2026-11-03-main-button-bar-system-design.md](docs/superpowers/specs/2026-11-03-main-button-bar-system-design.md)
 
 交接摘要（新的 Claude 對話先讀這份）：[docs/HANDOFF.md](docs/HANDOFF.md)
